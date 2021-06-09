@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;书评&#34; category</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-Hans</language>
+        <pubDate>Sun, 05 May 2019 20:27:23 +0800</pubDate>
+        <lastBuildDate>Sun, 05 May 2019 20:27:23 +0800</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>New Graduate</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>Hexo</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>trvalling</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>折腾</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>Tencent</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2019/05/05/Effective-Modern-C/</guid>
+            <title>Effective Modern C++</title>
+            <link>https://youngforest.github.io/2019/05/05/Effective-Modern-C/</link>
+            <category>C++</category>
+            <category>C++11</category>
+            <pubDate>Sun, 05 May 2019 20:27:23 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/review/10131903/&#34;&gt;我的书评&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

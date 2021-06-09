@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;sublime&#34; tag</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-Hans</language>
+        <pubDate>Wed, 18 Jan 2017 15:27:15 +0800</pubDate>
+        <lastBuildDate>Wed, 18 Jan 2017 15:27:15 +0800</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>New Graduate</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>Hexo</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>trvalling</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>折腾</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>Tencent</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2017/01/18/sublime-personlize/</guid>
+            <title>个性化sublime</title>
+            <link>https://youngforest.github.io/2017/01/18/sublime-personlize/</link>
+            <category>sublime</category>
+            <pubDate>Wed, 18 Jan 2017 15:27:15 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;strong&gt;[摘要]&lt;/strong&gt; &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;sublime text3&lt;/a&gt;是一款强大的editor, 我从大二下开始正式使用, 经过半年的不断摸索, 将sublime配置成为个性化的editor, 满足了我日常编码的大部分需求.&lt;/p&gt;
+&lt;h3 id=&#34;为不同的语言进行不同的配置&#34;&gt;&lt;a href=&#34;#为不同的语言进行不同的配置&#34; class=&#34;headerlink&#34; title=&#34;为不同的语言进行不同的配置&#34;&gt;&lt;/a&gt;为不同的语言进行不同的配置&lt;/h3&gt;&lt;p&gt;首先, 打开该语言的任意个文件, &lt;code&gt;Sublime Text 3 -&amp;gt; Preferences -&amp;gt; Settings - Syntax Specific&lt;/code&gt;进入该语言设置文件, 修改设置文件并保存即可.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://mlo.io/blog/2012/08/23/language-specific-indents-sublime.html&#34;&gt;参考: 为不同语言设置不同缩进&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Color-Scheme&#34;&gt;&lt;a href=&#34;#Color-Scheme&#34; class=&#34;headerlink&#34; title=&#34;Color Scheme&#34;&gt;&lt;/a&gt;Color Scheme&lt;/h3&gt;&lt;p&gt;sublime text 3 默认的主题是&lt;code&gt;Monokai(dark)&lt;/code&gt;, 感觉还是挺养眼的, 但缺点是markdown的支持特别差. 我还比较喜欢的另一个主题&lt;code&gt;Solarized(dark)&lt;/code&gt;也是这样, 默认提供的&lt;code&gt;Solarized&lt;/code&gt;与在vim中的体验相去甚远. 所以我通过&lt;code&gt;Package Contorl&lt;/code&gt;安装了&lt;code&gt;Solarized Color Scheme&lt;/code&gt;这个主题, 与vim对照如下, 还是比较养眼.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/sublime-solarized-optimized.PNG&#34; alt=&#34;Solarized optimized for sublime&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/vim-solarized.PNG&#34; alt=&#34;Solarized for vim&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

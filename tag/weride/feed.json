@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"weride\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2018/09/28/jingchi-interview/",
+            "url": "https://youngforest.github.io/2018/09/28/jingchi-interview/",
+            "title": "景弛（文远之行）面试",
+            "date_published": "2018-09-28T03:22:23.000Z",
+            "content_html": "<p>昨天参与了景驰科技的实习生面试。此次实习生面试是实验室统一安排的，并不是我自己找的。<br>形式为在线面试。总共2轮，预计每轮1小时，实际上第二轮只问了半个小时。第一轮用的Skype，通话质量比较差，视频输出也没有。第二轮，用的微信语音 + <a href=\"http://collabedit.com/\">collabedit</a>。效果好了很多。</p>\n<p>技术面都很简单。因为是招数据标注平台的码农实习生嘛，自然要求超级低。感觉自己要被廉价卖掉了。</p>\n<span id=\"more\"></span>\n\n<h2 id=\"一面\"><a href=\"#一面\" class=\"headerlink\" title=\"一面\"></a>一面</h2><p>一面问了项目和一道<a href=\"https://leetcode.com/problems/valid-parentheses/description/\">括号匹配</a>的问题。</p>\n<h2 id=\"二面\"><a href=\"#二面\" class=\"headerlink\" title=\"二面\"></a>二面</h2><p>二面问了项目和一道<a href=\"https://leetcode.com/problems/3sum/description/\">三数之和</a>的问题。过程中，因为我在简历里写的项目是 大三时在act云计算和系统安全组实习做的一系列项目 和 大四做的毕设。尤其是大三的项目，都是琐碎的小项目，而且年代过于久远，很多细节我都记不清了。所以，我干脆提到了我大四做的2次实习。当听到我曾经在快手实习过3个月后，Eric(二面的面试官)很感兴趣。和我聊了一会儿实习的经历，就开始聊景驰的一些技术细节和在景驰科技实习的要求。</p>\n<h2 id=\"HR面\"><a href=\"#HR面\" class=\"headerlink\" title=\"HR面\"></a>HR面</h2><p>下午回到宿舍后，HR小姐姐又给我打了20min电话，也就是聊了一些实习和公司的问题。通过这次交谈，我也对景驰科技有了进一步的了解。<br>景驰总共只有150人，总部在广州。在北京和硅谷有研发中心。其中北京这边刚刚建立，只有七八个人。硅谷那边有60+人。主要人员都集中在广州。<br>我还问了她transfer到硅谷的问题。她说，硅谷那边大多数在那边直接招的人，当然优秀的员工想要过去也是可以的(估计只是想吸引我)，甚至还有员工领着硅谷的薪水在中国工作。那岂不是年薪巨高（相对中国这边）。</p>\n<p>从Eric和HR的谈话中，我感觉景驰真的很缺人。估计我们都会被招，毕竟便宜嘛。</p>\n<p>我的计划是先实习3个月，认识一些人，学习一些技能。之后想办法再跳出来。继续实习下去，边际收益比较低。</p>\n<p>总之，我现在时间已经不多了。做什么事情都要 不忘初心…</p>\n",
+            "tags": [
+                "intern",
+                "WeRide"
+            ]
+        }
+    ]
+}

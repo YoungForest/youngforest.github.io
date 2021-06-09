@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;c++11&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2019-05-05T12:27:23.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="New Graduate" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="Hexo" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="trvalling" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="折腾" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="Tencent" />
+    <entry>
+        <id>https://youngforest.github.io/2019/05/05/Effective-Modern-C/</id>
+        <title>Effective Modern C++</title>
+        <link rel="alternate" href="https://youngforest.github.io/2019/05/05/Effective-Modern-C/"/>
+        <content type="html">&lt;p&gt;&lt;a href=&#34;https://book.douban.com/review/10131903/&#34;&gt;我的书评&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="C++" />
+        <category term="C++11" />
+        <updated>2019-05-05T12:27:23.000Z</updated>
+    </entry>
+</feed>
