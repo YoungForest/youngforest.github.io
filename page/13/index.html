@@ -175,6 +175,259 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/08/11/LeetCode-weekly-contest-149/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/11/LeetCode-weekly-contest-149/" class="post-title-link" itemprop="url">LeetCode weekly contest 149</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-11 12:34:32" itemprop="dateCreated datePublished" datetime="2019-08-11T12:34:32+08:00">2019-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-01 11:44:07" itemprop="dateModified" datetime="2021-04-01T11:44:07+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/08/11/LeetCode-weekly-contest-149/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/11/LeetCode-weekly-contest-149/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (4)</th>
+<th>Q2 (5)</th>
+<th>Q3 (6)</th>
+<th>Q4 (9)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>476 / 5091</td>
+<td>YoungForest</td>
+<td>15</td>
+<td>1:00:14</td>
+<td>0:10:21</td>
+<td>0:42:14</td>
+<td>1:00:14</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>惭愧的排名又落到400+了。最后一题有半个小时可以解决，一直试图用线段树来做。像kick start round D一样，沉迷于线段树而翻车。获得的教训是，不要纠结与区间问题一定要用线段树做，常常还有其他更简单的做法。</p>
+<h2 id="1154-Day-of-the-Year"><a href="#1154-Day-of-the-Year" class="headerlink" title="1154. Day of the Year"></a>1154. Day of the Year</h2><p>判断闰年，累加之前月份的日子。<br>时间复杂度: O(1),<br>空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isLeap</span><span class="params">(<span class="keyword">int</span> yy)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (yy % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; yy % <span class="number">100</span> != <span class="number">0</span>) || yy % <span class="number">400</span> == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dayOfYear</span><span class="params">(<span class="built_in">string</span> date)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> yy = stoi(date.substr(<span class="number">0</span>, <span class="number">4</span>));</span><br><span class="line">        <span class="keyword">auto</span> mm = stoi(date.substr(<span class="number">5</span>, <span class="number">2</span>));</span><br><span class="line">        <span class="keyword">auto</span> dd = stoi(date.substr(<span class="number">8</span>, <span class="number">2</span>));</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; days = &#123;<span class="number">0</span>, <span class="number">31</span>, <span class="number">28</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span> (isLeap(yy)) &#123;</span><br><span class="line">            days[<span class="number">2</span>] = <span class="number">29</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        ans += accumulate(days.cbegin(), days.cbegin() + mm, <span class="number">0</span>);</span><br><span class="line">        ans += dd;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1155-Number-of-Dice-Rolls-With-Target-Sum"><a href="#1155-Number-of-Dice-Rolls-With-Target-Sum" class="headerlink" title="1155. Number of Dice Rolls With Target Sum"></a>1155. Number of Dice Rolls With Target Sum</h2><p>隔板插空，经典的排列组合问题。由于2个隔板之前的间隔不能大于骰子最大的数字，所以不能直接用数学公式求解。我采用了回溯法，使用了memorization，所以也算是DP。</p>
+<p>时间复杂度: O(N ^ 2),<br>空间复杂度: O(d * bar).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">int</span> f;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; memo;</span><br><span class="line">    <span class="comment">// [begin, end), the index of insert bar</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span> end, <span class="keyword">int</span> bar)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (memo.find(&#123;begin, bar&#125;) != memo.end()) &#123;</span><br><span class="line">            <span class="keyword">return</span> memo[&#123;begin, bar&#125;];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (bar == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (end - begin + <span class="number">1</span> &lt;= f)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; end &amp;&amp; i - begin + <span class="number">1</span> &lt;= f; ++i) &#123;</span><br><span class="line">            <span class="comment">// insert in i</span></span><br><span class="line">            ans += backtracking(i + <span class="number">1</span>, end, bar - <span class="number">1</span>);</span><br><span class="line">            ans %= mod;</span><br><span class="line">        &#125;</span><br><span class="line">        memo[&#123;begin, bar&#125;] = ans;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numRollsToTarget</span><span class="params">(<span class="keyword">int</span> d, <span class="keyword">int</span> f, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;f = f;</span><br><span class="line">        <span class="keyword">int</span> ans = backtracking(<span class="number">0</span>, target - <span class="number">1</span>, d - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1156-Swap-For-Longest-Repeated-Character-Substring"><a href="#1156-Swap-For-Longest-Repeated-Character-Substring" class="headerlink" title="1156. Swap For Longest Repeated Character Substring"></a>1156. Swap For Longest Repeated Character Substring</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/11/LeetCode-weekly-contest-149/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/08/04/LeetCode-weekly-contest-148/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/04/LeetCode-weekly-contest-148/" class="post-title-link" itemprop="url">LeetCode weekly contest 148</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-04 12:03:11" itemprop="dateCreated datePublished" datetime="2019-08-04T12:03:11+08:00">2019-08-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-01 11:44:11" itemprop="dateModified" datetime="2021-04-01T11:44:11+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/08/04/LeetCode-weekly-contest-148/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/04/LeetCode-weekly-contest-148/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (4)</th>
+<th>Q2 (5)</th>
+<th>Q3 (6)</th>
+<th>Q4 (8)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>77 / 5319</td>
+<td>YoungForest</td>
+<td>23</td>
+<td>0:56:45</td>
+<td>0:09:51</td>
+<td>0:24:02</td>
+<td>0:41:20</td>
+<td>0:56:45</td>
+</tr>
+</tbody></table>
+<p>本次比赛是我时隔3个月再次进入前100名，也是连续2次进入前200名，还是有些小开心的。算是一扫上周kick start 翻车的阴郁。<br>事实上，由于<a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-chunked-palindrome-decomposition/discuss/350633/Wrong-problem-constraints-rejudge-all-wrong-submissions">评测机的问题</a>，我比赛刚结束时看到的排名是56名。后来官方有重新评测了最后一题，有些人的提交就可以过了，也没有罚时了。<br>本次比赛也是质量蛮高，题目不是很难，但考察的知识点很全面，难度分布也比较合理。</p>
+<h2 id="1144-Decrease-Elements-To-Make-Array-Zigzag"><a href="#1144-Decrease-Elements-To-Make-Array-Zigzag" class="headerlink" title="1144. Decrease Elements To Make Array Zigzag"></a>1144. Decrease Elements To Make Array Zigzag</h2><p>因为只能减1嘛，所以是到Easy题目。如果题目改成加1或减1，会难的多。<br>只需要比较2种情况，选择小的即可。</p>
+<p>时间复杂度: O(N),<br>空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">movesToMakeZigzag</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i += <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> neighbor = INF;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                neighbor = min(neighbor, nums[i - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; nums.size() - <span class="number">1</span>) &#123;</span><br><span class="line">                neighbor = min(neighbor, nums[i + <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (neighbor != INF &amp;&amp; neighbor &lt;= nums[i]) &#123;</span><br><span class="line">                ans1 += nums[i] - neighbor + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.size(); i += <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> neighbor = INF;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                neighbor = min(neighbor, nums[i - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; nums.size() - <span class="number">1</span>) &#123;</span><br><span class="line">                neighbor = min(neighbor, nums[i + <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (neighbor != INF &amp;&amp; neighbor &lt;= nums[i]) &#123;</span><br><span class="line">                ans2 += nums[i] - neighbor + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min(ans1, ans2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1145-Binary-Tree-Coloring-Game"><a href="#1145-Binary-Tree-Coloring-Game" class="headerlink" title="1145. Binary Tree Coloring Game"></a>1145. Binary Tree Coloring Game</h2><p>本题的难点在于理解题意。思路倒是十分直观，尽量选择最大的分支。如果大分支的数量大于一半，则必胜。<br>树的问题用递归，模版还是一个DFS。</p>
+<p>时间复杂度: O(N), 遍历每个节点1次；<br>空间复杂度: O(N). 树的深度，最差为N。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">    <span class="comment">// return the number of node in subtree</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(TreeNode* root, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = dfs(root-&gt;left, x);</span><br><span class="line">        <span class="keyword">int</span> right = dfs(root-&gt;right, x);</span><br><span class="line">        <span class="keyword">if</span> (root-&gt;val == x) &#123;</span><br><span class="line">            l = left;</span><br><span class="line">            r = right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left + right + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">btreeGameWinningMove</span><span class="params">(TreeNode* root, <span class="keyword">int</span> n, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        dfs(root, x);</span><br><span class="line">        <span class="keyword">if</span> (n == l + r + <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> l != r;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> parent = n - l - r - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> parent - <span class="number">1</span> &gt; l + r || l - <span class="number">1</span> &gt; r + parent || r - <span class="number">1</span> &gt; l + parent;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/04/LeetCode-weekly-contest-148/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/07/28/LeetCode-weekly-contest-147/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1057,237 +1310,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/07/15/LeetCode-weekly-contest-145/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/15/LeetCode-weekly-contest-145/" class="post-title-link" itemprop="url">LeetCode weekly contest 145</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-07-15 15:08:44" itemprop="dateCreated datePublished" datetime="2019-07-15T15:08:44+08:00">2019-07-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-01 11:46:21" itemprop="dateModified" datetime="2021-04-01T11:46:21+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/07/15/LeetCode-weekly-contest-145/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/15/LeetCode-weekly-contest-145/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <table>
-<thead>
-<tr>
-<th>Rank</th>
-<th>Name</th>
-<th>Score</th>
-<th>Finish Time</th>
-<th>Q1 (5)</th>
-<th>Q2 (5)</th>
-<th>Q3 (8)</th>
-<th>Q4 (8)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>451 / 4931</td>
-<td>YoungForest</td>
-<td>16</td>
-<td>1:24:26</td>
-<td>0:09:37</td>
-<td>0:17:39</td>
-<td>1:14:26 2</td>
-<td>null</td>
-</tr>
-</tbody></table>
-<h2 id="1122-Relative-Sort-Array"><a href="#1122-Relative-Sort-Array" class="headerlink" title="1122. Relative Sort Array"></a>1122. Relative Sort Array</h2><p>定制排序规则。</p>
-<p>时间复杂度: O(N long N),<br>空间复杂度: O(N).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">relativeSortArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr2)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; location;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr2.size(); ++i) &#123;</span><br><span class="line">            location[arr2[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(arr1.begin(), arr1.end(), [location](<span class="keyword">int</span> lhs, <span class="keyword">int</span> rhs) -&gt; <span class="keyword">bool</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (location.find(lhs) != location.end() &amp;&amp; location.find(rhs) != location.end()) &#123;</span><br><span class="line">                <span class="keyword">return</span> location.at(lhs) &lt; location.at(rhs);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (location.find(lhs) == location.end() &amp;&amp; location.find(rhs) != location.end()) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (location.find(lhs) != location.end() &amp;&amp; location.find(rhs) == location.end()) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> lhs &lt; rhs;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> arr1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1123-Lowest-Common-Ancestor-of-Deepest-Leaves"><a href="#1123-Lowest-Common-Ancestor-of-Deepest-Leaves" class="headerlink" title="1123. Lowest Common Ancestor of Deepest Leaves"></a>1123. Lowest Common Ancestor of Deepest Leaves</h2><p>树的问题递归解决。关注需要返回给父节点的信息和传递给子节点的信息。</p>
-<p>时间复杂度: O(N). 每个节点遍历一次。<br>空间复杂度: O(N). 树的最深深度，即递归的深度。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    pair&lt;int, TreeNode*&gt; recurse(TreeNode* root, int depth) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;depth, <span class="literal">nullptr</span>&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> l = recurse(root-&gt;left, depth + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">auto</span> r = recurse(root-&gt;right, depth + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (l.first &gt; r.first) &#123;</span><br><span class="line">            <span class="keyword">return</span> l;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (l.first == r.first) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;l.first, root&#125;;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lcaDeepestLeaves</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> ans = recurse(root, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans.second;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1124-Longest-Well-Performing-Interval"><a href="#1124-Longest-Well-Performing-Interval" class="headerlink" title="1124. Longest Well-Performing Interval"></a>1124. Longest Well-Performing Interval</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/07/15/LeetCode-weekly-contest-145/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/07/07/LeetCode-weekly-contest-144/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/07/LeetCode-weekly-contest-144/" class="post-title-link" itemprop="url">LeetCode weekly contest 144</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-07-07 19:18:15" itemprop="dateCreated datePublished" datetime="2019-07-07T19:18:15+08:00">2019-07-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-01 11:46:26" itemprop="dateModified" datetime="2021-04-01T11:46:26+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/07/07/LeetCode-weekly-contest-144/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/07/LeetCode-weekly-contest-144/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今早由于参加托福考试，无法像往常一样参加周赛。赛后补题。</p>
-<h2 id="1108-Defanging-an-IP-Address"><a href="#1108-Defanging-an-IP-Address" class="headerlink" title="1108. Defanging an IP Address"></a>1108. Defanging an IP Address</h2><p>One pass. 直接替换即可。</p>
-<p>时间复杂度: O(N),<br>空间复杂度: O(1).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">defangIPaddr</span><span class="params">(<span class="built_in">string</span> address)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> ret;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : address) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                ret.push_back(<span class="string">&#x27;[&#x27;</span>);</span><br><span class="line">                ret.push_back(<span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">                ret.push_back(<span class="string">&#x27;]&#x27;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ret.push_back(c);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1109-Corporate-Flight-Bookings"><a href="#1109-Corporate-Flight-Bookings" class="headerlink" title="1109. Corporate Flight Bookings"></a>1109. Corporate Flight Bookings</h2><p>Brute force. TLE.<br>时间复杂度: O(N * bookings.length);<br>空间复杂度: O(N).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">corpFlightBookings</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; bookings, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">ret</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; booking : bookings) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = booking.at(<span class="number">0</span>); i &lt;= booking.at(<span class="number">1</span>); ++i) &#123;</span><br><span class="line">                ret[i - <span class="number">1</span>] += booking.at(<span class="number">2</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>One pass. 前些天刚做过类似的题目。站点上下车的问题。<br>时间复杂度: O(max(booking.length, N)).<br>空间复杂度: O(N).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">corpFlightBookings</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; bookings, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">stops</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">ret</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; booking : bookings) &#123;</span><br><span class="line">            stops[booking[<span class="number">0</span>] - <span class="number">1</span>] += booking[<span class="number">2</span>];    <span class="comment">// begin</span></span><br><span class="line">            stops[booking[<span class="number">1</span>]] -= booking[<span class="number">2</span>];    <span class="comment">// end</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            total += stops[i];</span><br><span class="line">            ret[i] = total;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/07/07/LeetCode-weekly-contest-144/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1357,20 +1379,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

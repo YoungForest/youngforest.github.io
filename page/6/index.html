@@ -175,6 +175,259 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/10/18/LeetCode-biweekly-contest-37/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/18/LeetCode-biweekly-contest-37/" class="post-title-link" itemprop="url">LeetCode biweekly contest 37</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-18 09:54:27" itemprop="dateCreated datePublished" datetime="2020-10-18T09:54:27+08:00">2020-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-01 11:48:50" itemprop="dateModified" datetime="2021-04-01T11:48:50+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/18/LeetCode-biweekly-contest-37/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/18/LeetCode-biweekly-contest-37/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (7)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>893 / 8250</td>
+<td>YoungForest</td>
+<td>7</td>
+<td>0:27:31</td>
+<td>0:11:24</td>
+<td>0:27:31</td>
+<td>null</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>连续2次双周赛遭遇滑铁卢了。<br>第3题在赛后2分钟通过了，本来是在能力范围内的题目，但最后心太急了。本来晚上状态就不好，反而是比赛结束后，就写出来了。</p>
+<h2 id="1619-Mean-of-Array-After-Removing-Some-Elements"><a href="#1619-Mean-of-Array-After-Removing-Some-Elements" class="headerlink" title="1619. Mean of Array After Removing Some Elements"></a>1619. Mean of Array After Removing Some Elements</h2><p>签到题。先排序，后求和，在求平均。<br>这里需要注意题目中限制了<code>arr.size() % 20 == 0</code>.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">trimMean</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        sort(arr.begin(), arr.end());</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = arr.size();</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> x = n / <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">double</span> s = <span class="number">0.0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; x || (n - <span class="number">1</span> - i) &lt; x) <span class="keyword">continue</span>;</span><br><span class="line">            s += arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s / (n - <span class="number">2</span> * x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(N log N),<br>空间复杂度: O(1).</p>
+<h2 id="1620-Coordinate-With-Maximum-Network-Quality"><a href="#1620-Coordinate-With-Maximum-Network-Quality" class="headerlink" title="1620. Coordinate With Maximum Network Quality"></a>1620. Coordinate With Maximum Network Quality</h2><p>由于数据范围比较小，只有50，直接暴力。遍历每一个位置，遍历每个塔求它的信号。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">bestCoordinate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; towers, <span class="keyword">int</span> radius)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 50 * 50 * 50</span></span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">double</span> r = radius;</span><br><span class="line">        <span class="keyword">int</span> maxSignal = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxI = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxJ = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">auto</span> distance = [&amp;](<span class="keyword">const</span> <span class="keyword">int</span> a1, <span class="keyword">const</span> <span class="keyword">int</span> b1, <span class="keyword">const</span> <span class="keyword">int</span> a2, <span class="keyword">const</span> <span class="keyword">int</span> b2) -&gt; <span class="keyword">double</span> &#123;</span><br><span class="line">            <span class="keyword">return</span>  <span class="built_in">sqrt</span>((a1 - a2) * (a1 - a2) + (b1 - b2) * (b1 - b2));</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">auto</span> getSignal = [&amp;](<span class="keyword">const</span> <span class="keyword">int</span> i, <span class="keyword">const</span> <span class="keyword">int</span> j) -&gt; <span class="keyword">int</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; t : towers) &#123;</span><br><span class="line">                <span class="keyword">double</span> d = distance(t[<span class="number">0</span>], t[<span class="number">1</span>], i, j);</span><br><span class="line">                <span class="keyword">if</span> (d &gt; r) <span class="keyword">continue</span>;</span><br><span class="line">                ans += <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="built_in">floor</span>(t[<span class="number">2</span>] / (<span class="number">1</span> + d)));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">50</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">50</span>; ++j) &#123;</span><br><span class="line">                <span class="keyword">const</span> <span class="keyword">int</span> signal = getSignal(i, j);</span><br><span class="line">                <span class="comment">// cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; signal &lt;&lt; endl;</span></span><br><span class="line">                <span class="keyword">if</span> (signal &gt; maxSignal) &#123;</span><br><span class="line">                    maxI = i;</span><br><span class="line">                    maxJ = j;</span><br><span class="line">                    maxSignal = signal;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;maxI, maxJ&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度: O(rows * cols * towers),<br>空间复杂度: O(1).</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/18/LeetCode-biweekly-contest-37/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/10/11/LeetCode-weekly-contest-210/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/11/LeetCode-weekly-contest-210/" class="post-title-link" itemprop="url">LeetCode weekly contest 210</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-11 19:23:21" itemprop="dateCreated datePublished" datetime="2020-10-11T19:23:21+08:00">2020-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-01 11:42:05" itemprop="dateModified" datetime="2021-04-01T11:42:05+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/11/LeetCode-weekly-contest-210/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/11/LeetCode-weekly-contest-210/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>94 / 11792</td>
+<td>YoungForest</td>
+<td>18</td>
+<td>0:51:30</td>
+<td>0:03:13</td>
+<td>0:08:36</td>
+<td>0:21:59</td>
+<td>0:51:30</td>
+</tr>
+</tbody></table>
+<p>本场比赛都是常规题目，我没有遇到困难，久违地进入了前100名。太难了，残酷群排名也因此上升到25名。</p>
+<h2 id="5535-Maximum-Nesting-Depth-of-the-Parentheses"><a href="#5535-Maximum-Nesting-Depth-of-the-Parentheses" class="headerlink" title="5535. Maximum Nesting Depth of the Parentheses"></a>5535. Maximum Nesting Depth of the Parentheses</h2><p>签到题。括号嵌套层数，用栈的思路即可。左括号入栈，右括号出栈。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : s) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="string">&#x27;(&#x27;</span>) &#123;</span><br><span class="line">                ++left;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">&#x27;)&#x27;</span>) &#123;</span><br><span class="line">                --left;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = max(ans, left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度: O(N),<br>空间复杂度: O(1).</p>
+<h2 id="5536-Maximal-Network-Rank"><a href="#5536-Maximal-Network-Rank" class="headerlink" title="5536. Maximal Network Rank"></a>5536. Maximal Network Rank</h2><p>暴力法。枚举所有的城市对，计算network rank。有个技巧是先统计单个城市的度，如果2城市间存在道路则减一。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalNetworkRank</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; roads)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">using</span> pii = <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;;</span><br><span class="line">        <span class="built_in">set</span>&lt;pii&gt; roadmap;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">cnt</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; r : roads) &#123;</span><br><span class="line">            roadmap.insert(&#123;r[<span class="number">0</span>], r[<span class="number">1</span>]&#125;);</span><br><span class="line">            ++cnt[r[<span class="number">0</span>]];</span><br><span class="line">            ++cnt[r[<span class="number">1</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">int</span> sub = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span> (roadmap.find(&#123;i, j&#125;) != roadmap.end() || roadmap.find(&#123;j, i&#125;) != roadmap.end()) &#123;</span><br><span class="line">                    ++sub;</span><br><span class="line">                &#125;</span><br><span class="line">                ans = max(ans, cnt[i] + cnt[j] - sub);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度: O(n^2 * log m + m log m),<br>空间复杂度: O(n + m).</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/11/LeetCode-weekly-contest-210/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/10/07/LeetCode-weekly-contest-209/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1162,232 +1415,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/05/31/LeetCode-weekly-contest-191/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/31/LeetCode-weekly-contest-191/" class="post-title-link" itemprop="url">LeetCode weekly contest 191</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-31 17:40:09" itemprop="dateCreated datePublished" datetime="2020-05-31T17:40:09+08:00">2020-05-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-01 11:42:20" itemprop="dateModified" datetime="2021-04-01T11:42:20+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/31/LeetCode-weekly-contest-191/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/31/LeetCode-weekly-contest-191/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <table>
-<thead>
-<tr>
-<th>Rank</th>
-<th>Name</th>
-<th>Score</th>
-<th>Finish Time</th>
-<th>Q1 (3)</th>
-<th>Q2 (4)</th>
-<th>Q3 (5)</th>
-<th>Q4 (7)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>765 / 13283</td>
-<td>YoungForest</td>
-<td>12</td>
-<td>0:27:19</td>
-<td>0:02:16</td>
-<td>0:12:53</td>
-<td>0:27:19</td>
-<td>null</td>
-</tr>
-</tbody></table>
-<p>本周最后一题着实比较难，涉及概率和组合数学等知识。恰好触及到我的知识盲区，所以没有做出来。对于数学好的同学应该会好很多。</p>
-<h2 id="1464-Maximum-Product-of-Two-Elements-in-an-Array"><a href="#1464-Maximum-Product-of-Two-Elements-in-an-Array" class="headerlink" title="1464. Maximum Product of Two Elements in an Array"></a>1464. Maximum Product of Two Elements in an Array</h2><p>签到题。由于<code>nums.size()</code>比较小，所以暴力即可。</p>
-<p>时间复杂度: O(N^2),<br>空间复杂度: O(1).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = -INF;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; nums.size(); ++j) &#123;</span><br><span class="line">                ans = max(ans, (nums[i] - <span class="number">1</span>) * (nums[j] - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts"><a href="#1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts" class="headerlink" title="1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts"></a>1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts</h2><p>分别找出最大的horizontal和vertical间隔，相乘即可。需要注意，把边界也当作cut处理。<br>数据类型最好使用<code>long long</code>，因为会有<code>int32</code>的溢出问题。</p>
-<p>时间复杂度: O(horizontalCuts.size() * log + verticalCuts.size() * log),<br>空间复杂度: O(1).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">using</span> ll = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line">    <span class="keyword">const</span> ll MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span> h, <span class="keyword">int</span> w, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; horizontalCuts, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; verticalCuts)</span> </span>&#123;</span><br><span class="line">        horizontalCuts.insert(horizontalCuts.begin(), <span class="number">0</span>);</span><br><span class="line">        horizontalCuts.push_back(h);</span><br><span class="line">        verticalCuts.insert(verticalCuts.begin(), <span class="number">0</span>);</span><br><span class="line">        verticalCuts.push_back(w);</span><br><span class="line">        sort (begin(horizontalCuts), end(horizontalCuts));</span><br><span class="line">        sort (begin(verticalCuts), end(verticalCuts));</span><br><span class="line">        <span class="keyword">int</span> maxH = <span class="number">0</span>, maxW = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; horizontalCuts.size(); ++i) &#123;</span><br><span class="line">            maxH = max(maxH, horizontalCuts[i] - horizontalCuts[i<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; verticalCuts.size(); ++j) &#123;</span><br><span class="line">            maxW = max(maxW, verticalCuts[j] - verticalCuts[j<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        ll mxh = maxH;</span><br><span class="line">        ll mxw = maxW;</span><br><span class="line">        <span class="keyword">return</span> (mxh * mxw) % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/31/LeetCode-weekly-contest-191/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/" class="post-title-link" itemprop="url">Best implement to use pair as key to std::unordered_map in C++</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-27 12:29:34" itemprop="dateCreated datePublished" datetime="2020-05-27T12:29:34+08:00">2020-05-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-19 20:26:05" itemprop="dateModified" datetime="2021-03-19T20:26:05+08:00">2021-03-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Reference: <a target="_blank" rel="noopener" href="https://www.mica.edu.vn/perso/Vu-Hai/EE3490/Ref/The%20C++Standard%20Library%20-%202nd%20Edition.pdf">C++ Standard Library: A tutorial and reference, Second version</a> Chapter 7.9.2: Creating and Controlling unordered Container</p>
-<p>All solutions I found in Google use <code>XOR</code> to generate hashcode of <code>pair</code>, which is totally bad. see <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5889238/why-is-xor-the-default-way-to-combine-hashes">why-is-xor-the-default-way-to-combine-hashes</a>. However, the book has given us the best solution, using <code>hash_combine</code>, which is taken from <code>Boost</code>. The solution is much better than XOR when I tested it in Online Judge(<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc168/tasks/abc168_e">Atcoder</a>). I organized the code as a template as follow. You can copy and paste it as much as you can. And it is convenient to change it to fit any custom struct/class.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="comment">// from boost (functional/hash):</span></span><br><span class="line"><span class="comment">// see http://www.boost.org/doc/libs/1_35_0/doc/html/hash/combine.html template</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">hash_combine</span><span class="params">(<span class="built_in">std</span>::<span class="keyword">size_t</span> &amp;seed, <span class="keyword">const</span> T &amp;val)</span> </span>&#123;</span><br><span class="line">    seed ^= <span class="built_in">std</span>::hash&lt;T&gt;()(val) + <span class="number">0x9e3779b9</span> + (seed &lt;&lt; <span class="number">6</span>) + (seed &gt;&gt; <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// auxiliary generic functions to create a hash value using a seed</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">hash_val</span><span class="params">(<span class="built_in">std</span>::<span class="keyword">size_t</span> &amp;seed, <span class="keyword">const</span> T &amp;val)</span> </span>&#123;</span><br><span class="line">    hash_combine(seed, val);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Types&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">hash_val</span><span class="params">(<span class="built_in">std</span>::<span class="keyword">size_t</span> &amp;seed, <span class="keyword">const</span> T &amp;val, <span class="keyword">const</span> Types &amp;... args)</span> </span>&#123;</span><br><span class="line">    hash_combine(seed, val);</span><br><span class="line">    hash_val(seed, args...);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Types&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="built_in">std</span>::<span class="keyword">size_t</span> <span class="title">hash_val</span><span class="params">(<span class="keyword">const</span> Types &amp;... args)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="keyword">size_t</span> seed = <span class="number">0</span>;</span><br><span class="line">    hash_val(seed, args...);</span><br><span class="line">    <span class="keyword">return</span> seed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pair_hash</span> &#123;</span></span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>, <span class="title">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="title">std</span>:</span>:<span class="function"><span class="keyword">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">pair</span>&lt;T1, T2&gt; &amp;p)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> hash_val(p.first, p.second);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="built_in">pair</span>&lt;ll, ll&gt;, ll, pair_hash&gt; slopeCount;</span><br><span class="line">    <span class="built_in">unordered_set</span>&lt;<span class="built_in">pair</span>&lt;ll, ll&gt;, pair_hash&gt; seen;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>There is a hash implementation for <code>Tuple</code>. I updated the answer in<a target="_blank" rel="noopener" href="https://stackoverflow.com/a/62035742/6393787">StackOverflow</a>。Please go there if you need hash tuple.</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1457,20 +1484,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

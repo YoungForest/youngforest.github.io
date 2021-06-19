@@ -51,6 +51,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>interview</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2020/05/18/vscode-include-bits-stdc-h/</guid>
             <title>vscode include 万能头文件 bits/stdc++.h</title>

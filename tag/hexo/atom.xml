@@ -48,6 +48,7 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
+    <category term="interview" />
     <entry>
         <id>https://youngforest.github.io/2021/02/25/Google-AdSense-for-hexo-next/</id>
         <title>hexo next 配置 Google AdSense</title>

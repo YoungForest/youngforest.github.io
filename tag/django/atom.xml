@@ -48,6 +48,7 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
+    <category term="interview" />
     <entry>
         <id>https://youngforest.github.io/2017/01/23/Django-note/</id>
         <title>Django使用总结</title>

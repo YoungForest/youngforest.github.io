@@ -48,6 +48,7 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
+    <category term="interview" />
     <entry>
         <id>https://youngforest.github.io/2020/06/23/Bytedance-new-graduate-interview/</id>
         <title>Bytedance 秋招面试 2020</title>
@@ -135,6 +136,7 @@
 &lt;/ol&gt;
 </content>
         <category term="ByteDance" />
+        <category term="interview" />
         <updated>2019-09-06T11:25:56.000Z</updated>
     </entry>
 </feed>

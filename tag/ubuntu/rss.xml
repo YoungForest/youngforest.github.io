@@ -51,6 +51,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>interview</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/</guid>
             <title>owncloud setup on server</title>

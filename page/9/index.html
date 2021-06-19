@@ -175,6 +175,259 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/03/23/LeetCode-biweekly-contest-22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/23/LeetCode-biweekly-contest-22/" class="post-title-link" itemprop="url">LeetCode biweekly contest 22</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-23 22:47:33" itemprop="dateCreated datePublished" datetime="2020-03-23T22:47:33+08:00">2020-03-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-04 19:28:47" itemprop="dateModified" datetime="2021-04-04T19:28:47+08:00">2021-04-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/03/23/LeetCode-biweekly-contest-22/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/23/LeetCode-biweekly-contest-22/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (4)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1357 / 5632</td>
+<td>YoungForest</td>
+<td>12</td>
+<td>1:27:09</td>
+<td>0:05:06</td>
+<td>0:48:41  1</td>
+<td>1:22:09</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<h2 id="1385-Find-the-Distance-Value-Between-Two-Arrays"><a href="#1385-Find-the-Distance-Value-Between-Two-Arrays" class="headerlink" title="1385. Find the Distance Value Between Two Arrays"></a>1385. Find the Distance Value Between Two Arrays</h2><p>先对<code>arr2</code>进行排序，再对<code>arr1</code>中的每一个元素，利用二分搜索，判断<code>arr2</code>中是否有距离在<code>d</code>中的值。</p>
+<p>时间复杂度: O(arr2.size() * log arr2.size() + arr1.size() * log arr2.size()),<br>空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findTheDistanceValue</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr2, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        sort(arr2.begin(), arr2.end());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : arr1) &#123;</span><br><span class="line">            <span class="keyword">auto</span> it1 = lower_bound(arr2.begin(), arr2.end(), i - d);</span><br><span class="line">            <span class="keyword">auto</span> it2 = upper_bound(arr2.begin(), arr2.end(), i + d);</span><br><span class="line">            <span class="keyword">if</span> (it1 == it2)</span><br><span class="line">                ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1386-Cinema-Seat-Allocation"><a href="#1386-Cinema-Seat-Allocation" class="headerlink" title="1386. Cinema Seat Allocation"></a>1386. Cinema Seat Allocation</h2><p>贪心。每排尝试放2个family，再尝试放一个family。因为一行10个座位，所以可以用bitmap来表示占用情况。对于没reserverd的行，直接放2个。</p>
+<p>时间复杂度: O(reservedSeats.size() * log reserveredSeats.size() + max(n, reservedSeats.size())),<br>空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxNumberOfFamilies</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; reservedSeats)</span> </span>&#123;</span><br><span class="line">        sort(reservedSeats.begin(), reservedSeats.end(), [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b) -&gt; <span class="keyword">bool</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[<span class="number">0</span>] == b[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="keyword">return</span> a[<span class="number">1</span>] &lt; b[<span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> a[<span class="number">0</span>] &lt; b[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>, row = <span class="number">1</span>; row &lt;= n;) &#123;</span><br><span class="line">            <span class="keyword">unsigned</span> <span class="keyword">int</span> current_row = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (; index &lt; reservedSeats.size() &amp;&amp; reservedSeats[index][<span class="number">0</span>] == row; ++ index) &#123;</span><br><span class="line">                current_row |= <span class="number">1</span> &lt;&lt; (reservedSeats[index][<span class="number">1</span>] - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            current_row = ~current_row;</span><br><span class="line">            <span class="keyword">if</span> ((current_row &amp; <span class="number">0b0111111110</span>) == <span class="number">0b0111111110</span>)</span><br><span class="line">                ans += <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ((current_row &amp; <span class="number">0b0001111000</span>) == <span class="number">0b0001111000</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>((current_row &amp; <span class="number">0b0000011110</span>) == <span class="number">0b0000011110</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ((current_row &amp; <span class="number">0b0111100000</span>) == <span class="number">0b0111100000</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">            <span class="keyword">if</span> (index &lt; reservedSeats.size()) &#123;</span><br><span class="line">                ans += (reservedSeats[index][<span class="number">0</span>] - row - <span class="number">1</span>) * <span class="number">2</span>;</span><br><span class="line">                row = reservedSeats[index][<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                ans += (n + <span class="number">1</span> - row - <span class="number">1</span>) * <span class="number">2</span>;</span><br><span class="line">                row = n + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1387-Sort-Integers-by-The-Power-Value"><a href="#1387-Sort-Integers-by-The-Power-Value" class="headerlink" title="1387. Sort Integers by The Power Value"></a>1387. Sort Integers by The Power Value</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/23/LeetCode-biweekly-contest-22/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/03/22/LeetCode-weekly-contest-181/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/22/LeetCode-weekly-contest-181/" class="post-title-link" itemprop="url">LeetCode  weekly contest 181</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-22 18:57:47" itemprop="dateCreated datePublished" datetime="2020-03-22T18:57:47+08:00">2020-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-01 11:43:00" itemprop="dateModified" datetime="2021-04-01T11:43:00+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/03/22/LeetCode-weekly-contest-181/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/22/LeetCode-weekly-contest-181/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>自从LeetCode rating算法更新后，我的rating到达了顶峰，之后就一直向下掉。不过也是因为自己菜，每次都打的大好几百名，偶尔还上千。</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>839 / 10930</td>
+<td>YoungForest</td>
+<td>18</td>
+<td>1:31:13</td>
+<td>0:04:53</td>
+<td>0:14:43  1</td>
+<td>0:45:27  1</td>
+<td>1:16:13  1</td>
+</tr>
+</tbody></table>
+<h2 id="1389-Create-Target-Array-in-the-Given-Order"><a href="#1389-Create-Target-Array-in-the-Given-Order" class="headerlink" title="1389. Create Target Array in the Given Order"></a>1389. Create Target Array in the Given Order</h2><p>签到题。使用vector的insert接口，缺点是效率有问题，不过对于签到题足够了。</p>
+<p>时间复杂度: O(n ^ 2), 最坏情况是 每次都插到首位。<br>空间复杂度: O(n).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">createTargetArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; index)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n ; ++ i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index[i] &lt; ans.size()) </span><br><span class="line">                ans.insert(ans.begin() + index[i], nums[i]);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ans.push_back(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1390-Four-Divisors"><a href="#1390-Four-Divisors" class="headerlink" title="1390. Four Divisors"></a>1390. Four Divisors</h2><p>Brute force. 计算每个数的因数。</p>
+<p>时间复杂度: O(sqrt(nums[i]) * nums.length),<br>空间复杂的: O(nums.length) -&gt; O(1) without memo.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; memo;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; sumDivisors;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">divisors</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (memo.find(x) == memo.end()) &#123;</span><br><span class="line">                <span class="keyword">int</span> ans = <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">int</span> sum = <span class="number">1</span> + x;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= x; ++i) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (x % i == <span class="number">0</span>) &#123;</span><br><span class="line">                        ans += (i * i == x) ? <span class="number">1</span> : <span class="number">2</span>;</span><br><span class="line">                        sum += (i * i == x) ? i : i + x / i;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (ans &gt; <span class="number">4</span>)</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (ans == <span class="number">4</span>) &#123;</span><br><span class="line">                    sumDivisors[x] = sum;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> memo[x] = ans;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> memo[x];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumFourDivisors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (divisors(i) == <span class="number">4</span>)</span><br><span class="line">                ans += sumDivisors[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/22/LeetCode-weekly-contest-181/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/03/22/kick-start-2020-round-A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1085,250 +1338,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/02/27/Bytedance-Ads-backend-intern-interview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/27/Bytedance-Ads-backend-intern-interview/" class="post-title-link" itemprop="url">字节跳动 暑期实习 广告系统后端开发 面试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-27 18:34:40" itemprop="dateCreated datePublished" datetime="2020-02-27T18:34:40+08:00">2020-02-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-05 11:49:25" itemprop="dateModified" datetime="2021-05-05T11:49:25+08:00">2021-05-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/interview/" itemprop="url" rel="index"><span itemprop="name">interview</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/02/27/Bytedance-Ads-backend-intern-interview/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/27/Bytedance-Ads-backend-intern-interview/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>HashMap</li>
-<li>数据库<ul>
-<li>索引、优化、事务</li>
-<li>聚簇索引和非聚簇索引</li>
-</ul>
-</li>
-<li>并发编程</li>
-<li>网络编程，RPC</li>
-<li>算法题:<ul>
-<li>编辑距离</li>
-</ul>
-</li>
-</ul>
-<p>算法题问了一道计算<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Levenshtein_distance">编辑距离(Levenshtein Distance)</a>的问题。编辑距离的问题恰好我在之前度《图解算法》的时候有所涉及，用DP解决即可。但本题目稍微复杂度写，需要在很多字符串中，寻找距离最近的字符串。可以理解为”Fuzzy matching”。<br>题面大概为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">莱文斯坦距离，又称 Levenshtein 距离，是编辑距离的一种。指两个字串之间，由一个转成另一个所需的最少编辑操作次数。</span><br><span class="line">允许的编辑操作包括：</span><br><span class="line">插入一个字符</span><br><span class="line">删除一个字符</span><br><span class="line">将一个字符替换成另一个字符</span><br><span class="line">需要你编写一个程序，实现以下功能：</span><br><span class="line">给定一个字符串集合 S 以及一个模板串 P，从 S 中找出与 P 莱文斯坦距离最小的字符串 T，输出 T 以及其对应的编辑距离 D。如果 S 中出现多个满足条件的字符串，则取按字典序排列的第一个。</span><br></pre></td></tr></table></figure>
-
-<p>并没有想到很好的解法，暴力解法的话, 比较所有字符串和P的距离 时间复杂度为: O(P.size() * sum(S_i.size()).</p>
-<p>后在网上搜索解法，并不难找到。利用Trie以避免不同字符串的DP重复的计算，时间复杂度为: O(P.size() * Trie的节点数). 虽然最坏时间复杂度没有变好，但是实实在在的优化。应该这就是面试官想要的解法了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="built_in">array</span>, <span class="number">26</span>&gt; children;</span><br><span class="line">    <span class="built_in">vector</span> distance;</span><br><span class="line">    Node() = <span class="keyword">delete</span>;</span><br><span class="line">    Node(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        distance.resize(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">pair</span> <span class="title">solve</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; target, <span class="keyword">const</span> <span class="built_in">vector</span>&amp; s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> k = target.size() + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">auto</span> root = make_shared(k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i distance.size(); ++i) &#123;</span><br><span class="line">        root-&gt;distance[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans_distance = <span class="number">0x3f3f3f3f</span>,  ans_index = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; s.size(); ++j) &#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="built_in">string</span>&amp; str = s[j];</span><br><span class="line">        <span class="keyword">auto</span> current = root;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; endl &lt;&lt; &quot;debug: &quot; &lt;&lt; str &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">int</span> distance_from_empty = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : str) &#123;</span><br><span class="line">            <span class="keyword">if</span> (current-&gt;children[c - <span class="string">&#x27;a&#x27;</span>] == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                current-&gt;children[c - <span class="string">&#x27;a&#x27;</span>] = make_shared(k);</span><br><span class="line">                <span class="keyword">auto</span> next_current = current-&gt;children[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">                next_current-&gt;distance[<span class="number">0</span>] = distance_from_empty;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; ++i) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (c == target[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                        next_current-&gt;distance[i] = current-&gt;distance[i - <span class="number">1</span>];</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        next_current-&gt;distance[i] = min(&#123;</span><br><span class="line">                            current-&gt;distance[i - <span class="number">1</span>],</span><br><span class="line">                            current-&gt;distance[i],</span><br><span class="line">                            next_current-&gt;distance[i - <span class="number">1</span>]</span><br><span class="line">                        &#125;) + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// cout distance[i] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// cout &lt;&lt; endl;</span></span><br><span class="line">            &#125;</span><br><span class="line">            current = current-&gt;children[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">            ++distance_from_empty;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (current-&gt;distance[k - <span class="number">1</span>] &lt; ans_distance) &#123;</span><br><span class="line">            ans_distance = current-&gt;distance[k - <span class="number">1</span>];</span><br><span class="line">            ans_index = j;</span><br><span class="line">        &#125; <span class="keyword">else</span>  <span class="keyword">if</span> (current-&gt;distance[k - <span class="number">1</span>] == ans_distance) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[ans_index] &gt; s[j])</span><br><span class="line">                ans_index = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;ans_distance, s[ans_index]&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> P;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; P;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span> <span class="title">S</span><span class="params">(N)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">auto</span> ans = solve(P, S);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans.first &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans.second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/27/Bytedance-Ads-backend-intern-interview/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/02/23/LeetCode-weekly-contest-177/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/23/LeetCode-weekly-contest-177/" class="post-title-link" itemprop="url">LeetCode weekly contest 177</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-23 12:12:46" itemprop="dateCreated datePublished" datetime="2020-02-23T12:12:46+08:00">2020-02-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-01 11:43:22" itemprop="dateModified" datetime="2021-04-01T11:43:22+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/02/23/LeetCode-weekly-contest-177/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/23/LeetCode-weekly-contest-177/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <table>
-<thead>
-<tr>
-<th>Rank</th>
-<th>Name</th>
-<th>Score</th>
-<th>Finish Time</th>
-<th>Q1 (4)</th>
-<th>Q2 (5)</th>
-<th>Q3 (5)</th>
-<th>Q4 (6)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>333 / 6106</td>
-<td>YoungForest</td>
-<td>20</td>
-<td>1:04:22</td>
-<td>0:25:00</td>
-<td>0:33:40</td>
-<td>0:43:21</td>
-<td>0:59:22  1</td>
-</tr>
-</tbody></table>
-<p>手速和bug-free的场。</p>
-<h2 id="1360-Number-of-Days-Between-Two-Dates"><a href="#1360-Number-of-Days-Between-Two-Dates" class="headerlink" title="1360. Number of Days Between Two Dates"></a>1360. Number of Days Between Two Dates</h2><p>计算2个日期间的差值。本来想着手算来着，但写起来太复杂了。后来果断放弃，投机取巧用了Python日期处理的库函数。</p>
-<p>时间复杂度: O(1),<br>空间复杂度: O(1).</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> date</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">daysBetweenDates</span>(<span class="params">self, date1: str, date2: str</span>) -&gt; int:</span></span><br><span class="line">        delta = date.fromisoformat(date1) - date.fromisoformat(date2)</span><br><span class="line">        <span class="keyword">return</span> abs(delta.days)</span><br></pre></td></tr></table></figure>
-
-<h2 id="1361-Validate-Binary-Tree-Nodes"><a href="#1361-Validate-Binary-Tree-Nodes" class="headerlink" title="1361. Validate Binary Tree Nodes"></a>1361. Validate Binary Tree Nodes</h2><p>观察有，合法的二叉树为：</p>
-<ol>
-<li>有且仅有一个节点没有父节点</li>
-<li>剩下节点均只有一个父节点</li>
-<li>没有孤儿，既没有父亲、也没有child（在节点数大于1的情况下）</li>
-</ol>
-<p>第3个要求比较难想到，甚至是OJ一开始也是错的。我也就将错就错通过了。感谢<a target="_blank" rel="noopener" href="https://leetcode.com/problems/validate-binary-tree-nodes/discuss/517596/Count-Parents-and-Orphans-O(n)">votrubac</a>的提示。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/23/LeetCode-weekly-contest-177/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1398,20 +1407,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

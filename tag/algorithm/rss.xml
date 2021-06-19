@@ -51,6 +51,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>interview</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2019/12/14/find-all-unique-pairs-of-maximum-and-second-maximum-elements-over-all-sub-arrays-in-onlogn/</guid>
             <title>Find all unique pairs of maximum and second maximum elements 子数组的最大值和次大值对</title>

@@ -175,6 +175,216 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/02/04/LeetCode-weekly-contest-122/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/04/LeetCode-weekly-contest-122/" class="post-title-link" itemprop="url">LeetCode weekly contest 122</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-02-04 18:38:09" itemprop="dateCreated datePublished" datetime="2019-02-04T18:38:09+08:00">2019-02-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-01 11:47:57" itemprop="dateModified" datetime="2021-04-01T11:47:57+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/02/04/LeetCode-weekly-contest-122/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/04/LeetCode-weekly-contest-122/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>由于宅在家里过节，竟然忘记了每天是星期几，只知道农历腊月几日。今天才发现已经到了周一了，错过了每周一度的weekly contest。在此除夕之夜，和家人一起看春晚之前，Forest携全家人一起祝大家新年快乐！快些刷完这4道比赛题目，好安心吃年夜饭。</p>
+<p>由于比赛不能用官方的Notes, 写在blog上还是蛮方便的一种替代品。</p>
+<h2 id="985-Sum-of-Even-Numbers-After-Queries"><a href="#985-Sum-of-Even-Numbers-After-Queries" class="headerlink" title="985. Sum of Even Numbers After Queries"></a>985. Sum of Even Numbers After Queries</h2><p>第一题直接模拟即可。每个query有2个动作：</p>
+<ol>
+<li>add <code>val</code> to <code>A[index]</code>;</li>
+<li>sum the even values of A.</li>
+</ol>
+<p>模拟的时间复杂度为：<br>O(K * N)<br>其中，N为数组长度，K为queries长度。</p>
+<p>因为题目中K，N都不大于10000，所以总的规模在10^8 &lt; 10^9, 是可以AC的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sumEvenAfterQueries</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; queries)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; results;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; query : queries) &#123;</span><br><span class="line">            A[query[<span class="number">1</span>]] += query[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> a : A) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">0</span>) total += a;</span><br><span class="line">            &#125;</span><br><span class="line">            results.push_back(total);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>不过<a target="_blank" rel="noopener" href="https://leetcode.com/problems/sum-of-even-numbers-after-queries/solution/">Solution</a>中给到一种复杂度为O(N+K)的。<br>思想是：每次计算sum时，我们可以利用上一个query的结果。<br>如果add后，<br>A中数值从奇数变为偶数了，sum = last_sum + 新偶数；<br>if 偶数 -&gt; 奇数，sum = last_sum - 旧偶数;<br>if 偶数 -&gt; 偶数，sum = last_sum + 新偶数 - 旧偶数;<br>if 奇数 -&gt; 奇数，sum = last_sum.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sumEvenAfterQueries</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; queries)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; results;</span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> a : A) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">0</span>) total += a;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; query : queries) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[query[<span class="number">1</span>]] % <span class="number">2</span> == <span class="number">0</span>) total -= A[query[<span class="number">1</span>]];</span><br><span class="line">            A[query[<span class="number">1</span>]] += query[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">if</span> (A[query[<span class="number">1</span>]] % <span class="number">2</span> == <span class="number">0</span>) total += A[query[<span class="number">1</span>]];</span><br><span class="line">            results.push_back(total);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/04/LeetCode-weekly-contest-122/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/01/27/LeetCode-weekly-contest-121/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/01/27/LeetCode-weekly-contest-121/" class="post-title-link" itemprop="url">LeetCode weekly contest 121</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-01-27 16:05:48" itemprop="dateCreated datePublished" datetime="2019-01-27T16:05:48+08:00">2019-01-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-01 11:48:02" itemprop="dateModified" datetime="2021-04-01T11:48:02+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/01/27/LeetCode-weekly-contest-121/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/27/LeetCode-weekly-contest-121/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天放假回家，下午3点半的火车。不过我还是百忙之中抽出时间参加了每周例行的weekly contest。 结果因为回家不够专注，效果很差，只做出一道签到题。第二题TLE(结果把一个变量改成引用就可以了，也算是吸取了教训，能用引用就用引用)，第3题没有足够的时间完成了(直到下午坐上火车，心无旁骛地终于独立完成了第三题。其实思路从一开始就是对的，只不过没有时间调试细节)。第四题干脆连题干都没有时间看完。</p>
+<h2 id="984-String-Without-AAA-or-BBB"><a href="#984-String-Without-AAA-or-BBB" class="headerlink" title="984. String Without AAA or BBB"></a>984. String Without AAA or BBB</h2><p>Intution: 由于不能出现连续的a或b，我们可以试着直接构造出符合要求的字符串。多的字符出现2次，即插入一个少的字符，当剩余的2个字符一样多的时候，就一个出现一次就可以了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">strWithout3a3b</span><span class="params">(<span class="keyword">int</span> A, <span class="keyword">int</span> B)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> result;</span><br><span class="line">        <span class="keyword">char</span> large, small;</span><br><span class="line">        <span class="keyword">int</span> bigger, smaller;</span><br><span class="line">        <span class="keyword">if</span> (A &gt; B) &#123;</span><br><span class="line">            large = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            small = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">            bigger = A;</span><br><span class="line">            smaller = B;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            large = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">            small = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            bigger = B;</span><br><span class="line">            smaller = A;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; bigger &gt; <span class="number">0</span> &amp;&amp; smaller &gt; <span class="number">0</span> &amp;&amp; bigger &gt; smaller; bigger-=<span class="number">2</span>, smaller--) &#123;</span><br><span class="line">            result.push_back(large);</span><br><span class="line">            result.push_back(large);</span><br><span class="line">            result.push_back(small);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; bigger &gt; <span class="number">0</span> &amp;&amp; smaller &gt; <span class="number">0</span>; bigger--, smaller--) &#123;</span><br><span class="line">            result.push_back(large);</span><br><span class="line">            result.push_back(small);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (bigger &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result.push_back(large);</span><br><span class="line">            bigger--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (smaller &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result.push_back(small);</span><br><span class="line">            small--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="981-Time-Based-Key-Value-Store"><a href="#981-Time-Based-Key-Value-Store" class="headerlink" title="981. Time Based Key-Value Store"></a>981. Time Based Key-Value Store</h2><p>Intution:<br>使用hashmap存储&lt;key, vector&lt;pair&lt;int, string&gt;&gt; value&gt;,<br>每次查找到key对应的vector后，针对pair的第一个值使用二分查找upper_bound timestamp.</p>
+<p>注意：用引用，千万不要用普通变量存储hashmap[key]。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeMap</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/** Intution:</span></span><br><span class="line"><span class="comment">        使用hashmap存储&lt;key, vector&lt;pair&lt;int, string&gt;&gt; value&gt;,</span></span><br><span class="line"><span class="comment">        每次查找到key对应的vector后，针对pair的第一个值使用二分查找upper_bound timestamp</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="built_in">vector</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;&gt;&gt; hashmap;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Cmp</span> &#123;</span></span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; a, <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; b)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a.first &lt; b.first;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    TimeMap() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="built_in">string</span> key, <span class="built_in">string</span> value, <span class="keyword">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        hashmap[key].push_back(&#123;timestamp, value&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">get</span><span class="params">(<span class="built_in">string</span> key, <span class="keyword">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span>&amp; values = hashmap[key];    <span class="comment">// 注意：用引用，千万不要用普通变量存储</span></span><br><span class="line">        <span class="keyword">if</span> (values.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">auto</span> val = upper_bound(values.begin(), values.end(), <span class="built_in">make_pair</span>(timestamp, <span class="string">&quot;&quot;</span>), Cmp());</span><br><span class="line">        <span class="keyword">if</span> (val == values.begin()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> (--val)-&gt;second;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your TimeMap object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * TimeMap* obj = new TimeMap();</span></span><br><span class="line"><span class="comment"> * obj-&gt;set(key,value,timestamp);</span></span><br><span class="line"><span class="comment"> * string param_2 = obj-&gt;get(key,timestamp);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="983-Minimum-Cost-For-Tickets"><a href="#983-Minimum-Cost-For-Tickets" class="headerlink" title="983. Minimum Cost For Tickets"></a>983. Minimum Cost For Tickets</h2><p>Intution: 最优化问题，最优解依赖子问题的解，首先想到dp。<br>最优解结构：f(x) = min(f(x-1) + cost[0], f(x-7) + cost[1], f(x-30) + cost[2]),<br>其中，f(x)表示天数为x时的最小花费，由于x可能不存在于days中，此时，f(x)表示比x恰好大的天的最小花费。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/01/27/LeetCode-weekly-contest-121/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/01/20/LeetCode-weekly-contest-120/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1011,191 +1221,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/11/05/baidu-cloud-download-speed-hack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/11/05/baidu-cloud-download-speed-hack/" class="post-title-link" itemprop="url">突破百度云限速</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-11-05 16:44:00" itemprop="dateCreated datePublished" datetime="2018-11-05T16:44:00+08:00">2018-11-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-31 10:18:17" itemprop="dateModified" datetime="2020-08-31T10:18:17+08:00">2020-08-31</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/11/05/baidu-cloud-download-speed-hack/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/05/baidu-cloud-download-speed-hack/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近因为英语学习的需要，经常到百度云上下载一些大文件。众所周知，百度云对下载进行了限速，不开他家的会员的话，下载速度只有几十k/s。实在不能忍，遂搜索了限速破解工具，下载速度达到了15M/s，哈哈。在此分享给大家。<br>不过需要注意的是，由于百度云也会更新限速机制，防止大家滥用。所以如果本文的方法失效的话，也不足为奇，还可以在网上寻找其他更新的方法。要相信广大程序员的力量。<br>截止至2018年11月5日，此方法是可行的。</p>
-<span id="more"></span>
-
-<p><a target="_blank" rel="noopener" href="https://github.com/gxvv/ex-baiduyunpan">获取百度云 原始连接</a></p>
-<p>运行脚本后，百度云的下载界面会变成这个样子。</p>
-<p><img src="/images/ex-baiduyun.jpg" alt="Ex-百度云脚本结果"></p>
-<p>至于为什么点压缩连接呢？因为我发现用”复制链接“并不能获取文件本身的下载地址；而且下载压缩包也更快。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/proxyee-down-org/proxyee-down">http 多线程下载工具</a></p>
-<p><img src="/images/proxyee-down.png" alt="下载工具效果"></p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/11/05/baidu-cloud-download-speed-hack/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/10/26/LeetCode-380-Insert-Delete-GetRandomO-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/10/26/LeetCode-380-Insert-Delete-GetRandomO-1/" class="post-title-link" itemprop="url">LeetCode #380 Insert Delete GetRandom O(1)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-10-26 23:19:20" itemprop="dateCreated datePublished" datetime="2018-10-26T23:19:20+08:00">2018-10-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-31 10:18:17" itemprop="dateModified" datetime="2020-08-31T10:18:17+08:00">2020-08-31</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/10/26/LeetCode-380-Insert-Delete-GetRandomO-1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/26/LeetCode-380-Insert-Delete-GetRandomO-1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>此题的重点在于理解“average O(1) time”，这是也是时间复杂度分析中的一个重要概念”amortized”。<br>在 算法第4版 中，很多数据结构的操作的分析都是用的这个方法。所以，“amortized time complexity”常常和对应的数据结构的操作相对应。我5月时面试旷世科技的时候，第二题问的是构造一个维护最大值的队的数据结构，最后要求操作的时间复杂度是“amortized O(1)”。很遗憾，当时我对“amortized”这一概念还不熟悉，对最差情况下的时间复杂度分析的倒是可以，虽然在面试官的引导下最后得出正确答案，但可想而知，最后的结果是no hire。</p>
-<p>Description: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/insert-delete-getrandom-o1/description/">https://leetcode.com/problems/insert-delete-getrandom-o1/description/</a><br>Solution: None<br>Difficulty: Medium</p>
-<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/insert-delete-getrandom-o1/discuss/85401/Java-solution-using-a-HashMap-and-an-ArrayList-along-with-a-follow-up.-(131-ms)">answer</a></p>
-<p>关键点在于，利用hashmap查找效率为O(1),ArrayList很方便用下标来产生随机数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomizedSet</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Initialize your data structure here.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.array = []</span><br><span class="line">        self.index_map = &#123;&#125;</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span>(<span class="params">self, val</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Inserts a value to the set. Returns true if the set did not already contain the specified element.</span></span><br><span class="line"><span class="string">        :type val: int</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> val <span class="keyword">in</span> self.index_map:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        self.index_map[val] = len(self.array)</span><br><span class="line">        self.array.append(val)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span>(<span class="params">self, val</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Removes a value from the set. Returns true if the set contained the specified element.</span></span><br><span class="line"><span class="string">        :type val: int</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> val <span class="keyword">not</span> <span class="keyword">in</span> self.index_map:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        self.array[self.index_map[val]] = self.array[<span class="number">-1</span>]</span><br><span class="line">        self.index_map[self.array[<span class="number">-1</span>]] = self.index_map[val]</span><br><span class="line">        self.array.pop()</span><br><span class="line">        self.index_map.pop(val)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getRandom</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Get a random element from the set.</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        rnd = random.randint(<span class="number">0</span>, len(self.array)<span class="number">-1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.array[rnd]</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your RandomizedSet object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = RandomizedSet()</span></span><br><span class="line"><span class="comment"># param_1 = obj.insert(val)</span></span><br><span class="line"><span class="comment"># param_2 = obj.remove(val)</span></span><br><span class="line"><span class="comment"># param_3 = obj.getRandom()</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/10/26/LeetCode-380-Insert-Delete-GetRandomO-1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1265,20 +1290,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

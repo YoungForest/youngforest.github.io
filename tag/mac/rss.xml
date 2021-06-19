@@ -51,6 +51,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>interview</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2019/11/11/mac-write-ntfs-solution/</guid>
             <title>Mac OS写入ntfs解决方案</title>

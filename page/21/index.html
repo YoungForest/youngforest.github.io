@@ -175,6 +175,208 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/" class="post-title-link" itemprop="url">对CPU 内存 硬盘读写 网络 进行压力测试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-01-14 12:39:23" itemprop="dateCreated datePublished" datetime="2017-01-14T12:39:23+08:00">2017-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-31 10:18:17" itemprop="dateModified" datetime="2020-08-31T10:18:17+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Laboratory/" itemprop="url" rel="index"><span itemprop="name">Laboratory</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>近来实验室的师兄有个需求, 写4个小程序, 分别对内存, CPU, 硬盘, 网络进行压力测试, 要求测试程序有压力档位可以调, 比如压力可以分为大, 中, 小. 二话不说, 撸起袖子加油干. 需求很简单, 但实现起来却并不简单, 笔者边学习, 边写程序, 才勉强完成任务. </p>
+<span id="more"></span>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><p>Ubuntu 14.04</p>
+<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><p>受<a target="_blank" rel="noopener" href="https://book.douban.com/subject/3004255/">编程之美</a>的第一章”让CPU占有率曲线听你指挥”启发, 我很快地完成了对CPU的压力测试程序.</p>
+<h4 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h4><p>确定一个小周期, 笔者的周期设置为100, 这个值可以通过改变PIECE的值来改变, 周期为 100 * PIECE.</p>
+<p>在每个周期中, stress%的时间用于一个死循环, 剩下 (100-stress)%的时间usleep(注意sleep和usleep的区别).</p>
+<h4 id="程序源代码"><a href="#程序源代码" class="headerlink" title="程序源代码"></a>程序源代码</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/01/12/SSD-Single-Shot-MultiBox-Detector-configuration/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/12/SSD-Single-Shot-MultiBox-Detector-configuration/" class="post-title-link" itemprop="url">SSD: Single Shot MultiBox Detector 配置使用总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-01-12 23:50:49" itemprop="dateCreated datePublished" datetime="2017-01-12T23:50:49+08:00">2017-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-31 10:18:17" itemprop="dateModified" datetime="2020-08-31T10:18:17+08:00">2020-08-31</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/12/SSD-Single-Shot-MultiBox-Detector-configuration/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/12/SSD-Single-Shot-MultiBox-Detector-configuration/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><ul>
+<li>Ubuntu 16.04</li>
+<li>CPU only (自己的机器上没有NVIDIA的卡, AMD说起来都是泪.)</li>
+</ul>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>基本上是按照<a target="_blank" rel="noopener" href="https://github.com/weiliu89/caffe/tree/ssd">官方文档</a>. 这里只展示与文档中不同的部分.</p>
+<span id="more"></span>
+<h3 id="Makefile-confile"><a href="#Makefile-confile" class="headerlink" title="Makefile.confile"></a>Makefile.confile</h3><ul>
+<li>line 8: CPU only</li>
+<li>line 79, 80: support for python3</li>
+<li>line 81: /usr/lib/python3.5/dist-packages/numpy/core/include -&gt; /usr/local/lib/python3.5/dist-packages/numpy/core/include</li>
+<li>line 95: fix fatal of <code>hdf5</code></li>
+</ul>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><blockquote>
+<p>./include/caffe/util/hdf5.hpp:6:18: fatal error: hdf5.h: No such file or directory</p>
+</blockquote>
+<p>应该只有Ubuntu15.10+的版本才会遇到这样的问题, 原因是hdf5的头文件和库的路径在新版本中发生了改变.<br><a target="_blank" rel="noopener" href="https://gist.github.com/wangruohui/679b05fcd1466bb0937f#">解决方法</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/12/SSD-Single-Shot-MultiBox-Detector-configuration/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2016/11/22/move-posts-from-cnblogs-to-Hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1034,20 +1236,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
