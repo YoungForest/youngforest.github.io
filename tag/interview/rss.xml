@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;interview&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Fri, 06 Sep 2019 19:25:56 +0800</pubDate>
         <lastBuildDate>Fri, 06 Sep 2019 19:25:56 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2019/09/06/ByteDance-Camp/</guid>
             <title>2019 字节跳动夏令营</title>

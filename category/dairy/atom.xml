@@ -49,6 +49,7 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
+    <category term="English" />
     <entry>
         <id>https://youngforest.github.io/2021/07/11/my-3-years-master/</id>
         <title>硕士3年复盘</title>
@@ -335,7 +336,7 @@
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/11/09/gogogo/</id>
-        <title>gogogo</title>
+        <title>大三上的反思</title>
         <link rel="alternate" href="https://youngforest.github.io/2016/11/09/gogogo/"/>
         <content type="html">&lt;p&gt;最近经历了两件事情, 使得我感觉需要反思一下近几年的自己.&lt;/p&gt;
 &lt;p&gt;第一件事是, 昨晚的编译测试一没过, 具体地说是正确的程序没有跑出正确的结果. 编译测试让我想起两年前的计组测试, 进而想了很多.&lt;/p&gt;

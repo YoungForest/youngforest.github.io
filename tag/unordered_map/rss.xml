@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;unordered_map&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Wed, 27 May 2020 12:29:34 +0800</pubDate>
         <lastBuildDate>Wed, 27 May 2020 12:29:34 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/</guid>
             <title>Best implement to use pair as key to std::unordered_map in C++</title>
@@ -59,6 +60,7 @@
             <category>C++</category>
             <category>hash</category>
             <category>unordered_map</category>
+            <category>English</category>
             <pubDate>Wed, 27 May 2020 12:29:34 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Reference: &lt;a href=&#34;https://www.mica.edu.vn/perso/Vu-Hai/EE3490/Ref/The%20C++Standard%20Library%20-%202nd%20Edition.pdf&#34;&gt;C++ Standard Library: A tutorial and reference, Second version&lt;/a&gt; Chapter 7.9.2: Creating and Controlling unordered Container&lt;/p&gt;
 &lt;p&gt;All solutions I found in Google use &lt;code&gt;XOR&lt;/code&gt; to generate hashcode of &lt;code&gt;pair&lt;/code&gt;, which is totally bad. see &lt;a href=&#34;https://stackoverflow.com/questions/5889238/why-is-xor-the-default-way-to-combine-hashes&#34;&gt;why-is-xor-the-default-way-to-combine-hashes&lt;/a&gt;. However, the book has given us the best solution, using &lt;code&gt;hash_combine&lt;/code&gt;, which is taken from &lt;code&gt;Boost&lt;/code&gt;. The solution is much better than XOR when I tested it in Online Judge(&lt;a href=&#34;https://atcoder.jp/contests/abc168/tasks/abc168_e&#34;&gt;Atcoder&lt;/a&gt;). I organized the code as a template as follow. You can copy and paste it as much as you can. And it is convenient to change it to fit any custom struct/class.&lt;/p&gt;

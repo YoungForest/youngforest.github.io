@@ -49,6 +49,7 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
+    <category term="English" />
     <entry>
         <id>https://youngforest.github.io/2021/03/26/SSH-proxy-by-jump-server/</id>
         <title>SSH 通过跳板机登陆服务器</title>

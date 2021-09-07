@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;git&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Tue, 12 Dec 2017 20:32:52 +0800</pubDate>
         <lastBuildDate>Tue, 12 Dec 2017 20:32:52 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2017/12/12/work-with-two-github-accounts/</guid>
             <title>Work With Two Github Accounts Simultaneously</title>

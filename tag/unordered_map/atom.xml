@@ -49,6 +49,7 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
+    <category term="English" />
     <entry>
         <id>https://youngforest.github.io/2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/</id>
         <title>Best implement to use pair as key to std::unordered_map in C++</title>
@@ -62,6 +63,7 @@
         <category term="C++" />
         <category term="hash" />
         <category term="unordered_map" />
+        <category term="English" />
         <updated>2020-05-27T04:29:34.000Z</updated>
     </entry>
     <entry>

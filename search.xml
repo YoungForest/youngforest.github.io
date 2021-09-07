@@ -7458,6 +7458,7 @@
         <tag>C++</tag>
         <tag>hash</tag>
         <tag>unordered_map</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -7614,7 +7615,7 @@ Undefined symbols for architecture x86_64:
 ]]></content>
   </entry>
   <entry>
-    <title>gogogo</title>
+    <title>大三上的反思</title>
     <url>/2016/11/09/gogogo/</url>
     <content><![CDATA[<p>最近经历了两件事情, 使得我感觉需要反思一下近几年的自己.</p>
 <p>第一件事是, 昨晚的编译测试一没过, 具体地说是正确的程序没有跑出正确的结果. 编译测试让我想起两年前的计组测试, 进而想了很多.</p>
@@ -9222,7 +9223,7 @@ Undefined symbols for architecture x86_64:
 <td>1:27:14</td>
 <td>0:02:33</td>
 <td>0:13:25</td>
-<td>1:17:14  2</td>
+<td>1:17:14  🐞2</td>
 <td>null</td>
 </tr>
 </tbody></table>
@@ -9558,6 +9559,71 @@ Undefined symbols for architecture x86_64:
       </categories>
       <tags>
         <tag>Competitive Programming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode biweekly contest 60</title>
+    <url>/2021/09/07/LeetCode-biweekly-contest-60/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (5)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>998 / 10896</td>
+<td>YoungForest</td>
+<td>18</td>
+<td>1:27:14</td>
+<td>0:02:33</td>
+<td>0:13:25</td>
+<td>1:17:14  🐞2</td>
+<td>null</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Competitive Programming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Setup English blog</title>
+    <url>/2021/09/07/Setup-English-blog/</url>
+    <content><![CDATA[<p>自从来到亚马逊工作，接触英文和外国同事比较多。锻炼使用英语的需求越来越大。而且为了和国际接轨，我决定创建自己的英文博客。</p>
+<p>以中文博客为模版，创建英文博客。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp -r Hexo HexoEn</span><br></pre></td></tr></table></figure>
+
+<p>删除HexoEn中没用的中文博文和资源。</p>
+<p>在Github创建一个新repo：“en”.</p>
+<p>修改HexoEn <code>_config.yml</code>配置文件。注意部署分支为<code>gh-pages</code>, 这个GitHub默认的pages分支，如果不同的话，需要去repo的<code>Setting-&gt;Pages</code>配置一下你自定义的分支:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">language:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:YoungForest/en.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">    <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">    <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">    <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">    <span class="string">中文:</span> <span class="string">https://youngforest.github.io</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-language</span></span><br></pre></td></tr></table></figure>
+
+<p>中文Hexo <code>_config.yml</code>配置文件:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">language:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">    <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">    <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">    <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">    <span class="attr">English:</span> <span class="string">https://youngforest.github.io/en/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-globe</span></span><br></pre></td></tr></table></figure>
+
+<p>这样中英文博客就可以在Menu互相外链了。</p>
+<p>部署博客，看看效果如何。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate -d</span><br></pre></td></tr></table></figure>
+
+<p>把HexoEn也推到远端，做保存和同步。注意，这里和deploy用的是同一个repo, 但是不同的分支。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote remove origin</span><br><span class="line">git remote add origin git@github.com:YoungForest/en.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>折腾</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>

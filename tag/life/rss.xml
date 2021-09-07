@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;life&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Sun, 11 Jul 2021 12:47:44 +0800</pubDate>
         <lastBuildDate>Sun, 11 Jul 2021 12:47:44 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2021/07/11/my-3-years-master/</guid>
             <title>硕士3年复盘</title>
@@ -232,7 +233,7 @@
         </item>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2016/11/09/gogogo/</guid>
-            <title>gogogo</title>
+            <title>大三上的反思</title>
             <link>https://youngforest.github.io/2016/11/09/gogogo/</link>
             <category>life</category>
             <pubDate>Wed, 09 Nov 2016 12:39:13 +0800</pubDate>

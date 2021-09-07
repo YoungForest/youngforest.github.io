@@ -49,6 +49,7 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
+    <category term="English" />
     <entry>
         <id>https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/</id>
         <title>对CPU 内存 硬盘读写 网络 进行压力测试</title>

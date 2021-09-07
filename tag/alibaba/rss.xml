@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;alibaba&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Mon, 09 Mar 2020 16:45:44 +0800</pubDate>
         <lastBuildDate>Mon, 09 Mar 2020 16:45:44 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2020/03/09/Alibaba-Ant-backend-intern-interview/</guid>
             <title>阿里巴巴 蚂蚁金服 后端开发 暑期实习生</title>

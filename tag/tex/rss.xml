@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;tex&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Tue, 27 Mar 2018 19:27:55 +0800</pubDate>
         <lastBuildDate>Tue, 27 Mar 2018 19:27:55 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2018/03/27/latex-problems/</guid>
             <title>latex 使用过程中遇到的问题</title>

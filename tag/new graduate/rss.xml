@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;new graduate&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Tue, 23 Jun 2020 18:56:43 +0800</pubDate>
         <lastBuildDate>Tue, 23 Jun 2020 18:56:43 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2020/06/23/Bytedance-new-graduate-interview/</guid>
             <title>Bytedance 秋招面试 2020</title>

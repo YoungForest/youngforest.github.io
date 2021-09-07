@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;linux&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Thu, 18 Mar 2021 11:20:13 +0800</pubDate>
         <lastBuildDate>Thu, 18 Mar 2021 11:20:13 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2021/03/18/Ubuntu-vpn-cannot-access-public-resource/</guid>
             <title>Ubuntu OpenVPN 无法获取公网资源</title>

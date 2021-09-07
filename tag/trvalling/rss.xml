@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;trvalling&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Fri, 02 Jul 2021 19:26:23 +0800</pubDate>
         <lastBuildDate>Fri, 02 Jul 2021 19:26:23 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2021/07/02/Wuhan-trip/</guid>
             <title>武汉游记 暨硕士毕业旅行</title>

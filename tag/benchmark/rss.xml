@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;benchmark&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Sat, 14 Jan 2017 12:39:23 +0800</pubDate>
         <lastBuildDate>Sat, 14 Jan 2017 12:39:23 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/</guid>
             <title>对CPU 内存 硬盘读写 网络 进行压力测试</title>

@@ -4,7 +4,7 @@
         <title>YoungForest&#39;s blog • Posts by &#34;owncloud&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
-        <language>zh-Hans</language>
+        <language>zh-CN,en,default</language>
         <pubDate>Sun, 20 Aug 2017 22:42:32 +0800</pubDate>
         <lastBuildDate>Sun, 20 Aug 2017 22:42:32 +0800</lastBuildDate>
         <category>tech</category>
@@ -52,6 +52,7 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/</guid>
             <title>owncloud setup on server</title>
