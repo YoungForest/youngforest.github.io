@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">220</span>
+          <span class="site-state-item-count">221</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -195,6 +195,138 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/08/19/LeetCode-weekly-contest-150/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/19/LeetCode-weekly-contest-150/" class="post-title-link" itemprop="url">LeetCode weekly contest 150</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-19 09:45:53" itemprop="dateCreated datePublished" datetime="2019-08-19T09:45:53+08:00">2019-08-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/08/19/LeetCode-weekly-contest-150/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/19/LeetCode-weekly-contest-150/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (7)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>476 / 5091</td>
+<td>YoungForest</td>
+<td>19</td>
+<td>1:31:13</td>
+<td>0:03:52</td>
+<td>0:09:23</td>
+<td>1:16:13  2</td>
+<td>0:50:16  1</td>
+</tr>
+</tbody></table>
+<p>本次比赛效果同样不佳，排名在400+。直接原因是第3题的搜索剪枝花费了太长时间，没有一步到位。根本原因是最近2周好不容易放假在家，放松了练习，刷题基本停止了，自然手上的功夫就荒废了。真应了那句“业精于勤荒于嬉”呀。上周的排名同样很差。</p>
+<h2 id="1160-Find-Words-That-Can-Be-Formed-by-Characters"><a href="#1160-Find-Words-That-Can-Be-Formed-by-Characters" class="headerlink" title="1160. Find Words That Can Be Formed by Characters"></a>1160. Find Words That Can Be Formed by Characters</h2><p>常规的字母计数问题，用hashmap存储即可。需要注意的是，每次判断一个word的时候，需要获得一次拷贝。</p>
+<p>时间复杂度: O(chars.size() + words.size() * word.size()),<br>空间复杂度: O(26)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countCharacters</span><span class="params">(vector&lt;string&gt;&amp; words, string chars)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">26</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : chars) &#123;</span><br><span class="line">            ++count[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : words) &#123;</span><br><span class="line">            <span class="keyword">auto</span> count_copy = count;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">char</span> c : s) &#123;</span><br><span class="line">                --count_copy[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">                <span class="keyword">if</span> (count_copy[c - <span class="string">&#x27;a&#x27;</span>] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">goto</span> next;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans += s.<span class="built_in">size</span>();</span><br><span class="line">            next:</span><br><span class="line">                ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1161-Maximum-Level-Sum-of-a-Binary-Tree"><a href="#1161-Maximum-Level-Sum-of-a-Binary-Tree" class="headerlink" title="1161. Maximum Level Sum of a Binary Tree"></a>1161. Maximum Level Sum of a Binary Tree</h2><p>先获得每一层的和，再取得最大值。</p>
+<p>时间复杂度: O(N),<br>空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; sum_of_level;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode* root, <span class="keyword">int</span> depth)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (depth &gt; sum_of_level.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            sum_of_level.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        sum_of_level[depth<span class="number">-1</span>] += root-&gt;val;</span><br><span class="line">        <span class="built_in">dfs</span>(root-&gt;left, depth + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">dfs</span>(root-&gt;right, depth + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxLevelSum</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">dfs</span>(root, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; sum_of_level.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum_of_level[i] &gt; sum_of_level[ans]) &#123;</span><br><span class="line">                ans = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/19/LeetCode-weekly-contest-150/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1279,124 +1411,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/07/15/Happy-birthday-2019/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/07/15/Happy-birthday-2019/" class="post-title-link" itemprop="url">Happy birthday 2019</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-07-15 22:42:14" itemprop="dateCreated datePublished" datetime="2019-07-15T22:42:14+08:00">2019-07-15</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/dairy/" itemprop="url" rel="index"><span itemprop="name">dairy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/07/15/Happy-birthday-2019/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/15/Happy-birthday-2019/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>今年仍然是在学校度过了自己23岁的生日。下午和舍友出去看了电影《狮子王》，晚上去 城南旧事 吃了“北京菜。算是庆祝了自己的生日吧。祝我生日快乐。<br>自从18岁之后离开家，独自来到帝都读书。过生日就不再像在家里那么热闹和有人情味了。在外地漂泊，虽说还有同学或朋友祝你生日快乐，亲近的还会陪伴我一起过生日，但家人的温暖却再也没有了。大家来来往往，身边的人也基本只能陪伴一段时间。每每此时，都会怀念小时候。</p>
-<p>最近北京的天气特别热，不由的心情烦躁。持续性混吃等死，间断性踌躇满志。经常思考些所谓的人生意义，努力的价值，自己的目标。<br>我本人可以说是胸无大志，从小读过不少书，尤其是历史书。早早地就明白了自己与王侯将相无缘，只是个贩夫走卒。现在想要的也不多，在大城市有立锥之地，有个温暖的家。这样的想法，恐怕也是千千万万北漂一族的目标吧。这也是我努力学习的动力所在呀。<br>最近在看一部很火的网剧“长安十二时辰”，里面有句台词很引起我的共鸣：有些人生来就是长安人，有些人到死都没成为长安人。剧中无数长安底层人的生活，不正是影射的北漂族的生活嘛。</p>
-<p>时间如白驹过隙。匆匆之间，2019年已经过了一半。回望自己半年前写下的新年愿景，有些容易的已经实现，难的只能推迟到后半年，甚至来年了。</p>
-<ul>
-<li>健康的身体和良好的生活习惯。这点做的很不够，因为贪睡、怕热、懒等缘由，跑步、健身 并没有坚持下来。我需要做自我批评。</li>
-<li>一段大大厂的实习。在ST实习了一学期，并不算大厂。大大厂的实习需要推迟到明年实现了。</li>
-<li>一段交换经历。预计下学期执行。</li>
-<li>计算机系统 和 算法 的进阶。LeetCode的最初任务已经超额完成了，算法相关的书CTCI也翻过一遍，这点是值得肯定的。事实上，我在此下的功夫不少。除此之外，对C++的熟悉也基本完成了，可以在简历上或面试上大胆的说C++是自己的主语言了。剩余的 CSAPP、SICP、设计模式，并没有很大的进展，聊胜于无。</li>
-<li>实际面试经历。参加了字节跳动广告组的面试，和 字节跳动夏令营的笔试、以及 Google的电话面试。这些面试经历真的很刺激人，让人深入的认识到自己的短处。比如算法上离Kick start的标准还差的远呢！</li>
-</ul>
-<p>我认为自己需要牢记的2点：</p>
-<ul>
-<li>时间就是金钱！</li>
-<li>身体是革命的本钱！</li>
-</ul>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/07/15/Happy-birthday-2019/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

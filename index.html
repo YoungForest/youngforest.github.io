@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">220</span>
+          <span class="site-state-item-count">221</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -204,6 +204,136 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2021/09/25/LCCUP-21-Fall-Team/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/09/25/LCCUP-21-Fall-Team/" class="post-title-link" itemprop="url">LCCUP 21 Fall Team</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-09-25 20:28:48 / 修改时间：21:47:46" itemprop="dateCreated datePublished" datetime="2021-09-25T20:28:48+08:00">2021-09-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/09/25/LCCUP-21-Fall-Team/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/25/LCCUP-21-Fall-Team/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (2)</th>
+<th>Q2 (4)</th>
+<th>Q3 (6)</th>
+<th>Q4 (7)</th>
+<th>Q5 (8)</th>
+<th>Q6(9)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>81 / 1363</td>
+<td>爸爸去哪儿</td>
+<td>19/37</td>
+<td>1:07:44</td>
+<td>0:03:40 by 爸</td>
+<td>0:21:39 by 爸</td>
+<td>0:53:13 by 宝</td>
+<td>1:02:44 🐞 1 by 爸</td>
+<td>null</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>今年秋季赛只参加了团队赛，没有参加个人赛。春季赛和赖叔以及羡慕哥组队，效果不是很理想。秋季赛和宝宝二人组队，效果反而不错。尤其是宝宝不仅没有拖慢我的速度，还给团队做出了重要的贡献。没有她顺利地做出Q3，我们队排名绝对没有现在这么好看。<br>一个小时做了4题后，后两题只有5人AC。看了半天后并没有任何符合时间复杂度的思路。果断放弃了，后2个小时就节约下来干别的去了。</p>
+<p>虽然我现在用<a href="https://youngforest.github.io/en/">英文博客</a>写周赛总结了。但因为春季赛和秋季赛都是国区力扣的活动，只有中国人能参加和看到，因此考虑到受众，本次比赛总结还是用中文吧。</p>
+<h2 id="LCP-44-开幕式焰火"><a href="#LCP-44-开幕式焰火" class="headerlink" title="LCP 44. 开幕式焰火"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sZ59z6/">LCP 44. 开幕式焰火</a></h2><p>签到题。DFS，用set记录不同color.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numColor</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        set&lt;<span class="keyword">int</span>&gt; colors;</span><br><span class="line">        function&lt;<span class="built_in"><span class="keyword">void</span></span>(TreeNode*)&gt; dfs = [&amp;](TreeNode* root) -&gt; <span class="keyword">void</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (root) &#123;</span><br><span class="line">                colors.<span class="built_in">insert</span>(root-&gt;val);</span><br><span class="line">                <span class="built_in">dfs</span>(root-&gt;left);</span><br><span class="line">                <span class="built_in">dfs</span>(root-&gt;right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">dfs</span>(root);</span><br><span class="line">        <span class="keyword">return</span> colors.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度: O(N),<br>空间复杂度: O(N).<br>其中，<code>N</code>为节点数。</p>
+<h2 id="LCP-45-自行车炫技赛场"><a href="#LCP-45-自行车炫技赛场" class="headerlink" title="LCP 45. 自行车炫技赛场"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kplEvH/">LCP 45. 自行车炫技赛场</a></h2><p>DFS. 因为需要关注高度，因此把高度也当作参数传入。<br>需要用seen/visit记录访问过的状态。<br>因为速度变化的机制<code>h1-h2-o2</code>，显然速度不可能超过<code>最大高度+1</code>，因此状态数也是有限的，大概是<code>n\*m\*最大高度 = 10^6</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bicycleYard</span>(<span class="params">self, position: <span class="type">List</span>[<span class="built_in">int</span>], terrain: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]], obstacle: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span></span><br><span class="line">        n = <span class="built_in">len</span>(terrain)</span><br><span class="line">        m = <span class="built_in">len</span>(terrain[<span class="number">0</span>])</span><br><span class="line">        minSpeed = [[<span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)] * m <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        direction = ((<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">0</span>, -<span class="number">1</span>), (-<span class="number">1</span>, <span class="number">0</span>))</span><br><span class="line">        seen = <span class="built_in">set</span>()</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">i, j, speed</span>):</span></span><br><span class="line">            <span class="keyword">if</span> speed &lt;= <span class="number">0</span>: <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">if</span> (i, j, speed) <span class="keyword">in</span> seen: <span class="keyword">return</span></span><br><span class="line">            seen.add((i, j, speed))</span><br><span class="line">            minSpeed[i][j] = <span class="built_in">min</span>(minSpeed[i][j], speed)</span><br><span class="line">            <span class="keyword">for</span> di, dj <span class="keyword">in</span> direction:</span><br><span class="line">                ni = i + di</span><br><span class="line">                nj = j + dj</span><br><span class="line">                <span class="keyword">if</span> ni &lt; n <span class="keyword">and</span> ni &gt;= <span class="number">0</span> <span class="keyword">and</span> nj &gt;= <span class="number">0</span> <span class="keyword">and</span> nj &lt; m:</span><br><span class="line">                    newSpeed = speed + terrain[i][j] - terrain[ni][nj] - obstacle[ni][nj]</span><br><span class="line">                    <span class="keyword">if</span> (ni, nj, newSpeed) <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">                        dfs(ni, nj, newSpeed)</span><br><span class="line">        </span><br><span class="line">        dfs(position[<span class="number">0</span>], position[<span class="number">1</span>], <span class="number">1</span>)</span><br><span class="line">        minSpeed[position[<span class="number">0</span>]][position[<span class="number">1</span>]] = <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">                <span class="keyword">if</span> minSpeed[i][j] == <span class="number">1</span>:</span><br><span class="line">                    ans.append([i, j])</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/25/LCCUP-21-Fall-Team/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2021/09/07/Setup-English-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,7 +347,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/07/Setup-English-blog/" class="post-title-link" itemprop="url">Setup English blog</a>
+          <a href="/2021/09/07/Setup-English-blog/" class="post-title-link" itemprop="url">Hexo 创建中英文博客</a>
         </h2>
 
         <div class="post-meta-container">
@@ -229,7 +359,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-09-07 17:50:49 / 修改时间：18:04:30" itemprop="dateCreated datePublished" datetime="2021-09-07T17:50:49+08:00">2021-09-07</time>
+      <time title="创建时间：2021-09-07 17:50:49 / 修改时间：18:08:19" itemprop="dateCreated datePublished" datetime="2021-09-07T17:50:49+08:00">2021-09-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -266,18 +396,17 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>自从来到亚马逊工作，接触英文和外国同事比较多。锻炼使用英语的需求越来越大。而且为了和国际接轨，我决定创建自己的英文博客。</p>
-<p>以中文博客为模版，创建英文博客。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>以中文博客为模版，创建英文博客。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r Hexo HexoEn</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <p>删除HexoEn中没用的中文博文和资源。</p>
 <p>在Github创建一个新repo：“en”.</p>
 <p>修改HexoEn <code>_config.yml</code>配置文件。注意部署分支为<code>gh-pages</code>, 这个GitHub默认的pages分支，如果不同的话，需要去repo的<code>Setting-&gt;Pages</code>配置一下你自定义的分支:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:YoungForest/en.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">    <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">    <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">    <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">    <span class="string">中文:</span> <span class="string">https://youngforest.github.io</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-language</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:YoungForest/en.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">    <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">    <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">    <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">    <span class="string">中文:</span> <span class="string">https://youngforest.github.io</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-language</span> <span class="comment"># 图标可以去该网站搜索：https://fontawesome.com/v4.7/icons/</span></span><br></pre></td></tr></table></figure>
 
 <p>中文Hexo <code>_config.yml</code>配置文件:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">    <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">    <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">    <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">    <span class="attr">English:</span> <span class="string">https://youngforest.github.io/en/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-globe</span></span><br></pre></td></tr></table></figure>
-
-<p>这样中英文博客就可以在Menu互相外链了。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/09/07/Setup-English-blog/#more" rel="contents">
@@ -461,7 +590,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-07 13:24:38" itemprop="dateModified" datetime="2021-09-07T13:24:38+08:00">2021-09-07</time>
+        <time title="修改时间：2021-09-15 14:50:30" itemprop="dateModified" datetime="2021-09-15T14:50:30+08:00">2021-09-15</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -511,14 +640,14 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>262 / 12542</td>
+<td>222 / 12542</td>
 <td>YoungForest</td>
 <td>18</td>
-<td>2:08:15</td>
+<td>1:32:31</td>
 <td>0:06:21  🐞1</td>
 <td>0:12:18</td>
 <td>0:24:28</td>
-<td>1:28:15  🐞7</td>
+<td>1:17:31  🐞2</td>
 </tr>
 </tbody></table>
 <p>久违的不用打卡了。之前打了3周卡，实在是遭不住了呀。工作之后，花在刷题上的精力和时间都少了很多。很多卡都是让npy打的，或者干脆抄一份。一份付出一份回报。学如逆水行舟，不进则退。我周赛成绩下降确实是自己实力下降了。虽然我并不打算改变，并且慢慢接受了这个事实。但是我会坚持打周赛和呆在残酷群里，保持基本的做题手感即可，不需要对自己有太高要求。</p>
@@ -1320,114 +1449,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2021/07/02/Wuhan-trip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/02/Wuhan-trip/" class="post-title-link" itemprop="url">武汉游记 暨硕士毕业旅行</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-07-02 19:26:23" itemprop="dateCreated datePublished" datetime="2021-07-02T19:26:23+08:00">2021-07-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-12 19:59:35" itemprop="dateModified" datetime="2021-07-12T19:59:35+08:00">2021-07-12</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/dairy/" itemprop="url" rel="index"><span itemprop="name">dairy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/07/02/Wuhan-trip/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/02/Wuhan-trip/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>终于毕业了，筹划了许久的毕业旅行也正式提上议程。因为要等npy考完试，而且入职前要回来，最好还有几天休息和置办家具。我和npy只有1周时间旅行。共去了3个地方，山西临汾-&gt;湖北武汉-&gt;湖北随州。<br>目的大概是见我的家长，看望npy十年没见的奶奶。</p>
-<h1 id="6-24-Day-0"><a href="#6-24-Day-0" class="headerlink" title="6/24 Day 0"></a>6/24 Day 0</h1><p>这天领毕业证，收拾宿舍并退宿，送走了舍友，晚上等npy考完试，然后去十里堡看房。回学校取旅行行李，然后去火车站附近的酒店。洗漱完就已经1点多了，亲热好久才睡觉。毕竟距上次开房已经2个半月了，还是npy生日出去的。</p>
-<h1 id="6-25-Day-1"><a href="#6-25-Day-1" class="headerlink" title="6/25 Day 1"></a>6/25 Day 1</h1><p>中午睡到11点。打车去北京西站，虽然离得很近，但还是开车前10分钟才上了车。<br>坐D2003到达襄汾西站。爸爸和小爸来接，一起去风情街的油粉饭馆吃了饭，妈妈和姐姐也来了。</p>
-<h1 id="6-26-Day-2"><a href="#6-26-Day-2" class="headerlink" title="6/26 Day 2"></a>6/26 Day 2</h1><p>第二天早上在家吃饭，随后2辆车带npy去龙树峪玩。爬山，走了玻璃桥和石头滑梯。<br>中午回村里接上奶奶，再回城里尉村拉面馆吃大餐。<br>下午回家休息了2个小时，开车带npy去市里的商场玩。吃了美食城的麻辣拌。</p>
-<h1 id="6-27-Day-3"><a href="#6-27-Day-3" class="headerlink" title="6/27 Day 3"></a>6/27 Day 3</h1><p>上午在家做饭吃。本来打算做焖面，但因为我买错了豆角。最后做了西红柿鸡蛋手擀面吃。</p>
-<p>吃完饭稍事休息，爸爸开车送我们去机场。<br>乘坐飞机傍晚到达武汉天河机场，坐地铁到汉口站，在附近的宾馆留宿。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/07/02/Wuhan-trip/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

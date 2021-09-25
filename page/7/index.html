@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">220</span>
+          <span class="site-state-item-count">221</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -195,6 +195,138 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/10/19/LeetCode-weekly-contest-211/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/10/19/LeetCode-weekly-contest-211/" class="post-title-link" itemprop="url">LeetCode weekly contest 211</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-10-19 20:12:22" itemprop="dateCreated datePublished" datetime="2020-10-19T20:12:22+08:00">2020-10-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/10/19/LeetCode-weekly-contest-211/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/19/LeetCode-weekly-contest-211/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>224 / 11960</td>
+<td>YoungForest</td>
+<td>18</td>
+<td>1:23:45</td>
+<td>0:03:19</td>
+<td>0:31:37</td>
+<td>1:00:04</td>
+<td>1:18:45 1</td>
+</tr>
+</tbody></table>
+<p>本周题目质量还不错，而且自己排名也不错。提前10分钟AC，就是喜欢这种紧张刺激感。而像上周那样提前40minAC反而没今天这么开心。<br>因为连续2次周赛排名都很靠前，我残酷群的排名也上升到15名了。久违的最高位置，继续保持。</p>
+<h2 id="1624-Largest-Substring-Between-Two-Equal-Characters"><a href="#1624-Largest-Substring-Between-Two-Equal-Characters" class="headerlink" title="1624. Largest Substring Between Two Equal Characters"></a>1624. Largest Substring Between Two Equal Characters</h2><p>签到题。记录每个字符的首次出现下标和最后出现下标，遍历做差即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxLengthBetweenEqualCharacters</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">using</span> pii = pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;;</span><br><span class="line">        <span class="function">vector&lt;pii&gt; <span class="title">index</span><span class="params">(<span class="number">26</span>, &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">const</span> <span class="keyword">int</span> idx = s[i] - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span> (index[idx].first == <span class="number">-1</span>) &#123;</span><br><span class="line">                index[idx].first = i;</span><br><span class="line">            &#125;</span><br><span class="line">            index[idx].second = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> p : index) &#123;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, p.second - p.first - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度: O(s.size()),<br>空间复杂度: O(1).</p>
+<h2 id="1625-Lexicographically-Smallest-String-After-Applying-Operations"><a href="#1625-Lexicographically-Smallest-String-After-Applying-Operations" class="headerlink" title="1625. Lexicographically Smallest String After Applying Operations"></a>1625. Lexicographically Smallest String After Applying Operations</h2><p>第二题挺恶心，暴力就行，但实现起来还是比较复杂度的。写了50行代码，没成想竟然一次bug-free。<br>因为数据规模很小，100，brute force搞起.</p>
+<p>先找到所有通过shift可以作为开头的下标。shift最为一个子问题也是LeetCode的原题，通过3次<code>reverse</code>可以方便的实现。<br>然后就不需要考虑shift操作了，只需要考虑增加操作。贪心即可。这时根据b是奇偶，可能有2或1位要增加。<br>最后找到所有下标可以达到的最小值即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">findLexSmallestString</span><span class="params">(string s, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; head;</span><br><span class="line">        <span class="keyword">bool</span> first = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; ; ++i) &#123;</span><br><span class="line">            <span class="keyword">const</span> <span class="keyword">int</span> condidate = ((n - i * b) % n + n) % n;</span><br><span class="line">            <span class="keyword">if</span> (condidate == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!first) <span class="keyword">break</span>;</span><br><span class="line">                first = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            head.<span class="built_in">push_back</span>(condidate);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function">string <span class="title">ans</span><span class="params">(n, <span class="string">&#x27;9&#x27;</span>)</span></span>;</span><br><span class="line">        <span class="keyword">auto</span> shiftK = [&amp;](string&amp; a, <span class="keyword">const</span> <span class="keyword">int</span> k) -&gt; <span class="keyword">void</span> &#123;</span><br><span class="line">            <span class="comment">// shift left k unit</span></span><br><span class="line">            <span class="built_in">reverse</span>(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">            <span class="keyword">auto</span> it = a.<span class="built_in">begin</span>() + k;</span><br><span class="line">            <span class="built_in">reverse</span>(a.<span class="built_in">begin</span>(), it);</span><br><span class="line">            <span class="built_in">reverse</span>(it, a.<span class="built_in">end</span>());</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">auto</span> minIncrease = [&amp;](<span class="keyword">const</span> <span class="keyword">int</span> x) -&gt; <span class="keyword">int</span> &#123;</span><br><span class="line">            map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; reach;</span><br><span class="line">            <span class="keyword">int</span> i = x;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (reach.<span class="built_in">find</span>(i) == reach.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                reach[i] = ans;</span><br><span class="line">                i = (i + a) % <span class="number">10</span>;</span><br><span class="line">                ans += a;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> reach.<span class="built_in">begin</span>()-&gt;second;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">auto</span> fixHead = [&amp;](<span class="keyword">const</span> <span class="keyword">int</span> d) -&gt; string &#123;</span><br><span class="line">            string ans = s;</span><br><span class="line">            <span class="built_in">shiftK</span>(ans, d);</span><br><span class="line">            <span class="keyword">if</span> (b % <span class="number">2</span> != <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">const</span> <span class="keyword">int</span> increase = <span class="built_in">minIncrease</span>(ans[<span class="number">0</span>] - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i += <span class="number">2</span>) &#123;</span><br><span class="line">                    ans[i] = <span class="string">&#x27;0&#x27;</span> + ((ans[i] - <span class="string">&#x27;0&#x27;</span> + increase) % <span class="number">10</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">const</span> <span class="keyword">int</span> increase = <span class="built_in">minIncrease</span>(ans[<span class="number">1</span>] - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i += <span class="number">2</span>) &#123;</span><br><span class="line">                ans[i] = <span class="string">&#x27;0&#x27;</span> + ((ans[i] - <span class="string">&#x27;0&#x27;</span> + increase) % <span class="number">10</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">int</span> d : head) &#123;</span><br><span class="line">            <span class="keyword">const</span> string x = <span class="built_in">fixHead</span>(d);</span><br><span class="line">            <span class="keyword">if</span> (x &lt; ans) &#123;</span><br><span class="line">                ans = x;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/19/LeetCode-weekly-contest-211/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1368,140 +1500,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/05/31/LeetCode-biweekly-contest-27/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/31/LeetCode-biweekly-contest-27/" class="post-title-link" itemprop="url">LeetCode weekly contest 27</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-31 17:41:49" itemprop="dateCreated datePublished" datetime="2020-05-31T17:41:49+08:00">2020-05-31</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/31/LeetCode-biweekly-contest-27/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/31/LeetCode-biweekly-contest-27/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <table>
-<thead>
-<tr>
-<th>Rank</th>
-<th>Name</th>
-<th>Score</th>
-<th>Finish Time</th>
-<th>Q1 (3)</th>
-<th>Q2 (4)</th>
-<th>Q3 (5)</th>
-<th>Q4 (6)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>231 / 7926</td>
-<td>YoungForest</td>
-<td>18</td>
-<td>0:42:16</td>
-<td>0:04:51</td>
-<td>0:10:55</td>
-<td>0:22:31  1</td>
-<td>0:37:16</td>
-</tr>
-</tbody></table>
-<p>质量还可以的手速场。有些问题值得思考，只有发现本质，才能迅速解决。</p>
-<h2 id="1460-Make-Two-Arrays-Equal-by-Reversing-Sub-arrays"><a href="#1460-Make-Two-Arrays-Equal-by-Reversing-Sub-arrays" class="headerlink" title="1460. Make Two Arrays Equal by Reversing Sub-arrays"></a>1460. Make Two Arrays Equal by Reversing Sub-arrays</h2><p>由于对reverse操作的数目不限，我们可以采用这样的策略构造将2个array转成相同的array。用类似select sort的思想，每次reverse可以将一个位置排好序。所以问题转化为，2个数组排好序后是否相等。<br>C++中vector的<code>==</code>的作用正是如此。</p>
-<p>时间复杂度: O(N log N),<br>空间复杂度: O(1).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canBeEqual</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; target, vector&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(target.<span class="built_in">begin</span>(), target.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> target == arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1461-Check-If-a-String-Contains-All-Binary-Codes-of-Size-K"><a href="#1461-Check-If-a-String-Contains-All-Binary-Codes-of-Size-K" class="headerlink" title="1461. Check If a String Contains All Binary Codes of Size K"></a>1461. Check If a String Contains All Binary Codes of Size K</h2><p>滑动窗口。窗口大小K，判断所有<code>0 - 2^K - 1</code>的二进制是否出现。</p>
-<p>时间复杂度: O(s.size()),<br>空间复杂度: O(1 &lt;&lt; K).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasAllCodes</span><span class="params">(string s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">bool</span>&gt; <span class="title">seen</span><span class="params">(<span class="number">1</span> &lt;&lt; k, <span class="literal">false</span>)</span></span>;</span><br><span class="line">        <span class="keyword">int</span> current = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k &amp;&amp; i &lt; s.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            current = current * <span class="number">2</span> - <span class="string">&#x27;0&#x27;</span> + s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        seen[current] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = k; i &lt; s.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            current = (current - (s[i-k]-<span class="string">&#x27;0&#x27;</span>) * (<span class="number">1</span> &lt;&lt; (k<span class="number">-1</span>))) * <span class="number">2</span> - <span class="string">&#x27;0&#x27;</span> + s[i];</span><br><span class="line">            seen[current] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">all_of</span>(seen.<span class="built_in">begin</span>(), seen.<span class="built_in">end</span>(), [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; a) -&gt; <span class="keyword">bool</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> a;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/31/LeetCode-biweekly-contest-27/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">220</span>
+          <span class="site-state-item-count">221</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -195,6 +195,118 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/02/10/LeetCode-weekly-contest-123/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/02/10/LeetCode-weekly-contest-123/" class="post-title-link" itemprop="url">LeetCode weekly contest 123</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-02-10 10:29:44" itemprop="dateCreated datePublished" datetime="2019-02-10T10:29:44+08:00">2019-02-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/02/10/LeetCode-weekly-contest-123/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/10/LeetCode-weekly-contest-123/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>本次比赛是春节后的第一次。</p>
+<ol start="989">
+<li>Add to Array-Form of Integer</li>
+</ol>
+<p>思路：模拟笔算过程，一位一位地相加。（Solution中有个很形象的名字：Schoolbook Addition）<br>时间复杂度：O(max(N, M)), 其中N, M分别表示A，K的长度。<br>空间复杂度：O(M-N), 即deque所用的空间。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">addToArrayForm</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = A.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (K &gt; <span class="number">0</span> &amp;&amp; index &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> last_digit = K % <span class="number">10</span>;</span><br><span class="line">            K /= <span class="number">10</span>;</span><br><span class="line">            A[index] += last_digit;</span><br><span class="line">            <span class="keyword">int</span> carry = A[index] / <span class="number">10</span>;</span><br><span class="line">            K += carry;</span><br><span class="line">            A[index] %= <span class="number">10</span>;</span><br><span class="line">            index--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        deque&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">while</span> (K &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result.<span class="built_in">push_front</span>(K % <span class="number">10</span>);</span><br><span class="line">            K /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        A.<span class="built_in">insert</span>(A.<span class="built_in">begin</span>(), result.<span class="built_in">begin</span>(), result.<span class="built_in">end</span>());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="990-Satisfiability-of-Equality-Equations"><a href="#990-Satisfiability-of-Equality-Equations" class="headerlink" title="990. Satisfiability of Equality Equations"></a>990. Satisfiability of Equality Equations</h2><p>思路：使用并查集存储相等的关系，再遍历所有的不等关系是否在不同的集之间。</p>
+<p>时间复杂度：O(N),<br>空间复杂度：O（N）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    array&lt;<span class="keyword">char</span>, 26&gt; parents;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">union_variables</span><span class="params">(<span class="keyword">char</span> a, <span class="keyword">char</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a_parent = <span class="built_in">find_root</span>(a);</span><br><span class="line">        <span class="keyword">char</span> b_parent = <span class="built_in">find_root</span>(b);</span><br><span class="line">        parents[a_parent - <span class="string">&#x27;a&#x27;</span>] = b_parent;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">char</span> <span class="title">find_root</span><span class="params">(<span class="keyword">char</span> a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (parents[a - <span class="string">&#x27;a&#x27;</span>] != a)</span><br><span class="line">            a = parents[a - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Solution</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">            parents[i] = <span class="string">&#x27;a&#x27;</span> + i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">equationsPossible</span><span class="params">(vector&lt;string&gt;&amp; equations)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> string &amp; s : equations) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[<span class="number">1</span>] == <span class="string">&#x27;=&#x27;</span>) &#123;</span><br><span class="line">                <span class="built_in">union_variables</span>(s[<span class="number">0</span>], s[<span class="number">3</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> string &amp; s : equations) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[<span class="number">1</span>] == <span class="string">&#x27;!&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">find_root</span>(s[<span class="number">0</span>]) == <span class="built_in">find_root</span>(s[<span class="number">3</span>]))</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="991-Broken-Calculator"><a href="#991-Broken-Calculator" class="headerlink" title="991. Broken Calculator"></a>991. Broken Calculator</h2><p>思路：一旦X大于Y，就只能通过减一的操作来达到Y。<br>如果X小于Y，则可以DOUBLE，也可以Decrement。<br>这时候如何选择呢？可以发现Double, Decrement, Decrement 和 Decrement, Double得到的结果相同。<br>这样，我们可以看出，<br>如果Y是奇数，则必须Double, Decrement才能得到。<br>如果Y是偶数，则必须Double才能得到(Decrement的操作次数更多)。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/10/LeetCode-weekly-contest-123/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1194,120 +1306,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/12/09/sensetime-intern-interview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/12/09/sensetime-intern-interview/" class="post-title-link" itemprop="url">商汤见习计算机视觉实习生</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-09 11:29:41" itemprop="dateCreated datePublished" datetime="2018-12-09T11:29:41+08:00">2018-12-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/interview/" itemprop="url" rel="index"><span itemprop="name">interview</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/12/09/sensetime-intern-interview/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/09/sensetime-intern-interview/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>上周给在商汤实习的同学发了简历，和HR约了本周四的面试，周五就又接到HR的电话，商议Offer的事宜。不得不说，商汤招聘的效率还是很高的。这也从另一个侧面反应出，其十分缺人手的事实。很多商汤的同学都在询问我，有没有其他的同学可以推荐过来实习。<br>商汤校友被誉为“北航实验室”。因为其招聘了大量的北航实习生，正式员工很多也是实习生直接转正的，本科的时候，就有几乎一个班都在那里实习。<br>而我面试的时候，推我的是我的一个一直在那里实习的同学，一面的面试官是我大三编译实验课的助教，二三面的面试官也都是我的本科同学。可以说，如果你是北航的学生，那么进入商汤会比其他学校容易很多。</p>
-<p>我面的组是”商汤研究院基础技术与工具组“，算是在研究院里偏工程的组了。总体的面试过程还是很硬核，很高能的。好几次我都以为自己不行了，好在面试官及时给出一些hint，帮助我走下去。下面，我记录一下3个面试的流程。</p>
-<h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><p>一面面试官是此组的lead，今年刚刚毕业转正。我一直觉得他很眼熟，后来和同学交流过后才想起来，这不是2年前检查我编译实验的助教哥哥嘛！</p>
-<p>因为是lead给自己招人，所以一面总体上节奏很紧，内容也很充实。依次问了我职业规划、项目经历和2道算法题。<br>职业规划主要是与将来实习工作内容相关，从超级硬核的嵌入式和操作系统，到优化深度学习框架和库，再到优化计算机视觉的策略和算法。<br>项目经历主要问了我的2次实习和毕业设计，并问了我对之前的哪部分工作和实习最感兴趣。我当然把之前的实习都表扬了一边，然后再比较出自己对快手的实习最喜欢了。从和面试官的问答过程中我感受到，他对面试者是否真的想做某件工作、是否对其感兴趣很看重。</p>
-<p>算法题有2道：</p>
-<ol>
-<li>给出一个01串，给出0和1数目相等的最长子串的长度。比如’00100110011’的最长字串的长度为10.</li>
-<li>有1-n个路灯，对其进行n次操作，第i次操作为将编号是i的倍数的路灯状态取反。初始状态为都灭，问对于给定的n，最后有几盏灯是亮的。</li>
-</ol>
-<p>都不算很难的题目，虽然没能一下子解决，但最后都在面试官的hint下成功解决了。表现的不算太好，也不算很差。想解法的时候一度感觉自己要凉了，要丢人了。好在问题本身不是很难，经过更多的思考和尝试还是解答出来了。只有第一道题要求手写代码了，我用Python很快写完了。我用二维列表实现的桶，面试官指出，用Map难道不是更优雅吗？第二题解法过于简单，没必要写代码。</p>
-<p>经验总结就是，虽然我代码能力还行，LeetCode也刷了有100道Easy难度的题目，但并没有形成自己的一套解题的流程，也没有对于每一类问题的归纳总结，可以快速地找出合适的算法。<br>更多的是依靠灵感和尝试。比如第一道题，我最开始一筹莫展，但再尝试几次后，偶然想到可以先把前缀和计算出来(遇0减一，遇1加一)，之后就迎刃而解了。和LeetCode上一些字符串比较的问题很像。<br>这种依靠灵感和尝试的解决方案，首先不是每次都奏效，如果状态不好，可能就不行了；其次是不靠谱，做题的时候心里没谱，对于题目能不能成功解决心惊胆战的。<br>所以，在面对未来更多的面试和dream job之前，形成自己稳定可靠的解题流程是必要的。</p>
-<h2 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/12/09/sensetime-intern-interview/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
