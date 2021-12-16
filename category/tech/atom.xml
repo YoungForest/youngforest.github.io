@@ -50,6 +50,7 @@
     <category term="git" />
     <category term="Tencent" />
     <category term="English" />
+    <category term="键盘" />
     <entry>
         <id>https://youngforest.github.io/2021/02/27/build-qBittorrent/</id>
         <title>MAC 手动编译 build qBittorrent</title>

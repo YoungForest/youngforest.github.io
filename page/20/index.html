@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">221</span>
+          <span class="site-state-item-count">222</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,7 +146,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -195,6 +195,116 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/09/15/LeetCode-215-Kth-Largest-Element-in-an-Array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/09/15/LeetCode-215-Kth-Largest-Element-in-an-Array/" class="post-title-link" itemprop="url">LeetCode #215 Kth Largest Element in an Array</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-09-15 11:20:06" itemprop="dateCreated datePublished" datetime="2018-09-15T11:20:06+08:00">2018-09-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/09/15/LeetCode-215-Kth-Largest-Element-in-an-Array/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/15/LeetCode-215-Kth-Largest-Element-in-an-Array/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Description: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-an-array/description/">https://leetcode.com/problems/kth-largest-element-in-an-array/description/</a><br>Solution: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/">https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/</a><br>Difficulty: Medium</p>
+<p>这是二师兄面试景驰的一道题目。因为他的面试在上午，我的在下午。所以，和他交流过面试内容后，我把他被面的题目都做了一遍。包括这道题目和<a target="_blank" rel="noopener" href="https://leetcode.com/problems/coin-change/description/">找硬币</a>。</p>
+<h2 id="我的动态规划"><a href="#我的动态规划" class="headerlink" title="我的动态规划"></a>我的动态规划</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest</span>(<span class="params">self, nums, k</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        mi = nums[<span class="number">0</span>]</span><br><span class="line">        ma = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            ma = <span class="built_in">max</span>(ma, nums[i])</span><br><span class="line">            mi = <span class="built_in">min</span>(mi, nums[i])</span><br><span class="line">            memo[(i, i+<span class="number">1</span>)] = mi</span><br><span class="line">            memo[(i, <span class="number">1</span>)] = ma</span><br><span class="line">            </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">find</span>(<span class="params">n, k</span>):</span></span><br><span class="line">            <span class="keyword">if</span> (n, k) <span class="keyword">in</span> memo:</span><br><span class="line">                <span class="keyword">return</span> memo[(n, k)]</span><br><span class="line">            </span><br><span class="line">            n_sub_1_k = find(n-<span class="number">1</span>, k)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> nums[n] &lt;= n_sub_1_k:</span><br><span class="line">                <span class="keyword">return</span> n_sub_1_k</span><br><span class="line">            </span><br><span class="line">            n_sub_1_k_sub_1 = find(n-<span class="number">1</span>, k-<span class="number">1</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> nums[n] &gt;= n_sub_1_k_sub_1:</span><br><span class="line">                <span class="keyword">return</span> n_sub_1_k_sub_1</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> nums[n]</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> find(<span class="built_in">len</span>(nums)-<span class="number">1</span>, k)</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度 O(n^2)，memo中的每个元素需要遍历一遍;<br>空间复杂度 O(n^2)，创建一个二维的memo.</p>
+<p>结果：TLE 超时。<br>还不如直接快排找第k个值。</p>
+<h2 id="选择算法"><a href="#选择算法" class="headerlink" title="选择算法"></a><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Selection_algorithm">选择算法</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest</span>(<span class="params">self, nums, k</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">partition</span>(<span class="params">nums, lo, hi</span>):</span></span><br><span class="line">            i = lo + <span class="number">1</span></span><br><span class="line">            j = hi</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">                <span class="keyword">while</span> i &lt;= hi <span class="keyword">and</span> nums[i] &lt; nums[lo]:</span><br><span class="line">                    i += <span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> j &gt; lo <span class="keyword">and</span> nums[j] &gt; nums[lo]:</span><br><span class="line">                    j -= <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> i &gt;= j:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                    </span><br><span class="line">                nums[i], nums[j] = nums[j], nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">            nums[lo], nums[j] = nums[j], nums[lo]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> j</span><br><span class="line">        </span><br><span class="line">        lo = <span class="number">0</span></span><br><span class="line">        hi = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        k = <span class="built_in">len</span>(nums) - k</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">            j = partition(nums, lo, hi)</span><br><span class="line">            <span class="keyword">if</span> j &lt; k:</span><br><span class="line">                lo = j + <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> j &gt; k:</span><br><span class="line">                hi = j - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> nums[k]</span><br></pre></td></tr></table></figure>
+
+<p>和快排很像，尤其是<code>partition</code>部分。<br>时间复杂度O(n)，空间复杂度O(n)。<br>具体解释见<a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/60294/Solution-explained">Discuss</a>。</p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/09/15/LeetCode-215-Kth-Largest-Element-in-an-Array/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1174,100 +1284,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/05/07/Advanced-SQL-practice/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/05/07/github-page-binding-domain/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/07/github-page-binding-domain/" class="post-title-link" itemprop="url">为GitHub Page绑定自己的域名</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-05-07 23:29:46" itemprop="dateCreated datePublished" datetime="2018-05-07T23:29:46+08:00">2018-05-07</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/05/07/github-page-binding-domain/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/07/github-page-binding-domain/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我使用的是腾讯云的免费域名.</p>
-<p>除此之外, github上也需要进行一定的设置, 可以参考<a target="_blank" rel="noopener" href="https://help.github.com/articles/about-supported-custom-domains/">官方帮助文件</a>.</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/05/07/github-page-binding-domain/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

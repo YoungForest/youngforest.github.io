@@ -53,6 +53,7 @@
         <category>git</category>
         <category>Tencent</category>
         <category>English</category>
+        <category>键盘</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/</guid>
             <title>对CPU 内存 硬盘读写 网络 进行压力测试</title>

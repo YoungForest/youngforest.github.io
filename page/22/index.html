@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">221</span>
+          <span class="site-state-item-count">222</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,7 +146,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -195,6 +195,104 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/01/23/Django-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/23/Django-note/" class="post-title-link" itemprop="url">Django使用总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-01-23 19:18:20" itemprop="dateCreated datePublished" datetime="2017-01-23T19:18:20+08:00">2017-01-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2017/01/23/Django-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/23/Django-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>[摘要]</strong> <a target="_blank" rel="noopener" href="https://www.djangoproject.com/">Django</a> 是一个高水平的Python Web框架, 可以帮助我们迅速开发, 设计一个干净, 程序化的应用. 虽然Django比较臃肿(现在大神都用<a target="_blank" rel="noopener" href="http://flask.pocoo.org/">Flask</a>?), 适合大型Web应用的开发, 笔者的数据库课程设计是一个小型工程, 但Django名声是在太大, 笔者之前在实验室也稍稍接触过, 所以和队友果断选择了Django. 我们的课设, 在Django的帮助下, 实现起来就和切菜一样.</p>
+<span id="more"></span>
+<p>数据库课设最近出分了, 只得了良好, 未如愿取得优秀. 但两天完成数据库的经验确实使笔者学到了很多, Django框架的使用, 前后端的概念, 结对编程的合作… 其中最想和大家分享的是Django框架的使用, 幸亏有该框架, 让我们可以专注于后端和数据库的设计实现, 还能轻松实现一个看得过去的前端. 事半功倍, 没有被拖延症害死.</p>
+<h4 id="时间分配"><a href="#时间分配" class="headerlink" title="时间分配:"></a>时间分配:</h4><p>完成数据库用了两天(而且有一天是边刷”潜伏”边写程序的), 之前都是在学习Django, 文档甚至大部分是答辩完之后补完的.</p>
+<h4 id="人员分配"><a href="#人员分配" class="headerlink" title="人员分配:"></a>人员分配:</h4><p>原本的计划是抱tls大腿, 所有前后端由tls完成, 笔者帮助写写文档. 不过后来, 鉴于tls经常养精蓄锐, 一直在学习Django, 最后几个小时仍未有看的见的成果. 笔者就慌了, 在之前练习的基础上, 修补完善, 勉强实现预计功能, 完成课设. 最后文档是两个人一起紧急补完的, tls最后一个小时又帮助实现了两个新功能.</p>
+<h2 id="Django使用总结"><a href="#Django使用总结" class="headerlink" title="Django使用总结"></a>Django使用总结</h2><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/1.10/">官方文档</a>是很完善和亲民的, 需要用的功能都可以在上面找到. 缺点是, 太庞大, 不好找; 而且是英文的, 官方文档更新太快, 中文文档的翻译根本跟不上, 笔者的六级刚刚飘过, 很是头疼, 不过仍是喜欢看官方的英文文档, 感觉更有帮助.</p>
+<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/23/Django-note/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1116,117 +1214,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/09/28/timestamp-summary/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2016/08/25/my-britain-trip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/08/25/my-britain-trip/" class="post-title-link" itemprop="url">英伦游学所见所思</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-08-25 14:48:19" itemprop="dateCreated datePublished" datetime="2016-08-25T14:48:19+08:00">2016-08-25</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-12 19:26:46" itemprop="dateModified" datetime="2021-07-12T19:26:46+08:00">2021-07-12</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/dairy/" itemprop="url" rel="index"><span itemprop="name">dairy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2016/08/25/my-britain-trip/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/25/my-britain-trip/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>今年暑假，有幸参加我航高等工程学院和剑桥东方交流会联合承办的英国交流营。该交流营为期两周，内容充实，形式多样，让我深刻了解了英国的人文文化和中国人留学情况，圆满完成自己行前的目标。接下来，我就整个整理进行整理，分享给大家，希望对大家有所帮助。</p>
-<span id="more"></span>
-
-<p>这是我第一次有机会出国，也算是人生的一个标志事件，自己的心情也是十分激动的，半个学期都在期待这次交流。去英国前，英国脱欧公投，以几百万的微弱优势脱欧成功，首相卡梅隆辞职，英镑暴跌10%，我们又无形中省了一笔钱。经过几个月的行前筹备，我们终于踏上了这块离家乡八千公里的国度，开始为期两周的游学。所谓游学，既有紧张的环英之旅，从南到北，又从北到南，逛了很多自然人文景观；又有在剑桥的5天充实的学习生活，杜伦大学的一晚借宿，爱丁堡大学的参观游览，曼彻斯特大学的交流学习，伦敦大学的两天体会。14天的交流营，从希思罗机场到希思罗机场，可以说整个人都被洗脑了。被洗脑的原因有很多，我在下面分几个方面细细道来。</p>
-<p>关于留学方面。这次团队19位学生，其中包括3名博士，3名研究生，13名本科生；大多人都是抱着以后留学的打算来的。虽然每个人的志向不同，留学的目标也不都是英国，但来到这里可以参观体会很多英国著名的大学，了解这里的留学政策和留学生情况。在每个大学，我们基本上都有该校的学生做为导师，引领我们更好地了解这个大学，这些人有的是中国留学生，还有一个就是北航的，有些是其他国家的，比如在剑桥的墨西哥留学生朱莉。尤其是在剑桥大学呆的这5天，上午剑桥东方交流会会邀请剑桥的一些大牛教授给我们上各种专业、文化课程，虽然这些课程上课的过程不一定和剑桥真实情况完全一样，但却足够让我们体验到像剑桥这样的世界一流大学的上课是怎样的。他们还邀请到剑桥的招生办负责人，给我们介绍剑桥的留学情况，细心解答我们提出的各种问题。下午，我们一般都是各种参观交流和文化体验，像punting，参观著名的三一学院、圣约翰学院、国王学院，参观语言中心。我们在一天晚上还观看了国王学院学生演出的莎士比亚的四大喜剧之一的《皆大欢喜》。虽然看不懂戏剧的内容，但在草地上冻了2个小时的经历还是令我印象深刻。尤其让我印象深刻的是参观了卡文迪许实验室。卡文迪许实验室可谓物理学史上最著名的实验室，一直以来作为物理人的圣地。之前我一直有误解，认为卡文迪许实验室是为了纪念钮称测量万有引力常量的那个卡文迪许而建造的，所以被命名为“卡文迪许实验室”。来到这里才知道，卡文迪许实验室是剑桥大学的一位校长威廉·卡文迪许捐资建造的，所以以出资人的姓氏命名；值得一提的是，威廉·卡文迪许是测量万有引力常量的亨利·卡文迪许的近亲，同属声名显赫的卡文迪许家族。这座建成于1874年的物理实验室，先后培养出催生了近30位诺贝尔奖学者，拥有大量足以影响人类进步的重要科学成果，包括发现电子、中子、发现原子核的结构、发现DNA的双螺旋结构等，为人类的科学发展作出了举足轻重的贡献。我们怀着崇敬的心情在新的卡文迪许实验室外进行了合影留恋活动，以纪念在此的交流活动和受到的洗礼。这次交流活动时间虽然比较短，但让我受益颇丰，坚定了我留学的信念，也交到了很多志同道合的朋友，使我在前行的道路上感到不再孤单。</p>
-<p>英国的食物是世界出名的糟糕。有多糟糕呢？你可以在大街上找到各种菜，中国菜、印度菜、泰国菜、墨西哥菜、意大利菜、法国菜……唯独没有英国自己的餐馆。唯一比较有特色的炸鱼薯条，简直连肯德基的炸鸡和薯条都比不上。难怪在英留学的中国留学生都学会了自己做菜，外面吃贵不说，还吃不到什么好的。直到我们亲身体验了两周的英国食物之后，才对此有了深深的认同。几乎每日的全英早餐给我们每个人都留下了深刻的印象。刚开始的时候，大家还很新鲜，认为味道还不错，样式很多，还极富有营养价值；不过吃了几日，就有些受不了。原来全英早餐的意思是，全英国每天都吃。现在回国吃到包子豆浆、油条豆腐脑，别提多幸福了。</p>
-<p>在文化方面，我也受到了很大的震撼。</p>
-<p>我们在英期间恰值里约奥运会，可以看得出，英国人对于奥运会的热情还是很高的。在我们参观庄园的时候，遇到一个英国人，他见我是中国人面孔，就问我是哪里来的？我说中国。他就很高兴地说中国在奥运会表现很棒，又列举了跳水、体操、乒乓球、举重等中国很强的大项，赞美之声不绝于口。当时中国金牌榜还是排名第二的，我们在英呆的第二周，英国的金牌数量超过中国，并一直保持到了奥运会结束。在travelodge住宿的3天晚上，我每天晚上的娱乐活动都是看电视，看英国的电视都说些什么。BBC-1整天都在播放关于奥运会的节目，BBC相当于国内的CCTV，可见媒体对于奥运会的关注程度。在英国的各个酒吧中，奥运会和足球是永恒的主题。不过英国媒体和大众多关注自行车、赛艇这样的英国强势项目，其他的关注比较少，这与国内很相似，我们国内关注的也多是本国的传统优势项目。</p>
-<p>英国的绅士文化。英国作为一个老牌的资本主义国家，曾经是日不落帝国，掌握世界霸权长达一个世纪，如今虽无往日风光，但也是资本主义强国，仅次于美日德。众所周知，英国资产阶级革命是一场不彻底的、妥协的革命，不仅保留了王室，还保留了很大一部分贵族的存在，这些新贵族如今形成了独特的乡绅文化。英国人，不论什么情况下，都要说“Thank you”，这种谢谢已经不止是谢谢的意思了，更多的是一种文化，很多时候让我们不知所措，也好跟着说”Thank you“。英国人喜欢排队，这是我们在旅途过程中感受很深的，所谓”queue文化”。他们喜欢排队，很多时候会不自觉排队，有时候感觉挺可笑的。</p>
-<p>英国的气候。我们从小从教课书中获得的印象是，英国永远在下雨。来到这里后，得知并不是这样，或者说不准确。据留学生说，英国的天更多的是”grey”，更像多云。有太阳的天是少数，当晴天的时候，英国人就会都出来，坐在草坪上晒太阳，然后一天什么都不干。我们都称之为“腐朽的资本主义“。英国人从来不打伞，因为很多时候不需要，英国的雨下起来一般都不大，而且下的时间不长，打起伞来比较纠结，不如不打。</p>
-<p>苏格兰。英格兰、苏格兰、不列颠、大不列颠、英国……这些名字可能大多数中国人可能并不十分清楚谁是谁，而苏格兰和英格兰几百年的爱恨情仇，倒是被中国人调侃的很多。我们这次的行程有一部分就是在苏格兰完成的。在苏格兰，你绝对看不到英国的Union Jack旗，取而代之的是苏格兰自己的旗子。苏格兰甚至还有苏格兰银行印发自己的钱币，“就是不花你的钱 ”。苏格兰前些阵子还在闹独立，进行独立公投，首相卡梅伦哭着请求苏格兰不要离开，不过最后投票的结果还是留在英国了。在此次脱欧公投中，苏格兰大多选择留欧，理由是：凡是英格兰支持的，我们都反对；凡是英格兰反对的，我们都支持。苏格兰和伦敦一起，成为留欧阵营。无奈苏格兰人比较少，并未影响局势，脱欧后，又有了苏格兰打算先脱英，再加入欧盟的传言。从文化上，苏格兰和英格兰的差别也比较大。苏格兰虽然没有自己的语言，都说英语，但他们的口音确实也独树一帜。苏格兰有自己的文化，苏格兰小短裙、苏格兰风琴、苏格兰诗人……被中国人所熟知的《哈利波特》的作者，J·K 罗琳就是在苏格兰爱丁堡的大象咖啡馆完成。在世界杯和欧洲杯上，苏格兰和英格兰也都是有自己的球队的。总之，来到苏格兰确实看到了别样的英国。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/08/25/my-britain-trip/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

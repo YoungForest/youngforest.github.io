@@ -50,6 +50,7 @@
     <category term="git" />
     <category term="Tencent" />
     <category term="English" />
+    <category term="键盘" />
     <entry>
         <id>https://youngforest.github.io/2021/09/07/Setup-English-blog/</id>
         <title>Hexo 创建中英文博客</title>

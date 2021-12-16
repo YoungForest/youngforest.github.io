@@ -50,6 +50,7 @@
     <category term="git" />
     <category term="Tencent" />
     <category term="English" />
+    <category term="键盘" />
     <entry>
         <id>https://youngforest.github.io/2021/03/18/Ubuntu-vpn-cannot-access-public-resource/</id>
         <title>Ubuntu OpenVPN 无法获取公网资源</title>

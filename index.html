@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">221</span>
+          <span class="site-state-item-count">222</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,7 +146,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -195,6 +195,117 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2021/10/13/Niz-plum-option-key-not-work/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/13/Niz-plum-option-key-not-work/" class="post-title-link" itemprop="url">Niz plum option key 在蓝牙模式下不响应</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-13 12:39:31 / 修改时间：12:54:12" itemprop="dateCreated datePublished" datetime="2021-10-13T12:39:31+08:00">2021-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/10/13/Niz-plum-option-key-not-work/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/13/Niz-plum-option-key-not-work/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近使用我心爱的Niz Plum 66键盘时遇到一个奇怪的bug。<br>在蓝牙模式下，左option键失灵。因为我hammerspoon和其他应用的快捷键大量使用，虽然偶尔可以通过右option键短暂替代。但总不是回事儿，工作效率大幅降低。</p>
+<p>这个bug的引入我也不确定是如何来的。大概是我Mac开始连2个外界显示器开始的。<br>奇怪的是，有线模式并没有问题。而且我试过蓝牙断开重连也并没有修复。换个蓝牙通道也无济于事。</p>
+<p>我在网络上进行了大量的搜索，并没有找到类似的问题和解决方案。最终还是在自己的不断摸索下成功修复了。因此记录下来，以防止未来再次遇到。</p>
+<p><a target="_blank" rel="noopener" href="http://yunxii.cn/2019/08/12/plum%E9%9D%99%E7%94%B5%E5%AE%B9%E9%94%AE%E7%9B%9866%E9%94%AE%E8%AF%B4%E6%98%8E%E4%B9%A6/">参考说明书</a>.</p>
+<ol>
+<li>恢复出厂设置: 同时按住键盘四角的四个键5秒钟。</li>
+<li>键盘开机，连接Mac。</li>
+<li>重新配置键盘设置, 如我的如下:<ul>
+<li>Fn + Command 从默认的Windows键位切换回Mac</li>
+<li>Fn + ] 降低按键延迟</li>
+<li>Fn + 右Shift 将右shift转成<code>shift</code>而非默认的 Up</li>
+</ul>
+</li>
+<li>左Option键已成功修复。</li>
+</ol>
+<p>敬请享受自己的键盘吧！</p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/13/Niz-plum-option-key-not-work/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1319,114 +1430,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/07/11/LeetCode-weekly-contest-249/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2021/07/11/my-3-years-master/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/11/my-3-years-master/" class="post-title-link" itemprop="url">硕士3年复盘</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-07-11 12:47:44" itemprop="dateCreated datePublished" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-12 17:52:39" itemprop="dateModified" datetime="2021-07-12T17:52:39+08:00">2021-07-12</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/dairy/" itemprop="url" rel="index"><span itemprop="name">dairy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/07/11/my-3-years-master/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/11/my-3-years-master/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本科毕业时，我写了4年的总结：<a href="https://youngforest.github.io/2018/10/03/my-4-years-college/">大学4年复盘</a>. 现在转眼之间3年过去了，我已研究生毕业，即将进入职场。</p>
-<p>虽然经历了半年延毕，但最后还是有惊无险的成功毕业了。上周完成了去武汉的毕业旅行，周末回到北京搬家和准备入职。带着对未来美好的期望，我踌躇满志。</p>
-<h2 id="硕士3年"><a href="#硕士3年" class="headerlink" title="硕士3年"></a>硕士3年</h2><p>3年前，因为本科成绩优异。我最后走上了保研这条看似光鲜亮丽的路。<br>虽然经历了诸多坎坷和焦虑，但我并不后悔这样的选择。<br>对于我这样的小镇做题家，这样的结果和发展道路属实更加稳妥，风险更低，收益也相对可观。</p>
-<p>回顾研究生这3年，我有很多事情没有干成功。</p>
-<p>研一上被老板派去文远知行实习，工作还算辛苦和圆满，但最后不欢而散。其实一开始就不愿意去，迫于牛老板的淫威。见<a target="_blank" rel="noopener" href="https://www.douban.com/note/694767558/">我的吐槽</a>。短期挣到了每月3k的工资，长期浪费了时间。<br>研一下转做水科院项目，因为甲方扯皮和技术储备不足，最后成了一个深坑，不了了之了。<br>研一除了帮牛老板干活外，还需要上课。把毕业需要的学分都修完。因为时间精力分散和重要程度降低的原因，我成绩并没本科好。不过也没人在乎这个成绩。<br>研二下+研三，一直在写小论文和大论文。小论文修改数十次，投稿3次，2次被拒，一次被老板嫌弃会议级别而撤稿，均以失败告终。大论文被老板多次贬低，吓的毕不了业。然而答辩时，和其他同学一对比，发现自己的工作做的其实很不错。</p>
-<p>也干成了自己想干的一些事儿。</p>
-<p>研二上去比利时交换，体验了一下留学生活，并且把欧洲几乎玩了一个遍。事后证明，这确实是很幸运的。因为第二年，就爆发了全球性的新冠疫情。旅游变成了一项不可能的活动，尤其是出国旅行。<br>在交换的过程中，与npy相识、相知、最后相恋。也算是一段美妙的姻缘。<br>研二暑假通过亚马逊的远程实习，之后顺利拿到了亚马逊的offer。也算是稍稍弥补了因为突如其来的疫情而不能去谷歌的遗憾。</p>
-<h2 id="未来憧憬"><a href="#未来憧憬" class="headerlink" title="未来憧憬"></a>未来憧憬</h2><p>马上就要进入职场，成为一名光荣的打工人了。<br>给自己职业规划的几点忠告：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/07/11/my-3-years-master/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

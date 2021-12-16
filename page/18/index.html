@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">221</span>
+          <span class="site-state-item-count">222</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,7 +146,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -195,6 +195,122 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/02/11/recursion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/02/11/recursion/" class="post-title-link" itemprop="url">recursion</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-02-11 12:58:52" itemprop="dateCreated datePublished" datetime="2019-02-11T12:58:52+08:00">2019-02-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/02/11/recursion/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/recursion/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>本文根据LeetCode上的教程 <a target="_blank" rel="noopener" href="https://leetcode.com/explore/learn/card/recursion-i/">Introduction to Algorithms - Recursion I</a> 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。</p>
+<p>本文的结构和LeetCode上的完全相同，分为 简介、递归原则、复现关系、备忘录、复杂度分析、总结 6个部分。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本Card的目的，回答以下问题：</p>
+<ol>
+<li>什么是递归？递归如何工作？</li>
+<li>如何递归地解决一个问题？</li>
+<li>如何分析一个递归算法的时间复杂度和空间复杂度？</li>
+<li>如何以一种更好的方式应用递归？</li>
+</ol>
+<h2 id="递归的原理"><a href="#递归的原理" class="headerlink" title="递归的原理"></a>递归的原理</h2><p>每次递归函数调用自身，都将给定问题变为子问题。递归过程一直继续指导子问题可以不通过进一步递归就可以直接解决。</p>
+<p>递归函数避免无限递归的必要属性：</p>
+<ol>
+<li>递归结束条件(<strong>base cases</strong>)</li>
+<li>一套规则(<strong>recurrence relation</strong>)，可以将所有其他的cases规约为base cases。</li>
+</ol>
+<p>递归函数中可以有多个地方调用本身。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/11/recursion/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1173,117 +1289,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/12/19/LeetCode-weekly-contest-115/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/12/12/2018-summary-and-2019-resolutions/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/12/12/2018-summary-and-2019-resolutions/" class="post-title-link" itemprop="url">2018年终总结 与 2019新年愿望</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-12 21:29:47" itemprop="dateCreated datePublished" datetime="2018-12-12T21:29:47+08:00">2018-12-12</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-11 12:47:44" itemprop="dateModified" datetime="2021-07-11T12:47:44+08:00">2021-07-11</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/dairy/" itemprop="url" rel="index"><span itemprop="name">dairy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/12/12/2018-summary-and-2019-resolutions/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/12/2018-summary-and-2019-resolutions/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Merry Christmas!</p>
-<p>离2019年还有5天，2018年就要结束了。一年过的真快呀。不知道你的2018年怎么样呀？一年前制定的新年计划实现了多少呢？</p>
-<p>我曾在2017年的新年计划中写下这样一段话：</p>
-<blockquote>
-<p>最近刚读了蔡东藩的<a target="_blank" rel="noopener" href="https://book.douban.com/subject/3089584/">五代史</a>, 了解五代混乱的历史, 感叹大多数主子昏庸误国, 英明的主子也多少有瑕疵的同时, 也将心比心, 自己是否是一个英明的帝王. 答案却是否定的. 我是一个懒惰的人, 没有意志力的人, 不喜欢批评, 只喜欢表扬. 如果把自己放在帝王的位置上, 一定是个亡国之君了. 想想还是很可怕的.</p>
-</blockquote>
-<p>当时真的是处于人生中一个非常没有自信的阶段。大三的寒假，刚刚被编译虐了一学期，面临未来人生道路的选择，自己完全没有信心把握自己的未来，甚至对人生的职业规划完全没有一个清楚的认识。现在近2年过去了(当时是农历新年写的)，不敢说我的境遇好了多少，但起码对未来，对自己有了更清醒的认识。自信心也逐渐建立起来了。<br>现在如果重新回答17年时的问题，我会有不一样的答案。</p>
-<p>将心比心, 自己是否是一个英明的帝王。<br>我想，我可能会成为宋仁宗那样的君主。虽然在唐宗宋祖、秦皇汉武看来，完全没有帝王的权威。但宋仁宗是真正的仁主，他在位的40年，北宋人才辈出，经济也发展到古中国的顶峰。他是一个读书人所期待的最理想的皇帝。感兴趣的同学可以更多地了解一下那个时代，那个皇帝。类似的帝王还有汉文帝、明孝宗。“仁”是他们的共同特点，也是我给自己的一个很高的评价。</p>
-<h2 id="回顾与展望"><a href="#回顾与展望" class="headerlink" title="回顾与展望"></a>回顾与展望</h2><p>新的一年，既要坚持既往好的传统，又要摒弃坏的习惯，培养好的习性。</p>
-<p>坚持一切以<strong>找一份好的工作</strong>为中心。</p>
-<p>2018年我为此着实付出了不少努力，包括3次实习和多次实习面试。<br>3次实习分别是，17年9月到今年3月的偶数科技的云平台开发工程师，4月到6月在快手的推荐系统算法工程师，还有11月到目前的文远知行数据平台开发工程师。3次实习极大地让我接触到业界的需求和实际工作，提高了我的代码能力，最重要的是，帮助我更好地认识自己，从而作出合理的职业规划。<br>实习面试有：快手、face++、Microsoft、小红书、景驰、商汤。成功率大概只有一半，而且成功与否更多地和对方缺人程度相关。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/12/12/2018-summary-and-2019-resolutions/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
