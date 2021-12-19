@@ -25,11 +25,13 @@
     <category term="Algorithm" />
     <category term="LeetCode" />
     <category term="Mihayo" />
+    <category term="键盘" />
     <category term="Linux" />
-    <category term="atom" />
     <category term="trvalling" />
+    <category term="atom" />
     <category term="hash" />
     <category term="unordered_map" />
+    <category term="English" />
     <category term="折腾" />
     <category term="codeforces" />
     <category term="contest" />
@@ -49,8 +51,6 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
-    <category term="English" />
-    <category term="键盘" />
     <entry>
         <id>https://youngforest.github.io/2020/04/12/codeforces-round-633-Div2/</id>
         <title>codeforces round 633 Div2</title>

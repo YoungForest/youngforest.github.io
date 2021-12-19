@@ -28,11 +28,13 @@
         <category>Algorithm</category>
         <category>LeetCode</category>
         <category>Mihayo</category>
+        <category>键盘</category>
         <category>Linux</category>
-        <category>atom</category>
         <category>trvalling</category>
+        <category>atom</category>
         <category>hash</category>
         <category>unordered_map</category>
+        <category>English</category>
         <category>折腾</category>
         <category>codeforces</category>
         <category>contest</category>
@@ -52,8 +54,6 @@
         <category>gcc</category>
         <category>git</category>
         <category>Tencent</category>
-        <category>English</category>
-        <category>键盘</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2021/10/13/Niz-plum-option-key-not-work/</guid>
             <title>Niz plum option key 在蓝牙模式下不响应</title>
@@ -207,9 +207,18 @@
 &lt;p&gt;从Google AdSense上获取针对你网站的广告脚本，类似这样&lt;/p&gt;
 &lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-ad-client&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;ca-pub-9*******6&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;p&gt;Option1:&lt;/p&gt;
 &lt;p&gt;将广告脚本粘贴在&lt;code&gt;./themes/next/layout/_partials/head/head-unique.swig&lt;/code&gt;的末尾。&lt;/p&gt;
 &lt;p&gt;然后进行验证。一般几天就会通过，发邮件通知到你。&lt;/p&gt;
 &lt;p&gt;通过审核后，需要去AdSense上进行配置。基本上把 &lt;strong&gt;自动广告&lt;/strong&gt; 打开即可。&lt;/p&gt;
+&lt;p&gt;Option2:&lt;/p&gt;
+&lt;p&gt;在博客根目录下创建&lt;code&gt;_config.next.yml&lt;/code&gt;文件，内容如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;custom_file_path:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;head:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;source/_data/head.swig&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;创建&lt;code&gt;source/_data/head.swig&lt;/code&gt;文件，内容如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-ad-client&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;ca-pub-9046219176772396&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Option2的优势在于对&lt;code&gt;next&lt;/code&gt;不侵入，方便用Github Action做CD.&lt;/p&gt;
 &lt;h3 id=&#34;ads-txt-的设置&#34;&gt;&lt;a href=&#34;#ads-txt-的设置&#34; class=&#34;headerlink&#34; title=&#34;ads.txt 的设置&#34;&gt;&lt;/a&gt;ads.txt 的设置&lt;/h3&gt;&lt;p&gt;该文件放置在 &lt;code&gt;./source/&lt;/code&gt; 下即可，和&lt;code&gt;_posts/&lt;/code&gt; 同级。&lt;br&gt;&lt;code&gt;hexo d -g&lt;/code&gt;部署后，对应的文件就会自动部署到&lt;code&gt;/public/&lt;/code&gt;也就是你的博客上了。&lt;br&gt;其他需要生成放置在博客根目录下的文件也是类似的处理。&lt;/p&gt;
  ]]></description>
         </item>
@@ -252,7 +261,7 @@
             <description><![CDATA[ &lt;h2 id=&#34;配置代理&#34;&gt;&lt;a href=&#34;#配置代理&#34; class=&#34;headerlink&#34; title=&#34;配置代理&#34;&gt;&lt;/a&gt;配置代理&lt;/h2&gt;&lt;p&gt;笔者的需求是在markdown文档中插入LaTeX公式, atom默认的&lt;code&gt;markdown-preview&lt;/code&gt;包无法满足要求. 经过搜索, 社区包&lt;code&gt;markdown-preview-plus&lt;/code&gt;可是满足该需求.&lt;/p&gt;
 &lt;h3 id=&#34;atom包管理&#34;&gt;&lt;a href=&#34;#atom包管理&#34; class=&#34;headerlink&#34; title=&#34;atom包管理&#34;&gt;&lt;/a&gt;&lt;a href=&#34;http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages&#34;&gt;atom包管理&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;按照官方教程, 安装失败&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Installing “&lt;a href=&#34;mailto:&amp;#x6d;&amp;#x61;&amp;#114;&amp;#107;&amp;#100;&amp;#x6f;&amp;#x77;&amp;#110;&amp;#x2d;&amp;#x70;&amp;#114;&amp;#101;&amp;#x76;&amp;#105;&amp;#101;&amp;#x77;&amp;#45;&amp;#x70;&amp;#x6c;&amp;#117;&amp;#x73;&amp;#64;&amp;#x32;&amp;#46;&amp;#52;&amp;#x2e;&amp;#57;&#34;&gt;&amp;#x6d;&amp;#x61;&amp;#114;&amp;#107;&amp;#100;&amp;#x6f;&amp;#x77;&amp;#110;&amp;#x2d;&amp;#x70;&amp;#114;&amp;#101;&amp;#x76;&amp;#105;&amp;#101;&amp;#x77;&amp;#45;&amp;#x70;&amp;#x6c;&amp;#117;&amp;#x73;&amp;#64;&amp;#x32;&amp;#46;&amp;#52;&amp;#x2e;&amp;#57;&lt;/a&gt;” failed.&lt;/p&gt;
+&lt;p&gt;Installing “&lt;a href=&#34;mailto:&amp;#x6d;&amp;#x61;&amp;#x72;&amp;#x6b;&amp;#x64;&amp;#x6f;&amp;#119;&amp;#x6e;&amp;#45;&amp;#112;&amp;#x72;&amp;#101;&amp;#118;&amp;#105;&amp;#x65;&amp;#119;&amp;#x2d;&amp;#112;&amp;#108;&amp;#x75;&amp;#115;&amp;#x40;&amp;#x32;&amp;#x2e;&amp;#52;&amp;#x2e;&amp;#x39;&#34;&gt;&amp;#x6d;&amp;#x61;&amp;#x72;&amp;#x6b;&amp;#x64;&amp;#x6f;&amp;#119;&amp;#x6e;&amp;#45;&amp;#112;&amp;#x72;&amp;#101;&amp;#118;&amp;#105;&amp;#x65;&amp;#119;&amp;#x2d;&amp;#112;&amp;#108;&amp;#x75;&amp;#115;&amp;#x40;&amp;#x32;&amp;#x2e;&amp;#52;&amp;#x2e;&amp;#x39;&lt;/a&gt;” failed.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在log中, 笔者发现了这样的请求&lt;/p&gt;
 &lt;blockquote&gt;

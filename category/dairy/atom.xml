@@ -3,7 +3,7 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;dairy&#34; category</title>
     <link href="https://youngforest.github.io" />
-    <updated>2021-07-11T04:47:44.831Z</updated>
+    <updated>2021-12-19T11:34:29.229Z</updated>
     <category term="tech" />
     <category term="life" />
     <category term="intern" />
@@ -25,11 +25,13 @@
     <category term="Algorithm" />
     <category term="LeetCode" />
     <category term="Mihayo" />
+    <category term="键盘" />
     <category term="Linux" />
-    <category term="atom" />
     <category term="trvalling" />
+    <category term="atom" />
     <category term="hash" />
     <category term="unordered_map" />
+    <category term="English" />
     <category term="折腾" />
     <category term="codeforces" />
     <category term="contest" />
@@ -49,12 +51,10 @@
     <category term="gcc" />
     <category term="git" />
     <category term="Tencent" />
-    <category term="English" />
-    <category term="键盘" />
     <entry>
-        <id>https://youngforest.github.io/2021/07/11/my-3-years-master/</id>
+        <id>https://youngforest.github.io/2021/12/19/my-3-years-master/</id>
         <title>硕士3年复盘</title>
-        <link rel="alternate" href="https://youngforest.github.io/2021/07/11/my-3-years-master/"/>
+        <link rel="alternate" href="https://youngforest.github.io/2021/12/19/my-3-years-master/"/>
         <content type="html">&lt;p&gt;本科毕业时，我写了4年的总结：&lt;a href=&#34;https://youngforest.github.io/2018/10/03/my-4-years-college/&#34;&gt;大学4年复盘&lt;/a&gt;. 现在转眼之间3年过去了，我已研究生毕业，即将进入职场。&lt;/p&gt;
 &lt;p&gt;虽然经历了半年延毕，但最后还是有惊无险的成功毕业了。上周完成了去武汉的毕业旅行，周末回到北京搬家和准备入职。带着对未来美好的期望，我踌躇满志。&lt;/p&gt;
 &lt;h2 id=&#34;硕士3年&#34;&gt;&lt;a href=&#34;#硕士3年&#34; class=&#34;headerlink&#34; title=&#34;硕士3年&#34;&gt;&lt;/a&gt;硕士3年&lt;/h2&gt;&lt;p&gt;3年前，因为本科成绩优异。我最后走上了保研这条看似光鲜亮丽的路。&lt;br&gt;虽然经历了诸多坎坷和焦虑，但我并不后悔这样的选择。&lt;br&gt;对于我这样的小镇做题家，这样的结果和发展道路属实更加稳妥，风险更低，收益也相对可观。&lt;/p&gt;
@@ -71,7 +71,7 @@
 &lt;p&gt;&lt;img src=&#34;/images/%E7%89%9B%E8%80%81%E5%B8%88%E5%92%8C%E6%9D%A8%E6%A3%AE.jpeg&#34; alt=&#34;硕士毕业和导师的合影&#34;&gt;&lt;/p&gt;
 </content>
         <category term="life" />
-        <updated>2021-07-11T04:47:44.831Z</updated>
+        <updated>2021-12-19T11:34:29.229Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/07/02/Wuhan-trip/</id>
