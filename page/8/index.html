@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">222</span>
+          <span class="site-state-item-count">223</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -203,6 +203,138 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/06/15/LeetCode-weekly-contest-193/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/06/15/LeetCode-weekly-contest-193/" class="post-title-link" itemprop="url">LeetCode weekly contest 193</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-06-15 12:19:06" itemprop="dateCreated datePublished" datetime="2020-06-15T12:19:06+08:00">2020-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/06/15/LeetCode-weekly-contest-193/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/15/LeetCode-weekly-contest-193/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1854 / 13794</td>
+<td>YoungForest</td>
+<td>12</td>
+<td>1:18:35</td>
+<td>0:15:31</td>
+<td>0:12:31</td>
+<td>1:18:35</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>最近比赛能力有所下降，昨晚的双周赛也是有一道第3题没做出来，现在更是最后一题没做出来。对Q4的树上倍增算法不了解。</p>
+<h2 id="1480-Running-Sum-of-1d-Array"><a href="#1480-Running-Sum-of-1d-Array" class="headerlink" title="1480. Running Sum of 1d Array"></a>1480. Running Sum of 1d Array</h2><p>签到题，一遍presum求和。<br>也可以使用STL 中的<a target="_blank" rel="noopener" href="https://leetcode.com/problems/running-sum-of-1d-array/discuss/686276/C++-partial_sum">partial_sum</a>，达到相同的效果。</p>
+<p>时间复杂度: O(N),<br>空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">runningSum</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; presum;</span><br><span class="line">        presum.<span class="built_in">reserve</span>(nums.<span class="built_in">size</span>() + <span class="number">1</span>);</span><br><span class="line">        presum.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : nums) &#123;</span><br><span class="line">            presum.<span class="built_in">push_back</span>(presum.<span class="built_in">back</span>() + i);</span><br><span class="line">        &#125;</span><br><span class="line">        presum.<span class="built_in">erase</span>(presum.<span class="built_in">begin</span>());</span><br><span class="line">        <span class="keyword">return</span> presum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1481-Least-Number-of-Unique-Integers-after-K-Removals"><a href="#1481-Least-Number-of-Unique-Integers-after-K-Removals" class="headerlink" title="1481. Least Number of Unique Integers after K Removals"></a>1481. Least Number of Unique Integers after K Removals</h2><p>贪心。<br>按照频数从小到大排序，先删除小的。</p>
+<p>时间复杂度: O(N + N log N + K),<br>空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findLeastNumOfUniqueInts</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; arr, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; count;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">            ++count[i];</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; frequence;</span><br><span class="line">        frequence.<span class="built_in">reserve</span>(count.<span class="built_in">size</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : count) &#123;</span><br><span class="line">            frequence.<span class="built_in">push_back</span>(p.second);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(frequence.<span class="built_in">begin</span>(), frequence.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = frequence.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (i == k) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; frequence.<span class="built_in">size</span>(); ++j) &#123;</span><br><span class="line">            i += frequence[j];</span><br><span class="line">            <span class="keyword">if</span> (i == k) &#123;</span><br><span class="line">                <span class="keyword">return</span> n - j - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &gt; k) &#123;</span><br><span class="line">                <span class="keyword">return</span> n - j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/15/LeetCode-weekly-contest-193/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/06/07/LeetCode-weekly-contest-192/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,7 +366,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -366,7 +498,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -498,7 +630,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -630,7 +762,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -736,7 +868,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -847,7 +979,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -957,7 +1089,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1089,7 +1221,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1203,7 +1335,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1274,138 +1406,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/17/LeetCode-weekly-contest-189/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/05/17/LeetCode-biweekly-contest-26/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/17/LeetCode-biweekly-contest-26/" class="post-title-link" itemprop="url">LeetCode biweekly contest 26</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-17 10:15:47" itemprop="dateCreated datePublished" datetime="2020-05-17T10:15:47+08:00">2020-05-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/17/LeetCode-biweekly-contest-26/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/17/LeetCode-biweekly-contest-26/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <table>
-<thead>
-<tr>
-<th>Rank</th>
-<th>Name</th>
-<th>Score</th>
-<th>Finish Time</th>
-<th>Q1 (3)</th>
-<th>Q2 (4)</th>
-<th>Q3 (5)</th>
-<th>Q4 (7)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>115 / 7795</td>
-<td>YoungForest</td>
-<td>19</td>
-<td>0:33:49</td>
-<td>0:03:55</td>
-<td>0:08:25</td>
-<td>0:11:57</td>
-<td>0:28:49  1</td>
-</tr>
-</tbody></table>
-<p>上上周是五一假期，去河北正定和，因疫情原因，3个月没有见面的女朋友约会。所以周六晚上就时间不太合适，鸽了一场双周赛。之后还是会尽量参加的。最近比赛越来越顺手了，无论是每次的排名，还是rating，或是残酷群的排名。比之前都有所上升。尤其要感谢残酷群的每日一题和不定时的讲座，让我对DP和很多Hard的题目有了解决的信心。在此，再次安利一下<a target="_blank" rel="noopener" href="https://wisdompeak.github.io/lc-score-board/">残酷刷题群</a>.</p>
-<h2 id="1446-Consecutive-Characters"><a href="#1446-Consecutive-Characters" class="headerlink" title="1446. Consecutive Characters"></a>1446. Consecutive Characters</h2><p>滑动窗口，维持整个窗口的字母相等。</p>
-<p>时间复杂度: O(N),<br>空间复杂度: O(1).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxPower</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; r &lt; s.<span class="built_in">size</span>(); ++r) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[r] == s[l]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, r - l);</span><br><span class="line">                l = r;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, n - l);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1447-Simplified-Fractions"><a href="#1447-Simplified-Fractions" class="headerlink" title="1447. Simplified Fractions"></a>1447. Simplified Fractions</h2><p>枚举所有的分母和分子，并判断是否是最简形式。幸运的是，C++17已经内置提供<code>gcd</code>函数。</p>
-<p>时间复杂度: O(n^2),<br>空间复杂度: O(n).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">simplifiedFractions</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> down = <span class="number">2</span>; down &lt;= n; ++down) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> up = <span class="number">1</span>; up &lt; down; ++up) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">gcd</span>(up, down) == <span class="number">1</span>) &#123;</span><br><span class="line">                    ans.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(up) + <span class="string">&quot;/&quot;</span> + <span class="built_in">to_string</span>(down));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/17/LeetCode-biweekly-contest-26/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">222</span>
+          <span class="site-state-item-count">223</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -203,6 +203,116 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/10/04/LeetCode-weekly-contest-156/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/10/04/LeetCode-weekly-contest-156/" class="post-title-link" itemprop="url">LeetCode weekly contest 156</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-04 12:41:57" itemprop="dateCreated datePublished" datetime="2019-10-04T12:41:57+08:00">2019-10-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/10/04/LeetCode-weekly-contest-156/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/04/LeetCode-weekly-contest-156/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>赛后补题。</p>
+<h2 id="1207-Unique-Number-of-Occurrences"><a href="#1207-Unique-Number-of-Occurrences" class="headerlink" title="1207. Unique Number of Occurrences"></a>1207. Unique Number of Occurrences</h2><p>Record the number of occurrences of each value by <code>unordered_map</code>.<br>Check the unique using <code>unordered_set</code>.</p>
+<p>Time complexity: O(N),<br>Space complexity: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">uniqueOccurrences</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="keyword">int</span>&gt; count;</span><br><span class="line">        unordered_map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; seen;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">            ++seen[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : seen) &#123;</span><br><span class="line">            <span class="keyword">if</span> (count.<span class="built_in">find</span>(p.second) != count.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                count.<span class="built_in">insert</span>(p.second);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1208-Get-Equal-Substrings-Within-Budget"><a href="#1208-Get-Equal-Substrings-Within-Budget" class="headerlink" title="1208. Get Equal Substrings Within Budget"></a>1208. Get Equal Substrings Within Budget</h2><p>Sliding window.<br>Use a sliding window to represent the available substring.</p>
+<p>Time complexity: O(N),<br>space complexity: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">equalSubstring</span><span class="params">(string s, string t, <span class="keyword">const</span> <span class="keyword">int</span> maxCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// window: [left, right), length = right - left</span></span><br><span class="line">        <span class="keyword">int</span> cost = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (right &lt; s.<span class="built_in">size</span>() &amp;&amp; cost + std::<span class="built_in">abs</span>(s[right] - t[right]) &lt;= maxCost) &#123;</span><br><span class="line">                cost += std::<span class="built_in">abs</span>(s[right] - t[right]);</span><br><span class="line">                ++right;</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, right - left);</span><br><span class="line">            &#125;</span><br><span class="line">            cost -= std::<span class="built_in">abs</span>(s[left] - t[left]);</span><br><span class="line">            ++left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1209-Remove-All-Adjacent-Duplicates-in-String-II"><a href="#1209-Remove-All-Adjacent-Duplicates-in-String-II" class="headerlink" title="1209. Remove All Adjacent Duplicates in String II"></a>1209. Remove All Adjacent Duplicates in String II</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/10/04/LeetCode-weekly-contest-156/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/09/30/Paris/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,7 +344,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -341,7 +451,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -448,7 +558,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -558,7 +668,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -661,7 +771,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -793,7 +903,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -903,7 +1013,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1010,7 +1120,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1142,7 +1252,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-29 23:17:24" itemprop="dateModified" datetime="2021-12-29T23:17:24+08:00">2021-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1190,114 +1300,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/31/LeetCode-weekly-contest-151/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/08/29/kick-start-2019-round-E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/29/kick-start-2019-round-E/" class="post-title-link" itemprop="url">kick start 2019 round E</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-29 19:12:03" itemprop="dateCreated datePublished" datetime="2019-08-29T19:12:03+08:00">2019-08-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 19:34:29" itemprop="dateModified" datetime="2021-12-19T19:34:29+08:00">2021-12-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/KickStart/" itemprop="url" rel="index"><span itemprop="name">KickStart</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/08/29/kick-start-2019-round-E/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/29/kick-start-2019-round-E/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Cherries-Mesh"><a href="#Cherries-Mesh" class="headerlink" title="Cherries Mesh"></a>Cherries Mesh</h2><p>Minimum spanning tree.<br>尤其要注意Union-find的实现中，find要采用path compression的方法才能实现O(1).<br>否则会超时。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">UF</span> &#123;</span></span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; parents;</span><br><span class="line">	<span class="built_in">UF</span>(<span class="keyword">int</span> n) &#123;</span><br><span class="line">		parents.<span class="built_in">resize</span>(n);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">			parents[i] = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> parents[x] == x ? x : (parents[x] = <span class="built_in">find</span>(parents[x]));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">unio</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> px = <span class="built_in">find</span>(x);</span><br><span class="line">		<span class="keyword">int</span> py = <span class="built_in">find</span>(y);</span><br><span class="line">		parents[px] = py;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; T; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> N, M;</span><br><span class="line">		cin &gt;&gt; N &gt;&gt; M;</span><br><span class="line">		<span class="function">UF <span class="title">uf</span><span class="params">(N)</span></span>;</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; M; ++j) &#123;</span><br><span class="line">			<span class="keyword">int</span> l, r;</span><br><span class="line">			cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line">			--l;</span><br><span class="line">			--r;</span><br><span class="line">			<span class="keyword">if</span> (uf.<span class="built_in">find</span>(l) == uf.<span class="built_in">find</span>(r)) &#123;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			uf.<span class="built_in">unio</span>(l, r);</span><br><span class="line">			ans += <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ans += (N - <span class="number">1</span> - ans) * <span class="number">2</span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Code-Eat-Switcher"><a href="#Code-Eat-Switcher" class="headerlink" title="Code-Eat Switcher"></a>Code-Eat Switcher</h2><h3 id="Test-set-1"><a href="#Test-set-1" class="headerlink" title="Test set 1:"></a>Test set 1:</h3><p>S = 1 或 2。列不等式就可以求解。<br>当S = 2时，有2个变量，不等式求解过程类似线性规划。</p>
-<p>比赛的时候思路是对的，但是因为S = 1时，返回值写错了，一直没有AC。当时一直在调S = 2时的逻辑，完全没有想到S = 1时会出错。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">solve</span><span class="params">(<span class="keyword">const</span> vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;&amp; energy, <span class="keyword">const</span> <span class="keyword">int</span> S, <span class="keyword">double</span> code, <span class="keyword">double</span> eat)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (S == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">double</span> Ci = energy[<span class="number">0</span>].first;</span><br><span class="line">        <span class="keyword">double</span> Ei = energy[<span class="number">0</span>].second;</span><br><span class="line">        <span class="keyword">return</span> code / Ci + eat / Ei &lt;= <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (S == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">double</span> C1 = energy[<span class="number">0</span>].first, C2 = energy[<span class="number">1</span>].first;</span><br><span class="line">        <span class="keyword">double</span> E1 = energy[<span class="number">0</span>].second, E2 = energy[<span class="number">1</span>].second;</span><br><span class="line">        <span class="keyword">if</span> (C1 / C2 == E1 / E2) &#123;</span><br><span class="line">            vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; tmp = &#123;<span class="built_in">make_pair</span>(energy[<span class="number">0</span>].first + energy[<span class="number">1</span>].first, energy[<span class="number">0</span>].second + energy[<span class="number">1</span>].second)&#125;;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">solve</span>(tmp, <span class="number">1</span>, code, eat);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> C = code, E = eat;</span><br><span class="line">        <span class="keyword">double</span> x = (C / C2 - <span class="number">1</span> + E / E2 - E1 / E2) / (C1 / C2 - E1 / E2);</span><br><span class="line">        <span class="keyword">double</span> y = C / C2 - x * C1 / C2;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;result: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; &quot;|&quot; &lt;&lt; x * C1 + y * C2 &lt;&lt; &quot;, &quot; &lt;&lt; (1 - x) * E1 + (1 - y) * E2 &lt;&lt; &quot; | &quot; &lt;&lt; </span></span><br><span class="line">        <span class="comment">// 1 - E / E2 + E1 / E2 - x * E1 / E2</span></span><br><span class="line">        <span class="comment">// &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">if</span> (x &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> - E / E2 + E1 / E2 - <span class="number">1</span> * E1 / E2 &gt;= C / C2 - <span class="number">1</span> * C1 / C2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (y &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> (<span class="number">1</span> - E / E2 + E1 / E2 - <span class="number">1</span>) * (E2 / E1) &gt;= (C / C2 - <span class="number">1</span>) * (C2 / C1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> - E / E2 + E1 / E2 &gt;= C / C2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (y &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> (<span class="number">1</span> - E / E2 + E1 / E2) * (E2 / E1) &gt;= (C / C2) * (C2 / C1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// return x &gt;= 0 &amp;&amp; y &gt;= 0 &amp;&amp; x &lt;= 1 &amp;&amp; y &lt;= 1;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; T; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> D, S;</span><br><span class="line">        cin &gt;&gt; D &gt;&gt; S;</span><br><span class="line">        string ans;</span><br><span class="line">        vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; <span class="built_in">energy</span>(S);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; S; ++i) &#123;</span><br><span class="line">            cin &gt;&gt; energy[i].first &gt;&gt; energy[i].second;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; D; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> A, B;</span><br><span class="line">            cin &gt;&gt; A &gt;&gt; B;</span><br><span class="line">            <span class="keyword">bool</span> yes = <span class="built_in">solve</span>(energy, S, A, B);</span><br><span class="line">            <span class="keyword">if</span> (yes) &#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(<span class="string">&#x27;Y&#x27;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(<span class="string">&#x27;N&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Test-Set-2"><a href="#Test-Set-2" class="headerlink" title="Test Set 2"></a>Test Set 2</h3><p>观察有，对于每个slot，每获得1份eating能量，就会少收获$C_i / E_i$份coding能量。所以如果$C_i / E_i &lt; C_j / E_j$的话，更好的选择永远时i。<br>根据这个观察，我们把slot根据$C_i / E_i$排序，计算E的前缀和和C的后缀和。每天使用二分查找找到满足eating的分界点，再判断是否满足coding。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/29/kick-start-2019-round-E/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
