@@ -8094,7 +8094,7 @@
         <category>dairy</category>
       </categories>
       <tags>
-        <tag>trvalling</tag>
+        <tag>travel</tag>
       </tags>
   </entry>
   <entry>
@@ -8103,7 +8103,7 @@
     <content><![CDATA[<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><p>笔者的需求是在markdown文档中插入LaTeX公式, atom默认的<code>markdown-preview</code>包无法满足要求. 经过搜索, 社区包<code>markdown-preview-plus</code>可是满足该需求.</p>
 <h3 id="atom包管理"><a href="#atom包管理" class="headerlink" title="atom包管理"></a><a href="http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages">atom包管理</a></h3><p>按照官方教程, 安装失败</p>
 <blockquote>
-<p>Installing “<a href="mailto:&#109;&#x61;&#114;&#x6b;&#x64;&#x6f;&#119;&#x6e;&#45;&#112;&#x72;&#101;&#118;&#x69;&#x65;&#119;&#45;&#x70;&#x6c;&#x75;&#115;&#64;&#x32;&#46;&#x34;&#46;&#x39;">&#109;&#x61;&#114;&#x6b;&#x64;&#x6f;&#119;&#x6e;&#45;&#112;&#x72;&#101;&#118;&#x69;&#x65;&#119;&#45;&#x70;&#x6c;&#x75;&#115;&#64;&#x32;&#46;&#x34;&#46;&#x39;</a>” failed.</p>
+<p>Installing “<a href="mailto:&#109;&#x61;&#114;&#107;&#100;&#x6f;&#119;&#110;&#45;&#x70;&#114;&#x65;&#x76;&#105;&#101;&#119;&#45;&#x70;&#x6c;&#117;&#115;&#64;&#x32;&#46;&#52;&#x2e;&#x39;">&#109;&#x61;&#114;&#107;&#100;&#x6f;&#119;&#110;&#45;&#x70;&#114;&#x65;&#x76;&#105;&#101;&#119;&#45;&#x70;&#x6c;&#117;&#115;&#64;&#x32;&#46;&#52;&#x2e;&#x39;</a>” failed.</p>
 </blockquote>
 <p>在log中, 笔者发现了这样的请求</p>
 <blockquote>
@@ -8158,8 +8158,11 @@
 <li>总计 770</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>dairy</category>
+      </categories>
       <tags>
-        <tag>trvalling</tag>
+        <tag>travel</tag>
       </tags>
   </entry>
   <entry>
@@ -9204,7 +9207,7 @@ Undefined symbols for architecture x86_64:
         <category>dairy</category>
       </categories>
       <tags>
-        <tag>trvalling</tag>
+        <tag>travel</tag>
       </tags>
   </entry>
   <entry>
@@ -9541,7 +9544,7 @@ Undefined symbols for architecture x86_64:
         <category>dairy</category>
       </categories>
       <tags>
-        <tag>trvalling</tag>
+        <tag>travel</tag>
       </tags>
   </entry>
   <entry>
