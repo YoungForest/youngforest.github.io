@@ -128,7 +128,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">227</span>
+          <span class="site-state-item-count">228</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -200,6 +200,113 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/05/27/unordered-map-hash-pair-c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="杨森">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | YoungForest's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/05/27/unordered-map-hash-pair-c/" class="post-title-link" itemprop="url">pair 作为 unordered_map unordered_set 的键值 C++</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-27 11:57:01" itemprop="dateCreated datePublished" datetime="2020-05-27T11:57:01+08:00">2020-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/27/unordered-map-hash-pair-c/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/27/unordered-map-hash-pair-c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          今天在做一道AtCoder的题目，有个test case一直TLE。研究这个测试用例和其他用例的区别，苦思不得其解。后来把unordered_map换成map就过了。虽然在小数据集上hashmap和treemap区别不大，但数据量大的话，hashmap还是好些。所以最佳实践是，在不需要排序特性时，就用hashmap。
+而且之前也从来没有遇到过hashmap比treemap效果差这么多的原因。最后花了一上午时间，才定位到是我的 pair 的hash函数实现太糟糕了。因为C++ STL中并没有pair的hash特化，所以如果想把pair当作键用在unordered_map中的话，就需要自己实现ha
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/27/unordered-map-hash-pair-c/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/05/24/LeetCode-weekly-contest-190/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -236,7 +343,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -372,7 +479,7 @@ c
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -484,7 +591,7 @@ One pass. 寻找countdown的模式。由于开始数字一定为K，所以countd
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -603,7 +710,7 @@ gcc-9 -v -E -x c
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -711,7 +818,7 @@ gcc-9 -v -E -x c
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -819,7 +926,7 @@ gcc-9 -v -E -x c
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -927,7 +1034,7 @@ gcc-9 -v -E -x c
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1060,7 +1167,7 @@ public:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1173,7 +1280,7 @@ public:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
+      <time title="修改时间：2022-12-29 04:49:19" itemprop="dateModified" datetime="2022-12-29T04:49:19+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1217,143 +1324,6 @@ public:
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/26/LeetCode-weekly-contest-186/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2020/04/20/LeetCode-weekly-contest-185/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="杨森">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | YoungForest's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/04/20/LeetCode-weekly-contest-185/" class="post-title-link" itemprop="url">LeetCode weekly contest 185</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-04-20 11:42:21" itemprop="dateCreated datePublished" datetime="2020-04-20T11:42:21+08:00">2020-04-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-27 00:38:23" itemprop="dateModified" datetime="2022-12-27T00:38:23+08:00">2022-12-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/04/20/LeetCode-weekly-contest-185/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/04/20/LeetCode-weekly-contest-185/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          RankNameScoreFinish TimeQ1 (4)Q2 (4)Q3 (6)Q4 (7)703 / 9206YoungForest120:36:350:10:240:22:030:31:35 1null1417. Reformat The String
-分别统计数字和字母的个数。如果相差个数不大于1，则可以reformat。
-先选多的那类。
-
-时间复杂度: O(N),
-空间复杂度: O(N). 可以用双指针的方法，节省存储数字和字母的string的空间。
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/20/LeetCode-weekly-contest-185/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
