@@ -7,10 +7,10 @@
         <language>zh-CN,en,default</language>
         <pubDate>Tue, 27 Mar 2018 19:27:55 +0800</pubDate>
         <lastBuildDate>Tue, 27 Mar 2018 19:27:55 +0800</lastBuildDate>
-        <category>tech</category>
         <category>life</category>
         <category>intern</category>
         <category>kuaishou</category>
+        <category>tech</category>
         <category>Alibaba</category>
         <category>travel</category>
         <category>北京</category>
@@ -55,6 +55,7 @@
         <category>vscode</category>
         <category>gcc</category>
         <category>git</category>
+        <category>Tech</category>
         <category>Tencent</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2018/03/27/latex-problems/</guid>

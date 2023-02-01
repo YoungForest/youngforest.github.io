@@ -7,10 +7,10 @@
         <language>zh-CN,en,default</language>
         <pubDate>Sun, 20 Aug 2017 22:42:32 +0800</pubDate>
         <lastBuildDate>Sun, 20 Aug 2017 22:42:32 +0800</lastBuildDate>
-        <category>tech</category>
         <category>life</category>
         <category>intern</category>
         <category>kuaishou</category>
+        <category>tech</category>
         <category>Alibaba</category>
         <category>travel</category>
         <category>北京</category>
@@ -55,6 +55,7 @@
         <category>vscode</category>
         <category>gcc</category>
         <category>git</category>
+        <category>Tech</category>
         <category>Tencent</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/</guid>

@@ -4,10 +4,10 @@
     <title>YoungForest&#39;s blog • Posts by &#34;kaggle&#34; category</title>
     <link href="https://youngforest.github.io" />
     <updated>2018-08-14T03:22:23.000Z</updated>
-    <category term="tech" />
     <category term="life" />
     <category term="intern" />
     <category term="kuaishou" />
+    <category term="tech" />
     <category term="Alibaba" />
     <category term="travel" />
     <category term="北京" />
@@ -52,6 +52,7 @@
     <category term="vscode" />
     <category term="gcc" />
     <category term="git" />
+    <category term="Tech" />
     <category term="Tencent" />
     <entry>
         <id>https://youngforest.github.io/2018/08/14/kaggle-titanic-tutorial/</id>

@@ -7,10 +7,10 @@
         <language>zh-CN,en,default</language>
         <pubDate>Sat, 27 Feb 2021 17:10:01 +0800</pubDate>
         <lastBuildDate>Sat, 27 Feb 2021 17:10:01 +0800</lastBuildDate>
-        <category>tech</category>
         <category>life</category>
         <category>intern</category>
         <category>kuaishou</category>
+        <category>tech</category>
         <category>Alibaba</category>
         <category>travel</category>
         <category>北京</category>
@@ -55,6 +55,7 @@
         <category>vscode</category>
         <category>gcc</category>
         <category>git</category>
+        <category>Tech</category>
         <category>Tencent</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2021/02/27/build-qBittorrent/</guid>

@@ -4,10 +4,10 @@
     <title>YoungForest&#39;s blog • Posts by &#34;kuaishou&#34; tag</title>
     <link href="https://youngforest.github.io" />
     <updated>2018-05-07T15:30:25.000Z</updated>
-    <category term="tech" />
     <category term="life" />
     <category term="intern" />
     <category term="kuaishou" />
+    <category term="tech" />
     <category term="Alibaba" />
     <category term="travel" />
     <category term="北京" />
@@ -52,6 +52,7 @@
     <category term="vscode" />
     <category term="gcc" />
     <category term="git" />
+    <category term="Tech" />
     <category term="Tencent" />
     <entry>
         <id>https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</id>
@@ -80,8 +81,8 @@
 &lt;h3 id=&#34;‘left-join’，’right-join’，’inner-join’的区别&#34;&gt;&lt;a href=&#34;#‘left-join’，’right-join’，’inner-join’的区别&#34; class=&#34;headerlink&#34; title=&#34;‘left join’，’right join’，’inner join’的区别&#34;&gt;&lt;/a&gt;‘left join’，’right join’，’inner join’的区别&lt;/h3&gt;&lt;p&gt;‘inner join’即内联结，对于不匹配的项，不存在于联结结果中；’left join’，左外联结，如果左边的项在右边的表中没有匹配项，仍存在一条记录于联结结果中，此时右边表列均为NULL；’right join’，右联结与之类似。事实上，’left join’和’right join’可以互换，只是联结的左右两表也需要互换位置。&lt;/p&gt;
 &lt;h3 id=&#34;partition的概念&#34;&gt;&lt;a href=&#34;#partition的概念&#34; class=&#34;headerlink&#34; title=&#34;partition的概念&#34;&gt;&lt;/a&gt;partition的概念&lt;/h3&gt;&lt;p&gt;partion是为了加快查询速度，而将一个表分成不同的区。&lt;br&gt;限制是，select时，被partition的列必须写在where里作为filter。&lt;/p&gt;
 </content>
-        <category term="tech" />
         <category term="kuaishou" />
+        <category term="tech" />
         <updated>2018-05-07T15:30:25.000Z</updated>
     </entry>
     <entry>
