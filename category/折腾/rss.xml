@@ -7,10 +7,10 @@
         <language>zh-CN,en,default</language>
         <pubDate>Wed, 13 Oct 2021 12:39:31 +0800</pubDate>
         <lastBuildDate>Wed, 13 Oct 2021 12:39:31 +0800</lastBuildDate>
+        <category>tech</category>
         <category>life</category>
         <category>intern</category>
         <category>kuaishou</category>
-        <category>tech</category>
         <category>Alibaba</category>
         <category>travel</category>
         <category>北京</category>
@@ -264,7 +264,7 @@
             <description><![CDATA[ &lt;h2 id=&#34;配置代理&#34;&gt;&lt;a href=&#34;#配置代理&#34; class=&#34;headerlink&#34; title=&#34;配置代理&#34;&gt;&lt;/a&gt;配置代理&lt;/h2&gt;&lt;p&gt;笔者的需求是在markdown文档中插入LaTeX公式, atom默认的&lt;code&gt;markdown-preview&lt;/code&gt;包无法满足要求. 经过搜索, 社区包&lt;code&gt;markdown-preview-plus&lt;/code&gt;可是满足该需求.&lt;/p&gt;
 &lt;h3 id=&#34;atom包管理&#34;&gt;&lt;a href=&#34;#atom包管理&#34; class=&#34;headerlink&#34; title=&#34;atom包管理&#34;&gt;&lt;/a&gt;&lt;a href=&#34;http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages&#34;&gt;atom包管理&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;按照官方教程, 安装失败&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Installing “&lt;a href=&#34;mailto:&amp;#x6d;&amp;#97;&amp;#x72;&amp;#107;&amp;#x64;&amp;#x6f;&amp;#x77;&amp;#x6e;&amp;#45;&amp;#112;&amp;#x72;&amp;#101;&amp;#x76;&amp;#105;&amp;#x65;&amp;#119;&amp;#45;&amp;#x70;&amp;#108;&amp;#117;&amp;#115;&amp;#64;&amp;#x32;&amp;#46;&amp;#52;&amp;#46;&amp;#57;&#34;&gt;&amp;#x6d;&amp;#97;&amp;#x72;&amp;#107;&amp;#x64;&amp;#x6f;&amp;#x77;&amp;#x6e;&amp;#45;&amp;#112;&amp;#x72;&amp;#101;&amp;#x76;&amp;#105;&amp;#x65;&amp;#119;&amp;#45;&amp;#x70;&amp;#108;&amp;#117;&amp;#115;&amp;#64;&amp;#x32;&amp;#46;&amp;#52;&amp;#46;&amp;#57;&lt;/a&gt;” failed.&lt;/p&gt;
+&lt;p&gt;Installing “&lt;a href=&#34;mailto:&amp;#x6d;&amp;#x61;&amp;#114;&amp;#107;&amp;#100;&amp;#111;&amp;#119;&amp;#x6e;&amp;#x2d;&amp;#x70;&amp;#114;&amp;#101;&amp;#118;&amp;#x69;&amp;#x65;&amp;#x77;&amp;#45;&amp;#112;&amp;#108;&amp;#117;&amp;#x73;&amp;#64;&amp;#50;&amp;#46;&amp;#52;&amp;#x2e;&amp;#x39;&#34;&gt;&amp;#x6d;&amp;#x61;&amp;#114;&amp;#107;&amp;#100;&amp;#111;&amp;#119;&amp;#x6e;&amp;#x2d;&amp;#x70;&amp;#114;&amp;#101;&amp;#118;&amp;#x69;&amp;#x65;&amp;#x77;&amp;#45;&amp;#112;&amp;#108;&amp;#117;&amp;#x73;&amp;#64;&amp;#50;&amp;#46;&amp;#52;&amp;#x2e;&amp;#x39;&lt;/a&gt;” failed.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在log中, 笔者发现了这样的请求&lt;/p&gt;
 &lt;blockquote&gt;

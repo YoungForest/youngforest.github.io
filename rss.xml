@@ -7,10 +7,10 @@
         <language>zh-CN,en,default</language>
         <pubDate>Sun, 25 Dec 2022 10:59:13 +0800</pubDate>
         <lastBuildDate>Sun, 25 Dec 2022 10:59:13 +0800</lastBuildDate>
+        <category>tech</category>
         <category>life</category>
         <category>intern</category>
         <category>kuaishou</category>
-        <category>tech</category>
         <category>Alibaba</category>
         <category>travel</category>
         <category>北京</category>
@@ -150,7 +150,9 @@
             <category>life</category>
             <category>Tech</category>
             <pubDate>Fri, 09 Dec 2022 16:42:27 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;今年，我按照预期计划，从国内投欧洲程序员的岗位，虽然赶上宏观经济下行，各个公司纷纷hire freeze甚至layoff。幸运地，还是拿到了2个offer，并在11月成功入职完成肉翻。虽然历经了不少坎坷，回过头看也算是一切顺利。在“润”地道路上被很多有经验地群友帮助，因此我也撰写一篇博客，总结自己地经验和教训，以方便后来人。&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;转自&lt;a href=&#34;https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;今年，我按照预期计划，从国内投欧洲程序员的岗位，虽然赶上宏观经济下行，各个公司纷纷hire freeze甚至layoff。幸运地，还是拿到了2个offer，并在11月成功入职完成肉翻。虽然历经了不少坎坷，回过头看也算是一切顺利。在“润”地道路上被很多有经验地群友帮助，因此我也撰写一篇博客，总结自己地经验和教训，以方便后来人。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/%E6%B6%A6%E4%BA%86.png&#34; alt=&#34;润了&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;背景&#34;&gt;&lt;a href=&#34;#背景&#34; class=&#34;headerlink&#34; title=&#34;背景&#34;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;首先给不熟悉我的朋友简单介绍一下我的背景。&lt;br&gt;在北京某校读了计算机本硕。&lt;br&gt;读书时从大四开始有过不少实习经历，先后在小厂、大厂，人工智能、自动驾驶，国内互联网、外企干过一段时间，在学校也有长期的科研经历。&lt;br&gt;实习是不错的成本比较低的试错机会。&lt;br&gt;经过这些尝试，结合自己的实际情况，我确定了自己的目标。找工作，而非科研。去大厂，而不是小厂。来外企，而非国内企业。&lt;br&gt;在2020年初，因为新交的女朋友毕业后想留学的原因，确定了要润到欧洲工作的计划。&lt;br&gt;2021年硕士毕业后，如愿在北京某国际知名外企工作了一年零4个月时间。这段经历在简历上也极大地帮助我拿到不少面试。&lt;/p&gt;
 &lt;p&gt;新加坡、日本、欧洲、加拿大、澳洲 都是程序员润的热门目的地。&lt;br&gt;和美国相比，这些地区工签制度十分友好，基本只要拿到offer，都能轻松办下工签。&lt;br&gt;同时很多发达国家拥有从出生到坟墓的福利制度，尤其适合逃离国内996而且拖家带口的同行们。&lt;br&gt;最重要的是工作机会多，竞争压力小，有大量面向海外招人的岗位。从我的经验来看，不考虑语言挑战的话，面试难度是远小于国内的。&lt;br&gt;本文虽然是以投欧洲为背景，不过大多数经验也是对其他地区有帮助的。尤其是投谷歌、亚马逊、微软这种美企的。&lt;/p&gt;
 &lt;h2 id=&#34;时间线&#34;&gt;&lt;a href=&#34;#时间线&#34; class=&#34;headerlink&#34; title=&#34;时间线&#34;&gt;&lt;/a&gt;时间线&lt;/h2&gt;&lt;p&gt;3月开始在Stack Overflow（现在Jobs板块已关闭）、Google Jobs、LinkedIn上海投，也找了不少朋友内推。因为女朋友将在阿姆斯特丹读书，我投的工作地点主要以荷兰为主，也投了德国、爱尔兰、英国等其他国家。&lt;br&gt;这段时间以中小公司为主，想在投大厂前多练练。但并不理想，大多数直接被据，只有4个面试。&lt;/p&gt;
@@ -204,7 +206,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=IyPJFHFUpbQ&amp;ab_channel=DanCroitor&#34;&gt;DanCroitor&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;爱尔兰-怎么样？&#34;&gt;&lt;a href=&#34;#爱尔兰-怎么样？&#34; class=&#34;headerlink&#34; title=&#34;爱尔兰 怎么样？&#34;&gt;&lt;/a&gt;爱尔兰 怎么样？&lt;/h2&gt;&lt;p&gt;我这两年也加入了一起志同道合润的微信群（V2WORLD），也认识了不少已经润，正在润和将要润的群友。说实话，2022年因为国内经济和疫情封控的原因，润的人更多了。&lt;br&gt;从这个小范围样本来看（大概2百人，大概率会有幸存者偏差），润到新加坡/欧洲（其中德国占大部分）的居多，日本、加拿大、澳洲的其次。&lt;br&gt;爱尔兰算是一个不大热门也不引人关注的国家。其实我投递的时候也是没以爱尔兰为主的，但是后来发现这里大厂很多，包括很多美企巨头的欧洲总部，如 Microsoft，Apple，Google，AWS （Amazon的欧洲总部在卢森堡）。基本上都有3千研发的办公室。比如微软这里有2栋楼，3500+个研发。工作机会很多，尤其是如果你偏爱美企大厂，或者以后想通过L1润美的话。以后跳槽和职业发展也不错，也被称为欧洲小硅谷。&lt;br&gt;除了程序员比较好找工作外，药企也是爱尔兰支柱产业。&lt;/p&gt;
-&lt;p&gt;另外爱尔兰移民政策十分友好，有offer就能办工作许可，也就能办工签。程序员的话基本都是Critical Skill Work Permit。头1年不能换工作，头2年（Stamp 1）需要雇主担保Work Permit。2年后（Stamp 4）就可以自由换工作和自雇了。配偶签证也都可以学习工作。&lt;a href=&#34;https://www.citizensinformation.ie/en/moving_country/irish_citizenship/becoming_an_irish_citizen_through_naturalisation.html#l9d317&#34;&gt;最快5年可以换护照（不过爱尔兰也有移民监，每年离境时间需要不超过6周，否则这年是不算在你的5年里的。）&lt;/a&gt;。不像其他国家，需要语言要求和融入考试。推荐一下我微软同事的帖子: &lt;a href=&#34;https://www.1point3acres.com/bbs/thread-901327-1-1.html&#34;&gt;爱尔兰移民签证体系讲解&lt;/a&gt; 和 &lt;a href=&#34;https://www.irishimmigration.ie/registering-your-immigration-permission/information-on-registering/immigration-permission-stamps/#5b7196a7b9ecd4ab3&#34;&gt;各种居留签官方说明&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;另外爱尔兰移民政策十分友好，有offer就能办工作许可，也就能办工签。程序员的话基本都是Critical Skill Work Permit。头1年不能换工作，头2年（Stamp 1）需要雇主担保Work Permit。2年后（Stamp 4）就可以自由换工作和自雇了。配偶签证也都可以学习工作。&lt;a href=&#34;https://www.citizensinformation.ie/en/moving_country/irish_citizenship/becoming_an_irish_citizen_through_naturalisation.html#l9d317&#34;&gt;最快5年可以换护照（不过爱尔兰也有移民监，每年离境时间需要不超过6周，否则这年是不算在你的5年里的。）&lt;/a&gt;。不像其他国家，需要语言要求和融入考试。推荐一下我微软同事的帖子: &lt;a href=&#34;https://www.1point3acres.com/bbs/thread-901327-1-1.html&#34;&gt;爱尔兰移民签证体系讲解&lt;/a&gt; 和 &lt;a href=&#34;https://www.irishimmigration.ie/registering-your-immigration-permission/information-on-registering/immigration-permission-stamps/#5b7196a7b9ecd4ab3&#34;&gt;各种居留签官方说明&lt;/a&gt;. 感觉爱尔兰其实是价值洼地。岗位多，竞争少。和不少人聊过，感觉面试都更简单。&lt;/p&gt;
 &lt;p&gt;大家润出来一部分人最主要的目的是逃离国内996的卷，更好的生活。爱尔兰像其他国家一样都可以满足这样的需求，也有相对完善的福利制度，完全足以过上“老婆孩子热炕头”的生活。&lt;/p&gt;
 &lt;p&gt;爱尔兰缺点的话，也有很多。&lt;/p&gt;
 &lt;p&gt;都柏林基础设施极差。比大多数欧洲发达国家的首都都差，甚至比不上希腊。没有地铁，轻轨线路也只有2条，公共交通公交是主流。去不同方向的地方都需要去市中心转车。机场不通轻轨或火车，只有大巴和公交。机场设施，如安检，也都相当原始和缓慢。我分析爱尔兰基础设施比较差的主要原因有：1. 人口密度低。爱尔兰人口只有4百万，相比中国和欧洲其他地区人口少，所以基础建设性价比低，跟不上。2. 底子差。因为历史上长期是英国的殖民地，面对着长期的剥削，以发展农业为主，经济腾飞成为工业国是二战后的事儿。不像欧洲其他国家有几百年的工业历史和建设。&lt;/p&gt;

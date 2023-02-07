@@ -7,10 +7,10 @@
         <language>zh-CN,en,default</language>
         <pubDate>Mon, 07 May 2018 23:30:25 +0800</pubDate>
         <lastBuildDate>Mon, 07 May 2018 23:30:25 +0800</lastBuildDate>
+        <category>tech</category>
         <category>life</category>
         <category>intern</category>
         <category>kuaishou</category>
-        <category>tech</category>
         <category>Alibaba</category>
         <category>travel</category>
         <category>北京</category>
@@ -61,8 +61,8 @@
             <guid isPermalink="true">https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</guid>
             <title>SQL实践进阶</title>
             <link>https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</link>
-            <category>kuaishou</category>
             <category>tech</category>
+            <category>kuaishou</category>
             <pubDate>Mon, 07 May 2018 23:30:25 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;这一周在公司写了很多很长功能很复杂的sql语句，深感自己的数据库和SQL学的还只是皮毛，完全没法满足工程上的要求。&lt;br&gt;负责带我的二mentor对SQL比较也精通，对我有很多指导和建议。&lt;br&gt;没有对比就没有伤害，自己的菜和师兄的强让我知耻而后勇，有了进阶SQL的想法和行动。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
