@@ -58,19 +58,22 @@
         <id>https://youngforest.github.io/2017/04/08/atom-explore/</id>
         <title>atom 浅尝辄止</title>
         <link rel="alternate" href="https://youngforest.github.io/2017/04/08/atom-explore/"/>
-        <content type="html">&lt;h2 id=&#34;配置代理&#34;&gt;&lt;a href=&#34;#配置代理&#34; class=&#34;headerlink&#34; title=&#34;配置代理&#34;&gt;&lt;/a&gt;配置代理&lt;/h2&gt;&lt;p&gt;笔者的需求是在markdown文档中插入LaTeX公式, atom默认的&lt;code&gt;markdown-preview&lt;/code&gt;包无法满足要求. 经过搜索, 社区包&lt;code&gt;markdown-preview-plus&lt;/code&gt;可是满足该需求.&lt;/p&gt;
-&lt;h3 id=&#34;atom包管理&#34;&gt;&lt;a href=&#34;#atom包管理&#34; class=&#34;headerlink&#34; title=&#34;atom包管理&#34;&gt;&lt;/a&gt;&lt;a href=&#34;http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages&#34;&gt;atom包管理&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;按照官方教程, 安装失败&lt;/p&gt;
+        <content type="html">&lt;h2 id=&#34;配置代理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置代理&#34;&gt;&lt;/a&gt; 配置代理&lt;/h2&gt;
+&lt;p&gt;笔者的需求是在markdown文档中插入LaTeX公式, atom默认的&lt;code&gt;markdown-preview&lt;/code&gt;包无法满足要求. 经过搜索, 社区包&lt;code&gt;markdown-preview-plus&lt;/code&gt;可是满足该需求.&lt;/p&gt;
+&lt;h3 id=&#34;atom包管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#atom包管理&#34;&gt;&lt;/a&gt; &lt;a href=&#34;http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages&#34;&gt;atom包管理&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;按照官方教程, 安装失败&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Installing “&lt;a href=&#34;mailto:&amp;#x6d;&amp;#97;&amp;#114;&amp;#107;&amp;#100;&amp;#111;&amp;#119;&amp;#x6e;&amp;#45;&amp;#112;&amp;#114;&amp;#x65;&amp;#x76;&amp;#105;&amp;#101;&amp;#119;&amp;#x2d;&amp;#112;&amp;#108;&amp;#117;&amp;#x73;&amp;#x40;&amp;#50;&amp;#46;&amp;#52;&amp;#46;&amp;#57;&#34;&gt;&amp;#x6d;&amp;#97;&amp;#114;&amp;#107;&amp;#100;&amp;#111;&amp;#119;&amp;#x6e;&amp;#45;&amp;#112;&amp;#114;&amp;#x65;&amp;#x76;&amp;#105;&amp;#101;&amp;#119;&amp;#x2d;&amp;#112;&amp;#108;&amp;#117;&amp;#x73;&amp;#x40;&amp;#50;&amp;#46;&amp;#52;&amp;#46;&amp;#57;&lt;/a&gt;” failed.&lt;/p&gt;
+&lt;p&gt;Installing “markdown-preview-plus@2.4.9” failed.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在log中, 笔者发现了这样的请求&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;GET &lt;a href=&#34;https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz&#34;&gt;https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;笔者接着使用浏览器测试该网址, 无法相应, 猜测是被q了. 幸运的是, atom文档中考虑到使用代理的需要, 并给出了guide.&lt;/p&gt;
-&lt;p&gt; &lt;a href=&#34;http://flight-manual.atom.io/getting-started/sections/installing-atom/#using-a-proxy&#34;&gt;配置apm的代理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://flight-manual.atom.io/getting-started/sections/installing-atom/#using-a-proxy&#34;&gt;配置apm的代理&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最后, &lt;a href=&#34;http://blog.youngforest.me/2016/11/02/%E5%AE%9E%E7%8E%B0terminal%E4%BB%A3%E7%90%86/&#34;&gt;fq基本功&lt;/a&gt;. 不解释.&lt;/p&gt;
-&lt;h3 id=&#34;具体命令&#34;&gt;&lt;a href=&#34;#具体命令&#34; class=&#34;headerlink&#34; title=&#34;具体命令&#34;&gt;&lt;/a&gt;具体命令&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config &lt;span class=&#34;built_in&#34;&gt;set&lt;/span&gt; https-proxy http://localhost:8123&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config get https-proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;http://localhost:8123/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm install markdown-preview-plus&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Installing markdown-preview-plus to /home/sean/.atom/packages ✓&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+&lt;h3 id=&#34;具体命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#具体命令&#34;&gt;&lt;/a&gt; 具体命令&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config &lt;span class=&#34;built_in&#34;&gt;set&lt;/span&gt; https-proxy http://localhost:8123&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config get https-proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;http://localhost:8123/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm install markdown-preview-plus&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Installing markdown-preview-plus to /home/sean/.atom/packages ✓&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="atom" />
         <updated>2017-04-08T14:20:36.000Z</updated>
     </entry>

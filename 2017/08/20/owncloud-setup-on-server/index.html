@@ -18,17 +18,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介 owncloud是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的二进制安装包，更方便快速，更适合个人的应用。  服务器环境 腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU&#x2F;Lin">
+    <meta name="description" content="简介 owncloud是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的二进制安装包，更方便快速，更适合个人的应用。   服务器环境 腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU&#x2F;Li">
 <meta property="og:type" content="article">
 <meta property="og:title" content="owncloud setup on server">
 <meta property="og:url" content="https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/index.html">
 <meta property="og:site_name" content="YoungForest&#39;s blog">
-<meta property="og:description" content="简介 owncloud是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的二进制安装包，更方便快速，更适合个人的应用。  服务器环境 腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU&#x2F;Lin">
+<meta property="og:description" content="简介 owncloud是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的二进制安装包，更方便快速，更适合个人的应用。   服务器环境 腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU&#x2F;Li">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-08-20T14:42:32.000Z">
-<meta property="article:modified_time" content="2023-04-13T14:59:08.120Z">
+<meta property="article:modified_time" content="2023-05-12T21:34:54.121Z">
 <meta property="article:author" content="YoungForest">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Owncloud">
@@ -118,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">服务器环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85owncloud"><span class="nav-number">3.1.</span> <span class="nav-text">安装owncloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8apache%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.2.</span> <span class="nav-text">启动apache服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E5%92%8C%E8%AE%BE%E7%BD%AEowncloud"><span class="nav-number">3.3.</span> <span class="nav-text">管理和设置owncloud</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEMySQL"><span class="nav-number">3.3.1.</span> <span class="nav-text">配置MySQL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Client-install"><span class="nav-number">4.</span> <span class="nav-text">Client install</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows"><span class="nav-number">4.1.</span> <span class="nav-text">windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android"><span class="nav-number">4.2.</span> <span class="nav-text">Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">4.3.</span> <span class="nav-text">Linux</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text"> 服务器环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text"> 搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85owncloud"><span class="nav-number">3.1.</span> <span class="nav-text"> 安装owncloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8apache%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.2.</span> <span class="nav-text"> 启动apache服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E5%92%8C%E8%AE%BE%E7%BD%AEowncloud"><span class="nav-number">3.3.</span> <span class="nav-text"> 管理和设置owncloud</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEmysql"><span class="nav-number">3.3.1.</span> <span class="nav-text"> 配置MySQL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-install"><span class="nav-number">4.</span> <span class="nav-text"> Client install</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows"><span class="nav-number">4.1.</span> <span class="nav-text"> windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android"><span class="nav-number">4.2.</span> <span class="nav-text"> Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux"><span class="nav-number">4.3.</span> <span class="nav-text"> Linux</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-13 22:59:08" itemprop="dateModified" datetime="2023-04-13T22:59:08+08:00">2023-04-13</time>
+      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
     </span>
 
   
@@ -272,18 +272,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a target="_blank" rel="noopener" href="https://owncloud.org/">owncloud</a>是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的<a target="_blank" rel="noopener" href="https://download.owncloud.org/download/repositories/stable/owncloud/">二进制安装包</a>，更方便快速，更适合个人的应用。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p><a target="_blank" rel="noopener" href="https://owncloud.org/">owncloud</a>是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的<a target="_blank" rel="noopener" href="https://download.owncloud.org/download/repositories/stable/owncloud/">二进制安装包</a>，更方便快速，更适合个人的应用。</p>
 <span id="more"></span>
-<h2 id="服务器环境"><a href="#服务器环境" class="headerlink" title="服务器环境"></a>服务器环境</h2><p>腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-105-generic x86_64)。</p>
-<h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><h3 id="安装owncloud"><a href="#安装owncloud" class="headerlink" title="安装owncloud"></a>安装owncloud</h3><p><a target="_blank" rel="noopener" href="https://download.owncloud.org/download/repositories/stable/owncloud/">通过apt库安装owncloud</a>。同时会安装很多依赖包，如apache2，php环境等。</p>
-<h3 id="启动apache服务"><a href="#启动apache服务" class="headerlink" title="启动apache服务"></a>启动apache服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd start</span><br></pre></td></tr></table></figure>
-
-<h3 id="管理和设置owncloud"><a href="#管理和设置owncloud" class="headerlink" title="管理和设置owncloud"></a>管理和设置owncloud</h3><p>在浏览器的地址栏输入<code>ip/owncloud</code>或<code>域名/owncloud</code>，设置好管理员账户和密码就好了。</p>
-<h4 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h4><p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html">参考</a></p>
+<h2 id="服务器环境"><a class="markdownIt-Anchor" href="#服务器环境"></a> 服务器环境</h2>
+<p>腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-105-generic x86_64)。</p>
+<h2 id="搭建过程"><a class="markdownIt-Anchor" href="#搭建过程"></a> 搭建过程</h2>
+<h3 id="安装owncloud"><a class="markdownIt-Anchor" href="#安装owncloud"></a> 安装owncloud</h3>
+<p><a target="_blank" rel="noopener" href="https://download.owncloud.org/download/repositories/stable/owncloud/">通过apt库安装owncloud</a>。同时会安装很多依赖包，如apache2，php环境等。</p>
+<h3 id="启动apache服务"><a class="markdownIt-Anchor" href="#启动apache服务"></a> 启动apache服务</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd start</span><br></pre></td></tr></table></figure>
+<h3 id="管理和设置owncloud"><a class="markdownIt-Anchor" href="#管理和设置owncloud"></a> 管理和设置owncloud</h3>
+<p>在浏览器的地址栏输入<code>ip/owncloud</code>或<code>域名/owncloud</code>，设置好管理员账户和密码就好了。</p>
+<h4 id="配置mysql"><a class="markdownIt-Anchor" href="#配置mysql"></a> 配置MySQL</h4>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html">参考</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql --user=root --password</span><br></pre></td></tr></table></figure>
+<h2 id="client-install"><a class="markdownIt-Anchor" href="#client-install"></a> Client install</h2>
+<h3 id="windows"><a class="markdownIt-Anchor" href="#windows"></a> windows</h3>
+<h3 id="android"><a class="markdownIt-Anchor" href="#android"></a> Android</h3>
+<h3 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h3>
 
-<h2 id="Client-install"><a href="#Client-install" class="headerlink" title="Client install"></a>Client install</h2><h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3>
     </div>
 
     
@@ -400,9 +408,17 @@
 
 
 
+
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" integrity="sha256-hLTCMFlKxdNgPXyWlSSxYN0ykJmxxq9Yt3MNfdRGWeA=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
 
 
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"YoungForest","count":true,"i18n":{"disqus":"disqus"}}</script>

@@ -18,17 +18,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文根据LeetCode上的教程 Introduction to Algorithms - Recursion I 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。  本文的结构和LeetCode上的完全相同，分为 简介、递归原则、复现关系、备忘录、复杂度分析、总结 6个部分。  简介 本Card的目的，回答以下问题：   1. 什么是递归">
+    <meta name="description" content="本文根据LeetCode上的教程 Introduction to Algorithms - Recursion I 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。  本文的结构和LeetCode上的完全相同，分为 简介、递归原则、复现关系、备忘录、复杂度分析、总结 6个部分。   简介 本Card的目的，回答以下问题：   1. 什么是递">
 <meta property="og:type" content="article">
 <meta property="og:title" content="recursion">
 <meta property="og:url" content="https://youngforest.github.io/2019/02/11/recursion/index.html">
 <meta property="og:site_name" content="YoungForest&#39;s blog">
-<meta property="og:description" content="本文根据LeetCode上的教程 Introduction to Algorithms - Recursion I 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。  本文的结构和LeetCode上的完全相同，分为 简介、递归原则、复现关系、备忘录、复杂度分析、总结 6个部分。  简介 本Card的目的，回答以下问题：   1. 什么是递归">
+<meta property="og:description" content="本文根据LeetCode上的教程 Introduction to Algorithms - Recursion I 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。  本文的结构和LeetCode上的完全相同，分为 简介、递归原则、复现关系、备忘录、复杂度分析、总结 6个部分。   简介 本Card的目的，回答以下问题：   1. 什么是递">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-02-11T04:58:52.000Z">
-<meta property="article:modified_time" content="2023-04-13T14:59:08.120Z">
+<meta property="article:modified_time" content="2023-05-12T21:34:54.125Z">
 <meta property="article:author" content="YoungForest">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="LeetCode">
@@ -118,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">递归的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.1.</span> <span class="nav-text">例子 翻转字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">递归函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recurrence-Relation"><span class="nav-number">3.</span> <span class="nav-text">Recurrence Relation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9APascal%E2%80%99s-Triangle"><span class="nav-number">3.1.</span> <span class="nav-text">例子：Pascal’s Triangle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memoization-%E5%A4%87%E5%BF%98%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">Memoization 备忘录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">4.1.</span> <span class="nav-text">递归过程中重复的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text">例子 斐波那契数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Complexity-Analysis-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">5.</span> <span class="nav-text">Complexity Analysis 复杂度分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">5.1.</span> <span class="nav-text">Time Complexity 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Space-Complexity-%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">5.2.</span> <span class="nav-text">Space Complexity 空间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#recursion-related"><span class="nav-number">5.2.1.</span> <span class="nav-text">recursion related</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#non-recursion-related"><span class="nav-number">5.2.2.</span> <span class="nav-text">non-recursion related</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tail-Recursion-%E5%B0%BE%E9%80%92%E5%BD%92"><span class="nav-number">5.3.</span> <span class="nav-text">Tail Recursion 尾递归</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text"> 递归的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.1.</span> <span class="nav-text"> 例子 翻转字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text"> 递归函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#recurrence-relation"><span class="nav-number">3.</span> <span class="nav-text"> Recurrence Relation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90pascals-triangle"><span class="nav-number">3.1.</span> <span class="nav-text"> 例子：Pascal’s Triangle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#memoization-%E5%A4%87%E5%BF%98%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text"> Memoization 备忘录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">4.1.</span> <span class="nav-text"> 递归过程中重复的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text"> 例子 斐波那契数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complexity-analysis-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">5.</span> <span class="nav-text"> Complexity Analysis 复杂度分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-complexity-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">5.1.</span> <span class="nav-text"> Time Complexity 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#space-complexity-%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">5.2.</span> <span class="nav-text"> Space Complexity 空间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#recursion-related"><span class="nav-number">5.2.1.</span> <span class="nav-text"> recursion related</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#non-recursion-related"><span class="nav-number">5.2.2.</span> <span class="nav-text"> non-recursion related</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tail-recursion-%E5%B0%BE%E9%80%92%E5%BD%92"><span class="nav-number">5.3.</span> <span class="nav-text"> Tail Recursion 尾递归</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-13 22:59:08" itemprop="dateModified" datetime="2023-04-13T22:59:08+08:00">2023-04-13</time>
+      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,70 +281,94 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>本文根据LeetCode上的教程 <a target="_blank" rel="noopener" href="https://leetcode.com/explore/learn/card/recursion-i/">Introduction to Algorithms - Recursion I</a> 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。</p>
+    <div class="post-body" itemprop="articleBody"><p>本文根据LeetCode上的教程 <a target="_blank" rel="noopener" href="https://leetcode.com/explore/learn/card/recursion-i/">Introduction to Algorithms - Recursion I</a> 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。</p>
 <p>本文的结构和LeetCode上的完全相同，分为 简介、递归原则、复现关系、备忘录、复杂度分析、总结 6个部分。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本Card的目的，回答以下问题：</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>本Card的目的，回答以下问题：</p>
 <ol>
 <li>什么是递归？递归如何工作？</li>
 <li>如何递归地解决一个问题？</li>
 <li>如何分析一个递归算法的时间复杂度和空间复杂度？</li>
 <li>如何以一种更好的方式应用递归？</li>
 </ol>
-<h2 id="递归的原理"><a href="#递归的原理" class="headerlink" title="递归的原理"></a>递归的原理</h2><p>每次递归函数调用自身，都将给定问题变为子问题。递归过程一直继续指导子问题可以不通过进一步递归就可以直接解决。</p>
+<h2 id="递归的原理"><a class="markdownIt-Anchor" href="#递归的原理"></a> 递归的原理</h2>
+<p>每次递归函数调用自身，都将给定问题变为子问题。递归过程一直继续指导子问题可以不通过进一步递归就可以直接解决。</p>
 <p>递归函数避免无限递归的必要属性：</p>
 <ol>
 <li>递归结束条件(<strong>base cases</strong>)</li>
 <li>一套规则(<strong>recurrence relation</strong>)，可以将所有其他的cases规约为base cases。</li>
 </ol>
 <p>递归函数中可以有多个地方调用本身。</p>
-<h3 id="例子-翻转字符串"><a href="#例子-翻转字符串" class="headerlink" title="例子 翻转字符串"></a>例子 翻转字符串</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">printReverse</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!*str) <span class="keyword">return</span>;  <span class="comment">// base case</span></span><br><span class="line">    <span class="built_in">printReverse</span>(str + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(*str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h3><p>如果一个问题存在递归解法，我们就可以遵循下列步骤去实现它。</p>
+<h3 id="例子-翻转字符串"><a class="markdownIt-Anchor" href="#例子-翻转字符串"></a> 例子 翻转字符串</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">printReverse</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!*str) <span class="keyword">return</span>;  <span class="comment">// base case</span></span><br><span class="line">    <span class="built_in">printReverse</span>(str + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(*str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="递归函数"><a class="markdownIt-Anchor" href="#递归函数"></a> 递归函数</h3>
+<p>如果一个问题存在递归解法，我们就可以遵循下列步骤去实现它。</p>
 <p>我们定义该问题为函数<code>F(x)</code>可以实现，其中<code>X</code>是函数的输入，同时表示了问题的范围。</p>
 <p>在函数<code>F(X)</code>中，我们实现以下步骤：</p>
 <ol>
-<li>将问题拆分成更小的范围，$x_1 \belong X, x_2 \belong X, …, x_n \belong X$.</li>
+<li>将问题拆分成更小的范围，<span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \belong at position 5: x_1 \̲b̲e̲l̲o̲n̲g̲ ̲X, x_2 \belong …'>x_1 \belong X, x_2 \belong X, ..., x_n \belong X</span>.</li>
 <li>递归调用函数<code>F(x_1), F(x_2), ..., F(x_n)</code>以解决<code>X</code>的子问题。</li>
 <li>最后，处理子问题的解，组合成对应<code>X</code>的解。</li>
 </ol>
-<h2 id="Recurrence-Relation"><a href="#Recurrence-Relation" class="headerlink" title="Recurrence Relation"></a>Recurrence Relation</h2><p>定义：一个问题的解和其子问题的解之间的关系。</p>
-<h3 id="例子：Pascal’s-Triangle"><a href="#例子：Pascal’s-Triangle" class="headerlink" title="例子：Pascal’s Triangle"></a>例子：Pascal’s Triangle</h3><p>定义：杨辉三角是一系列数字组成三角形的形状。在杨辉三角中，每行最左和最右的数字永远是1. 对于剩余的数字，每个数字是它前一行正上方2个数字之和。</p>
-<p>用数学公式表达出来就是，Recurrence Relation为<br>$f(i, j) = f(i-1, j-1) + f(i-1, j),$</p>
-<p>base cases为：<br>$f(i, j) = 1, if j = 1 or j = i$.</p>
-<p>其中，$f(i, j)$表示第i行第j个数。</p>
-<h2 id="Memoization-备忘录"><a href="#Memoization-备忘录" class="headerlink" title="Memoization 备忘录"></a>Memoization 备忘录</h2><h3 id="递归过程中重复的计算"><a href="#递归过程中重复的计算" class="headerlink" title="递归过程中重复的计算"></a>递归过程中重复的计算</h3><p>递归解法常常是十分<strong>符合直觉</strong>和<strong>容易编码</strong>的。但大多数时候，在递归过程中，重复计算导致了性能上的损失。</p>
-<p><strong>备忘录法(Memoization)</strong><br>即是一个通用的避免重复计算的技术。<br>是的，这个词没有拼错，不是Memorization。</p>
+<h2 id="recurrence-relation"><a class="markdownIt-Anchor" href="#recurrence-relation"></a> Recurrence Relation</h2>
+<p>定义：一个问题的解和其子问题的解之间的关系。</p>
+<h3 id="例子pascals-triangle"><a class="markdownIt-Anchor" href="#例子pascals-triangle"></a> 例子：Pascal’s Triangle</h3>
+<p>定义：杨辉三角是一系列数字组成三角形的形状。在杨辉三角中，每行最左和最右的数字永远是1. 对于剩余的数字，每个数字是它前一行正上方2个数字之和。</p>
+<p>用数学公式表达出来就是，Recurrence Relation为<br />
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">f(i, j) = f(i-1, j-1) + f(i-1, j),</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mpunct">,</span></span></span></span></p>
+<p>base cases为：<br />
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>i</mi><mi>f</mi><mi>j</mi><mo>=</mo><mn>1</mn><mi>o</mi><mi>r</mi><mi>j</mi><mo>=</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">f(i, j) = 1, if j = 1 or j = i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>.</p>
+<p>其中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(i, j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span>表示第i行第j个数。</p>
+<h2 id="memoization-备忘录"><a class="markdownIt-Anchor" href="#memoization-备忘录"></a> Memoization 备忘录</h2>
+<h3 id="递归过程中重复的计算"><a class="markdownIt-Anchor" href="#递归过程中重复的计算"></a> 递归过程中重复的计算</h3>
+<p>递归解法常常是十分<strong>符合直觉</strong>和<strong>容易编码</strong>的。但大多数时候，在递归过程中，重复计算导致了性能上的损失。</p>
+<p><strong>备忘录法(Memoization)</strong><br />
+即是一个通用的避免重复计算的技术。<br />
+是的，这个词没有拼错，不是Memorization。</p>
 <p>定义：为了避免重复计算，我们可以在一个cache中存储中间子问题的结果，以便之后再次使用它们的时候不需要重复计算。</p>
 <p>备忘录的实现可以通过hashmap实现。尤其是在OOP中，利用装饰器可以实现通用的Memoization。</p>
-<h3 id="例子-斐波那契数"><a href="#例子-斐波那契数" class="headerlink" title="例子 斐波那契数"></a>例子 斐波那契数</h3><p><a target="_blank" rel="noopener" href="https://leetcode.com/articles/climbing-stairs/">斐波那契数的多种解法</a>，其中有时间复杂度为O(log n)的<strong>Binets法</strong>和<strong>公式法</strong>，令人印象十分深刻.</p>
-<h2 id="Complexity-Analysis-复杂度分析"><a href="#Complexity-Analysis-复杂度分析" class="headerlink" title="Complexity Analysis 复杂度分析"></a>Complexity Analysis 复杂度分析</h2><p>递归算法的复杂度有时候不是显而易见的，要通过一些套路分析。</p>
+<h3 id="例子-斐波那契数"><a class="markdownIt-Anchor" href="#例子-斐波那契数"></a> 例子 斐波那契数</h3>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/articles/climbing-stairs/">斐波那契数的多种解法</a>，其中有时间复杂度为O(log n)的<strong>Binets法</strong>和<strong>公式法</strong>，令人印象十分深刻.</p>
+<h2 id="complexity-analysis-复杂度分析"><a class="markdownIt-Anchor" href="#complexity-analysis-复杂度分析"></a> Complexity Analysis 复杂度分析</h2>
+<p>递归算法的复杂度有时候不是显而易见的，要通过一些套路分析。</p>
 <p>尾递归是一种特殊的技术，可以消减递归栈的使用，优化空间复杂度，使其和迭代算法相同。</p>
-<h3 id="Time-Complexity-时间复杂度"><a href="#Time-Complexity-时间复杂度" class="headerlink" title="Time Complexity 时间复杂度"></a>Time Complexity 时间复杂度</h3><p>递归算法的时间复杂度为：<br>O(T) = R * O(s),<br>其中，R为递归调用的数量，O(s)为每次递归调用产生的计算复杂度。<br>一般来说，R更难算一点，O(s)的计算和非递归算法的时间复杂度分析一样。</p>
-<p>借助execution tree的技术，我们可以更好地分析递归调用的数量。<br>execution tree是展示具体情况下递归调用流的一棵树，每个节点代表一次调用，节点上的值表示调用时的参数。<br>这棵树的节点数目就是R。</p>
+<h3 id="time-complexity-时间复杂度"><a class="markdownIt-Anchor" href="#time-complexity-时间复杂度"></a> Time Complexity 时间复杂度</h3>
+<p>递归算法的时间复杂度为：<br />
+O(T) = R * O(s),<br />
+其中，R为递归调用的数量，O(s)为每次递归调用产生的计算复杂度。<br />
+一般来说，R更难算一点，O(s)的计算和非递归算法的时间复杂度分析一样。</p>
+<p>借助execution tree的技术，我们可以更好地分析递归调用的数量。<br />
+execution tree是展示具体情况下递归调用流的一棵树，每个节点代表一次调用，节点上的值表示调用时的参数。<br />
+这棵树的节点数目就是R。</p>
 <p>需要特别注意的是，当使用Memoization技术时，execution tree的变化。</p>
-<h3 id="Space-Complexity-空间复杂度"><a href="#Space-Complexity-空间复杂度" class="headerlink" title="Space Complexity 空间复杂度"></a>Space Complexity 空间复杂度</h3><p>递归算法的空间使用主要分为2部分：</p>
+<h3 id="space-complexity-空间复杂度"><a class="markdownIt-Anchor" href="#space-complexity-空间复杂度"></a> Space Complexity 空间复杂度</h3>
+<p>递归算法的空间使用主要分为2部分：</p>
 <ol>
 <li>recursion related</li>
-<li>non-recursion related </li>
+<li>non-recursion related</li>
 </ol>
-<h4 id="recursion-related"><a href="#recursion-related" class="headerlink" title="recursion related"></a>recursion related</h4><p>学过编译原理的我们都知道，每次函数调用都要在栈上压入：</p>
+<h4 id="recursion-related"><a class="markdownIt-Anchor" href="#recursion-related"></a> recursion related</h4>
+<p>学过编译原理的我们都知道，每次函数调用都要在栈上压入：</p>
 <ol>
 <li>函数的返回地址</li>
 <li>函数参数</li>
 <li>函数的本地变量</li>
 </ol>
 <p>递归算法的函数调用栈的深度是从初始case到base case.</p>
-<h4 id="non-recursion-related"><a href="#non-recursion-related" class="headerlink" title="non-recursion related"></a>non-recursion related</h4><p>全局变量使用的空间，主要在堆上分配。比如，memoization 要使用的hashmap。</p>
-<h3 id="Tail-Recursion-尾递归"><a href="#Tail-Recursion-尾递归" class="headerlink" title="Tail Recursion 尾递归"></a>Tail Recursion 尾递归</h3><p>尾递归是一种递归调用是递归函数的最后指令，而且函数中只有一个递归调用。</p>
+<h4 id="non-recursion-related"><a class="markdownIt-Anchor" href="#non-recursion-related"></a> non-recursion related</h4>
+<p>全局变量使用的空间，主要在堆上分配。比如，memoization 要使用的hashmap。</p>
+<h3 id="tail-recursion-尾递归"><a class="markdownIt-Anchor" href="#tail-recursion-尾递归"></a> Tail Recursion 尾递归</h3>
+<p>尾递归是一种递归调用是递归函数的最后指令，而且函数中只有一个递归调用。</p>
 <p>尾递归的一个很好的例子。注意，non_tail_recursion在最后的递归调用后还有计算。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">helper_non_tail_recursion</span><span class="params">(<span class="type">int</span> start, <span class="type">int</span> [] ls)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (start &gt;= ls.length) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// not a tail recursion because it does some computation after the recursive call returned.</span></span><br><span class="line">    <span class="keyword">return</span> ls[start] + helper_non_tail_recursion(start+<span class="number">1</span>, ls);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum_non_tail_recursion</span><span class="params">(<span class="type">int</span> [] ls)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (ls == <span class="literal">null</span> || ls.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> helper_non_tail_recursion(<span class="number">0</span>, ls);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//---------------------------------------------</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">helper_tail_recursion</span><span class="params">(<span class="type">int</span> start, <span class="type">int</span> [] ls, <span class="type">int</span> acc)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (start &gt;= ls.length) &#123;</span><br><span class="line">      <span class="keyword">return</span> acc;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// this is a tail recursion because the final instruction is the recursive call.</span></span><br><span class="line">    <span class="keyword">return</span> helper_tail_recursion(start+<span class="number">1</span>, ls, acc+ls[start]);</span><br><span class="line">  &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum_tail_recursion</span><span class="params">(<span class="type">int</span> [] ls)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (ls == <span class="literal">null</span> || ls.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> helper_tail_recursion(<span class="number">0</span>, ls, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>尾递归消除递归栈的原理：<br>编译器知道在从callee中返回之后，会立刻再次返回，不需要再利用函数调用栈中保存的数据。只需要一个栈帧就可以了，所有层共用一个栈帧，所以返回时可以跳过整个递归栈。</p>
+<p>尾递归消除递归栈的原理：<br />
+编译器知道在从callee中返回之后，会立刻再次返回，不需要再利用函数调用栈中保存的数据。只需要一个栈帧就可以了，所有层共用一个栈帧，所以返回时可以跳过整个递归栈。</p>
 <p>并不是所有语言的编译器都支持尾递归优化的。比如，C, C++支持，而Python, Java不支持。</p>
-<p>尾递归通常也不是那么好实现。需要<br>递归调用只出现在最后一个指令，如果需要调用多个函数，或是对返回值进行计算，就没法尾递归了。</p>
+<p>尾递归通常也不是那么好实现。需要<br />
+递归调用只出现在最后一个指令，如果需要调用多个函数，或是对返回值进行计算，就没法尾递归了。</p>
 <p>而且细心的同学可以发现尾递归和迭代(loop)的相似之处。事实上，有些函数式编程语言甚至不支持loop，只有递归，完全可以实现迭代。因为我们平时使用loop居多，尾递归很少。如果需要写尾递归时（一般是在一些面试的要求中），可以先写loop版本的代码。然后试着把其中的局部变量更新改成尾递归中的参数，往往就可以写出优雅的（但对于大多数人可读性并不高）的尾递归代码了。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>解决递归问题的套路：</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>解决递归问题的套路：</p>
 <ol>
 <li>定义递归函数</li>
 <li>写下recurrence relation和base case</li>
@@ -468,9 +492,17 @@
 
 
 
+
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" integrity="sha256-hLTCMFlKxdNgPXyWlSSxYN0ykJmxxq9Yt3MNfdRGWeA=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
 
 
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"YoungForest","count":true,"i18n":{"disqus":"disqus"}}</script>

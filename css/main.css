@@ -1970,7 +1970,12 @@ pre code {
   font-size: 0.875em;
   margin-top: 1em;
   padding-top: 1em;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.social-like a {
+  border-bottom: none;
 }
 .reward-container {
   margin: 1em 0 0;
@@ -2525,7 +2530,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #f44fd6;
+  background: #0558b1;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

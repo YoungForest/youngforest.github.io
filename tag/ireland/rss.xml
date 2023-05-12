@@ -64,8 +64,9 @@
             <category>Ireland</category>
             <pubDate>Fri, 11 Nov 2022 21:25:17 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;成功润到爱尔兰2周时间了，因为刚一直在办各种东西。慢慢的生活开始步入了正规。从今天开始，我会陆续分享一些来爱尔兰工作留学初期的一些攻略。一方面自己经历了很多坑，另一方面现在终于成功了一些，也算是有些经验可以帮助到大家。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/ireland-flag.png&#34; alt=&#34;爱尔兰国旗&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第一篇-电话卡&#34;&gt;&lt;a href=&#34;#第一篇-电话卡&#34; class=&#34;headerlink&#34; title=&#34;第一篇 电话卡&#34;&gt;&lt;/a&gt;第一篇 电话卡&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/images/sim-card.jpg&#34; alt=&#34;SIM card&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/ireland-flag.png&#34; alt=&#34;爱尔兰国旗&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第一篇-电话卡&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一篇-电话卡&#34;&gt;&lt;/a&gt; 第一篇 电话卡&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/sim-card.jpg&#34; alt=&#34;SIM card&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;初来国门，办爱尔兰电话卡往往是大家需要做的第一件事。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;上蜂窝网络（也就是流量）。虽然国内电话卡可以通过漫游上网，但一则比较贵25CNY一天，二则没法上外网，这里经常用的谷歌地图/搜索用不了，还得翻墙。&lt;/li&gt;
@@ -90,7 +91,7 @@
 &lt;p&gt;我本人最后选择了最便宜的Lyca，便宜是便宜，不过遇到两个大坑。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;邮件收到的速度比较慢，花了整整一周时间。官网上的承诺是2天，不过这也和你住的地方有关。感觉是我住的那个公寓的锅，邮件大概一周才集中给你分发一次。&lt;/li&gt;
-&lt;li&gt;上网配置复杂。配置不好的话，会乱收费，被坑了有近5欧。具体配置方法是，1. 按照订购邮件的指示。先拨打“&lt;em&gt;116&lt;/em&gt;PIN#”，你的PIN在邮件里能找到。2. 再根据官网上的&lt;a href=&#34;https://www.lycamobile.ie/en/help/mobile-web-settings/&#34;&gt;这个指示的第二步&lt;/a&gt;打开漫游，配置APN（Name: lyca internet, APN: data.lycamobile.ie, Username: lmie, Password: plus)。之后才能正常上网。&lt;/li&gt;
+&lt;li&gt;上网配置复杂。配置不好的话，会乱收费，被坑了有近5欧。具体配置方法是，1. 按照订购邮件的指示。先拨打“&lt;em&gt;116&lt;/em&gt;PIN#”，你的PIN在邮件里能找到。2. 再根据官网上的&lt;a href=&#34;https://www.lycamobile.ie/en/help/mobile-web-settings/&#34;&gt;这个指示的第二步&lt;/a&gt;打开漫游，配置APN（Name: lyca internet, APN: &lt;a href=&#34;http://data.lycamobile.ie&#34;&gt;data.lycamobile.ie&lt;/a&gt;, Username: lmie, Password: plus)。之后才能正常上网。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;大家根据自己的预算和偏好选择运营商吧。&lt;/p&gt;
  ]]></description>

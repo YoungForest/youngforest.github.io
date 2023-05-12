@@ -64,9 +64,13 @@
             <category>tex</category>
             <pubDate>Tue, 27 Mar 2018 19:27:55 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;笔者毕业设计论文的撰写使用了latex工具，遇到了许多问题，在此总结一下。&lt;/p&gt;
-&lt;h2 id=&#34;pdf无法正常显示&#34;&gt;&lt;a href=&#34;#pdf无法正常显示&#34; class=&#34;headerlink&#34; title=&#34;pdf无法正常显示&#34;&gt;&lt;/a&gt;pdf无法正常显示&lt;/h2&gt;&lt;h3 id=&#34;问题描述&#34;&gt;&lt;a href=&#34;#问题描述&#34; class=&#34;headerlink&#34; title=&#34;问题描述&#34;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;经过xelatex编译成功地文档无法正常显示pdf图片，显示的是一片空白。&lt;/p&gt;
-&lt;h3 id=&#34;原因&#34;&gt;&lt;a href=&#34;#原因&#34; class=&#34;headerlink&#34; title=&#34;原因&#34;&gt;&lt;/a&gt;&lt;a href=&#34;http://tieba.baidu.com/p/4191389769?traceid=&#34;&gt;原因&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;pdf文件的版本问题。查看其版本为1.7，xelatex默认按照1.5进行编译。&lt;/p&gt;
-&lt;h3 id=&#34;解决方案&#34;&gt;&lt;a href=&#34;#解决方案&#34; class=&#34;headerlink&#34; title=&#34;解决方案&#34;&gt;&lt;/a&gt;解决方案&lt;/h3&gt;&lt;p&gt;xelatex %.tex，此处加上–output-driver=”xdvipdfmx -V7”。即修改msmake.bat&lt;/p&gt;
+&lt;h2 id=&#34;pdf无法正常显示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pdf无法正常显示&#34;&gt;&lt;/a&gt; pdf无法正常显示&lt;/h2&gt;
+&lt;p&gt;###　问题描述&lt;br /&gt;
+经过xelatex编译成功地文档无法正常显示pdf图片，显示的是一片空白。&lt;/p&gt;
+&lt;h3 id=&#34;原因&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原因&#34;&gt;&lt;/a&gt; &lt;a href=&#34;http://tieba.baidu.com/p/4191389769?traceid=&#34;&gt;原因&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;pdf文件的版本问题。查看其版本为1.7，xelatex默认按照1.5进行编译。&lt;/p&gt;
+&lt;h3 id=&#34;解决方案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解决方案&#34;&gt;&lt;/a&gt; 解决方案&lt;/h3&gt;
+&lt;p&gt;xelatex %.tex，此处加上–output-driver=“xdvipdfmx -V7”。即修改msmake.bat&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;xelatex %mythesis%&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# =&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;xelatex --output-driver=&lt;span class=&#34;string&#34;&gt;&amp;quot;xdvipdfmx -V7&amp;quot;&lt;/span&gt; %mythesis%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
     </channel>

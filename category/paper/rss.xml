@@ -62,7 +62,8 @@
             <title>毕设大论文撰写问题汇总及解决</title>
             <link>https://youngforest.github.io/2021/05/06/Mendeley-GB-T-7714-2005/</link>
             <pubDate>Thu, 06 May 2021 00:10:43 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;Mendeley-GB-T-7714-2005&#34;&gt;&lt;a href=&#34;#Mendeley-GB-T-7714-2005&#34; class=&#34;headerlink&#34; title=&#34;Mendeley GB/T 7714-2005&#34;&gt;&lt;/a&gt;Mendeley GB/T 7714-2005&lt;/h2&gt;&lt;ul&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;mendeley-gbt-7714-2005&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mendeley-gbt-7714-2005&#34;&gt;&lt;/a&gt; Mendeley GB/T 7714-2005&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;针对英文文献中作者名字使用了全大写&lt;/li&gt;
 &lt;li&gt;针对英文文献中三个以上人名省略时使用了中文的“等”，而不是et al.&lt;/li&gt;
 &lt;/ul&gt;
@@ -71,7 +72,8 @@
 &lt;ul&gt;
 &lt;li&gt;删除参考文献中的 // 。特别是会议后面多出来的这个分隔符&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;引用知网参考文献&#34;&gt;&lt;a href=&#34;#引用知网参考文献&#34; class=&#34;headerlink&#34; title=&#34;引用知网参考文献&#34;&gt;&lt;/a&gt;引用知网参考文献&lt;/h2&gt;&lt;p&gt;知网上没有Mendeley支持的Bib参考文献格式，因此，我写了一个网站可以在线进行参考文献的转换: &lt;a href=&#34;https://cnki2bib.youngforest.me/products&#34;&gt;入口1&lt;/a&gt; &lt;a href=&#34;https://youngforest.me/products&#34;&gt;入口2&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;引用知网参考文献&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#引用知网参考文献&#34;&gt;&lt;/a&gt; 引用知网参考文献&lt;/h2&gt;
+&lt;p&gt;知网上没有Mendeley支持的Bib参考文献格式，因此，我写了一个网站可以在线进行参考文献的转换: &lt;a href=&#34;https://cnki2bib.youngforest.me/products&#34;&gt;入口1&lt;/a&gt; &lt;a href=&#34;https://youngforest.me/products&#34;&gt;入口2&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
