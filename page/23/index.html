@@ -126,7 +126,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">229</span>
+          <span class="site-state-item-count">230</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -137,7 +137,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -204,6 +204,123 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | YoungForest's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/" class="post-title-link" itemprop="url">对CPU 内存 硬盘读写 网络 进行压力测试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-01-14 12:39:23" itemprop="dateCreated datePublished" datetime="2017-01-14T12:39:23+08:00">2017-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Laboratory/" itemprop="url" rel="index"><span itemprop="name">Laboratory</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          近来实验室的师兄有个需求, 写4个小程序, 分别对内存, CPU, 硬盘, 网络进行压力测试, 要求测试程序有压力档位可以调, 比如压力可以分为大, 中, 小. 二话不说, 撸起袖子加油干. 需求很简单, 但实现起来却并不简单, 笔者边学习, 边写程序, 才勉强完成任务.
+
+ 测试环境
+Ubuntu 14.04
+
+ CPU
+受编程之美的第一章"让CPU占有率曲线听你指挥"启发, 我很快地完成了对CPU的压力测试程序.
+
+ 基本思路
+确定一个小周期, 笔者的周期设置为100, 这个值可以通过改变PIECE的值来改变, 周期为 100 * PIECE.
+
+在每个周期中, stress%的时间用于一
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/01/12/SSD-Single-Shot-MultiBox-Detector-configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -240,7 +357,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
 
   
@@ -348,7 +465,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -466,7 +583,7 @@ Installed migrator plu
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -579,7 +696,7 @@ Installed migrator plu
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -700,7 +817,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -811,7 +928,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
 
   
@@ -908,7 +1025,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
 
   
@@ -1005,7 +1122,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1113,7 +1230,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-13 05:34:54" itemprop="dateModified" datetime="2023-05-13T05:34:54+08:00">2023-05-13</time>
+      <time title="修改时间：2023-05-16 03:42:07" itemprop="dateModified" datetime="2023-05-16T03:42:07+08:00">2023-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">

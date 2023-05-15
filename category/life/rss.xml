@@ -5,8 +5,8 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Fri, 11 Nov 2022 21:25:17 +0800</pubDate>
-        <lastBuildDate>Fri, 11 Nov 2022 21:25:17 +0800</lastBuildDate>
+        <pubDate>Mon, 15 May 2023 19:55:06 +0800</pubDate>
+        <lastBuildDate>Mon, 15 May 2023 19:55:06 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
         <category>intern</category>
@@ -49,6 +49,7 @@
         <category>Ubuntu</category>
         <category>Owncloud</category>
         <category>benchmark</category>
+        <category>RIP</category>
         <category>sensetime</category>
         <category>sublime</category>
         <category>Microsoft</category>
@@ -57,6 +58,22 @@
         <category>git</category>
         <category>Tech</category>
         <category>Tencent</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2023/05/15/rip-hao/</guid>
+            <title>深痛悼念 左耳朵耗子</title>
+            <link>https://youngforest.github.io/2023/05/15/rip-hao/</link>
+            <category>RIP</category>
+            <pubDate>Mon, 15 May 2023 19:55:06 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;R.I.P.&lt;br /&gt;
+有幸和 左耳朵耗子 在同一个群里刷题。大家得知消息以为是谣言，还at了他。但多方消息佐证，现在应该是真的了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/hao-foxi.jpg&#34; alt=&#34;左耳朵耗子 在 佛系刷题群 的聊天历史&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我最早也是通过&lt;a href=&#34;https://coolshell.cn/&#34;&gt;他的博客 酷壳 – COOLSHELL&lt;/a&gt;认识他的，好像是VIM系列吧。当时我还在上大学，刚刚开始计算机学习。他的博客对我帮助很大。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/haoel.png&#34; alt=&#34;左耳朵耗子 博客上的自我介绍&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我最接近猝死的是 大三上学期，做 编译 实验到早上6点。当时感觉不行了，心脏不太舒服。就回宿舍睡觉了。从那以后就躺平了，不卷了，不再追求上进了。读研的时候，我们学院有个大二的学第就在图书馆猝死了，是做 计组实验 做的。我也是经历过计组的人，想想也确实是压力太大了。工作后，更是每年国内计算机行业都有猝死的新闻。&lt;br /&gt;
+最后，再给从事程序员的同行们介绍一个Github repo: &lt;a href=&#34;https://github.com/geekan/HowToLiveLonger&#34;&gt;程序员延寿指南 geekan/HowToLiveLonger&lt;/a&gt;. 活着真好，好好珍惜。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/HowToLiveLonger.png&#34; alt=&#34;程序员延寿指南 README&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2022/11/11/Ireland-Onboarding/</guid>
             <title>刚来爱尔兰必看的生活攻略</title>
