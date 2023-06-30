@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>YoungForest&#39;s blog • Posts by &#34;游记&#34; category</title>
+        <title>YoungForest&#39;s blog • Posts by &#34;游记&#34; tag</title>
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
@@ -13,6 +13,7 @@
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
         <category>北京</category>
         <category>户口</category>
         <category>ByteDance</category>
@@ -65,6 +66,7 @@
             <title>巴黎</title>
             <link>https://youngforest.github.io/2019/09/30/Paris/</link>
             <category>travel</category>
+            <category>游记</category>
             <pubDate>Mon, 30 Sep 2019 22:24:49 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;上周五赶上了9月27日比利时的法语区节日，学校放假，连上周末，我们恰好有3天的假期。在上上周从阿姆斯特丹回来的火车上，我们就定下了本次的去巴黎之旅。本次旅行的成员有：我、zfn、lsd、wyd。&lt;/p&gt;
 &lt;p&gt;总的感受是：我太喜欢巴黎了，我爱巴黎.&lt;br /&gt;
@@ -127,6 +129,7 @@
             <title>阿姆斯特丹</title>
             <link>https://youngforest.github.io/2019/09/23/Amsterdam/</link>
             <category>travel</category>
+            <category>游记</category>
             <pubDate>Mon, 23 Sep 2019 11:57:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;来到欧洲安顿下来的第一周，我们去了美丽的荷兰-阿姆斯特丹和周围的2座村庄。&lt;br /&gt;
 由于是第一次出来玩，许多行程安排的有问题，花费也相对不菲。人均大概450欧。相比之下，一周之后的巴黎之旅只花了300欧，并且体验也更棒。&lt;br /&gt;
@@ -157,13 +160,26 @@
             <title>比利时交换之旅</title>
             <link>https://youngforest.github.io/2019/09/17/Beligum/</link>
             <category>travel</category>
+            <category>游记</category>
             <pubDate>Tue, 17 Sep 2019 22:08:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;今年的下半年，有幸有机会来比利时交换一学期，大概5个月时间。&lt;br /&gt;
-这是我首次出国这么长时间。之前也是参加学校的项目，去英国游学了半个月，详情可以看我3年前写的&lt;a href=&#34;https://youngforest.github.io/2016/08/25/my-britain-trip/&#34;&gt;英伦游学所见所思&lt;/a&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;悲惨的生活安顿&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#悲惨的生活安顿&#34;&gt;&lt;/a&gt; 悲惨的生活安顿&lt;/h2&gt;
-&lt;p&gt;没有被子。&lt;br /&gt;
-没有网。&lt;br /&gt;
-想买鲜奶却买成了酸奶。&lt;/p&gt;
+这是我首次出国这么长时间。之前也是参加学校的项目，去英国游学了半个月，详情可以看我3年前写的&lt;a href=&#34;https://youngforest.github.io/2016/08/25/my-britain-trip/&#34;&gt;英伦游学所见所思&lt;/a&gt;。&lt;br /&gt;
+接下来，我从城市、生活、学习和旅行四个方面总结我的交换项目。&lt;/p&gt;
+&lt;h2 id=&#34;城市&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#城市&#34;&gt;&lt;/a&gt; 城市&lt;/h2&gt;
+&lt;p&gt;列日处于比利时的东南部，也是列日省的省会所在，与卢森堡、荷兰和德国接壤，也是比利时法语区第三大城市。很多前往欧洲上学的同学十分担心当地的治安和自身的安全。然而，列日就是一个十分安全的城市。在欧洲，往往越是小城市，越安全。像巴黎和布鲁塞尔相较之下可能遇到危险的概率就更大。我曾经就在布鲁塞尔差点被偷了包。在列日这样的小城市，街上的汽车都会主动为行人让路。有时候，一车公交的人等我过马路，我还有些不好意思，加快了脚下的步伐。虽然欧洲老龄化十分严重，但是列日作为一个大学城，这样的感觉并不明显，年轻人依然很多，整个城市充满活力。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Belgium/liege-train-station.jpg&#34; alt=&#34;列日火车站&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;生活&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#生活&#34;&gt;&lt;/a&gt; 生活&lt;/h2&gt;
+&lt;p&gt;西欧的生活节奏十分慢。一方面因为纬度高的原因，列日很早就天黑；另一方面，欧洲人生活压力小，十分讲究工作和生活的平衡。大多数商店都是6点关门，公共服务设施基本上5点关门，超市8点关门。从国内996的生活状态刚过来时会又些不适应，回来之后也是。&lt;/p&gt;
+&lt;p&gt;比利时的生活成本在欧洲还是比较高的。欧洲是越靠北、越靠西的地区，越富有生活成本越高。维持最低生活水平的话，大概需要每月700欧元。如果想过的好些，再出去玩一玩，每个月大概需要1000欧元。&lt;/p&gt;
+&lt;p&gt;西欧的天气在冬天以阴雨连绵为主，经常半个月见不到太阳，真的会影响心情。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Belgium/2020.jpg&#34; alt=&#34;圣彼得堡 的2020灯，新年快乐&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#学习&#34;&gt;&lt;/a&gt; 学习&lt;/h2&gt;
+&lt;p&gt;我学习的是计算机专业的课程，在列日大学分属应用科学学院，所有的课程都被安排在一个位于城市南部的山上。而为了生活便利，我和大多数学生一样，选择住在市里。每天上课通勤乘坐40分钟的公交上山上学。课程难度整体并不大，但知识量很大，又是英文教学，所以需要投入大量时间。最 令我印象深刻的一点是，这里的课程和考试的时长几乎都为4个小时，有时会提前下课。长时间的课程对集中注意力是一项重大的考验，每次上完课都感觉筋疲力尽。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Belgium/children-learning-web-development.jpg&#34; alt=&#34;荷兰小朋友在学习网站编程&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;旅行&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#旅行&#34;&gt;&lt;/a&gt; 旅行&lt;/h2&gt;
+&lt;p&gt;比利时布鲁塞尔作为欧盟的总部，欧洲的交通枢纽，前往其他国家的机票都十分便宜。经常可以找到10欧的廉价机票，背上行李，来场说走就走的旅行。可以说，这里和欧洲的联系十分密切。欧洲作为近现代工业革命的起源地和西方列强的根据地，拥有从全世界搜集的众多瑰宝。其中，以卢浮宫和大英博物馆居首。像中国一样，列日也有一些公共假期。除了比利时的假期外，还专门有一天法语区的放假。利用这些假期，我们在欧洲进行了充分的旅游，极大地增长了自己的眼界和阅历。读了二十多年书后，终于有机会走万里路了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Belgium/france-nice.jpg&#34; alt=&#34;法国尼斯海岸&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Belgium/Italy-Roma-Colosseum.jpg&#34; alt=&#34;罗马斗兽场&#34; /&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -171,6 +187,7 @@
             <title>游记 | 穗港澳</title>
             <link>https://youngforest.github.io/2018/10/09/guangzhou-tour/</link>
             <category>travel</category>
+            <category>游记</category>
             <pubDate>Tue, 09 Oct 2018 17:26:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;国庆节后，我和二师兄有机会前往广东，依次游览了广州、澳门 和 香港。10月6号从北京出发，坐10个小时高铁，来到广州南站，之后落塌广东大厦。&lt;/p&gt;
 &lt;h2 id=&#34;广州&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#广州&#34;&gt;&lt;/a&gt; 广州&lt;/h2&gt;
