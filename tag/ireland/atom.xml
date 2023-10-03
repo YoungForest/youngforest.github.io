@@ -3,7 +3,7 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;ireland&#34; tag</title>
     <link href="https://youngforest.github.io" />
-    <updated>2023-06-10T03:50:50.000Z</updated>
+    <updated>2023-10-03T03:53:31.000Z</updated>
     <category term="tech" />
     <category term="life" />
     <category term="intern" />
@@ -28,6 +28,7 @@
     <category term="Europe" />
     <category term="Hexo" />
     <category term="Ireland" />
+    <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
@@ -62,6 +63,37 @@
     <category term="git" />
     <category term="Tech" />
     <category term="Tencent" />
+    <entry>
+        <id>https://youngforest.github.io/2023/10/03/Ireland-visiting-dentist/</id>
+        <title>爱尔兰看牙记</title>
+        <link rel="alternate" href="https://youngforest.github.io/2023/10/03/Ireland-visiting-dentist/"/>
+        <content type="html">&lt;p&gt;笔者天生牙齿比较软，易得蛀牙。之前在北京上学的时候，就曾经和校医院和北医三院的口腔科有不解之缘，甚至久病成医。去年来到爱尔兰，在这边也是第一时间看牙，经常看牙。因此，总结和分享一下我的经验和体会。&lt;/p&gt;
+&lt;p&gt;在离开北京的前2天，我忽然牙疼，然后发现有颗牙有个洞，也就是龋齿了，还比较严重。之前一直去公立医院看病，一来三甲医院比较受我信任，二来花销少，医保可以报销，三来学生时代转院只能转到北医三院，比较熟悉。但公立医院挂号要提前一周，也不好抢。因此，果断第二天一早去了当时住的宾馆附近的一家评价不错的口腔私立医院，甚至不需要挂号。私立医院果然服务不错，拍了X光后，牙医说龋齿已经到神经了，需要做根管治疗，然后装冠。治疗周期至少需要2周，来治疗2次。我几年前，一颗牙齿在北医三院做过类似的治疗。因此十分清楚着这意味着什么：你的牙，他其实已经死了，只是尸体还在。因为我第二天就要坐飞机走了，最后给我开了些止疼药。&lt;/p&gt;
+&lt;p&gt;来了爱尔兰之后，我第二周就入职了。就已经有医疗保险了。但当时我还没有PPSN，有些担心，就又等了一个半月，直到有了PPSN后，才预约了公司办公室附近的一个Dentist。并且提前把保险换成了Principle Scheme + Dental Care，看牙的报销会更多些。后来我也了解到，并不需要PPSN，甚至入职，也能使用公司的保险，还是十分强大和对我们这些外地人有保障的。&lt;/p&gt;
+&lt;p&gt;在 &lt;a href=&#34;http://dentalexperts.ie/&#34;&gt;dentalexperts.ie&lt;/a&gt; 看病的体验十分不错，牙医拍了X光后说，虽然龋齿比较深，比较接近神经，但并没有伤到神经，也不需要根管治疗，优先补牙。补牙后，还是十分成功的，过了一年也没再疼过。我又做了检查和洗牙，发现了其他比较浅的龋齿，也迅速补了。过了9个月，我刷牙出血了。明白是时候再次去洗牙，顺便做了检查，补了2颗牙。来爱尔兰近一年，我前后共看了4次牙医，花费是200+200+130+280 欧元。Laya保险基本都给报了，报销后的花费是 1+0+0+0 欧元。Dental Care还是很顶用的。每次看牙报销会通过Principle Scheme报一次，Dental Care再把剩余部分报一次。用户只用提交一次申请，Laya会自动帮忙最优化。牙不好的朋友一定要加个Dental Care。我的保险费是每2周70欧元，还是挺贵的。幸运的是，这部分是公司福利，公司会出。但由于算是福利，我们其实还是要为此交个人收入税的。&lt;/p&gt;
+</content>
+        <category term="Ireland" />
+        <category term="Life" />
+        <updated>2023-10-03T03:53:31.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2023/09/20/Ireland-France-visa-monitor/</id>
+        <title>爱尔兰法签抢号辅助</title>
+        <link rel="alternate" href="https://youngforest.github.io/2023/09/20/Ireland-France-visa-monitor/"/>
+        <content type="html">&lt;p&gt;申根签太难了。终于还是用科技打败了黄牛，成功抢到了法签。不枉学了9年计算机，程序员从不向黄牛低头。&lt;/p&gt;
+&lt;p&gt;爱尔兰有抢法签需求的同学可以试试我开发的这个法签通知工具，使用说明见文档。有问题可随时找我反馈：&lt;br /&gt;
+&lt;a href=&#34;https://docs.google.com/document/d/1uHJCxINt9Sb0f1HHybCFhxkmpzxRURilsxqD6OQLpQ4/edit?usp=sharing&#34;&gt;Google Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本工具目前仅支持 爱尔兰，和 法国签证。&lt;br /&gt;
+听说英国的朋友抢法签也蛮难的。&lt;/p&gt;
+</content>
+        <category term="Ireland" />
+        <category term="Life" />
+        <category term="法国签证" />
+        <category term="法签" />
+        <category term="申根签证" />
+        <category term="Side Project" />
+        <updated>2023-09-20T06:05:07.000Z</updated>
+    </entry>
     <entry>
         <id>https://youngforest.github.io/2023/06/10/Ireland-Driving-License/</id>
         <title>爱尔兰驾照申请 Ireland Driving License Application</title>
@@ -141,6 +173,7 @@
 &lt;h3 id=&#34;申请正式驾照&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#申请正式驾照&#34;&gt;&lt;/a&gt; 申请正式驾照。&lt;/h3&gt;
 </content>
         <category term="Ireland" />
+        <category term="Life" />
         <updated>2023-06-10T03:50:50.000Z</updated>
     </entry>
     <entry>
@@ -180,6 +213,7 @@
 &lt;p&gt;大家根据自己的预算和偏好选择运营商吧。&lt;/p&gt;
 </content>
         <category term="Ireland" />
+        <category term="Life" />
         <updated>2022-11-11T13:25:17.000Z</updated>
     </entry>
 </feed>
