@@ -45,6 +45,9 @@
     <category term="English" />
     <category term="折腾" />
     <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
     <category term="vim" />
     <category term="投资" />
     <category term="WeRide" />
@@ -57,7 +60,6 @@
     <category term="RIP" />
     <category term="sensetime" />
     <category term="sublime" />
-    <category term="Microsoft" />
     <category term="vscode" />
     <category term="gcc" />
     <category term="git" />
