@@ -6,6 +6,7 @@
     <updated>2020-04-30T08:51:34.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
     <category term="kuaishou" />
     <category term="Alibaba" />
@@ -20,19 +21,19 @@
     <category term="contest" />
     <category term="Weride" />
     <category term="C++" />
+    <category term="C++11" />
     <category term="Database" />
     <category term="Django" />
-    <category term="C++11" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
     <category term="Hexo" />
-    <category term="Ireland" />
-    <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
+    <category term="Ireland" />
+    <category term="Life" />
     <category term="Competitive Programming" />
     <category term="Algorithm" />
     <category term="LeetCode" />
@@ -54,9 +55,9 @@
     <category term="tex" />
     <category term="Mac" />
     <category term="Windows" />
+    <category term="benchmark" />
     <category term="Ubuntu" />
     <category term="Owncloud" />
-    <category term="benchmark" />
     <category term="RIP" />
     <category term="sensetime" />
     <category term="sublime" />
@@ -67,7 +68,7 @@
     <category term="Tencent" />
     <entry>
         <id>https://youngforest.github.io/2020/04/30/2021-summer-intern-interview-summary/</id>
-        <title>2021 暑期实习 求职总结</title>
+        <title>2020 暑期实习 求职总结</title>
         <link rel="alternate" href="https://youngforest.github.io/2020/04/30/2021-summer-intern-interview-summary/"/>
         <content type="html">&lt;p&gt;从在牛客网发暑期实习的第一篇面经开始，到现在已经过去近2个月了。中间陆陆续续参加了8个厂的招聘。岗位均为后端/服务器开发。base地点为北京。&lt;/p&gt;
 &lt;h2 id=&#34;失败&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#失败&#34;&gt;&lt;/a&gt; 失败&lt;/h2&gt;
