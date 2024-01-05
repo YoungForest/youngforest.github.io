@@ -21,19 +21,19 @@
     <category term="contest" />
     <category term="Weride" />
     <category term="C++" />
-    <category term="C++11" />
     <category term="Database" />
     <category term="Django" />
+    <category term="C++11" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
     <category term="Hexo" />
+    <category term="Ireland" />
+    <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="Ireland" />
-    <category term="Life" />
     <category term="Competitive Programming" />
     <category term="Algorithm" />
     <category term="LeetCode" />
@@ -55,9 +55,9 @@
     <category term="tex" />
     <category term="Mac" />
     <category term="Windows" />
-    <category term="benchmark" />
     <category term="Ubuntu" />
     <category term="Owncloud" />
+    <category term="benchmark" />
     <category term="RIP" />
     <category term="sensetime" />
     <category term="sublime" />
@@ -70,7 +70,8 @@
         <id>https://youngforest.github.io/2024/03/13/2023-summary-and-2024-resolutions/</id>
         <title>2023年终总结 与 2024新年展望</title>
         <link rel="alternate" href="https://youngforest.github.io/2024/03/13/2023-summary-and-2024-resolutions/"/>
-        <content type="html">&lt;p&gt;圣诞假期将至，爱尔兰微软的办公室早早就充满着节日气氛。各种张灯结彩，圣诞树和圣诞老人的装饰，不亏是爱尔兰最大的节日。爱尔兰圣诞节会放2天假，12月25号和26号，比美国还多一天。更多的人，尤其是基督教国家的同事，会在节日前后请年假，回家和家人一起过节。因此12月是一个工作比较轻松，大家十分放松的时间。&lt;br /&gt;
+        <content type="html">&lt;p&gt;转自&lt;a href=&#34;https://youngforest.github.io/2024/03/13/2023-summary-and-2024-resolutions/&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;圣诞假期将至，爱尔兰微软的办公室早早就充满着节日气氛。各种张灯结彩，圣诞树和圣诞老人的装饰，不亏是爱尔兰最大的节日。爱尔兰圣诞节会放2天假，12月25号和26号，比美国还多一天。更多的人，尤其是基督教国家的同事，会在节日前后请年假，回家和家人一起过节。因此12月是一个工作比较轻松，大家十分放松的时间。&lt;br /&gt;
 距离新年还有半个月，我的生活和想法应该不会在这段时间内发生改变。不少朋友也在期待着我的年终总结，都成为一年一度的固定项目了。从17年到现在，已经第7年了。&lt;/p&gt;
 &lt;p&gt;往年的年终总结：&lt;/p&gt;
 &lt;ul&gt;
@@ -149,6 +150,8 @@
 或许，正是这种信息差，导致爱尔兰其实是一个价值洼地。这边留学和工作的机会很多，但知道的人不多，竞争也没那么激烈。大多数人，无论是打算定居，还是把爱尔兰当跳板，都是冲着这些很好的留学和工作的机会来的。&lt;/p&gt;
 &lt;p&gt;想了解更多从国内润到爱尔兰的经验的话，可以参考我 &lt;a href=&#34;https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/&#34;&gt;之前的博客: 从北京到都柏林 一名程序员的润欧之旅&lt;/a&gt; 和 &lt;a href=&#34;https://youtu.be/W_AltNnX4fw&#34;&gt;播客&lt;/a&gt; (国内的朋友也可以在&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/6558ee9451ba721857f6eb45?s=eyJ1IjogIjY0YTQ3OWQwZWRjZTY3MTA0YWYzNWJhMyJ9&#34;&gt;小宇宙上听&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;因此上半年，和ex分手后，我在爱尔兰就很尴尬了。进退失据。没有去处，没有家。回国是肯定回不去了，也不好意思回去。当时出国的时候，家人也不那么同意，我也是一意孤行出来的。而且，我还有梦想没有实现，“两亩薄田一头牛，老婆孩子热炕头”的理想生活。显然是在发达国家更容易实现得多。国内近些年改革的方向，也是令我比较失望和担忧的。既然无法兼济天下，现在只能独善其身了。&lt;/p&gt;
+&lt;p&gt;爱尔兰还是蛮适合生活的，尤其适合家庭生活（老婆孩子热炕头）。自然环境好，十分安静。虽然福利可能比北欧差些，但毕竟是福利国家，比美国、新加坡、香港、中国都要好不少。工作机会和薪资也很不错，尤其是作为IT员工。在欧洲算是顶流的了，除了伦敦和瑞士，其他地方都更差了。&lt;br /&gt;
+不过这里有些过于躺平了，有上进心的人还是更适合去美国发展。有点田忌赛马的意思。上等马都去美国了，爱尔兰都剩下中等马 或是 更青睐躺平的同学。因此，在爱尔兰工作生活都十分轻松，正好趁着这几年休息一下，多学习和思考，了解世界，更重要的是了解自己。&lt;/p&gt;
 &lt;p&gt;我从18年到20年，就一直想去美国发展，包括后来20年确立来欧洲的目标后，也是想把欧洲当作跳板，最后还是要去美国的。但是当时这种“美国梦”都是基于比较原始、和朴素的理由。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;美国的薪资十分有吸引力。作为程序员，明显地超过其他国家，包括中、欧、日本、新加坡。大概是欧洲的2倍。爱尔兰薪资在欧洲已经算是高的了，但跟美国还是差很远。机会（包括 工作、教育、赚钱）众多，也就是所谓的“美国梦”。&lt;/li&gt;
@@ -177,7 +180,8 @@
 至于如何做出更好的选择，就需要提高自己的认知、眼界、消除偏见、阶级和家庭局限性。我的方法其实也很简单：&lt;br /&gt;
 读万卷书，行万里路，和一万个人聊天。&lt;br /&gt;
 读万卷书可以消除时间上的差异，行万里路可以消除空间上的差异，和一万个人聊天可以消除人生阶层和生活阅历上的差异。&lt;br /&gt;
-更具体地，可以参考我对今年诺兰的新电影&lt;a href=&#34;https://movie.douban.com/review/15325962/&#34;&gt;《奥本海默》的影评&lt;/a&gt;。&lt;/p&gt;
+更具体地，可以参考我对今年诺兰的新电影&lt;a href=&#34;https://movie.douban.com/review/15325962/&#34;&gt;《奥本海默》的影评&lt;/a&gt;。&lt;br /&gt;
+你也得有能力蹭到溢出价值，比如 移民，进大公司摸鱼，和优秀的人一起共事，都还是稍微有些门槛的。&lt;/p&gt;
 &lt;p&gt;这就是为什么要移民到发达国家，尤其是去美国，去美国科技产业聚集的地区，为自己，也为子孙后代可以自己不用努力，蹭到更多优秀的人和科技发展的溢出。肉身去蹭溢价，其实还是稍微有些挑战、折腾和麻烦的。另一种更方便快捷的方法，就是直接买股票。尤其是美股市场十分开放，每个人都可以享受到科技发展带来的好处。不像A股市场，都是用来集资和割韭菜的。正所谓“相信国运，定投纳指”。美股体验也十分友好，长牛短熊，经历了长期的考验。今年尤其如此，大盘标普500涨了25%，收复去年失地，又创新高。&lt;/p&gt;
 &lt;p&gt;买股票需要开通券商账户（Broker），欧洲的朋友推荐 &lt;a href=&#34;https://ref.trade.re/z0xs4rc3&#34;&gt;Trade Republic&lt;/a&gt;，欧元买卖。现金也有4%的利息，比放在银行好。而且是放在德国的Citibank，有10万欧元的存款保险。另外一个更强大，功能更多，股票市场更多，全球大多数国家都能用的推荐是 &lt;a href=&#34;https://ibkr.com/referral/sen697&#34;&gt;IBKR&lt;/a&gt;，也是大多高手的选择, 但它操作门槛稍高，特别适合进阶用户。我基本只买大盘指数ETF （标普500 和 纳斯达克100）, 而且长期持有，也是 财务自由运动 FIRE (Finacial Independent, Retire Early) 的推荐。长期持有很考验心态，需要你对所投资的标的有信仰，才能在股市的波动中一直拿住，坚持定投。比如 投资美股大盘标普500，就要对美国有信仰；买Nasdaq 100，就要对科技有信仰。对财务自由感兴趣的朋友，可以参考&lt;a href=&#34;https://book.douban.com/subject/6920307/&#34;&gt;《Early Retirement Extreme: A Philosophical and Practical Guide to Financial Independence》&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;可以发现，无论是对美国，还是对人类文明，科学技术都是最重要的推动力。我们现在生活在工业文明，是何其幸运。生活质量如此之高。现在人类群星如此闪耀。现在就是历史上最好的时代，以后还会越来越好。如果信心不足，可以看看 茨威格 的&lt;a href=&#34;https://book.douban.com/subject/36096686/&#34;&gt;《人类群星闪耀时》&lt;/a&gt;。算是我“摸鱼理论”中的成功学书籍了。&lt;/p&gt;
@@ -474,5 +478,34 @@ CTCI 基本看完。&lt;br /&gt;
         <category term="life" />
         <category term="年终总结" />
         <updated>2018-12-12T13:29:47.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2017/02/22/2017-resolutions/</id>
+        <title>2017 新年展望</title>
+        <link rel="alternate" href="https://youngforest.github.io/2017/02/22/2017-resolutions/"/>
+        <content type="html">&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;现在是大年初七, 是大多数有工作的人上班的日子, 也是襄中开学的日子, 而我作为一个大学生, 居然可以放假到农历二月, 致使现在凌晨2点还有时间码字. 刚刚看了&lt;a href=&#34;http://www.jianshu.com/p/0566385dceff&#34;&gt;一篇文章&lt;/a&gt;, 作者的话很大程度上描述了我的状态, 咸鱼懒的翻身. 而作者的亲身经历和劝说也让我愧疚.&lt;/p&gt;
+&lt;p&gt;最近刚读了蔡东藩的&lt;a href=&#34;https://book.douban.com/subject/3089584/&#34;&gt;五代史&lt;/a&gt;, 了解五代混乱的历史, 感叹大多数主子昏庸误国, 英明的主子也多少有瑕疵的同时, 也将心比心, 自己是否是一个英明的帝王. 答案却是否定的. 我是一个懒惰的人, 没有意志力的人, 不喜欢批评, 只喜欢表扬. 如果把自己放在帝王的位置上, 一定是个亡国之君了. 想想还是很可怕的.&lt;/p&gt;
+&lt;p&gt;综上两点原因, 我打算在新的一年里有所改变, 制定新年目标, 完成新年计划, 做更好地自己.&lt;/p&gt;
+&lt;h2 id=&#34;2017目标及计划&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2017目标及计划&#34;&gt;&lt;/a&gt; 2017目标及计划&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;英语每日打卡学习, 加大任务量(小镇做题家欠下的，语言关必须过)&lt;/li&gt;
+&lt;li&gt;早起, 8点之前&lt;/li&gt;
+&lt;li&gt;早睡, 12点之前&lt;/li&gt;
+&lt;li&gt;坚持吃早饭&lt;/li&gt;
+&lt;li&gt;坚持每日锻炼身体, 天气好出门跑步, 天气差在室内运动&lt;/li&gt;
+&lt;li&gt;凡事不要以懒惰为借口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;p&gt;姐姐今年就要毕业找工作了, 我也要准备尽力保研了, 深感世事艰辛, 人间险阻, 唯有努力学习才能获得拯救.&lt;/p&gt;
+&lt;p&gt;最后, 二句&amp;quot;名言&amp;quot;镇文.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;学习使我快乐.
+
+我爱学习, 学习爱我.
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="life" />
+        <category term="年终总结" />
+        <updated>2017-02-22T04:36:31.000Z</updated>
     </entry>
 </feed>
