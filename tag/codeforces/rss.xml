@@ -15,10 +15,10 @@
         <category>Alibaba</category>
         <category>travel</category>
         <category>游记</category>
-        <category>北京</category>
-        <category>户口</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>北京</category>
+        <category>户口</category>
         <category>New Graduate</category>
         <category>codeforces</category>
         <category>contest</category>
@@ -42,6 +42,11 @@
         <category>LeetCode</category>
         <category>Mihayo</category>
         <category>键盘</category>
+        <category>投资</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
         <category>Linux</category>
         <category>atom</category>
         <category>hash</category>
@@ -53,7 +58,6 @@
         <category>Microsoft</category>
         <category>China</category>
         <category>vim</category>
-        <category>投资</category>
         <category>WeRide</category>
         <category>tex</category>
         <category>Mac</category>
@@ -64,9 +68,9 @@
         <category>RIP</category>
         <category>sensetime</category>
         <category>sublime</category>
+        <category>git</category>
         <category>vscode</category>
         <category>gcc</category>
-        <category>git</category>
         <category>Tech</category>
         <category>Tencent</category>
         <item>

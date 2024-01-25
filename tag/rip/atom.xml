@@ -12,10 +12,10 @@
     <category term="Alibaba" />
     <category term="travel" />
     <category term="游记" />
-    <category term="北京" />
-    <category term="户口" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="北京" />
+    <category term="户口" />
     <category term="New Graduate" />
     <category term="codeforces" />
     <category term="contest" />
@@ -39,6 +39,11 @@
     <category term="LeetCode" />
     <category term="Mihayo" />
     <category term="键盘" />
+    <category term="投资" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
     <category term="Linux" />
     <category term="atom" />
     <category term="hash" />
@@ -50,7 +55,6 @@
     <category term="Microsoft" />
     <category term="China" />
     <category term="vim" />
-    <category term="投资" />
     <category term="WeRide" />
     <category term="tex" />
     <category term="Mac" />
@@ -61,9 +65,9 @@
     <category term="RIP" />
     <category term="sensetime" />
     <category term="sublime" />
+    <category term="git" />
     <category term="vscode" />
     <category term="gcc" />
-    <category term="git" />
     <category term="Tech" />
     <category term="Tencent" />
     <entry>
