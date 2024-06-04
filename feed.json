@@ -5,6 +5,18 @@
     "home_page_url": "https://youngforest.github.io",
     "items": [
         {
+            "id": "https://youngforest.github.io/2024/06/04/Xiao-Lin/",
+            "url": "https://youngforest.github.io/2024/06/04/Xiao-Lin/",
+            "title": "时势 周期波动下的国家、社会和个人",
+            "date_published": "2024-06-04T15:11:35.000Z",
+            "content_html": "<p><a href=\"https://book.douban.com/subject/36673627/\">本书豆瓣链接</a></p>\n<p>小Lin是我最喜欢的UP主之一了。美女、学霸、华尔街投行、创业。各种引人注目的标签。而且她的视频确实质量比较高，制作精良，然后又通俗易通。看她的书支持一下。全书的内容，其实她的视频里都讲过，甚至讲的还更好。毕竟视频展示各种图表也更方便。所以，其实不读这本书，只看她的油管或B站视频也是足够的。读本书最神奇的地方在于，自带语音功能。不得不感叹人类大脑的强大，读的时候，脑袋里面会自动播放小Lin的语音和视频，算是一次不错的体验了。而且也就当是复习一下之前的视频里讲的知识。</p>\n<p>不过，还是要强调一点。小Lin的视频和书，都是科普向的，虽然宏观经济的干活不少，但总体是轻松娱乐向的。虽然又很多文献和数据做支撑，但仍然显得十分浅显，许多因果关系也并未如她分析的那样。毕竟经济学是十分复杂的学问。很多时候是拿着后视镜去寻找原因，而不是根据现在预测未来。炒股或关注经济的朋友，应该都有这个感受。每个分析师分析的都不一样，而且话也不说死，最后过了半年，发现和当初分析的大相径庭，但仍能自圆其说。我自己也关注了一些投资的UP主，在这里就不举例和介绍给大家了，免得误人子弟。</p>\n",
+            "tags": [
+                "Reading",
+                "时势",
+                "小Lin说"
+            ]
+        },
+        {
             "id": "https://youngforest.github.io/2024/05/06/The-Art-of-War-by-Sunzi/",
             "url": "https://youngforest.github.io/2024/05/06/The-Art-of-War-by-Sunzi/",
             "title": "华杉讲透《孙子兵法》",
@@ -221,17 +233,6 @@
             "tags": [
                 "codeforces",
                 "contest"
-            ]
-        },
-        {
-            "id": "https://youngforest.github.io/2023/06/21/investment-2023/",
-            "url": "https://youngforest.github.io/2023/06/21/investment-2023/",
-            "title": "我的投资故事（二）2023",
-            "date_published": "2023-06-21T06:35:00.000Z",
-            "content_html": "<p>距离上篇<a href=\"https://youngforest.github.io/2021/03/22/investment/\">我的投资故事（一）</a>已经过去2年时间了，这2年，无论是我的投资观念，还是投资成果，都有了很大的进步。在此，我总结分享我的2022-2023年的投资故事。<a href=\"https://youngforest.github.io/2023/06/21/investment-2023/\">博客原文</a>。</p>\n<p>最重要的变化是，经过5年的投资，终于扭亏为盈啦。</p>\n<h2 id=\"国际大环境\"><a class=\"markdownIt-Anchor\" href=\"#国际大环境\"></a> 国际大环境</h2>\n<p>由于疫情2年的无限量化宽松，俗称“大放水”，美股在2021年底达到历史最高点。之后2022年，欧美通胀高企，Fed又出面强硬加息了。一年时间，从0加到5%。中间多次75基点，不可谓不快。</p>\n",
-            "tags": [
-                "money",
-                "投资"
             ]
         }
     ]
