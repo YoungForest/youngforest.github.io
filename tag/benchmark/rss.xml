@@ -14,8 +14,8 @@
         <category>Reading</category>
         <category>3 body</category>
         <category>全球通史</category>
-        <category>Alibaba</category>
         <category>kuaishou</category>
+        <category>Alibaba</category>
         <category>travel</category>
         <category>游记</category>
         <category>你的灯亮着吗</category>
@@ -31,12 +31,13 @@
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
-        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
+        <category>埃隆·马斯克传</category>
         <category>Hexo</category>
         <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
         <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
@@ -47,15 +48,16 @@
         <category>Competitive Programming</category>
         <category>Algorithm</category>
         <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
         <category>Mihayo</category>
         <category>键盘</category>
         <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
         <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>现实不似你所见-量子引力之旅</category>
         <category>孙子兵法</category>
         <category>Linux</category>
         <category>历代经济变革得失</category>
@@ -129,7 +131,7 @@
 &lt;h2 id=&#34;内存&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存&#34;&gt;&lt;/a&gt; 内存&lt;/h2&gt;
 &lt;h4 id=&#34;基本思想-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本思想-2&#34;&gt;&lt;/a&gt; 基本思想&lt;/h4&gt;
 &lt;p&gt;对内存的测试, 笔者的师兄向笔者介绍了&lt;a href=&#34;https://linux.die.net/man/8/memtester&#34;&gt;&lt;code&gt;memtester&lt;/code&gt;&lt;/a&gt;这个程序. 具体安装及使用方法:&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ sudo apt-get install memtester&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 从PHYSADDR处分配MEMORY大小的内存, 测试ITERATIONS次.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ sudo memtester [-p PHYSADDR] &amp;lt;MEMORY&amp;gt; [ITERATIONS]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;built_in&#34;&gt;sudo&lt;/span&gt; apt-get install memtester&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 从PHYSADDR处分配MEMORY大小的内存, 测试ITERATIONS次.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;built_in&#34;&gt;sudo&lt;/span&gt; memtester [-p PHYSADDR] &amp;lt;MEMORY&amp;gt; [ITERATIONS]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;一般情况下, 不需要指定PHYSADDR, 因为可能将其他进程占用的内存破坏掉, 存在一定的危险性.&lt;/p&gt;
 &lt;p&gt;利用&lt;code&gt;memtester&lt;/code&gt;这个程序, 笔者进行简单加工, 就完成了需求.&lt;/p&gt;
 &lt;h4 id=&#34;程序源代码-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序源代码-4&#34;&gt;&lt;/a&gt; 程序源代码&lt;/h4&gt;
@@ -141,7 +143,7 @@
 &lt;h4 id=&#34;基本思路-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本思路-3&#34;&gt;&lt;/a&gt; 基本思路&lt;/h4&gt;
 &lt;p&gt;一台机器作为服务器, 另一台机器作为客户端, 客户端向服务器发包, 服务器接受, 连接使用UDP连接. 这也就是说, 如果没有服务器的话, 客户端仍然可以对网络上行进行压力测试; 但没有客户端, 服务器则没法对网络下行进行压力测试. 简单地说, 服务器(下行)是被动的, 客户端(上行)是主动的, 没人收包仍然可以狂发包, 但没人发包, 无论如何是收不到包的.&lt;/p&gt;
 &lt;h4 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;&lt;/a&gt; 安装&lt;/h4&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ sudo apt-get install iperf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;built_in&#34;&gt;sudo&lt;/span&gt; apt-get install iperf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&#34;使用方法-5&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用方法-5&#34;&gt;&lt;/a&gt; 使用方法&lt;/h4&gt;
 &lt;h5 id=&#34;服务器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务器&#34;&gt;&lt;/a&gt; 服务器&lt;/h5&gt;
 &lt;p&gt;启动服务器&lt;/p&gt;

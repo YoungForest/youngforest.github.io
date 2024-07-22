@@ -11,8 +11,8 @@
     <category term="Reading" />
     <category term="3 body" />
     <category term="全球通史" />
-    <category term="Alibaba" />
     <category term="kuaishou" />
+    <category term="Alibaba" />
     <category term="travel" />
     <category term="游记" />
     <category term="你的灯亮着吗" />
@@ -28,12 +28,13 @@
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
-    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
+    <category term="埃隆·马斯克传" />
     <category term="Hexo" />
     <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
     <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
@@ -44,15 +45,16 @@
     <category term="Competitive Programming" />
     <category term="Algorithm" />
     <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
     <category term="Mihayo" />
     <category term="键盘" />
     <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
     <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="现实不似你所见-量子引力之旅" />
     <category term="孙子兵法" />
     <category term="Linux" />
     <category term="历代经济变革得失" />
@@ -109,7 +111,7 @@
 &lt;p&gt;如果遇到报错，&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Error: Directory not empty @ dir_s_rmdir - /usr/local/opt/openssl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;可以删掉对应文件夹或是更改其所有人&lt;code&gt;chown&lt;/code&gt;.&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew cleanup&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;rm&lt;/span&gt; -rf /usr/local/Cellar/openssl/1.0.2q&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew cleanup&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;rm&lt;/span&gt; -rf /usr/local/Cellar/openssl/1.0.2q&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在我&lt;code&gt;brew install libtorrent-rasterbar&lt;/code&gt;后再&lt;code&gt;./configure&lt;/code&gt;时，仍然会发生该库版本不对的问题：&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Requested &lt;span class=&#34;string&#34;&gt;&amp;#x27;libtorrent-rasterbar &amp;gt;= 1.2.11&amp;#x27;&lt;/span&gt; but version of libtorrent-rasterbar is 1.2.10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;因为&lt;code&gt;brew&lt;/code&gt;的formula中只有1.2.10，我们只好手动编译一个新版了。&lt;/p&gt;
