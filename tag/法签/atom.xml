@@ -20,11 +20,11 @@
     <category term="户口" />
     <category term="ByteDance" />
     <category term="interview" />
-    <category term="New Graduate" />
     <category term="codeforces" />
     <category term="contest" />
-    <category term="Weride" />
+    <category term="New Graduate" />
     <category term="C++" />
+    <category term="Weride" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
@@ -35,29 +35,30 @@
     <category term="Hexo" />
     <category term="枪炮、病菌与钢铁" />
     <category term="厚黑学" />
-    <category term="Ireland" />
-    <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="持续买进" />
+    <category term="Ireland" />
+    <category term="Life" />
     <category term="Competitive Programming" />
     <category term="Algorithm" />
+    <category term="持续买进" />
     <category term="LeetCode" />
     <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
     <category term="Mihayo" />
     <category term="键盘" />
     <category term="编程珠玑" />
-    <category term="现实不似你所见-量子引力之旅" />
     <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
+    <category term="现实不似你所见-量子引力之旅" />
     <category term="孙子兵法" />
-    <category term="Linux" />
     <category term="历代经济变革得失" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
     <category term="碧血剑" />
@@ -65,8 +66,8 @@
     <category term="hash" />
     <category term="unordered_map" />
     <category term="English" />
-    <category term="折腾" />
     <category term="旷视" />
+    <category term="折腾" />
     <category term="Amazon" />
     <category term="Microsoft" />
     <category term="China" />
@@ -97,12 +98,12 @@
 &lt;p&gt;本工具目前仅支持 爱尔兰，和 法国签证。&lt;br /&gt;
 听说英国的朋友抢法签也蛮难的。&lt;/p&gt;
 </content>
-        <category term="Ireland" />
-        <category term="Life" />
         <category term="法国签证" />
         <category term="法签" />
         <category term="申根签证" />
         <category term="Side Project" />
+        <category term="Ireland" />
+        <category term="Life" />
         <updated>2023-09-20T06:05:07.000Z</updated>
     </entry>
 </feed>
