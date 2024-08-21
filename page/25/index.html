@@ -126,7 +126,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">260</span>
+          <span class="site-state-item-count">261</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -137,7 +137,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">86</span>
+        <span class="site-state-item-count">87</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -216,6 +216,122 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/03/27/latex-problems/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | YoungForest's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/27/latex-problems/" class="post-title-link" itemprop="url">latex 使用过程中遇到的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-03-27 19:27:55" itemprop="dateCreated datePublished" datetime="2018-03-27T19:27:55+08:00">2018-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/03/27/latex-problems/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/27/latex-problems/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          笔者毕业设计论文的撰写使用了latex工具，遇到了许多问题，在此总结一下。
+
+ pdf无法正常显示
+### 问题描述
+经过xelatex编译成功地文档无法正常显示pdf图片，显示的是一片空白。
+
+ 原因
+pdf文件的版本问题。查看其版本为1.7，xelatex默认按照1.5进行编译。
+
+ 解决方案
+xelatex %.tex，此处加上–output-driver=“xdvipdfmx -V7”。即修改msmake.bat
+
+1
+2
+3
+
+
+xelatex %mythesis%
+# =>
+xelatex --output-driver="xdvipdfmx -V7" %mythesis%
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/27/latex-problems/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/12/12/work-with-two-github-accounts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -252,7 +368,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
 
   
@@ -368,7 +484,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
 
   
@@ -489,7 +605,7 @@ python -m ipykernel install --user --name py27 --display-name "Python (py27)"
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
 
   
@@ -596,7 +712,7 @@ owncloud是一个私有云解决方案，可以替代百度云。其提供企业
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -708,7 +824,7 @@ https://www.windowscentral.
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -826,7 +942,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -936,7 +1052,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1047,7 +1163,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
 
   
@@ -1146,7 +1262,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
+      <time title="修改时间：2024-08-22 03:39:34" itemprop="dateModified" datetime="2024-08-22T03:39:34+08:00">2024-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1216,125 +1332,8 @@ sublime text 3 默认的主题是Monokai(dark), 感觉还是挺养眼的, 但缺
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YoungForest">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | YoungForest's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/" class="post-title-link" itemprop="url">对CPU 内存 硬盘读写 网络 进行压力测试</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2017-01-14 12:39:23" itemprop="dateCreated datePublished" datetime="2017-01-14T12:39:23+08:00">2017-01-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-08 05:48:13" itemprop="dateModified" datetime="2024-08-08T05:48:13+08:00">2024-08-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Laboratory/" itemprop="url" rel="index"><span itemprop="name">Laboratory</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          近来实验室的师兄有个需求, 写4个小程序, 分别对内存, CPU, 硬盘, 网络进行压力测试, 要求测试程序有压力档位可以调, 比如压力可以分为大, 中, 小. 二话不说, 撸起袖子加油干. 需求很简单, 但实现起来却并不简单, 笔者边学习, 边写程序, 才勉强完成任务.
-
- 测试环境
-Ubuntu 14.04
-
- CPU
-受编程之美的第一章"让CPU占有率曲线听你指挥"启发, 我很快地完成了对CPU的压力测试程序.
-
- 基本思路
-确定一个小周期, 笔者的周期设置为100, 这个值可以通过改变PIECE的值来改变, 周期为 100 * PIECE.
-
-在每个周期中, stress%的时间用于一
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/24/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/26/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/24/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/26/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

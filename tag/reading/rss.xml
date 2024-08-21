@@ -5,8 +5,8 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Wed, 07 Aug 2024 22:35:33 +0800</pubDate>
-        <lastBuildDate>Wed, 07 Aug 2024 22:35:33 +0800</lastBuildDate>
+        <pubDate>Wed, 21 Aug 2024 20:37:52 +0800</pubDate>
+        <lastBuildDate>Wed, 21 Aug 2024 20:37:52 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
         <category>年终总结</category>
@@ -32,11 +32,11 @@
         <category>Django</category>
         <category>C++11</category>
         <category>埃隆·马斯克传</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>Hexo</category>
-        <category>枪炮、病菌与钢铁</category>
         <category>厚黑学</category>
         <category>Ireland</category>
         <category>Life</category>
@@ -60,13 +60,14 @@
         <category>场外转场内</category>
         <category>Investment</category>
         <category>现实不似你所见-量子引力之旅</category>
+        <category>太白金星有点烦</category>
         <category>纳瓦尔宝典</category>
         <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
         <category>Linux</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>碧血剑</category>
         <category>atom</category>
         <category>hash</category>
         <category>unordered_map</category>
@@ -93,6 +94,17 @@
         <category>git</category>
         <category>Tech</category>
         <category>Tencent</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/08/21/Tai-bai-jin-xing-you-dian-fan/</guid>
+            <title>太白金星有点烦 马亲王解构西游记</title>
+            <link>https://youngforest.github.io/2024/08/21/Tai-bai-jin-xing-you-dian-fan/</link>
+            <category>Reading</category>
+            <category>太白金星有点烦</category>
+            <pubDate>Wed, 21 Aug 2024 20:37:52 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;马伯庸新作，十分，推荐。后记中说是消遣之作，读起来也确实畅快和消遣,2天读完，爱不释手。私认为质量仅次于长篇“古董局中局”，超过“两京十五日”，“长安十二时辰”和“长安的荔枝”，“我读书少，你可别骗我”，“显微镜下的大明”。亲王的书，我也是读了不少。算是最喜欢的当代中国作家了。一个作家的书能让我读这么多的，国外还有一个“东野圭吾”，国内还有一个“金庸”。&lt;/p&gt;
+&lt;p&gt;解构了经典四大名著之“西游记”，凭借对人性和官场的洞察，写的故事反而比原版更有说服力，也更符合现代叙事。其中的冤假错案，山头斗争，权力制衡，发挥的淋漓尽致。很早就听说过一种说法（大概是早年知乎上看到的），孙悟空之所以大闹天宫，是被天庭刻意为之的，趁此各个部门把锅甩给齐天大圣，尤其是地府的“生死簿”，估计本身就是很多漏洞，趁此销毁证据。“太白”恰好把此观点发扬光大，借取经表演，也揭露500年前大闹天宫的真相。扩展成一部10万字的中篇小说。读起来诙谐幽默，让人捧腹，但细思又极恐。其中不乏揭露现实，或借古讽今之意，但也充满着“马伯庸”一贯的悲天悯人，悬疑反转。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2024/08/07/Poor-Charlie-Almanack/</guid>
             <title>穷查理宝典 查理芒格的人生智慧</title>
