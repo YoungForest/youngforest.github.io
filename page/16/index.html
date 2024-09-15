@@ -126,7 +126,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">263</span>
+          <span class="site-state-item-count">264</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -137,7 +137,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">90</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -216,6 +216,112 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/12/15/Cpp-generator-implement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | YoungForest's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/12/15/Cpp-generator-implement/" class="post-title-link" itemprop="url">C++ 中实现生成器(Generator, yield in Python)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-15 21:34:30" itemprop="dateCreated datePublished" datetime="2019-12-15T21:34:30+08:00">2019-12-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/12/15/Cpp-generator-implement/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/15/Cpp-generator-implement/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          问题的起因是因为LeetCode上的一个题目1286. Iterator for Combination。最完美的实现是利用 生成器(Generator)，也就是Python中的yield。但是我不会，只实现了一个提前计算，然后存起来的解法。并不优雅，赛后，学习了一个C++中Generator的实现，在此分享下。因为我并未在网上找到很好的中文的关于此的文章。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/15/Cpp-generator-implement/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/12/14/find-all-unique-pairs-of-maximum-and-second-maximum-elements-over-all-sub-arrays-in-onlogn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -252,7 +358,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -369,7 +475,7 @@ Brute force 的解法是枚举所有的子数组，时间复杂度为O(N ^ 2).
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -478,7 +584,7 @@ RankNameScoreFinish TimeQ1 (2)Q2 (4)Q3 (5)Q4 (7)119 / 2503YoungForest180:39:280:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -587,7 +693,7 @@ RankNameScoreFinish TimeQ1 (2)Q2 (4)Q3 (5)Q4 (7)119 / 2503YoungForest180:39:280:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -697,7 +803,7 @@ RankNameScoreFinish TimeQ1 (2)Q2 (4)Q3 (5)Q4 (7)119 / 2503YoungForest180:39:280:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -820,7 +926,7 @@ reference: mounty
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -950,7 +1056,7 @@ class Solution {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1063,7 +1169,7 @@ class Solution {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1199,7 +1305,7 @@ impl Solution {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
+      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1270,118 +1376,6 @@ public:
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/10/04/LeetCode-weekly-contest-156/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/09/30/Paris/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YoungForest">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | YoungForest's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/30/Paris/" class="post-title-link" itemprop="url">巴黎</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-30 22:24:49" itemprop="dateCreated datePublished" datetime="2019-09-30T22:24:49+08:00">2019-09-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 21:53:16" itemprop="dateModified" datetime="2024-09-02T21:53:16+08:00">2024-09-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/dairy/" itemprop="url" rel="index"><span itemprop="name">dairy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/09/30/Paris/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/30/Paris/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          上周五赶上了9月27日比利时的法语区节日，学校放假，连上周末，我们恰好有3天的假期。在上上周从阿姆斯特丹回来的火车上，我们就定下了本次的去巴黎之旅。本次旅行的成员有：我、zfn、lsd、wyd。
-
-总的感受是：我太喜欢巴黎了，我爱巴黎.
-在这里，我深刻地感受到法国的文化自信。
-
- 第一天
-周五一大早，我们先乘火车到达Bruxell Nord站，转乘FlixBus直达巴黎。之所以坐大巴去，主要还是因为穷。最快的方式是 大力神火车，但需要99欧。大巴只需要15欧，缺点就是舒适性不足、速度慢。到达巴黎已经是下午1点半了。我们先买了巴黎公共交通的3天旅行通票，1-3Zone的。巴黎的行政区域划分为很多
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/30/Paris/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

@@ -15,8 +15,8 @@
         <category>3 body</category>
         <category>全球通史</category>
         <category>迷人的温度</category>
-        <category>kuaishou</category>
         <category>Alibaba</category>
+        <category>kuaishou</category>
         <category>travel</category>
         <category>游记</category>
         <category>反脆弱</category>
@@ -26,10 +26,11 @@
         <category>ByteDance</category>
         <category>interview</category>
         <category>New Graduate</category>
+        <category>深奥的简洁</category>
         <category>codeforces</category>
         <category>contest</category>
-        <category>Weride</category>
         <category>C++</category>
+        <category>Weride</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
@@ -40,12 +41,12 @@
         <category>Hexo</category>
         <category>枪炮、病菌与钢铁</category>
         <category>厚黑学</category>
-        <category>Ireland</category>
-        <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
+        <category>Ireland</category>
+        <category>Life</category>
         <category>持续买进</category>
         <category>Competitive Programming</category>
         <category>Algorithm</category>
@@ -113,12 +114,12 @@
             <guid isPermalink="true">https://youngforest.github.io/2023/09/20/Ireland-France-visa-monitor/</guid>
             <title>爱尔兰法签抢号辅助</title>
             <link>https://youngforest.github.io/2023/09/20/Ireland-France-visa-monitor/</link>
-            <category>Ireland</category>
-            <category>Life</category>
             <category>法国签证</category>
             <category>法签</category>
             <category>申根签证</category>
             <category>Side Project</category>
+            <category>Ireland</category>
+            <category>Life</category>
             <pubDate>Wed, 20 Sep 2023 14:05:07 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;申根签太难了。终于还是用科技打败了黄牛，成功抢到了法签。不枉学了9年计算机，程序员从不向黄牛低头。&lt;/p&gt;
 &lt;p&gt;爱尔兰有抢法签需求的同学可以试试我开发的这个法签通知工具，使用说明见文档。有问题可随时找我反馈：&lt;br /&gt;

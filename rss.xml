@@ -5,8 +5,8 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Mon, 02 Sep 2024 14:51:00 +0800</pubDate>
-        <lastBuildDate>Mon, 02 Sep 2024 14:51:00 +0800</lastBuildDate>
+        <pubDate>Sun, 15 Sep 2024 18:54:17 +0800</pubDate>
+        <lastBuildDate>Sun, 15 Sep 2024 18:54:17 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
         <category>年终总结</category>
@@ -15,8 +15,8 @@
         <category>3 body</category>
         <category>全球通史</category>
         <category>迷人的温度</category>
-        <category>kuaishou</category>
         <category>Alibaba</category>
+        <category>kuaishou</category>
         <category>travel</category>
         <category>游记</category>
         <category>反脆弱</category>
@@ -26,10 +26,11 @@
         <category>ByteDance</category>
         <category>interview</category>
         <category>New Graduate</category>
+        <category>深奥的简洁</category>
         <category>codeforces</category>
         <category>contest</category>
-        <category>Weride</category>
         <category>C++</category>
+        <category>Weride</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
@@ -40,12 +41,12 @@
         <category>Hexo</category>
         <category>枪炮、病菌与钢铁</category>
         <category>厚黑学</category>
-        <category>Ireland</category>
-        <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
+        <category>Ireland</category>
+        <category>Life</category>
         <category>持续买进</category>
         <category>Competitive Programming</category>
         <category>Algorithm</category>
@@ -96,6 +97,18 @@
         <category>git</category>
         <category>Tech</category>
         <category>Tencent</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</guid>
+            <title>深奥的简洁 从混沌、复杂到地球生命的起源</title>
+            <link>https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</link>
+            <category>Reading</category>
+            <category>深奥的简洁</category>
+            <pubDate>Sun, 15 Sep 2024 18:54:17 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;每周一本书22：&lt;a href=&#34;https://book.douban.com/subject/3370214/&#34;&gt;&lt;strong&gt;深奥的简洁&lt;/strong&gt; 从混沌、复杂到地球生命的起源&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;“穷查理宝典”推荐的书籍，从混沌的角度理解宇宙、生命和社会，十分有趣的角度。通过混沌，这一数学上的概念，把宇宙中很多事情都穿起来了。虽然我们有许多的物理学知识，看似对世界了解很多，可以做到预测历史和未来，像拉普拉斯认为的那样。但事实和理论证明了，这是不可能的。计算宇宙最好也是唯一的方案就是宇宙本身，无法在宇宙中制作出这样的机器或生命，去计算和预测宇宙。这是数学的限制，如果像很多先贤说的那样，数学是上帝的语言。那看来这一语言也是天生有限制的，不是全知全能的。当然数学也一直在进展，但从目前的证明来看，很多方程是没有解析解的。迭代解注定是蝴蝶效应。相比“迷人的温度”那本书稍差。虽然我自认为有一定的数理基础背景，但还是被本书的数学和论证搞得有些糊涂了。&lt;/p&gt;
+&lt;p&gt;有意思的是，前一本书提到“流浪地球”的方案。本书则是以，“三体”问题开端。三体问题不可解，不是物理的错，而是数学的错，而且是数学已经证明了不可解。因此，如果“地球往事”里，三体组织的拯救派看过这部作品，也就会放弃拯救“主”的想法。当然，“三体”书中，最后拯救派也证明了此事，并且在与降临派的斗争中失败。可以说，他们的策略从根上就是不可能和注定失败的。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2024/09/02/A-Matter-of-Degrees/</guid>
             <title>迷人的温度 温度计里的人类、地球和宇宙史</title>
@@ -507,20 +520,6 @@
 &lt;p&gt;民意无法得到反映，最后只能迎来剧烈的革命&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;尤其是在2024年的今天，越发的明白了自由的重要性。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://youngforest.github.io/2024/01/08/Guns-Germs-and-Steel/</guid>
-            <title>枪炮、病菌与钢铁</title>
-            <link>https://youngforest.github.io/2024/01/08/Guns-Germs-and-Steel/</link>
-            <category>Reading</category>
-            <category>枪炮、病菌与钢铁</category>
-            <pubDate>Mon, 08 Jan 2024 23:54:32 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/35714810/&#34;&gt;豆瓣链接 Guns, Germs, and Steel: The Fates of Human Societies&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;为什么当今国际社会如此？（也就是书中新几内亚农民土著 亚力问的问题）欧亚大陆及欧亚大陆的移民地（如北美、澳洲）占主导。近因是1492年开始的大航海时代，欧洲人带着枪炮（马匹）、病菌、钢铁（各种技术）和先进的政治体制（如 国家），开启了殖民时代，同期配合西欧的工业革命，奠定了西方社会当今的领先状态。而后起之秀是 东亚（日韩中）和南亚（印度）、东南亚（越南、印尼），他们要么已经成为发达国家，要么是发展的很快的。而非洲（尤其是撒哈拉以南）仍处于贫困。这些近因一目了然，讨论也很多。&lt;/p&gt;
-&lt;p&gt;那是什么导致了这些近因？次近因是农业和技术的发展，导致人口增长，可以供养非农人员，如工匠 进一步促进技术发展，和官僚 国家等体制。作者致力于追寻终极原因：地理和和地理紧密相关的生态。也就是”地理决定论“。1. 环境差异，各大陆可供驯化的动植物资源不同。2. 欧亚大陆的轴线是东西向的。非洲和美洲是南北向。影响了传播和迁移速度。3. 大陆之间植物、牲口和技术的传播。美洲和澳洲相对与世隔绝，非洲撒哈拉沙漠以南其次，中国的东亚也在亚欧大陆相对独立。4. 各大洲面积和人口总数的差异。&lt;/p&gt;
-&lt;p&gt;作者也讨论了其他学者观点并加以反驳，如”人种决定论“，”文化决定论“，”个人（英雄）史观“。&lt;/p&gt;
-&lt;p&gt;感恩生在中华，虽然比不上西欧，北美，澳洲等西方社会，也比不上日韩台等东亚发达地区，但起码比非洲强得多。投胎没法改变，剩下的只能靠自己移民了。&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
