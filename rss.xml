@@ -5,8 +5,8 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Sun, 15 Sep 2024 18:54:17 +0800</pubDate>
-        <lastBuildDate>Sun, 15 Sep 2024 18:54:17 +0800</lastBuildDate>
+        <pubDate>Sun, 20 Oct 2024 19:05:48 +0800</pubDate>
+        <lastBuildDate>Sun, 20 Oct 2024 19:05:48 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
         <category>年终总结</category>
@@ -15,8 +15,8 @@
         <category>3 body</category>
         <category>全球通史</category>
         <category>迷人的温度</category>
-        <category>Alibaba</category>
         <category>kuaishou</category>
+        <category>Alibaba</category>
         <category>travel</category>
         <category>游记</category>
         <category>反脆弱</category>
@@ -26,27 +26,27 @@
         <category>ByteDance</category>
         <category>interview</category>
         <category>New Graduate</category>
-        <category>深奥的简洁</category>
         <category>codeforces</category>
         <category>contest</category>
+        <category>深奥的简洁</category>
         <category>C++</category>
         <category>Weride</category>
         <category>Database</category>
         <category>Django</category>
-        <category>C++11</category>
         <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
+        <category>C++11</category>
         <category>Hexo</category>
         <category>枪炮、病菌与钢铁</category>
         <category>厚黑学</category>
+        <category>Ireland</category>
+        <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>Ireland</category>
-        <category>Life</category>
         <category>持续买进</category>
         <category>Competitive Programming</category>
         <category>Algorithm</category>
@@ -63,11 +63,13 @@
         <category>场外转场内</category>
         <category>Investment</category>
         <category>现实不似你所见-量子引力之旅</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
         <category>太白金星有点烦</category>
         <category>纳瓦尔宝典</category>
         <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
         <category>Linux</category>
+        <category>历代经济变革得失</category>
         <category>时势</category>
         <category>小Lin说</category>
         <category>碧血剑</category>
@@ -85,9 +87,9 @@
         <category>tex</category>
         <category>生死疲劳</category>
         <category>Mac</category>
-        <category>Windows</category>
         <category>Ubuntu</category>
         <category>Owncloud</category>
+        <category>Windows</category>
         <category>benchmark</category>
         <category>RIP</category>
         <category>sensetime</category>
@@ -97,6 +99,20 @@
         <category>git</category>
         <category>Tech</category>
         <category>Tencent</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/10/20/Shi-Nan-Zhi-Tu/</guid>
+            <title>食南之徒 马伯庸</title>
+            <link>https://youngforest.github.io/2024/10/20/Shi-Nan-Zhi-Tu/</link>
+            <category>Reading</category>
+            <category>食南之徒</category>
+            <category>马伯庸</category>
+            <pubDate>Sun, 20 Oct 2024 19:05:48 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;每周一本书24：&lt;strong&gt;食南之徒&lt;/strong&gt; &lt;a href=&#34;https://book.douban.com/search/%E9%A9%AC%E4%BC%AF%E5%BA%B8&#34;&gt;马伯庸&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者貌似是在借汉朝的南越问题，映射台湾问题。马伯庸还是那么擅长，借用史书上的只言片语，脑补出完整的悬疑故事。之前的“两京十五日”，“长安的荔枝”都是如此。&lt;/p&gt;
+&lt;p&gt;十分不错的中篇小说，尤其是对食物的描写，让人感到真诚和流口水。就是结局过于悲惨，“甘蔗”一家人都死了。悬案也终究没有告破和昭雪，虽然读者们和男主都知道真相了，迟到20+年的惩罚，也来的太迟了。男主要是再晚几年，凶手就善终了。但仍然作威作福那么多年，害了不少人。&lt;/p&gt;
+&lt;p&gt;狐死首丘，万里运枣树苗，孤宫独守。赵佗 的这些情感，作为一个离开家乡10年有余，如今甚至流落海外的移民，真是感同身受，都要哭死了。但我也如同赵佗，也知道，回不去了。记忆中的故乡已经远去，即使勉强回去以减思乡之愁，也是无济于事，反而带来更大的痛苦。因为现实的家乡，和你想象中的，其实是完全不同的。思乡的人，总是美化这些。记吃不记打，好了伤疤忘了疼。&lt;strong&gt;过去没有想象中那么美好，现在没有想象中那么不好，未来远比想象中要好。&lt;/strong&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</guid>
             <title>深奥的简洁 从混沌、复杂到地球生命的起源</title>
@@ -497,29 +513,6 @@
             <pubDate>Tue, 23 Jan 2024 23:39:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/25772550/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;从别的程序员的&lt;a href=&#34;https://github.com/TonnnnnnyLiu/Books&#34;&gt;GitHub书籍推荐&lt;/a&gt;过来的。 一本很小的书，一天可以读完。读来十分有趣，提供了一些思考问题和解决方案独特的方法和案例，很有启发。尤其是结合自己生活和工作中的一些经验和历史，互为印证，十分有趣。过去的很多困扰和烦恼也就没有了。比如，人们嘴上说要解决问题，其实上很多人并不是真心想解决的。这时候你去帮他，就是吃力不讨好。反而发现他真正的问题才是更重要的。很多问题都来源于某些人，因此，远离他们，很多问题和不幸就消失了。比如糟糕的老板和伴侣，原生家庭等。不过，作为我这样的按部就班的S人和J人还是很难操作和不适应，不过启发是巨大的。N人和P人怕是可以学到不少，而且十分适合。有意思的是，作者估计是上个世纪的程序员，举得例子和故事好多都是相关的。虽然只是几十年前的事情，但对于计算机行业来说已经是中古时代了。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://youngforest.github.io/2024/01/17/Details-of-Democracy/</guid>
-            <title>民主的细节</title>
-            <link>https://youngforest.github.io/2024/01/17/Details-of-Democracy/</link>
-            <category>Reading</category>
-            <category>你的灯亮着吗</category>
-            <pubDate>Wed, 17 Jan 2024 23:50:01 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;全书都是由小文章和小故事组成，本身是作者在报纸专栏上地投稿（“南方人物周刊”，想想南方系的下场和现状，和15年前的鼎盛。真是唏嘘），然后才集合成本书。因此，对于某项主题和故事地讨论并不深入和细致，相比 林达 地《近距离看美国》差很多。但是，还是推荐每个国民，尤其是对公民运动感兴趣地中国人去阅读。读书门槛很低，也相当直白和有趣。成书于09年，主要是01-08年写就地故事。而国内外局势在近15年已经发生了很大变化。所以有些可能过时和不切实际。但并不影响现在的阅读价值。当年还可以反思和说话，现在已经噤若寒蝉。尤其是最近24年1月份，TW也进行了大选，更是“皿煮”成为大家感兴趣和反思的事情。虽然现状可能离作者的期许越来越远，但希望大家都平安无事吧。待天下有变，这些早年的公众人物还可以发光发热。总之，去读，但不要说话。&lt;/p&gt;
-&lt;p&gt;真是很多金句和讽刺对比。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;没有自由的“民主”，最终会蜕化成为以民粹面目出现的极权主义。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;书中竟然还可以对比和反思WG和3年，可以想象15年前出版审查和言论管制的相对放松。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;把牛鬼蛇神死死关进盒子里不让透气，民意反而像个不断升温却没有出气口的高压锅一样，慢慢凝聚越来越危险的压力。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;国服的体制真是被美国吊打。同时推荐 林达 的《近距离看美国》系列，更好地了解美国背后的制度运行和历史。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;民意无法得到反映，最后只能迎来剧烈的革命&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;尤其是在2024年的今天，越发的明白了自由的重要性。&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

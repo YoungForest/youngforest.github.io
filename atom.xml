@@ -3,7 +3,7 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog</title>
     <link href="https://youngforest.github.io" />
-    <updated>2024-09-15T10:54:17.000Z</updated>
+    <updated>2024-10-20T11:05:48.000Z</updated>
     <category term="tech" />
     <category term="life" />
     <category term="年终总结" />
@@ -12,8 +12,8 @@
     <category term="3 body" />
     <category term="全球通史" />
     <category term="迷人的温度" />
-    <category term="Alibaba" />
     <category term="kuaishou" />
+    <category term="Alibaba" />
     <category term="travel" />
     <category term="游记" />
     <category term="反脆弱" />
@@ -23,27 +23,27 @@
     <category term="ByteDance" />
     <category term="interview" />
     <category term="New Graduate" />
-    <category term="深奥的简洁" />
     <category term="codeforces" />
     <category term="contest" />
+    <category term="深奥的简洁" />
     <category term="C++" />
     <category term="Weride" />
     <category term="Database" />
     <category term="Django" />
-    <category term="C++11" />
     <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
+    <category term="C++11" />
     <category term="Hexo" />
     <category term="枪炮、病菌与钢铁" />
     <category term="厚黑学" />
+    <category term="Ireland" />
+    <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="Ireland" />
-    <category term="Life" />
     <category term="持续买进" />
     <category term="Competitive Programming" />
     <category term="Algorithm" />
@@ -60,11 +60,13 @@
     <category term="场外转场内" />
     <category term="Investment" />
     <category term="现实不似你所见-量子引力之旅" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
     <category term="太白金星有点烦" />
     <category term="纳瓦尔宝典" />
     <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
     <category term="Linux" />
+    <category term="历代经济变革得失" />
     <category term="时势" />
     <category term="小Lin说" />
     <category term="碧血剑" />
@@ -82,9 +84,9 @@
     <category term="tex" />
     <category term="生死疲劳" />
     <category term="Mac" />
-    <category term="Windows" />
     <category term="Ubuntu" />
     <category term="Owncloud" />
+    <category term="Windows" />
     <category term="benchmark" />
     <category term="RIP" />
     <category term="sensetime" />
@@ -94,6 +96,20 @@
     <category term="git" />
     <category term="Tech" />
     <category term="Tencent" />
+    <entry>
+        <id>https://youngforest.github.io/2024/10/20/Shi-Nan-Zhi-Tu/</id>
+        <title>食南之徒 马伯庸</title>
+        <link rel="alternate" href="https://youngforest.github.io/2024/10/20/Shi-Nan-Zhi-Tu/"/>
+        <content type="html">&lt;p&gt;每周一本书24：&lt;strong&gt;食南之徒&lt;/strong&gt; &lt;a href=&#34;https://book.douban.com/search/%E9%A9%AC%E4%BC%AF%E5%BA%B8&#34;&gt;马伯庸&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者貌似是在借汉朝的南越问题，映射台湾问题。马伯庸还是那么擅长，借用史书上的只言片语，脑补出完整的悬疑故事。之前的“两京十五日”，“长安的荔枝”都是如此。&lt;/p&gt;
+&lt;p&gt;十分不错的中篇小说，尤其是对食物的描写，让人感到真诚和流口水。就是结局过于悲惨，“甘蔗”一家人都死了。悬案也终究没有告破和昭雪，虽然读者们和男主都知道真相了，迟到20+年的惩罚，也来的太迟了。男主要是再晚几年，凶手就善终了。但仍然作威作福那么多年，害了不少人。&lt;/p&gt;
+&lt;p&gt;狐死首丘，万里运枣树苗，孤宫独守。赵佗 的这些情感，作为一个离开家乡10年有余，如今甚至流落海外的移民，真是感同身受，都要哭死了。但我也如同赵佗，也知道，回不去了。记忆中的故乡已经远去，即使勉强回去以减思乡之愁，也是无济于事，反而带来更大的痛苦。因为现实的家乡，和你想象中的，其实是完全不同的。思乡的人，总是美化这些。记吃不记打，好了伤疤忘了疼。&lt;strong&gt;过去没有想象中那么美好，现在没有想象中那么不好，未来远比想象中要好。&lt;/strong&gt;&lt;/p&gt;
+</content>
+        <category term="Reading" />
+        <category term="食南之徒" />
+        <category term="马伯庸" />
+        <updated>2024-10-20T11:05:48.000Z</updated>
+    </entry>
     <entry>
         <id>https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</id>
         <title>深奥的简洁 从混沌、复杂到地球生命的起源</title>
@@ -495,28 +511,5 @@
         <category term="Reading" />
         <category term="你的灯亮着吗" />
         <updated>2024-01-23T15:39:27.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://youngforest.github.io/2024/01/17/Details-of-Democracy/</id>
-        <title>民主的细节</title>
-        <link rel="alternate" href="https://youngforest.github.io/2024/01/17/Details-of-Democracy/"/>
-        <content type="html">&lt;p&gt;全书都是由小文章和小故事组成，本身是作者在报纸专栏上地投稿（“南方人物周刊”，想想南方系的下场和现状，和15年前的鼎盛。真是唏嘘），然后才集合成本书。因此，对于某项主题和故事地讨论并不深入和细致，相比 林达 地《近距离看美国》差很多。但是，还是推荐每个国民，尤其是对公民运动感兴趣地中国人去阅读。读书门槛很低，也相当直白和有趣。成书于09年，主要是01-08年写就地故事。而国内外局势在近15年已经发生了很大变化。所以有些可能过时和不切实际。但并不影响现在的阅读价值。当年还可以反思和说话，现在已经噤若寒蝉。尤其是最近24年1月份，TW也进行了大选，更是“皿煮”成为大家感兴趣和反思的事情。虽然现状可能离作者的期许越来越远，但希望大家都平安无事吧。待天下有变，这些早年的公众人物还可以发光发热。总之，去读，但不要说话。&lt;/p&gt;
-&lt;p&gt;真是很多金句和讽刺对比。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;没有自由的“民主”，最终会蜕化成为以民粹面目出现的极权主义。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;书中竟然还可以对比和反思WG和3年，可以想象15年前出版审查和言论管制的相对放松。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;把牛鬼蛇神死死关进盒子里不让透气，民意反而像个不断升温却没有出气口的高压锅一样，慢慢凝聚越来越危险的压力。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;国服的体制真是被美国吊打。同时推荐 林达 的《近距离看美国》系列，更好地了解美国背后的制度运行和历史。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;民意无法得到反映，最后只能迎来剧烈的革命&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;尤其是在2024年的今天，越发的明白了自由的重要性。&lt;/p&gt;
-</content>
-        <category term="Reading" />
-        <category term="你的灯亮着吗" />
-        <updated>2024-01-17T15:50:01.000Z</updated>
     </entry>
 </feed>

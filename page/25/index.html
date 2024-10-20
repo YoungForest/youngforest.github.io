@@ -15,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="佛系更新；生活、学习">
 <meta property="og:type" content="website">
@@ -126,7 +126,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">264</span>
+          <span class="site-state-item-count">265</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -137,7 +137,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-count">92</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -216,6 +216,134 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/05/08/ssh-login-remote-server-without-password/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | YoungForest's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/05/08/ssh-login-remote-server-without-password/" class="post-title-link" itemprop="url">ssh免密登陆服务器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-05-08 18:47:09" itemprop="dateCreated datePublished" datetime="2018-05-08T18:47:09+08:00">2018-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/05/08/ssh-login-remote-server-without-password/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/08/ssh-login-remote-server-without-password/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          以下命令仅针对Unix-like系统。
+Windows是不需要这样的解决方法的，Windows下很多类Putty工具都可以选择"记住密码"来实现免密登陆。
+我在Mac上没有找到类似记住密码的解决方案，但使用Key事实上是更安全的一种方式。
+
+ step1: 生成rsa密钥对
+1
+
+
+ssh-keygen -t rsa
+
+
+ step2: 上传rsa公钥到服务器
+1
+
+
+cat id_rsa.pub | ssh -p 26757 root@138.128.193.150 'cat >> .ssh/authorized_keys'
+
+
+ step3: 更改权限
+1
+
+
+ssh -p 26757 r
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/05/08/ssh-login-remote-server-without-password/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -252,7 +380,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -370,7 +498,7 @@ runoob的优点是可以在网站提供的线上数据库进行测试和练习�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
 
   
@@ -469,7 +597,7 @@ runoob的优点是可以在网站提供的线上数据库进行测试和练习�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -587,7 +715,7 @@ runoob的优点是可以在网站提供的线上数据库进行测试和练习�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
 
   
@@ -703,7 +831,7 @@ xelatex --output-driver="xdvipdfmx -V7" %mythesis%
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
 
   
@@ -819,7 +947,7 @@ xelatex --output-driver="xdvipdfmx -V7" %mythesis%
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
 
   
@@ -940,7 +1068,7 @@ python -m ipykernel install --user --name py27 --display-name "Python (py27)"
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
 
   
@@ -1047,7 +1175,7 @@ owncloud是一个私有云解决方案，可以替代百度云。其提供企业
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1159,7 +1287,7 @@ https://www.windowscentral.
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
+      <time title="修改时间：2024-10-21 02:08:37" itemprop="dateModified" datetime="2024-10-21T02:08:37+08:00">2024-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1211,116 +1339,6 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/04/08/atom-explore/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2017/03/26/gvim-configuration-for-windows/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YoungForest">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoungForest's blog">
-      <meta itemprop="description" content="佛系更新；生活、学习">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | YoungForest's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/03/26/gvim-configuration-for-windows/" class="post-title-link" itemprop="url">gvim configuration for windows</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2017-03-26 18:46:41" itemprop="dateCreated datePublished" datetime="2017-03-26T18:46:41+08:00">2017-03-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-16 02:05:31" itemprop="dateModified" datetime="2024-09-16T02:05:31+08:00">2024-09-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">折腾</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2017/03/26/gvim-configuration-for-windows/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/26/gvim-configuration-for-windows/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          最近由于准备GRE, 整天背单词, 练听力和写作, 很是心烦, 很久没折腾了, 所以抽出时间, 给自己的笔记本下载并配置gvim, 也算是休憩.
-
- 下载
- 配置文件
-与Linux不同, Windows中gvim的配置文件为$HOME/_vimrc(个人配置文件), $VIMROOT/_vimrc(系统配置文件), 默认情况下为C:\Program Files (x86)\Vim. 除此之外, 还可以有_gvimrc文件, 只有在gui情况下打开才会读取, 在terminal下不会. 这对于两者应用不同的配置很有帮助, 尤其是使用不同的主题, 同一主题下, 两者的效果很不同. 这样就避免了使用
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/03/26/gvim-configuration-for-windows/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

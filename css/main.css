@@ -3,6 +3,8 @@
   --content-bg-color: #f5f5f5;
   --card-bg-color: #f5f5f5;
   --text-color: #555;
+  --selection-bg: #262a30;
+  --selection-color: #eee;
   --blockquote-color: #666;
   --link-color: #555;
   --link-hover-color: #222;
@@ -173,8 +175,8 @@ template {
   display: none;
 }
 ::selection {
-  background: #262a30;
-  color: #eee;
+  background: var(--selection-bg);
+  color: var(--selection-color);
 }
 html,
 body {
@@ -1268,7 +1270,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffe786;
+  background: #ff0a26;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
