@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"tex\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2018/03/27/latex-problems/",
+            "url": "https://youngforest.github.io/2018/03/27/latex-problems/",
+            "title": "latex 使用过程中遇到的问题",
+            "date_published": "2018-03-27T18:27:55.000Z",
+            "content_html": "<p>笔者毕业设计论文的撰写使用了latex工具，遇到了许多问题，在此总结一下。</p>\n<h2 id=\"pdf无法正常显示\"><a class=\"markdownIt-Anchor\" href=\"#pdf无法正常显示\"></a> pdf无法正常显示</h2>\n<p>###　问题描述<br />\n经过xelatex编译成功地文档无法正常显示pdf图片，显示的是一片空白。</p>\n<h3 id=\"原因\"><a class=\"markdownIt-Anchor\" href=\"#原因\"></a> <a href=\"http://tieba.baidu.com/p/4191389769?traceid=\">原因</a></h3>\n<p>pdf文件的版本问题。查看其版本为1.7，xelatex默认按照1.5进行编译。</p>\n<h3 id=\"解决方案\"><a class=\"markdownIt-Anchor\" href=\"#解决方案\"></a> 解决方案</h3>\n<p>xelatex %.tex，此处加上–output-driver=“xdvipdfmx -V7”。即修改msmake.bat</p>\n<figure class=\"highlight bash\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">xelatex %mythesis%</span><br><span class=\"line\"><span class=\"comment\"># =&gt;</span></span><br><span class=\"line\">xelatex --output-driver=<span class=\"string\">&quot;xdvipdfmx -V7&quot;</span> %mythesis%</span><br></pre></td></tr></table></figure>",
+            "tags": [
+                "tex"
+            ]
+        }
+    ]
+}

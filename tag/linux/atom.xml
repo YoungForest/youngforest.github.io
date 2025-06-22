@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;linux&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2021-03-18T11:20:13.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2021/03/18/Ubuntu-vpn-cannot-access-public-resource/</id>
+        <title>Ubuntu OpenVPN 无法获取公网资源</title>
+        <link rel="alternate" href="https://youngforest.github.io/2021/03/18/Ubuntu-vpn-cannot-access-public-resource/"/>
+        <content type="html">&lt;p&gt;由于科研需求，我需要连接杭州研究院的VPN，才能使用显卡做神经网络的训练任务。&lt;br /&gt;
+然而在Ubunut 18.04配置好OpenVPN后，发现一个难题：连上VPN后无法上外网（百度等网站，不是墙外的网站，而是相对局域网内网的“外网”），断开VPN后可以连外网，但无法连接杭研院的资源。鉴于工作中，外网和杭研院内网基本缺一不可，我花了2天时间调研和修复改问题。而且其他同学使用VPN并没有类似问题，所以我认为是&lt;code&gt;Ubuntu&lt;/code&gt;独特的问题。修复的操作很简单，但定位到问题的过程十分坎坷。&lt;/p&gt;
+&lt;h2 id=&#34;现象整理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#现象整理&#34;&gt;&lt;/a&gt; 现象整理&lt;/h2&gt;
+&lt;p&gt;连接VPN后，可以ping通baidu的IP，但浏览器无法连接baidu，&lt;a href=&#34;http://xn--pingbaidu-zz6n858p0ufslzom6ak32f.com&#34;&gt;也无法直接ping通baidu.com&lt;/a&gt;。浏览器只能打开杭研院和北航内部的网站。&lt;br /&gt;
+初步判断是网络上DNS服务器的问题，但调研之后发现DNS的配置并无问题。&lt;br /&gt;
+猜测是访问外部资源时，理应的DNS解析并没有办法完成。&lt;/p&gt;
+&lt;p&gt;最后在网上查了半天，才发现真正的问题（VPN本地配置问题）和解决方案。&lt;/p&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解决方案&#34;&gt;&lt;/a&gt; 解决方案&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://askubuntu.com/a/713066/558370&#34;&gt;网上最类似的一个问题和解决方案&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;由于我是Ubuntu 18.04, 并不大一样。&lt;br /&gt;
+在我这里给出我的完整解决方案，以供大家参考。&lt;/p&gt;
+&lt;p&gt;打开VPN的配置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/vpn1.png&#34; alt=&#34;Step 1&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/vpn2.png&#34; alt=&#34;Step 2&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;勾选“Use this connection only for resources on its network&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/vpn2.png&#34; alt=&#34;Step 2&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Apply后，重新连接VPN即可解决问题。&lt;/p&gt;
+&lt;h2 id=&#34;后记&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#后记&#34;&gt;&lt;/a&gt; 后记&lt;/h2&gt;
+&lt;p&gt;下一步，我还会试着在Ubuntu上装个跳板机。这样我的Mac或许可以通过该跳板机连入杭研院的机器。 (已经成功啦，下篇更新在&lt;a href=&#34;https://youngforest.github.io/2021/03/26/SSH-proxy-by-jump-server/&#34;&gt;这里&lt;/a&gt;)。&lt;/p&gt;
+</content>
+        <category term="Linux" />
+        <updated>2021-03-18T11:20:13.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2016/11/02/terminal-proxy-configuration/</id>
+        <title>实现terminal代理</title>
+        <link rel="alternate" href="https://youngforest.github.io/2016/11/02/terminal-proxy-configuration/"/>
+        <content type="html">&lt;h2 id=&#34;问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题&#34;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
+&lt;p&gt;作为一名Linuxer，熟练使用终端是一项必备技能，但终端中有时下载安装功能速度很慢，令人崩溃.我自然而然想到了可否加个代理,提高速度。我之前一直用shadowsocks,浏览器使用switchyProxy,实现了初步的科学上网。那么,终端中是否有类似的工具呢？答案是肯定的。通过科学搜索，我成功解决了terminal中的科学上网问题，在此总结一下，希望可以帮到大家。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;准备工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#准备工具&#34;&gt;&lt;/a&gt; 准备工具&lt;/h2&gt;
+&lt;p&gt;shadowsocks, polipo&lt;/p&gt;
+&lt;h3 id=&#34;shadowsocks&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#shadowsocks&#34;&gt;&lt;/a&gt; shadowsocks&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://shadowsocks.org/en/download/clients.html&#34;&gt;Download and Install Client&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;install-command-line-client&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#install-command-line-client&#34;&gt;&lt;/a&gt; Install Command-line Client&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pip install shadowsocks&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;apt-get install shadowsocks-libev&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cpan Net::Shadowsocks&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;shadowsocks的配置可以参考&lt;a href=&#34;http://bblove.me/2015/03/09/use-ss/&#34;&gt;这篇文章&lt;/a&gt;, 我很久之前配置的,这里就不回忆了(忘得差不多了).&lt;/p&gt;
+&lt;p&gt;让我们直接从polipo开始吧.&lt;/p&gt;
+&lt;h3 id=&#34;polipo&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#polipo&#34;&gt;&lt;/a&gt; polipo&lt;/h3&gt;
+&lt;p&gt;polipo有多种安装方式,可以使用Python的包管理工具pip直接安装,也可以用各个操作系统的包管理工具安装.我更推荐后者,因为个人认为这样更好管理罢了.这里以Ubuntu为例.&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;apt-cache search polipo&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adzapper - proxy advertisement zapper add-on&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;polipo - lightweight, caching web proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;polipo-dbg - debug package for polipo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;第二个包就是给我们这些小白使用的,安装它&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo apt-get install polipo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装好之后默认自启的,&lt;br /&gt;
+我们要先修改它的配置文件(/etc/polipo/config):&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;logSyslog = true&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;logFile = /var/log/polipo/polipo.log&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;logLevel = 4 # 没有这句话的话`sudo polipo -v`会出现无法查看log文件的情况&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;socksParentProxy = &amp;quot;localhost:1080&amp;quot; # 这里假设shadowsocks的local port为1080&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;socksProxyType = socks5 # 是不是和SwitchyProxy的设置很像?&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;具体各个配置选项可以参考文件&lt;code&gt;/usr/share/doc/polipo/examples/config.sample&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;配置好之后,我们需要重启polipo服务(每次修改配置文件需要重启服务才能加载)&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo service polipo stop;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo service polipo start;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或者直接&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo service polipo restart;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;可以用&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo polipo -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看具体各个配置项,可以看到我们之前的更改生效了.&lt;/p&gt;
+&lt;h2 id=&#34;测试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#测试&#34;&gt;&lt;/a&gt; 测试&lt;/h2&gt;
+&lt;p&gt;配置完成后,怎么才知道自己是否已经可以科学上网了呢?&lt;br /&gt;
+可以使用以下命令:&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;~$ curl -i http://ip.cn&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;当前 IP：60.xxx.xxx.x 来自：中国北京北京 xxx/电信&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;~$ http_proxy=http://localhost:8123 curl -i http://ip.cn # polipo的默认端口为8123,如有需要可以自行改动&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;当前 IP：xxx.xxx.xxx.xx0 来自：美国加利福尼亚州洛杉矶&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样就算成功了.&lt;/p&gt;
+&lt;p&gt;最近发现&amp;quot;&lt;a href=&#34;http://ip.cn&#34;&gt;ip.cn&lt;/a&gt;&amp;quot;这个网站不能用了，500访问错误。可以将其替换为“&lt;a href=&#34;http://ipinfo.io/ip%E2%80%9D%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86i%EF%BC%8C%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E4%B8%AA%E8%BF%94%E5%9B%9E%E4%BD%A0%E7%9A%84%E5%85%AC%E7%BD%91IP%E7%9A%84%E7%BD%91%E7%AB%99%E3%80%82&#34;&gt;ipinfo.io/ip”就可以了i，这是另一个返回你的公网IP的网站。&lt;/a&gt;&lt;br /&gt;
+还有一些其他的网站提供类似的返回IP的服务:&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;curl ifconfig.me&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;curl icanhazip.com&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;curl ipecho.net/plain&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;curl ifconfig.co&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;从浏览器中获得自己公网IP的方法:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=what%20is%20my%20IP%20address&#34;&gt;Google&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://duckduckgo.com/?q=ip&#34;&gt;DuckDuckGo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wolframalpha.com/input/?i=what+is+my+ip+address&#34;&gt;Wolframalpha&lt;/a&gt;, 推荐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;更进一步&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更进一步&#34;&gt;&lt;/a&gt; 更进一步&lt;/h2&gt;
+&lt;p&gt;每次都打这么长的命令&lt;code&gt;http_proxy=http://localhost:8123&lt;/code&gt;着实不是我们想要的,为了方便使用,可以在终端键入&lt;code&gt;export http_proxy=http://localhost:8123&lt;/code&gt;,表示对该终端所有命令生效;或者更进一步,在.bashrc中加入&lt;code&gt;export http_proxy=http://localhost:8123&lt;/code&gt;,每次启动终端时自动执行.如果不想要每次都走代理,可以像我一样,在.bashrc中加入&lt;code&gt;alias hp=&amp;quot;http_proxy=http://localhost:8123&amp;quot;&lt;/code&gt;,每次需要代理时,只需要在命令前面加&lt;code&gt;hp &lt;/code&gt;就好了.&lt;/p&gt;
+&lt;h2 id=&#34;为git配置代理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为git配置代理&#34;&gt;&lt;/a&gt; 为git配置代理&lt;/h2&gt;
+&lt;p&gt;git clone的速度很是感人, 只有几十k, 为git配置代理也是很简单的.&lt;/p&gt;
+&lt;p&gt;Add the following setting to the http items of .gitconfig files.&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[http]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;proxy = &amp;lt;address of the proxy server&amp;gt;:&amp;lt;port of the proxy server&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;You can also configure it using the following config command:&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git config --global http.proxy &amp;lt;address of the proxy server&amp;gt;:&amp;lt;port of the proxy server&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1&#34;&gt;ssh形式连接Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在终端中尽情享受科学上网吧!&lt;/p&gt;
+</content>
+        <category term="Linux" />
+        <updated>2016-11-02T23:30:00.000Z</updated>
+    </entry>
+</feed>

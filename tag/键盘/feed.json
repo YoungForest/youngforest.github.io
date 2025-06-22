@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"键盘\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2021/10/13/Niz-plum-option-key-not-work/",
+            "url": "https://youngforest.github.io/2021/10/13/Niz-plum-option-key-not-work/",
+            "title": "Niz plum option key 在蓝牙模式下不响应",
+            "date_published": "2021-10-13T11:39:31.000Z",
+            "content_html": "<p>最近使用我心爱的Niz Plum 66键盘时遇到一个奇怪的bug。<br />\n在蓝牙模式下，左option键失灵。因为我hammerspoon和其他应用的快捷键大量使用，虽然偶尔可以通过右option键短暂替代。但总不是回事儿，工作效率大幅降低。</p>\n<p>这个bug的引入我也不确定是如何来的。大概是我Mac开始连2个外界显示器开始的。<br />\n奇怪的是，有线模式并没有问题。而且我试过蓝牙断开重连也并没有修复。换个蓝牙通道也无济于事。</p>\n<p>我在网络上进行了大量的搜索，并没有找到类似的问题和解决方案。最终还是在自己的不断摸索下成功修复了。因此记录下来，以防止未来再次遇到。</p>\n<p><a href=\"http://yunxii.cn/2019/08/12/plum%E9%9D%99%E7%94%B5%E5%AE%B9%E9%94%AE%E7%9B%9866%E9%94%AE%E8%AF%B4%E6%98%8E%E4%B9%A6/\">参考说明书</a>.</p>\n<ol>\n<li>恢复出厂设置: 同时按住键盘四角的四个键5秒钟。</li>\n<li>键盘开机，连接Mac。</li>\n<li>重新配置键盘设置, 如我的如下:\n<ul>\n<li>Fn + Command 从默认的Windows键位切换回Mac</li>\n<li>Fn + ] 降低按键延迟</li>\n<li>Fn + 右Shift 将右shift转成<code>shift</code>而非默认的 Up</li>\n</ul>\n</li>\n<li>左Option键已成功修复。</li>\n</ol>\n<p>敬请享受自己的键盘吧！</p>\n",
+            "tags": [
+                "键盘"
+            ]
+        }
+    ]
+}

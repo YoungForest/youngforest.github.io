@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="为了更快地锻炼自己数据挖掘的能力，我计划最近一个月花一定的时间在kaggle比赛上。目前的计划是把Tutorial上的比赛、Datasets和牛人们的notebook跟完作为入门。之后再选择一个简单的常规比赛参加。 至于最后是否像欢哥一样走上数据挖掘竞赛之路，看入门之后的感受。自己是否愿意继续花大量的精力在上面。  数据挖掘的能力主要分为2部分：   * 机器学习  * 特征工程  之前在快手推荐">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kaggle入门之-titanic">
+<meta property="og:url" content="https://youngforest.github.io/2018/08/14/kaggle-titanic-tutorial/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="为了更快地锻炼自己数据挖掘的能力，我计划最近一个月花一定的时间在kaggle比赛上。目前的计划是把Tutorial上的比赛、Datasets和牛人们的notebook跟完作为入门。之后再选择一个简单的常规比赛参加。 至于最后是否像欢哥一样走上数据挖掘竞赛之路，看入门之后的感受。自己是否愿意继续花大量的精力在上面。  数据挖掘的能力主要分为2部分：   * 机器学习  * 特征工程  之前在快手推荐">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-14T10:22:23.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.372Z">
+<meta property="article:author" content="YoungForest">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2018/08/14/kaggle-titanic-tutorial/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>kaggle入门之-titanic | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/08/14/kaggle-titanic-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kaggle入门之-titanic
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-08-14 11:22:23" itemprop="dateCreated datePublished" datetime="2018-08-14T11:22:23+01:00">2018-08-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/kaggle/" itemprop="url" rel="index"><span itemprop="name">kaggle</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/08/14/kaggle-titanic-tutorial/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/14/kaggle-titanic-tutorial/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>为了更快地锻炼自己数据挖掘的能力，我计划最近一个月花一定的时间在kaggle比赛上。目前的计划是把<a target="_blank" rel="noopener" href="https://www.kaggle.com/tags/tutorial">Tutorial</a>上的比赛、Datasets和牛人们的notebook跟完作为入门。之后再选择一个简单的常规比赛参加。<br />
+至于最后是否像欢哥一样走上数据挖掘竞赛之路，看入门之后的感受。自己是否愿意继续花大量的精力在上面。</p>
+<p>数据挖掘的能力主要分为2部分：</p>
+<ul>
+<li>机器学习</li>
+<li>特征工程</li>
+</ul>
+<p>之前在快手推荐组实习的时候，工作也涉及这些。推荐系统也算是数据挖掘的一个分支，从结果上看，是预测某个item是否会被用户点击。</p>
+<p><a target="_blank" rel="noopener" href="https://www.kaggle.com/c/titanic">Titanic: Machine Learning from Disaster</a>作为大多数人入门kaggle的第一步，确实是对数据挖掘技巧的集中体现。相反，最近在kaggle上比较火的比赛，都是和CV或NLP相关的。领域知识的要求更高，淡化了通用的数据挖掘技能。<br />
+在kaggle上还有许多<a target="_blank" rel="noopener" href="https://www.kaggle.com/tags/tutorial">其他的教程</a>可供用户学习，我今后会选择其中的一些进行重点学习，争取在开学前入门kaggle。</p>
+<span id="more"></span>
+<p>Titanic训练的技能为：</p>
+<ul>
+<li>二分类(活/死)</li>
+<li>Python/R 基础</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.kaggle.com/helgejo/an-interactive-data-science-tutorial/notebook">notebook link</a>这是我本次跟的notebook。<br />
+我把所有的代码都手敲了一遍，拒绝复制粘贴；该完成的Exercises也全部完成；对比赛的一般流程有了初步了解：</p>
+<ul>
+<li>题目理解</li>
+<li>数据理解</li>
+<li>数据预处理</li>
+<li>机器学习建模</li>
+<li>模型评估</li>
+<li>提交结果</li>
+</ul>
+<h2 id="题目理解"><a class="markdownIt-Anchor" href="#题目理解"></a> 题目理解</h2>
+<p>在问题描述中，一般会给出数据集的背景、每个challenge的目标、还有所需的技能。<br />
+还可以判断出需要哪些领域知识。比如在Titanic中，20世纪初 西方人的姓名、贵族爵位、船的相关知识都是极其有帮助的。</p>
+<p>看完问题描述后，可以有自己基本的猜测：什么因素对是否存活影响最大？<br />
+我会想到 年龄和性别。媒体不是一直宣传沉船的时候，会让妇女儿童先走？<br />
+之后，我们会用数据分析的方式验证猜测是否合理。</p>
+<h2 id="数据理解"><a class="markdownIt-Anchor" href="#数据理解"></a> 数据理解</h2>
+<p>通过一些Python及其可视化的工具，我们可以快速对数据有初步的了解。</p>
+<p>比如：<code>titanic</code>是存储所有原始数据的<code>pd.DataFrame</code>，<code>titanic.head()</code>可以显示最开始的5行，<code>titanic.describe()</code>显示所有特征的统计结果，包括最大值、最小值、缺失数量、均值方差等。<br />
+对所有原始特征有直观的了解后，可以知道，哪些特征是离散值，哪些是连续值，哪些需要预处理。</p>
+<p>利用热力图，可以直观地看到不同特征之间的相关性。<br />
+对连续值，画出其分布图(<code>plot_distribution()</code>)；对离散值，画出箱形图(<code>plot_categories</code>).</p>
+<p>通过这些技能，可以对<strong>选择哪些特征进行建模</strong>、<strong>如何进行数据预处理</strong> 心中有数。</p>
+<h2 id="数据预处理"><a class="markdownIt-Anchor" href="#数据预处理"></a> 数据预处理</h2>
+<p>对于离散值(Categorical variables)，需要将其转化为数值类型才能进行下一步的建模。<br />
+二类离散值可以简单地映射为(0, 1)，<br />
+多类离散值需要利用<code>pd.get_dummies()</code>进行one hot编码。</p>
+<p><strong>对缺失值进行填充</strong>。由于真实数据采集过程中的不确定性，有些行的某些列是缺失的，这时有2种选择：丢弃整个行，用有意义的值填充缺失值。<br />
+在数据比较宝贵的情况(数据量小 或 缺失值过多）下，一般采取填充的方式。对于离散值，可以填充“Unknown”；对于连续值，一般填充其均值。</p>
+<p><strong>特征工程</strong>。这是拉开不同选手之间水平的一项技能，需要一定的领域知识和对数据足够的敏感性。不过今年由于深度学习的原因，特征工程有被放弃的趋势。选手之前的差别主要靠调参。在Titanic中，如果你对20世纪初的西方足够了解的话，一些特征工程才能做。如，从姓名中提取出“Title”，是贵族、平民、还是职员。对船足够熟悉的话，可以从舱室提取出是几等舱，票号中提取出几等票。</p>
+<p><strong>组装最后的数据集</strong>。数据集经过我们的预处理后，需要进行特征选择，并组装成可以进行建模的形式。一般是一个<code>pd.DataFrame</code>，还需要切分成 训练集(Train)、验证集(Valid) 和 测试集(Test)。</p>
+<h2 id="建模-和-模型评估"><a class="markdownIt-Anchor" href="#建模-和-模型评估"></a> 建模 和 模型评估</h2>
+<p>这里也是大量工作所在。常用的机器学习模型要一个一个试，每个的参数也要进行调整后再试，然后用验证集评估，选出最好的。<br />
+很多时候，还需要回到数据预处理的部分，选择不同的特征，进行不同的特征工程，再回来进行建模和评估。</p>
+<p>这部分属于枯燥的实验部分，因为需要大量的尝试和选择。当然，可以写自动化的脚本加速这些工作。</p>
+<h2 id="提交"><a class="markdownIt-Anchor" href="#提交"></a> 提交</h2>
+<p>提交比较简单。主要是需要注意提交的方法和格式。一般比赛都会给一个提交的模板，帮助参赛者理解所要求的格式。</p>
+<p>我第一次提交因为预测值没有从浮点数转化为整数，分数只有0。之后解决这个问题后，获得了0.77033这样的分数，排名6242/9939。<br />
+这次提交算是对整个流程的一次体验。<br />
+我之后会继续特征工程和调参，以获得更高的分数。<br />
+牛逼的是有很多人满分，之前听说会有泄露预测信息到特征中的bug，不知道是不是这个原因。</p>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>据今年找工作的师兄们和网络上的消息，今年算法工程师的岗位竞争十分激烈。很大程度是因为算法岗的高薪资，和去年毕业生尝到的甜头。大家纷纷从开发岗转去算法岗。众多数据挖掘的比赛也因此十分火爆，kaggle就是其中最火的一个比赛平台。我也打算花1个月时间蹭蹭热度，看看自己有没有做算法的天赋和能力。</p>
+<p>在kaggle上，我首先关注了欢哥(mgchbot)，和大师兄(sparkingarthur)。看了他们的Profile，真是很厉害的人呐。尤其是欢哥，不愧是KDD的双料冠军。大师兄也不赖，平时在我面前特别谦虚（也可能是欢哥这样的人一直在身边吧）。他们的kaggle排名分别是100，和1000（现在共有超过8w人）。由于我还没有任何比赛结束，所以排名为Unranked。向优秀的人学习，因为有40w+户口的诱惑。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/07/03/recommender-systems-of-popular-apps/" rel="prev" title="论推荐系统如何改造和奴役你的思维">
+      <i class="fa fa-chevron-left"></i> 论推荐系统如何改造和奴役你的思维
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/08/14/face-interview/" rel="next" title="face++ 面试">
+      face++ 面试 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text"> 题目理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text"> 数据理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text"> 数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E6%A8%A1-%E5%92%8C-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">4.</span> <span class="nav-text"> 建模 和 模型评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4"><span class="nav-number">5.</span> <span class="nav-text"> 提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">6.</span> <span class="nav-text"> 后记</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2018/08/14/kaggle-titanic-tutorial/";
+    this.page.identifier = "2018/08/14/kaggle-titanic-tutorial/";
+    this.page.title = "kaggle入门之-titanic";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

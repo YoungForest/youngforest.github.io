@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;mac&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2019-11-11T10:10:44.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2019/11/11/mac-write-ntfs-solution/</id>
+        <title>Mac OS写入ntfs解决方案</title>
+        <link rel="alternate" href="https://youngforest.github.io/2019/11/11/mac-write-ntfs-solution/"/>
+        <content type="html">&lt;p&gt;使用Mac系统确实存在一些不方便的地方，比如 写入 NTFS的硬盘或U盘。默认情况下，MAC 只支持读取NTFS。不过只要你有勇气折腾，解决方案还是很简单的。&lt;/p&gt;
+&lt;h2 id=&#34;最推荐方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最推荐方法&#34;&gt;&lt;/a&gt; 最推荐方法&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://mounty.app/&#34;&gt;Mounty for NTFS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;优点：免费，小巧&lt;br /&gt;
+缺点：不hack，其实就是命令行的包装。有些同学可能更喜欢命令行的方式。&lt;/p&gt;
+&lt;h2 id=&#34;最hack的方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最hack的方法&#34;&gt;&lt;/a&gt; 最hack的方法&lt;/h2&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo umount &lt;span class=&#34;string&#34;&gt;&amp;quot;/Volumes/Seagate Expansion Drive&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo mount -t ntfs -o rw,auto,nobrowse /dev/disk3s1 ~/ntfs-volume&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;reference: &lt;a href=&#34;https://mounty.app/&#34;&gt;mounty&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;经过一段时间的斗争，我还是采用了安装第三方应用的推荐方法。因为命令行确实经常忘记或是输错，每次都要重新Google，与我使用Mac系统想要的优雅方便不符。&lt;/p&gt;
+</content>
+        <category term="Mac" />
+        <updated>2019-11-11T10:10:44.000Z</updated>
+    </entry>
+</feed>

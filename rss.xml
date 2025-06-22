@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Mon, 26 May 2025 22:15:29 +0100</pubDate>
+        <lastBuildDate>Mon, 26 May 2025 22:15:29 +0100</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>interview</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>New Graduate</category>
+        <category>Hexo</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Ireland</category>
+        <category>Competitive Programming</category>
+        <category>Tech</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>Tencent</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>Windows</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>RIP</category>
+        <category>Weride</category>
+        <category>游记</category>
+        <category>投资</category>
+        <category>Life</category>
+        <category>法国签证</category>
+        <category>法签</category>
+        <category>申根签证</category>
+        <category>Side Project</category>
+        <category>年终总结</category>
+        <category>Amazon</category>
+        <category>China</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>你的灯亮着吗</category>
+        <category>埃隆·马斯克传</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>持续买进</category>
+        <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
+        <category>生死疲劳</category>
+        <category>深奥的简洁</category>
+        <category>迷人的温度</category>
+        <category>反脆弱</category>
+        <category>厚黑学</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>穷查理宝典</category>
+        <category>太白金星有点烦</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
+        <category>纳瓦尔宝典</category>
+        <category>时势</category>
+        <category>小Lin说</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2025/05/26/Business-cycles-history-theory-and-investment-reality/</guid>
+            <title>逃不开的经济周期 历史，理论与投资现实</title>
+            <link>https://youngforest.github.io/2025/05/26/Business-cycles-history-theory-and-investment-reality/</link>
+            <category>Reading</category>
+            <category>Business cycles history theory and investment reality</category>
+            <category>Economics</category>
+            <pubDate>Mon, 26 May 2025 22:15:29 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;前30%特别有趣。因为其古老，充满故事性和传奇，人物也相对比较少，经济学知识对于现代人也容易理解。进入后凯恩斯时代后，变难好多。人物众多，学派众多，分歧也多。&lt;/p&gt;
+&lt;p&gt;关于自由市场的最重要的核心事实在于，除非交易双方都获得好处，否则交易根本不可能发生。&lt;/p&gt;
+&lt;p&gt;微观经济学是科学。宏观经济学就相对像是社会学。就像之前读过的“&lt;a href=&#34;https://book.douban.com/subject/3370214/&#34;&gt;&lt;strong&gt;深奥的简洁 : 从混沌、复杂到地球生命的起源&lt;/strong&gt;&lt;/a&gt;”。系统微小的变化带来不可计算的影响。&lt;/p&gt;
+&lt;p&gt;通过研究股票市场来预测经济活动，要比通过研究经济来预测股票市场容易得多。&lt;/p&gt;
+&lt;p&gt;狂热与崩溃曾是和普遍的非理性或者暴民心理结合在一起的。&lt;/p&gt;
+&lt;p&gt;16种心理偏误：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;代表性效应：我们往往认为我们所观察到的趋势会继续下去。&lt;/li&gt;
+&lt;li&gt;错误公式效应：我们往往高估与我们所见略同者的人数。&lt;/li&gt;
+&lt;li&gt;后悔理论：我们试图避免可证实我们已经犯错的行为。&lt;/li&gt;
+&lt;li&gt;定锚/框架：我们的决策受到隐约按时正确答案的信息的影响。&lt;/li&gt;
+&lt;li&gt;同化误差：我们会误解接收到的信息，以为该信息认同我们所做的事。&lt;/li&gt;
+&lt;li&gt;选择性接受：我们只能接受似乎认同自己行为与态度的信息。&lt;/li&gt;
+&lt;li&gt;心理区隔：我们把现象区分为不同的隔间，并试着把每个隔间最适化，而非整体。&lt;/li&gt;
+&lt;li&gt;选择性认知：我们曲解信息，好让其认同我们的行为与态度。&lt;/li&gt;
+&lt;li&gt;过度自信行为：我们高估自己做出正确决策的能力。&lt;/li&gt;
+&lt;li&gt;后见之明偏误：我们高估自己预测过去一连串事件后果的可能性。&lt;/li&gt;
+&lt;li&gt;确认偏误：我们的结论不当地偏向我们想要相信的事。&lt;/li&gt;
+&lt;li&gt;适应性态度：我们与熟识的人往往持相同的态度。&lt;/li&gt;
+&lt;li&gt;社会比较：面对一个我们觉得难以理解的主题，我们以他人的行为作为信息的来源。&lt;/li&gt;
+&lt;li&gt;认知不协调：我们试图回避或扭曲表明我们的假设错误的证据，我们也会避免强调这类不协调的行为。&lt;/li&gt;
+&lt;li&gt;自我防卫功能：我们调适自己的态度，好让其似乎认同我们所做的决策。&lt;/li&gt;
+&lt;li&gt;展望理论：我们有一种不理性的倾向，比较愿意赌亏损而不是赌获益，这意味着我们持有亏损头寸的时间长于持有获利头寸的时间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;保罗 沃尔克：人们认为通货膨胀是一种残酷的，而且可能是最为残酷的税收，因为它给许多部门造成了意想不到的打击，而且给那些固定收入者造成了最大的损失。&lt;/p&gt;
+&lt;p&gt;弗里德曼：无论何时何地，通货膨胀都是一种货币现象。要想控制通货膨胀，只需要控制货币供给。&lt;/p&gt;
+&lt;p&gt;熊彼特 1939年：周期并不像扁桃体那样，是可以单独摘除的东西，而是像心跳一样，是有机体的核心。 约瑟夫&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/</guid>
+            <title>2024年终总结 与 2025新年展望</title>
+            <link>https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/</link>
+            <category>life</category>
+            <category>年终总结</category>
+            <pubDate>Sat, 28 Dec 2024 00:04:56 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;转自&lt;a href=&#34;https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;往年的年终总结：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2023/12/23/2023-summary-and-2024-resolutions/&#34;&gt;2023年终总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2022/12/25/2022-summary-and-2023-resolutions/&#34;&gt;2022年终总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2021/12/28/2021-summary-and-2022-resolutions/&#34;&gt;2021年终总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2020/11/25/2020-summary-and-2021-resolutions/&#34;&gt;2020年终总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2020/02/20/2019-summary-and-2020-resolutions/&#34;&gt;2019年终总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2019/07/15/Happy-birthday-2019/&#34;&gt;2019年中总结(生日随想)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2018/12/12/2018-summary-and-2019-resolutions/&#34;&gt;2018年终总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2017/02/22/2017-resolutions/&#34;&gt;2017新年展望&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;里程碑回顾:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2021/07/03/my-3-years-master/&#34;&gt;硕士3年复盘&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2018/10/03/my-4-years-college/&#34;&gt;大学4年复盘&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些重要的博文都放在我博客的&lt;a href=&#34;https://youngforest.github.io/categories/dairy/&#34;&gt;dairy分类下&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;十年编程经验&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#十年编程经验&#34;&gt;&lt;/a&gt; 十年编程经验&lt;/h2&gt;
+&lt;p&gt;此处BGM应为，叶圣涛的“还有多少个十年&amp;quot;,唱尽了多少人生的感悟。&lt;/p&gt;
+&lt;p&gt;14年，18岁的我，离开家乡，前往北京读书。当时的那个少年，对前途一无所知。从此颠沛流离。这10年间，无论是我自己，还是这个世界，都发生了天翻地覆的变化。&lt;br /&gt;
+从“沙河镇”到“知春路”到“十里堡”，从“昌平”到“海淀”又到“朝阳”，从“北京”又到了“都柏林”。经历了许多的光荣和梦想，烦恼和心碎。走过了万里路，读遍了万卷书，也认识了许多不一样的人。从小镇做题家，成长为打工人。幸运的选择了计算机这个充满科技红利的专业，见证了 移动互联网的崛起和饱和，AI 的方兴未艾，全球化的鼎盛和倒退，和平和冲突，人类科技的不断进步。标普500 从1900点涨到6000点。&lt;/p&gt;
+&lt;p&gt;当年“计算机”也算是热门专业，但绝对没有如今的TOP1的地位。当年北航计算机本科学科排名据说是第4. 上大学起，我才正式写下第一行代码。同时开始学习C语言和Python，对于新手来说，同时2门语言意味着傻傻分不清楚，花括号&lt;code&gt;&amp;#123;&lt;/code&gt;和换行，&lt;code&gt;printf&lt;/code&gt; 和 &lt;code&gt;print&lt;/code&gt;，编译 与 解释，静态 和 动态。当年Python甚至还有&lt;code&gt;2&lt;/code&gt;,&lt;code&gt;3&lt;/code&gt;。好多概念也是日后慢慢才搞清楚的，直到现在如数家珍。后来陆续学了 &lt;code&gt;C++&lt;/code&gt;,&lt;code&gt;Java&lt;/code&gt;,&lt;code&gt;GoLang&lt;/code&gt;,&lt;code&gt;TypeScript&lt;/code&gt;,&lt;code&gt;C#&lt;/code&gt; 都作为一时的主力语言，根据兴趣，也学过 &lt;code&gt;Lisp&lt;/code&gt;,&lt;code&gt;Rust&lt;/code&gt; 等小众语言。大二大三，正式有了感觉。那2年自己折腾和自学了很多，也有学校硬核课程的帮助。大四开始实习，正式接触业界。之前总结的 &lt;a href=&#34;https://youngforest.github.io/2018/10/03/my-4-years-college/&#34;&gt;大学4年复盘&lt;/a&gt;，&lt;a href=&#34;https://youngforest.github.io/2021/07/03/my-3-years-master/&#34;&gt;硕士3年复盘&lt;/a&gt;。不得不说，读硕士真是浪费时间。也就是国内太卷，找份好工作都要研究生。毕业就25岁了。到了海外后，基本都是本科就出来工作的，早早进入业界，早早升职加薪。现在又全职工作了3年多，加上之前实习，也算体验和经历了6家公司了. 回头看看，这么多年，很多东西浅尝辄止，简历也十分花里胡哨和充实。&lt;br /&gt;
+真是如金庸所言，独孤求败 一开始“青光利剑，过刚则折”，之后&amp;quot;紫薇软剑，灵活变通&amp;quot;, 中年“重剑无锋，大巧不工。”, 最后&amp;quot;草木之剑，返璞归真&amp;quot;，花草树木，皆可为剑。达到最高境界。程序员也是如此。&lt;/p&gt;
+&lt;p&gt;还有一首歌，我也很喜欢。“你曾是少年”是电影《少年班》的主题曲。其中的每句歌词，真是都唱出了我的心声，曾经的浪漫主义和理想主义，到如今的现实主义、怀念和憧憬。历史的车轮滚滚向前，命运推着我走过不可想象的路，前往未知的道路。虽然我每年都会做新年展望，但一旦拉长到10年的尺度，人生就无法预测，更不能设限。我现在的生活是10年前无法想象的，而现在的我，也无法想象10年后的生活。人往往高估自己和世界短期的进步，但低估长期的进步。这就是指数增长的可怕之处。希望自己永远是少年！继续保持对世界的好奇心和善良乐观。&lt;/p&gt;
+&lt;h2 id=&#34;2024年个人回顾&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2024年个人回顾&#34;&gt;&lt;/a&gt; 2024年个人回顾&lt;/h2&gt;
+&lt;p&gt;今年又是按部就班的一年，像往年一样。J人属性拉满。&lt;br /&gt;
+虽然没有石破天惊和惊心动魄，基本一直呆在舒适圈里，但现在内心已经十分强大，可以做到心安理得地呆在舒适圈:) 不求走的快，只求走的远。&lt;br /&gt;
+其实也是近年来学习到的知识使得内心更强大，正所谓知识就是力量。站在巨人的肩膀上。&lt;br /&gt;
+郝旭烈 的 “做的舒服才能做的久，做的久才能做的好”。相信 巴菲特 和 芒格 倡导的“时间的复利”，和 罗振宇 一起“做时间的朋友”。&lt;/p&gt;
+&lt;h3 id=&#34;买房&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#买房&#34;&gt;&lt;/a&gt; 买房&lt;/h3&gt;
+&lt;p&gt;按&lt;a href=&#34;https://youngforest.github.io/2023/12/23/2023-summary-and-2024-resolutions/&#34;&gt;去年的新年愿望&lt;/a&gt;，今年成功在爱尔兰买房了。&lt;br /&gt;
+本身不是非要买房不可，我也不是觉得是刚需。&lt;br /&gt;
+按照&lt;a href=&#34;https://book.douban.com/review/15812972/&#34;&gt;《持续买进》&lt;/a&gt;中的数据，从投资角度看，买房并不是好的选择。当然这是数据上的分析，因为房产增值和地区和年代关系很大，另外因为流动性差的原因，反而容易拿的久，获得还可以的投资收益。但从回测分析，买SP500其实比房产更强。不过，买房有很多其他精神和社会上的好处，比如稳定的生活。&lt;br /&gt;
+我也并不是打算在爱尔兰呆很多年，稳定的生活其实也需求也不大，以后还想想去天花板更高的美国发展。&lt;br /&gt;
+不过按照 &lt;a href=&#34;https://book.douban.com/subject/4772963/&#34;&gt;彼得林奇&lt;/a&gt; 的观点，从投资心态上来讲，年轻人推荐先买房，再买股票投资。因为买房要准备头款，而股票投资是推荐用常年（5年，10年，甚至永远）不用的钱做的。买房后，头款已经花了，只每月换月供，相对确定性更高，钱的规划会更容易。否则，你也不确定准备多少钱，未来买房。&lt;br /&gt;
+买房贷款是一种相对安全的杠杆，对资产的放大作用明显。尤其是第一套房的时候，银行和政府一般都会有不少优惠政策可以利用。如 爱尔兰，贷款最多年基本工资的4倍，头款10%，因此 最大是9倍杠杆。&lt;/p&gt;
+&lt;p&gt;然而，我买房的最大动力还是因为 都柏林 变态的租金，由于租售比偏高，买房反而比租房更划算。房贷低租金不少。另外，虽然都柏林房价已经涨了十年，但相比收入和经济增长不像国内那么变态，再加上，作为美企大厂程序员的收入溢价，还是蛮容易上车的。&lt;/p&gt;
+&lt;p&gt;买房比租房麻烦很多，需要贷款，看房，竞价（最后还是买了新房，一口价。不需要像二手房那样变态竞价），联系律师。&lt;br /&gt;
+交房后，又是装修，还有暖房。我本身也不是十分勤快的人，后花园（Terranced house) 甚至一直是野草旺盛，不想收拾。&lt;br /&gt;
+生活质量感觉提升了不少，也享受了5个月的自由，没有了合租舍友。不过仍有些孤单，以后考虑也找寻些租客。&lt;/p&gt;
+&lt;p&gt;最重要的经验就是，买房最重要的是位置，其他都是次要。&lt;/p&gt;
+&lt;p&gt;爱尔兰 实现 中国梦 的难度是真的低。之前在北京生活了8年，也是“墙板砸烂，头款也凑不齐”，感叹“安得广厦千万间，大庇天下寒士俱欢颜”。&lt;/p&gt;
+&lt;h3 id=&#34;读万卷书&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#读万卷书&#34;&gt;&lt;/a&gt; 读万卷书&lt;/h3&gt;
+&lt;p&gt;今年读了差不多25本书: &lt;a href=&#34;https://youngforest.github.io/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/&#34;&gt;读后感列表&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;特别推荐的有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/07/27/The-Almanack-of-Naval-Ravikant/&#34;&gt;纳瓦尔宝典 财富与幸福，人生智慧的集合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/03/07/Elon-Musk/&#34;&gt;埃隆·马斯克传&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/03/16/Just-Keep-Buying/&#34;&gt;Just Keep Buying 持续买进&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/01/29/The-gains-and-losses-of-economic-changes-in-the-past-dynasties/&#34;&gt;历代经济变革得失&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/01/08/Guns-Germs-and-Steel/&#34;&gt;枪炮、病菌与钢铁&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果像我一样，对科学十分比较感兴趣:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/03/01/Reality-Is-Not-What-It-Seems-The-Journey-to-Quantum-Gravity/&#34;&gt;现实不似你所见 量子引力之旅&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://book.douban.com/subject/11226708/&#34;&gt;A Little History of Science&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/09/02/A-Matter-of-Degrees/&#34;&gt;迷人的温度 温度计里的人类、地球和宇宙史&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/&#34;&gt;深奥的简洁 从混沌、复杂到地球生命的起源&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;也经常有朋友让我推荐些投资理财的书，我一般推荐:&lt;br /&gt;
+&lt;a href=&#34;https://book.douban.com/subject/35060020/&#34;&gt;金钱心理学&lt;/a&gt;，&lt;a href=&#34;https://youngforest.github.io/2024/03/16/Just-Keep-Buying/&#34;&gt;持续买进&lt;/a&gt;，&lt;a href=&#34;https://book.douban.com/subject/26948036/&#34;&gt;小乌龟投资智慧&lt;/a&gt;，&lt;a href=&#34;https://book.douban.com/subject/2189613/&#34;&gt;战胜华尔街&lt;/a&gt;，&lt;a href=&#34;https://book.douban.com/subject/36593827/&#34;&gt;邻家的百万富翁&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;看完这些，其实就是为了明白几件事情。1. 安全边际。投资要用长期不用的钱，5年以上。手头要留半年到3年的生活费（现金等价物），具体多长取决于年龄，家庭状况，工作。2. 股票大幅强于房产，债券，黄金，等其他标的。3. 被动指数基金大幅强于个股和主动基金。4. 直接梭哈强于定投和择时。5. 只买不卖，强于择时。6. 美国和美股强于其他国家。7. 投资最难的是心理，追涨杀跌，感性短视要克服。&lt;/p&gt;
+&lt;p&gt;总有人说 “悲观者正确，乐观者前行。”。但读多了历史和科学，我认为，“乐观者正确且前行”。&lt;/p&gt;
+&lt;h3 id=&#34;行万里路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#行万里路&#34;&gt;&lt;/a&gt; 行万里路&lt;/h3&gt;
+&lt;p&gt;今年只出了3趟门，一次去 爱尔兰 Wexford, 看呆萌的Puffin鸟。&lt;/p&gt;
+&lt;h4 id=&#34;英国-瑞士&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#英国-瑞士&#34;&gt;&lt;/a&gt; 英国 瑞士&lt;/h4&gt;
+&lt;p&gt;一次去英国（苏格兰高地自驾游）和 瑞士（苏黎世，Interlaken, 少女峰，卢塞恩，Rigi峰）。&lt;br /&gt;
+从 都柏林 去 爱丁堡 坐了 ART72 螺旋浆飞机。第一次坐非 波音 空客 的飞机，十分紧张。&lt;br /&gt;
+遇到爱丁堡国际艺术节到处是卖艺的，各种表演和“奇怪”的人。people mountain people sea。&lt;br /&gt;
+苏格兰高地自驾游路线真是名不虚传，山路开车体验十分不错，一路山光水色。&lt;br /&gt;
+“让”的三角路牌上，爱尔兰是写YIELD，英国是GIVE WAY，瑞士是空白。&lt;br /&gt;
+再次感叹伦敦人杰地灵，TOP人才浓度大概是欧洲最高了。参观了 TikTok，CAMEL AI，Bloomberg，Amazon 的办公室和朋友。TikTok的饭是我在欧洲吃过最好的食堂了，甚至比谷歌还好。&lt;br /&gt;
+体验了 从 伦敦 到 巴黎 的Eurostar，“一地两检”, 通过英吉利海峡隧道，确实方便。不过价格和飞机相比没有竞争力，主要优势在于方便。毕竟火车站一般都在市里，飞机场在郊区。&lt;br /&gt;
+恰好错过巴黎奥运会，不过巴黎城市建设确实有很大进步，多了很多自行车道。道路上homeless和闲杂人等也少了很多。巴黎适合穷人，生活舒适，社会福利好。也适合华人，中餐甚至比伦敦还好，也更便宜。伦敦适合精英，机会多。&lt;br /&gt;
+也体验了从 巴黎 到 苏黎世 的欧洲高铁，是我在海外做过最好的火车了。速度和舒适度不输中国高铁, 还有WIFI。&lt;br /&gt;
+瑞士真是太适合J人了。公共交通发达，准时，密度高，频次大，火车、船、巴士、Tram联动。本次玩了中部 Interlaken 的 图恩湖, 格林德瓦 的First山，是韩剧“爱的迫降”的取景地。流量真大，吸引了太多韩国人来。北部的 卢塞恩湖，Rigi山。真是“日出江花红胜火，春来江水绿如蓝。”。幸亏先去了苏格兰，后来的瑞士，要不然会落差很大。可惜没机会参观谷歌的苏黎世办公室。最重要的，参观了曾经的梦校ETH，尤其是爱因斯坦上学用的柜子，也算是完成了朝圣。下次有机会再去南部的，阿尔卑斯山区。&lt;/p&gt;
+&lt;h4 id=&#34;美国&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#美国&#34;&gt;&lt;/a&gt; 美国&lt;/h4&gt;
+&lt;p&gt;此处BGM应为，德沃夏克 的 “自新世界”。上次听这首曲子还是在大一时的“西方音乐鉴赏”选修课。当时知识还不够，不是特别理解此中的表达。如今，在美国的土地上，一遍遍听这个曲子，才更好地体会到其中对新大陆地热爱和赞颂。虽然已经是19世纪末创作的音乐，现在的美国年龄已经翻了一倍，26年就是250年庆典了。&lt;br /&gt;
+和旧大陆不同，新大陆是非民族国家，通过共识建立。类似BTC，所有的价值都在于人和人之间的共识。而不是三权分立的制度和成文宪法。很多照搬三权分立的国家，也照样陷入独裁。&lt;br /&gt;
+需要强调的是 这一共识是“自由”而非“民主”。&lt;/p&gt;
+&lt;p&gt;一次去了美国，逛了东北部的几个大城市 纽约，华盛顿，费城，波士顿。同为发达国家，美国确实比欧洲更发达的多。基础建设很多，路上车水马龙，车也很大，都是SUV起步。欧洲流行的小轿车在美国很少，Europoor果然名不虚传。美国开车还是野，比国内更甚。好多车门，车头，车尾都撞烂的车，还在路上跑。爱尔兰开车大家一般都很谦逊，车道也很窄，以单车道为主，基建比中美差不少。&lt;br /&gt;
+比较有趣的是，我去的很多州，车牌都只强制后车牌，前车牌很多人都不挂。转向灯有不少车是红色的，和示廓灯和刹车灯不是很容易区别开。不知道为什么不像其他地方强制黄色的，辨识度更高。&lt;/p&gt;
+&lt;p&gt;自由女神像 真是大IP。堪比巴黎埃菲尔铁塔，而且确实也是由埃菲尔建造的。X战警在上面打过架，红警里盟军第一关谭雅也见证了其毁坏。所有涉及美国19，20世纪初期欧洲移民的影视，也都拍出了，新移民从海上坐船进港，见到自由女神像的经典场景，比如 海上钢琴师，教父，泰坦尼克号。当然还有蜘蛛侠，游戏也算是纽约旅游模拟器。&lt;/p&gt;
+&lt;p&gt;深入理解了曼哈顿距离。之前在北京的时候，因为规划原因，已经感觉比较规正了，道路都是正南正北，正东正西的。曼哈顿才是严格按照长方形规划，类似唐朝的长安城，坊市都是块。也深入理解LeetCode里，城市Skyline的那些问题了。&lt;br /&gt;
+也去百老汇看了火爆的“汉密尔顿”音乐剧，也是名不虚传。用Rapper唱国父的故事，演员大多是黑人，音乐天赋十分契合。主要国父都是黑人演员，也是见证了美国的包容，政治正确，毫无违和感。&lt;/p&gt;
+&lt;p&gt;去华尔街摸牛，为A股祈福[偷笑], 在纽交所前看看美股，当时SP500都快5800点了。&lt;/p&gt;
+&lt;p&gt;参观了世贸，有些像北京的国贸。装修都很好，店也属于高端大气上档次的。当然还有911纪念馆，从中和其他历史的很多发展，都可以看出911对美国和世界的深刻影响和改变。&lt;/p&gt;
+&lt;p&gt;纽约有些地铁站设计比较坑，花钱进站了才发现要做反方向的车，但换方向要出战。这种情况，如果坐过站了，也得出站才能坐回来。&lt;/p&gt;
+&lt;p&gt;还逛了世界上最大的唐人街曼哈顿下城，地理位置很不错，名不虚传。怪不得唐人街探案 第二部就选扭腰。历史悠久，规模很大，还有不少前朝遗老。&lt;br /&gt;
+还有法拉盛的新唐人街，更夸张。在别的地方见到的唐人街，都是中外双文。法拉盛的唐人街，只有中文。&lt;/p&gt;
+&lt;p&gt;EU现在和CN一个待遇，Apple Intelligent不能用。到了美国就行了。EU 现在真是太拉了，别的不行，搞监管和立法世界第一，创新和经济发展阻碍成这样子。&lt;/p&gt;
+&lt;p&gt;华盛顿特区 才是十分震撼。如果纽约是资本主义的象征，华盛顿就是美国宪法的象征。林肯纪念堂，华盛顿纪念碑，国会山，最高法院，白宫。之前很多书本里读到的历史，和现实联动了起来。&lt;br /&gt;
+比如 长者 引用的“Of the people, by the people, for the people”。&lt;br /&gt;
+国会山也有很亲民的免费参观导游，进参众两院接受教育（当然是和办公区有些区隔，但也只是一道简单的线，议员走里面，观众走外面），普及立国制度和历史，告诉观众公民的权力和政府的权力。&lt;/p&gt;
+&lt;p&gt;当然美国也有很多缺点啦。而且很多其实都是优缺点一体两面，是双刃剑。比如 比较极端的自由主义。虽然自从大萧条以后，自由主义有所衰败，但仍是发达国家中最自由的国家。这带来了经济的增长，人才的汇集，创新的发生，但也有社会保障相对较差，贫富差距大，枪支暴力多。&lt;br /&gt;
+我个人还是更推崇自由主义的，后面再细说。&lt;/p&gt;
+&lt;h3 id=&#34;身份&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#身份&#34;&gt;&lt;/a&gt; 身份&lt;/h3&gt;
+&lt;p&gt;来爱尔兰2年了，也拿到永居（Stamp 4）了。爱尔兰可以说是移民和身份十分友好的国家了，还没见过其它国家有如此友好的条件。可能也和缺人有关。&lt;br /&gt;
+办工签的列表中，屠宰工人（畜牧业发达），医院，IT，会计都是名列前茅的职业。&lt;br /&gt;
+从国籍来说，印度人最多，占1/4，其次 巴西，印度，土耳其，埃及 也很多人。中国人是算在Other（5%）里的，不算是华人热门的移民目的地。在爱华人也不多。华人还是喜欢去传统的老牌帝国主义，美国，加/澳，英国法国。&lt;/p&gt;
+&lt;p&gt;爱岛每年发2-4万张工签，对于人口5百万的国家也算不少了。除此之外，还有大量英国，欧盟的人来打工，他们不需要工签。虽然流入很大，但流出也很大，基本都是呆几年就走，作为一个跳板的存在。因为这边工作机会很好，跨国大企业不少。不少欧洲人镀个金就走了。&lt;br /&gt;
+至于第三世界的人，很多人也是拿个身份就走。在程序员这个群体里，很多人是有美国梦的，已经/正在/将要去美国打工。美国身份虽然难拿，但主要是针对中印这2个人口大国，其他国家的人还是蛮快的。&lt;/p&gt;
+&lt;p&gt;爱尔兰虽然有主题民族，爱尔兰人（凯尔特人，盖尔人），还是一个蛮古老的民族，从欧洲大陆迁移而来。其他地方（比如 欧陆，不列颠岛）的盖尔人，早就被新的民族（如 拉丁人，盎格鲁撒克逊，日耳曼人）所取代，现在仅剩爱尔兰和苏格兰还有。历史上也经历了很多磨难，好不容易幸存到现在。这也是一个生物进化很自然的过程，很多其他洲也存在类似的民族取代。比较 有名的是 日本北海道的阿努人，太平洋夹缝中生存的南岛人，北美的印第安人。爱尔兰人还算幸运，在边缘地带苟活下来，近2百年又主动和被动地开枝散叶，现在海外有7千万爱尔兰后裔了（如拜登）。相比之下，本土只有7百万人（加上北爱），其中还有15%的外国人，尤其是在都柏林，有一半都是外国人。外国人也主要生活在城市里。爱尔兰近数十年的经济快速增长也是离不开移民的一分功劳。类似北上广深基本一多半都是外地人一样。&lt;/p&gt;
+&lt;p&gt;出来打工，身份其实是最重要的。主要是&lt;strong&gt;自由&lt;/strong&gt;和抗风险。&lt;/p&gt;
+&lt;h3 id=&#34;自由主义保守主义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自由主义保守主义&#34;&gt;&lt;/a&gt; 自由主义，保守主义&lt;/h3&gt;
+&lt;p&gt;今年办了YouTube Premium，听了 罗振宇 罗辑思维 4季节目，可能有200小时吧。罗胖总结他人知识，输出观点可谓熟练和精彩。自由主义 和 保守主义 是他所拥趸的。尤其是，这期&lt;a href=&#34;https://youtu.be/mCiLIZRQSXo?si=Gvfbc5AVCLp_IUcn&#34;&gt;83 他真的拯救了美国?&lt;/a&gt;，直接批判 罗斯福新政 和 凯恩斯主义，为 胡佛 部分翻案，为自由主义市场经济完全翻案。&lt;/p&gt;
+&lt;p&gt;还有，读了 &lt;a href=&#34;https://youngforest.github.io/2024/08/24/Antifragile-Things-That-Gain-from-Disorder/&#34;&gt;纳西姆 的《反脆弱》&lt;/a&gt;，当然有很多观点，自由主义也是他所宣扬的。&lt;/p&gt;
+&lt;p&gt;从小长在社会主义国家，Party管一切。政府作为大家长，对每个人的照顾和管束可谓无微不至。虽然现在相比毛主席时代，已经放松了很多，但仍然不少。虽然自己没有经历过之前的时代，体会不到计划生育，大跃进，WG，但疫情三年基本全部呆在国内，“享受”了十分的不自由。&lt;br /&gt;
+当然，不少同胞是愿意用自由交换安全的。但人各有志，用脚投票吧。&lt;br /&gt;
+结合之前读的 &lt;a href=&#34;https://youngforest.github.io/2024/01/29/The-gains-and-losses-of-economic-changes-in-the-past-dynasties/&#34;&gt;吴秀波 的《历代经济变革得失》&lt;/a&gt;，自由也是经济发展的前提。正所谓“一抓就死，一放就活，一活就乱”。&lt;/p&gt;
+&lt;p&gt;爱尔兰 其实蛮自由的，但税收高是一项很大的缺点。对于很多有上进心人才来说，很多还是去了收入更高，税收更低的地区（如 美国，中东，新加坡，瑞士）。当然，按照“无知之幕”的理论，福利社会也是优点吧。如果开局不知道自己的出厂配置，肯定更喜欢福利国家。&lt;/p&gt;
+&lt;h3 id=&#34;世界局势&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#世界局势&#34;&gt;&lt;/a&gt; 世界局势&lt;/h3&gt;
+&lt;p&gt;爱尔兰共和国 政治制度继承英国，也就是 议会制。今年底也大选了，中间偏右的统一党和共和党继续组成联合政府。相比世界其他国家，政局还算是十分平稳。当然，最大的原因应属经济一直平稳发展，每个人都能收益，因此矛盾没有那么尖锐。&lt;/p&gt;
+&lt;p&gt;今年夏天，我也近距离观察和参与了爱尔兰的地方选举和投票活动，有意培养一下自己的公民意识。5年一度的当地理事会Local Council 的代表选举，类似县人大代表。只要有地址和税号就行，不需要公民身份。同时投票的还有欧盟议会，这个就需要欧盟公民身份了。我上次投票还是很多年前给海淀区的人大代表投票。当然，地方理事会的权力很小，平时也就是决定当地的税收资金（主要是房产税归地方）怎么用，比如建学校，图书馆 这些民生小事儿。&lt;/p&gt;
+&lt;p&gt;马路边路灯上的到处挂着竞选人宣传头像；邮箱里也收到很多竞选宣传单；区投票地点Polling station，是一个小学；选票，按照支持的程度，填1，2，3… 即可，可以都填，也可以在任意数字停下。投票的过程是，首先提前一个月会开始造势，路灯上会挂上竞选人头像，邮箱里会收到竞选宣传单。选民也要先线上或线下注册，获得选举资格，会收到选举卡，上面有分配的号码。选举日的7-20点，选民到所在区的投票站，出示身份证件和选举卡或只报上面的号码就行，工作人员会在注册单上找到你的名字，划掉，给你张选票，用机器打孔，以示是发出的选票。然后有个填票区，有隔板互相挡着，用那里提供的铅笔填上数字。最后把选票投到票箱里就好。&lt;/p&gt;
+&lt;p&gt;对所谓的民主，有几点感受：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;被选举权比选举权更重要。被选举人有各种党派，和不少独立候选人。被选举人的资格认证十分简单，不需要被审查或审批。进行差额选举而非等额选举。&lt;/li&gt;
+&lt;li&gt;法制保障自由，民主依赖自由。不得不说，社会主义核心价值观遥遥领先。&lt;/li&gt;
+&lt;li&gt;公民社会有赖传统和传承，需要培养，教育和维护。这是法制，民主，自由的基础。就像 利比里亚 和 海地 照搬了美国的制度，但只有表，没有里，一样发展不好。公民的民主和权利意识，要比简单的民主过程重要得多。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;世界很多国家和地区今年也都进行了大选。英国左转，其他国家右转。当然大家关注的最多的还是 美国大选，川普“三权合一”。当然，我对美国的权力制衡还是蛮有信心的。历史上，华盛顿 最有称帝的威望。罗斯福 也是大幅拓展联邦政府权力，“三权合一”，甚至突破2次的任期默契，连任到死。我最近也是在读罗胖推荐的&lt;a href=&#34;https://book.douban.com/subject/26314954/&#34;&gt;《光荣与梦想》&lt;/a&gt;，讲的就是32年之后的美国总统史。美国的制度韧性还是很强的。罗斯福 的威望空前，民意汹涌。有些民众甚至愿意为了他烧掉掣肘的国会（当然没有执行，不像21年国会山叛乱）。后来，改选后，参众两院也被民主党把持，最高法院还是否定了很多法案。到最后，最高法院也被民主党把控，已经很多年过去了。但仍有民主党内部的限制和州权的制约。罗斯福 一去世，国会也很快通过宪法修正案，明文规定总统的任期限制。这一法案，也意味着川普2.0已经是最后一个任期了。论民主，比如在经济学人的民主指数里，美国排名并不靠前。但论自由和权力制衡，美国可算是名列前茅。&lt;br /&gt;
+欧洲人可能也会关注一下年中的，欧盟议会选举，右翼当选不少席位。&lt;/p&gt;
+&lt;p&gt;除此之外，战争和冲突也在延续。&lt;/p&gt;
+&lt;p&gt;俄乌战争第三年了，继续焦灼。不过听说川普上台后要要求乌克兰和俄国媾和。&lt;/p&gt;
+&lt;p&gt;巴以冲突也第二年头了, 哈马斯被干没了，黎巴嫩真主党和伊朗也遭到了报复。巴勒斯坦确实是惨，现在的国际秩序可谓崩坏，拳头比讲理有用。以色列也是抓住这一机会，大打出手。大家都自顾不暇，欧洲也都停留在口头支持上。之前对乌克兰，就是再现了二战前的经典，绥靖政策。&lt;/p&gt;
+&lt;p&gt;叙利亚 的 阿萨德 也顷刻倒台，反政府军直接是传檄而定，大概是抓住了好时机。国内外环境都十分有利。国外，支持 阿萨德 的 俄国，深陷战争泥潭；伊朗 和 黎巴嫩真主党被以色列报复地自顾不暇。国内，50年的 阿萨德 父子统治，也已经是不得人心，经济上也一直无法恢复。新政府如何被建立，如何重建和恢复叙利亚，也只能明年拭目以待。&lt;/p&gt;
+&lt;p&gt;韩国 年底上演了 总统 戒严，派军队取缔国会 的俄国剧本。大韩民国民主化30年来，确实民主深入人心，这剧本果然结局不一样。军队保卫国会，但允许议员进去，议员投票废除戒严令，军队撤退。总统 6个小时后也宣布取消名存实亡的戒严了。最新的进展是，总统已经被弹劾停职，等待最高法院裁决。估计最后难逃坐牢的命运。&lt;/p&gt;
+&lt;p&gt;不过，我关注新闻，其实并没有什么用，只是出于兴趣。我对未来还是十分乐观的，对人类文明的信心空前。从历史上来看，现在世界的动荡其实并不算特别突出，甚至可以算是相对很好的年代了。堪比欧洲1848年到1914年的黄金时代，以和平为主，经济发展，科技不断突破，人民生活水平也提高不少。都以指数形式发展，根据复利的原理，势不可挡。AI 的如火如荼，SpaceX的星舰也激动人心。人类发展到现在，按照&lt;a href=&#34;https://zh.wikipedia.org/zh-hans/%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%82%96%E5%A4%AB%E6%8C%87%E6%95%B0&#34;&gt;卡尔达肖夫指数&lt;/a&gt;，已经是一个0.7级文明了。我对以后继续发展成1级，2级，3级都是蛮乐观的。&lt;br /&gt;
+刘慈欣 虽然说，“给岁月以文明，而不是给文明以岁月”。但作为人类文明的一分子，我还是希望能给文明以多些岁月。(想起，今年网飞也出了“三体”新剧，我写了一些观后感：&lt;a href=&#34;https://youngforest.github.io/2024/03/25/3-body/&#34;&gt;网飞三体有感：质疑程心，理解程心，成为程心&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id=&#34;投资&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#投资&#34;&gt;&lt;/a&gt; 投资&lt;/h3&gt;
+&lt;p&gt;和去年一样，今年也是遍地股神。光大盘就涨了26%，多次历史新高，已经到6000点了。&lt;/p&gt;
+&lt;p&gt;年初读了 艾萨克森 的&lt;a href=&#34;https://youngforest.github.io/2024/03/07/Elon-Musk/&#34;&gt;埃隆·马斯克传&lt;/a&gt;，确实激动人心。买了10股TSLA，成本价190，最低跌到160，最后涨到260卖了。也算是卖飞了，没一个月，美国大选后，TSLA一飞冲天，最高涨到460，现在也有430. 波动很大，没有盲目的信仰，果然是拿不住，没有暴富的命。买入的也少，基本是玩一玩的心态。&lt;/p&gt;
+&lt;p&gt;今年继续按照&lt;a href=&#34;https://book.douban.com/review/15812972/&#34;&gt;《持续买进》&lt;/a&gt;的建议，梭哈标普500. 大盘指数的信仰相对好建立，尤其是我对历史和科技比较感兴趣，因此，也是对人类文明十分有信心。标普500 背后的根本增长动力还是人类生产力的加速提高和经济的长期复利发展。&lt;/p&gt;
+&lt;p&gt;CN 也有924行情。网友们戏称，从ICU直接打强心剂，到夜店蹦迪。和很多人一样，我也是趁此政策短牛，把A股和中概股都分批清完了。中概股指数 甚至陆续买了3年，都回本了。当然，算上时间成本还是蛮亏的。当年同期买的标普和纳指都涨了70%了。A股也是买了沪深300和某些行业指数，本身本金其实不多。也小亏出货了，再也不玩缅A了。&lt;br /&gt;
+非自由市场经济，还是别碰为好。让别人玩吧。相信国运，珍爱身心健康。&lt;/p&gt;
+&lt;p&gt;当年出国的时候，1欧元等于6.8人民币。现在 1 EUR = 7.8 CNY，也是后悔22年没多换点汇。当时也没有很周全的未来安排，很多事情不确定，风险蛮高的。&lt;br /&gt;
+直到去年，才慢慢规划好未来近几年的人生。有了买房买车等想法，也近几年不打算回国发展了。&lt;/p&gt;
+&lt;h2 id=&#34;2025年憧憬&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2025年憧憬&#34;&gt;&lt;/a&gt; 2025年憧憬&lt;/h2&gt;
+&lt;p&gt;回家。来爱岛2年了，都没有回家，各种原因吧，总是拖着。当年出来的时候，还是三年大疫情封控期间，就做好了多年不回的准备。结果形式变化太快，走在了黎明前最黑暗的时候&lt;br /&gt;
+也办了入台证，打算顺便去宝岛台湾省看看。正好去参加一个在爱尔兰的台湾朋友的婚礼。行万里路，TW也算是蛮有特点，值得去旅游体验的地方。小时候也算是听“周杰伦”长大，和一家人一起看湖南卫视金鹰剧场“恶作剧之吻”，还有“那些年一起追的女孩”，各种偶像青春剧吧。也有人说是“华人之光”，实现了“社会主义核心价值观”，风土人情也十分有特色。&lt;/p&gt;
+&lt;p&gt;考到 爱尔兰 驾照。这一路考驾照之旅也是坎坷，我都有些难以置信。考了4次路考了，每次都因为各种原因没有过。明年继续。虽然 一鼓作气，再而衰，三而竭。明年回爱尔兰重新开始，Fighting！我还就不信了。&lt;/p&gt;
+&lt;p&gt;坚持健身。买房后，离公司远了，也就不怎么去办公室了，办公室的健身房也就不能白嫖了。办了家附近购物中心健身房的卡，一月35欧，一周去3次。明年继续。&lt;/p&gt;
+&lt;p&gt;事业上，可以有所进步和更好的转机。前2年，因为layoff和reorg，还是蛮颠沛流离的。24年，经济环境明显转暖，公司也开始重新扩招，也算是苟到了好时候。今年下半年，重新转到美国旧组。虽然前老板提前退休，有很大遗憾，但仍比去年以色列组强不少。重新和新老板（也是前同事）建立了Trust，工作也按部就班，有所impact。明年继续。&lt;/p&gt;
+&lt;p&gt;生活上，希望可以多出门，多认识不同的人，多参加社交活动。今年下半年搬进新家，没了舍友。也基本在家办公，完全过上了日本青年的独居宅男生活。就算是70% 的I 也顶不住。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/10/20/Shi-Nan-Zhi-Tu/</guid>
+            <title>食南之徒 马伯庸</title>
+            <link>https://youngforest.github.io/2024/10/20/Shi-Nan-Zhi-Tu/</link>
+            <category>Reading</category>
+            <category>食南之徒</category>
+            <category>马伯庸</category>
+            <pubDate>Sun, 20 Oct 2024 19:05:48 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;每周一本书24：&lt;strong&gt;食南之徒&lt;/strong&gt; &lt;a href=&#34;https://book.douban.com/search/%E9%A9%AC%E4%BC%AF%E5%BA%B8&#34;&gt;马伯庸&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者貌似是在借汉朝的南越问题，映射台湾问题。马伯庸还是那么擅长，借用史书上的只言片语，脑补出完整的悬疑故事。之前的“两京十五日”，“长安的荔枝”都是如此。&lt;/p&gt;
+&lt;p&gt;十分不错的长篇小说，尤其是对食物的描写，让人感到真诚和流口水。就是结局过于悲惨，“甘蔗”一家人都死了。悬案也终究没有告破和昭雪，虽然读者们和男主都知道真相了，迟到20+年的惩罚，也来的太迟了。男主要是再晚几年，凶手就善终了。但仍然作威作福那么多年，害了不少人。&lt;/p&gt;
+&lt;p&gt;狐死首丘，万里运枣树苗，孤宫独守。赵佗 的这些情感，作为一个离开家乡10年有余，如今甚至流落海外的移民，真是感同身受，都要哭死了。但我也如同赵佗，也知道，回不去了。记忆中的故乡已经远去，即使勉强回去以减思乡之愁，也是无济于事，反而带来更大的痛苦。因为现实的家乡，和你想象中的，其实是完全不同的。思乡的人，总是美化这些。记吃不记打，好了伤疤忘了疼。&lt;strong&gt;过去没有想象中那么美好，现在没有想象中那么不好，未来远比想象中要好。&lt;/strong&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</guid>
+            <title>深奥的简洁 从混沌、复杂到地球生命的起源</title>
+            <link>https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</link>
+            <category>Reading</category>
+            <category>深奥的简洁</category>
+            <pubDate>Sun, 15 Sep 2024 18:54:17 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;每周一本书22：&lt;a href=&#34;https://book.douban.com/subject/3370214/&#34;&gt;&lt;strong&gt;深奥的简洁&lt;/strong&gt; 从混沌、复杂到地球生命的起源&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;“穷查理宝典”推荐的书籍，从混沌的角度理解宇宙、生命和社会，十分有趣的角度。通过混沌，这一数学上的概念，把宇宙中很多事情都穿起来了。虽然我们有许多的物理学知识，看似对世界了解很多，可以做到预测历史和未来，像拉普拉斯认为的那样。但事实和理论证明了，这是不可能的。计算宇宙最好也是唯一的方案就是宇宙本身，无法在宇宙中制作出这样的机器或生命，去计算和预测宇宙。这是数学的限制，如果像很多先贤说的那样，数学是上帝的语言。那看来这一语言也是天生有限制的，不是全知全能的。当然数学也一直在进展，但从目前的证明来看，很多方程是没有解析解的。迭代解注定是蝴蝶效应。相比“迷人的温度”那本书稍差。虽然我自认为有一定的数理基础背景，但还是被本书的数学和论证搞得有些糊涂了。&lt;/p&gt;
+&lt;p&gt;有意思的是，前一本书提到“流浪地球”的方案。本书则是以，“三体”问题开端。三体问题不可解，不是物理的错，而是数学的错，而且是数学已经证明了不可解。因此，如果“地球往事”里，三体组织的拯救派看过这部作品，也就会放弃拯救“主”的想法。当然，“三体”书中，最后拯救派也证明了此事，并且在与降临派的斗争中失败。可以说，他们的策略从根上就是不可能和注定失败的。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/09/02/A-Matter-of-Degrees/</guid>
+            <title>迷人的温度 温度计里的人类、地球和宇宙史</title>
+            <link>https://youngforest.github.io/2024/09/02/A-Matter-of-Degrees/</link>
+            <category>Reading</category>
+            <category>迷人的温度</category>
+            <pubDate>Mon, 02 Sep 2024 14:51:00 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;A Matter of Degrees: What Temperature Reveals about the Past and Future of Our Species, Planet, and Universe&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/27016304/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十分。“穷查理宝典”的推荐书籍，我从那本书过来的。芒格在书中强调，跨学科知识的重要性，或许这就是他推荐此书的原因吧。确实如此，本书集合多门学科大成，深入简出，是本优秀的科普书籍。虽然很多知识和历史都是我所知道的，但是通过“温度”这一物理变量，把医学，生物学（包括进化论），物理学（光、热、量子力学），地质学，化学都串在一起。当不同学科融会贯通，历史的发展交织在一起的时候，不得不感叹科学和人类文明的伟大。就像书中所说，从宇宙大爆炸，到太阳系的诞生，地球的诞生，再到生命，最后到人类来思考这些间接和直接创造人的这一切。让我读来多次拍手称快，爱不释手，3天读完。生而为人，我很幸运和骄傲。尤其是生活在21世纪，站在那么多巨人的肩膀上。享受着他们的发现和创造，过着舒适和幸福的生活。&lt;/p&gt;
+&lt;p&gt;最有意思的部分是，在“太阳的诞生”章节，作者提到，太阳因为核心聚变的进程，核心温度是不断升高的。因为越重的原子核需要更高的温度，才能抗衡电磁斥力，产生聚变。现在的太阳是50亿年前，释放能量的30%多。之后也会越来越亮。这对地球不是什么好消息。再过10亿年，也许地球会步入金星后尘，变成一个温室效应严重，过热的星球。生命或将在地球上灭绝。但是科学家已经提出了解决方法，如果人类可以继续存在的话，可以通过驾驭小行星，利用引力弹弓（其实是发射太阳系探测器加速的常用技巧）的效应，每次从地球掠过的时候，把地球往外推一点，然后小行星会回到木星之外补充能量。然后人类再通过火箭，改变轨道，再次返回地球。每六千年一个周期，火箭的功率其实也不需要很大，因为时间长，产生的动量就大了。几十亿年后，地球就会到今天火星的轨道上。地球可以保持适宜的温度，为生命延长几十亿年的时间。真是科学版流浪地球，比大刘的行星核聚变引擎方案可行的多。当然大刘的背景是需要更快的走，引力弹弓虽然可行省力，但需要的时间也更久。当然《流浪地球》里的设定是，太阳会几千年内发生毁灭的氦闪，这不是科学的。当然50亿年后，太阳还是要变成红巨星，吞没地球和火星的。之后就生命需要移民到木星和更外的轨道了（这次没法带着地球一起走了），甚至是其他的恒星系。&lt;/p&gt;
+&lt;p&gt;曾几何时，我也是有所谓“科学家”的理想的，初高中的时候，也是对物理十分感兴趣。差点报考南大的物理系或天文物理系了。小时候就喜欢读“十万个为什么”，“动物世界”，还订阅了科学杂志（忘记名字了，但真的很喜欢。印象最深刻的是讲，地平线号发射，将会十多年后访问冥王星的故事。当时冥王星还是九大行星之一。长大后，它真的到了，掠过冥王星。发回了探测数据，并开始离开太阳系了。但冥王星早被踢出行星行列，现在只有八大行星了）。高中的时候，也读了加来道雄的《平行宇宙》，霍金的《时间简史》，《果壳里的宇宙》。甚至是人教版的物理课本，都把物理学和那些科学家的故事讲的绘声绘色，令人神往。大学也读了加莫夫的《从一到无穷大》。来了爱尔兰后，读了《上帝掷色子吗》，《现实不似你所见》。如果你喜欢这些书的话，《迷人的温度》肯定也会十分符合你的胃口的。&lt;/p&gt;
+&lt;p&gt;回想自己小时候也是充满了求知欲和理想主义，却在现实和社会的规训下，变得如今十分现实主义了。尤其是在国内的教育体制之下，剥夺了孩子们的多样性和求知欲，质疑与勇气。即使最后考上很好的大学，读了热门的专业，做了体面的工作，赚了可以的钱。但仍然也算是自怜自爱。唉，伤仲永呀。有些同学即使大学读了物理，大多也在社会的压力下转了码。我有个高中同学，一直读到高能物理博士，去年在巴黎联合培养两年。当时还去拜访和参观了他的实验室。但也去昧了。学物理确实是穷，就业面也窄。做的学术内容，日常也是读论文，写代码，分析实验数据和模拟。还是读科普书或看故事更精彩。身在其中的人，也是绝大多数要做很多枯燥的工作的。而且物理、数学这些很看天赋，多少知名的科学家都是年少有成，25岁之前就可以证明自己。我自己已经太老了。不过作为门外汉，关注这些科学的重大进展，还是很让人激动和开心的。多少次回想起，年少时第一次读到这些科学故事和知识的时候。&lt;/p&gt;
+&lt;p&gt;第三章，”读懂地球“。也是十分有借鉴意义的，尤其是我一直很喜欢看B站上一个叫”芳斯塔夫“的UP主，讲生物进化的。很多地质和生活演化历史事件，和”芳斯塔夫“的都串起来了。这种感觉真是神奇。提到和分析了”温室效应“，但更加理性和客观，对二氧化碳的排放也更加从容和容忍。不像之前白左的极端观点，当然现如今白左也降温了。气候议题已经不如几十年前那么火热了。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/08/24/Antifragile-Things-That-Gain-from-Disorder/</guid>
+            <title>反脆弱 从不确定性中获益</title>
+            <link>https://youngforest.github.io/2024/08/24/Antifragile-Things-That-Gain-from-Disorder/</link>
+            <category>Reading</category>
+            <category>反脆弱</category>
+            <pubDate>Sat, 24 Aug 2024 10:31:57 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;保守主义，自由主义，乐观主义 的盛宴。&lt;/p&gt;
+&lt;p&gt;纳西姆.塔勒布 是 纳瓦尔 和 李总 都很推荐的一位作家，或许他们也叫他哲学家。&lt;/p&gt;
+&lt;p&gt;反脆弱更像是成功学书籍，告诉人们要拥抱压力、坏的东西，从而获得恢复性的成长。其实就像是“七龙珠”里赛亚人的被动技能一样，每次从濒死状态恢复过来，战斗力都会成倍增长。贝吉塔就用过此技能开挂刷战斗力，但最后还是被弗利沙杀死了。&lt;/p&gt;
+&lt;p&gt;在爱尔兰的2年，真是躺平和安逸。少不入欧。人都要呆废了。虽然生活很幸福，但没有了恢复性成长。&lt;/p&gt;
+&lt;p&gt;也让我想起中学时代接受的教育，为了高考作文学的那些名言。想想之前的掉书袋和爱用典故，真是年轻气盛。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;孟子云：天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。入则无法家拂士，出则无敌国外患者，国恒亡。生于忧患，死于安乐。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;司马迁在“史记 太史公自序”和“报仁安书”中也说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;盖西伯拘而演《周易》；仲尼厄而作《春秋》；屈原放逐，乃赋《离骚》；左丘失明，厥有《国语》；孙子膑脚，《兵法》修列；不韦迁蜀，世传《吕览》；韩非囚秦，《说难》、《孤愤》；《诗》三百篇，大底圣贤发愤之所为作也。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;回顾自己的成长经历，不也是如此吗。发现自己的反脆弱性还是蛮强的。去年（23年）从各个角度讲，都是我近几年的人生低谷。但慢慢地，开始触底反弹。今年获得的成长性真的是超越过去任何阶段。现在的我，似乎又来到一个新的高度。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大公司和政府似乎并不明白信息的反作用力，事实上，信息有能力控制那些试图控制它的人。当你听到一家公司或一个负债累累的政府表示要”重新注入信心“，那么你就应该知道它们是脆弱的，注定失败。信息是无情的：越是召开新闻发布会来”安抚“投资者，越会吓跑投资者，导致死亡螺旋或银行挤兑。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;反脆弱性的产生是有条件的。压力源的刺激频率非常重要：人类在急性刺激下会比在慢性刺激下表现得更出色，尤其是在急性刺激后给予较长得恢复期，这将使得这些压力源成为信息得传导渠道。…比一个温和但连续不断的压力源有益，后者大多是让你在生活中感到压抑的东西，包括按揭贷款、税务问题、因拖欠报税而产生的内疚、考试压力、琐碎事务、电子邮件回复、填写表格、每天上下班通勤，等等。换句话说，这是文明带来的压力。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我是J人喜欢确定性。看来不确定性也要很大益处，有时要主动接受不确定性，拥抱变化。但之后一定要给自己恢复和成长的时间。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你还或者，你的内心深处就会喜欢一定程度的随机性和混乱。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;平均斯坦 VS. 极端斯坦&lt;/p&gt;
+&lt;p&gt;平均斯坦：平时存在许多波动和不确定性，长期来看反而更加稳定。&lt;/p&gt;
+&lt;p&gt;极端斯坦：平时相对稳定，长期来看反而不稳定。&lt;/p&gt;
+&lt;p&gt;自由职业者 VS. 打工人&lt;/p&gt;
+&lt;p&gt;出租车司机 VS. 银行白领&lt;/p&gt;
+&lt;p&gt;城邦制 VS. 中央集权&lt;/p&gt;
+&lt;p&gt;论述完为什么反脆弱性，在谈如何建立反脆弱性的一些策略。不对称性（杠铃策略），完全消减毁灭性事件，等待好事件自然而然发生。可选择性。&lt;/p&gt;
+&lt;p&gt;反现代化，崇尚古人的生活方式。&lt;/p&gt;
+&lt;p&gt;反思科技，反对过于理性。&lt;/p&gt;
+&lt;p&gt;用否定法，减法来提高反脆弱性，而不是加法。没有证据表明 vs. 有证据表明没有 的区别。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在政治领域，一个好的体制就是有助于社会淘汰坏人的体制，它不必考虑做什么事或者有谁执政。因为一个坏人造成的伤害可能大于一群好人集体所做出的努力。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公司都热衷于制订战略计划。它们需要花钱来弄明白自己究竟该走向何方。然而，没有证据表明，战略规划起到了作用—否定它的证据倒有很多。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;国家不也是这样吗。尤其是大政府，市场经济国家。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在医学界的黑暗时代，医生曾经非常依赖于一些天真的理性主义想法，比如必须平衡身体的体液，疾病被认为源于某些不平衡，根据这些想法所衍生出的一系列治疗方法被认为是恢复身体平衡的必要手段。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;比如，臭名昭著的放血疗法。然而，即使到了21世纪，中医仍然甚嚣尘上。回顾历史，其实没有所谓中西西医的对立，而是现代医学和传统医学的对立。西方之前也有各种类似中医的疗法和观点，只不过被历史所淘汰了。当我像外国人表达中医时，我说traditional doctor，然后说了疗法。他说，你意思是witch doctor&lt;/p&gt;
+&lt;p&gt;作者旁征博引，让我一个从小受东方教育的人，也意识到，西方同样也有着悠久的历史和文化传承。塔勒布是黎巴嫩人，东正教区域。从苏美尔文明，到希腊罗马文明，再到其实不那么黑暗的中世纪，文艺复兴，科学和工业革命的现代文明，其实也是一脉相承的呀。美索不达米亚的苏美尔文明是最早的人类文明，公元前4500年就创造了灿烂的文明。黄帝（公元前2600年）的车轮和很多发明，其实就是从地中海东岸一步一步传过来的。即使是夏朝（当然有所争议，因为历史记载和考古发现对不上。我是倾向于存在的，考古发现之后也许会跟上。因为夏朝也是所谓的部落联盟，也没有文字，考古发现更难些。我也比较认同，二里头文明就是夏朝），也是公元前2000年。现在民族主义是，法国大革命才诞生的，距今不过200多年。中国的民族主义也是鸦片战争后才慢慢建立，抗日战争后完备的。所以不必为了民族主义，阻碍文明认同。三星堆的事实和发掘大概就是受阻于此。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/08/21/Tai-bai-jin-xing-you-dian-fan/</guid>
+            <title>太白金星有点烦 马亲王解构西游记</title>
+            <link>https://youngforest.github.io/2024/08/21/Tai-bai-jin-xing-you-dian-fan/</link>
+            <category>Reading</category>
+            <category>太白金星有点烦</category>
+            <pubDate>Wed, 21 Aug 2024 20:37:52 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;马伯庸新作，十分，推荐。后记中说是消遣之作，读起来也确实畅快和消遣,2天读完，爱不释手。私认为质量仅次于长篇“古董局中局”，超过“两京十五日”，“长安十二时辰”和“长安的荔枝”，“我读书少，你可别骗我”，“显微镜下的大明”。亲王的书，我也是读了不少。算是最喜欢的当代中国作家了。一个作家的书能让我读这么多的，国外还有一个“东野圭吾”，国内还有一个“金庸”。&lt;/p&gt;
+&lt;p&gt;解构了经典四大名著之“西游记”，凭借对人性和官场的洞察，写的故事反而比原版更有说服力，也更符合现代叙事。其中的冤假错案，山头斗争，权力制衡，发挥的淋漓尽致。很早就听说过一种说法（大概是早年知乎上看到的），孙悟空之所以大闹天宫，是被天庭刻意为之的，趁此各个部门把锅甩给齐天大圣，尤其是地府的“生死簿”，估计本身就是很多漏洞，趁此销毁证据。“太白”恰好把此观点发扬光大，借取经表演，也揭露500年前大闹天宫的真相。扩展成一部10万字的中篇小说。读起来诙谐幽默，让人捧腹，但细思又极恐。其中不乏揭露现实，或借古讽今之意，但也充满着“马伯庸”一贯的悲天悯人，悬疑反转。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/08/07/Poor-Charlie-Almanack/</guid>
+            <title>穷查理宝典 查理芒格的人生智慧</title>
+            <link>https://youngforest.github.io/2024/08/07/Poor-Charlie-Almanack/</link>
+            <category>Reading</category>
+            <category>穷查理宝典</category>
+            <pubDate>Wed, 07 Aug 2024 22:35:33 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;每周一本书 18:穷查理宝典:查理芒格的人生智慧&lt;/p&gt;
+&lt;p&gt;查理芒格去年底去世，享年99岁。惭愧现在才读集他思想大成的“穷查理宝典”。算是凝结他80年思想智慧的产物，因为原书第三版成书于2008年。最近看了太多的成功学书籍，对未来和自己真是充满了期待和自信。&lt;/p&gt;
+&lt;p&gt;读传记，研究那些获得成功的人生和其他那些留下遗憾或者遭遇失败的人生。&lt;/p&gt;
+&lt;p&gt;没有一个芒格认识的成功的朋友是不喜欢读书的。&lt;/p&gt;
+&lt;p&gt;“迅速歼灭不该做的事情，接着对该做的事情发起熟练的、跨学科的攻击，然后，当合适的机会来临—只有当合适的机会来临—就采取果断地行动”。和“孙子兵法”的思想很像，孙子兵法不愧是三千年的经典，是人类智慧的总结。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;简化人物的最佳方法一般是先解决那些答案显而易见的大问题。&lt;/li&gt;
+&lt;li&gt;伽利略说，唯有数学才能揭示科学的真实面貌，因为数学似乎是上帝的语言。&lt;/li&gt;
+&lt;li&gt;光是正面思考问题时不够的，你必须进行反面思考。&lt;/li&gt;
+&lt;li&gt;最好的、最具有实践性的智慧是基本的学术指挥。前提：以跨学科的方式思考。&lt;/li&gt;
+&lt;li&gt;lollapalooza效应，通常在几种因素的共同作用下才会出现。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;爱因斯坦：我的成就取决于四个因素，首先是自我批评，然后才是好奇心、专注和毅力。&lt;/p&gt;
+&lt;p&gt;我只想知道将来我会死在什么地方，这样我就永远不去那儿了。&lt;/p&gt;
+&lt;p&gt;后面有多篇演讲稿，内容有些类似，其实是继承关系。第11讲是最长，也是集大成者。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/07/27/The-Almanack-of-Naval-Ravikant/</guid>
+            <title>纳瓦尔宝典 财富与幸福，人生智慧的集合</title>
+            <link>https://youngforest.github.io/2024/07/27/The-Almanack-of-Naval-Ravikant/</link>
+            <category>Reading</category>
+            <category>纳瓦尔宝典</category>
+            <pubDate>Sat, 27 Jul 2024 20:35:07 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/35876121/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前半本财富，适合35岁前读，改变现状。很多智慧也是世界上比较公认和容易的。后半本幸福，适合35岁后读，接受现状。但就比较主观和因人而异了，属于更大的智慧，也更加难得了。最后Die with zero (也是一本书).&lt;/p&gt;
+&lt;p&gt;和之前读过的很多书都串起来了，真就是一份宝典。很多智慧只是只言片语，就讲清楚了。比如，“原子习惯”中如何培养好习惯，摒弃坏习惯，习惯的重要性；“金钱心理学”中财富的定义，如何获得财富；再如 “进化心理学”，“欲望的演化”中关于人类心理学和两性心理的论述。当然，这些书都写的详细的多，可操作性更强，属于术的部分。“纳瓦尔宝典”是一个集锦，纳瓦尔作为一个聪明人，读过很多书的人，几十年来积累的智慧总结。用他所推崇的“费曼学习法”，讲给大家。不同的人，有不同的人生阅历和阅读，感受就完全不一样。真是相见恨晚。&lt;/p&gt;
+&lt;p&gt;痛苦时刻的一个定义是：当你看到实物的真面目不是你本来想要的样子时，你是痛苦的。&lt;/p&gt;
+&lt;p&gt;对美好现实的渴求蒙蔽了对真实世界的认知。所谓痛苦，就是无法继续无视事实。&lt;/p&gt;
+&lt;p&gt;科学最重要的是可证伪性。&lt;/p&gt;
+&lt;p&gt;纳瓦尔推荐阅读原著和经典。但不敢苟同，很多原著都是几百年，上千年的历史了。阅读门槛很高，也不容易理解，有些内容也会过时或受局限。比如“孙子兵法”虽然只有5千多字，但直接去读就很难。我选择读了“华杉”的讲解版本。也可能是我太菜了吧。&lt;/p&gt;
+&lt;p&gt;“如果能活1000次，那么其中的999次，我都过着成功的生活。”纳瓦尔的成功不是靠运气，而是靠自己的认知。就像冯小刚的“1942”中的 张国立 说的那样，“再给他十年他还能成为地主。”当然大环境也很重要。我当然相信 张国立 是知道怎么重新白手起家的，也会成功。但土地革命、社会主义改造、人民公社的历史进程很快就到来了。通过像“白鹿原”中贫民紧衣缩食，心思活泛，丰年屯粮，灾年买地，成长为地主的日子已经一去不复返了。迎接他的，也只是千百年未有之大变局。&lt;/p&gt;
+&lt;p&gt;智慧是一种知道个人行为的长期后果的思维能力。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/07/25/Liu-Shen-Lei-Lei-Du-Tang-Shi/</guid>
+            <title>六神磊磊读唐诗</title>
+            <link>https://youngforest.github.io/2024/07/25/Liu-Shen-Lei-Lei-Du-Tang-Shi/</link>
+            <category>Reading</category>
+            <category>六神磊磊读唐诗</category>
+            <pubDate>Thu, 25 Jul 2024 22:25:35 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;有种“当年明月”的“明朝那些事儿”的感觉呀。不知道是刻意模仿，还是无意为之。&lt;/p&gt;
+&lt;p&gt;经常和金庸小说互动，尤其是同样的“悲天悯人”。&lt;/p&gt;
+&lt;p&gt;岳灵珊“自怜自伤还自怨，不悔情真不悔痴。”&lt;/p&gt;
+&lt;p&gt;知识分子借古讽今，在文章中委婉表达观点是常态。磊磊 特意写了一篇“放下筷子骂娘的白居易”，表达对如今言论管制环境的不满，和唐代开放包容的向往和怀念。&lt;/p&gt;
+&lt;p&gt;这一年读了太多的现实主义书，获得了不少知识和智慧。但这本书是最有浪漫主义色彩的，令人十分感动。&lt;/p&gt;
+&lt;p&gt;唐诗的四种套路：田园有宅男，边塞多愤青，咏古伤不起，送别满基情。&lt;/p&gt;
+&lt;p&gt;“我们经常把赞美等同于忠诚，把批评等同于敌对，这实在是一个天大的误区，罗隐告诉我们：从来都没有这个等式。”和如今的社会现实如此相似。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/07/22/Liu-Shen-Lei-Lei-Du-Jin-Yong/</guid>
+            <title>六神磊磊读金庸</title>
+            <link>https://youngforest.github.io/2024/07/22/Liu-Shen-Lei-Lei-Du-Jin-Yong/</link>
+            <category>Reading</category>
+            <category>六神磊磊读金庸</category>
+            <pubDate>Mon, 22 Jul 2024 22:54:13 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/35479455/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;是六神磊磊同名公众号文章的集合，以不同金庸小说分类，一次性读完，大快人心。多次拍手称快。&lt;/p&gt;
+&lt;p&gt;因为本身是微信公众号的文章，所以十分擅长吸引流量和观众。语言轻松诙谐，又十分有道理，算是对金庸小说的一些独特解读。作者十分读过很多遍小说，因此对于不同小说里的人物信手拈来，擅长横向（同一小说里的不同人物）和纵向（不同小说中的类似人物）对比，甚至很多小人物的遭遇和命运也都如数家珍。不仅关注主角们，也关注配角们，而且全是从他们各自的角度出发。体现出一个“悲天悯人”。这也是作者认为，金庸小说的核心之一。另一个是“侠之大者，为国为民”。角度也十分现代化，有时又跳出江湖，以公司或现实生活类比，幽默效果就出来了。&lt;/p&gt;
+&lt;p&gt;尤其是很多金庸小说里，本身就有很多的借古讽今，借江湖讽刺当时的政治。六神磊磊当然也不敢揭露的太明显，只捡了一些无关痛痒的话来讲。希望有生之年，可以看到大家放开心讲话，这样的文学和社会都会有趣很多。&lt;/p&gt;
+&lt;p&gt;王小波说过一句话：“在中国，历史以三十年为极限，我们不可能知道三十年以前的事。”&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/07/20/Hou-Hei-Xue/</guid>
+            <title>李宗吾 厚黑学</title>
+            <link>https://youngforest.github.io/2024/07/20/Hou-Hei-Xue/</link>
+            <category>Reading</category>
+            <category>厚黑学</category>
+            <pubDate>Sat, 20 Jul 2024 22:53:37 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/1911687/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;千万别被书名骗了，望文生义，以为这是一本成功学书籍，看完后，就能学到脸厚心黑，成为英雄豪杰。其实不然，这本书主要是一本讽刺历史和社会现实得书。厚黑学成书于民国初年，正是社会剧烈变革之际。中国传统的学说被反思和打倒，西方现在学说又未被完全接受。厚黑学教主，正是在这个背景下，写出了这部讽刺学说。真是把旧中国的仁义道德撕个粉碎，揭露了社会黑暗的现实。&lt;/p&gt;
+&lt;p&gt;虽然已经过了一百多年，中国社会已经初步实现现代化，进步了不少。但书中很多讽刺竟然仍然可以针砭时弊。果然优秀的作品都是经久不衰的，因为讲的都是人性。纵使社会变迁，科技进步，但人类的进化是很慢的，只是在不同环境下激发出不同的表现。所以，只要掌握深层的人性，表象的东西就不会怎么变。比如 鲁迅 的文章，放在今天仍然让大家彷徨呐喊。比如 是，大臣or首相. 虽然写的是英国50年的政坛，但今天很多台词依然适用，甚至适用于其他国家。&lt;/p&gt;
+&lt;p&gt;本书说的“做官六字真言”，就是如此，”空、恭、绷、凶，聋、弄“，”空，即空洞的意思。一是文字上，凡是批呈词、出文告，都是空空洞洞的，其中奥妙，我难细说，请到军政各机关，把壁上的文字读完，就可恍然大悟；二是办事上，随便办什么事情，都是活摇活动，东倒也可，西倒也可，有时办得雷厉风行，其实暗中藏有退路，如果见势不佳，就从那条路抽身走了，绝不会把自己牵连着。……”其他的也十分准确，对上恭，对下绷。真是把官僚体制讽刺个透透的。这些一百多年前的文字，今天仍然如此，甚至由于社会的发展，更是如此。民国时那种百家争鸣，反思和批判的声音反而没有了。&lt;/p&gt;
+&lt;p&gt;还有“厚黑经”，模仿论语的话术，写了很多  宗吾说。真是把讽刺效果拉满。类似现在互联网论坛上的各种段子手，真是又讽刺又搞笑。又把自己的“厚黑学”和王阳明的“致良知”所对应，真是从先秦，到宋儒，再到心学，都剖析了个遍。&lt;/p&gt;
+&lt;p&gt;孟子云：君之视臣如草芥，则臣视君如寇仇。厚黑学其实只是李宗吾写的很多议论文中的几篇，也是最著名的。剩下的文章也值得一读，很多是对传统儒学，尤其是宋代及以后的程朱理学的反对和抨击。正是近代以来，不断有这些文人，借用西方理性和科学的方法，对儒学的反思。中国文化才能渐渐摆脱糟粕，接近现代文明。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/06/04/Xiao-Lin/</guid>
+            <title>时势 周期波动下的国家、社会和个人</title>
+            <link>https://youngforest.github.io/2024/06/04/Xiao-Lin/</link>
+            <category>Reading</category>
+            <category>时势</category>
+            <category>小Lin说</category>
+            <pubDate>Tue, 04 Jun 2024 23:11:35 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/36673627/&#34;&gt;本书豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;小Lin是我最喜欢的UP主之一了。美女、学霸、华尔街投行、创业。各种引人注目的标签。而且她的视频确实质量比较高，制作精良，然后又通俗易通。看她的书支持一下。全书的内容，其实她的视频里都讲过，甚至讲的还更好。毕竟视频展示各种图表也更方便。所以，其实不读这本书，只看她的油管或B站视频也是足够的。读本书最神奇的地方在于，自带语音功能。不得不感叹人类大脑的强大，读的时候，脑袋里面会自动播放小Lin的语音和视频，算是一次不错的体验了。而且也就当是复习一下之前的视频里讲的知识。&lt;/p&gt;
+&lt;p&gt;不过，还是要强调一点。小Lin的视频和书，都是科普向的，虽然宏观经济的干活不少，但总体是轻松娱乐向的。虽然又很多文献和数据做支撑，但仍然显得十分浅显，许多因果关系也并未如她分析的那样。毕竟经济学是十分复杂的学问。很多时候是拿着后视镜去寻找原因，而不是根据现在预测未来。炒股或关注经济的朋友，应该都有这个感受。每个分析师分析的都不一样，而且话也不说死，最后过了半年，发现和当初分析的大相径庭，但仍能自圆其说。我自己也关注了一些投资的UP主，在这里就不举例和介绍给大家了，免得误人子弟。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/05/06/The-Art-of-War-by-Sunzi/</guid>
+            <title>华杉讲透《孙子兵法》</title>
+            <link>https://youngforest.github.io/2024/05/06/The-Art-of-War-by-Sunzi/</link>
+            <category>Reading</category>
+            <category>孙子兵法</category>
+            <pubDate>Mon, 06 May 2024 23:09:09 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/26917969/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;看完《狂飙》，也来看《孙子兵法》。原版看不懂，来看解读。老高的视频也看了，确实牛。高启强一本“孙子兵法”定“京海市”，从一个小鱼贩，成长为一代黑白势力老大。当然只靠孙子兵法有些夸张，但确实是必要条件。读完后，感觉“孙子兵法”就像是武侠小说里的“九阴真经”，虽然是讲兵法，但因为万事万物后面有千丝万缕的联系。其中的不少道理，放在商业，甚至个人生活中也是有用的，尤其是投资理财。之前了解到的一个信息模型：“智慧，知识，和信息”，是从重要到次要，从少到多的。真正的智慧是大道至简的，几句话就能说清楚的。孙子兵法，主要讲的就是智慧和知识，还有如何搜集信息和情报，所以才能五千年经久不衰。&lt;/p&gt;
+&lt;p&gt;对我启发最大，对普通生活最有价值的几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先胜而后战。先通过计算基本面，分析胜败几率和成本回报。如果能胜利，才发动战争。尤其是对于我这样比较保守的人，尤其适合。回顾我这28年的生涯，在重要抉择时，我确实都是选择了更保守更稳妥的方案。虽然也会遗憾后悔，但这确实是更适合我的策略。我对风险更加厌恶，对于安全边际十分敏感。不过稳妥方案的话，其实后果也不错。慢慢地获得了自己想要的东西，学业事业也算是成功。&lt;/li&gt;
+&lt;li&gt;知己知彼，关键是知己。越长大，对世界和自己了解越多，越发现有太多自己不知道和不了解的事情。相比世界来说，了解自己更难但更重要。光是自己，竟然也是这么地复杂和有趣。包括经典的哲学三问：“我是谁”，“我从哪里来”，“我要到哪里去”。我向来相信求仁得仁。知道自己想要什么，才能最终获得。我也是个J人，需要有个目标去前进，才能更安心的生活。&lt;/li&gt;
+&lt;li&gt;谋定而后动。要能等待，要忍耐。一战而定。就像之前高考前被学校鸡血的那样，人生关键的节点就那么几个，大多数时间都是蛰伏和平淡的。要学会享受、利用和珍惜这些平淡的时光，也要做好准备，这样机遇或考验到来时，才能把握住。投资也是一样，少操作，少关心股市涨跌，有闲钱就梭哈标普500就行。&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/03/25/3-body/</guid>
+            <title>网飞三体有感：质疑程心，理解程心，成为程心</title>
+            <link>https://youngforest.github.io/2024/03/25/3-body/</link>
+            <category>Reading</category>
+            <category>3 body</category>
+            <pubDate>Mon, 25 Mar 2024 19:45:04 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;最近网飞版的三体火了，誉谤满身。我也没看，不好评价，但勾起了我和三体的往事回忆。&lt;/p&gt;
+&lt;p&gt;三体的小说。我还是在大概十年前，在沙河图书馆看的。当时虽然还没有得雨果奖，三体系列已经在慢慢变火了。当时印象中还是，一开始书名是 “地球往事 之 三体，黑暗森林，死神永生”。三体虽然只是第一部和其中虚拟现实游戏得名字，但因为太火了，就慢慢变成了整个系列得名字。搞笑的是，图书馆里只能借到第一部和第三部，第二部永远预约不到。因此，我读的顺序是 一，三，二。还看了宝树狗尾续貂得 三体X。我对三部书的喜爱顺序是：死神永生&amp;gt;黑暗森林&amp;gt;三体。也算入了科幻坑，之后看了大刘的其他小说。也接触了阿西莫夫的“基地”和“银河帝国”系列，中篇“永恒的终结”，都十分不错，推荐给大家。&lt;/p&gt;
+&lt;p&gt;最神奇的感受是。当年不到二十岁，读完后，对罗辑崇拜，对韦德敬畏，对程心鄙夷。现在要奔三了，却发现自己越来越像程心了。不知是年龄大了，还是怎得，对他人、世界和人类越来越温柔善良。质疑程心，理解程心，成为程心。也更理解了书中的一些细节：为什么罗辑会愿意交出手中的执剑人权力，即使知道对自己和对人类的后果。为什么章北海在执行黑暗森林操作对付友舰时会有所迟疑。为什么即使是威慑度快满的韦德，最后也遵守诺言，交出权力，即使预见到对自己和对人类的后果。人类是智慧，情感，兽性的结合，大刘的观点显然是对人类生存来说 智慧&amp;gt;兽性&amp;gt;情感 的。借韦德口说出的”失去人性，失去很多；失去兽性，失去一切“就十分有代表性。但就是这情感，每次在关键时刻起到重要作用，改变历史和人类命运。当然，每次都是往万劫不复的方向改变。即使如此，人类仍然无法摆脱人性的束缚，强如韦德，最后也无法剔除所有人性，完全按照理性和兽性做决定。&lt;/p&gt;
+&lt;p&gt;剧集，讨论最多的应该就是第一集。著名的”爱因斯坦他有奶便是娘“，不了解那段历史，十年”艰辛探索“，也就不会理解叶文洁的反人类人格如何被塑造出来，也不好理解，她的行为和立场（其实是 降临派）。虽然剧集改编很多，但这一段确实是还原原著了，部分反映历史。大刘 其实已经很克制表达和隐晦了，20年前还能写出来出版，现在估计够呛。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/03/16/Just-Keep-Buying/</guid>
+            <title>Just Keep Buying 持续买进</title>
+            <link>https://youngforest.github.io/2024/03/16/Just-Keep-Buying/</link>
+            <category>Reading</category>
+            <category>持续买进</category>
+            <pubDate>Sat, 16 Mar 2024 23:13:47 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/35871073/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;很不错的投资书籍，和“金钱心理学”有些像。用很多数据和回测说服读者。&lt;/p&gt;
+&lt;p&gt;我收益最多的几个点是：&lt;/p&gt;
+&lt;p&gt;有钱就买，不要等。择时没用。&lt;/p&gt;
+&lt;p&gt;不要买个股，买大盘。超额收益不切实际，大概率无法达到。&lt;/p&gt;
+&lt;p&gt;房地产并不是一个好的经济上的资产（房产回报并没有大家想象的那么高），但有很多其他精神和社会上的好处，比如稳定的生活。&lt;/p&gt;
+&lt;p&gt;运气对投资太重要了。你出生的国家，时代，决定了你成年后的国际大环境。还有是退休前最后几年的收益，对退休后的收益和生活影响很大。&lt;/p&gt;
+&lt;p&gt;资产中，时间才是最重要的。也就是“一寸光阴一寸金，寸金难买寸光阴”。&lt;/p&gt;
+&lt;p&gt;年轻时，思考人生和关注事业更重要，尤其是头10年是收入增长最快的。投资是后来才更重要的事情。正如“史记 货殖列传”中所讲“是以无财作力，少有斗智，既饶争时，此其大经也。”。没有钱财只能出卖劳力，稍有钱财便玩弄智巧，已经富足便争时逐利，这是常理。&lt;/p&gt;
+&lt;p&gt;人本身年轻时是成长股，年老时是价值股。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/03/07/Elon-Musk/</guid>
+            <title>埃隆·马斯克传 Elon Musk</title>
+            <link>https://youngforest.github.io/2024/03/07/Elon-Musk/</link>
+            <category>Reading</category>
+            <category>埃隆·马斯克传</category>
+            <pubDate>Thu, 07 Mar 2024 23:16:44 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/36518892/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;放弃英文版，转到翻译版果然是个正确的选择。38万字，一周看完，太爽了。尤其是从2000后第一个十年那段，关于SpaceX和Tesla的初创阶段，真的是振奋人心，改变人类历史进程的冒险。相比原版，是有些删减的，主要是关于中国部分。我对照着看了下，其实不多，为了过审可以理解。&lt;/p&gt;
+&lt;p&gt;全书其实可以分为几个部分：&lt;/p&gt;
+&lt;p&gt;71-94: 南非的成长，移民妈妈的祖籍加拿大，转学美国宾夕法尼亚。&lt;/p&gt;
+&lt;p&gt;95-02: 互联网泡沫，转战硅谷创业，公司黄页Zip2, &lt;a href=&#34;http://xn--X-c06au82eipxyqa.com&#34;&gt;支付网络X.com&lt;/a&gt;, PayPal&lt;/p&gt;
+&lt;p&gt;00-10: 我最喜欢的部分，关于SpaceX和Tesla的初创阶段。尤其是SpaceX，真是靠一己之力改变整个行业和美国，仍是私有企业，甚至不用上市融资。&lt;/p&gt;
+&lt;p&gt;10-20: Tesla和SpaceX 的成熟阶段。虽然也有星舰和Model 3+Y，但没那么激动人心了。同期还有人工智能OpenAI，脑机接口 Nerolink，挖隧道公司 Boring Company,&lt;/p&gt;
+&lt;p&gt;21-23: 最后的几年，作者写的很详细。主要还是作者为了写传记一直跟着马斯克这几年，有很多信息和资料。收购推特是其中最引人注目的剧情。推特员工真是从天堂掉入地狱，私有化后，被裁75%。不像Tesla 和 SpaceX的工程师，他们一开始就在马斯克手下，已经习惯了。推特真是天降暴君。作为一名程序员，真是十分同情他们。&lt;/p&gt;
+&lt;p&gt;看完之后不敢坐特斯拉了，马斯克为了节省成本太拼了。他有一套5步工作法，用来加速制造和节省成本。简单来说，就是质疑一切标准（行业标准，国家标准），删掉尽可能多的东西（删掉后，如果不行，再拿回来。如果拿回来的东西不够删的10%，说明删的不够多）。比如本来行业标准应该拧4棵螺丝，他就拧2棵，认为够了，一测试，也没问题。他做事情很激进。给我一种国服领导人的感觉，喜欢搞运动式生产，各种大跃进。造火箭也是类似的。炸了没事儿，都是实验，快速推动测试。&lt;/p&gt;
+&lt;p&gt;正如书中所说，没有马斯克的话，电动车也会出来，只是晚十年。但火星殖民可能会晚更多。甚至在人类灭亡之前能不能出去也未可知。人类是在和AI赛跑。AI的优势在于发展快，但人类有先发优势，积累很多。在地球呆着或早或晚要灭绝。就像卡尔萨根说的那样，人类要么遍布星辰大海，要么彻底灭绝，没有中间状态。我对人类文明的未来还是充满希望的。&lt;/p&gt;
+&lt;p&gt;更坚定了我All in TSLA的信念。今天股价176，市值5600亿美元。我的成本 190。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/03/01/Reality-Is-Not-What-It-Seems-The-Journey-to-Quantum-Gravity/</guid>
+            <title>现实不似你所见 量子引力之旅</title>
+            <link>https://youngforest.github.io/2024/03/01/Reality-Is-Not-What-It-Seems-The-Journey-to-Quantum-Gravity/</link>
+            <category>Reading</category>
+            <category>现实不似你所见-量子引力之旅</category>
+            <pubDate>Fri, 01 Mar 2024 23:18:54 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/27156306/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;又一本读起来很爽，欲罢不能的书。除了熟悉的希腊哲学到经典物理，再到现代物理（相对论和量子物理）的故事（书中讲的相对简略些，但有不同的角度。这部分也可以看&lt;a href=&#34;https://book.douban.com/author/243729/&#34;&gt;曹天元&lt;/a&gt;的&lt;a href=&#34;https://book.douban.com/subject/1467022/&#34;&gt;“&lt;strong&gt;上帝掷骰子吗&lt;/strong&gt;&amp;quot;&lt;/a&gt;，同样十分精彩，讲的故事更多），本书主要重点讲了最前沿的“圈量子引力学”，也即试图融合相对论和量子力学的一个理论。作者目前更相信这个圈理论，而不是当今火热的弦/膜理论。当然，这些是已知和未知的交界，目前还没有绝对的优势和证据确定哪方是正确的。&lt;/p&gt;
+&lt;p&gt;曾经年少时，也有物理梦。从初中，正是接触开始，到高中时达到顶峰。自认为还有些聪明，对科学十分感兴趣，物理当然是科学王冠上的明珠。那种解释和预测世界的能力，还有不断颠覆你世界观的发现，令人颅内高潮迭起。那些物理先贤们的故事，充满了吸引力和震撼，令我崇拜和向往。不是生物、化学、地理这些可以比拟的。可能也就数学可以更牛逼吧。当然，最终还是从理想主义，越来越现实主义了。大学还是选了赚钱多，好找工作的计算机专业。从此”一入侯门深似海，从此萧郎是路人“, 转眼已过10年时间。不过选择还是正确的，一路上见了太多物理转码的朋友。当然也有坚持物理道路的同学，在做高能物理，也有做量子计算机的。所以，作为爱好物理和科学的门外汉，很享受这种阅读物理科普书籍的感觉，那种更新的哲学和视角，让人可以不在乎现实世界的烦恼，单纯享受作为智慧生命的快乐。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/02/05/Programming-Pearls/</guid>
+            <title>编程珠玑 Programming Pearls</title>
+            <link>https://youngforest.github.io/2024/02/05/Programming-Pearls/</link>
+            <category>Reading</category>
+            <category>编程珠玑</category>
+            <pubDate>Mon, 05 Feb 2024 23:24:13 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/34860300/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;计算机编程和软件的经典书籍，成书于1986年，算是计算机的中古时期了，PC时代的开始。因此书中很多例子可能对于“现代”程序员来说，有些陌生和不理解。如对算法的注重、内存的关注、磁盘相关的编程和标准库的放弃使用。有些书中强调的重要概念，如今也已家喻户晓，属于基本能力了。如二分、排序等算法、字符串、BST、堆等数据结构，程序时空复杂度估计和调优。阅读经典，总是有种和大师隔着时空对话的感觉，真是爽快和崇拜。此书常读常新，大学时读过，好像还买过纸质书籍，如今学习编程也有10年时间了，正式进入工业界也快3年了。再次读下来，感觉十分简单，但却如此深刻。经典果然永垂不朽。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2024/01/29/The-gains-and-losses-of-economic-changes-in-the-past-dynasties/</guid>
+            <title>历代经济变革得失</title>
+            <link>https://youngforest.github.io/2024/01/29/The-gains-and-losses-of-economic-changes-in-the-past-dynasties/</link>
+            <category>Reading</category>
+            <category>历代经济变革得失</category>
+            <pubDate>Mon, 29 Jan 2024 23:28:06 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/24851460/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;今年读过最棒，最能引起共鸣，启发思考最多的一本书。极力推荐。有许多想分享的思考和感受，但不好把握尺度。如此大胆，如此勇敢。总结了自古至今的经济改革，尤其是近代之后，6次“国进民退”。很多思考和振聋发聩的金句。虽然有故意忽略张居正改革的嫌疑，但瑕不掩瑜。中央集权的经济改革必定与民争利，以国富兵强和统治稳定为目的，但长期看反而会导致官商勾结、民变四起。自由主义、法制、保护私有财产、资产阶级、科技进步才是长久之计，尤其是对于国家和人民而言。经济改革的根本还是政治改革，没有配套的制度，经济改革就不可能彻底，已有的成就还会失去。本书&lt;/p&gt;
+&lt;p&gt;写于2013年，之后的事他没写。13年后的改革，是为中国近代史上第7次国进民退。标志事件是国央企的重新崛起和对民营资本家的更强控制。20年阻止阿里上市，开启了限制资本无序扩张的序幕。同样是以共同富裕为借口。最后的结果我们也看到了，一鲸落万物死。&lt;/p&gt;
+&lt;p&gt;后记中，吴晓波提到的四股前所未有的新势力：互联网、非政府组织、企业家和自由知识分子。寄予厚望，推动经济改革和体制变革。10年之后，这四股势力基本荡然无存。&lt;/p&gt;
+&lt;p&gt;一些我很喜欢的选段，真是一阵见血。值得反复品味:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果不研究历代经济的变革，其实无法真正理解当前的中国。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在这个世界上，人性的贪婪都是需要制度基础的，好的制度会遏制人的恶，反之则会催化和放大之。在这个意义上，比人的贪婪更可怕的是制度的贪婪。大清官王安石创造了一个贪婪的集权制度，他的后继者就会把这种贪婪和集权推向极致，并必然地产生异化，这是一条“惯性之路”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;发生在王安石时代的这两个时间具有分水岭般的意义。自由的城市催生自由的商业，自由的大学催生自由的思想，而自由的商业和思想又是人类文明走向现代社会的两块奠基石。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;明清治国者有特别发达的“专制智慧”，他们真正发现了“专制的秘密”：政权想要稳定，危险无非来自两处，一曰外患，一曰内忧。除外患，断绝一切联系时不二法门，所以要把国家变成一个铁桶。解内忧，控制、削弱民间的组织力量是关键，所以要把人民打成散沙。&lt;br /&gt;
+铁桶阵和散沙术，是明清治国者的两大法宝。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;法国思想家托克维尔尝言：“对于一个坏政府来说，最危险的时刻通常就是它开始改革的时刻”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;哈耶克 开始于“致命的自负”，终而“通往奴役之路”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面的政府指中华民国南京国民政府。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;民间企业家阶层对政府彻底失望。当时最大的私营集团控制人荣德生向政府上书，他写道：“若论国家经济，统治者富有四海，只须掌握政权，人民安居乐业，民生优裕，赋税自足……能用民力，不必国营，国用自足。不能使用民力，虽一切皆归官办，亦是无用。因官从民出，事不切己，徒然增加浪费而已”荣德生的这段表述可圈可点，至今是普世道理，可惜不为当政者闻。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;中国历代经济改革主旋律：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其一，维持国家统一和中央集权的大一统原则；&lt;br /&gt;
+其二，抵御外敌、强盛国家的强国原则；&lt;br /&gt;
+其三，发展国营事业、节制民间资本的国有经济优先原则。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;中国历代经济改革种的4大利益集团：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;中央政府，地方政府&lt;br /&gt;
+无产阶层，有产阶层&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如此大胆，如此勇敢。竟然写了49年到78年间的，经济改革。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在整个计划经济时期，农民是一个被背叛和剥夺的阶层。他们失去了土地，被剥夺了进入城市的权利，他们创造的财富以“剪刀差”的方式转化为国家资产，而他们的生活质量却没有得到相应的改善。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;到1976年，中国是一个封闭自守的、与世界经济体系基本“绝缘”、高度集中而没有活力的经济体，沿用司马光对汉武帝的评价，此时的执政者“有亡秦之失，而免亡秦之祸”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对改革开放的评价:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在将近三十年的时间里，邓小平的这些话语形成一种强大的社会共识，进而勾勒出本次改革的几个基本特征：功利务实、被动渐进、非均衡、不彻底。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;法国启蒙思想家孟德斯鸠尝言：“土地出产之少，主要不在于土地肥沃程度，而在于居民是否享有自由。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本书写于2013年，之后的事他没写。13年后的深化改革，我愿称之为中国近代史上第7次国进民退。标志事件是国央企的重新崛起和对资本家的更强控制。&lt;/p&gt;
+&lt;p&gt;后记中，吴晓波提到的四股前所未有的新势力：互联网、非政府组织、企业家和自由知识分子。寄予厚望，推动经济改革和体制变革。10年之后，这四股势力基本荡然无存。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;地方缺乏自治意识、政府与民间缺乏契约意识、知识分子缺乏独立意识、企业家阶层缺乏阶层意识。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只有自由和市场经济方能在现代激烈的竞争中存活，过去的中央集权主义，在外部势力的角逐下，不得不对地方和小资产阶级退步。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;20年阻止阿里上市，开启了限制资本无序扩张的序幕。同样是以共同富裕为借口。最后的结果我们也看到了，一鲸落万物死。到23年，撞到南墙，经济下滑趋势明显，开始重新鼓励民营经济和外资的时候，内外资都已成惊弓之鸟，全无信心。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;布罗代尔曾很简洁地说道：“中国社会，政府的权力太大了，使富有的非统治者不能享有任何真正的安全。对任意征收的恐惧始终挥之不去。”&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

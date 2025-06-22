@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;atom&#34; tag</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Sat, 08 Apr 2017 22:20:36 +0100</pubDate>
+        <lastBuildDate>Sat, 08 Apr 2017 22:20:36 +0100</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>interview</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>New Graduate</category>
+        <category>Hexo</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Ireland</category>
+        <category>Competitive Programming</category>
+        <category>Tech</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>Tencent</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>Windows</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>RIP</category>
+        <category>Weride</category>
+        <category>游记</category>
+        <category>投资</category>
+        <category>Life</category>
+        <category>法国签证</category>
+        <category>法签</category>
+        <category>申根签证</category>
+        <category>Side Project</category>
+        <category>年终总结</category>
+        <category>Amazon</category>
+        <category>China</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>你的灯亮着吗</category>
+        <category>埃隆·马斯克传</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>持续买进</category>
+        <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
+        <category>生死疲劳</category>
+        <category>深奥的简洁</category>
+        <category>迷人的温度</category>
+        <category>反脆弱</category>
+        <category>厚黑学</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>穷查理宝典</category>
+        <category>太白金星有点烦</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
+        <category>纳瓦尔宝典</category>
+        <category>时势</category>
+        <category>小Lin说</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2017/04/08/atom-explore/</guid>
+            <title>atom 浅尝辄止</title>
+            <link>https://youngforest.github.io/2017/04/08/atom-explore/</link>
+            <category>atom</category>
+            <pubDate>Sat, 08 Apr 2017 22:20:36 +0100</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;配置代理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置代理&#34;&gt;&lt;/a&gt; 配置代理&lt;/h2&gt;
+&lt;p&gt;笔者的需求是在markdown文档中插入LaTeX公式, atom默认的&lt;code&gt;markdown-preview&lt;/code&gt;包无法满足要求. 经过搜索, 社区包&lt;code&gt;markdown-preview-plus&lt;/code&gt;可是满足该需求.&lt;/p&gt;
+&lt;h3 id=&#34;atom包管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#atom包管理&#34;&gt;&lt;/a&gt; &lt;a href=&#34;http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages&#34;&gt;atom包管理&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;按照官方教程, 安装失败&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Installing “markdown-preview-plus@2.4.9” failed.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在log中, 笔者发现了这样的请求&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GET &lt;a href=&#34;https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz&#34;&gt;https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;笔者接着使用浏览器测试该网址, 无法相应, 猜测是被q了. 幸运的是, atom文档中考虑到使用代理的需要, 并给出了guide.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://flight-manual.atom.io/getting-started/sections/installing-atom/#using-a-proxy&#34;&gt;配置apm的代理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最后, &lt;a href=&#34;http://blog.youngforest.me/2016/11/02/%E5%AE%9E%E7%8E%B0terminal%E4%BB%A3%E7%90%86/&#34;&gt;fq基本功&lt;/a&gt;. 不解释.&lt;/p&gt;
+&lt;h3 id=&#34;具体命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#具体命令&#34;&gt;&lt;/a&gt; 具体命令&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config &lt;span class=&#34;built_in&#34;&gt;set&lt;/span&gt; https-proxy http://localhost:8123&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config get https-proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;http://localhost:8123/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm install markdown-preview-plus&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Installing markdown-preview-plus to /home/sean/.atom/packages ✓&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

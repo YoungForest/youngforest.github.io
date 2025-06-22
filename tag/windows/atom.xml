@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;windows&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2017-08-12T22:50:49.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2017/08/12/optimize-cortana-in-searching-local-files-and-folders/</id>
+        <title>Optimize Cortana in Searching Local files and Folders</title>
+        <link rel="alternate" href="https://youngforest.github.io/2017/08/12/optimize-cortana-in-searching-local-files-and-folders/"/>
+        <content type="html">&lt;h2 id=&#34;problem-description&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#problem-description&#34;&gt;&lt;/a&gt; Problem description&lt;/h2&gt;
+&lt;p&gt;When I used the Cortana, the personal assistant of Windows 10, I found that it is confusing that searching&lt;br /&gt;
+function worked badly sometimes but well sometimes. To improve my productivity, I googled this problem and&lt;br /&gt;
+encounter a good solution.&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#reference&#34;&gt;&lt;/a&gt; Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10&#34;&gt;https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="Windows" />
+        <updated>2017-08-12T22:50:49.000Z</updated>
+    </entry>
+</feed>

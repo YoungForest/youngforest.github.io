@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;ubuntu&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2017-08-20T21:42:32.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/</id>
+        <title>owncloud setup on server</title>
+        <link rel="alternate" href="https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/"/>
+        <content type="html">&lt;h2 id=&#34;简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简介&#34;&gt;&lt;/a&gt; 简介&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://owncloud.org/&#34;&gt;owncloud&lt;/a&gt;是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的&lt;a href=&#34;https://download.owncloud.org/download/repositories/stable/owncloud/&#34;&gt;二进制安装包&lt;/a&gt;，更方便快速，更适合个人的应用。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;服务器环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务器环境&#34;&gt;&lt;/a&gt; 服务器环境&lt;/h2&gt;
+&lt;p&gt;腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-105-generic x86_64)。&lt;/p&gt;
+&lt;h2 id=&#34;搭建过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#搭建过程&#34;&gt;&lt;/a&gt; 搭建过程&lt;/h2&gt;
+&lt;h3 id=&#34;安装owncloud&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装owncloud&#34;&gt;&lt;/a&gt; 安装owncloud&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://download.owncloud.org/download/repositories/stable/owncloud/&#34;&gt;通过apt库安装owncloud&lt;/a&gt;。同时会安装很多依赖包，如apache2，php环境等。&lt;/p&gt;
+&lt;h3 id=&#34;启动apache服务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#启动apache服务&#34;&gt;&lt;/a&gt; 启动apache服务&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;service httpd start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;管理和设置owncloud&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#管理和设置owncloud&#34;&gt;&lt;/a&gt; 管理和设置owncloud&lt;/h3&gt;
+&lt;p&gt;在浏览器的地址栏输入&lt;code&gt;ip/owncloud&lt;/code&gt;或&lt;code&gt;域名/owncloud&lt;/code&gt;，设置好管理员账户和密码就好了。&lt;/p&gt;
+&lt;h4 id=&#34;配置mysql&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置mysql&#34;&gt;&lt;/a&gt; 配置MySQL&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mysql --user=root --password&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;client-install&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#client-install&#34;&gt;&lt;/a&gt; Client install&lt;/h2&gt;
+&lt;h3 id=&#34;windows&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows&#34;&gt;&lt;/a&gt; windows&lt;/h3&gt;
+&lt;h3 id=&#34;android&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#android&#34;&gt;&lt;/a&gt; Android&lt;/h3&gt;
+&lt;h3 id=&#34;linux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux&#34;&gt;&lt;/a&gt; Linux&lt;/h3&gt;
+</content>
+        <category term="Ubuntu" />
+        <category term="Owncloud" />
+        <updated>2017-08-20T21:42:32.000Z</updated>
+    </entry>
+</feed>

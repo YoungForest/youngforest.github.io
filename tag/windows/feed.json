@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"windows\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2017/08/12/optimize-cortana-in-searching-local-files-and-folders/",
+            "url": "https://youngforest.github.io/2017/08/12/optimize-cortana-in-searching-local-files-and-folders/",
+            "title": "Optimize Cortana in Searching Local files and Folders",
+            "date_published": "2017-08-12T22:50:49.000Z",
+            "content_html": "<h2 id=\"problem-description\"><a class=\"markdownIt-Anchor\" href=\"#problem-description\"></a> Problem description</h2>\n<p>When I used the Cortana, the personal assistant of Windows 10, I found that it is confusing that searching<br />\nfunction worked badly sometimes but well sometimes. To improve my productivity, I googled this problem and<br />\nencounter a good solution.</p>\n<h2 id=\"reference\"><a class=\"markdownIt-Anchor\" href=\"#reference\"></a> Reference</h2>\n<p><a href=\"https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10\">https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10</a></p>\n",
+            "tags": [
+                "Windows"
+            ]
+        }
+    ]
+}

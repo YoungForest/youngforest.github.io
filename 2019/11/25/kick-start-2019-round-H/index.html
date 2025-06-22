@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="由于欧洲这边夏令时的原因，处于UTC +1.00，所以本次比赛我是特意早上6点起来打的。打完后休息了一个小时，又和小伙伴去根特玩了一天。晚上回来的时候，才想起来Machine Learning的assignment 2当天截止，又疯狂地赶起了Deadline。事实证明，没有认真学习还是搞不定作业的。马马虎虎交上去了，总比不交好些。空白的题目，大方地告诉助教我就是不会。  本次比赛是Kick sta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kick start 2019 round H">
+<meta property="og:url" content="https://youngforest.github.io/2019/11/25/kick-start-2019-round-H/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="由于欧洲这边夏令时的原因，处于UTC +1.00，所以本次比赛我是特意早上6点起来打的。打完后休息了一个小时，又和小伙伴去根特玩了一天。晚上回来的时候，才想起来Machine Learning的assignment 2当天截止，又疯狂地赶起了Deadline。事实证明，没有认真学习还是搞不定作业的。马马虎虎交上去了，总比不交好些。空白的题目，大方地告诉助教我就是不会。  本次比赛是Kick sta">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-25T22:11:22.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.375Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="Competitive Programming">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2019/11/25/kick-start-2019-round-H/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>kick start 2019 round H | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/11/25/kick-start-2019-round-H/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kick start 2019 round H
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-25 22:11:22" itemprop="dateCreated datePublished" datetime="2019-11-25T22:11:22+00:00">2019-11-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/KickStart/" itemprop="url" rel="index"><span itemprop="name">KickStart</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/11/25/kick-start-2019-round-H/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/25/kick-start-2019-round-H/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>由于欧洲这边夏令时的原因，处于UTC +1.00，所以本次比赛我是特意早上6点起来打的。打完后休息了一个小时，又和小伙伴去根特玩了一天。晚上回来的时候，才想起来Machine Learning的assignment 2当天截止，又疯狂地赶起了Deadline。事实证明，没有认真学习还是搞不定作业的。马马虎虎交上去了，总比不交好些。空白的题目，大方地告诉助教我就是不会。</p>
+<p>本次比赛是Kick start 2019的最后一个轮次，我还是很想参加的。今年我共参加了6轮kick start。虽然A轮就拿到了面试的邀请，但仍然不可马虎。各次的排名如下所示:</p>
+<table>
+<thead>
+<tr>
+<th>轮次</th>
+<th>A</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rank</td>
+<td>600</td>
+<td>765</td>
+<td>1566</td>
+<td>1341</td>
+<td>462</td>
+<td>330</td>
+</tr>
+<tr>
+<td>Score</td>
+<td>35</td>
+<td>27</td>
+<td>22</td>
+<td>11</td>
+<td>42</td>
+<td>41</td>
+</tr>
+</tbody>
+</table>
+<p>除了F轮，我当时在巴黎玩，趁晚上在青旅的功夫瞎做的外。其他轮次还是可以说是全力以赴的。<br />
+总的名次是先下降后上升，并不能体现实力的变化，更多的是心态的改变。因为D轮次比较重要，当时也有同学一起竞争，不忍心与他比赛时交流。E轮次时，当时是在字节跳动的夏令营，和一个妹子一起做的。本身还是很想打好的，但由于并查集没有实现find的折叠，导致 超时。这也是之前没有注意到的盲点。其他3次结果相对好的轮次反而是没有包袱，更放松的时候。</p>
+<p>最近还意外地收获了Google北京 A day with Google的邀请。无奈我不再北京，只能拒绝了。另外，我还通过邮件向Google反映了Google所有招聘相关的Form中My University中都没有 Beihang University的选项（我猜测这可能是因为北航在美国商务部的黑名单上的原因）。Google很快解决了，我航以后再也不是野鸡大学了。</p>
+<p>本次做出签到题和第3题的小测试集1，算是正常发挥吧。</p>
+<h2 id="a-h-index"><a class="markdownIt-Anchor" href="#a-h-index"></a> A. H-index</h2>
+<p>第一次做误解了题意，以为是求最后的H-index就可以了。简单地写了个二分查找用判定问题求最大值的解法。<br />
+后来才发现是需要求每次论文的结果，之后又因编写了几个bug的问题影响了耗时。</p>
+<p>Intuition：<br />
+随着论文的发表，H-index是单调递增的。利用这一特性，每次发表论文后，尝试去增加H-index.<br />
+这里我利用里C++ STL set中有序的特点和基于节点的container再插入新节点后iterator的不变性，高效地实现了尝试增加H-index的操作。</p>
+<p>时间复杂度: O(N log N),<br />
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> MAX_N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt; &amp;A, <span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">    multiset&lt;<span class="type">int</span>, std::greater&lt;<span class="type">int</span>&gt;&gt; s;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">auto</span> it = s.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> come = A[i];</span><br><span class="line">        <span class="keyword">if</span> (come &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            s.<span class="built_in">insert</span>(come);</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">size</span>() == <span class="number">1</span>) &#123;</span><br><span class="line">                it = s.<span class="built_in">begin</span>();</span><br><span class="line">                <span class="keyword">if</span> (come &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">                    ans = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (come &gt; *it) &#123;</span><br><span class="line">                --it;</span><br><span class="line">                <span class="comment">// cout &lt;&lt; &quot; --it &quot; &lt;&lt; *it &lt;&lt; &quot; &quot;;</span></span><br><span class="line">                <span class="comment">// if (next(it) != s.end()) &#123;</span></span><br><span class="line">                <span class="comment">//     cout &lt;&lt; &quot; next(it): &quot; &lt;&lt; *(next(it)) &lt;&lt; &quot; &quot;;</span></span><br><span class="line">                <span class="comment">// &#125;</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (it != s.<span class="built_in">end</span>() &amp;&amp; <span class="built_in">next</span>(it) != s.<span class="built_in">end</span>() &amp;&amp; *<span class="built_in">next</span>(it) &gt;= ans + <span class="number">1</span>) &#123;</span><br><span class="line">                ++ans;</span><br><span class="line">                ++it;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">A</span><span class="params">(MAX_N)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> iCase = <span class="number">0</span>; iCase &lt; T; ++iCase) &#123;</span><br><span class="line">        <span class="type">int</span> N;</span><br><span class="line">        cin &gt;&gt; N;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            cin &gt;&gt; A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; iCase + <span class="number">1</span> &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        <span class="built_in">solve</span>(A, N);</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="b-diagonal-puzzle"><a class="markdownIt-Anchor" href="#b-diagonal-puzzle"></a> B. Diagonal Puzzle</h2>
+<p>比赛时试图通过回溯枚举所有的翻转找到最小解，时间复杂度O(2 ^ (4 * N))。没想到连最小的数据集都超时了。所以，题解都是通过赛后从官方的Analysis中看来得。</p>
+<h3 id="小测试集"><a class="markdownIt-Anchor" href="#小测试集"></a> 小测试集</h3>
+<p>没必要枚举所有的翻转。我们可以只枚举同一个方向的翻转，然后检查是否另一个方向每条线上都同色。<br />
+与主对角线平行的翻转有<code>2 * N - 1</code>个，与主对角线垂直的也有<code>2 * N - 1</code>个。<br />
+检查同色的复杂度为<code>O(N ^ 2)</code>.<br />
+所以总的时间复杂度为<code>O(2 ^ (2 * N - 1) * N ^ 2)</code>.</p>
+<h3 id="大测试集"><a class="markdownIt-Anchor" href="#大测试集"></a> 大测试集</h3>
+<p>本解法基于一个有趣的观察，如果我们确定主对角线和反主对角线的翻转，为了确定最后全为白色，其余翻转可以因此确定。当N为奇数时，是主对角线和次反主对角线。<code>N == 6， 7</code>时的情况如下所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\..../ \......</span><br><span class="line">.\../. .\..../</span><br><span class="line">..\/.. ..\../.</span><br><span class="line">../\.. ...\/..</span><br><span class="line">./..\. .../\..</span><br><span class="line">/....\ ../..\.</span><br><span class="line">       ./....\</span><br></pre></td></tr></table></figure>
+<p>所以，我们可以枚举主对角线的翻转 情况 ，共4种，然后根据对角线上 的 其他元素的颜色，确定其他翻转 。最后检查是否符合全是白的要求。<br />
+时间复杂度: <code>O(4 * N ^ 2)</code>.</p>
+<p>此解法其实和我之前经常做的翻灯的题目很像，翻转一个灯，同时会翻转其周围的4个灯。最后求全部灭掉灯的步数。<br />
+只需要枚举第一行的翻转，为了改变当前行的灯的状态，我们只能翻转下一行的灯，其余行会因此确定。<br />
+题目在LeetCode上可以找到：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/description/">LeetCode 1284. Minimum Number of Flips to Convert Binary Matrix to Zero Matrix</a>.<br />
+我的解法是从<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/97/">acwing</a>获得的，还可以 看大雪菜的视频学习。</p>
+<h4 id="另一种解法"><a class="markdownIt-Anchor" href="#另一种解法"></a> 另一种解法</h4>
+<p>将此问题转换成<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Graph_coloring#Vertex_coloring">2-coloring</a>的一种变形。每个格子都由2条线共享。如果格子是白的，2条线之一需要被翻转。如果格子是黑的，不需要翻转，或 都翻转。<br />
+我们考虑每条对角线是图中的节点，格子是边。<br />
+如果格子是黑的，对应的边连接的2个节点必须是相同颜色的。反之，必须是不同颜色的。<br />
+可以通过DFS解决2-coloring的图问题。<br />
+枚举root的颜色，DFS确定邻居的颜色，如果邻居的颜色已确定，则检查即可。更少的颜色就代表着翻的个数。</p>
+<p>边数 为 <code>O(N^2)</code>, DFS的解法复杂度为<code>O(|Edges|)</code>。<br />
+总的时间复杂度为<code>O(N ^ 2)</code>.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Line</span> &#123;</span><br><span class="line">    ll difference;</span><br><span class="line">    <span class="type">bool</span> positive;</span><br><span class="line">    vector&lt;weak_ptr&lt;Line&gt;&gt; same_color_neighbors, different_color_neighbors;</span><br><span class="line">    <span class="built_in">Line</span>(ll d, <span class="type">bool</span> p) : <span class="built_in">difference</span>(d), <span class="built_in">positive</span>(p) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(shared_ptr&lt;Line&gt; root, set&lt;shared_ptr&lt;Line&gt;&gt; &amp;white,</span></span></span><br><span class="line"><span class="params"><span class="function">         set&lt;shared_ptr&lt;Line&gt;&gt; &amp;black)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    ;</span><br><span class="line">    <span class="type">bool</span> w = white.<span class="built_in">find</span>(root) != white.<span class="built_in">end</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> node : root-&gt;different_color_neighbors) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">auto</span> node_shared_ptr = node.<span class="built_in">lock</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (white.<span class="built_in">find</span>(node_shared_ptr) == white.<span class="built_in">end</span>() &amp;&amp;</span><br><span class="line">                black.<span class="built_in">find</span>(node_shared_ptr) == black.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">auto</span> &amp;color = w ? black : white;</span><br><span class="line">                color.<span class="built_in">insert</span>(node_shared_ptr);</span><br><span class="line">                <span class="keyword">if</span> (!<span class="built_in">dfs</span>(node_shared_ptr, white, black))</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (white.<span class="built_in">find</span>(node_shared_ptr) != white.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (w) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!w) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> node : root-&gt;same_color_neighbors) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">auto</span> node_shared_ptr = node.<span class="built_in">lock</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (white.<span class="built_in">find</span>(node_shared_ptr) == white.<span class="built_in">end</span>() &amp;&amp;</span><br><span class="line">                black.<span class="built_in">find</span>(node_shared_ptr) == black.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">auto</span> &amp;color = w ? white : black;</span><br><span class="line">                color.<span class="built_in">insert</span>(node_shared_ptr);</span><br><span class="line">                <span class="keyword">if</span> (!<span class="built_in">dfs</span>(node_shared_ptr, white, black))</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (white.<span class="built_in">find</span>(node_shared_ptr) != white.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!w)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (w)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">(vector&lt;vector&lt;<span class="type">bool</span>&gt;&gt; &amp;puzzle)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, shared_ptr&lt;Line&gt;&gt; positive, negative;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> n = puzzle.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">            <span class="type">int</span> j_sub_i = j - i;</span><br><span class="line">            <span class="type">int</span> j_add_i = j + i;</span><br><span class="line">            <span class="keyword">if</span> (positive[j_sub_i] == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                positive[j_sub_i] = <span class="built_in">make_shared</span>&lt;Line&gt;(j_sub_i, <span class="literal">true</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (negative[j_add_i] == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                negative[j_add_i] = <span class="built_in">make_shared</span>&lt;Line&gt;(j_add_i, <span class="literal">false</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (puzzle[i][j]) &#123; <span class="comment">// black</span></span><br><span class="line">                positive[j_sub_i]-&gt;same_color_neighbors.<span class="built_in">push_back</span>(</span><br><span class="line">                    negative[j_add_i]);</span><br><span class="line">                negative[j_add_i]-&gt;same_color_neighbors.<span class="built_in">push_back</span>(</span><br><span class="line">                    positive[j_sub_i]);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                positive[j_sub_i]-&gt;different_color_neighbors.<span class="built_in">push_back</span>(</span><br><span class="line">                    negative[j_add_i]);</span><br><span class="line">                negative[j_add_i]-&gt;different_color_neighbors.<span class="built_in">push_back</span>(</span><br><span class="line">                    positive[j_sub_i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    set&lt;shared_ptr&lt;Line&gt;&gt; seen;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;direction : &#123;positive, negative&#125;) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> p : direction) &#123;</span><br><span class="line">            <span class="keyword">auto</span> node = p.second;</span><br><span class="line">            <span class="keyword">if</span> (seen.<span class="built_in">find</span>(node) == seen.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                set&lt;shared_ptr&lt;Line&gt;&gt; white, black;</span><br><span class="line">                white.<span class="built_in">insert</span>(node);</span><br><span class="line">                <span class="keyword">if</span> (!<span class="built_in">dfs</span>(node, white, black)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                ans += <span class="built_in">min</span>(white.<span class="built_in">size</span>(), black.<span class="built_in">size</span>());</span><br><span class="line">                seen.<span class="built_in">insert</span>(white.<span class="built_in">begin</span>(), white.<span class="built_in">end</span>());</span><br><span class="line">                seen.<span class="built_in">insert</span>(black.<span class="built_in">begin</span>(), black.<span class="built_in">end</span>());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    ll T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> iCase = <span class="number">1</span>; iCase &lt;= T; ++iCase) &#123;</span><br><span class="line">        ll n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">bool</span>&gt;&gt; <span class="built_in">pullze</span>(n, <span class="built_in">vector</span>&lt;<span class="type">bool</span>&gt;(n));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            string row;</span><br><span class="line">            cin &gt;&gt; row;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (row[j] == <span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">                    pullze[i][j] = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    pullze[i][j] = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ll ans = <span class="built_in">solve</span>(pullze);</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; iCase &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现过程中，需要注意的点有：</p>
+<ul>
+<li>如何存储和构造Graph。</li>
+<li>DFS解法时，需要遍历所有的节点。因为整个图是可以分为多个联通子图的。只从一个root开始dfs得到的染色不完整。</li>
+</ul>
+<h2 id="c-elevanagram"><a class="markdownIt-Anchor" href="#c-elevanagram"></a> C. Elevanagram</h2>
+<p>小测试集时，<code>0 &lt;= A_i &lt;= 20</code>，可以使用回溯法，尝试所有的正负号分配方式。</p>
+<p>时间复杂度：O(A_i ^ 9), 算上剪枝，复杂度会更低些。<br />
+空间复杂度：O(9).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;numeric&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line">ll plus_max;</span><br><span class="line">ll s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">backtracking</span><span class="params">(<span class="type">const</span> vector&lt;ll&gt; &amp;A, ll index, ll plus, ll accu)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (plus &gt; plus_max) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (plus == plus_max) &#123;</span><br><span class="line">        <span class="built_in">return</span> ((accu - (s - accu)) % <span class="number">11</span>) == <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index == <span class="number">0</span>) &#123;</span><br><span class="line">        ll need_plus = plus_max - plus;</span><br><span class="line">        <span class="keyword">if</span> (need_plus &gt; A[<span class="number">0</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            accu += need_plus;</span><br><span class="line">            <span class="keyword">return</span> ((accu - (s - accu)) % <span class="number">11</span>) == <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ll num = index + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (ll i = <span class="built_in">min</span>(A[index], plus_max - plus); i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">backtracking</span>(A, index - <span class="number">1</span>, plus + i, accu + num * i)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(<span class="type">const</span> vector&lt;ll&gt; &amp;A)</span> </span>&#123;</span><br><span class="line">    s = std::<span class="built_in">accumulate</span>(A.<span class="built_in">begin</span>(), A.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">    plus_max = s / <span class="number">2</span> + s % <span class="number">2</span>;</span><br><span class="line">    s = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">        s += A[i] * (i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">backtracking</span>(A, <span class="number">8</span>, <span class="number">0</span>, <span class="number">0</span>)) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="function">vector&lt;ll&gt; <span class="title">A</span><span class="params">(<span class="number">9</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> iCase = <span class="number">0</span>; iCase &lt; T; ++iCase) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">            cin &gt;&gt; A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; iCase + <span class="number">1</span> &lt;&lt; <span class="string">&quot;: &quot;</span>;</span><br><span class="line">        <span class="built_in">solve</span>(A);</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/11/mac-write-ntfs-solution/" rel="prev" title="Mac OS写入ntfs解决方案">
+      <i class="fa fa-chevron-left"></i> Mac OS写入ntfs解决方案
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/07/Europe-bank-accounts/" rel="next" title="留学在欧洲，聊聊关于银行和钱的事儿">
+      留学在欧洲，聊聊关于银行和钱的事儿 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a-h-index"><span class="nav-number">1.</span> <span class="nav-text"> A. H-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b-diagonal-puzzle"><span class="nav-number">2.</span> <span class="nav-text"> B. Diagonal Puzzle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%B5%8B%E8%AF%95%E9%9B%86"><span class="nav-number">2.1.</span> <span class="nav-text"> 小测试集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%B5%8B%E8%AF%95%E9%9B%86"><span class="nav-number">2.2.</span> <span class="nav-text"> 大测试集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%A6%E4%B8%80%E7%A7%8D%E8%A7%A3%E6%B3%95"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 另一种解法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-elevanagram"><span class="nav-number">3.</span> <span class="nav-text"> C. Elevanagram</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2019/11/25/kick-start-2019-round-H/";
+    this.page.identifier = "2019/11/25/kick-start-2019-round-H/";
+    this.page.title = "kick start 2019 round H";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

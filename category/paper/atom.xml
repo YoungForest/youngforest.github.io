@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;paper&#34; category</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2021-05-05T23:10:43.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2021/05/06/Mendeley-GB-T-7714-2005/</id>
+        <title>毕设大论文撰写问题汇总及解决</title>
+        <link rel="alternate" href="https://youngforest.github.io/2021/05/06/Mendeley-GB-T-7714-2005/"/>
+        <content type="html">&lt;h2 id=&#34;mendeley-gbt-7714-2005&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mendeley-gbt-7714-2005&#34;&gt;&lt;/a&gt; Mendeley GB/T 7714-2005&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;针对英文文献中作者名字使用了全大写&lt;/li&gt;
+&lt;li&gt;针对英文文献中三个以上人名省略时使用了中文的“等”，而不是et al.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yitian_z/article/details/104050142&#34;&gt;Solution&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我配置了自己的参考文献格式，在此分享给大家。特色有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除参考文献中的 // 。特别是会议后面多出来的这个分隔符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;引用知网参考文献&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#引用知网参考文献&#34;&gt;&lt;/a&gt; 引用知网参考文献&lt;/h2&gt;
+&lt;p&gt;知网上没有Mendeley支持的Bib参考文献格式，因此，我写了一个网站可以在线进行参考文献的转换: &lt;a href=&#34;https://cnki2bib.youngforest.me/products&#34;&gt;入口1&lt;/a&gt; &lt;a href=&#34;https://youngforest.me/products&#34;&gt;入口2&lt;/a&gt;&lt;/p&gt;
+</content>
+        <updated>2021-05-05T23:10:43.000Z</updated>
+    </entry>
+</feed>

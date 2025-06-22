@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="转自我的博客  今年，我按照预期计划，从国内投欧洲程序员的岗位，虽然赶上宏观经济下行，各个公司纷纷hire freeze甚至layoff。幸运地，还是拿到了2个offer，并在11月成功入职完成肉翻。虽然历经了不少坎坷，回过头看也算是一切顺利。在“润”地道路上被很多有经验地群友帮助，因此我也撰写一篇博客，总结自己地经验和教训，以方便后来人。     背景 首先给不熟悉我的朋友简单介绍一下我的背景。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从北京到都柏林 一名程序员的润欧之旅">
+<meta property="og:url" content="https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="转自我的博客  今年，我按照预期计划，从国内投欧洲程序员的岗位，虽然赶上宏观经济下行，各个公司纷纷hire freeze甚至layoff。幸运地，还是拿到了2个offer，并在11月成功入职完成肉翻。虽然历经了不少坎坷，回过头看也算是一切顺利。在“润”地道路上被很多有经验地群友帮助，因此我也撰写一篇博客，总结自己地经验和教训，以方便后来人。     背景 首先给不熟悉我的朋友简单介绍一下我的背景。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youngforest.github.io/images/%E6%B6%A6%E4%BA%86.png">
+<meta property="article:published_time" content="2022-12-09T16:42:27.000Z">
+<meta property="article:modified_time" content="2024-01-31T17:18:46.386Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="life">
+<meta property="article:tag" content="Tech">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://youngforest.github.io/images/%E6%B6%A6%E4%BA%86.png">
+
+<link rel="canonical" href="https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>从北京到都柏林 一名程序员的润欧之旅 | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从北京到都柏林 一名程序员的润欧之旅
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-09 16:42:27" itemprop="dateCreated datePublished" datetime="2022-12-09T16:42:27+00:00">2022-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-31 17:18:46" itemprop="dateModified" datetime="2024-01-31T17:18:46+00:00">2024-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dairy/" itemprop="url" rel="index"><span itemprop="name">dairy</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/12/09/Find-a-Europe-SDE-job-from-China/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/12/09/Find-a-Europe-SDE-job-from-China/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>转自<a href="https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/">我的博客</a></p>
+<p>今年，我按照预期计划，从国内投欧洲程序员的岗位，虽然赶上宏观经济下行，各个公司纷纷hire freeze甚至layoff。幸运地，还是拿到了2个offer，并在11月成功入职完成肉翻。虽然历经了不少坎坷，回过头看也算是一切顺利。在“润”地道路上被很多有经验地群友帮助，因此我也撰写一篇博客，总结自己地经验和教训，以方便后来人。</p>
+<p><img src="/images/%E6%B6%A6%E4%BA%86.png" alt="润了" /></p>
+<h2 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h2>
+<p>首先给不熟悉我的朋友简单介绍一下我的背景。<br />
+在北京某校读了计算机本硕。<br />
+读书时从大四开始有过不少实习经历，先后在小厂、大厂，人工智能、自动驾驶，国内互联网、外企干过一段时间，在学校也有长期的科研经历。<br />
+实习是不错的成本比较低的试错机会。<br />
+经过这些尝试，结合自己的实际情况，我确定了自己的目标。找工作，而非科研。去大厂，而不是小厂。来外企，而非国内企业。<br />
+在2020年初，因为ex的原因，确定了要润到欧洲工作的计划。她因为10043的限制，去不了美国读书。她也对国内深造不感兴趣，所以当时决定选择欧洲的院校深造。打算2022年秋来读硕士。<br />
+2021年硕士毕业后，如愿在北京某国际知名外企工作了一年零4个月时间。这段经历在简历上也极大地帮助我拿到不少面试。</p>
+<p>新加坡、日本、欧洲、加拿大、澳洲 都是程序员润的热门目的地。<br />
+和美国相比，这些地区工签制度十分友好，基本只要拿到offer，都能轻松办下工签。<br />
+同时很多发达国家拥有从出生到坟墓的福利制度，尤其适合逃离国内996而且拖家带口的同行们。<br />
+最重要的是工作机会多，竞争压力小，有大量面向海外招人的岗位。从我的经验来看，不考虑语言挑战的话，面试难度是远小于国内的。<br />
+本文虽然是以投欧洲为背景，不过大多数经验也是对其他地区有帮助的。尤其是投谷歌、亚马逊、微软这种美企的。</p>
+<h2 id="时间线"><a class="markdownIt-Anchor" href="#时间线"></a> 时间线</h2>
+<p>3月开始在Stack Overflow（现在Jobs板块已关闭）、Google Jobs、LinkedIn上海投，也找了不少朋友内推。我投的工作地点主要以荷兰为主，也投了德国、爱尔兰、英国等其他国家。<br />
+这段时间以中小公司为主，想在投大厂前多练练。但并不理想，大多数直接被据，只有4个面试。</p>
+<p>4月底开始投大厂，当然海投一直没停，最后投了近40个厂，有8家面试，2家offer。阿姆本地的大厂岗位只有 Amazon、Uber和Booking。微软投了都柏林，谷歌投了慕尼黑。<br />
+因为我本身在Amazon工作，因此外部没法投。内部投又有跨国岗位需要L5(SDE 2) + 1年的限制，我不满足。虽然内部聊了几个经理，但都不能给exception。因此错失了Amazon在欧洲的工作机会。Uber 在约Phone Interview时，hire freeze了，对面直接找不到人了。Booking干脆没拿到面试。</p>
+<p>6月面了微软和谷歌。</p>
+<p>微软是一次Online Assessment (3道算法题，LeetCode Medium难度) + 3 轮Virtual Onsite (Algorithm + Behavior Questions, Software Design + Behavior Questions, System Design + Behavior Questions) + 1轮Virtual Onnsite (Behavior Questions)。可以看出微软Behavior Questions的比重很大，每轮都有。Software Design其实就是OOD (Oriented Object Design), 我因为理解错了没有准备对，第二轮面的有些糟糕。不过最后还是拿到了Offer。</p>
+<p>谷歌是 1轮Phone Interview (Algorithm) + 4轮 Virtual Onsite (3轮 Algorithm + 1轮Behavior Questions)。可以看出，谷歌的算法比重很大，Senior以下是不面系统设计的。因为我刷题十分多，因此谷歌的这种面试模式让我很享受，感觉效果也不错。之后就是漫长的Team Match。最后因为HC Freeze结束了申请流程。谷歌的流程十分冗长，推荐的做法是，最先投谷歌，等谷歌面试结束后，再投其他大厂。这样可以使得出offer的时间差不多，方便compete。</p>
+<p>7月份同一天拿到2个Offer，谈薪资。<br />
+8月份接offer。9月办签证。10月离职。11月入职。</p>
+<p>可以看出，从开始投大厂，到入职，基本半年就过去了。大家可以酌情准备。</p>
+<p>另外，我花了不少时间在 Pramp模拟面试 和 中小厂的面试上。主要是前期没有自信，想要练习一下再冲大厂。回头看看其实用处不大。<br />
+首先是小厂和大厂面试模式和内容差别很大，练习效果一般。<br />
+其次，因为我只有1年工作经验。投小厂我收到面试其实很少，毕竟从海外搬用入职时间比较长，成本也不低，他们更愿意招一些Senior的人。<br />
+最后，因为赶上了今年恶劣的大环境，晚几个月投大厂太致命了。到6、7月的时候，陆续传来Hire Freeze或Layoff的消息。大厂虽然看实力，但运气也很重要。如果再晚些就更惨了。我最后拿微软offer的组，也不是一开始面的组。因为一开始的组Hire Freeze了，幸运地是，我入职的组因为十分基础和重要，在整个公司Hire Freeze的背景下，仍然争取到了少量的Head Count。</p>
+<h2 id="面试准备"><a class="markdownIt-Anchor" href="#面试准备"></a> 面试准备</h2>
+<p>这部分是大家最关心，也是最花时间的了。</p>
+<p>首先推荐一下<a target="_blank" rel="noopener" href="https://www.youtube.com/@Fred_Talk">V2WORLD 群主的频道</a>. 有包括 简历准备、英文、算法、技能 等十分干货的视频，尤其是适合德国岗位。</p>
+<p>我这里主要结合我自己的经验，分享一下面试准备的心得。</p>
+<h3 id="英文"><a class="markdownIt-Anchor" href="#英文"></a> 英文</h3>
+<p>英文对于很多同学可能是比较恐惧和担忧的一个挑战。我也是这样，因此很能理解。<br />
+作为一名小镇做题家，高考英语听力都不算分，从小到大的英语老师也都是二本甚至专科毕业的，自己英文都说的不利索。四六级倒是有听力，但口语当时还是可选的，也没多少人专门去考。大学英语老师水平倒是很高，但无奈基础已经摆在那里了。而且大学英语也更侧重于科研需求。大一的时候是最恐惧的时候，英语课都改成全英文的了，上课都听不懂了。也有部分同学游刃有余，对应着城乡，发达与落后地区的差距就十分明显了。从大学开始，我开始了漫长的和英语搏斗之路。虽然四六级都是一次性裸考过，但我深知那只是代表了应试能力和我阅读的强势，听说仍然比大城市的同学差很多。当时尝试了不少英语App，包括流利说和扇贝网。其中扇贝网因为网页做的不错，我身为程序员，也更习惯PC端的产品。而且扇贝听力的精听功能深得我心。我和舍友每日打卡，差不多打了有快2年时间。<br />
+另外，我也尝试参加一些学校的英语活动。包括尝试了几次英语社，每日大早在沙河南湖边大声背诵。以志愿者身份，参加了2次暑期学校，解决外国学生的各种问题。也以学生身份上了一次暑期学校的课。<br />
+以考促学也是一个不错的途径。当时还没有10043法案，北航的同学出国比例还是挺高的，最后大概有20%，再加上剩下有些许留学想法的，可能有50%。我当时也受影响，考了托福。虽然最后只考了91分，但准备的过程中，确实让我英语进步很多，尤其是听力。<br />
+再到后来去比利时交换，也有了机会锻炼自己的英文和交流。</p>
+<p>虽然到目前为止，我发现自己的英语和周围人之间还是有不小差距的，但可以基本不大影响工作。在面试过程中，因为欧洲这边基本也都不是英语母语，所以要求和水平相对较低。即使如此，还是有面试据我的理由是，他们目前想找一个英文更好的人。</p>
+<p>在我看来，面试中的英文并不难，最重要的是你敢说，愿意交流。如果遇到不会表达的，或没表达清楚，只要和面试官反复沟通和确认，基本上还是可以沟通无碍的。其实在工作中也是一样。</p>
+<p>因此，我给出的建议是：用模拟面试（如<a target="_blank" rel="noopener" href="https://www.pramp.com/invt/lYgBVdQ8qrTMQg9jwEmP">pramp</a>）或 真正的面试(可以先投一些小厂) 去练习，找到短板和技巧。无论是英文还是技术，欧洲的面试真没大多数人想象中的那么难。</p>
+<h3 id="简历投递"><a class="markdownIt-Anchor" href="#简历投递"></a> 简历投递</h3>
+<p>主要靠网友内推和Linkedin海投为主。花些时间维护好Linkedin profile。基本大厂靠内推，其他靠海投。</p>
+<h3 id="算法题"><a class="markdownIt-Anchor" href="#算法题"></a> 算法题</h3>
+<p>还是得靠刷题 LeetCode基本刷上300题就差不多了。<br />
+之前写的经验在这里分享一下: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/280279208/answer/704774024">大家都是如何刷 LeetCode 的？ - youngforest的回答 - 知乎</a></p>
+<h3 id="软件设计-software-design-ood"><a class="markdownIt-Anchor" href="#软件设计-software-design-ood"></a> 软件设计 Software Design, OOD</h3>
+<p>基本这一本书就够了：</p>
+<ul>
+<li>Grokking the Object Oriented Design Interview<br />
+其他进阶资料：</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/donnemartin/system-design-primer">The System Design Primer</a></li>
+</ul>
+<h3 id="系统设计-system-design"><a class="markdownIt-Anchor" href="#系统设计-system-design"></a> 系统设计 System Design</h3>
+<p>准备面试基本看2本书就够了，</p>
+<ul>
+<li>Grokking the System Design Interview</li>
+<li>Alex Yu - System Design Interview_ An Insider’s Guide</li>
+</ul>
+<p>如果没时间，优先看第一本。</p>
+<p>除此应付面试外，其实系统设计对于工作也是十分重要的。我这里也推荐一些资源，提升自己本身系统设计的能力，而不是为了应付面试。</p>
+<ul>
+<li>DDIA (Designing Data Intensive Applications)</li>
+<li><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-907316-1-1.html">一本分布式电子书和视频资料</a></li>
+</ul>
+<h3 id="行为面试"><a class="markdownIt-Anchor" href="#行为面试"></a> 行为面试</h3>
+<p>Behavior questions 很好准备，用一两周即可。网上有大量的问题，自己提前根据自己的过往经历准备几个故事，足以应付大多数问题即可。一定要基于自己过往经历，可以添油加醋，但不要无中生有，要不面试时如果问follow up有可能圆不上露馅。</p>
+<p>文章</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/google_search.php?q=behavior%20question">一亩三分地</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-529217-1-1.html">一亩三分地 Behavior questions合集</a></li>
+</ul>
+<p>Podcast</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://softskills.audio/">softskills</a></li>
+<li><a target="_blank" rel="noopener" href="https://podcasts.google.com/feed/aHR0cHM6Ly9zb2Z0c2tpbGxzLmF1ZGlvL2ZlZWQueG1s?sa=X&amp;ved=0CAMQ4aUDahgKEwiA2Mv__tL3AhUAAAAAHQAAAAAQ4xo">Soft Skills Engineering</a></li>
+</ul>
+<p>YouTube</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=IyPJFHFUpbQ&amp;ab_channel=DanCroitor">DanCroitor</a></li>
+</ul>
+<h2 id="爱尔兰-怎么样"><a class="markdownIt-Anchor" href="#爱尔兰-怎么样"></a> 爱尔兰 怎么样？</h2>
+<p>我这两年也加入了一起志同道合润的微信群（V2WORLD），也认识了不少已经润，正在润和将要润的群友。说实话，2022年因为国内经济和疫情封控的原因，润的人更多了。<br />
+从这个小范围样本来看（大概2百人，大概率会有幸存者偏差），润到新加坡/欧洲（其中德国占大部分）的居多，日本、加拿大、澳洲的其次。<br />
+爱尔兰算是一个不大热门也不引人关注的国家。其实我投递的时候也是没以爱尔兰为主的，但是后来发现这里大厂很多，包括很多美企巨头的欧洲总部，如 Microsoft，Apple，Google，AWS （Amazon的欧洲总部在卢森堡）。基本上都有3千研发的办公室。比如微软这里有2栋楼，3500+个研发。工作机会很多，尤其是如果你偏爱美企大厂，或者以后想通过L1润美的话。以后跳槽和职业发展也不错，也被称为欧洲小硅谷。<br />
+除了程序员比较好找工作外，药企也是爱尔兰支柱产业。</p>
+<p>另外爱尔兰移民政策十分友好，有offer就能办工作许可，也就能办工签。程序员的话基本都是Critical Skill Work Permit。头1年不能换工作，头2年（Stamp 1）需要雇主担保Work Permit。2年后（Stamp 4）就可以自由换工作和自雇了。配偶签证也都可以学习工作。<a target="_blank" rel="noopener" href="https://www.citizensinformation.ie/en/moving_country/irish_citizenship/becoming_an_irish_citizen_through_naturalisation.html#l9d317">最快5年可以换护照（不过爱尔兰也有移民监，每年离境时间需要不超过6周，否则这年是不算在你的5年里的。）</a>。不像其他国家，需要语言要求和融入考试。推荐一下我微软同事的帖子: <a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-901327-1-1.html">爱尔兰移民签证体系讲解</a> 和 <a target="_blank" rel="noopener" href="https://www.irishimmigration.ie/registering-your-immigration-permission/information-on-registering/immigration-permission-stamps/#5b7196a7b9ecd4ab3">各种居留签官方说明</a>. 感觉爱尔兰其实是价值洼地。岗位多，竞争少。和不少人聊过，感觉面试都更简单。</p>
+<p>大家润出来一部分人最主要的目的是逃离国内996的卷，更好的生活。爱尔兰像其他国家一样都可以满足这样的需求，也有相对完善的福利制度，完全足以过上“老婆孩子热炕头”的生活。</p>
+<p>爱尔兰缺点的话，也有很多。</p>
+<p>都柏林基础设施极差。比大多数欧洲发达国家的首都都差，甚至比不上希腊。没有地铁，轻轨线路也只有2条，公共交通公交是主流。去不同方向的地方都需要去市中心转车。机场不通轻轨或火车，只有大巴和公交。机场设施，如安检，也都相当原始和缓慢。我分析爱尔兰基础设施比较差的主要原因有：1. 人口密度低。爱尔兰人口只有4百万，相比中国和欧洲其他地区人口少，所以基础建设性价比低，跟不上。2. 底子差。因为历史上长期是英国的殖民地，面对着长期的剥削，以发展农业为主，经济腾飞成为工业国是二战后的事儿。不像欧洲其他国家有几百年的工业历史和建设。</p>
+<p>气候谈不上恶劣，但绝对不十分宜人。这方面其实西北欧都差不多，属于温带海洋性气候。气温上还比较好，夏天不大热，低于30度，冬天不大冷，-10度以上。但每年有半年的雨季，集中在冬天，刮风下雨实在是物理加法术伤害。因为纬度比较高，冬天日照时间短，再加上雨季阴天不大能见到太阳，容易让人抑郁。建议通过补剂或食物额外补充维生素D。我在国内都是北方长大到现在，实在是顶不住。不过据南方（杭州）的朋友说，这里气候其实是比南方要好的。</p>
+<p>比较村，也被称为“爱村”。除了之前提到的基础设施差之外，商场娱乐也不像大城市的样子。不过这点对我来说也挺好，我其实就喜欢这个样子。作为一名典型的“小镇做题家”，从小在小县城长大。虽然后来通过高考来到了大城市，但头两年呆在沙河（北京昌平郊区一镇），十分荒凉。后来来到了北四环学院路，总算是城市了。但海淀相比朝阳还是破旧许多。工作后在朝阳呆了一年，总算是品尝了些大城市的灯红酒绿，但也不习惯。所以，此番来到爱尔兰都柏林郊区，也算是能接受，感觉比长大的县城还是好上不少的。</p>
+<p>高税收。爱尔兰属于高税收高福利国家，更看重公平而非效率。本身就比美国薪水低很多，再加上最高52%的各种税，到手其实和国内差不多，甚至更少。再加上高昂的房租和物价，存下来的钱必然是更少的。</p>
+<p>变态的房租。我之前在<a href="https://youngforest.github.io/2022/12/25/2022-summary-and-2023-resolutions/#%E7%94%9F%E6%B4%BB">年终总结</a>里分享过，都柏林的房租直追欧洲一线城市，但享受到的基础设施、服务都是三线的。</p>
+<h2 id="faq"><a class="markdownIt-Anchor" href="#faq"></a> FAQ</h2>
+<p>有想润的朋友经常咨询我一些问题，统一在这里整理出来。</p>
+<p>** Q: 你当时在职面海外岗位，会不会时间太紧完全没法准备啊？以及请假会不会很难？**</p>
+<p>A: 我还好。因为我本身在国内就在外企工作，工作压力小，请假也十分方便，而且还长期居家办公。另外我面的欧洲工作，我会优先选择晚上面试，最差情况是下午面试，就得请假了。准备方面的话。因为我长期刷题，这方面基本不怎么需要再花时间。英语、系统设计、Behavior questions倒是花了不少时间练习。你如果当前工作压力大，确实会顶不住。建议你慢慢来，如果真想润的话，别放弃润的目标，长期准备。正好现在大环境不好，到处裁员和缩招。另外以面代练，广撒网也很重要。不需要等准备充分了才开始投。</p>
+<p>** Q: 我想去美国。为什么大家分享从海外投美国的经验的很少呢？**</p>
+<p>A: 因为美国是计算机技术的中心，薪资、机会也很多。有不少年轻的同学可能比较向往。<br />
+不过因为美国工签（H1B）是抽签制度，十分难抽。现在从海外直接投已经几乎不可能了。<br />
+主流的方式是 1. 读美国硕士，毕业后用OPT签证（29个月）工作。2. 去美企的海外办公室，1年后 L1签证（5年） transfer到美国本土总部。<br />
+不过去了后，还是需要抽H1B才能换工作。<br />
+排绿卡又是按出生地，中国大陆和印度属于地狱级别，现在已经6年往上了。要知道，在海外工作，身份问题可是决定幸福程度的重要影响因素。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/life/" rel="tag"># life</a>
+              <a href="/tags/Tech/" rel="tag"># Tech</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/19/Western-political-correctness/" rel="prev" title="谈谈西方政治正确">
+      <i class="fa fa-chevron-left"></i> 谈谈西方政治正确
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/12/15/Netherlands-Visa-from-Ireland/" rel="next" title="爱尔兰 办荷兰申根短期签证">
+      爱尔兰 办荷兰申根短期签证 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text"> 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF"><span class="nav-number">2.</span> <span class="nav-text"> 时间线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87"><span class="nav-number">3.</span> <span class="nav-text"> 面试准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%B1%E6%96%87"><span class="nav-number">3.1.</span> <span class="nav-text"> 英文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8E%86%E6%8A%95%E9%80%92"><span class="nav-number">3.2.</span> <span class="nav-text"> 简历投递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98"><span class="nav-number">3.3.</span> <span class="nav-text"> 算法题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1-software-design-ood"><span class="nav-number">3.4.</span> <span class="nav-text"> 软件设计 Software Design, OOD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-system-design"><span class="nav-number">3.5.</span> <span class="nav-text"> 系统设计 System Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E9%9D%A2%E8%AF%95"><span class="nav-number">3.6.</span> <span class="nav-text"> 行为面试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%B1%E5%B0%94%E5%85%B0-%E6%80%8E%E4%B9%88%E6%A0%B7"><span class="nav-number">4.</span> <span class="nav-text"> 爱尔兰 怎么样？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#faq"><span class="nav-number">5.</span> <span class="nav-text"> FAQ</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/";
+    this.page.identifier = "2022/12/09/Find-a-Europe-SDE-job-from-China/";
+    this.page.title = "从北京到都柏林 一名程序员的润欧之旅";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

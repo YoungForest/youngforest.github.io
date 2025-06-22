@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="RankNameScoreFinish TimeQ1 (3)Q2 (5)Q3 (5)Q4 (6)383 &#x2F; 11635YoungForest181:53:500:01:050:13:020:20:591:28:50 5 1837. Sum of Digits in Base K 签到题。10进制转6进制。  1 2 3 4 5 6 7   class Solution:     def sumBa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode weekly contest 238">
+<meta property="og:url" content="https://youngforest.github.io/2021/04/25/LeetCode-weekly-contest-238/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="RankNameScoreFinish TimeQ1 (3)Q2 (5)Q3 (5)Q4 (6)383 &#x2F; 11635YoungForest181:53:500:01:050:13:020:20:591:28:50 5 1837. Sum of Digits in Base K 签到题。10进制转6进制。  1 2 3 4 5 6 7   class Solution:     def sumBa">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-25T16:58:13.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.350Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="Competitive Programming">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2021/04/25/LeetCode-weekly-contest-238/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>LeetCode weekly contest 238 | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2021/04/25/LeetCode-weekly-contest-238/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode weekly contest 238
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-04-25 17:58:13" itemprop="dateCreated datePublished" datetime="2021-04-25T17:58:13+01:00">2021-04-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/04/25/LeetCode-weekly-contest-238/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/25/LeetCode-weekly-contest-238/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (5)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>383 / 11635</td>
+<td>YoungForest</td>
+<td>18</td>
+<td>1:53:50</td>
+<td>0:01:05</td>
+<td>0:13:02</td>
+<td>0:20:59</td>
+<td>1:28:50 5</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="1837-sum-of-digits-in-base-k"><a class="markdownIt-Anchor" href="#1837-sum-of-digits-in-base-k"></a> 1837. Sum of Digits in Base K</h2>
+<p>签到题。10进制转6进制。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sumBase</span>(<span class="params">self, n: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">            ans += n % k</span><br><span class="line">            n //= k</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(log_k n),<br />
+空间复杂度: O(1).</p>
+<h2 id="1838-frequency-of-the-most-frequent-element"><a class="markdownIt-Anchor" href="#1838-frequency-of-the-most-frequent-element"></a> 1838. Frequency of the Most Frequent Element</h2>
+<p>本周周赛Q2 Q3都是滑动窗口题。事实上，从零宝大数据来看，Q2难度还是比Q3大的。</p>
+<p>首先想出暴力解法，尝试每个元素，试图把比它小的元素增至它，看最多有多少个。<br />
+时间复杂度: O(N ^ 2), 估计会TLE。<br />
+Q2 通常情况下还是可以暴力解的，虽然本题不可以。</p>
+<p>在暴力解的基础上，尝试优化。观察到，“试图把比它小的元素增至它”这个操作或许可以在O(1)的情况下完成，而不需要暴力尝试每个比它小的元素。因为那些元素已经被升至上一个尝试元素了。</p>
+<p>先排序。然后，从小到大尝试把所有值都增至<code>nums[r]</code>。<br />
+窗口<code>[l:r]</code>维护这些被增至目标值<code>nums[r]</code>的元素。<br />
+当<code>r</code>右移时，把窗口里的元素都从上个值更新到<code>nums[r]</code>。<br />
+如果用了过多的增操作，则增加<code>l</code>，释放增操作。<br />
+取窗口最宽值作为答案。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxFrequency</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># brute force: N ^ 2</span></span><br><span class="line">        <span class="comment"># for each element, try to make it most frequency</span></span><br><span class="line">        <span class="comment"># sliding window</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> r &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="comment"># make all increment to nums[r]</span></span><br><span class="line">                k -= (nums[r] - nums[r-<span class="number">1</span>]) * (r - l)</span><br><span class="line">            <span class="keyword">while</span> k &lt; <span class="number">0</span>:</span><br><span class="line">                k += nums[r] - nums[l]</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            ans = <span class="built_in">max</span>(r - l + <span class="number">1</span>, ans)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(n log n + n),<br />
+空间复杂度: O(1).</p>
+<h2 id="1839-longest-substring-of-all-vowels-in-order"><a class="markdownIt-Anchor" href="#1839-longest-substring-of-all-vowels-in-order"></a> 1839. Longest Substring Of All Vowels in Order</h2>
+<p>相比上题，本题更是明显的滑动窗口题。<br />
+窗口<code>[l:r]</code>的不变量是字串递增。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestBeautifulSubstring</span>(<span class="params">self, word: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># brute force: N^3, enumerate all substring * check each substring</span></span><br><span class="line">        <span class="comment"># sliding window: N</span></span><br><span class="line">        <span class="comment"># at least once, incresing</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="number">0</span></span><br><span class="line">        n = <span class="built_in">len</span>(word)</span><br><span class="line">        cnt = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">check</span>():</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&#x27;aeiou&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span> cnt[<span class="built_in">ord</span>(i) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)] &lt;= <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> r &lt; n:</span><br><span class="line">            cnt[<span class="built_in">ord</span>(word[r]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> r &gt; <span class="number">0</span> <span class="keyword">and</span> word[r] &lt; word[r-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">while</span> l &lt; r:</span><br><span class="line">                    cnt[<span class="built_in">ord</span>(word[l]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)] -= <span class="number">1</span></span><br><span class="line">                    l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> check():</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, r - l + <span class="number">1</span>)</span><br><span class="line">            r += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(word.length),<br />
+空间复杂度: O(1).</p>
+<h2 id="1840-maximum-building-height"><a class="markdownIt-Anchor" href="#1840-maximum-building-height"></a> 1840. Maximum Building Height</h2>
+<p>还是挺难的一道Hard题。<br />
+相邻差值为1. 一开始想到用BFS，从高度限制小的开始遍历，更新周围的高度。也算是经典算法。<br />
+然后TLE后，才注意到<code>n &lt;= 10^9</code>这个限制。O(N)的算法也肯定超时。<br />
+注意<code>restrictions.length &lt;= 10^5</code>这一限制，大概率是要从这里下手的。<br />
+因此，BFS时只更新被限制的块，块中间再用二分搜索找最高点（其实可以用O(1)的数学解法的，比赛时没好想法就二分暴力了）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxBuilding</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; restrictions)</span> </span>&#123;</span><br><span class="line">        map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; rtxMap;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">bool</span>&gt; seen;</span><br><span class="line">        seen.<span class="built_in">reserve</span>(restrictions.<span class="built_in">size</span>() + <span class="number">2</span>);</span><br><span class="line">        rtxMap[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        rtxMap[n<span class="number">-1</span>] = INF;</span><br><span class="line">        seen[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">        seen[n<span class="number">-1</span>] = <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// bfs: O(N), TLE</span></span><br><span class="line">        <span class="keyword">using</span> pii = pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;;</span><br><span class="line">        priority_queue&lt;pii, vector&lt;pii&gt;, greater&lt;&gt;&gt; pq;</span><br><span class="line">        pq.<span class="built_in">push</span>(&#123;<span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; v : restrictions) &#123;</span><br><span class="line">            pq.<span class="built_in">push</span>(&#123;v[<span class="number">1</span>], v[<span class="number">0</span>] - <span class="number">1</span>&#125;);</span><br><span class="line">            rtxMap[v[<span class="number">0</span>] - <span class="number">1</span>] = v[<span class="number">1</span>];</span><br><span class="line">            seen[v[<span class="number">0</span>] - <span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!pq.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            <span class="keyword">auto</span> [height, idx] = pq.<span class="built_in">top</span>();</span><br><span class="line">            <span class="comment">// cout &lt;&lt; height &lt;&lt; &quot;, &quot; &lt;&lt; idx &lt;&lt; endl;</span></span><br><span class="line">            pq.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span> (seen[idx]) <span class="keyword">continue</span>;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, height);</span><br><span class="line">            seen[idx] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">const</span> <span class="type">int</span> j : &#123;<span class="number">-1</span>, <span class="number">1</span>&#125;) &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> next = idx + j;</span><br><span class="line">                <span class="keyword">if</span> (next &gt;= n || next &lt; <span class="number">0</span> || seen[next]) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (j == <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">auto</span> it = rtxMap.<span class="built_in">lower_bound</span>(next);</span><br><span class="line">                    <span class="keyword">if</span> (it != rtxMap.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                        <span class="type">const</span> <span class="type">int</span> x = it-&gt;first;</span><br><span class="line">                        it-&gt;second = <span class="built_in">min</span>(it-&gt;second, height + x - idx);</span><br><span class="line">                        pq.<span class="built_in">push</span>(&#123;it-&gt;second, x&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">auto</span> it = rtxMap.<span class="built_in">lower_bound</span>(idx);</span><br><span class="line">                    <span class="comment">// 2 5</span></span><br><span class="line">                    <span class="comment">// next = 4</span></span><br><span class="line">                    <span class="keyword">if</span> (it != rtxMap.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">                        --it;</span><br><span class="line">                        <span class="type">const</span> <span class="type">int</span> x = it-&gt;first;</span><br><span class="line">                        it-&gt;second = <span class="built_in">min</span>(it-&gt;second, height + idx - x);</span><br><span class="line">                        pq.<span class="built_in">push</span>(&#123;it-&gt;second, x&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> it = rtxMap.<span class="built_in">begin</span>(); <span class="built_in">next</span>(it) != rtxMap.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> leftIdx = it-&gt;first, leftHeight = it-&gt;second;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> rightIdx = <span class="built_in">next</span>(it)-&gt;first, rightHeight = <span class="built_in">next</span>(it)-&gt;second;</span><br><span class="line">            <span class="keyword">if</span> (leftIdx + <span class="number">1</span> == rightIdx) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; leftIdx &lt;&lt; &quot;, &quot; &lt;&lt; leftHeight &lt;&lt; &quot;, &quot; &lt;&lt; rightIdx &lt;&lt; &quot;, &quot; &lt;&lt; rightHeight &lt;&lt; endl;</span></span><br><span class="line">            <span class="type">int</span> lo = <span class="built_in">min</span>(leftHeight, rightHeight), hi = <span class="built_in">min</span>(leftHeight + rightIdx - leftIdx, rightHeight + rightIdx - leftIdx);</span><br><span class="line">            <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">                <span class="type">bool</span> deter = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">if</span> (mid - leftHeight &lt; rightIdx - leftIdx <span class="keyword">and</span> mid - rightHeight &lt; rightIdx - leftIdx <span class="keyword">and</span> mid - leftHeight + mid - rightHeight - <span class="number">1</span> &lt; rightIdx - leftIdx) deter = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">if</span> (deter) &#123;</span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    hi = mid;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// t, t, t, f, f</span></span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, lo - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>m = restrictions.length</code><br />
+时间复杂度: O(m log m),<br />
+空间复杂度: O(m).</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-building-height/solution/zui-gao-jian-zhu-gao-du-by-leetcode-solu-axbb/910208">零神题解</a>里有2次扫描的算法。虽然时间复杂度是一样的，但实现比较简单，常数上会更好些。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/20/kick-start-2021-round-B/" rel="prev" title="kick start 2021 round B">
+      <i class="fa fa-chevron-left"></i> kick start 2021 round B
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/02/LeetCode-weekly-contest-239/" rel="next" title="LeetCode weekly contest 239">
+      LeetCode weekly contest 239 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1837-sum-of-digits-in-base-k"><span class="nav-number">1.</span> <span class="nav-text"> 1837. Sum of Digits in Base K</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1838-frequency-of-the-most-frequent-element"><span class="nav-number">2.</span> <span class="nav-text"> 1838. Frequency of the Most Frequent Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1839-longest-substring-of-all-vowels-in-order"><span class="nav-number">3.</span> <span class="nav-text"> 1839. Longest Substring Of All Vowels in Order</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1840-maximum-building-height"><span class="nav-number">4.</span> <span class="nav-text"> 1840. Maximum Building Height</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2021/04/25/LeetCode-weekly-contest-238/";
+    this.page.identifier = "2021/04/25/LeetCode-weekly-contest-238/";
+    this.page.title = "LeetCode weekly contest 238";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

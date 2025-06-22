@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;interview&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2019-09-06T18:25:56.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2019/09/06/ByteDance-Camp/</id>
+        <title>2019 字节跳动夏令营</title>
+        <link rel="alternate" href="https://youngforest.github.io/2019/09/06/ByteDance-Camp/"/>
+        <content type="html">&lt;p&gt;总的体验是很开心，收获很大。&lt;/p&gt;
+&lt;p&gt;很幸运可以参加今年的Byte Camp，我认为这一周的活动是我今年参加过的最有意义的活动了。今年的夏令营共分为3个赛道：工程、算法、和 产品。我参加的是工程赛道。&lt;/p&gt;
+&lt;p&gt;工程和算法赛道进入夏令营的选拔都是通过笔试和面试完成的。笔试的题目也都一样，就是通过牛客网的平台在线完成。笔试有2次机会，都参加的话取分高的。笔试题目分为基础题（操作系统、计算机组成原理、计算机网络）和编程题。编程题有4题，难度依次递增。我参加的是第一场，AC了前3道，难度大约等于是LeetCode medium，最后一题的难度直接飙升到 ICPC world final的难度，要用费用流的知识。我也没打过ACM，第一次听说费用流，就没做出来。由于笔试答的还行，面试我没参加，直接拿到入营资格了。不过听参加面试的同学反映，面试也挺水的，难度很低。&lt;/p&gt;
+&lt;p&gt;然后就是夏令营的正式活动了。活动虽然只有一周，但是日程安排的十分紧凑，基本是9 10 6。开幕式是有 AI-lab的主管 李航老师 主持。以前只在网上和书上久闻大名，这次竟然可以见到真人了，还有一起合影的机会。学机器学习的同学应该都听说过他，他的《统计学习方法》也是入门算法岗工作的维几之选。我们每人还获赠他签名的《统计学习方法》一书（工程赛道的同学可能对此不是很感冒，哈哈）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/ByteDance-camp-jiti.jpg&#34; alt=&#34;集体照&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;之后的日程主要分为2天的听课和3天的做项目。课程安排和项目都可以在&lt;a href=&#34;https://bytecamp.toutiao.com/course&#34;&gt;官网上&lt;/a&gt;看到，每天要上7节课之多。课上也是干货满满，每个主题都是字节跳动内部负责相关技术的资深工程师负责讲解，从基础设施架构到前后端，覆盖工程的同学可能感兴趣和从事的所有内容。&lt;br /&gt;
+算法那边除了请公司内部的大牛之外，还有像 Yoshua Bengio、Oren Etzioni 这样的外部嘉宾参与。因为这2个人实在是太牛了（我也是后来才知道的，毕竟不搞算法），我们工程的也被要求参加他们的课程。课程内容倒是一般，比较入门和浅显（难道是为了照顾我们工程的孩子？），实质内容反而不多。&lt;/p&gt;
+&lt;p&gt;我选择的项目是“服务治理：基于共享内存的高性能通信中间件”。说实话，我对共享内存和进程间通信不是特别熟，但是当时选题目的时候只有这个题目能看懂，其他的题目更是一头雾水，所以选择了“中间件”这一看起来比较靠谱的项目。（后来证明，这样的项目反而不如小游戏这样的项目容易拿奖，也更难完成）。项目的具体细节就不便透露了。我和交大的一位大佬一起完成，3天的时间里，完成了设计、实现、测试、性能测试、PPT和展示。别的组都是4～5人，我们组因为有2个队友提前退营了，只有2人。这3天的代码不是我写的最难的，但算是我这一年来写的最开心的了。白天写一天代码，晚上10点回到酒店里接着肝到一两点。（有五星级酒店住，也是我学校在北京，但仍和大家一起住酒店的原因。标间一晚九百多，很舒服）。我俩甚至把项目开源了：&lt;a href=&#34;https://github.com/Yellow-Pay/MakeTheAmericanGreatAgain&#34;&gt;Yellow-Pay/MakeTheAmericanGreatAgain&lt;/a&gt;。在GitHub上可以搜到很多shm-ipc的库，我们的目的更多的是为了用git协同工作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Bytedance-camp.jpg&#34; alt=&#34;做项目的第二天&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/us.jpg&#34; alt=&#34;我和队友黄富乾&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;上周五下午刚刚结束夏令营，回学校正式开工，才发现字节跳动的总部中航广场离学校如此之近。本来想坐地铁回来，可是走到知春里的时候发现，学校竟然只有半站路，就直接走回宿舍了。期待以后有机会可以和字节跳动有更多的接触，这么近的距离，偷偷出来实习一定很方便。&lt;/p&gt;
+&lt;p&gt;总结一下我这一周的收获，重要程度从前向后：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;结识了很多小伙伴，其中不乏大佬。&lt;/li&gt;
+&lt;li&gt;对字节跳动这个公司的氛围、技术栈有了比较深的了解。&lt;/li&gt;
+&lt;li&gt;虽然很累，但整个活动我都很开心。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最后，感谢为此次夏令营奔波劳碌的蔓莲姐姐和其他工作人员及志愿者。&lt;/p&gt;
+&lt;p&gt;整个夏令营需要吐槽的地方有，希望明年能有所改善：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;开幕晚宴的饭菜比较难吃，不是太咸、就是太甜。&lt;/li&gt;
+&lt;li&gt;中午没有休息的地方。虽然坐着6k元的椅子，但是靠背没有放脖子和脑袋的地方，每天只能靠着墙凑活睡了。到现在我腰还因此疼。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="ByteDance" />
+        <category term="interview" />
+        <updated>2019-09-06T18:25:56.000Z</updated>
+    </entry>
+</feed>

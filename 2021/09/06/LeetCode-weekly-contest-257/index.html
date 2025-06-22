@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (5)Q4 (6)222 &#x2F; 12542YoungForest181:32:310:06:21 🐞10:12:180:24:281:17:31 🐞2久违的不用打卡了。之前打了3周卡，实在是遭不住了呀。工作之后，花在刷题上的精力和时间都少了很多。很多卡都是让npy打的，或者干脆抄一份。一份付出一份回报。学如逆水行舟，不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode weekly contest 257">
+<meta property="og:url" content="https://youngforest.github.io/2021/09/06/LeetCode-weekly-contest-257/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (5)Q4 (6)222 &#x2F; 12542YoungForest181:32:310:06:21 🐞10:12:180:24:281:17:31 🐞2久违的不用打卡了。之前打了3周卡，实在是遭不住了呀。工作之后，花在刷题上的精力和时间都少了很多。很多卡都是让npy打的，或者干脆抄一份。一份付出一份回报。学如逆水行舟，不">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-06T22:15:10.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.358Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="Competitive Programming">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2021/09/06/LeetCode-weekly-contest-257/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>LeetCode weekly contest 257 | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2021/09/06/LeetCode-weekly-contest-257/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode weekly contest 257
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-06 23:15:10" itemprop="dateCreated datePublished" datetime="2021-09-06T23:15:10+01:00">2021-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/09/06/LeetCode-weekly-contest-257/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/06/LeetCode-weekly-contest-257/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>222 / 12542</td>
+<td>YoungForest</td>
+<td>18</td>
+<td>1:32:31</td>
+<td>0:06:21  🐞1</td>
+<td>0:12:18</td>
+<td>0:24:28</td>
+<td>1:17:31  🐞2</td>
+</tr>
+</tbody>
+</table>
+<p>久违的不用打卡了。之前打了3周卡，实在是遭不住了呀。工作之后，花在刷题上的精力和时间都少了很多。很多卡都是让npy打的，或者干脆抄一份。一份付出一份回报。学如逆水行舟，不进则退。我周赛成绩下降确实是自己实力下降了。虽然我并不打算改变，并且慢慢接受了这个事实。但是我会坚持打周赛和呆在残酷群里，保持基本的做题手感即可，不需要对自己有太高要求。</p>
+<p>最近除了工作，花了很多时间在投资理财上。</p>
+<p>一方面学习相关知识。比如 关注了 喜欢玩基金的小瑜哥 的B站和微信公众号，还有 <strong>认真的天马</strong> 的B站和微信公众号。<br />
+关注了有大半年时间了。小瑜哥妥妥的韭菜一枚，关注他有3点原因：他每日更新复盘视频，十分坚持和勤劳；视频内容很开心（准确地说，看他亏钱很开心），可以当作娱乐区UP看；他犯了很多韭菜的误区和大忌，我们可以从他的失败中学习教训，而不需要自己去失败。<br />
+天马 是妥妥的知识型和保守型UP主，比较符合我的需求和观点。他微信公众号也是日更，每天早上8点准时更新。更新文章末尾有估值表，通过其可以买低估、卖高估。他的文章和视频也是以干货为主，值得反复学习和观看。<br />
+同时关注了 YouTube 的 “NaNa说美股“。主要讲的都是美股大盘的变动。我之前买过200元 纳指100 和 标普500. 涨了一些就卖了。错过了后面的行情。美股确实是长牛，和 A股没法比。现在虽然继续涨，但已经历史新高了，我也不敢再买了。<br />
+同时阅读投资书籍。之前读了<a target="_blank" rel="noopener" href="https://book.douban.com/subject/3576486/">《小狗钱钱》</a>，最近读完了<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26948036/">《小乌龟的投资智慧》</a>和<a target="_blank" rel="noopener" href="https://book.douban.com/subject/5382213/">《股票大作手回忆录》</a>。我在<a target="_blank" rel="noopener" href="https://www.douban.com/people/141835199/">豆瓣</a>均写简短的书评。<br />
+其中《小乌龟》是我觉得最有用的一本书，尤其是对于长期（10年以上）的投资。打算以后准备退休钱的时候按照其投资。现在因为要准备买房出国的事儿，暂时还没有足够的长期资金。短期基本都要用。</p>
+<p>另一方面进行实践。把自己的资产分为4个部分 灵活取用（现金，货币基金）、保守的债卷基金 和 固收（定期）、偏风险的股票基金（以宽基指数 和 行业指数 为主）。<br />
+半年前写过一个<a href="https://youngforest.github.io/2021/03/22/investment/">自己的投资故事</a>，现在，我可以大胆的说我的知识和经验更加丰富和专业了。虽然并没有收益多少，但工作之后随着本金的增加，投资理财变得更加重要了。<br />
+现在我总的股票仓位较低，大概不到 1/3，以其他3种保守投资为主。</p>
+<h2 id="1995-count-special-quadruplets"><a class="markdownIt-Anchor" href="#1995-count-special-quadruplets"></a> 1995. Count Special Quadruplets</h2>
+<p>签到题。暴力枚举即可。不过因为着急，没仔细看题，忽略了index 递增的要求，擅自加了排序，导致WA一发。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">countQuadruplets</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        seen = <span class="built_in">set</span>()</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># print(nums)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, n):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(j + <span class="number">1</span>, n):</span><br><span class="line">                    <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(k + <span class="number">1</span>, n):</span><br><span class="line">                        <span class="keyword">if</span> nums[i] + nums[j] + nums[k] == nums[l]:</span><br><span class="line">                            <span class="comment"># print((i, j, k, l))</span></span><br><span class="line">                            seen.add((i, j, k, l))</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(seen)</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(n^4),<br />
+空间复杂度: O(n)。</p>
+<h2 id="1996-the-number-of-weak-characters-in-the-game"><a class="markdownIt-Anchor" href="#1996-the-number-of-weak-characters-in-the-game"></a> 1996. The Number of Weak Characters in the Game</h2>
+<p>做这题的时候，我就觉的它有些像<a target="_blank" rel="noopener" href="https://leetcode.com/problems/russian-doll-envelopes/">354. Russian Doll Envelopes</a>。<br />
+先排序，按照一维递减，另一维递增的方式。<br />
+然后遍历，因为前面的都保证第一维大于等于当前了，只需要看前面第二维最大的就可以了。这也是为什么第二维排序要递增的原因，在第一维相等的时候，第二位大的要排后面，才不会影响遍历时的比较过程。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numberOfWeakCharacters</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; p)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(p.<span class="built_in">begin</span>(), p.<span class="built_in">end</span>(), [](<span class="type">const</span> <span class="keyword">auto</span>&amp; lhs, <span class="type">const</span> <span class="keyword">auto</span>&amp; rhs) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (lhs[<span class="number">0</span>] != rhs[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="keyword">return</span> lhs[<span class="number">0</span>] &gt; rhs[<span class="number">0</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> lhs[<span class="number">1</span>] &lt; rhs[<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> maxDefense = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; c : p) &#123;</span><br><span class="line">            <span class="keyword">if</span> (maxDefense &gt; c[<span class="number">1</span>]) &#123;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">            maxDefense = <span class="built_in">max</span>(maxDefense, c[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(nlogn),<br />
+空间复杂度: O(log n).</p>
+<h2 id="1997-first-day-where-you-have-been-in-all-the-rooms"><a class="markdownIt-Anchor" href="#1997-first-day-where-you-have-been-in-all-the-rooms"></a> 1997. First Day Where You Have Been in All the Rooms</h2>
+<p>本题幸运的发现了问题的本质，很快并且代码行数很少地解决了问题。<br />
+否则最后一题可能没时间Debug了。</p>
+<p>注意到<code>0 &lt;= nextVisit[i] &lt;= i</code>，因此奇数次的时候必然是要往回走/呆在原地。<br />
+偶数次只能向前走一步。意味着当我们第一次（其实可以扩展到奇数次）走到位置<code>i</code>时，之前的所有格子都必然走过偶数次。<br />
+因此状态转移方程是：<br />
+<code>dp(i) = dp(i - 1) + 1 + (dp(i - 1) - dp(nextVisit[i-1])) + 1</code>,<br />
+即 第一次走到前一个位置，走一步，退回到nextVisit[i-1]，再次走到前一个位置，再多走一步到当前位置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">firstDayBeenInAllRooms</span>(<span class="params">self, nextVisit: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        MOD = <span class="number">10</span>**<span class="number">9</span> + <span class="number">7</span></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">i</span>):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> (dp(i-<span class="number">1</span>) * <span class="number">2</span> + <span class="number">2</span> - dp(nextVisit[i-<span class="number">1</span>])) % MOD</span><br><span class="line">        n = <span class="built_in">len</span>(nextVisit)</span><br><span class="line">        <span class="keyword">return</span> dp(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(N),<br />
+空间复杂度: O(N).</p>
+<h2 id="1998-gcd-sort-of-an-array"><a class="markdownIt-Anchor" href="#1998-gcd-sort-of-an-array"></a> 1998. GCD Sort of an Array</h2>
+<p>观察交换规则，可以发现交换的位置其实是一个并查集，2个元素可以通过第3个元素互换。<br />
+问题转换成，原始位置要换到排序后的位置，需要经过一系列元素的交换，这些元素必须在同一个集（component）里。<br />
+在同一个集的充分必要条件是 gcd 大于 1。</p>
+<p>因此，一个直接的想法（但是显然会TLE）是：</p>
+<ol>
+<li>两两算gcd, 更新union-find；</li>
+<li>排序原始数组，找到对应的排序后的位置；</li>
+<li>根据dfs原则，判断哪些元素必须在同一集，然后用之前算好的union-find去验证。</li>
+</ol>
+<p>时间复杂度为: O(N^2 + N log N + N).</p>
+<p>复杂度瓶颈在第一步的计算union-find这里。我们尝试优化它。<br />
+观察数据规模：<code>2 &lt;= nums[i] &lt;= 10^5</code>，意味着我们可以计算每个元素的因子，然后把相同因子的元素通过因子unite起来。这里有个坑，我们不仅需要连接小因子，还需要把相应的大因子连接起来。可以把并查集的数组扩大，扩大后的位置用来表示因子，用一个+n偏移表示。<br />
+时间复杂度降为 O(N * sqrt(num)), 这里大概是<code>10^7</code>, 其实还是可能会超时的。这也是我本题7次罚时的原因，在TLE的边缘疯狂试探。<br />
+残酷群友提示：第四题和952. Largest Component Size by Common Factor 很像，要按因数去优化，不然会tle到死。不过我通过把局部数组移到类变量，这种常数优化AC了。<br />
+不过这种按因数优化的方式还是很值得学习的，可以把获得因数的复杂度从O(sqrt(num))降为O(log num)：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/gcd-sort-of-an-array/discuss/1445180/C%2B%2BPython-Union-Find-and-Sieve-and-Sorting-Clean-and-Concise">https://leetcode.com/problems/gcd-sort-of-an-array/discuss/1445180/C%2B%2BPython-Union-Find-and-Sieve-and-Sorting-Clean-and-Concise</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">UF</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; sz;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">int</span> comp_cnt;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; fa;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">UF</span>(<span class="type">int</span> _n): <span class="built_in">n</span>(_n), <span class="built_in">comp_cnt</span>(_n), <span class="built_in">fa</span>(_n), <span class="built_in">sz</span>(_n, <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">iota</span>(fa.<span class="built_in">begin</span>(), fa.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findset</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> fa[x] == x ? x : fa[x] = <span class="built_in">findset</span>(fa[x]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">unite</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">        x = <span class="built_in">findset</span>(x);</span><br><span class="line">        y = <span class="built_in">findset</span>(y);</span><br><span class="line">        <span class="keyword">if</span> (x != y) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sz[x] &lt; sz[y]) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">            fa[y] = x;</span><br><span class="line">            sz[x] += sz[y];</span><br><span class="line">            --comp_cnt;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">connected</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">        x = <span class="built_in">findset</span>(x);</span><br><span class="line">        y = <span class="built_in">findset</span>(y);</span><br><span class="line">        <span class="keyword">return</span> x == y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">    <span class="keyword">using</span> pii = pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;;</span><br><span class="line">    array&lt;pii, 50000&gt; index;</span><br><span class="line">    array&lt;<span class="type">int</span>, 50000&gt; reverseIndex;</span><br><span class="line">    array&lt;<span class="type">bool</span>, 50000&gt; visited;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">gcdSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// time: n log n + n ^ 2</span></span><br><span class="line">        <span class="comment">// (10**5)**0.5</span></span><br><span class="line">        <span class="comment">// = 316.22776601683796</span></span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            index[i] = &#123;nums[i], i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(index.<span class="built_in">begin</span>(), index.<span class="built_in">begin</span>() + n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            reverseIndex[index[i].second] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> maxX = *<span class="built_in">max_element</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="function">UF <span class="title">uf</span><span class="params">(n + maxX + <span class="number">10</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> a = <span class="number">0</span>; a &lt; n; ++a) &#123;</span><br><span class="line">            uf.<span class="built_in">unite</span>(a, n + nums[a]);</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> b = <span class="number">2</span>; b * b &lt;= nums[a]; ++b) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[a] % b == <span class="number">0</span>) &#123;</span><br><span class="line">                    uf.<span class="built_in">unite</span>(a, n + b);</span><br><span class="line">                    <span class="comment">// 有可能是倍数</span></span><br><span class="line">                    <span class="keyword">if</span> ((nums[a] / b) &gt; <span class="number">1</span>) uf.<span class="built_in">unite</span>(a, n + (nums[a] / b)); </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// N ^ 2, TLE</span></span><br><span class="line">        <span class="comment">// for (int a = 0; a &lt; n; ++a) &#123;</span></span><br><span class="line">        <span class="comment">//     for (int b = a + 1; b &lt; n; ++b) &#123;</span></span><br><span class="line">        <span class="comment">//         if (gcd(nums[a], nums[b]) &gt; 1) &#123;</span></span><br><span class="line">        <span class="comment">//             uf.unite(a, b);</span></span><br><span class="line">        <span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            visited[i] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[i]) &#123;</span><br><span class="line">                vector&lt;<span class="type">int</span>&gt; group;</span><br><span class="line">                <span class="keyword">while</span> (!visited[i]) &#123;</span><br><span class="line">                    visited[i] = <span class="literal">true</span>;</span><br><span class="line">                    group.<span class="built_in">push_back</span>(i);</span><br><span class="line">                    i = reverseIndex[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> root = uf.<span class="built_in">findset</span>(group[<span class="number">0</span>]);</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; group.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (root != uf.<span class="built_in">findset</span>(group[i])) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(N * sqrt(N) + N log N),<br />
+空间复杂度: O(N + max(nums[i])).</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/23/LeetCode-weekly-contest-255/" rel="prev" title="LeetCode weekly contest 255">
+      <i class="fa fa-chevron-left"></i> LeetCode weekly contest 255
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/07/LeetCode-biweekly-contest-60/" rel="next" title="LeetCode biweekly contest 60">
+      LeetCode biweekly contest 60 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1995-count-special-quadruplets"><span class="nav-number">1.</span> <span class="nav-text"> 1995. Count Special Quadruplets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1996-the-number-of-weak-characters-in-the-game"><span class="nav-number">2.</span> <span class="nav-text"> 1996. The Number of Weak Characters in the Game</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1997-first-day-where-you-have-been-in-all-the-rooms"><span class="nav-number">3.</span> <span class="nav-text"> 1997. First Day Where You Have Been in All the Rooms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1998-gcd-sort-of-an-array"><span class="nav-number">4.</span> <span class="nav-text"> 1998. GCD Sort of an Array</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2021/09/06/LeetCode-weekly-contest-257/";
+    this.page.identifier = "2021/09/06/LeetCode-weekly-contest-257/";
+    this.page.title = "LeetCode weekly contest 257";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

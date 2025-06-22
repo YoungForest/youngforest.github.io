@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"sublime\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2017/01/18/sublime-personlize/",
+            "url": "https://youngforest.github.io/2017/01/18/sublime-personlize/",
+            "title": "个性化sublime",
+            "date_published": "2017-01-18T15:27:15.000Z",
+            "content_html": "<p><strong>[摘要]</strong> <a href=\"https://www.sublimetext.com/\">sublime text3</a>是一款强大的editor, 我从大二下开始正式使用, 经过半年的不断摸索, 将sublime配置成为个性化的editor, 满足了我日常编码的大部分需求.</p>\n<h3 id=\"为不同的语言进行不同的配置\"><a class=\"markdownIt-Anchor\" href=\"#为不同的语言进行不同的配置\"></a> 为不同的语言进行不同的配置</h3>\n<p>首先, 打开该语言的任意个文件, <code>Sublime Text 3 -&gt; Preferences -&gt; Settings - Syntax Specific</code>进入该语言设置文件, 修改设置文件并保存即可.</p>\n<p><a href=\"http://mlo.io/blog/2012/08/23/language-specific-indents-sublime.html\">参考: 为不同语言设置不同缩进</a></p>\n<h3 id=\"color-scheme\"><a class=\"markdownIt-Anchor\" href=\"#color-scheme\"></a> Color Scheme</h3>\n<p>sublime text 3 默认的主题是<code>Monokai(dark)</code>, 感觉还是挺养眼的, 但缺点是markdown的支持特别差. 我还比较喜欢的另一个主题<code>Solarized(dark)</code>也是这样, 默认提供的<code>Solarized</code>与在vim中的体验相去甚远. 所以我通过<code>Package Contorl</code>安装了<code>Solarized Color Scheme</code>这个主题, 与vim对照如下, 还是比较养眼.</p>\n<p><img src=\"../assets/sublime-solarized-optimized.PNG\" alt=\"Solarized optimized for sublime\" /></p>\n<p><img src=\"../assets/vim-solarized.PNG\" alt=\"Solarized for vim\" /></p>\n",
+            "tags": [
+                "sublime"
+            ]
+        }
+    ]
+}

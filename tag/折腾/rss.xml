@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;折腾&#34; tag</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Sat, 27 Feb 2021 17:10:01 +0000</pubDate>
+        <lastBuildDate>Sat, 27 Feb 2021 17:10:01 +0000</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>interview</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>New Graduate</category>
+        <category>Hexo</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Ireland</category>
+        <category>Competitive Programming</category>
+        <category>Tech</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>Tencent</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>Windows</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>RIP</category>
+        <category>Weride</category>
+        <category>游记</category>
+        <category>投资</category>
+        <category>Life</category>
+        <category>法国签证</category>
+        <category>法签</category>
+        <category>申根签证</category>
+        <category>Side Project</category>
+        <category>年终总结</category>
+        <category>Amazon</category>
+        <category>China</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>你的灯亮着吗</category>
+        <category>埃隆·马斯克传</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>持续买进</category>
+        <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
+        <category>生死疲劳</category>
+        <category>深奥的简洁</category>
+        <category>迷人的温度</category>
+        <category>反脆弱</category>
+        <category>厚黑学</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>穷查理宝典</category>
+        <category>太白金星有点烦</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
+        <category>纳瓦尔宝典</category>
+        <category>时势</category>
+        <category>小Lin说</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2021/02/27/build-qBittorrent/</guid>
+            <title>MAC 手动编译 build qBittorrent</title>
+            <link>https://youngforest.github.io/2021/02/27/build-qBittorrent/</link>
+            <category>折腾</category>
+            <pubDate>Sat, 27 Feb 2021 17:10:01 +0000</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;起因&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#起因&#34;&gt;&lt;/a&gt; 起因&lt;/h2&gt;
+&lt;p&gt;最近毕业压力比较大，想在北邮人上下载个电影看看，放松下。却发现一直使用的做种下载工具qBittorrent无法打开了。在网上寻找了半天原因和解决方案。&lt;/p&gt;
+&lt;p&gt;最终确认是MAC更新的锅，qBittorrent 属于认证不完整的应用：&lt;a href=&#34;https://github.com/qbittorrent/qBittorrent/issues/11570&#34;&gt;Issue 11570&lt;/a&gt;。&lt;br /&gt;
+解决方案有二：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;禁掉APPLE的安全检查&lt;/li&gt;
+&lt;li&gt;自己手动编译一遍应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由于某些原因，我无法对MAC做过多的系统更改。只好尝试第二个解决方案。事实证明，手动编译qBittorrent并不简单，一下午就此度过，电影也不用看了。为方便有相同问题的同学参考，我记录我的解决方案于此。因为在我编译构建过程中，网上并没有类似的教程或是参考，而且确实有不少坑。&lt;/p&gt;
+&lt;h2 id=&#34;步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤&#34;&gt;&lt;/a&gt; 步骤&lt;/h2&gt;
+&lt;p&gt;如果之前没有QT环境，&lt;code&gt;./configure&lt;/code&gt;会报找不到&lt;code&gt;qmake&lt;/code&gt;的错误。需要配置相应的环境。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew install qt&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;export PATH=&amp;quot;/usr/local/opt/qt/bin:$PATH&amp;quot;&amp;#x27;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; PATH=&lt;span class=&#34;string&#34;&gt;&amp;quot;/usr/local/opt/qt/bin:&lt;span class=&#34;variable&#34;&gt;$PATH&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; LDFLAGS=&lt;span class=&#34;string&#34;&gt;&amp;quot;-L/usr/local/opt/qt/lib&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; CPPFLAGS=&lt;span class=&#34;string&#34;&gt;&amp;quot;-I/usr/local/opt/qt/include&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; PKG_CONFIG_PATH=&lt;span class=&#34;string&#34;&gt;&amp;quot;/usr/local/opt/qt/lib/pkgconfig&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果之前没有&lt;code&gt;boost&lt;/code&gt;环境，会报找不到&lt;code&gt;boostlib&lt;/code&gt;的错误：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;checking &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; boostlib &amp;gt;= 1.65 (106500)... configure: We could not detect the boost libraries (version 1.65 or higher). If you have a staged boost library (still not installed) please specify &lt;span class=&#34;variable&#34;&gt;$BOOST_ROOT&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; your environment and &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; not give a PATH to --with-boost option.  If you are sure you have boost installed, &lt;span class=&#34;keyword&#34;&gt;then&lt;/span&gt; check your version number looking &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &amp;lt;boost/version.hpp&amp;gt;. See http://randspringer.de/boost &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; more documentation.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;configure: error: Could not find Boost&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;需要安装&lt;code&gt;boost&lt;/code&gt;环境。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew install boost&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew install libtorrent-rasterbar&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果遇到报错，&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Error: Directory not empty @ dir_s_rmdir - /usr/local/opt/openssl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;可以删掉对应文件夹或是更改其所有人&lt;code&gt;chown&lt;/code&gt;.&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew cleanup&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;rm&lt;/span&gt; -rf /usr/local/Cellar/openssl/1.0.2q&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在我&lt;code&gt;brew install libtorrent-rasterbar&lt;/code&gt;后再&lt;code&gt;./configure&lt;/code&gt;时，仍然会发生该库版本不对的问题：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Requested &lt;span class=&#34;string&#34;&gt;&amp;#x27;libtorrent-rasterbar &amp;gt;= 1.2.11&amp;#x27;&lt;/span&gt; but version of libtorrent-rasterbar is 1.2.10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;因为&lt;code&gt;brew&lt;/code&gt;的formula中只有1.2.10，我们只好手动编译一个新版了。&lt;/p&gt;
+&lt;p&gt;去github找到libtorrent-rasterbar对应版本的源码：&lt;a href=&#34;https://github.com/arvidn/libtorrent/releases/tag/v1.2.11&#34;&gt;download&lt;/a&gt;。按照文档中的构建说明编译安装即可。&lt;/p&gt;
+&lt;p&gt;对于MAC来说：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew install boost-build boost openssl@1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;using darwin ;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt;~/user-config.jam&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;b2 crypto=openssl cxxstd=17 openssl-lib=/usr/local/Cellar/openssl@1.1/1.1.1j/lib openssl-include=/usr/local/Cellar/openssl@1.1/1.1.1j/include release&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;b2 crypto=openssl cxxstd=17 openssl-lib=/usr/local/Cellar/openssl@1.1/1.1.1j/lib openssl-include=/usr/local/Cellar/openssl@1.1/1.1.1j/include install --prefix=/usr/local&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; libtorrent_LIBS=&lt;span class=&#34;string&#34;&gt;&amp;quot;-L/usr/local/lib&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; libtorrent_CFLAGS=&lt;span class=&#34;string&#34;&gt;&amp;quot;-I/usr/local/include&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; openssl_CFLAGS=&lt;span class=&#34;string&#34;&gt;&amp;quot;-I/usr/local/Cellar/openssl@1.1/1.1.1j/include&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; openssl_LIBS=&lt;span class=&#34;string&#34;&gt;&amp;quot;-L/usr/local/Cellar/openssl@1.1/1.1.1j/lib&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;make &amp;amp;&amp;amp; make install&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;qbittorrent&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;!-- ```bash
+Undefined symbols for architecture x86_64:
+  &#34;_EVP_sha512&#34;
+``` --&gt;
+&lt;p&gt;除此之外，你还可以参考&lt;a href=&#34;https://github.com/qbittorrent/qBittorrent/wiki#compilation&#34;&gt;官网的另外一些编译构建文档&lt;/a&gt;. 这里提供了使用CMake或QT Creator的编译方案。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

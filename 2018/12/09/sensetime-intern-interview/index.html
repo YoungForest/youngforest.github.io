@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="上周给在商汤实习的同学发了简历，和HR约了本周四的面试，周五就又接到HR的电话，商议Offer的事宜。不得不说，商汤招聘的效率还是很高的。这也从另一个侧面反应出，其十分缺人手的事实。很多商汤的同学都在询问我，有没有其他的同学可以推荐过来实习。 商汤校友被誉为“北航实验室”。因为其招聘了大量的北航实习生，正式员工很多也是实习生直接转正的，本科的时候，就有几乎一个班都在那里实习。 而我面试的时候，推我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="商汤见习计算机视觉实习生">
+<meta property="og:url" content="https://youngforest.github.io/2018/12/09/sensetime-intern-interview/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="上周给在商汤实习的同学发了简历，和HR约了本周四的面试，周五就又接到HR的电话，商议Offer的事宜。不得不说，商汤招聘的效率还是很高的。这也从另一个侧面反应出，其十分缺人手的事实。很多商汤的同学都在询问我，有没有其他的同学可以推荐过来实习。 商汤校友被誉为“北航实验室”。因为其招聘了大量的北航实习生，正式员工很多也是实习生直接转正的，本科的时候，就有几乎一个班都在那里实习。 而我面试的时候，推我">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-12-09T11:29:41.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.387Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="intern">
+<meta property="article:tag" content="sensetime">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2018/12/09/sensetime-intern-interview/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>商汤见习计算机视觉实习生 | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/12/09/sensetime-intern-interview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          商汤见习计算机视觉实习生
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-09 11:29:41" itemprop="dateCreated datePublished" datetime="2018-12-09T11:29:41+00:00">2018-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/interview/" itemprop="url" rel="index"><span itemprop="name">interview</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/12/09/sensetime-intern-interview/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/09/sensetime-intern-interview/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>上周给在商汤实习的同学发了简历，和HR约了本周四的面试，周五就又接到HR的电话，商议Offer的事宜。不得不说，商汤招聘的效率还是很高的。这也从另一个侧面反应出，其十分缺人手的事实。很多商汤的同学都在询问我，有没有其他的同学可以推荐过来实习。<br />
+商汤校友被誉为“北航实验室”。因为其招聘了大量的北航实习生，正式员工很多也是实习生直接转正的，本科的时候，就有几乎一个班都在那里实习。<br />
+而我面试的时候，推我的是我的一个一直在那里实习的同学，一面的面试官是我大三编译实验课的助教，二三面的面试官也都是我的本科同学。可以说，如果你是北航的学生，那么进入商汤会比其他学校容易很多。</p>
+<p>我面的组是&quot;商汤研究院基础技术与工具组“，算是在研究院里偏工程的组了。总体的面试过程还是很硬核，很高能的。好几次我都以为自己不行了，好在面试官及时给出一些hint，帮助我走下去。下面，我记录一下3个面试的流程。</p>
+<h2 id="一面"><a class="markdownIt-Anchor" href="#一面"></a> 一面</h2>
+<p>一面面试官是此组的lead，今年刚刚毕业转正。我一直觉得他很眼熟，后来和同学交流过后才想起来，这不是2年前检查我编译实验的助教哥哥嘛！</p>
+<p>因为是lead给自己招人，所以一面总体上节奏很紧，内容也很充实。依次问了我职业规划、项目经历和2道算法题。<br />
+职业规划主要是与将来实习工作内容相关，从超级硬核的嵌入式和操作系统，到优化深度学习框架和库，再到优化计算机视觉的策略和算法。<br />
+项目经历主要问了我的2次实习和毕业设计，并问了我对之前的哪部分工作和实习最感兴趣。我当然把之前的实习都表扬了一边，然后再比较出自己对快手的实习最喜欢了。从和面试官的问答过程中我感受到，他对面试者是否真的想做某件工作、是否对其感兴趣很看重。</p>
+<p>算法题有2道：</p>
+<ol>
+<li>给出一个01串，给出0和1数目相等的最长子串的长度。比如’00100110011’的最长字串的长度为10.</li>
+<li>有1-n个路灯，对其进行n次操作，第i次操作为将编号是i的倍数的路灯状态取反。初始状态为都灭，问对于给定的n，最后有几盏灯是亮的。</li>
+</ol>
+<p>都不算很难的题目，虽然没能一下子解决，但最后都在面试官的hint下成功解决了。表现的不算太好，也不算很差。想解法的时候一度感觉自己要凉了，要丢人了。好在问题本身不是很难，经过更多的思考和尝试还是解答出来了。只有第一道题要求手写代码了，我用Python很快写完了。我用二维列表实现的桶，面试官指出，用Map难道不是更优雅吗？第二题解法过于简单，没必要写代码。</p>
+<p>经验总结就是，虽然我代码能力还行，LeetCode也刷了有100道Easy难度的题目，但并没有形成自己的一套解题的流程，也没有对于每一类问题的归纳总结，可以快速地找出合适的算法。<br />
+更多的是依靠灵感和尝试。比如第一道题，我最开始一筹莫展，但再尝试几次后，偶然想到可以先把前缀和计算出来(遇0减一，遇1加一)，之后就迎刃而解了。和LeetCode上一些字符串比较的问题很像。<br />
+这种依靠灵感和尝试的解决方案，首先不是每次都奏效，如果状态不好，可能就不行了；其次是不靠谱，做题的时候心里没谱，对于题目能不能成功解决心惊胆战的。<br />
+所以，在面对未来更多的面试和dream job之前，形成自己稳定可靠的解题流程是必要的。</p>
+<h2 id="二面"><a class="markdownIt-Anchor" href="#二面"></a> 二面</h2>
+<p>二面的面试官是我的本科同学，但平时交流并不多，他属于比较geek的类型。<br />
+这位同学刚开始比较不善言辞，问我一面都面了什么，会写什么。我判断他作为面试官的经历其实也不多，并不擅长。稍稍有些放松和欣喜。<br />
+不过很快，他真的是用技术教我重新做人了。慢慢熟悉起来之后，他也进入了面试的状态。从操作系统(从shell敲入命令到程序被执行中间发生了什么，进程的建立过程)问到编译器(编译的过程，每一步的细节)，从编译优化(循环展开)问到CPython的实现(全局变量的处理，Python是如何运行的)，看到我用过Django，又问我框架的实现，model的实现。问我哪门语言比较熟，我说Python，就问了我很多Python实现的问题。问我看过什么Python的大型项目的代码吗？我只好汗颜地说没有。</p>
+<p>整场面试除了刚开始几分钟比较轻松外，后面的节奏越来越快。每个问题都是越来越深入，直到我实在回答不上来为止。<br />
+应对这种类型的面试，我只能说，<strong>CSAPP</strong>和<strong>SICP</strong>的真的很重要。虽然我都只看了几章，但硬是凭着不深的记忆硬扯。比如Python的运行过程，我之前根本没有了解过。刚开始只说是解释运行，对方要求更详细些，从开始到运行完毕的过程是怎样的？我想Lisp也是解释语言，就把老早之前在SICP上看过的Lisp运行过程说了下。面试后我查了查Python的运行过程，惊喜地发现真的差不多。CSAPP对编译和进程有很深入的介绍，如果对这2章更熟一点，我面试时一定会更从容。没有读过大型项目的源码也是我的短板。说实话，真的没有多少人读过很多大型项目的源码。但是我们是要向大牛看齐的，多读读源码，才能成为更优秀的程序员。</p>
+<h2 id="三面"><a class="markdownIt-Anchor" href="#三面"></a> 三面</h2>
+<p>三面的面试官也是我的本科同学，稍微还熟悉些。最后一面由不同组的同学负责，被称为跨组面试。防止有组内私自招收不合格员工的情况发生。<br />
+既然比较熟，面试过程就比较轻松了。先是依次问了项目经历，之后又问了1道语言题和一道算法题。</p>
+<p>语言题涉及到Python的闭包，<br />
+就是理解</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">lambda</span> x: x + i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+<p>和</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">func1</span>(<span class="params">i</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> x: x + i</span><br><span class="line"></span><br><span class="line">[func1(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+<p>的区别。<br />
+不知道多少年前看过廖雪峰Python的教程上闭包相关的内容，只有些许印象，平时也不用。只记得变量<code>i</code>有时会变化，产生意料之外的结果，比如前者。好在在面试官的hint下有惊无险。</p>
+<p>算法题是关于DP的，<br />
+给定<code>n &lt;= 20, a_i &lt; 100, 整数s</code>，求解有多少种正负号的填法使得等式成立$$ \sum_i^{n} \pm a_i = s $$</p>
+<p>我给出解法后，面试官又问，构造表的时候s为负数时怎么办？</p>
+<h2 id="后记-感悟"><a class="markdownIt-Anchor" href="#后记-感悟"></a> 后记 | 感悟</h2>
+<p>有一个清晰的职业规划和技能方向是十分重要的。平时和师兄聊天的时候可以说自己也不知道做啥，不知道对啥最感兴趣。但面试时这样说肯定就gg了，最好最自己有比较清晰的认识，知道自己的兴趣，职业规划，当然这些和面试职位的需求相符那就更好了。如果不相符的话，大概率也会gg，搞不好还会被喷（参考我5月时面试face++的面试经历，在我的博客上可以找到<a href="https://youngforest.github.io/2018/08/14/face-interview/%EF%BC%89%E3%80%82">https://youngforest.github.io/2018/08/14/face-interview/）。</a></p>
+<p>今年算法岗大火，以至于供过于求。算法岗也处于程序员鄙视链的上游，薪水也比研发岗高一些。<br />
+但我结合自己的经历和体验，发现自己还是对写代码比较感兴趣，写出更优雅，performance更高的代码，满足用户的需求，产生impact。我就很开心和满足了。虽然做程序员很辛苦，但是我很开心。没必要追求别人认为好的职业(鄙视链大概是：研究员 &gt; 算法岗 &gt; 研发岗 &gt; 其他)。<br />
+我以后也会顺着研发这个方向规划自己的职业，学习必要技能的。</p>
+<p>我曾经给好友说过，“我想写一辈子代码”。现在仍然是这样，而且更加坚定了。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/intern/" rel="tag"># intern</a>
+              <a href="/tags/sensetime/" rel="tag"># sensetime</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/11/05/baidu-cloud-download-speed-hack/" rel="prev" title="突破百度云限速">
+      <i class="fa fa-chevron-left"></i> 突破百度云限速
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/12/2018-summary-and-2019-resolutions/" rel="next" title="2018年终总结 与 2019新年展望">
+      2018年终总结 与 2019新年展望 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text"> 一面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text"> 二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text"> 三面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0-%E6%84%9F%E6%82%9F"><span class="nav-number">4.</span> <span class="nav-text"> 后记 | 感悟</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2018/12/09/sensetime-intern-interview/";
+    this.page.identifier = "2018/12/09/sensetime-intern-interview/";
+    this.page.title = "商汤见习计算机视觉实习生";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

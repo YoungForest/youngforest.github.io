@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;键盘&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2021-10-13T11:39:31.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2021/10/13/Niz-plum-option-key-not-work/</id>
+        <title>Niz plum option key 在蓝牙模式下不响应</title>
+        <link rel="alternate" href="https://youngforest.github.io/2021/10/13/Niz-plum-option-key-not-work/"/>
+        <content type="html">&lt;p&gt;最近使用我心爱的Niz Plum 66键盘时遇到一个奇怪的bug。&lt;br /&gt;
+在蓝牙模式下，左option键失灵。因为我hammerspoon和其他应用的快捷键大量使用，虽然偶尔可以通过右option键短暂替代。但总不是回事儿，工作效率大幅降低。&lt;/p&gt;
+&lt;p&gt;这个bug的引入我也不确定是如何来的。大概是我Mac开始连2个外界显示器开始的。&lt;br /&gt;
+奇怪的是，有线模式并没有问题。而且我试过蓝牙断开重连也并没有修复。换个蓝牙通道也无济于事。&lt;/p&gt;
+&lt;p&gt;我在网络上进行了大量的搜索，并没有找到类似的问题和解决方案。最终还是在自己的不断摸索下成功修复了。因此记录下来，以防止未来再次遇到。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yunxii.cn/2019/08/12/plum%E9%9D%99%E7%94%B5%E5%AE%B9%E9%94%AE%E7%9B%9866%E9%94%AE%E8%AF%B4%E6%98%8E%E4%B9%A6/&#34;&gt;参考说明书&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;恢复出厂设置: 同时按住键盘四角的四个键5秒钟。&lt;/li&gt;
+&lt;li&gt;键盘开机，连接Mac。&lt;/li&gt;
+&lt;li&gt;重新配置键盘设置, 如我的如下:
+&lt;ul&gt;
+&lt;li&gt;Fn + Command 从默认的Windows键位切换回Mac&lt;/li&gt;
+&lt;li&gt;Fn + ] 降低按键延迟&lt;/li&gt;
+&lt;li&gt;Fn + 右Shift 将右shift转成&lt;code&gt;shift&lt;/code&gt;而非默认的 Up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;左Option键已成功修复。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;敬请享受自己的键盘吧！&lt;/p&gt;
+</content>
+        <category term="键盘" />
+        <updated>2021-10-13T11:39:31.000Z</updated>
+    </entry>
+</feed>

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;tex&#34; tag</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Tue, 27 Mar 2018 19:27:55 +0100</pubDate>
+        <lastBuildDate>Tue, 27 Mar 2018 19:27:55 +0100</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>interview</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>New Graduate</category>
+        <category>Hexo</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Ireland</category>
+        <category>Competitive Programming</category>
+        <category>Tech</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>Tencent</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>Windows</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>RIP</category>
+        <category>Weride</category>
+        <category>游记</category>
+        <category>投资</category>
+        <category>Life</category>
+        <category>法国签证</category>
+        <category>法签</category>
+        <category>申根签证</category>
+        <category>Side Project</category>
+        <category>年终总结</category>
+        <category>Amazon</category>
+        <category>China</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>你的灯亮着吗</category>
+        <category>埃隆·马斯克传</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>持续买进</category>
+        <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
+        <category>生死疲劳</category>
+        <category>深奥的简洁</category>
+        <category>迷人的温度</category>
+        <category>反脆弱</category>
+        <category>厚黑学</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>穷查理宝典</category>
+        <category>太白金星有点烦</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
+        <category>纳瓦尔宝典</category>
+        <category>时势</category>
+        <category>小Lin说</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2018/03/27/latex-problems/</guid>
+            <title>latex 使用过程中遇到的问题</title>
+            <link>https://youngforest.github.io/2018/03/27/latex-problems/</link>
+            <category>tex</category>
+            <pubDate>Tue, 27 Mar 2018 19:27:55 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;笔者毕业设计论文的撰写使用了latex工具，遇到了许多问题，在此总结一下。&lt;/p&gt;
+&lt;h2 id=&#34;pdf无法正常显示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pdf无法正常显示&#34;&gt;&lt;/a&gt; pdf无法正常显示&lt;/h2&gt;
+&lt;p&gt;###　问题描述&lt;br /&gt;
+经过xelatex编译成功地文档无法正常显示pdf图片，显示的是一片空白。&lt;/p&gt;
+&lt;h3 id=&#34;原因&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原因&#34;&gt;&lt;/a&gt; &lt;a href=&#34;http://tieba.baidu.com/p/4191389769?traceid=&#34;&gt;原因&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;pdf文件的版本问题。查看其版本为1.7，xelatex默认按照1.5进行编译。&lt;/p&gt;
+&lt;h3 id=&#34;解决方案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解决方案&#34;&gt;&lt;/a&gt; 解决方案&lt;/h3&gt;
+&lt;p&gt;xelatex %.tex，此处加上–output-driver=“xdvipdfmx -V7”。即修改msmake.bat&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;xelatex %mythesis%&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# =&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;xelatex --output-driver=&lt;span class=&#34;string&#34;&gt;&amp;quot;xdvipdfmx -V7&amp;quot;&lt;/span&gt; %mythesis%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

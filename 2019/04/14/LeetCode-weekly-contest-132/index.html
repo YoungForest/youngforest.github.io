@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本次比赛不难，但代码实现起来不易。不容易一次写到bug-free。考察的是用编程语言处理复杂的逻辑，和各种意外情况。比如 第3题，当前一个dp为0时，长度应该更新为2，除此之外，dp+1。第四题，在各种情况下寻找分隔符时，没有找到，应该如何处理。  RankNameScoreFinish TimeQ1 (4)Q2 (5)Q3 (5)Q4 (5)388 &#x2F; 4765YoungForest241:21">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode weekly contest 132">
+<meta property="og:url" content="https://youngforest.github.io/2019/04/14/LeetCode-weekly-contest-132/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="本次比赛不难，但代码实现起来不易。不容易一次写到bug-free。考察的是用编程语言处理复杂的逻辑，和各种意外情况。比如 第3题，当前一个dp为0时，长度应该更新为2，除此之外，dp+1。第四题，在各种情况下寻找分隔符时，没有找到，应该如何处理。  RankNameScoreFinish TimeQ1 (4)Q2 (5)Q3 (5)Q4 (5)388 &#x2F; 4765YoungForest241:21">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-14T10:55:04.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.317Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="Competitive Programming">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2019/04/14/LeetCode-weekly-contest-132/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>LeetCode weekly contest 132 | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/04/14/LeetCode-weekly-contest-132/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode weekly contest 132
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-14 11:55:04" itemprop="dateCreated datePublished" datetime="2019-04-14T11:55:04+01:00">2019-04-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/04/14/LeetCode-weekly-contest-132/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/14/LeetCode-weekly-contest-132/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本次比赛不难，但代码实现起来不易。不容易一次写到bug-free。考察的是用编程语言处理复杂的逻辑，和各种意外情况。比如 第3题，当前一个dp为0时，长度应该更新为2，除此之外，dp+1。第四题，在各种情况下寻找分隔符时，没有找到，应该如何处理。</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (4)</th>
+<th>Q2 (5)</th>
+<th>Q3 (5)</th>
+<th>Q4 (5)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>388 / 4765</td>
+<td>YoungForest</td>
+<td>24</td>
+<td>1:21:20</td>
+<td>0:15:54</td>
+<td>0:30:16</td>
+<td>0:38:05</td>
+<td>1:21:20</td>
+</tr>
+<tr>
+<td>大概需要1个小时内做完，才能进入前200。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>第4题由于一些边界条件，我调试了不少时间。我分析花这么长时间的原因。还是写代码写的少，对变量更新的边界条件不敏感。比如string::find没有找到的时候，其他各个坐标该如何更新。我就是由于没找到的时候，返回了npos(-1), <code>current_find_index</code>此时应该等于<code>end</code>，而不是继续在-1上加分隔符的长度。</p>
+<h2 id="1025-divisor-game"><a class="markdownIt-Anchor" href="#1025-divisor-game"></a> 1025. Divisor Game</h2>
+<p>一道找规律的题目。<br />
+Intution:<br />
+dp。 Solution(N) = true if any Solution(N’s divisor) is false, else false。<br />
+时间复杂度: O(N^2),<br />
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">divisorGame</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1, false</span></span><br><span class="line">        <span class="comment">// 2, 1 true</span></span><br><span class="line">        <span class="comment">// 3, false</span></span><br><span class="line">        <span class="comment">// 4, 1 true</span></span><br><span class="line">        <span class="comment">// 5, 1 false</span></span><br><span class="line">        <span class="comment">// 6. 3, true</span></span><br><span class="line">        <span class="comment">// 7, 1, false</span></span><br><span class="line">        <span class="comment">// 8, 1, true</span></span><br><span class="line">        <span class="comment">// 9, false</span></span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">dp</span><span class="params">(<span class="number">1001</span>, <span class="literal">false</span>)</span></span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= N; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i % j == <span class="number">0</span> &amp;&amp; dp[i - j] == <span class="literal">false</span>) &#123;</span><br><span class="line">                    dp[i] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[N];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>把1～9的结果输出之后发现了了不得的规律。试了一下，一行代码就搞定了。<br />
+用数学归纳法可以证明:<br />
+前提:<br />
+N 为奇数，false;<br />
+N 为偶数，true。</p>
+<ol>
+<li>如果N为偶数，取x=1，N-1为false。则N为True.</li>
+<li>如果N为奇数，它所有的因子也必为奇数，即N-x一定为偶数，true. 则N为False。</li>
+</ol>
+<p>时间复杂度: O(1),<br />
+空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">divisorGame</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1, false</span></span><br><span class="line">        <span class="comment">// 2, 1 true</span></span><br><span class="line">        <span class="comment">// 3, false</span></span><br><span class="line">        <span class="comment">// 4, 1 true</span></span><br><span class="line">        <span class="comment">// 5, 1 false</span></span><br><span class="line">        <span class="comment">// 6. 3, true</span></span><br><span class="line">        <span class="comment">// 7, 1, false</span></span><br><span class="line">        <span class="comment">// 8, 1, true</span></span><br><span class="line">        <span class="comment">// 9, false</span></span><br><span class="line">        <span class="keyword">return</span> N % <span class="number">2</span> != <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1026-maximum-difference-between-node-and-ancestor"><a class="markdownIt-Anchor" href="#1026-maximum-difference-between-node-and-ancestor"></a> 1026. Maximum Difference Between Node and Ancestor</h2>
+<p>Intution:<br />
+递归。由于possible difference可能是<code>| root-&gt;val - 左子树中的最小值 |</code>或<code>| root-&gt;val - 左子树中的最大值 |</code>或 减去右子树中的最大最小值，或 左右子树中Maximun Difference中的较大者。<br />
+所以递归函数返回3个值，分别是Maximun Different, 树中最小值，树中最大值。</p>
+<p>时间复杂度: O(N)，每个节点都会被递归调用一次。<br />
+空间复杂度: O(N)，树的高度，平均情况O(log N), 最差O(N)。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">// max_different, max, min</span></span><br><span class="line">    <span class="function">tuple&lt;<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>&gt; <span class="title">dfs</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;<span class="number">0</span>, <span class="number">-1</span>, <span class="number">100001</span>&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> l = <span class="built_in">dfs</span>(root-&gt;left);</span><br><span class="line">        <span class="keyword">auto</span> r = <span class="built_in">dfs</span>(root-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="built_in">max</span>(&#123;<span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(l), <span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(r), <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(l) == <span class="number">-1</span> ? <span class="number">-1</span> : <span class="built_in">abs</span>(root-&gt;val - <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(l)), <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(r) == <span class="number">-1</span> ? <span class="number">-1</span> : <span class="built_in">abs</span>(root-&gt;val - <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(r)), <span class="built_in">get</span>&lt;<span class="number">2</span>&gt;(l) == <span class="number">100001</span> ? <span class="number">-1</span> : <span class="built_in">abs</span>(root-&gt;val - <span class="built_in">get</span>&lt;<span class="number">2</span>&gt;(l)), <span class="built_in">get</span>&lt;<span class="number">2</span>&gt;(r) == <span class="number">100001</span> ? <span class="number">-1</span> : <span class="built_in">abs</span>(root-&gt;val - <span class="built_in">get</span>&lt;<span class="number">2</span>&gt;(r))&#125;), </span><br><span class="line">            <span class="built_in">max</span>(&#123;root-&gt;val, <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(l), <span class="built_in">get</span>&lt;<span class="number">1</span>&gt;(r)&#125;), </span><br><span class="line">            <span class="built_in">min</span>(&#123;root-&gt;val, <span class="built_in">get</span>&lt;<span class="number">2</span>&gt;(l), <span class="built_in">get</span>&lt;<span class="number">2</span>&gt;(r)&#125;)</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxAncestorDiff</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> ret = <span class="built_in">dfs</span>(root);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(ret);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1027-longest-arithmetic-sequence"><a class="markdownIt-Anchor" href="#1027-longest-arithmetic-sequence"></a> 1027. Longest Arithmetic Sequence</h2>
+<p>Intution:<br />
+DP.<br />
+最优子结构，其中dp[a][b]表示，以坐标a结尾，且差值为b的子序列的长度。<br />
+dp[i][A[i] - A[j]] = dp[j][A[i] - A[j]] == 0 ? 2 : dp[j][A[i] - A[j]] + 1。</p>
+<p>时间复杂度: O(N ^ 2 log N), 用unordered_map的话可以进一步降为O(N^2).<br />
+空间复杂度: O(N ^ 2). 最差情况下，两两差值均不同。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">longestArithSeqLength</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// n^2</span></span><br><span class="line">        <span class="type">int</span> ret = <span class="number">0</span>;</span><br><span class="line">        vector&lt;map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(A.<span class="built_in">size</span>()); <span class="comment">// diff, length</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; ++j) &#123;</span><br><span class="line">                dp[i][A[i] - A[j]] = dp[j][A[i] - A[j]] == <span class="number">0</span> ? <span class="number">2</span> : dp[j][A[i] - A[j]] + <span class="number">1</span>;</span><br><span class="line">                ret = <span class="built_in">max</span>(ret, dp[i][A[i] - A[j]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1028-recover-a-tree-from-preorder-traversal"><a class="markdownIt-Anchor" href="#1028-recover-a-tree-from-preorder-traversal"></a> 1028. Recover a Tree From Preorder Traversal</h2>
+<p>Intution:<br />
+递归构造Tree。难点在于字符串的处理，如何迅速并bug-free地实现。</p>
+<p>时间复杂度：O(N * M), 每个节点最多遍历一次字符串；<br />
+空间复杂度：O(N), 需要存储最后的树，递归深度最多为N，递归函数本身内存消耗O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">// [Begin, end)</span></span><br><span class="line">    <span class="function">TreeNode* <span class="title">dfs</span><span class="params">(string&amp; S, <span class="type">int</span> begin, <span class="type">int</span> end, <span class="type">int</span> depth)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; begin &lt;&lt; &quot; &quot; &lt;&lt; end &lt;&lt; &quot; &quot; &lt;&lt; depth &lt;&lt; endl;</span></span><br><span class="line">        <span class="function">string <span class="title">delimiter</span><span class="params">(depth + <span class="number">1</span>, <span class="string">&#x27;-&#x27;</span>)</span></span>;</span><br><span class="line">        <span class="type">int</span> first_dash = S.<span class="built_in">find</span>(<span class="string">&#x27;-&#x27;</span>, begin);</span><br><span class="line">        <span class="type">int</span> val_end_index = <span class="built_in">min</span>(end, first_dash == string::npos ? numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>() : first_dash);</span><br><span class="line">        TreeNode* ret = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(<span class="built_in">stoi</span>(S.<span class="built_in">substr</span>(begin, val_end_index - begin)));</span><br><span class="line">        <span class="comment">// 找到左右子树的分界点</span></span><br><span class="line">        <span class="type">int</span> left_begin = S.<span class="built_in">find</span>(delimiter, begin);</span><br><span class="line">        <span class="keyword">if</span> (left_begin == string::npos || left_begin &gt;= end) &#123;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> current_find_index = left_begin + delimiter.<span class="built_in">size</span>();</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;   &quot; &lt;&lt; current_find_index &lt;&lt; endl;</span></span><br><span class="line">        <span class="type">int</span> left_end = S.<span class="built_in">find</span>(delimiter, current_find_index);</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;   &quot; &lt;&lt; left_end &lt;&lt; endl;</span></span><br><span class="line">        current_find_index = (left_end == string::npos) ? end : left_end + delimiter.<span class="built_in">size</span>();</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;   &quot; &lt;&lt; current_find_index &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">while</span> (left_end != string::npos &amp;&amp; left_end &lt; end &amp;&amp; S[current_find_index] == <span class="string">&#x27;-&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (S[current_find_index] == <span class="string">&#x27;-&#x27;</span>) ++current_find_index;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot;   &quot; &lt;&lt; current_find_index &lt;&lt; endl;</span></span><br><span class="line">            left_end = S.<span class="built_in">find</span>(delimiter, current_find_index);</span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot;   &quot; &lt;&lt; left_end &lt;&lt; endl;</span></span><br><span class="line">            current_find_index = (left_end == string::npos) ? end : left_end + delimiter.<span class="built_in">size</span>();</span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot;   &quot; &lt;&lt; current_find_index &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        ret-&gt;left = <span class="built_in">dfs</span>(S, left_begin + delimiter.<span class="built_in">size</span>(), left_end &lt; end &amp;&amp; left_end != string::npos ? left_end : end, depth + <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> right_begin = current_find_index;</span><br><span class="line">        <span class="keyword">if</span> (right_begin &lt; end)</span><br><span class="line">            ret-&gt;right = <span class="built_in">dfs</span>(S, right_begin, end, depth + <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">recoverFromPreorder</span><span class="params">(string S)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dfs</span>(S, <span class="number">0</span>, S.<span class="built_in">size</span>(), <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>由于自己的实现虽然想法简单，但实现不易，而且容易写错。我自己就调试了很长时间。<br />
+于是去评论区找到了更 优的方案，Iterative Stack.</p>
+<p>时间复杂度: O(M), one pass.<br />
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">recoverFromPreorder</span><span class="params">(string S)</span> </span>&#123;</span><br><span class="line">        stack&lt;TreeNode*&gt; s;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; S.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="type">int</span> value = <span class="number">0</span>, level = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (i &lt; S.<span class="built_in">size</span>() &amp;&amp; S[i] == <span class="string">&#x27;-&#x27;</span>) &#123;</span><br><span class="line">                ++level;</span><br><span class="line">                ++i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (i &lt; S.<span class="built_in">size</span>() &amp;&amp; S[i] != <span class="string">&#x27;-&#x27;</span>) &#123;</span><br><span class="line">                value = value * <span class="number">10</span> + S[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">                ++i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (s.<span class="built_in">size</span>() &gt; level) &#123;</span><br><span class="line">                s.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">auto</span> node = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(value);</span><br><span class="line">            <span class="keyword">if</span> (!s.<span class="built_in">empty</span>() &amp;&amp; !s.<span class="built_in">top</span>()-&gt;left) &#123;</span><br><span class="line">                s.<span class="built_in">top</span>()-&gt;left = node;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                s.<span class="built_in">top</span>()-&gt;right = node;</span><br><span class="line">            &#125;</span><br><span class="line">            s.<span class="built_in">push</span>(node);</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode* ret;</span><br><span class="line">        <span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            ret = s.<span class="built_in">top</span>();</span><br><span class="line">            s.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>每周在这里总结一下最近生活的进展吧。</p>
+<ol>
+<li>Google summer of code 的申请放弃了。理由是看了一些感兴趣的organization，发现proposal的要求很高。自己很多都达不到。另一方面，自己开源项目的经历确实不够。能拿出手的仅仅是去年在Apache/HAWQ上的一次Contribution。今年可以多参加一些开源活动，丰富简历。</li>
+<li>微软的summer intern的笔试的后续结果还没有。Action Center的最新的更新还处于3月31号。</li>
+</ol>
+<p>最近在读Lippman的《Essential C++》，侯捷老师在翻译的序里有这么一段话，送给大家。</p>
+<blockquote>
+<p>有些人的学习，自练一身铜筋铁骨，可以在热带丛林中披襟斩棘，在莽莽草原中追奔逐北。有些人的学习，既未习惯大部头书，也未习惯严谨格调，更未习惯自修勤学，是温室里的一朵花，没有自强自立的本钱。</p>
+</blockquote>
+<p>不知道大家怎么样。我反思自己学习的过程，常常“趋利避害”，喜欢简单的皮毛，面对需要花费大量时间钻研的技术即浅尝辄止。而我也知道，作为一名“程序员”，真正拉开与别人距离的都是需要沉下心去钻研的。放眼其他领域，其实也是这样。由于大家都是理智的人，拥有惰性的人，简单的好事一定是趋之若鹜的，做的人多了，供需平衡一打破，门槛一定也日渐提高。<br />
+侯老师的话让我醍醐灌顶，自己也需每天反思自己的学习状态，即使纠正错误的思想和方法。这样才能走的更远，飞的更高。</p>
+<!-- 3. 交换项目准备的材料还差成绩单，而研究生的成绩单开具需要导师的签字。一直没找到老板。
+4. 商汤的实习一如既往的忙碌。学到的东西不少，但都是皮毛，没有深入的，不可替代的技术。还是自己的钻研程度不够吧。 -->
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/07/LeetCode-weekly-contest-131/" rel="prev" title="LeetCode weekly contest 131">
+      <i class="fa fa-chevron-left"></i> LeetCode weekly contest 131
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/04/21/LeetCode-weekly-contest-133/" rel="next" title="LeetCode weekly contest 133">
+      LeetCode weekly contest 133 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1025-divisor-game"><span class="nav-number">1.</span> <span class="nav-text"> 1025. Divisor Game</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1026-maximum-difference-between-node-and-ancestor"><span class="nav-number">2.</span> <span class="nav-text"> 1026. Maximum Difference Between Node and Ancestor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1027-longest-arithmetic-sequence"><span class="nav-number">3.</span> <span class="nav-text"> 1027. Longest Arithmetic Sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1028-recover-a-tree-from-preorder-traversal"><span class="nav-number">4.</span> <span class="nav-text"> 1028. Recover a Tree From Preorder Traversal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">5.</span> <span class="nav-text"> 后记</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2019/04/14/LeetCode-weekly-contest-132/";
+    this.page.identifier = "2019/04/14/LeetCode-weekly-contest-132/";
+    this.page.title = "LeetCode weekly contest 132";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一周一度的LeetCode weekly contest 开始啦。本周着实比之前有所进步，首先是对C++更加熟悉了，之前都是用Python写的。答题过程也更流畅了，差点做出来3道题目。   970. Powerful Integers 第一题只有3分，而且无法从算法上就行优化，brute approach即可。 需要注意的是corner case, 当x &#x3D;&#x3D; 1 or y &#x3D;&#x3D; 1时，1^n &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode weekly contest 118">
+<meta property="og:url" content="https://youngforest.github.io/2019/01/06/LeetCode-weekly-contest-118/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="一周一度的LeetCode weekly contest 开始啦。本周着实比之前有所进步，首先是对C++更加熟悉了，之前都是用Python写的。答题过程也更流畅了，差点做出来3道题目。   970. Powerful Integers 第一题只有3分，而且无法从算法上就行优化，brute approach即可。 需要注意的是corner case, 当x &#x3D;&#x3D; 1 or y &#x3D;&#x3D; 1时，1^n &#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-06T10:37:36.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.310Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="Competitive Programming">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2019/01/06/LeetCode-weekly-contest-118/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>LeetCode weekly contest 118 | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/01/06/LeetCode-weekly-contest-118/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode weekly contest 118
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-01-06 10:37:36" itemprop="dateCreated datePublished" datetime="2019-01-06T10:37:36+00:00">2019-01-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/01/06/LeetCode-weekly-contest-118/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/06/LeetCode-weekly-contest-118/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一周一度的LeetCode weekly contest 开始啦。本周着实比之前有所进步，首先是对C++更加熟悉了，之前都是用Python写的。答题过程也更流畅了，差点做出来3道题目。</p>
+<span id="more"></span>
+<h2 id="970-powerful-integers"><a class="markdownIt-Anchor" href="#970-powerful-integers"></a> 970. Powerful Integers</h2>
+<p>第一题只有3分，而且无法从算法上就行优化，brute approach即可。<br />
+需要注意的是corner case, 当x == 1 or y == 1时，1^n = 1.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">powerfulIntegers</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> bound)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; ; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> ans = <span class="built_in">pow</span>(x, i);</span><br><span class="line">            <span class="keyword">if</span> (ans &gt; bound) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; ; ++j) &#123;</span><br><span class="line">                <span class="type">int</span> ans_new = ans + <span class="built_in">pow</span>(y, j);</span><br><span class="line">                <span class="keyword">if</span> (ans_new &lt;= bound)</span><br><span class="line">                    res.<span class="built_in">insert</span>(ans_new);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span> (y == <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res_vec;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> a: res) &#123;</span><br><span class="line">            res_vec.<span class="built_in">push_back</span>(a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res_vec;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="969-pancake-sorting"><a class="markdownIt-Anchor" href="#969-pancake-sorting"></a> 969. Pancake Sorting</h2>
+<p>首先想到一种暴力方法，每次把最后一个元素排好序，类似选择排序的算法。<br />
+即先找到最后一个元素的位置，将其flip到第一个位置，然后再flip一次，放在最后一个位置。<br />
+不变式为，最后一个位置之后的元素都是排好序的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">flip</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, <span class="type">int</span> begin,<span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (; begin &lt; end; ++begin, --end) &#123;</span><br><span class="line">            <span class="type">int</span> temp;</span><br><span class="line">            temp = A[begin];</span><br><span class="line">            A[begin] = A[end];</span><br><span class="line">            A[end] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">pancakeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = A.<span class="built_in">size</span>(); i &gt; <span class="number">1</span>; --i) &#123;</span><br><span class="line">            <span class="type">int</span> index = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (A[j] == i) &#123;</span><br><span class="line">                    index = j;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;           </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (index + <span class="number">1</span> != i) &#123;</span><br><span class="line">                res.<span class="built_in">push_back</span>(index+<span class="number">1</span>);</span><br><span class="line">                <span class="built_in">flip</span>(A, <span class="number">0</span>, index);</span><br><span class="line">                res.<span class="built_in">push_back</span>(i);</span><br><span class="line">                <span class="built_in">flip</span>(A, <span class="number">0</span>, i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="971-flip-binary-tree-to-match-preorder-traversal"><a class="markdownIt-Anchor" href="#971-flip-binary-tree-to-match-preorder-traversal"></a> 971. Flip Binary Tree To Match Preorder Traversal</h2>
+<p>该题也是straight forward解决即可，不断递归判断每个子树是否可以flip。由于搞错了一个参数的含义(设计的是没问题的，但实现的时候有疏忽)，voyageIndex传入的是root的位置，flip返回的是预计下一个子树的根结点在voyage中的位置。<br />
+导致12:19才AC，超时20min。而且还WA了4次。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">flip</span><span class="params">(<span class="type">int</span> voyageIndex, TreeNode* root, vector&lt;<span class="type">int</span>&gt;&amp; voyage, vector&lt;<span class="type">int</span>&gt;&amp; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span> voyageIndex;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;root-&gt;val : &quot; &lt;&lt; root-&gt;val &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">if</span> (voyage[voyageIndex] != root-&gt;val) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;root-&gt;val : &quot; &lt;&lt; root-&gt;val &lt;&lt; endl;</span></span><br><span class="line">        <span class="type">int</span> voyageIndexEnd;</span><br><span class="line">        <span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (root-&gt;left != <span class="literal">nullptr</span> &amp;&amp; voyage[voyageIndex + <span class="number">1</span>] == root-&gt;left-&gt;val) &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (root-&gt;right != <span class="literal">nullptr</span> &amp;&amp; voyage[voyageIndex + <span class="number">1</span>] == root-&gt;right-&gt;val &amp;&amp; root-&gt;left != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            TreeNode *temp;</span><br><span class="line">            temp = root-&gt;left;</span><br><span class="line">            root-&gt;left = root-&gt;right;</span><br><span class="line">            root-&gt;right = temp;</span><br><span class="line">            flag = <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;voyageIndex: &quot; &lt;&lt; voyageIndex &lt;&lt; &quot; &quot;&lt;&lt; root-&gt;val &lt;&lt; endl;</span></span><br><span class="line">        voyageIndexEnd = <span class="built_in">flip</span>(voyageIndex + <span class="number">1</span>, root-&gt;left, voyage, res);</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;voyageIndexEnd: &quot; &lt;&lt; voyageIndexEnd &lt;&lt; endl; </span></span><br><span class="line">        <span class="keyword">if</span> (voyageIndexEnd == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        voyageIndexEnd = <span class="built_in">flip</span>(voyageIndexEnd, root-&gt;right, voyage, res);</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;voyageIndexEnd: &quot; &lt;&lt; voyageIndexEnd &lt;&lt; endl; </span></span><br><span class="line">        <span class="keyword">if</span> (voyageIndexEnd == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span> (flag) res.<span class="built_in">push_back</span>(root-&gt;val);</span><br><span class="line">        <span class="keyword">return</span> voyageIndexEnd;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">flipMatchVoyage</span><span class="params">(TreeNode* root, vector&lt;<span class="type">int</span>&gt;&amp; voyage)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; error = &#123;<span class="number">-1</span>&#125;;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">flip</span>(<span class="number">0</span>, root, voyage, res) == <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> error;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="972-equal-rational-numbers"><a class="markdownIt-Anchor" href="#972-equal-rational-numbers"></a> 972. Equal Rational Numbers</h2>
+<p>本题并没有考察任何算法，只考察的是数据结构抽象和基础的数学知识(对有理数Rational Numbers)的理解。<br />
+我也是看的题解才明白如此简单的。真的是一道难者不会，会者不难的题目。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Fraction</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> numerator, denominator;</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">gcd</span><span class="params">(<span class="type">long</span> <span class="type">long</span> x, <span class="type">long</span> <span class="type">long</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> y &gt; <span class="number">0</span> ? <span class="built_in">gcd</span>(y, x % y) : x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Fraction</span>(<span class="type">long</span> <span class="type">long</span> n, <span class="type">long</span> <span class="type">long</span> d) &#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> g = <span class="keyword">this</span>-&gt;<span class="built_in">gcd</span>(n, d);</span><br><span class="line">        <span class="keyword">this</span>-&gt;numerator = n / g;</span><br><span class="line">        <span class="keyword">this</span>-&gt;denominator = d / g;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Fraction</span>(string S) &#123;</span><br><span class="line">        <span class="comment">// &lt;IntegerPart&gt;&lt;.&gt;&lt;NonRepeatingPart&gt;&lt;(&gt;&lt;RepeatingPart&gt;&lt;)&gt;</span></span><br><span class="line">        <span class="keyword">auto</span> dotPosition = S.<span class="built_in">find</span>(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">        <span class="function">Fraction <span class="title">ans</span><span class="params">(<span class="number">0</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (dotPosition != string::npos) &#123;</span><br><span class="line">            <span class="function">Fraction <span class="title">integerPart</span><span class="params">(stol(S.substr(<span class="number">0</span>, dotPosition)), <span class="number">1</span>)</span></span>;</span><br><span class="line">            ans.<span class="built_in">add</span>(integerPart);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">auto</span> leftParenthese = S.<span class="built_in">find</span>(<span class="string">&quot;(&quot;</span>);</span><br><span class="line">            string nonRepeatingPartString;</span><br><span class="line">            <span class="keyword">if</span> (leftParenthese != string::npos) &#123;</span><br><span class="line">                nonRepeatingPartString = S.<span class="built_in">substr</span>(dotPosition + <span class="number">1</span>, leftParenthese - dotPosition - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">auto</span> repeatingPartString = S.<span class="built_in">substr</span>(leftParenthese + <span class="number">1</span>, S.<span class="built_in">size</span>() - leftParenthese - <span class="number">2</span>);</span><br><span class="line">                <span class="function">Fraction <span class="title">repeatingPart</span><span class="params">(stol(repeatingPartString), pow(<span class="number">10</span>, nonRepeatingPartString.size()) * (pow(<span class="number">10</span>, repeatingPartString.size()) - <span class="number">1</span>))</span></span>;</span><br><span class="line">                ans.<span class="built_in">add</span>(repeatingPart);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                nonRepeatingPartString = S.<span class="built_in">substr</span>(dotPosition + <span class="number">1</span>, S.<span class="built_in">size</span>() - dotPosition - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (nonRepeatingPartString.<span class="built_in">size</span>() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="function">Fraction <span class="title">nonRepeatingPart</span><span class="params">(stol(nonRepeatingPartString), pow(<span class="number">10</span>, nonRepeatingPartString.size()))</span></span>;</span><br><span class="line">                ans.<span class="built_in">add</span>(nonRepeatingPart);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            Fraction <span class="built_in">integerPart</span>(<span class="built_in">stol</span>(S.<span class="built_in">substr</span>(<span class="number">0</span>, S.<span class="built_in">size</span>())), <span class="number">1</span>);</span><br><span class="line">            ans.<span class="built_in">add</span>(integerPart);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">this</span>-&gt;numerator = ans.numerator;</span><br><span class="line">        <span class="keyword">this</span>-&gt;denominator = ans.denominator;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(Fraction b)</span> </span>&#123;</span><br><span class="line">        <span class="function">Fraction <span class="title">n</span><span class="params">(<span class="keyword">this</span>-&gt;numerator * b.denominator + <span class="keyword">this</span>-&gt;denominator * b.numerator, <span class="keyword">this</span>-&gt;denominator * b.denominator)</span></span>;</span><br><span class="line">        <span class="keyword">this</span>-&gt;numerator = n.numerator;</span><br><span class="line">        <span class="keyword">this</span>-&gt;denominator = n.denominator;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">equal</span><span class="params">(Fraction b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>-&gt;numerator == b.numerator &amp;&amp; <span class="keyword">this</span>-&gt;denominator == b.denominator;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isRationalEqual</span><span class="params">(string S, string T)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Fraction</span>(S).<span class="built_in">equal</span>(<span class="built_in">Fraction</span>(T));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main2</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Solution s;</span><br><span class="line">    <span class="comment">// auto res = s.isRationalEqual(&quot;0.(52)&quot;, &quot;0.5(25)&quot;);</span></span><br><span class="line">    <span class="function">Fraction <span class="title">a</span><span class="params">(<span class="string">&quot;0.(52)&quot;</span>)</span></span>;</span><br><span class="line">    cout &lt;&lt; a.numerator &lt;&lt; <span class="string">&quot; / &quot;</span> &lt;&lt; a.denominator &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="function">Fraction <span class="title">b</span><span class="params">(<span class="string">&quot;0.5(25)&quot;</span>)</span></span>;</span><br><span class="line">    cout &lt;&lt; b.numerator &lt;&lt; <span class="string">&quot; / &quot;</span> &lt;&lt; b.denominator &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="function">Fraction <span class="title">c</span><span class="params">(<span class="string">&quot;0.52(52)&quot;</span>)</span></span>;</span><br><span class="line">    cout &lt;&lt; c.numerator &lt;&lt; <span class="string">&quot; / &quot;</span> &lt;&lt; c.denominator &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>事实上，如果注意到对有理数的限制的话，还有更投机取巧的解法，具体可以参考<a target="_blank" rel="noopener" href="https://leetcode.com/problems/equal-rational-numbers/discuss/214203/JavaC++Python-Easy-Cheat">han神的解答</a>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Each part consists only of digits.</span><br><span class="line">The &lt;IntegerPart&gt; will not begin with 2 or more zeros.  (There is no other restriction on the digits of each part.)</span><br><span class="line">1 &lt;= &lt;IntegerPart&gt;.length &lt;= 4</span><br><span class="line">0 &lt;= &lt;NonRepeatingPart&gt;.length &lt;= 4</span><br><span class="line">1 &lt;= &lt;RepeatingPart&gt;.length &lt;= 4</span><br></pre></td></tr></table></figure>
+<p>我的代码很长。写的过程中，暴露出来对C<ins>类的实现十分不熟悉。本来还想用运算符重载来着，后来发现自己并不会。<br />
+看来，我还需要把&quot;C</ins> Primer&quot;的其他部分也花时间读一下。毕竟</p>
+<blockquote>
+<p>工欲善其事，必先利其器.<br />
+– 《论语·卫灵公》</p>
+</blockquote>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>最后附上我对“C++ Primer”的书评：</p>
+<blockquote>
+<p>C<ins>入门的神书。从大一开始就被无数人推荐，然而一直懒于去看，天真地认为学校学的那些C</ins>就够了。后来随着编程学习的继续深入，对C<ins>的敬畏之心渐渐建立起来。原来自己一直用的C</ins>根本就是假的，只是带类的C语言。尤其是学习cs107编程范式的时候，老师也一针见血地指出，大多数C<ins>程序员都是这样的。听到后羞愧难当，把C</ins>从简历里会的语言里都删去了。到了元旦假期，终于有勇气去重新入门C<ins>了。直接上手英文版，以用C</ins>刷LeetCode作为辅助，先看了前3章和9～12章（即基础部分、container 和 smart pointer）。看完之后真的是醍醐灌顶，后悔没有早点“学习”C++。由于本书面面俱到(实在太厚了），我短期内也没有计划全部看完。但是我认为，每读一章，都受益无穷。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/30/LeetCode-weekly-contest-117/" rel="prev" title="LeetCode weekly contest 117">
+      <i class="fa fa-chevron-left"></i> LeetCode weekly contest 117
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/01/13/LeetCode-weekly-contest-119/" rel="next" title="LeetCode weekly contest 119">
+      LeetCode weekly contest 119 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#970-powerful-integers"><span class="nav-number">1.</span> <span class="nav-text"> 970. Powerful Integers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#969-pancake-sorting"><span class="nav-number">2.</span> <span class="nav-text"> 969. Pancake Sorting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#971-flip-binary-tree-to-match-preorder-traversal"><span class="nav-number">3.</span> <span class="nav-text"> 971. Flip Binary Tree To Match Preorder Traversal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#972-equal-rational-numbers"><span class="nav-number">4.</span> <span class="nav-text"> 972. Equal Rational Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">5.</span> <span class="nav-text"> 后记</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2019/01/06/LeetCode-weekly-contest-118/";
+    this.page.identifier = "2019/01/06/LeetCode-weekly-contest-118/";
+    this.page.title = "LeetCode weekly contest 118";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"vscode\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2020/05/18/vscode-include-bits-stdc-h/",
+            "url": "https://youngforest.github.io/2020/05/18/vscode-include-bits-stdc-h/",
+            "title": "vscode include 万能头文件 bits/stdc++.h",
+            "date_published": "2020-05-18T09:41:29.000Z",
+            "content_html": "<p>最近经常打kickstart需要include万能头文件<code>bits/stdc++.h</code>，然而，我喜爱的编辑器vs code总是不能正确地找到该头文件，会有红色波浪线表示错误。作为程序员的我完全不能忍受，所以尝试解决该问题。在网络上搜了很多解决方案，大多数并不能直接地解决我的问题。所以，我总结自己的解决方案于此，方便各位取用。</p>\n<p>编程环境:<br />\ng++ 9.1.0, Mac 10.14.2, vs code 1.45.1</p>\n<p>总的思路是:</p>\n<ol>\n<li>寻找gcc编译器头文件的路径,</li>\n<li>更改VS Code设置，让其用上面的路径可以找到<code>bits/stdc++.h</code></li>\n</ol>\n<figure class=\"highlight bash\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">gcc-9 -v -E -x c++ -</span><br></pre></td></tr></table></figure>\n<p><img src=\"/images/vscode-include-bits-stdc-h/gcc-include-path.png\" alt=\"gcc include path\" /></p>\n<p>图中所示，就是编译器默认找的路径顺序。将这些路径全部加到vscode的includePath里。</p>\n<p><img src=\"/images/vscode-include-bits-stdc-h/vscode-include-path.png\" alt=\"vscode-include-path\" /></p>\n<p><img src=\"/images/vscode-include-bits-stdc-h/vscode-settings.png\" alt=\"vscode-settings\" /></p>\n<p>Done!</p>\n",
+            "tags": [
+                "vscode",
+                "gcc"
+            ]
+        }
+    ]
+}

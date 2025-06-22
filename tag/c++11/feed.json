@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"c++11\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2019/05/05/Effective-Modern-C/",
+            "url": "https://youngforest.github.io/2019/05/05/Effective-Modern-C/",
+            "title": "Effective Modern C++",
+            "date_published": "2019-05-05T19:27:23.000Z",
+            "content_html": "<p><a href=\"https://book.douban.com/review/10131903/\">我的书评</a></p>\n",
+            "tags": [
+                "C++",
+                "C++11"
+            ]
+        }
+    ]
+}

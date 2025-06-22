@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;bank&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2019-12-07T12:22:12.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2019/12/07/Europe-bank-accounts/</id>
+        <title>留学在欧洲，聊聊关于银行和钱的事儿</title>
+        <link rel="alternate" href="https://youngforest.github.io/2019/12/07/Europe-bank-accounts/"/>
+        <content type="html">&lt;p&gt;本学期有幸来比利时交换一学期，在“钱”上遇到很多困难，在同学的帮助下逐步克服。在此感谢帮助过我的一系列好友，并将自己的经验分享给大家，让更多的人收益。&lt;/p&gt;
+&lt;p&gt;在全球化的今天，来到欧洲，如何方便的花钱，省钱，是每个留学生关心的事情。在欧洲花钱基本可以分为2类：现金、刷卡。2者是相辅相成的关系，并不像在国内，一部手机走天下。&lt;br /&gt;
+我的经历是：在国内换了700欧的现金带过来，还带了一张招商银行的Visa全币种信用卡。因为办签证需要经济证明，我还提前转了3000多欧给学校的账户，学校之后每个月给我的账户返还666欧，作为生活费。来了之后，我分别办了 ING的Green Account，网上银行 Revult, Curve, Bunq, Monese; 配置了Google Pay 和 PayPal。并经过到欧洲到处自由行，结合不同的花钱方式，达到最便利和最省钱。&lt;/p&gt;
+&lt;p&gt;接下来，我分别介绍各种方式的办理方法和优缺点。&lt;/p&gt;
+&lt;h1 id=&#34;现金-和-刷卡&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#现金-和-刷卡&#34;&gt;&lt;/a&gt; 现金 和 刷卡&lt;/h1&gt;
+&lt;p&gt;在刚来比利时的时候，从国内带足够的现金是必要的，心里也有底。我带了700欧，事实证明，在有信用卡夹持的情况下，这些绰绰有余。比利时作为欧洲最发达的地区之一，刷卡几乎可以覆盖大多数消费场景。甚至一些大额的消费，如交房租，必须刷卡。幸好我信用卡的额度足够，在第一次交房租时，我还需要替同行的2个同学帮付。这时候就体现出国带信用卡的好处了。&lt;/p&gt;
+&lt;h2 id=&#34;现金&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#现金&#34;&gt;&lt;/a&gt; 现金&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/money/5euro.jpg&#34; alt=&#34;5Euro 纸币&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;在欧洲，身上带少量现金是必要的。尤其是50分的硬币，因为这里很多公共卫生间都是收费的，大多数是50分, 这可是救命钱。我建议多带些5欧的钱，面额越大，用处越小，越不方便。在某些消费场合，比如集市、地摊，也只能用现金。在欧洲某些相对欠发达地区，如希腊、意大利，不能刷卡的场合也比较多。西欧和北欧相对好很多，丹麦甚至上厕所都能刷卡。&lt;/p&gt;
+&lt;h2 id=&#34;信用卡&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#信用卡&#34;&gt;&lt;/a&gt; 信用卡&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/money/zhaohang-visa-credit.jpg&#34; alt=&#34;招商银行全币种Visa信用卡&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;信用卡最大的好处是方便，支持&lt;strong&gt;全币种&lt;/strong&gt;，人民币还款。还款可以直接向信用卡转账，所以父母在国内也可以很方便地还款。招商银行还根据你的消费地点，提醒你可以提高临时额度，满足境外的大额消费需求。招行也是相对容易给学生办下卡的一家银行，并且额度还不错。&lt;br /&gt;
+缺点是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;并不足够经济。具体的汇率可以在&lt;a href=&#34;https://www.kylc.com/huilv/whichcard.html?ccy=eur&#34;&gt;kylc&lt;/a&gt;网站上查到。招行信用卡的还款策略是：当你消费非美元的货币时，先根据Visa的汇率购入美元入账，过2天再根据招行的汇率换成人民币。虽然没有所谓的货币转换费（DCC），但其实招行的汇率并不好，尤其是相比 中国银行。相比下面介绍的网上银行，和私下换hui, 也不很经济。&lt;/li&gt;
+&lt;li&gt;容易多花钱。这是信用卡的通病，在国内也一样。每个月出账单和还款的时候，才发现自己竟然花了这么多钱。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果有想办该卡的小伙伴，可以找有卡的同学推荐，这样2个人都可以获得不错的礼物。&lt;/p&gt;
+&lt;h1 id=&#34;传统银行-ing&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#传统银行-ing&#34;&gt;&lt;/a&gt; 传统银行 ING&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;/images/money/ing.jpg&#34; alt=&#34;ING debit card&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;因为我门需要学校返还生活费，必须办理账户。在大多数银行办理账户都需要居留卡，只有在ING办理只需要临时的居留证明即可，也即15号文件。我办的是一种年费40欧的Green Account，每3个月扣10欧。后来听说可以办更实惠的Lion Account，这种账户面向25岁以下青年，还会给你40欧。&lt;br /&gt;
+ING办卡需要先预约，然后再开户。前前后后大概需要2周多时间才能拿到卡片。拿到卡片后，如果使用网上银行或是手机银行，还需要一个类似U盾的Reader。这个Reader按理说会和卡片一起寄给你。但是我们几个人都没有收到，后来特意从官网上又&lt;strong&gt;重新申请&lt;/strong&gt;了一个，大概3天后就得到了。&lt;/p&gt;
+&lt;p&gt;ING卡会给你一个比利时的账户和一张卡片。&lt;br /&gt;
+账户可以用来收钱和转账。同银行间转账一般即刻到账，跨行转账需要一个工作日。这个账户还可以绑定PayPal进行网上支付。&lt;br /&gt;
+卡片支持Maestro支付和Bancontact支付。2种支付渠道都比较有限，无法和Visa或MasterCard相比。尤其是Bancontact, 是比利时的一家公司控制的支付渠道，基本上出了比利时就不能用了。Bancontact也支持手机和线上支付，不过基本上也是比利时的公司和网站会使用。而且这张卡片没有CVV码，这意味着很多线上支付的场景无法使用。&lt;br /&gt;
+ING的刷卡消费也不是即时提醒的，需要等几个工作日。所以消费起来无法立刻知道扣了多少钱。作为国人可能心中不安，这里的人好像都习惯这种消费方式了，也不会出现多扣钱的情况。&lt;/p&gt;
+&lt;p&gt;我通常的处理方式是，把大钱放在ING账户里，转小钱给其他网上银行的账户，方便消费。&lt;/p&gt;
+&lt;p&gt;ING 还有个缺点是换汇的汇率比较差，大概会比市场上的汇率差个10%。而且需要提前预约。线上预约需要7个工作日，可以订面值，线下预约快一些，大概3个工作日，但不可以订面值，十分不方便。我换过一次匈牙利福林，拿了9张1万块就回来了（事实上只相当于大概300欧）。&lt;/p&gt;
+&lt;h1 id=&#34;网上银行&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网上银行&#34;&gt;&lt;/a&gt; 网上银行&lt;/h1&gt;
+&lt;p&gt;欧洲是银行业的起源地，银行业十分发达，金融经济等制度十分完善。除了传统的银行外，还有很多网上银行的存在。这些网上银行解决了传统银行的诸多痛点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;收费高&lt;/li&gt;
+&lt;li&gt;效率底&lt;/li&gt;
+&lt;li&gt;不方便&lt;/li&gt;
+&lt;li&gt;余额变更提醒不及时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;经台湾同胞Benjemin推荐和我的自己摸索，我共尝试了4种网上银行，它们功能和解决的需求各不相同。大家有旅行需求和线上消费需求的一定要尝试下，会发现欧洲的生活其实还是很方便的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Revult&lt;/li&gt;
+&lt;li&gt;Curve&lt;/li&gt;
+&lt;li&gt;Bunq&lt;/li&gt;
+&lt;li&gt;Monese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;各家网上银行的认证大同小异，都需要上传你在欧洲居住的证明，可以是 护照 + 签证，也可以是 居留卡。从我的经验看来，用居留卡办审核更容易通过些。&lt;/p&gt;
+&lt;h2 id=&#34;revolt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#revolt&#34;&gt;&lt;/a&gt; Revolt&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/money/revolut.jpg&#34; alt=&#34;Revolt debit card&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;名气最大的网上银行，会给你一个英国的账户，支持多种货币，每种货币之前兑换的话，使用很经济的interbank rate。可以免费预订一张实体卡片和多张虚拟卡。&lt;br /&gt;
+我开通了一张实体卡片和一张虚拟卡。&lt;br /&gt;
+虚拟卡可以用以网上支付，绑定Google Pay和 PayPal，和Curve（结合Curve使用有奇效）。&lt;br /&gt;
+实体卡片会邮寄给你，大约2周时间，使用起来和普通的卡片没有区别。&lt;br /&gt;
+实体卡片就有丢失和被盗的风险。我的卡片就在伊斯坦布尔取钱的时候被ATM吞了，好在网上银行都可以立刻冻结和挂失，没有造成更大的损失。我马上预定了第二张实体卡片，不过第二张就要花大概2欧了。&lt;/p&gt;
+&lt;p&gt;Revolt作为我的主力网上银行使用。我通常从ING转账到Revolt，保证它的余额在100～200欧。实体卡随身携带，方便消费。虚拟卡 绑定Google Pay，PayPal，Curve，发挥最大作用。&lt;br /&gt;
+去非欧元区旅行时，提前在APP上换好汇，再去机场的ATM取出来即可。可能有3.5%左右的取款费，但省掉了货币转换费（DCC），也比从ING换汇或机场换汇要好很多。&lt;/p&gt;
+&lt;p&gt;其突出的优点是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下卡快、开户方便&lt;/li&gt;
+&lt;li&gt;余额变化实时提醒&lt;/li&gt;
+&lt;li&gt;换汇汇率比较好&lt;/li&gt;
+&lt;li&gt;支持虚拟卡，有CVV码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://revolut.com/referral/?referral-code=seny00v6&#34;&gt;推广链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;n26&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#n26&#34;&gt;&lt;/a&gt; N26&lt;/h2&gt;
+&lt;p&gt;N26 是一家德国的网上银行，和Revult类似。也是给你一个德国的账户，支持多种货币消费，使用很经济的interbank rate。&lt;br /&gt;
+虚拟卡是免费的，可以绑定到Google Pay上消费。&lt;br /&gt;
+实体卡片需要10欧的邮寄费。我没有申请，只花钱买了张Revolut的卡。大多数情况下，Google Pay就够用了。实习卡只是以防极端情况下手机没电了。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://n26.com/r/seny1732&#34;&gt;N26 推广链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;curve&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#curve&#34;&gt;&lt;/a&gt; Curve&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/money/curve.png&#34; alt=&#34;Curve debit card&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Curve也是一家英国的网上银行，主打功能是 集合多张银行卡到一张卡，省去货币转化费。&lt;br /&gt;
+这也是我的第二主力卡。英国果然是金融中心，网上银行的先行者。&lt;br /&gt;
+它工作的原理是：你申请通过后，会给你发一张MasterCard的贮蓄卡。但并没有真正的银行账户，你可以在APP上绑定多张别的银行的卡片，只要有CVV码就可以。刷卡消费时，真正扣款的是后面的这张卡。Curve卡相当于是一个代理的功能。&lt;br /&gt;
+学过&lt;strong&gt;设计模式之代理模式&lt;/strong&gt;的同学应该都知道，有了这层代理，我们可以干很多事情。比如，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;免除货币转化费。消费外币时，用Curve进行购汇，实际扣除后面那张银行卡的货币类型就是它本身的货币类型了。即 将换汇的操作挪到Curve进行。Curve采用的也是很好的interbank rate。需要注意的一点是 千万不要周末使用换汇功能，周末伦敦货币交易市场关门，就产生0.5%-1.5%的货币转换费。&lt;/li&gt;
+&lt;li&gt;伪装信用卡到储蓄卡。信用卡有许多好处，少数场合需要信用的地方不能使用储蓄卡，如 租车、在 &lt;a href=&#34;https://www.booking.com/&#34;&gt;booking&lt;/a&gt;上担保。但也有一些场合只能用储蓄卡（我目前还没有遇到，国内支付宝消费的时候，倒是经常遇到不能用花呗的场景）。这时，就可以刷Curve卡，扣款的其实是信用卡。&lt;/li&gt;
+&lt;li&gt;出门只带一张卡。这也是其杀手特性。现代社会，很多人有多张银行卡，在不同的场景下需要使用不同的卡片，这时，只需要在APP里切换卡片就可以了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点是目前还不支持欧洲地区的Google Pay。无法和Google Pay结合实现更骚的操作。&lt;/p&gt;
+&lt;p&gt;推广码，可以赠送5英镑哦：&lt;br /&gt;
+I’m using @imaginecurve! All my cards in one + a great way to save &amp;amp; manage money. Sign up with code DL6LOLZE &amp;amp; get £5 &lt;a href=&#34;https://curve.page.link/HyuYB&#34;&gt;https://curve.page.link/HyuYB&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bunq&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bunq&#34;&gt;&lt;/a&gt; Bunq&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/money/bunq.png&#34; alt=&#34;Bunq travel card&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这是一家荷兰的银行。会给你一张银行卡（彩虹卡）和一个&lt;strong&gt;荷兰&lt;/strong&gt;的银行账户。主打的也是旅行时消除货币转换费。荷兰账户也可以干更多的事情，比如开通&lt;a href=&#34;https://www.ideal.nl/&#34;&gt;iDEAL Payment&lt;/a&gt;，这是荷兰版的Bancontact。一些荷兰的公司和网站用此支付手段有优惠。&lt;/p&gt;
+&lt;p&gt;另外改账户还有一个杀手特性：从信用卡中Top Up，也就是我们常说的套现。结合信用卡，可以发挥各种资产运作，如 扩大现金流。&lt;/p&gt;
+&lt;h2 id=&#34;monese&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#monese&#34;&gt;&lt;/a&gt; Monese&lt;/h2&gt;
+&lt;p&gt;同样是一家英国的网上银行，会给你一个英国的账户和一张银行卡。&lt;br /&gt;
+优点和其他网上银行类似，我也用的比较少，开发程度低。&lt;br /&gt;
+缺点是 只有英镑(GBP)和欧元(EUR) 的账户。&lt;/p&gt;
+&lt;h1 id=&#34;支付方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#支付方式&#34;&gt;&lt;/a&gt; 支付方式&lt;/h1&gt;
+&lt;p&gt;除了常见的用卡支付外，欧洲还流行2种支付方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Google Pay&lt;/li&gt;
+&lt;li&gt;Pay Pal&lt;br /&gt;
+一些功能有些像 支付宝。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;google-pay&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#google-pay&#34;&gt;&lt;/a&gt; Google Pay&lt;/h2&gt;
+&lt;p&gt;支持线下的非接触支付和线上支付（通常通过手机）。&lt;br /&gt;
+由于国内买的安卓手机，Google服务一般是被阉割的，是否能用还需要看你具体的手机型号。&lt;br /&gt;
+我使用的是 小米9，通过一些配置就可以正常使用Google Pay。&lt;br /&gt;
+只需要把系统默认的钱包从 “小米钱包”更改为“HEC钱包”即可。&lt;/p&gt;
+&lt;p&gt;线下刷手机真的是及其方便，不需要掏卡，甚至不需要解锁。比国内扫二维码 或 出示付款码 都更方便。&lt;/p&gt;
+&lt;p&gt;除此之外，Google Pay还可以集合各种会员卡。在欧洲这里和国内一样，许多超市会发行会员卡，有积分和打折。可以使用Google Pay录入会员卡的 条形码 或 二维码，付款时可以很方便地调出来，减少了保管和掏实体卡片的麻烦。&lt;/p&gt;
+&lt;h2 id=&#34;pay-pal&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pay-pal&#34;&gt;&lt;/a&gt; Pay Pal&lt;/h2&gt;
+&lt;p&gt;PayPal 主要解决的是线上支付问题。在欧洲买个机票，订个旅店，除了直接用卡支付外，很多支持且只支持PayPal。PayPal可以绑定ING的银行账户和网上银行的卡，也可以绑定信用卡，和支付宝很像。除了方便网上支付外，它还有个汇率上的优点。当你支付货币和卡里的钱不一样时，你可以选择通过PayPal直接换汇，可能会比银行的汇率要好。&lt;/p&gt;
+</content>
+        <category term="bank" />
+        <category term="money" />
+        <category term="Europe" />
+        <updated>2019-12-07T12:22:12.000Z</updated>
+    </entry>
+</feed>

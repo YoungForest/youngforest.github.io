@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"atom\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2017/04/08/atom-explore/",
+            "url": "https://youngforest.github.io/2017/04/08/atom-explore/",
+            "title": "atom 浅尝辄止",
+            "date_published": "2017-04-08T21:20:36.000Z",
+            "content_html": "<h2 id=\"配置代理\"><a class=\"markdownIt-Anchor\" href=\"#配置代理\"></a> 配置代理</h2>\n<p>笔者的需求是在markdown文档中插入LaTeX公式, atom默认的<code>markdown-preview</code>包无法满足要求. 经过搜索, 社区包<code>markdown-preview-plus</code>可是满足该需求.</p>\n<h3 id=\"atom包管理\"><a class=\"markdownIt-Anchor\" href=\"#atom包管理\"></a> <a href=\"http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages\">atom包管理</a></h3>\n<p>按照官方教程, 安装失败</p>\n<blockquote>\n<p>Installing “markdown-preview-plus@2.4.9” failed.</p>\n</blockquote>\n<p>在log中, 笔者发现了这样的请求</p>\n<blockquote>\n<p>GET <a href=\"https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz\">https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz</a></p>\n</blockquote>\n<p>笔者接着使用浏览器测试该网址, 无法相应, 猜测是被q了. 幸运的是, atom文档中考虑到使用代理的需要, 并给出了guide.</p>\n<p><a href=\"http://flight-manual.atom.io/getting-started/sections/installing-atom/#using-a-proxy\">配置apm的代理</a></p>\n<p>最后, <a href=\"http://blog.youngforest.me/2016/11/02/%E5%AE%9E%E7%8E%B0terminal%E4%BB%A3%E7%90%86/\">fq基本功</a>. 不解释.</p>\n<h3 id=\"具体命令\"><a class=\"markdownIt-Anchor\" href=\"#具体命令\"></a> 具体命令</h3>\n<figure class=\"highlight bash\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">sean@sean-OptiPlex-790:~$ apm config <span class=\"built_in\">set</span> https-proxy http://localhost:8123</span><br><span class=\"line\">sean@sean-OptiPlex-790:~$ apm config get https-proxy</span><br><span class=\"line\">http://localhost:8123/</span><br><span class=\"line\">sean@sean-OptiPlex-790:~$ apm install markdown-preview-plus</span><br><span class=\"line\">Installing markdown-preview-plus to /home/sean/.atom/packages ✓</span><br></pre></td></tr></table></figure>",
+            "tags": [
+                "atom"
+            ]
+        }
+    ]
+}

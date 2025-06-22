@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="赛后补的题解。 题目链接   Building Palindromes 给定长度为N的一个字符串，和Q个Query。每个query是一个range，可以得到字串。判断子串重新排列后是否回文。因为可以任意重排，所以子串中字符的顺序不重要，重要的是每个字符出现的频数。频数为奇数的字符数目为0或1，即可重排为回文串。 因为N和Q的规模较大，10^5。平方算法会超时。这里借用前缀和的思路，快速计算子串字符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kick start 2019 round B">
+<meta property="og:url" content="https://youngforest.github.io/2019/07/24/kick-start-2019-round-B/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="赛后补的题解。 题目链接   Building Palindromes 给定长度为N的一个字符串，和Q个Query。每个query是一个range，可以得到字串。判断子串重新排列后是否回文。因为可以任意重排，所以子串中字符的顺序不重要，重要的是每个字符出现的频数。频数为奇数的字符数目为0或1，即可重排为回文串。 因为N和Q的规模较大，10^5。平方算法会超时。这里借用前缀和的思路，快速计算子串字符">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-24T10:04:30.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.373Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="Competitive Programming">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://youngforest.github.io/2019/07/24/kick-start-2019-round-B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>kick start 2019 round B | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2019/07/24/kick-start-2019-round-B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kick start 2019 round B
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-24 11:04:30" itemprop="dateCreated datePublished" datetime="2019-07-24T11:04:30+01:00">2019-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/KickStart/" itemprop="url" rel="index"><span itemprop="name">KickStart</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/07/24/kick-start-2019-round-B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/24/kick-start-2019-round-B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>赛后补的题解。<br />
+<a target="_blank" rel="noopener" href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050eda">题目链接</a></p>
+<h2 id="building-palindromes"><a class="markdownIt-Anchor" href="#building-palindromes"></a> Building Palindromes</h2>
+<p>给定长度为N的一个字符串，和Q个Query。每个query是一个range，可以得到字串。判断子串重新排列后是否回文。因为可以任意重排，所以子串中字符的顺序不重要，重要的是每个字符出现的频数。频数为奇数的字符数目为0或1，即可重排为回文串。<br />
+因为N和Q的规模较大，<code>10^5</code>。平方算法会超时。这里借用前缀和的思路，快速计算子串字符频数。<br />
+时间复杂度为线性。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= T; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> N, Q;</span><br><span class="line">        cin &gt;&gt; N &gt;&gt; Q;</span><br><span class="line">        string s;</span><br><span class="line">        cin &gt;&gt; s;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">prefix</span>(N+<span class="number">1</span>);</span><br><span class="line">        prefix[<span class="number">0</span>] = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">26</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= N; ++j) &#123;</span><br><span class="line">            prefix[j] = prefix[j<span class="number">-1</span>];</span><br><span class="line">            ++prefix[j][s[j<span class="number">-1</span>] - <span class="string">&#x27;A&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; Q; ++j) &#123;</span><br><span class="line">            <span class="type">int</span> L, R;</span><br><span class="line">            cin &gt;&gt; L &gt;&gt; R;</span><br><span class="line">            <span class="type">const</span> <span class="keyword">auto</span>&amp; l = prefix[L<span class="number">-1</span>], r = prefix[R];</span><br><span class="line">            <span class="type">int</span> odd = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">26</span>; ++k) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((r[k] - l[k]) % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">                    ++odd;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (odd &lt;= <span class="number">1</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="energy-stones"><a class="markdownIt-Anchor" href="#energy-stones"></a> Energy Stones</h2>
+<p>本题的思想是 贪心 + 动态规划 (一种<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Knapsack_problem">0-1背包</a>)。更多背包问题，可以参考<a target="_blank" rel="noopener" href="https://comzyh.com/upload/PDF/Pack-PDF-Comzyh.pdf">背包九讲</a>。<br />
+难点在于，背包遍历的顺序需要用贪心的思路去排序的。</p>
+<p>对于S相同的小的测试集而言，L大的先去遍历。可以是的损失的能量最少。<br />
+对于S不同的大的测试集而言，2个石头<code>i</code>, <code>j</code>的顺序由<code>S_i * L_j</code>决定，如果<code>S_i * L_j &lt; S_j * L_i</code>，则先去<code>i</code>损失的能量更少。</p>
+<p>贪心的正确性也很容易去证明。如果我们有一个吃石头的序列，则 必然是按照能量损失较小的顺序去吃的。否则交换一下顺序，可以获得更大的能量。</p>
+<p>时间复杂度: O(N * N * S_i).<br />
+空间复杂度: O(N * N * S_i), 可以进一步优化到O(N * S_i)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tuple&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Stone</span> &#123;</span><br><span class="line">  <span class="type">int</span> s, e, l;</span><br><span class="line">  <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Stone &amp;p) <span class="type">const</span> &#123; <span class="keyword">return</span> s * p.l &lt; l * p.s; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> T;</span><br><span class="line">  cin &gt;&gt; T;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> iCase = <span class="number">1</span>; iCase &lt;= T; ++iCase) &#123;</span><br><span class="line">    <span class="type">int</span> N;</span><br><span class="line">    cin &gt;&gt; N;</span><br><span class="line">    <span class="function">vector&lt;Stone&gt; <span class="title">data</span><span class="params">(N + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> S_sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">      cin &gt;&gt; data[i].s &gt;&gt; data[i].e &gt;&gt; data[i].l;</span><br><span class="line">      S_sum += data[i].s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(data.<span class="built_in">begin</span>() + <span class="number">1</span>, data.<span class="built_in">end</span>());</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(N + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(S_sum + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> time = <span class="number">0</span>; time &lt;= S_sum; ++time) &#123;</span><br><span class="line">        <span class="keyword">if</span> (time &lt; data[i].s) &#123;</span><br><span class="line">          dp[i][time] = dp[i - <span class="number">1</span>][time];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          dp[i][time] =</span><br><span class="line">              <span class="built_in">max</span>(dp[i - <span class="number">1</span>][time],</span><br><span class="line">                  dp[i - <span class="number">1</span>][time - data[i].s] +</span><br><span class="line">                      <span class="built_in">max</span>(<span class="number">0</span>, data[i].e - data[i].l * (time - data[i].s)));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> time = <span class="number">0</span>; time &lt;= S_sum; ++time) &#123;</span><br><span class="line">      ans = <span class="built_in">max</span>(ans, dp[N][time]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; iCase &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="diverse-subarray"><a class="markdownIt-Anchor" href="#diverse-subarray"></a> Diverse Subarray</h2>
+<p>本题和第一题一样，都需要用到前缀和，但这一转换其实并不是很明显。<br />
+需要先把 types序列 转换成 增减事件序列，此时可以看出，增减事件的前缀和即是最后的我们需要优化的礼物数。<br />
+然后，为了快速获取最大前缀和，可以使用 [线段树](// <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/maximum-prefix-sum-given-range/">https://www.geeksforgeeks.org/maximum-prefix-sum-given-range/</a>) 这一工具。实现<code>O(log N)</code>效率的查询一个Range中最大的前缀和，和<code>O(log N)</code>更新线段树。</p>
+<p>总的时间复杂度: O(N log N)</p>
+<ul>
+<li>初始化线段树 O(N log N)</li>
+<li>对于N个起点，更新、查询 线段树 O(log N)</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;limits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SegmentTree</span> &#123;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="type">int</span> sum = numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">min</span>();</span><br><span class="line">    <span class="type">int</span> prefix = numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">min</span>();</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValid</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> sum != numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">min</span>() &amp;&amp;</span><br><span class="line">             prefix != numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">min</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    Node &amp;<span class="keyword">operator</span>=(<span class="type">const</span> Node &amp;rhs) &#123;</span><br><span class="line">      <span class="keyword">this</span>-&gt;sum = rhs.sum;</span><br><span class="line">      <span class="keyword">this</span>-&gt;prefix = rhs.prefix;</span><br><span class="line">      <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="type">const</span> <span class="type">int</span> MAX_N = <span class="number">1</span> &lt;&lt; <span class="number">17</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 存储线段树的全局数组</span></span><br><span class="line">  vector&lt;Node&gt; dat;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="comment">// 初始化</span></span><br><span class="line">  <span class="built_in">SegmentTree</span>(<span class="type">int</span> n_, <span class="type">int</span> a[]) &#123;</span><br><span class="line">    <span class="comment">// 为简单起见，把元素个数扩大到2的幂</span></span><br><span class="line">    n = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &lt; n_)</span><br><span class="line">      n *= <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把所有的值都设为INT_MAX</span></span><br><span class="line">    dat.<span class="built_in">resize</span>(<span class="number">2</span> * n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n_; ++i) &#123;</span><br><span class="line">      <span class="built_in">update</span>(i, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;d : dat) &#123;</span><br><span class="line">      cout &lt;&lt; <span class="string">&quot;&#123;&quot;</span> &lt;&lt; d.sum &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; d.prefix &lt;&lt; <span class="string">&quot;&#125;, &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 把第k个值(0-indexed)更新为a</span></span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">int</span> k, <span class="type">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 叶子节点</span></span><br><span class="line">    k += n - <span class="number">1</span>;</span><br><span class="line">    dat[k].sum = a;</span><br><span class="line">    dat[k].prefix = a;</span><br><span class="line">    <span class="comment">// 向上更新</span></span><br><span class="line">    <span class="keyword">while</span> (k &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      k = (k - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">      <span class="keyword">if</span> (!dat[<span class="number">2</span> * k + <span class="number">2</span>].<span class="built_in">isValid</span>())</span><br><span class="line">        dat[k] = dat[<span class="number">2</span> * k + <span class="number">1</span>];</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        dat[k].sum = dat[<span class="number">2</span> * k + <span class="number">1</span>].sum + dat[<span class="number">2</span> * k + <span class="number">2</span>].sum;</span><br><span class="line">        dat[k].prefix = <span class="built_in">max</span>(dat[<span class="number">2</span> * k + <span class="number">1</span>].prefix,</span><br><span class="line">                            dat[<span class="number">2</span> * k + <span class="number">1</span>].sum + dat[<span class="number">2</span> * k + <span class="number">2</span>].prefix);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 求[beg, end)的最小值</span></span><br><span class="line">  <span class="comment">// 后面的参数是为了计算起来方便而转入的。</span></span><br><span class="line">  <span class="comment">// k 是节点的编号, l, r表示这个节点对应的是[l, r)区间。</span></span><br><span class="line">  <span class="comment">// 在外部调用时，用query(index, beg, end, 0, n)</span></span><br><span class="line">  <span class="function">Node <span class="title">query</span><span class="params">(<span class="type">int</span> index, <span class="type">const</span> <span class="type">int</span> beg, <span class="type">const</span> <span class="type">int</span> end, <span class="type">int</span> l, <span class="type">int</span> r)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; &quot;(&quot; &lt;&lt; index &lt;&lt; &quot;, &quot; &lt;&lt; l &lt;&lt; &quot;, &quot; &lt;&lt; r &lt;&lt; &quot;);&quot; &lt;&lt; endl;</span></span><br><span class="line">    Node ret;</span><br><span class="line">    <span class="comment">// 如果[beg, end) 和 [l, r)不相交，则返回INT_MAX</span></span><br><span class="line">    <span class="keyword">if</span> (r &lt;= beg || end &lt;= l)</span><br><span class="line">      <span class="keyword">return</span> ret;</span><br><span class="line">    <span class="comment">// 如果[beg, end)完全包含[l, r), 则返回当前节点的值</span></span><br><span class="line">    <span class="keyword">if</span> (beg &lt;= l &amp;&amp; r &lt;= end)</span><br><span class="line">      <span class="keyword">return</span> dat[index];</span><br><span class="line">    <span class="type">int</span> mid = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">auto</span> vl = <span class="built_in">query</span>(index * <span class="number">2</span> + <span class="number">1</span>, beg, end, l, mid);</span><br><span class="line">    <span class="keyword">auto</span> vr = <span class="built_in">query</span>(index * <span class="number">2</span> + <span class="number">2</span>, beg, end, mid, r);</span><br><span class="line">    <span class="keyword">if</span> (!vr.<span class="built_in">isValid</span>()) &#123;</span><br><span class="line">      ret = vl;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!vl.<span class="built_in">isValid</span>()) &#123;</span><br><span class="line">      ret = vr;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      ret.sum = vl.sum + vr.sum;</span><br><span class="line">      ret.prefix = <span class="built_in">max</span>(vl.prefix, vl.sum + vr.prefix);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function">Node <span class="title">queryMin</span><span class="params">(<span class="type">const</span> <span class="type">int</span> a, <span class="type">const</span> <span class="type">int</span> b)</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> <span class="built_in">query</span>(<span class="number">0</span>, a, b, <span class="number">0</span>, n); &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// https://www.geeksforgeeks.org/maximum-prefix-sum-given-range/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> T;</span><br><span class="line">  cin &gt;&gt; T;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> iCase = <span class="number">1</span>; iCase &lt;= T; ++iCase) &#123;</span><br><span class="line">    <span class="type">int</span> N, S;</span><br><span class="line">    cin &gt;&gt; N &gt;&gt; S;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">A</span><span class="params">(N)</span>, <span class="title">events</span><span class="params">(N)</span></span>;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;&gt; types; <span class="comment">// type, &lt;index&gt;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">      cin &gt;&gt; A[i];</span><br><span class="line">      types[A[i]].<span class="built_in">push_back</span>(i);</span><br><span class="line">      <span class="keyword">if</span> (types[A[i]].<span class="built_in">size</span>() &lt;= S) &#123;</span><br><span class="line">        events[i] = <span class="number">1</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (types[A[i]].<span class="built_in">size</span>() == S + <span class="number">1</span>) &#123;</span><br><span class="line">        events[i] = -S;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        events[i] = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">SegmentTree <span class="title">st</span><span class="params">(N, events.data())</span></span>;</span><br><span class="line">    <span class="type">int</span> ans = numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">min</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">      <span class="keyword">auto</span> r = st.<span class="built_in">queryMin</span>(i, N);</span><br><span class="line">      ans = <span class="built_in">max</span>(ans, r.prefix);</span><br><span class="line">      <span class="keyword">auto</span> &amp;v = types[A[i]];</span><br><span class="line">      <span class="keyword">auto</span> it = <span class="built_in">lower_bound</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), i);</span><br><span class="line">      <span class="keyword">if</span> (it + S &lt; v.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        st.<span class="built_in">update</span>(*(it + S), <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (it + S + <span class="number">1</span> &lt; v.<span class="built_in">end</span>())</span><br><span class="line">          st.<span class="built_in">update</span>(*(it + S + <span class="number">1</span>), -S);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; iCase &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>练习了2场Kick Start，并实际参与1场。我发现自己的水平里Google的要求还差的远呢。Google的对算法的要求直逼ACM，竞赛选手会有很大优势的。我虽然水平有限，但还有时间可以进步。<br />
+过去有6年的比赛题，每年8轮。足够练习2个月时间了。</p>
+<p>周末一场2019 Round D，我会参加练手。争取拿到第1题的全部分数 和 后2题的小 case的分数。<br />
+加油，Forest！</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Competitive-Programming/" rel="tag"># Competitive Programming</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/07/21/LeetCode-weekly-contest-146/" rel="prev" title="LeetCode weekly contest 146">
+      <i class="fa fa-chevron-left"></i> LeetCode weekly contest 146
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/07/25/kick-start-2019-round-C/" rel="next" title="kick start 2019 round C">
+      kick start 2019 round C <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#building-palindromes"><span class="nav-number">1.</span> <span class="nav-text"> Building Palindromes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#energy-stones"><span class="nav-number">2.</span> <span class="nav-text"> Energy Stones</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diverse-subarray"><span class="nav-number">3.</span> <span class="nav-text"> Diverse Subarray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text"> 后记</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2019/07/24/kick-start-2019-round-B/";
+    this.page.identifier = "2019/07/24/kick-start-2019-round-B/";
+    this.page.title = "kick start 2019 round B";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;vscode&#34; tag</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Mon, 18 May 2020 10:41:29 +0100</pubDate>
+        <lastBuildDate>Mon, 18 May 2020 10:41:29 +0100</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>interview</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>New Graduate</category>
+        <category>Hexo</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Ireland</category>
+        <category>Competitive Programming</category>
+        <category>Tech</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>Tencent</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>Windows</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>RIP</category>
+        <category>Weride</category>
+        <category>游记</category>
+        <category>投资</category>
+        <category>Life</category>
+        <category>法国签证</category>
+        <category>法签</category>
+        <category>申根签证</category>
+        <category>Side Project</category>
+        <category>年终总结</category>
+        <category>Amazon</category>
+        <category>China</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>你的灯亮着吗</category>
+        <category>埃隆·马斯克传</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>持续买进</category>
+        <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
+        <category>生死疲劳</category>
+        <category>深奥的简洁</category>
+        <category>迷人的温度</category>
+        <category>反脆弱</category>
+        <category>厚黑学</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>穷查理宝典</category>
+        <category>太白金星有点烦</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
+        <category>纳瓦尔宝典</category>
+        <category>时势</category>
+        <category>小Lin说</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2020/05/18/vscode-include-bits-stdc-h/</guid>
+            <title>vscode include 万能头文件 bits/stdc++.h</title>
+            <link>https://youngforest.github.io/2020/05/18/vscode-include-bits-stdc-h/</link>
+            <category>vscode</category>
+            <category>gcc</category>
+            <pubDate>Mon, 18 May 2020 10:41:29 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;最近经常打kickstart需要include万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，然而，我喜爱的编辑器vs code总是不能正确地找到该头文件，会有红色波浪线表示错误。作为程序员的我完全不能忍受，所以尝试解决该问题。在网络上搜了很多解决方案，大多数并不能直接地解决我的问题。所以，我总结自己的解决方案于此，方便各位取用。&lt;/p&gt;
+&lt;p&gt;编程环境:&lt;br /&gt;
+g++ 9.1.0, Mac 10.14.2, vs code 1.45.1&lt;/p&gt;
+&lt;p&gt;总的思路是:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;寻找gcc编译器头文件的路径,&lt;/li&gt;
+&lt;li&gt;更改VS Code设置，让其用上面的路径可以找到&lt;code&gt;bits/stdc++.h&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;gcc-9 -v -E -x c++ -&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;/images/vscode-include-bits-stdc-h/gcc-include-path.png&#34; alt=&#34;gcc include path&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;图中所示，就是编译器默认找的路径顺序。将这些路径全部加到vscode的includePath里。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/vscode-include-bits-stdc-h/vscode-include-path.png&#34; alt=&#34;vscode-include-path&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/vscode-include-bits-stdc-h/vscode-settings.png&#34; alt=&#34;vscode-settings&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Done!&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

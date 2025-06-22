@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;laboratory&#34; category</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2017-01-14T12:39:23.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/</id>
+        <title>对CPU 内存 硬盘读写 网络 进行压力测试</title>
+        <link rel="alternate" href="https://youngforest.github.io/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/"/>
+        <content type="html">&lt;p&gt;近来实验室的师兄有个需求, 写4个小程序, 分别对内存, CPU, 硬盘, 网络进行压力测试, 要求测试程序有压力档位可以调, 比如压力可以分为大, 中, 小. 二话不说, 撸起袖子加油干. 需求很简单, 但实现起来却并不简单, 笔者边学习, 边写程序, 才勉强完成任务.&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;测试环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#测试环境&#34;&gt;&lt;/a&gt; 测试环境&lt;/h2&gt;
+&lt;p&gt;Ubuntu 14.04&lt;/p&gt;
+&lt;h2 id=&#34;cpu&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cpu&#34;&gt;&lt;/a&gt; CPU&lt;/h2&gt;
+&lt;p&gt;受&lt;a href=&#34;https://book.douban.com/subject/3004255/&#34;&gt;编程之美&lt;/a&gt;的第一章&amp;quot;让CPU占有率曲线听你指挥&amp;quot;启发, 我很快地完成了对CPU的压力测试程序.&lt;/p&gt;
+&lt;h4 id=&#34;基本思路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本思路&#34;&gt;&lt;/a&gt; 基本思路&lt;/h4&gt;
+&lt;p&gt;确定一个小周期, 笔者的周期设置为100, 这个值可以通过改变PIECE的值来改变, 周期为 100 * PIECE.&lt;/p&gt;
+&lt;p&gt;在每个周期中, stress%的时间用于一个死循环, 剩下 (100-stress)%的时间usleep(注意sleep和usleep的区别).&lt;/p&gt;
+&lt;h4 id=&#34;程序源代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序源代码&#34;&gt;&lt;/a&gt; 程序源代码&lt;/h4&gt;
+&lt;script src=&#34;https://gist.github.com/YoungForest/04080ae9ad932aa1fd7211c05e93b197.js&#34;&gt;&lt;/script&gt;
+&lt;h4 id=&#34;使用方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用方法&#34;&gt;&lt;/a&gt; 使用方法&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ 程序名 stress    &lt;span class=&#34;comment&#34;&gt;# 其中 0&amp;lt;=stress&amp;lt;=100&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 例子&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ gcc cpu_benchmark.c -o cpu_benchmark.out&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ cpu_benchmark.out 50&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;硬盘读写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬盘读写&#34;&gt;&lt;/a&gt; 硬盘读写&lt;/h2&gt;
+&lt;p&gt;对硬盘进行读写的压力测试, 我是分别通过两个程序实现的.&lt;/p&gt;
+&lt;h3 id=&#34;硬盘读操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬盘读操作&#34;&gt;&lt;/a&gt; 硬盘读操作&lt;/h3&gt;
+&lt;h4 id=&#34;基本思路-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本思路-2&#34;&gt;&lt;/a&gt; 基本思路&lt;/h4&gt;
+&lt;p&gt;与CPU的压力测试类似, 在一个周期(1s)里, 先从硬盘里读取特定大小(speed)的数据, 周期的剩余时间sleep.&lt;/p&gt;
+&lt;h4 id=&#34;程序源代码-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序源代码-2&#34;&gt;&lt;/a&gt; 程序源代码&lt;/h4&gt;
+&lt;script src=&#34;https://gist.github.com/YoungForest/9faaa24df53b3e78d27c18155ee26384.js&#34;&gt;&lt;/script&gt;
+&lt;h4 id=&#34;使用方法-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用方法-2&#34;&gt;&lt;/a&gt; 使用方法&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ python3 disk_read.py 硬盘名 level    &lt;span class=&#34;comment&#34;&gt;# 其中level可以是0, 1, 2, 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 例子&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ python3 disk_read.py /dev/vda 2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;硬盘写操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬盘写操作&#34;&gt;&lt;/a&gt; 硬盘写操作&lt;/h3&gt;
+&lt;h4 id=&#34;基本思想&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本思想&#34;&gt;&lt;/a&gt; 基本思想&lt;/h4&gt;
+&lt;p&gt;硬盘写操作的压力测试与读操作类似. 在一个周期内(1s)向一个文件中写入特定大小的数据, 之后删掉, 在周期的剩余时间内sleep.&lt;/p&gt;
+&lt;p&gt;为了向文件中写数据, 笔者使用了命令&lt;br /&gt;
+&lt;code&gt;dd if=/dev/zero of=/path/to/targetfile bs=1024k count=speed conv=fdatasync &amp;gt; /dev/null 2&amp;gt; /dev/null&lt;/code&gt;.&lt;br /&gt;
+该命令从/dev/zero中读取数据(其实是无效数据, /dev/zero 经常被作为初始化文件的数据源), 写入到/path/to/targetfile中. 为了不使&lt;code&gt;dd&lt;/code&gt;产生的错误输出和标准输出影响本程序的可读性, 使用重定向了. /dev/null 是一个黑洞设备, 可以向其输入任何数据而不会产生坏的影响.&lt;/p&gt;
+&lt;h4 id=&#34;程序源代码-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序源代码-3&#34;&gt;&lt;/a&gt; 程序源代码&lt;/h4&gt;
+&lt;script src=&#34;https://gist.github.com/YoungForest/0b3fdfbe15821b32991d9d48a9122290.js&#34;&gt;&lt;/script&gt;
+&lt;h4 id=&#34;使用方法-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用方法-3&#34;&gt;&lt;/a&gt; 使用方法&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ python3 disk_write.py 硬盘名 level    &lt;span class=&#34;comment&#34;&gt;# 其中level可以是0, 1, 2, 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 例子&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ python3 disk_write.py /dev/vda 2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;内存&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存&#34;&gt;&lt;/a&gt; 内存&lt;/h2&gt;
+&lt;h4 id=&#34;基本思想-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本思想-2&#34;&gt;&lt;/a&gt; 基本思想&lt;/h4&gt;
+&lt;p&gt;对内存的测试, 笔者的师兄向笔者介绍了&lt;a href=&#34;https://linux.die.net/man/8/memtester&#34;&gt;&lt;code&gt;memtester&lt;/code&gt;&lt;/a&gt;这个程序. 具体安装及使用方法:&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ sudo apt-get install memtester&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 从PHYSADDR处分配MEMORY大小的内存, 测试ITERATIONS次.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ sudo memtester [-p PHYSADDR] &amp;lt;MEMORY&amp;gt; [ITERATIONS]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;一般情况下, 不需要指定PHYSADDR, 因为可能将其他进程占用的内存破坏掉, 存在一定的危险性.&lt;/p&gt;
+&lt;p&gt;利用&lt;code&gt;memtester&lt;/code&gt;这个程序, 笔者进行简单加工, 就完成了需求.&lt;/p&gt;
+&lt;h4 id=&#34;程序源代码-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序源代码-4&#34;&gt;&lt;/a&gt; 程序源代码&lt;/h4&gt;
+&lt;script src=&#34;https://gist.github.com/YoungForest/73875763467c9cd1eeccad3496a18398.js&#34;&gt;&lt;/script&gt;
+&lt;h4 id=&#34;使用方法-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用方法-4&#34;&gt;&lt;/a&gt; 使用方法&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ python3 memory_benchmark.py &amp;lt;MEMORY&amp;gt; [ITERATIONS]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 例子&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ python3 memory_benchmark.py 3m 10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ python3 memory_benchmark.py 2m &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网络&#34;&gt;&lt;/a&gt; 网络&lt;/h2&gt;
+&lt;p&gt;师兄的需求是需要公网压力测试, 查找了很多资料, 大多数工具都是测网速的, 而不是可以指定上下行速率进行测试. 幸运的是, 找了几天之后, 终于找到一个工具&lt;code&gt;iperf&lt;/code&gt;可以勉强完成任务.&lt;/p&gt;
+&lt;h4 id=&#34;基本思路-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本思路-3&#34;&gt;&lt;/a&gt; 基本思路&lt;/h4&gt;
+&lt;p&gt;一台机器作为服务器, 另一台机器作为客户端, 客户端向服务器发包, 服务器接受, 连接使用UDP连接. 这也就是说, 如果没有服务器的话, 客户端仍然可以对网络上行进行压力测试; 但没有客户端, 服务器则没法对网络下行进行压力测试. 简单地说, 服务器(下行)是被动的, 客户端(上行)是主动的, 没人收包仍然可以狂发包, 但没人发包, 无论如何是收不到包的.&lt;/p&gt;
+&lt;h4 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;&lt;/a&gt; 安装&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ sudo apt-get install iperf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;使用方法-5&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用方法-5&#34;&gt;&lt;/a&gt; 使用方法&lt;/h4&gt;
+&lt;h5 id=&#34;服务器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务器&#34;&gt;&lt;/a&gt; 服务器&lt;/h5&gt;
+&lt;p&gt;启动服务器&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ iperf -s&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&#34;客户端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#客户端&#34;&gt;&lt;/a&gt; 客户端&lt;/h5&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ iperf -c 服务器ip -b 压力值&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ &lt;span class=&#34;comment&#34;&gt;# 比如:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ iperf -c 123.206.61.77 -b 11m&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考&#34;&gt;&lt;/a&gt; 参考&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.binarytides.com/linux-commands-monitor-network/&#34;&gt;Linux下如何监控网络&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://www.linux.com/learn/five-funny-little-linux-network-testers-and-monitors&#34;&gt;Linux网络测试和监控&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://tuxtweaks.com/2014/11/linux-network-speed-test/?utm_source=tuicool&amp;amp;utm_medium=referral&#34;&gt;[Linux] 局域网中测试网速&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="benchmark" />
+        <updated>2017-01-14T12:39:23.000Z</updated>
+    </entry>
+</feed>

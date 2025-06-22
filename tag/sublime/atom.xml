@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;sublime&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2017-01-18T15:27:15.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2017/01/18/sublime-personlize/</id>
+        <title>个性化sublime</title>
+        <link rel="alternate" href="https://youngforest.github.io/2017/01/18/sublime-personlize/"/>
+        <content type="html">&lt;p&gt;&lt;strong&gt;[摘要]&lt;/strong&gt; &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;sublime text3&lt;/a&gt;是一款强大的editor, 我从大二下开始正式使用, 经过半年的不断摸索, 将sublime配置成为个性化的editor, 满足了我日常编码的大部分需求.&lt;/p&gt;
+&lt;h3 id=&#34;为不同的语言进行不同的配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为不同的语言进行不同的配置&#34;&gt;&lt;/a&gt; 为不同的语言进行不同的配置&lt;/h3&gt;
+&lt;p&gt;首先, 打开该语言的任意个文件, &lt;code&gt;Sublime Text 3 -&amp;gt; Preferences -&amp;gt; Settings - Syntax Specific&lt;/code&gt;进入该语言设置文件, 修改设置文件并保存即可.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://mlo.io/blog/2012/08/23/language-specific-indents-sublime.html&#34;&gt;参考: 为不同语言设置不同缩进&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;color-scheme&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#color-scheme&#34;&gt;&lt;/a&gt; Color Scheme&lt;/h3&gt;
+&lt;p&gt;sublime text 3 默认的主题是&lt;code&gt;Monokai(dark)&lt;/code&gt;, 感觉还是挺养眼的, 但缺点是markdown的支持特别差. 我还比较喜欢的另一个主题&lt;code&gt;Solarized(dark)&lt;/code&gt;也是这样, 默认提供的&lt;code&gt;Solarized&lt;/code&gt;与在vim中的体验相去甚远. 所以我通过&lt;code&gt;Package Contorl&lt;/code&gt;安装了&lt;code&gt;Solarized Color Scheme&lt;/code&gt;这个主题, 与vim对照如下, 还是比较养眼.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/sublime-solarized-optimized.PNG&#34; alt=&#34;Solarized optimized for sublime&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/vim-solarized.PNG&#34; alt=&#34;Solarized for vim&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="sublime" />
+        <updated>2017-01-18T15:27:15.000Z</updated>
+    </entry>
+</feed>

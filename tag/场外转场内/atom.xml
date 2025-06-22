@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;场外转场内&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2024-01-25T15:28:10.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2024/01/25/QDII-off-exchange-to-on-exchange-arbitrage/</id>
+        <title>手把手教你 QDII 场外转场内 套利</title>
+        <link rel="alternate" href="https://youngforest.github.io/2024/01/25/QDII-off-exchange-to-on-exchange-arbitrage/"/>
+        <content type="html">&lt;p&gt;最近QDII场内基金高溢价大家似乎都听说了。溢价是说，场外基金的市场价格，高于场外基金的净值。疯狂的如 &lt;a href=&#34;https://xueqiu.com/S/SH513850&#34;&gt;美国50ETF（SH513850）&lt;/a&gt;曾达到30+点，&lt;a href=&#34;https://xueqiu.com/S/SH513520&#34;&gt;日经ETF（SH513520）&lt;/a&gt;20+点。普通的也有2个点。基金公司和券商都发布声明说，溢价过高的风险提示。高溢价会导致套利资金过来，然后抹平溢价。套利是说，在场外申购基金，然后转到场内，再卖出。在基金不涨不跌的情况下，至少可以有溢价的收益。正常情况下，因为市场本身的调节作用，对于基金规模大，交易量大的正常基金，如 很多 &lt;a href=&#34;https://xueqiu.com/S/SH510300&#34;&gt;沪深300ETF(SH510300)&lt;/a&gt;，溢价几乎没有。但QDII因为外汇等各种限制，有限购，规模小，交易量小等特点，套利基金并不能自由地无限进行，因此十分容易形成溢价。&lt;/p&gt;
+&lt;p&gt;我前几年恰好购买了一些QDII场外基金（&lt;a href=&#34;https://xueqiu.com/S/SH513500&#34;&gt;标普500ETF SH513500&lt;/a&gt;, &lt;a href=&#34;https://xueqiu.com/S/SH513100&#34;&gt;纳斯达克100 SH513100&lt;/a&gt;, &lt;a href=&#34;https://xueqiu.com/S/SH513050&#34;&gt;中概互联网ETF&lt;/a&gt;），之前都是直接在场外买卖的。没想过转场内交易。因为虽然套利门槛没那么高，但对于新手来说也不低，操作比平时购买基金难不少。最近的高溢价引起了我的极大兴趣，也在网上查了不少资料和教程，并没有想象中的那么容易和资料多。因此总结于此，方便后人参考。我以我的 场外”易方达e钱包“，场内 ”华泰券商 涨乐财富通“ 为例。其他的场外基金和场内券商，大同小异。之前我那么多QDII直接场外卖出，好亏呀。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查询基金TA账户。首页“易方达e钱包” “我的” “账户设置” ，最下面倒数第三项“基金账户”。深圳是98开头的12位数，上海99开头的12位数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立账户的场内场外连接。“涨乐财富通”，下方按钮 “账户”也面，最下面“更多功能”，搜索“场内外对应关系维护”。办理时间是交易日北京时间9.15-15.45。连接自己的账户即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;咨询证券营业部交易所席位号，深圳6位数，上海5位数。在券商App上可以得到自己营业部和客户经理的联系方式。我的客户经理开户的时候就加了我微信，所以我直接在微信上问了。回复很快。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在基金账户上转托管。必须登录官网，手机App不行。点击持有的基金份额后的“详情-转托管”。必须整数份额。2个工作日到券商账户。“涨乐财富通”也有“基金场外转场内”的服务，交易时间交易日北京时间9.30-15.00，但查不到我的基金份额。我理解，只有在券商账户上，场外买的基金才能在这里转。在基金公司或第三方（支付宝、银行、蛋卷雪球）上买的不行，只能去对应的地方转出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;到达场内后，就可以在二级股票市场直接卖掉了。相比在场外卖掉，多了溢价的收益。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="money" />
+        <category term="投资" />
+        <category term="QDII" />
+        <category term="套利" />
+        <category term="场外转场内" />
+        <category term="Investment" />
+        <updated>2024-01-25T15:28:10.000Z</updated>
+    </entry>
+</feed>

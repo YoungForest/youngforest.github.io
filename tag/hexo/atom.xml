@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;hexo&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2021-09-07T16:50:49.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2021/09/07/Setup-English-blog/</id>
+        <title>Hexo 创建中英文博客</title>
+        <link rel="alternate" href="https://youngforest.github.io/2021/09/07/Setup-English-blog/"/>
+        <content type="html">&lt;p&gt;自从来到亚马逊工作，接触英文和外国同事比较多。锻炼使用英语的需求越来越大。而且为了和国际接轨，我决定创建自己的英文博客。&lt;/p&gt;
+&lt;h2 id=&#34;步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤&#34;&gt;&lt;/a&gt; 步骤&lt;/h2&gt;
+&lt;p&gt;以中文博客为模版，创建英文博客。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cp&lt;/span&gt; -r Hexo HexoEn&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;删除HexoEn中没用的中文博文和资源。&lt;/p&gt;
+&lt;p&gt;在Github创建一个新repo：“en”.&lt;/p&gt;
+&lt;p&gt;修改HexoEn &lt;code&gt;_config.yml&lt;/code&gt;配置文件。注意部署分支为&lt;code&gt;gh-pages&lt;/code&gt;, 这个GitHub默认的pages分支，如果不同的话，需要去repo的&lt;code&gt;Setting-&amp;gt;Pages&lt;/code&gt;配置一下你自定义的分支:&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;language:&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;en&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;deploy:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;type:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;git&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;repo:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;git@github.com:YoungForest/en.git&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;branch:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;gh-pages&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;theme_config:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;menu:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;home:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-home&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;about:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/about/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-user&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;tags:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/tags/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-tags&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;categories:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/categories/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-th&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;archives:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/archives/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-archive&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;中文:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;https://youngforest.github.io&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-language&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 图标可以去该网站搜索：https://fontawesome.com/v4.7/icons/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;中文Hexo &lt;code&gt;_config.yml&lt;/code&gt;配置文件:&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;language:&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;zh-CN&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;en&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;theme_config:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;menu:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;home:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-home&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;about:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/about/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-user&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;tags:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/tags/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-tags&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;categories:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/categories/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-th&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;archives:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;/archives/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-archive&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;English:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;https://youngforest.github.io/en/&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-globe&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样中英文博客就可以在Menu互相外链了。&lt;/p&gt;
+&lt;p&gt;部署博客，看看效果如何。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo generate -d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;把HexoEn也推到远端，做保存和同步。注意，这里和deploy用的是同一个repo, 但是不同的分支。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git remote remove origin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git remote add origin git@github.com:YoungForest/en.git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git push -u origin master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;最后的效果&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最后的效果&#34;&gt;&lt;/a&gt; 最后的效果&lt;/h2&gt;
+&lt;p&gt;中文博客：&lt;a href=&#34;https://youngforest.github.io&#34;&gt;https://youngforest.github.io&lt;/a&gt;&lt;br /&gt;
+英文博客：&lt;a href=&#34;https://youngforest.github.io/en/&#34;&gt;https://youngforest.github.io/en/&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="Hexo" />
+        <updated>2021-09-07T16:50:49.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2021/02/25/Google-AdSense-for-hexo-next/</id>
+        <title>hexo next 配置 Google AdSense</title>
+        <link rel="alternate" href="https://youngforest.github.io/2021/02/25/Google-AdSense-for-hexo-next/"/>
+        <content type="html">&lt;h2 id=&#34;动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动机&#34;&gt;&lt;/a&gt; 动机&lt;/h2&gt;
+&lt;p&gt;最近由于看了“半佛仙人”的一些视频，我对钱更感兴趣了。除了拿出积蓄的一部分投资A股外，还想着怎么提高被动收入。自己一直有写博客的习惯，写了有5年多，攒了一百余篇文章。虽然每日浏览量只有几十，但苍蝇再小也是肉。参照大佬的一些经验，尝试着通过投放广告来牟利。&lt;br /&gt;
+一般网站的广告收入都是通过广告联盟接入的。简而言之就是，你只用出租广告位给广告联盟，他们在此投放针对用户的广告，然后按照流量给你钱。&lt;br /&gt;
+面向国际的主要就是Google AdSense了，国内也有一些，如百度。&lt;br /&gt;
+因为我本职是一名程序员，博客内容也不分国界，因此选择了Google AdSense作为广告商。Google AdSense的配置十分简单。&lt;/p&gt;
+&lt;h2 id=&#34;具体步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#具体步骤&#34;&gt;&lt;/a&gt; 具体步骤&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.google.com/adsense/&#34;&gt;注册新的AdSense账号&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;从Google AdSense上获取针对你网站的广告脚本，类似这样&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-ad-client&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;ca-pub-9*******6&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Option1:&lt;/p&gt;
+&lt;p&gt;将广告脚本粘贴在&lt;code&gt;./themes/next/layout/_partials/head/head-unique.swig&lt;/code&gt;的末尾。&lt;/p&gt;
+&lt;p&gt;然后进行验证。一般几天就会通过，发邮件通知到你。&lt;/p&gt;
+&lt;p&gt;通过审核后，需要去AdSense上进行配置。基本上把 &lt;strong&gt;自动广告&lt;/strong&gt; 打开即可。&lt;/p&gt;
+&lt;p&gt;Option2:&lt;/p&gt;
+&lt;p&gt;在博客根目录下创建&lt;code&gt;_config.next.yml&lt;/code&gt;文件，内容如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;custom_file_path:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;head:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;source/_data/head.swig&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;创建&lt;code&gt;source/_data/head.swig&lt;/code&gt;文件，内容如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-ad-client&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;ca-pub-9046219176772396&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Option2的优势在于对&lt;code&gt;next&lt;/code&gt;不侵入，方便用Github Action做CD.&lt;/p&gt;
+&lt;h3 id=&#34;adstxt-的设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#adstxt-的设置&#34;&gt;&lt;/a&gt; ads.txt 的设置&lt;/h3&gt;
+&lt;p&gt;该文件放置在 &lt;code&gt;./source/&lt;/code&gt; 下即可，和&lt;code&gt;_posts/&lt;/code&gt; 同级。&lt;br /&gt;
+&lt;code&gt;hexo d -g&lt;/code&gt;部署后，对应的文件就会自动部署到&lt;code&gt;/public/&lt;/code&gt;也就是你的博客上了。&lt;br /&gt;
+其他需要生成放置在博客根目录下的文件也是类似的处理。&lt;/p&gt;
+</content>
+        <category term="Hexo" />
+        <updated>2021-02-25T11:17:14.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2016/11/22/move-posts-from-cnblogs-to-Hexo/</id>
+        <title>将博客园中的随笔迁移到Hexo</title>
+        <link rel="alternate" href="https://youngforest.github.io/2016/11/22/move-posts-from-cnblogs-to-Hexo/"/>
+        <content type="html">&lt;p&gt;有关如何将其他博客上的文章迁移到&lt;code&gt;Hexo&lt;/code&gt;上, &lt;a href=&#34;https://hexo.io/docs/migration.html&#34;&gt;官方文档&lt;/a&gt;给出了一些指引. 我也是根据官方文档进行了将自己之前在博客园中的随笔迁移到新博客上的尝试. 这个过程中遇到过一些问题, 再此给出解决方法.&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;未安装迁移插件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#未安装迁移插件&#34;&gt;&lt;/a&gt; 未安装迁移插件&lt;/h2&gt;
+&lt;p&gt;博客园需要用rss迁移, 我根据文档, &lt;code&gt;$ npm install hexo-migrator-rss --save&lt;/code&gt; 安装了相关的插件, 但在运行迁移命令&lt;code&gt;$ hexo migrate rss &amp;lt;source&amp;gt;&lt;/code&gt;时, 报出了如下错误:&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;undefined migrator plugin is not installed.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Installed migrator plugins:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;For more &lt;span class=&#34;built_in&#34;&gt;help&lt;/span&gt;, you can check the online docs: http://hexo.io/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我在&lt;a href=&#34;http://stackoverflow.com/questions/34025076/when-running-hexo-migrate-rss-it-prompt-undefined-migrator-plugin-is-not-insta&#34;&gt;stackoverflow&lt;/a&gt;上找到了答案. 原来是需要在博客所在的目录下运行安装插件命令&lt;code&gt;$ npm install hexo-migrator-rss --save&lt;/code&gt;才可以. 看来还是我不熟悉nodejs的原因, 因为nodejs的包管理安装默认是局部的, 安装在当前文件夹下的.&lt;/p&gt;
+&lt;p&gt;在博客所在目录下重新安装&amp;quot;hexo-migrator-rss&amp;quot;插件, 问题解决.&lt;/p&gt;
+&lt;h2 id=&#34;迁移后的文章只有摘要和超链接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#迁移后的文章只有摘要和超链接&#34;&gt;&lt;/a&gt; 迁移后的文章只有摘要和超链接&lt;/h2&gt;
+&lt;p&gt;成功迁移后, 我兴奋地立即查看了迁移结果, 结果发现, 迁移的文章只有摘要和链接到博客园原文章的超链接, 就想下图一样. 这显然不是我想要的.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/13612111/20493077/5f16663e-b052-11e6-9a0f-256d35ca6110.png&#34; alt=&#34;迁移不完全&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;可以发现这是由于博客园导出的rss就是这样的. 通过观察, 我发现rss的链接只是一个包含文章信息的&lt;code&gt;xml&lt;/code&gt;文件, 也就是说, 如果我们可以得到有完整文章信息的&lt;code&gt;xml&lt;/code&gt;文件就可以了. 恰好博客园的备份功能可以提供这样的文件. 将rss链接换为备份文件的链接, 在运行迁移命令就可以将完整的文章迁移到Hexo了. 下面是完整迁移的效果.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/13612111/20493198/cc799b42-b052-11e6-9a0d-28f2e3f8e207.png&#34; alt=&#34;迁移完全&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;不过这样的迁移还是丢失了标签这样的信息, 不尽如人意.&lt;/p&gt;
+&lt;h2 id=&#34;奇怪的格式问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#奇怪的格式问题&#34;&gt;&lt;/a&gt; 奇怪的格式问题&lt;/h2&gt;
+&lt;p&gt;迁移成功后发现, 有两篇文章的格式变得很奇怪, 正文都很正常, 但引用, 插入代码的地方就会排版很乱. 但另一篇却很完美. 通过观察迁移的&lt;code&gt;xml&lt;/code&gt;文件内容发现, 那两篇文章的内容是html格式的, 而另一篇是&lt;code&gt;Markdown&lt;/code&gt;格式的. 这时我才想起, 最初的两篇随笔是用博客园推荐的&lt;code&gt;TinyMCE编辑器&lt;/code&gt;编写的, 后来才转投&lt;code&gt;Markdown&lt;/code&gt;的. 所以, Hexo当然不能完美的支持.&lt;/p&gt;
+</content>
+        <category term="Hexo" />
+        <updated>2016-11-22T01:42:23.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2016/11/02/Hexo-github-building-personal-blog/</id>
+        <title>Hexo + github 搭建个人博客</title>
+        <link rel="alternate" href="https://youngforest.github.io/2016/11/02/Hexo-github-building-personal-blog/"/>
+        <content type="html">&lt;h2 id=&#34;动机放在前面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动机放在前面&#34;&gt;&lt;/a&gt; 动机(放在前面)&lt;/h2&gt;
+&lt;p&gt;之前在cnblog上有个博客, 但是也不经常维护, 到现在满打满算也才有3篇随笔, 1个粉. 主要是因为自己没有写东西的习惯. 高中的时候记过一段时间的日记, 零零总总写了有大半本, 都是一些励志(自欺欺人)的东西, 写给自己看的.&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;首先, 之前感觉没有可写的, 但现在觉得可写的还是挺多的.自己这两年也折腾了不少东西.但折腾完后, 说实话忘得挺快的, 下次自己再弄或者给别人处理相同问题的时候, 基本上又要重新来过. 记下来下之后, 不管是自己日后需要, 还是给小伙伴们借鉴都是极有用的.&lt;/p&gt;
+&lt;p&gt;其次, 经高人安利, 经常写博客, 总结自己的工作学习, 和网络上的大牛们交流是学习计算机的基本技能. 写下来, 不仅可以系统地记录自己的学习历程, 供后日回顾, 或后人参考, 还可以督促自己坚持下来. 何乐而不为呢?&lt;/p&gt;
+&lt;p&gt;最后, 最近在搞编译课设的时候, 看到了&lt;a href=&#34;http://jcf94.com/2016/02/21/2016-02-21-pl0/&#34;&gt;这篇博客&lt;/a&gt;. 学习编译知识的同时, 感觉这个博客设计的很美观, 博主也很nice. 了解到使用&lt;code&gt;Hexo&lt;/code&gt;搭建的时候, 便有了自己搭建博客的想法, 现在也终于有时间实现了.&lt;/p&gt;
+&lt;h2 id=&#34;介绍hexo&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍hexo&#34;&gt;&lt;/a&gt; 介绍&lt;code&gt;Hexo&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;有很多专门用来搭建博客的框架, 如 WordPress, Jekyll, Octopress, Joomla等. 这些我都没有用过, 就不评论了. 事实上, 这是我第一次搭建博客的经历, 也算是一种猿粪吧, 遇上了Hexo.&lt;/p&gt;
+&lt;p&gt;这里我就自己的感受, 说说Hexo的优点:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;文档完善.&lt;/li&gt;
+&lt;li&gt;中文支持好, 包括文档各个方面. 事实上, 开发者就是中国人.&lt;/li&gt;
+&lt;li&gt;主题丰富.(作为一个看脸的人)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;搭建过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#搭建过程&#34;&gt;&lt;/a&gt; 搭建过程&lt;/h2&gt;
+&lt;h3 id=&#34;本地hexo安装配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#本地hexo安装配置&#34;&gt;&lt;/a&gt; 本地Hexo安装配置&lt;/h3&gt;
+&lt;p&gt;关于如何搭建, 我这里推荐官方的&lt;a href=&#34;https://hexo.io/zh-cn/docs/&#34;&gt;文档&lt;/a&gt;. 文档中说的已经很详细了, 而且遇到问题的话, 还可以直接在文档最下面的讨论区提问, 貌似遇到奇奇怪怪问题的人挺多的, 我遇到问题一般靠谷歌, 事实上, 很多时候都被谷歌引到讨论区或者文档中的&lt;a href=&#34;https://hexo.io/zh-cn/docs/troubleshooting.html&#34;&gt;Troubleshoot&lt;/a&gt;了.&lt;/p&gt;
+&lt;p&gt;我安装hexo使用的环境的Ubuntu14.04, 在安装hexo的时候&lt;code&gt;$ npm install -g hexo-cli&lt;/code&gt;, 会遇到这样的问题&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sh: 1: node: not found&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm WARN This failure might be due to the use of legacy binary &amp;quot;node&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm WARN For further explanations, please read&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;/usr/share/doc/nodejs/README.Debian&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;通过搜索可以很快找到解决问题的&lt;a href=&#34;http://stackoverflow.com/questions/21168141/cannot-install-packages-using-node-package-manager-in-ubuntu&#34;&gt;方法&lt;/a&gt;. 只需要&lt;code&gt;sudo apt-get install nodejs-legacy&lt;/code&gt;就可以了.&lt;/p&gt;
+&lt;p&gt;出现这个问题的原因是, debian社区发现, nodejs解释器的命令是&lt;code&gt;node&lt;/code&gt;. 然而, 这个命令和其他的包有命名空间的冲突, 比如 node 包中的 ax25-node. 所以, 他们决定把nodejs解释器命令改为&lt;code&gt;nodejs&lt;/code&gt;, 大家需要用到nodejs的解释器时需要&lt;code&gt;nodejs&lt;/code&gt;命令, 而不是&lt;code&gt;node&lt;/code&gt;. 但是这样就会带来向后兼容的问题, 之前的nodejs脚本中的命令还用的是&lt;code&gt;node&lt;/code&gt;, 其他Linux发行版也一直在用&lt;code&gt;node&lt;/code&gt;. 所以他们想了一个兼容的方法, 创建一个符号链接, 将/usr/bin/node链接到/usr/bin/nodejs. 这个工作又&lt;code&gt;node-legacy&lt;/code&gt;包来实现, 不推荐用户自己手动链接. 并且他们也规定, &#39;nodejs’的源代码包应该也提供一个&lt;code&gt;node-legacy&lt;/code&gt;的可执行包. 这样就&amp;quot;完美&amp;quot;地解决了兼容问题.&lt;/p&gt;
+&lt;p&gt;由此看来, debian系的发布版都会出现这个问题.&lt;/p&gt;
+&lt;h3 id=&#34;发布到github上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#发布到github上&#34;&gt;&lt;/a&gt; 发布到github上&lt;/h3&gt;
+&lt;p&gt;在github上新建一个库, 库名为 “{your name}.github.io”, 比如, 我的是&amp;quot;&lt;a href=&#34;http://youngforest.github.io&#34;&gt;youngforest.github.io&lt;/a&gt;&amp;quot;. 事实上, 以这样的格式命名, github会默认配置好你的&lt;code&gt;[GitHub Pages](https://pages.github.com/)&lt;/code&gt;, 默认发布到&amp;quot;https://{your name}.github.io/“, 比如我的就是&amp;quot;&lt;a href=&#34;https://youngforest.github.io/&#34;&gt;https://youngforest.github.io/&lt;/a&gt;”.&lt;br /&gt;
+当然, 如果你不这样命名的话, 自己也可去库中的设置中设置发布&lt;code&gt;GitHub Page&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;在本地的博客目录下, 运行&lt;code&gt;hexo generate&lt;/code&gt;, 即可在&lt;code&gt;public/&lt;/code&gt;中生成你博客的静态页面, 在这个文件夹下, 将其中所有的文件推到你在github上建好的库就可以了.&lt;/p&gt;
+&lt;p&gt;关于具体如何将本地的文件夹推到新建好的库, 在你新建好空库的时候, github应该会告诉你.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/13612111/20461580/713552e6-af3d-11e6-8078-a8c570e594af.png&#34; alt=&#34;initial a repository in github&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果你想要一条命令完成github部署的话, 可以参考&lt;a href=&#34;https://hexo.io/zh-cn/docs/deployment.html&#34;&gt;相关文档&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;我在运行&lt;code&gt;hexo deploy&lt;/code&gt;是会遇到这样的错误&lt;code&gt;ERROR Deployer not found: git&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;查了半天在&lt;a href=&#34;https://github.com/hexojs/hexo/issues/1040&#34;&gt;hexo的isuue&lt;/a&gt;中找到了解决方法. 在bash中运行如下命令就好了.&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-generator-index --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-generator-archive --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-generator-category --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-generator-tag --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-server --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-deployer-git --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-renderer-marked@0.2 --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-renderer-stylus@0.2 --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-generator-feed@1 --save&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-generator-sitemap@1 --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;当你在浏览器中访问你的&amp;quot;GitHub Pages&amp;quot;时, 就会看到部署好的博客.&lt;br /&gt;
+在&lt;a href=&#34;https://youngforest.github.io/&#34;&gt;这里&lt;/a&gt;可以看到我部署好的博客.&lt;/p&gt;
+</content>
+        <category term="Hexo" />
+        <updated>2016-11-02T22:32:55.000Z</updated>
+    </entry>
+</feed>

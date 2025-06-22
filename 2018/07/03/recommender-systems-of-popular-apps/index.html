@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"youngforest.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="应园子的邀请，我撰写了一篇关于现今流行的内容app的推荐系统的研究与讨论的文章。 事情的起因是这样： 园子同学是知乎的重度用户，曾经有一段时间每天画在刷知乎的时间超过1个小时，其三观深受知乎的影响。 我提醒她：  不是知乎主动改造你的三观； 而是根据知乎的推荐，你越刷只会加深自己的固有倾向。 比如，你是一个比较右的人，推荐系统最后推的都是你愿意点进去看的。 增加用户花在产品上的时间是推荐系统的目标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论推荐系统如何改造和奴役你的思维">
+<meta property="og:url" content="https://youngforest.github.io/2018/07/03/recommender-systems-of-popular-apps/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="应园子的邀请，我撰写了一篇关于现今流行的内容app的推荐系统的研究与讨论的文章。 事情的起因是这样： 园子同学是知乎的重度用户，曾经有一段时间每天画在刷知乎的时间超过1个小时，其三观深受知乎的影响。 我提醒她：  不是知乎主动改造你的三观； 而是根据知乎的推荐，你越刷只会加深自己的固有倾向。 比如，你是一个比较右的人，推荐系统最后推的都是你愿意点进去看的。 增加用户花在产品上的时间是推荐系统的目标">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youngforest.github.io/assets/zhihu-recommend-page.jpg">
+<meta property="og:image" content="https://youngforest.github.io/assets/zhihu-topic-page.jpg">
+<meta property="og:image" content="https://youngforest.github.io/assets/netease-music-homepage.jpg">
+<meta property="article:published_time" content="2018-07-03T21:55:55.000Z">
+<meta property="article:modified_time" content="2022-11-11T20:23:39.386Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="tech">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://youngforest.github.io/assets/zhihu-recommend-page.jpg">
+
+<link rel="canonical" href="https://youngforest.github.io/2018/07/03/recommender-systems-of-popular-apps/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script data-ad-client="ca-pub-9046219176772396" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9046219176772396"></script>
+
+  <title>论推荐系统如何改造和奴役你的思维 | YoungForest's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-88350169-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">YoungForest's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-english">
+
+    <a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2018/07/03/recommender-systems-of-popular-apps/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+      <meta itemprop="description" content="佛系更新；生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          论推荐系统如何改造和奴役你的思维
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-07-03 22:55:55" itemprop="dateCreated datePublished" datetime="2018-07-03T22:55:55+01:00">2018-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-11 20:23:39" itemprop="dateModified" datetime="2022-11-11T20:23:39+00:00">2022-11-11</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/07/03/recommender-systems-of-popular-apps/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/03/recommender-systems-of-popular-apps/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>应园子的邀请，我撰写了一篇关于现今流行的内容app的推荐系统的研究与讨论的文章。<br />
+事情的起因是这样：<br />
+园子同学是知乎的重度用户，曾经有一段时间每天画在刷知乎的时间超过1个小时，其三观深受知乎的影响。<br />
+我提醒她：</p>
+<pre><code>不是知乎主动改造你的三观；
+而是根据知乎的推荐，你越刷只会加深自己的固有倾向。
+比如，你是一个比较右的人，推荐系统最后推的都是你愿意点进去看的。
+增加用户花在产品上的时间是推荐系统的目标，而不是解决用户的问题￼。这样想想是不是挺可怕的
+这样的推荐系统就会导致，你最后只会看到你自己想看的东西。
+</code></pre>
+<p>园子顿时对推荐系统产生了浓厚的兴趣，并“报复”我：</p>
+<pre><code>要不我给你布置个任务吧：正好你最近在研究推荐系统，要不你查查资料，看看目前各大内容APP的推荐系统都是怎么做的，有哪些思路，整理成一篇文章怎么样￼￼
+</code></pre>
+<span id="more"></span>
+<p>促使我整理2个月来的实习经验，以及查阅大量公开的资料。<br />
+最后总结成为这篇对各大内容APP的推荐系统的研究文章。<br />
+本文的目标群众是每天与推荐系统打交道（使用各大内容APP）但又对推荐系统一无所知的同学。</p>
+<p>首先，根据app下载量和对园子的影响力，我认为各大内容APP有：</p>
+<ul>
+<li>知乎</li>
+<li>网易云音乐</li>
+<li>快手</li>
+<li>淘宝</li>
+</ul>
+<p>本文还用了很多来自：Netflix, Amazon, Google News, Facebook 这些国外大厂的例子对推荐系统加以说明，因为这些app虽然国内的同学不熟悉，但在推荐系统业内属于引领者。</p>
+<h2 id="推荐系统的2大类"><a class="markdownIt-Anchor" href="#推荐系统的2大类"></a> 推荐系统的2大类</h2>
+<h3 id="基于内容的过滤"><a class="markdownIt-Anchor" href="#基于内容的过滤"></a> 基于内容的过滤</h3>
+<p>此种过滤只依赖于item的数据。<br />
+在一个推荐系统中，被推荐和消费的就是item。如：在今日头条这样的新闻客户端中，一条新闻就是一个item，知乎 -&gt; 一个回答, 网易云音乐 -&gt; 一首歌，快手 -&gt; 一个短视频，淘宝 -&gt; 一个商品。<br />
+根据用户填的问卷信息（针对新用户。一般新用户进入一个应用时，都会选择一些自己的兴趣），或者根据用户的评分（针对老用户。老用户会产生很多评分，或其他action，体现出其兴趣），我们发现他对民谣感兴趣，我们就继续给他推荐其它他未消费过的民谣类歌曲。<br />
+这里的民谣只是一个tag，表示歌曲的类型，除此之外可能还有歌手名等tag可以利用。</p>
+<h3 id="协同过滤"><a class="markdownIt-Anchor" href="#协同过滤"></a> 协同过滤</h3>
+<p>此种过滤依赖于其他用户的数据。<br />
+协同过滤基于这样的假设：与你类似的用户喜欢的东西，可能你也会喜欢。<br />
+这就跟你朋友推荐给你的东西与一个陌生人推荐给你的东西相比，更可能符合你的胃口。因为你的朋友在一定程度上是与你相像的，拥有一些共同的标签。而且根据心理学的研究，人们也倾向于与与自己更像的人交朋友。<br />
+协同过滤的原理简而言之就是，找到一群和你相像的用户，把他们喜欢或消费过的item推荐给你。<br />
+“相像”的定义有许多，一般会综合考虑用户的基础信息和行为信息。<br />
+比如：<br />
+如果你的基础信息中有“年龄24岁，女人”，Netflix会把24岁的女人看的多的片子也推给你。<br />
+行为信息在Amazon上的体现就是：“你买了A，大部分买了A的用户，同样也买了B，你要不要买B”。</p>
+<p>在拥有大量用户的情况下，协同过滤的效果是要好于基于内容过滤的。<br />
+其原因可以归咎为：用户自己也不能很确切地定义自己喜欢什么，然而身体是诚实的。这也说成是大数据会比你更了解你。<br />
+而且在协同过滤的帮助下，app在你的调教下会越用越好用，越用越舒心，你花在其上的时间也越来越多。<br />
+这对老用户的粘性是非常强的。不过反过来说，当你一段时间不使用该app后，你会发现其推荐的内容就不像之前那样符合你的口味了。</p>
+<p>当然基于内容的过滤也是很有用。尤其是当一个新用户刚刚登录，还未产生很多动作和基础信息来找到和他相像的人的时候。<br />
+吸引新用户是十分重要的，特别是在一个app快速成长的时期。<br />
+相对应的，业内会有1日留存率，3日留存率，7日留存率还表示推荐系统对新用户的吸引程度。</p>
+<h2 id="各大内容app使用的推荐系统"><a class="markdownIt-Anchor" href="#各大内容app使用的推荐系统"></a> 各大内容app使用的推荐系统</h2>
+<p>各个厂用的主要推荐算法基本都属于协同过滤的那一大类，由于应用场景的不尽相同（新闻、商品、音乐、电影），使用的算法也不一样。<br />
+为了实现冷启动（新用户刚使用时获得比较好的推荐效果），各个厂也会使用基于内容的过滤和基于规则的推荐。<br />
+由于推荐系统都是基于内容的公司的核心竞争力，完全公开的是没有的。<br />
+而且据一位业界专家所说，每个厂使用的推荐算法基本相同，都是公开的那些；不一样的只是参数、数据和规则；最后推荐的结果也趋于一致。<br />
+我们只能在不同的应用场景下进行一些猜测，比如，在内容为音乐的网易云音乐会使用什么样的推荐算法。</p>
+<h3 id="知乎"><a class="markdownIt-Anchor" href="#知乎"></a> 知乎</h3>
+<p>知乎的内容以文字为主，现在还加入了很多视频的内容。<br />
+作为一个“高素质”人群的问答社区，知乎问题的分类和描述都比较清晰，这有利于更好的推荐。<br />
+分析知乎在推荐页给我的推荐内容，知乎的推荐以回答为主，之外还有少量的live和广告。<br />
+由于我对live了解不多，这里主要猜测一下“回答”的推荐过程。<br />
+最开始知乎的首页是 推荐 和 关注 放在一起的，现在分开了，又加了热门这一页面。<br />
+通过推荐页的提示“关注话题获取精准内容推荐”，可以看出，推荐页的内容主要依据的是你关注的话题。这相当于是基于内容过滤的场景。<br />
+从结果来看，向我推荐的回答大多是我显式选择的关注话题或者是于此相关的话题（如下图2所示：话题之间有父子、相关等关系），</p>
+<p><img src="/assets/zhihu-recommend-page.jpg" alt="推荐页" /></p>
+<p><img src="/assets/zhihu-topic-page.jpg" alt="相关话题页" /></p>
+<h3 id="网易云音乐"><a class="markdownIt-Anchor" href="#网易云音乐"></a> 网易云音乐</h3>
+<p>网易云音乐的推荐可以分为3个板块：私人FM，每日推荐，推荐歌单。</p>
+<p><img src="/assets/netease-music-homepage.jpg" alt="网易云音乐推荐模块" /></p>
+<p>私人FM有3个主要操作：</p>
+<ul>
+<li>喜欢</li>
+<li>删除</li>
+<li>跳过</li>
+</ul>
+<p>除此之外还有一些其他的隐式操作，如 完整听完一首歌曲，调节进度条，看评论时长等可以利用。<br />
+我们可以将这些行为分为2大类：喜欢和不喜欢。<br />
+根据程度不同，可以赋给不同操作不同的喜欢值。<br />
+如显式地点击喜欢和完整地听完这首歌都代表喜欢，不过前者更强一点，可以赋给更高的喜欢值。<br />
+用户对播放的歌曲产生的所有操作最后求和可以得到用户对这首歌的喜欢程度。<br />
+用户在听过一段时间私人FM之后，会产生一系列的操作。<br />
+我们就可以得到用户听过的所有的歌曲的喜欢程度。<br />
+利用这些信息，再通过协同过滤的一些经典算法，就可以向用户推荐他没有听过的歌曲了。<br />
+所以说，私人FM听的越多，推荐效果会越好。</p>
+<p>每日推荐一般会与你最近听过的歌曲有关。也就是说，歌曲的兴趣对今天推荐的影响随时间衰减比较快。<br />
+比如，你昨天听了电音，比较喜欢，接连听了几首，可能还“喜欢”了一些。今天的每日推荐就会推更多的电音给你。</p>
+<p>推荐歌单算是比较容易推荐的一个板块。因为歌单都是专家或是爱好者组建的，将很多歌曲按照某一标准归为一类。每个歌单还都有自己的标签可以利用。如摇滚、英伦、另类、独立。这些标签都是区分性很强的。<br />
+在向我推荐的歌单里，一般包含几首我“喜爱”的歌曲。由此可见，推荐歌单使用了“我喜欢的音乐”中的信息。如果几首你喜欢的音乐同时出现在一个歌单中，那么很大程度上可以预测，这个歌单中的其他音乐也会被你喜欢。</p>
+<h3 id="快手"><a class="markdownIt-Anchor" href="#快手"></a> 快手</h3>
+<p>快手作为一个短视频平台，每天用户会产生大量的视频。视频相对而言是不那么好推荐的，因为</p>
+<ul>
+<li>视频内的语义现在用机器理解还是很困难的</li>
+<li>被推荐的内容几乎都是冷启动的，也就是说要争取推荐最新上传的视频</li>
+</ul>
+<p>在这种情况下，快手可能使用了标签这一信息作为推荐的主要依据。<br />
+用户上传的视频可以被用户自己打上各种标签：社会摇，炫技，教程，小吃等。<br />
+依靠这些标签把用户和视频聚成不同的类。这样新上传的视频就可以利用用户在老视频上产生的操作了。</p>
+<h3 id="淘宝"><a class="markdownIt-Anchor" href="#淘宝"></a> 淘宝</h3>
+<p>淘宝作为一个c2c的电商平台，推荐系统的指标与其他b2c电商（如 亚马逊）有所不同。<br />
+评价一个推荐系统好坏的指标中有一个是对冷门产品的发掘能力，即对<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94">长尾</a>的尾端进行推荐。<br />
+使用推荐系统将冷门产品的商家和顾客联系起来是淘宝的一个卖点，因为淘宝上的商品实在太多了。没有你买不到，只有你想不到。<br />
+根据亚马逊公开的一些信息，电商系统的推荐系统核心可以用一句话概括：买了商品A的人，同样也买了B，你买B呀？</p>
+<h2 id="为什么说推荐系统在改造和奴役你的思维"><a class="markdownIt-Anchor" href="#为什么说推荐系统在改造和奴役你的思维"></a> 为什么说推荐系统在改造和奴役你的思维</h2>
+<p>对于一个内容app的推荐系统来说，推荐好不好的指标最后都会反应在用户停留在该app上的时间。<br />
+在互联网上网人数趋于饱和的情况下，整个市场用户时间数不会像之前那样快速增长，如何抢夺用户宝贵的时间就成个各个内容推荐系统的目标。<br />
+为了让你停留在本应用的时间增加，各大内容app可谓用心良苦。<br />
+如知乎现在移动端网站会向app内导流。之前即使用户不登陆、在移动端网页上也可以享受到所有的信息。<br />
+现在在移动端网页上只能看到一个回答的开始部分，想要浏览完整部分就不许下载并进入知乎的app才可以。<br />
+很大程度上降低了用户体验。比如我的朋友经常会分享一些知乎上的回答或问题给我，我必须点击多次用app打开才能看到完整信息，很是不爽。<br />
+今日头条之前也因为三俗内容被政府多次约谈。就是因为相比其他的新闻，低俗、色情的东西更容易吸引网民们的眼球。<br />
+就像本文最开始谈到的那样，推荐系统为了增加用户停留的时间。只会一味地迎合用户的喜好，无论用户的喜好是否正确。<br />
+整个过程就是一个正反馈。你思想比较右，推荐系统会推符合你口味的内容，加深你的兴趣。<br />
+对一个成年人来说，还有甄别内容和选择平台的能力。<br />
+对于广大的未成年人，无疑会是一种误导。再加上现在互联网内容的监管并不是很完善。为了利益，推荐系统推给未成年人的不会是正能量，只会是娱乐导向、甚至低俗的内容。这对未成年人的思想塑造会有很不好的影响。</p>
+<p>其实很多成年人又成熟多少呢？想想你被推荐的内容，想想你花在这些内容app上的时间。<br />
+在此引用一句古话：“良药苦口利于病，忠言逆耳利于行”。然而作为推荐系统，只会给你说好听的，你喜欢听的。<br />
+在潜移默化之中，你的思想已经被推荐系统所改造和奴役了。</p>
+<p>依赖于推荐系统的内容也是一种懒惰的表现。相比 主动去获取信息，直接接受推荐系统的内容 要容易、愉快的多。但要记住，懒惰是有代价的，你的思想将不可避免地变得狭隘。</p>
+<h2 id="如何避免推荐系统的恶果"><a class="markdownIt-Anchor" href="#如何避免推荐系统的恶果"></a> 如何避免推荐系统的恶果</h2>
+<h3 id="多读书"><a class="markdownIt-Anchor" href="#多读书"></a> 多读书</h3>
+<p>无论知乎给你怎样的错觉，书本上的内容在质量上还是高的多。<br />
+我最近读了一本斌卡的《一平米健身》，相比知乎上的健身类回答，内容的质量要高的多。<br />
+毕竟相比在网络上写个回答来说，出书的门槛和花费的精力要多的多。<br />
+尤其是，书本上还承载着互联网之前人们的原创思想。这是知乎上所没有的。当然，经过不断搬运，许多&quot;知乎er&quot;把书本上的知识运用在回答中。不过这些都是经过加工和断章取义的，也有不少从某本书上搬一段话就获得高赞的案例。</p>
+<h3 id="与优秀的人交朋友"><a class="markdownIt-Anchor" href="#与优秀的人交朋友"></a> 与优秀的人交朋友</h3>
+<p>与优秀的人交朋友，聊天，比起把时间花在追随大v的言论要有用的多。<br />
+我总认为，一个人在互联网上呈现给你的是他想给你看的部分，不完全。<br />
+相比之下，虽然面对面的交流也通常是会掩盖本性的，但这种信息交互是双向的，而非通过follow关系的单向信息输出。<br />
+而且，不知道大家有没有这样的感觉。与优秀的人交流时，自己会花更多的精力去思考，而非听完就完事儿了。在知乎这些平台上，看完之后的热度保持的并不长久。</p>
+<h3 id="接触不同的内容才能够塑造一个完整的三观"><a class="markdownIt-Anchor" href="#接触不同的内容才能够塑造一个完整的三观"></a> 接触不同的内容，才能够塑造一个完整的三观</h3>
+<p>不要只看自己喜欢的，也要听取不同的声音。党同伐异是人类的天性。如果你不刻意去避免这一人性上的缺点的话，推荐系统会像一个谄媚的奸臣一样，只说你想听的，而你可能就会想历史上的昏君一样，荒废了朝政。广开言路，逆耳忠言才是明君应有的表现。<br />
+比方说，当你听到与你不同的言论，不要先想着反驳对方，试着想想为什么对方会这样想？<br />
+每个人的想法都是其经历和体验的体现，没有相应的经历，很难会理解一些不一样的事情。这个时候不要着急去反驳对方，而是试着丰富自己的阅历。<br />
+之前说的2条“多读书、与优秀的人交朋友”都是丰富自己阅历的高效途径。</p>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>希望大家作为一个成年人，拥有一个独立的三观，不要被推荐系统和自己的懒惰而奴役。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/tech/" rel="tag"># tech</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/06/01/suzhou-microsoft-interview/" rel="prev" title="微软苏州面试">
+      <i class="fa fa-chevron-left"></i> 微软苏州面试
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/08/14/kaggle-titanic-tutorial/" rel="next" title="kaggle入门之-titanic">
+      kaggle入门之-titanic <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%842%E5%A4%A7%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text"> 推荐系统的2大类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E8%BF%87%E6%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text"> 基于内容的过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text"> 协同过滤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E5%A4%A7%E5%86%85%E5%AE%B9app%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text"> 各大内容app使用的推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E4%B9%8E"><span class="nav-number">2.1.</span> <span class="nav-text"> 知乎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90"><span class="nav-number">2.2.</span> <span class="nav-text"> 网易云音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E6%89%8B"><span class="nav-number">2.3.</span> <span class="nav-text"> 快手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%98%E5%AE%9D"><span class="nav-number">2.4.</span> <span class="nav-text"> 淘宝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%9C%A8%E6%94%B9%E9%80%A0%E5%92%8C%E5%A5%B4%E5%BD%B9%E4%BD%A0%E7%9A%84%E6%80%9D%E7%BB%B4"><span class="nav-number">3.</span> <span class="nav-text"> 为什么说推荐系统在改造和奴役你的思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%81%B6%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text"> 如何避免推荐系统的恶果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%AF%BB%E4%B9%A6"><span class="nav-number">4.1.</span> <span class="nav-text"> 多读书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E4%BC%98%E7%A7%80%E7%9A%84%E4%BA%BA%E4%BA%A4%E6%9C%8B%E5%8F%8B"><span class="nav-number">4.2.</span> <span class="nav-text"> 与优秀的人交朋友</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E8%A7%A6%E4%B8%8D%E5%90%8C%E7%9A%84%E5%86%85%E5%AE%B9%E6%89%8D%E8%83%BD%E5%A4%9F%E5%A1%91%E9%80%A0%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E4%B8%89%E8%A7%82"><span class="nav-number">4.3.</span> <span class="nav-text"> 接触不同的内容，才能够塑造一个完整的三观</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">5.</span> <span class="nav-text"> 后记</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">佛系更新；生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">267</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YoungForest</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YoungForest.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://youngforest.github.io/2018/07/03/recommender-systems-of-popular-apps/";
+    this.page.identifier = "2018/07/03/recommender-systems-of-popular-apps/";
+    this.page.title = "论推荐系统如何改造和奴役你的思维";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://YoungForest.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

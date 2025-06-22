@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;bytedance&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2020-06-23T17:56:43.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2020/06/23/Bytedance-new-graduate-interview/</id>
+        <title>Bytedance 秋招面试 2020</title>
+        <link rel="alternate" href="https://youngforest.github.io/2020/06/23/Bytedance-new-graduate-interview/"/>
+        <content type="html">&lt;p&gt;我字节跳动提前批投了 技术中台 的 后端开发岗位。&lt;br /&gt;
+计算机基础没复习到位，答得不好。&lt;br /&gt;
+许愿offer。&lt;/p&gt;
+&lt;h1 id=&#34;一面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一面&#34;&gt;&lt;/a&gt; 一面&lt;/h1&gt;
+&lt;p&gt;我自介绍。&lt;/p&gt;
+&lt;h2 id=&#34;算法题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算法题&#34;&gt;&lt;/a&gt; 算法题&lt;/h2&gt;
+&lt;p&gt;先给暴力解，再优化。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目：数组代表股票每天价格，每天只允许买或者卖一次，也可以不买卖，需要先买入才能卖出，在只交易一次（即只买和卖一次）的情况下求最大收益。&lt;br /&gt;
+输入：[2,1,4,1,5,6,1]&lt;br /&gt;
+输出： 5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;solution&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; vector&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; prices)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// time: N ^ 2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// space: 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; ans = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; buy = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; buy &amp;lt; prices.&lt;span class=&#34;built_in&#34;&gt;size&lt;/span&gt;(); ++buy) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; sell = buy + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;; sell &amp;lt; prices.&lt;span class=&#34;built_in&#34;&gt;size&lt;/span&gt;(); ++sell) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; profit = prices[sell] - prices[buy];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ans = &lt;span class=&#34;built_in&#34;&gt;max&lt;/span&gt;(ans, profit);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; ans;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;solution2&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; vector&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; prices)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// time: O(N)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// space: 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; ans = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (prices.&lt;span class=&#34;built_in&#34;&gt;empty&lt;/span&gt;()) &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; minPrices = prices[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; sell = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;; sell &amp;lt; prices.&lt;span class=&#34;built_in&#34;&gt;size&lt;/span&gt;(); ++sell) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; profit = prices[sell] - minPrices;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        ans = &lt;span class=&#34;built_in&#34;&gt;max&lt;/span&gt;(ans, profit);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        minPrices = &lt;span class=&#34;built_in&#34;&gt;min&lt;/span&gt;(minPrices, prices[sell]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; ans;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;//int a;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;//cin &amp;gt;&amp;gt; a;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;//cout &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    vector&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;&amp;gt; prices = &amp;#123;&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    cout &amp;lt;&amp;lt; &lt;span class=&#34;built_in&#34;&gt;solution2&lt;/span&gt;(prices) &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;计算机基础&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#计算机基础&#34;&gt;&lt;/a&gt; 计算机基础&lt;/h2&gt;
+&lt;h3 id=&#34;操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统&#34;&gt;&lt;/a&gt; 操作系统&lt;/h3&gt;
+&lt;p&gt;IPC 种类&lt;br /&gt;
+信号量&lt;/p&gt;
+&lt;p&gt;进程 和 线程&lt;br /&gt;
+各有几种状态、状态转移图。&lt;/p&gt;
+&lt;p&gt;虚拟内存&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/ldd.html&#34;&gt;Linux的一些常用命令&lt;/a&gt;, 今天刚复习过。&lt;br /&gt;
+如 查看端口、内存、进程状态.&lt;br /&gt;
+&lt;a href=&#34;https://unix.stackexchange.com/questions/94357/find-out-current-working-directory-of-a-running-process&#34;&gt;进程的current working directory&lt;/a&gt;: &lt;code&gt;lsof -p &amp;lt;PID&amp;gt; | grep cwd&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;计算机网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#计算机网络&#34;&gt;&lt;/a&gt; 计算机网络&lt;/h3&gt;
+&lt;p&gt;3次握手 4次挥手 的过程和必要性. 答的很糟糕。&lt;/p&gt;
+&lt;h3 id=&#34;数据库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据库&#34;&gt;&lt;/a&gt; 数据库&lt;/h3&gt;
+&lt;p&gt;几种范式&lt;br /&gt;
+深入了解吗？不了解&lt;/p&gt;
+&lt;h3 id=&#34;语言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语言&#34;&gt;&lt;/a&gt; 语言&lt;/h3&gt;
+&lt;p&gt;python&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GIL&lt;/li&gt;
+&lt;li&gt;引用还是值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;贵组大概率是写python的。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;p&gt;昨天约了今天的面试，失误呀。太过仓促。本来秋招提前批是很重要的，计算机基础知识就是题库里的那些题，花3天时间背背还是有必要的。要不靠着本科时学的知识，回答不会太好，会很伤。&lt;/p&gt;
+&lt;p&gt;好多同学问题库在哪里。我也是在网上找的，&lt;a href=&#34;https://github.com/CyC2018/CS-Notes&#34;&gt;https://github.com/CyC2018/CS-Notes&lt;/a&gt;&lt;br /&gt;
+感觉还是挺全的. 已经在背了。&lt;/p&gt;
+</content>
+        <category term="ByteDance" />
+        <category term="New Graduate" />
+        <updated>2020-06-23T17:56:43.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2020/02/27/Bytedance-Ads-backend-intern-interview/</id>
+        <title>字节跳动 暑期实习 广告系统后端开发 面试</title>
+        <link rel="alternate" href="https://youngforest.github.io/2020/02/27/Bytedance-Ads-backend-intern-interview/"/>
+        <content type="html">&lt;ul&gt;
+&lt;li&gt;HashMap&lt;/li&gt;
+&lt;li&gt;数据库
+&lt;ul&gt;
+&lt;li&gt;索引、优化、事务&lt;/li&gt;
+&lt;li&gt;聚簇索引和非聚簇索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;并发编程&lt;/li&gt;
+&lt;li&gt;网络编程，RPC&lt;/li&gt;
+&lt;li&gt;算法题:
+&lt;ul&gt;
+&lt;li&gt;编辑距离&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;算法题问了一道计算&lt;a href=&#34;https://en.wikipedia.org/wiki/Levenshtein_distance&#34;&gt;编辑距离(Levenshtein Distance)&lt;/a&gt;的问题。编辑距离的问题恰好我在之前度《图解算法》的时候有所涉及，用DP解决即可。但本题目稍微复杂度写，需要在很多字符串中，寻找距离最近的字符串。可以理解为&amp;quot;Fuzzy matching&amp;quot;。&lt;br /&gt;
+题面大概为：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;莱文斯坦距离，又称 Levenshtein 距离，是编辑距离的一种。指两个字串之间，由一个转成另一个所需的最少编辑操作次数。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;允许的编辑操作包括：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;插入一个字符&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;删除一个字符&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;将一个字符替换成另一个字符&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;需要你编写一个程序，实现以下功能：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;给定一个字符串集合 S 以及一个模板串 P，从 S 中找出与 P 莱文斯坦距离最小的字符串 T，输出 T 以及其对应的编辑距离 D。如果 S 中出现多个满足条件的字符串，则取按字典序排列的第一个。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;并没有想到很好的解法，暴力解法的话, 比较所有字符串和P的距离 时间复杂度为: O(P.size() * sum(S_i.size()).&lt;/p&gt;
+&lt;p&gt;后在网上搜索解法，并不难找到。利用Trie以避免不同字符串的DP重复的计算，时间复杂度为: O(P.size() * Trie的节点数). 虽然最坏时间复杂度没有变好，但是实实在在的优化。应该这就是面试官想要的解法了。&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;77&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;Node&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    array, &lt;span class=&#34;number&#34;&gt;26&lt;/span&gt;&amp;gt; children;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    vector distance;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;Node&lt;/span&gt;() = &lt;span class=&#34;keyword&#34;&gt;delete&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;Node&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; n) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        distance.&lt;span class=&#34;built_in&#34;&gt;resize&lt;/span&gt;(n);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;pair &lt;span class=&#34;title&#34;&gt;solve&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; string&amp;amp; target, &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; vector&amp;amp; s)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; k = target.&lt;span class=&#34;built_in&#34;&gt;size&lt;/span&gt;() + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; root = &lt;span class=&#34;built_in&#34;&gt;make_shared&lt;/span&gt;(k);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; i distance.&lt;span class=&#34;built_in&#34;&gt;size&lt;/span&gt;(); ++i) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        root-&amp;gt;distance[i] = i;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; ans_distance = &lt;span class=&#34;number&#34;&gt;0x3f3f3f3f&lt;/span&gt;,  ans_index = &lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; j &amp;lt; s.&lt;span class=&#34;built_in&#34;&gt;size&lt;/span&gt;(); ++j) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; string&amp;amp; str = s[j];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; current = root;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;// cout &amp;lt;&amp;lt; endl &amp;lt;&amp;lt; &amp;quot;debug: &amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; distance_from_empty = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; c : str) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (current-&amp;gt;children[c - &lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;] == &lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                current-&amp;gt;children[c - &lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;] = &lt;span class=&#34;built_in&#34;&gt;make_shared&lt;/span&gt;(k);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; next_current = current-&amp;gt;children[c - &lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                next_current-&amp;gt;distance[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;] = distance_from_empty;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;; i &amp;lt; k; ++i) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (c == target[i - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        next_current-&amp;gt;distance[i] = current-&amp;gt;distance[i - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    &amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        next_current-&amp;gt;distance[i] = &lt;span class=&#34;built_in&#34;&gt;min&lt;/span&gt;(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                            current-&amp;gt;distance[i - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                            current-&amp;gt;distance[i],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                            next_current-&amp;gt;distance[i - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        &amp;#125;) + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    &lt;span class=&#34;comment&#34;&gt;// cout distance[i] &amp;lt;&amp;lt; &amp;quot; &amp;quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;comment&#34;&gt;// cout &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            current = current-&amp;gt;children[c - &lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++distance_from_empty;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (current-&amp;gt;distance[k - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] &amp;lt; ans_distance) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ans_distance = current-&amp;gt;distance[k - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ans_index = j;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;  &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (current-&amp;gt;distance[k - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] == ans_distance) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (s[ans_index] &amp;gt; s[j])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                ans_index = j;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &amp;#123;ans_distance, s[ans_index]&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    string P;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    cin &amp;gt;&amp;gt; P;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; N;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    cin &amp;gt;&amp;gt; N;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;vector &lt;span class=&#34;title&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(N)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; i &amp;lt; N; ++i) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        cin &amp;gt;&amp;gt; S[i];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; ans = &lt;span class=&#34;built_in&#34;&gt;solve&lt;/span&gt;(P, S);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    cout &amp;lt;&amp;lt; ans.first &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    cout &amp;lt;&amp;lt; ans.second &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="intern" />
+        <category term="ByteDance" />
+        <updated>2020-02-27T18:34:40.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://youngforest.github.io/2019/09/06/ByteDance-Camp/</id>
+        <title>2019 字节跳动夏令营</title>
+        <link rel="alternate" href="https://youngforest.github.io/2019/09/06/ByteDance-Camp/"/>
+        <content type="html">&lt;p&gt;总的体验是很开心，收获很大。&lt;/p&gt;
+&lt;p&gt;很幸运可以参加今年的Byte Camp，我认为这一周的活动是我今年参加过的最有意义的活动了。今年的夏令营共分为3个赛道：工程、算法、和 产品。我参加的是工程赛道。&lt;/p&gt;
+&lt;p&gt;工程和算法赛道进入夏令营的选拔都是通过笔试和面试完成的。笔试的题目也都一样，就是通过牛客网的平台在线完成。笔试有2次机会，都参加的话取分高的。笔试题目分为基础题（操作系统、计算机组成原理、计算机网络）和编程题。编程题有4题，难度依次递增。我参加的是第一场，AC了前3道，难度大约等于是LeetCode medium，最后一题的难度直接飙升到 ICPC world final的难度，要用费用流的知识。我也没打过ACM，第一次听说费用流，就没做出来。由于笔试答的还行，面试我没参加，直接拿到入营资格了。不过听参加面试的同学反映，面试也挺水的，难度很低。&lt;/p&gt;
+&lt;p&gt;然后就是夏令营的正式活动了。活动虽然只有一周，但是日程安排的十分紧凑，基本是9 10 6。开幕式是有 AI-lab的主管 李航老师 主持。以前只在网上和书上久闻大名，这次竟然可以见到真人了，还有一起合影的机会。学机器学习的同学应该都听说过他，他的《统计学习方法》也是入门算法岗工作的维几之选。我们每人还获赠他签名的《统计学习方法》一书（工程赛道的同学可能对此不是很感冒，哈哈）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/ByteDance-camp-jiti.jpg&#34; alt=&#34;集体照&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;之后的日程主要分为2天的听课和3天的做项目。课程安排和项目都可以在&lt;a href=&#34;https://bytecamp.toutiao.com/course&#34;&gt;官网上&lt;/a&gt;看到，每天要上7节课之多。课上也是干货满满，每个主题都是字节跳动内部负责相关技术的资深工程师负责讲解，从基础设施架构到前后端，覆盖工程的同学可能感兴趣和从事的所有内容。&lt;br /&gt;
+算法那边除了请公司内部的大牛之外，还有像 Yoshua Bengio、Oren Etzioni 这样的外部嘉宾参与。因为这2个人实在是太牛了（我也是后来才知道的，毕竟不搞算法），我们工程的也被要求参加他们的课程。课程内容倒是一般，比较入门和浅显（难道是为了照顾我们工程的孩子？），实质内容反而不多。&lt;/p&gt;
+&lt;p&gt;我选择的项目是“服务治理：基于共享内存的高性能通信中间件”。说实话，我对共享内存和进程间通信不是特别熟，但是当时选题目的时候只有这个题目能看懂，其他的题目更是一头雾水，所以选择了“中间件”这一看起来比较靠谱的项目。（后来证明，这样的项目反而不如小游戏这样的项目容易拿奖，也更难完成）。项目的具体细节就不便透露了。我和交大的一位大佬一起完成，3天的时间里，完成了设计、实现、测试、性能测试、PPT和展示。别的组都是4～5人，我们组因为有2个队友提前退营了，只有2人。这3天的代码不是我写的最难的，但算是我这一年来写的最开心的了。白天写一天代码，晚上10点回到酒店里接着肝到一两点。（有五星级酒店住，也是我学校在北京，但仍和大家一起住酒店的原因。标间一晚九百多，很舒服）。我俩甚至把项目开源了：&lt;a href=&#34;https://github.com/Yellow-Pay/MakeTheAmericanGreatAgain&#34;&gt;Yellow-Pay/MakeTheAmericanGreatAgain&lt;/a&gt;。在GitHub上可以搜到很多shm-ipc的库，我们的目的更多的是为了用git协同工作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Bytedance-camp.jpg&#34; alt=&#34;做项目的第二天&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/us.jpg&#34; alt=&#34;我和队友黄富乾&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;上周五下午刚刚结束夏令营，回学校正式开工，才发现字节跳动的总部中航广场离学校如此之近。本来想坐地铁回来，可是走到知春里的时候发现，学校竟然只有半站路，就直接走回宿舍了。期待以后有机会可以和字节跳动有更多的接触，这么近的距离，偷偷出来实习一定很方便。&lt;/p&gt;
+&lt;p&gt;总结一下我这一周的收获，重要程度从前向后：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;结识了很多小伙伴，其中不乏大佬。&lt;/li&gt;
+&lt;li&gt;对字节跳动这个公司的氛围、技术栈有了比较深的了解。&lt;/li&gt;
+&lt;li&gt;虽然很累，但整个活动我都很开心。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最后，感谢为此次夏令营奔波劳碌的蔓莲姐姐和其他工作人员及志愿者。&lt;/p&gt;
+&lt;p&gt;整个夏令营需要吐槽的地方有，希望明年能有所改善：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;开幕晚宴的饭菜比较难吃，不是太咸、就是太甜。&lt;/li&gt;
+&lt;li&gt;中午没有休息的地方。虽然坐着6k元的椅子，但是靠背没有放脖子和脑袋的地方，每天只能靠着墙凑活睡了。到现在我腰还因此疼。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="ByteDance" />
+        <category term="interview" />
+        <updated>2019-09-06T18:25:56.000Z</updated>
+    </entry>
+</feed>

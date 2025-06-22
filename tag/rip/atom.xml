@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://youngforest.github.io</id>
+    <title>YoungForest&#39;s blog • Posts by &#34;rip&#34; tag</title>
+    <link href="https://youngforest.github.io" />
+    <updated>2023-05-15T18:55:06.000Z</updated>
+    <category term="tech" />
+    <category term="life" />
+    <category term="intern" />
+    <category term="kuaishou" />
+    <category term="Alibaba" />
+    <category term="travel" />
+    <category term="ByteDance" />
+    <category term="interview" />
+    <category term="C++" />
+    <category term="Database" />
+    <category term="Django" />
+    <category term="C++11" />
+    <category term="bank" />
+    <category term="money" />
+    <category term="Europe" />
+    <category term="New Graduate" />
+    <category term="Hexo" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Ireland" />
+    <category term="Competitive Programming" />
+    <category term="Tech" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="Tencent" />
+    <category term="Linux" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="Mac" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="Windows" />
+    <category term="benchmark" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="Microsoft" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <category term="RIP" />
+    <category term="Weride" />
+    <category term="游记" />
+    <category term="投资" />
+    <category term="Life" />
+    <category term="法国签证" />
+    <category term="法签" />
+    <category term="申根签证" />
+    <category term="Side Project" />
+    <category term="年终总结" />
+    <category term="Amazon" />
+    <category term="China" />
+    <category term="QDII" />
+    <category term="套利" />
+    <category term="场外转场内" />
+    <category term="Investment" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="你的灯亮着吗" />
+    <category term="埃隆·马斯克传" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="持续买进" />
+    <category term="编程珠玑" />
+    <category term="现实不似你所见-量子引力之旅" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="碧血剑" />
+    <category term="生死疲劳" />
+    <category term="深奥的简洁" />
+    <category term="迷人的温度" />
+    <category term="反脆弱" />
+    <category term="厚黑学" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="穷查理宝典" />
+    <category term="太白金星有点烦" />
+    <category term="食南之徒" />
+    <category term="马伯庸" />
+    <category term="纳瓦尔宝典" />
+    <category term="时势" />
+    <category term="小Lin说" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
+    <entry>
+        <id>https://youngforest.github.io/2023/05/15/rip-hao/</id>
+        <title>深痛悼念 左耳朵耗子</title>
+        <link rel="alternate" href="https://youngforest.github.io/2023/05/15/rip-hao/"/>
+        <content type="html">&lt;p&gt;R.I.P.&lt;br /&gt;
+有幸和 左耳朵耗子 在同一个群里刷题。大家得知消息以为是谣言，还at了他。但多方消息佐证，现在应该是真的了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/hao-foxi.jpg&#34; alt=&#34;左耳朵耗子 在 佛系刷题群 的聊天历史&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我最早也是通过&lt;a href=&#34;https://coolshell.cn/&#34;&gt;他的博客 酷壳 – COOLSHELL&lt;/a&gt;认识他的，好像是VIM系列吧。当时我还在上大学，刚刚开始计算机学习。他的博客对我帮助很大。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/haoel.png&#34; alt=&#34;左耳朵耗子 博客上的自我介绍&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我最接近猝死的是 大三上学期，做 编译 实验到早上6点。当时感觉不行了，心脏不太舒服。就回宿舍睡觉了。从那以后就躺平了，不卷了，不再追求上进了。读研的时候，我们学院有个大二的学第就在图书馆猝死了，是做 计组实验 做的。我也是经历过计组的人，想想也确实是压力太大了。工作后，更是每年国内计算机行业都有猝死的新闻。&lt;br /&gt;
+最后，再给从事程序员的同行们介绍一个Github repo: &lt;a href=&#34;https://github.com/geekan/HowToLiveLonger&#34;&gt;程序员延寿指南 geekan/HowToLiveLonger&lt;/a&gt;. 活着真好，好好珍惜。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/HowToLiveLonger.png&#34; alt=&#34;程序员延寿指南 README&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="RIP" />
+        <updated>2023-05-15T18:55:06.000Z</updated>
+    </entry>
+</feed>

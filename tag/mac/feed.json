@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"mac\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2019/11/11/mac-write-ntfs-solution/",
+            "url": "https://youngforest.github.io/2019/11/11/mac-write-ntfs-solution/",
+            "title": "Mac OS写入ntfs解决方案",
+            "date_published": "2019-11-11T10:10:44.000Z",
+            "content_html": "<p>使用Mac系统确实存在一些不方便的地方，比如 写入 NTFS的硬盘或U盘。默认情况下，MAC 只支持读取NTFS。不过只要你有勇气折腾，解决方案还是很简单的。</p>\n<h2 id=\"最推荐方法\"><a class=\"markdownIt-Anchor\" href=\"#最推荐方法\"></a> 最推荐方法</h2>\n<p><a href=\"https://mounty.app/\">Mounty for NTFS</a></p>\n<p>优点：免费，小巧<br />\n缺点：不hack，其实就是命令行的包装。有些同学可能更喜欢命令行的方式。</p>\n<h2 id=\"最hack的方法\"><a class=\"markdownIt-Anchor\" href=\"#最hack的方法\"></a> 最hack的方法</h2>\n<figure class=\"highlight bash\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">sudo umount <span class=\"string\">&quot;/Volumes/Seagate Expansion Drive&quot;</span></span><br><span class=\"line\">sudo mount -t ntfs -o rw,auto,nobrowse /dev/disk3s1 ~/ntfs-volume</span><br></pre></td></tr></table></figure>\n<p>reference: <a href=\"https://mounty.app/\">mounty</a></p>\n<p>经过一段时间的斗争，我还是采用了安装第三方应用的推荐方法。因为命令行确实经常忘记或是输错，每次都要重新Google，与我使用Mac系统想要的优雅方便不符。</p>\n",
+            "tags": [
+                "Mac"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;kuaishou&#34; tag</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Mon, 07 May 2018 23:30:25 +0100</pubDate>
+        <lastBuildDate>Mon, 07 May 2018 23:30:25 +0100</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>interview</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>New Graduate</category>
+        <category>Hexo</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Ireland</category>
+        <category>Competitive Programming</category>
+        <category>Tech</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>Tencent</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>Windows</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>RIP</category>
+        <category>Weride</category>
+        <category>游记</category>
+        <category>投资</category>
+        <category>Life</category>
+        <category>法国签证</category>
+        <category>法签</category>
+        <category>申根签证</category>
+        <category>Side Project</category>
+        <category>年终总结</category>
+        <category>Amazon</category>
+        <category>China</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>你的灯亮着吗</category>
+        <category>埃隆·马斯克传</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>持续买进</category>
+        <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
+        <category>生死疲劳</category>
+        <category>深奥的简洁</category>
+        <category>迷人的温度</category>
+        <category>反脆弱</category>
+        <category>厚黑学</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>穷查理宝典</category>
+        <category>太白金星有点烦</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
+        <category>纳瓦尔宝典</category>
+        <category>时势</category>
+        <category>小Lin说</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</guid>
+            <title>SQL实践进阶</title>
+            <link>https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</link>
+            <category>tech</category>
+            <category>kuaishou</category>
+            <pubDate>Mon, 07 May 2018 23:30:25 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;这一周在公司写了很多很长功能很复杂的sql语句，深感自己的数据库和SQL学的还只是皮毛，完全没法满足工程上的要求。&lt;br /&gt;
+负责带我的二mentor对SQL比较也精通，对我有很多指导和建议。&lt;br /&gt;
+没有对比就没有伤害，自己的菜和师兄的强让我知耻而后勇，有了进阶SQL的想法和行动。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;我被推荐的2份教程（感谢快手师兄和二mentor）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sql必知必会&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.runoob.com/sql/sql-constraints.html&#34;&gt;runoob&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中《sql必知必会》我系统的看过一遍，runoob教程只是大致浏览一遍。&lt;br /&gt;
+我认为只看一个教程就够了。&lt;br /&gt;
+runoob的优点是可以在网站提供的线上数据库进行测试和练习，这一点和&lt;a href=&#34;https://www.w3schools.com/sql/&#34;&gt;w3school的教程&lt;/a&gt;有些像。&lt;br /&gt;
+《sql必知必会》的优点是内容比较多，作者会传授一些写sql的经验，还会涉及到不同数据库的移植性和区别。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.com/problemset/database/&#34;&gt;leetcode上有42道Database的面试题目&lt;/a&gt;，有时间一定要刷一刷。&lt;/p&gt;
+&lt;h1 id=&#34;实践中遇到的问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实践中遇到的问题&#34;&gt;&lt;/a&gt; 实践中遇到的问题&lt;/h1&gt;
+&lt;p&gt;由于我的岗位是推荐组的算法工程师，有大量的数据挖掘的需要。&lt;br /&gt;
+而且写的不是纯sql，而是&lt;a href=&#34;https://cwiki.apache.org/confluence/display/Hive/Home&#34;&gt;Hive&lt;/a&gt;-sql。&lt;br /&gt;
+Hive上存在很多限制和挑战，比如不能在select中嵌套select子句，&lt;code&gt;select 2 * (select 3);&lt;/code&gt;就是不可以的（最后摸索出得解决方案是：使用聚集函数或列之间的可计算进行需要的计算，这就很考验&lt;code&gt;union&lt;/code&gt;或&lt;code&gt;join&lt;/code&gt;的灵活使用了。）；数据量特别大，每次查询很耗时（学会了用小的查询验证想法，从内到外层层验证，还有在‘jupyter notebook’上进行查询和计算）。&lt;/p&gt;
+&lt;h1 id=&#34;回答面试中的问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#回答面试中的问题&#34;&gt;&lt;/a&gt; 回答面试中的问题&lt;/h1&gt;
+&lt;p&gt;一面的小哥哥当时问我：你会SQL吗？&lt;/p&gt;
+&lt;p&gt;我：会，而且我之前还有在数据库公司的实习经历。&lt;/p&gt;
+&lt;p&gt;小哥哥：那你说说‘left join’，‘right join’，&#39;inner join’的区别。&lt;/p&gt;
+&lt;p&gt;我：不知道…&lt;/p&gt;
+&lt;p&gt;小哥哥：那你知道partition吗？&lt;/p&gt;
+&lt;p&gt;我：这个我也不知道。&lt;/p&gt;
+&lt;p&gt;小哥哥：你会的SQL仅限于上过的“数据库原理”和“课程设计”课吗？&lt;/p&gt;
+&lt;p&gt;我：是的，而且因为一段时间不用有些生疏了。&lt;/p&gt;
+&lt;p&gt;小哥哥就没再问SQL相关的内容了。&lt;/p&gt;
+&lt;p&gt;经过一周的工作和SQL的重新系统学习，我现在可以回答这两个问题了。&lt;/p&gt;
+&lt;h3 id=&#34;left-joinright-joininner-join的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#left-joinright-joininner-join的区别&#34;&gt;&lt;/a&gt; ‘left join’，‘right join’，&#39;inner join’的区别&lt;/h3&gt;
+&lt;p&gt;&#39;inner join’即内联结，对于不匹配的项，不存在于联结结果中；‘left join’，左外联结，如果左边的项在右边的表中没有匹配项，仍存在一条记录于联结结果中，此时右边表列均为NULL；‘right join’，右联结与之类似。事实上，&#39;left join’和’right join’可以互换，只是联结的左右两表也需要互换位置。&lt;/p&gt;
+&lt;h3 id=&#34;partition的概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#partition的概念&#34;&gt;&lt;/a&gt; partition的概念&lt;/h3&gt;
+&lt;p&gt;partion是为了加快查询速度，而将一个表分成不同的区。&lt;br /&gt;
+限制是，select时，被partition的列必须写在where里作为filter。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2018/04/30/kuaishou-intern-interview/</guid>
+            <title>快手实习生面试</title>
+            <link>https://youngforest.github.io/2018/04/30/kuaishou-intern-interview/</link>
+            <category>intern</category>
+            <category>kuaishou</category>
+            <pubDate>Mon, 30 Apr 2018 23:33:10 +0100</pubDate>
+            <description><![CDATA[ &lt;p&gt;感谢@lxc师兄的内推和面试建议，我有幸可以参加快手推荐组算法实习生的面试，并最终通过面试被录取。&lt;br /&gt;
+虽然实习生的面试可能相对简单，但是我认为还是有参考价值的。&lt;br /&gt;
+刷实习算是一种最终找到好工作，进入梦想公司的途径吧（不能算是捷径，我实习的2份工作还是很累的。快手是我的第二份实习。）。&lt;br /&gt;
+现在实习终于稳定下来，毕设论文也还有一段时间才deadline，恰好抽出时间总结一下自己的面试和实习。&lt;br /&gt;
+希望可以指导到自己之后找其他实习或者是正式工作:)&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h1 id=&#34;面试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面试&#34;&gt;&lt;/a&gt; 面试&lt;/h1&gt;
+&lt;p&gt;我总共经历2轮面试，耗时近2个小时。&lt;br /&gt;
+总体感觉是准备的不很充分，很多地方有待提高。&lt;/p&gt;
+&lt;h2 id=&#34;一面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一面&#34;&gt;&lt;/a&gt; 一面&lt;/h2&gt;
+&lt;p&gt;面试官是一个胖胖的小哥哥，很友善，面试也很认真。&lt;br /&gt;
+我参加实习后，经常在开会和吃饭的时候遇到他，感觉很亲切；我们不在一个小组，但在同一大组。&lt;/p&gt;
+&lt;p&gt;面试内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;给定一个数组，找到和最大的连续序列，返回和；&lt;/li&gt;
+&lt;li&gt;翻转句子：如 today is wednesday! =&amp;gt; wesdnesday is today!&lt;/li&gt;
+&lt;li&gt;SQL相关：left join, right join, inner join区别；partition了解不。&lt;/li&gt;
+&lt;li&gt;机器学习相关：准确率和召回率的定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;二面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二面&#34;&gt;&lt;/a&gt; 二面&lt;/h2&gt;
+&lt;p&gt;面试官是一个严肃的工程师，给我的印象是反应很快，可能是leader类的人物。&lt;br /&gt;
+但可惜的是，我入职之后在大组没有见过他。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内存特别小时，在大量的数中找到数m的位置。&lt;/li&gt;
+&lt;li&gt;a = b时，b有可能在哪里获取？寄存器、cache、Memory、外存&lt;/li&gt;
+&lt;li&gt;一个已排好序的数组，循环左移k位(k未知)，找到数m的位置。&lt;/li&gt;
+&lt;li&gt;n个台阶，可以走1步或2步… 这个题他先问我做过吗？我说做过，就没再让我做。&lt;/li&gt;
+&lt;li&gt;一颗二叉树，每个节点存一个数，找到两个数的最近公共父节点。&lt;/li&gt;
+&lt;li&gt;多进程与多线程区别；&lt;/li&gt;
+&lt;li&gt;java、C++ 多进程通信使用；&lt;/li&gt;
+&lt;li&gt;java、C++ 网络通信 socket库使用。（这2个我没答好）&lt;/li&gt;
+&lt;li&gt;机器学习的了解程度，损失函数是否研究过。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;面试准备&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面试准备&#34;&gt;&lt;/a&gt; 面试准备&lt;/h2&gt;
+&lt;p&gt;经过这次面试，我对面试的准备内容更加明确了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据结构和算法是基础，必须好好复习和刷题的。&lt;/li&gt;
+&lt;li&gt;SQL、机器学习和Hadoop只是是锦上添花的技能。&lt;/li&gt;
+&lt;li&gt;手写代码和简答是面试的主要内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为事实上，我sql、机器学习、多线程的问题答得都很差，只有算法题马马虎虎答得还可以，都写出来了，虽然中间出现过一些错误而且耗时可能比较长（尤其是手写第一题的时候，还没进入状态，多花了些时间）。&lt;/p&gt;
+&lt;p&gt;参考师兄的建议，我认为如下的准备路径和方式比较高效（我也还在准备当中）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据结构和算法：cos226+算法第四版，the elements of interview&lt;/li&gt;
+&lt;li&gt;sql: sql必知必会，&lt;a href=&#34;http://www.runoob.com/sql/sql-constraints.html&#34;&gt;runoob&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;多线程：Java并发编程实践&lt;/li&gt;
+&lt;li&gt;机器学习：周志华的“西瓜书&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;入职&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#入职&#34;&gt;&lt;/a&gt; 入职&lt;/h1&gt;
+&lt;p&gt;之前因为毕设的原因，还犹豫过到底要不要接受实习offer。&lt;!--和陪奶奶--&gt;&lt;br /&gt;
+经过咨询师兄和权衡利弊，我最终还是接受了offer，于4月19日入职。&lt;!--被奶奶劝导--&gt;&lt;br /&gt;
+这份offer的待遇是：每天300，管午饭、下午茶和晚饭，水果牛奶雪糕随便吃。&lt;br /&gt;
+事实上是：&lt;br /&gt;
+每天税前300，实习生按劳务所得交税，超过800的部分要交给国家20%。&lt;br /&gt;
+午饭晚饭还是很棒的，尤其是午饭的自助餐，每次都吃撑。&lt;br /&gt;
+下午茶很简单，一个牛皮纸袋里有饮料、水果和零食，与想象中的有差距，但还是很使人满足的；我经常会剩一些带回去吃。&lt;/p&gt;
+&lt;p&gt;从工作中的点点滴滴中，我可以感受到&lt;br /&gt;
+快手是一家技术很好、牛人很多的公司，现在在迅速扩张之中，几乎每周组内都有人入职（因此我才被录取？）。&lt;br /&gt;
+带我的2个mentor人也都很nice，我从工作中学习和成长了很多。&lt;/p&gt;
+&lt;!--
+工作内容有：
+- 使用pyplot进行数据可视化
+- hive sql进行数据预处理
+--&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

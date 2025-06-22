@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"ubuntu\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/",
+            "url": "https://youngforest.github.io/2017/08/20/owncloud-setup-on-server/",
+            "title": "owncloud setup on server",
+            "date_published": "2017-08-20T21:42:32.000Z",
+            "content_html": "<h2 id=\"简介\"><a class=\"markdownIt-Anchor\" href=\"#简介\"></a> 简介</h2>\n<p><a href=\"https://owncloud.org/\">owncloud</a>是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的<a href=\"https://download.owncloud.org/download/repositories/stable/owncloud/\">二进制安装包</a>，更方便快速，更适合个人的应用。</p>\n<span id=\"more\"></span>\n<h2 id=\"服务器环境\"><a class=\"markdownIt-Anchor\" href=\"#服务器环境\"></a> 服务器环境</h2>\n<p>腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-105-generic x86_64)。</p>\n<h2 id=\"搭建过程\"><a class=\"markdownIt-Anchor\" href=\"#搭建过程\"></a> 搭建过程</h2>\n<h3 id=\"安装owncloud\"><a class=\"markdownIt-Anchor\" href=\"#安装owncloud\"></a> 安装owncloud</h3>\n<p><a href=\"https://download.owncloud.org/download/repositories/stable/owncloud/\">通过apt库安装owncloud</a>。同时会安装很多依赖包，如apache2，php环境等。</p>\n<h3 id=\"启动apache服务\"><a class=\"markdownIt-Anchor\" href=\"#启动apache服务\"></a> 启动apache服务</h3>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">service httpd start</span><br></pre></td></tr></table></figure>\n<h3 id=\"管理和设置owncloud\"><a class=\"markdownIt-Anchor\" href=\"#管理和设置owncloud\"></a> 管理和设置owncloud</h3>\n<p>在浏览器的地址栏输入<code>ip/owncloud</code>或<code>域名/owncloud</code>，设置好管理员账户和密码就好了。</p>\n<h4 id=\"配置mysql\"><a class=\"markdownIt-Anchor\" href=\"#配置mysql\"></a> 配置MySQL</h4>\n<p><a href=\"http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html\">参考</a></p>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">mysql --user=root --password</span><br></pre></td></tr></table></figure>\n<h2 id=\"client-install\"><a class=\"markdownIt-Anchor\" href=\"#client-install\"></a> Client install</h2>\n<h3 id=\"windows\"><a class=\"markdownIt-Anchor\" href=\"#windows\"></a> windows</h3>\n<h3 id=\"android\"><a class=\"markdownIt-Anchor\" href=\"#android\"></a> Android</h3>\n<h3 id=\"linux\"><a class=\"markdownIt-Anchor\" href=\"#linux\"></a> Linux</h3>\n",
+            "tags": [
+                "Ubuntu",
+                "Owncloud"
+            ]
+        }
+    ]
+}

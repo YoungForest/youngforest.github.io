@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"django\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2017/01/23/Django-note/",
+            "url": "https://youngforest.github.io/2017/01/23/Django-note/",
+            "title": "Django使用总结",
+            "date_published": "2017-01-23T19:18:20.000Z",
+            "content_html": "<p><strong>[摘要]</strong> <a href=\"https://www.djangoproject.com/\">Django</a> 是一个高水平的Python Web框架, 可以帮助我们迅速开发, 设计一个干净, 程序化的应用. 虽然Django比较臃肿(现在大神都用<a href=\"http://flask.pocoo.org/\">Flask</a>?), 适合大型Web应用的开发, 笔者的数据库课程设计是一个小型工程, 但Django名声是在太大, 笔者之前在实验室也稍稍接触过, 所以和队友果断选择了Django. 我们的课设, 在Django的帮助下, 实现起来就和切菜一样.</p>\n<span id=\"more\"></span>\n<p>数据库课设最近出分了, 只得了良好, 未如愿取得优秀. 但两天完成数据库的经验确实使笔者学到了很多, Django框架的使用, 前后端的概念, 结对编程的合作… 其中最想和大家分享的是Django框架的使用, 幸亏有该框架, 让我们可以专注于后端和数据库的设计实现, 还能轻松实现一个看得过去的前端. 事半功倍, 没有被拖延症害死.</p>\n<h4 id=\"时间分配\"><a class=\"markdownIt-Anchor\" href=\"#时间分配\"></a> 时间分配:</h4>\n<p>完成数据库用了两天(而且有一天是边刷&quot;潜伏&quot;边写程序的), 之前都是在学习Django, 文档甚至大部分是答辩完之后补完的.</p>\n<h4 id=\"人员分配\"><a class=\"markdownIt-Anchor\" href=\"#人员分配\"></a> 人员分配:</h4>\n<p>原本的计划是抱tls大腿, 所有前后端由tls完成, 笔者帮助写写文档. 不过后来, 鉴于tls经常养精蓄锐, 一直在学习Django, 最后几个小时仍未有看的见的成果. 笔者就慌了, 在之前练习的基础上, 修补完善, 勉强实现预计功能, 完成课设. 最后文档是两个人一起紧急补完的, tls最后一个小时又帮助实现了两个新功能.</p>\n<h2 id=\"django使用总结\"><a class=\"markdownIt-Anchor\" href=\"#django使用总结\"></a> Django使用总结</h2>\n<p><a href=\"https://docs.djangoproject.com/en/1.10/\">官方文档</a>是很完善和亲民的, 需要用的功能都可以在上面找到. 缺点是, 太庞大, 不好找; 而且是英文的, 官方文档更新太快, 中文文档的翻译根本跟不上, 笔者的六级刚刚飘过, 很是头疼, 不过仍是喜欢看官方的英文文档, 感觉更有帮助.</p>\n<h4 id=\"练习\"><a class=\"markdownIt-Anchor\" href=\"#练习\"></a> 练习</h4>\n<p>笔者是跟着andrew-liu的用<a href=\"https://andrew-liu.gitbooks.io/django-blog/content/\">Django搭建博客</a>的教程, 熟悉一步步的命令和操作的. 这个教程很适合初学者用来熟悉Django的基础命令和文件结构. 但一个明显的恶果是, 最后, 我们的课设<code>电动汽车充电站管理系统</code>的效果看上去和博客差不多.</p>\n<h2 id=\"总结\"><a class=\"markdownIt-Anchor\" href=\"#总结\"></a> 总结</h2>\n<p>这篇post干货比较少, 实在是因为笔者学艺不精, 没有更过可以分享的. 如果下次要需要再次使用Django, 笔者一定会回来再次补充的.</p>\n",
+            "tags": [
+                "Database",
+                "Django"
+            ]
+        }
+    ]
+}

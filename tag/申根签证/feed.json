@@ -1,0 +1,23 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "YoungForest's blog • All posts by \"申根签证\" tag",
+    "description": "佛系更新；生活、学习",
+    "home_page_url": "https://youngforest.github.io",
+    "items": [
+        {
+            "id": "https://youngforest.github.io/2023/09/20/Ireland-France-visa-monitor/",
+            "url": "https://youngforest.github.io/2023/09/20/Ireland-France-visa-monitor/",
+            "title": "爱尔兰法签抢号辅助",
+            "date_published": "2023-09-20T13:05:07.000Z",
+            "content_html": "<p>申根签太难了。终于还是用科技打败了黄牛，成功抢到了法签。不枉学了9年计算机，程序员从不向黄牛低头。</p>\n<p>爱尔兰有抢法签需求的同学可以试试我开发的这个法签通知工具，使用说明见文档。有问题可随时找我反馈：<br />\n<a href=\"https://docs.google.com/document/d/1uHJCxINt9Sb0f1HHybCFhxkmpzxRURilsxqD6OQLpQ4/edit?usp=sharing\">Google Docs</a></p>\n<p>本工具目前仅支持 爱尔兰，和 法国签证。<br />\n听说英国的朋友抢法签也蛮难的。</p>\n",
+            "tags": [
+                "Ireland",
+                "Life",
+                "法国签证",
+                "法签",
+                "申根签证",
+                "Side Project"
+            ]
+        }
+    ]
+}

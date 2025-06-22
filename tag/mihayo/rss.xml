@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YoungForest&#39;s blog • Posts by &#34;mihayo&#34; tag</title>
+        <link>https://youngforest.github.io</link>
+        <description>佛系更新；生活、学习</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Fri, 20 Mar 2020 16:29:48 +0000</pubDate>
+        <lastBuildDate>Fri, 20 Mar 2020 16:29:48 +0000</lastBuildDate>
+        <category>tech</category>
+        <category>life</category>
+        <category>intern</category>
+        <category>kuaishou</category>
+        <category>Alibaba</category>
+        <category>travel</category>
+        <category>ByteDance</category>
+        <category>interview</category>
+        <category>C++</category>
+        <category>Database</category>
+        <category>Django</category>
+        <category>C++11</category>
+        <category>bank</category>
+        <category>money</category>
+        <category>Europe</category>
+        <category>New Graduate</category>
+        <category>Hexo</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Ireland</category>
+        <category>Competitive Programming</category>
+        <category>Tech</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>Tencent</category>
+        <category>Linux</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>Mac</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>Windows</category>
+        <category>benchmark</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>Microsoft</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
+        <category>RIP</category>
+        <category>Weride</category>
+        <category>游记</category>
+        <category>投资</category>
+        <category>Life</category>
+        <category>法国签证</category>
+        <category>法签</category>
+        <category>申根签证</category>
+        <category>Side Project</category>
+        <category>年终总结</category>
+        <category>Amazon</category>
+        <category>China</category>
+        <category>QDII</category>
+        <category>套利</category>
+        <category>场外转场内</category>
+        <category>Investment</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>你的灯亮着吗</category>
+        <category>埃隆·马斯克传</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>持续买进</category>
+        <category>编程珠玑</category>
+        <category>现实不似你所见-量子引力之旅</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>碧血剑</category>
+        <category>生死疲劳</category>
+        <category>深奥的简洁</category>
+        <category>迷人的温度</category>
+        <category>反脆弱</category>
+        <category>厚黑学</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>穷查理宝典</category>
+        <category>太白金星有点烦</category>
+        <category>食南之徒</category>
+        <category>马伯庸</category>
+        <category>纳瓦尔宝典</category>
+        <category>时势</category>
+        <category>小Lin说</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
+        <item>
+            <guid isPermalink="true">https://youngforest.github.io/2020/03/20/Mihayo-backend-intern-interview/</guid>
+            <title>米哈游 服务器开发 暑期实习</title>
+            <link>https://youngforest.github.io/2020/03/20/Mihayo-backend-intern-interview/</link>
+            <category>intern</category>
+            <category>Mihayo</category>
+            <pubDate>Fri, 20 Mar 2020 16:29:48 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;一面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一面&#34;&gt;&lt;/a&gt; 一面&lt;/h1&gt;
+&lt;p&gt;time: 2020-03-20 16:29:48&lt;/p&gt;
+&lt;p&gt;上周五参加了在牛客网上的笔试。题目不难，分为计算机基础、算法 和 系统设计。&lt;br /&gt;
+计算机基础靠着本科的认真学习，没啥问题。算法也属于LeetCode medium难度，很快AC了。&lt;br /&gt;
+系统设计倒是难倒我了，并不擅长，也没有准备。需要设计一个 MOBA游戏的匹配机制，包括单人和组队。之前完全没想过，瞎写了一通。&lt;br /&gt;
+昨天收到电话，说我通过了笔试，约了今天下午2:30的电话面试。&lt;/p&gt;
+&lt;p&gt;本科有个可爱的大佬舍友最后去米哈游了。我虽然对游戏不感冒，但本着多面试，多总结的态度，也报名了其春招内推。&lt;/p&gt;
+&lt;p&gt;面试预计30min, 实际40min。&lt;/p&gt;
+&lt;p&gt;自我介绍 + 项目经历 + 计算机基础。&lt;/p&gt;
+&lt;p&gt;计算机基础又分为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;操作系统&lt;/li&gt;
+&lt;li&gt;数据库&lt;/li&gt;
+&lt;li&gt;计算机网络&lt;/li&gt;
+&lt;li&gt;设计模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我不会的有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP 3次挥手，最后的time_wait的作用&lt;/li&gt;
+&lt;li&gt;C++ 父类析构函数为什么必需是虚函数&lt;/li&gt;
+&lt;li&gt;MySQL
+&lt;ul&gt;
+&lt;li&gt;事务 及 ACID&lt;/li&gt;
+&lt;li&gt;Block 和 Tag 区别&lt;/li&gt;
+&lt;li&gt;BiLog是什么&lt;/li&gt;
+&lt;li&gt;timestamp, datetime的区别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;说出常用的设计模式，我讲了几个，但面试官好像并不满意&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;没有手撕代码环节，稍微有些失落。&lt;/p&gt;
+&lt;h1 id=&#34;二面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二面&#34;&gt;&lt;/a&gt; 二面&lt;/h1&gt;
+&lt;p&gt;time: 2020-04-03 12:54:20&lt;/p&gt;
+&lt;p&gt;之前&lt;a href=&#34;https://www.nowcoder.com/discuss/387235&#34;&gt;一面的帖子&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;二面距离一面过去了整整2周。中间HR还打电话希望我能到上海onsite二面。我只好如实说 学校现在不允许跨省区流动。贵司心也是大。最后还是按计划视频面试。&lt;/p&gt;
+&lt;p&gt;整场面试持续50min。难度并不大，但由于是游戏公司，所以很多问题和项目是之前没有遇到或想过。&lt;/p&gt;
+&lt;h2 id=&#34;算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算法&#34;&gt;&lt;/a&gt; 算法&lt;/h2&gt;
+&lt;p&gt;合并2个有序链表。&lt;/p&gt;
+&lt;h2 id=&#34;项目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#项目&#34;&gt;&lt;/a&gt; 项目&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux下的项目。我告诉他我大多数全是Linux。&lt;/li&gt;
+&lt;li&gt;之前大四做的一个游戏（软件工程作业）&lt;a href=&#34;https://github.com/xxr5566833/Game&#34;&gt;github&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;内存泄漏诊断&lt;/li&gt;
+&lt;li&gt;protobuf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;计算机基础&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#计算机基础&#34;&gt;&lt;/a&gt; 计算机基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如何诊断网络问题？&lt;/li&gt;
+&lt;li&gt;一致性哈希，增桶、减桶。&lt;/li&gt;
+&lt;li&gt;单例模式，带模版的单例，多线程下的。这是共享屏幕在本地IDE实现的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;三面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三面&#34;&gt;&lt;/a&gt; 三面&lt;/h1&gt;
+&lt;p&gt;time: 2020-04-08 12:58:36&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/discuss/387235&#34;&gt;一面&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://www.nowcoder.com/discuss/399642&#34;&gt;二面&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;语言基础&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语言基础&#34;&gt;&lt;/a&gt; 语言基础&lt;/h2&gt;
+&lt;p&gt;实现智能指针shared_ptr的构造、析构函数。&lt;br /&gt;
+问：为什么count要用指针？&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typename&lt;/span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;shared_ptr&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    T* data = &lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;uint32_t&lt;/span&gt;* count = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;shared_ptr&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; shared_ptr&amp;amp; a) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        data = a-&amp;gt;data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        count = a-&amp;gt;count;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        ++(*count);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;shared_ptr&lt;/span&gt;(T* t) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        data = t;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (t) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            count = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;uint32_t&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            count = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    shared_ptr &lt;span class=&#34;keyword&#34;&gt;operator&lt;/span&gt; = (&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; shared_ptr&amp;amp; a) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (a == &lt;span class=&#34;keyword&#34;&gt;this&lt;/span&gt;) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;keyword&#34;&gt;this&lt;/span&gt; != &lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                --(*count);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (*count == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    &lt;span class=&#34;keyword&#34;&gt;delete&lt;/span&gt; data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    &lt;span class=&#34;keyword&#34;&gt;delete&lt;/span&gt; count;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            data = a-&amp;gt;data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            count = a-&amp;gt;count;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++(*count);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ~&lt;span class=&#34;built_in&#34;&gt;shared_ptr&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (data) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (*count &amp;gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                --(*count);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;keyword&#34;&gt;delete&lt;/span&gt; data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;keyword&#34;&gt;delete&lt;/span&gt; count;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typename&lt;/span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;shared_ptr&amp;lt;T&amp;gt; &lt;span class=&#34;title&#34;&gt;make_shared&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ret&lt;/span&gt;(&lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;T&lt;/span&gt;());&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;算法-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算法-2&#34;&gt;&lt;/a&gt; 算法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1，7，10 三种面值硬币。&lt;br /&gt;
+给定一个n，最少硬币凑出这个值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我刚开始想要贪心，但面试官很快给出反例。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;15&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之后给出一个DP的O(N)的解法，面试官再提示N很大时，有何优化的思路。进而提出先mod最大公倍数，再对余数DP的O(1)解法。&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;dp&lt;/span&gt;(n) = &lt;span class=&#34;built_in&#34;&gt;min&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;dp&lt;/span&gt;(n - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;) + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;dp&lt;/span&gt;(n - &lt;span class=&#34;number&#34;&gt;7&lt;/span&gt;) + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;dp&lt;/span&gt;(n - &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;) + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;); &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; n &amp;gt;= &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; * &lt;span class=&#34;number&#34;&gt;7&lt;/span&gt; * &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt; = &lt;span class=&#34;number&#34;&gt;70&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;O&lt;/span&gt; (&lt;span class=&#34;number&#34;&gt;7&lt;/span&gt; + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;) = &lt;span class=&#34;built_in&#34;&gt;O&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;数据结构设计&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据结构设计&#34;&gt;&lt;/a&gt; 数据结构设计&lt;/h2&gt;
+&lt;p&gt;设计一个百万量级排行榜 ，支持插入，按uid查找分数，按uid查找名次，按名次查找uid.&lt;br /&gt;
+follow up: 分数相同时，按照上榜时间排序。&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;order statisc tree&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;getSize&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(TreeNode* node)&lt;/span&gt; &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;multiset&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;order_statisc_tree&amp;lt;pair&amp;lt;分数, 时间&amp;gt;，uid&amp;gt;：按名次查uid log N&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hashmap&amp;lt;uid, pair&amp;lt;分数,时间&amp;gt;&amp;gt;: 按uid查分数 &lt;span class=&#34;built_in&#34;&gt;O&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;按uid查排名 &lt;span class=&#34;built_in&#34;&gt;O&lt;/span&gt;(log N)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;insert: &lt;span class=&#34;built_in&#34;&gt;O&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; + log N)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;计算机基础-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#计算机基础-2&#34;&gt;&lt;/a&gt; 计算机基础&lt;/h2&gt;
+&lt;p&gt;Linux熟不&lt;br /&gt;
+排查线上某进程CPU为100%。&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#其他&#34;&gt;&lt;/a&gt; 其他&lt;/h2&gt;
+&lt;p&gt;游戏公司的特别之处。&lt;br /&gt;
+玩过我们公司的游戏吗？（否）那平时玩什么游戏。&lt;/p&gt;
+&lt;p&gt;最后面试官问我能不能毕业前提前来实习。我说不能，没发去上海。&lt;/p&gt;
+&lt;p&gt;问题：贵司服务器开发内部分组情况。不同产品的后端共用情况。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
