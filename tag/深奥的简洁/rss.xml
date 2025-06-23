@@ -5,109 +5,110 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Sun, 15 Sep 2024 18:54:17 +0100</pubDate>
-        <lastBuildDate>Sun, 15 Sep 2024 18:54:17 +0100</lastBuildDate>
+        <pubDate>Sun, 15 Sep 2024 18:54:17 +0800</pubDate>
+        <lastBuildDate>Sun, 15 Sep 2024 18:54:17 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</guid>
             <title>深奥的简洁 从混沌、复杂到地球生命的起源</title>
             <link>https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</link>
             <category>Reading</category>
             <category>深奥的简洁</category>
-            <pubDate>Sun, 15 Sep 2024 18:54:17 +0100</pubDate>
+            <pubDate>Sun, 15 Sep 2024 18:54:17 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;每周一本书22：&lt;a href=&#34;https://book.douban.com/subject/3370214/&#34;&gt;&lt;strong&gt;深奥的简洁&lt;/strong&gt; 从混沌、复杂到地球生命的起源&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;“穷查理宝典”推荐的书籍，从混沌的角度理解宇宙、生命和社会，十分有趣的角度。通过混沌，这一数学上的概念，把宇宙中很多事情都穿起来了。虽然我们有许多的物理学知识，看似对世界了解很多，可以做到预测历史和未来，像拉普拉斯认为的那样。但事实和理论证明了，这是不可能的。计算宇宙最好也是唯一的方案就是宇宙本身，无法在宇宙中制作出这样的机器或生命，去计算和预测宇宙。这是数学的限制，如果像很多先贤说的那样，数学是上帝的语言。那看来这一语言也是天生有限制的，不是全知全能的。当然数学也一直在进展，但从目前的证明来看，很多方程是没有解析解的。迭代解注定是蝴蝶效应。相比“迷人的温度”那本书稍差。虽然我自认为有一定的数理基础背景，但还是被本书的数学和论证搞得有些糊涂了。&lt;/p&gt;
 &lt;p&gt;有意思的是，前一本书提到“流浪地球”的方案。本书则是以，“三体”问题开端。三体问题不可解，不是物理的错，而是数学的错，而且是数学已经证明了不可解。因此，如果“地球往事”里，三体组织的拯救派看过这部作品，也就会放弃拯救“主”的想法。当然，“三体”书中，最后拯救派也证明了此事，并且在与降临派的斗争中失败。可以说，他们的策略从根上就是不可能和注定失败的。&lt;/p&gt;

@@ -5,109 +5,110 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Mon, 07 May 2018 23:30:25 +0100</pubDate>
-        <lastBuildDate>Mon, 07 May 2018 23:30:25 +0100</lastBuildDate>
+        <pubDate>Mon, 07 May 2018 23:30:25 +0800</pubDate>
+        <lastBuildDate>Mon, 07 May 2018 23:30:25 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</guid>
             <title>SQL实践进阶</title>
             <link>https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</link>
             <category>tech</category>
             <category>kuaishou</category>
-            <pubDate>Mon, 07 May 2018 23:30:25 +0100</pubDate>
+            <pubDate>Mon, 07 May 2018 23:30:25 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;这一周在公司写了很多很长功能很复杂的sql语句，深感自己的数据库和SQL学的还只是皮毛，完全没法满足工程上的要求。&lt;br /&gt;
 负责带我的二mentor对SQL比较也精通，对我有很多指导和建议。&lt;br /&gt;
 没有对比就没有伤害，自己的菜和师兄的强让我知耻而后勇，有了进阶SQL的想法和行动。&lt;/p&gt;
@@ -150,7 +151,7 @@ Hive上存在很多限制和挑战，比如不能在select中嵌套select子句�
             <link>https://youngforest.github.io/2018/04/30/kuaishou-intern-interview/</link>
             <category>intern</category>
             <category>kuaishou</category>
-            <pubDate>Mon, 30 Apr 2018 23:33:10 +0100</pubDate>
+            <pubDate>Mon, 30 Apr 2018 23:33:10 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;感谢@lxc师兄的内推和面试建议，我有幸可以参加快手推荐组算法实习生的面试，并最终通过面试被录取。&lt;br /&gt;
 虽然实习生的面试可能相对简单，但是我认为还是有参考价值的。&lt;br /&gt;
 刷实习算是一种最终找到好工作，进入梦想公司的途径吧（不能算是捷径，我实习的2份工作还是很累的。快手是我的第二份实习。）。&lt;br /&gt;

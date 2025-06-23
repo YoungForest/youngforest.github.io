@@ -5,109 +5,110 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Thu, 07 Mar 2024 23:16:44 +0000</pubDate>
-        <lastBuildDate>Thu, 07 Mar 2024 23:16:44 +0000</lastBuildDate>
+        <pubDate>Thu, 07 Mar 2024 23:16:44 +0800</pubDate>
+        <lastBuildDate>Thu, 07 Mar 2024 23:16:44 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2024/03/07/Elon-Musk/</guid>
             <title>埃隆·马斯克传 Elon Musk</title>
             <link>https://youngforest.github.io/2024/03/07/Elon-Musk/</link>
             <category>Reading</category>
             <category>埃隆·马斯克传</category>
-            <pubDate>Thu, 07 Mar 2024 23:16:44 +0000</pubDate>
+            <pubDate>Thu, 07 Mar 2024 23:16:44 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/36518892/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;放弃英文版，转到翻译版果然是个正确的选择。38万字，一周看完，太爽了。尤其是从2000后第一个十年那段，关于SpaceX和Tesla的初创阶段，真的是振奋人心，改变人类历史进程的冒险。相比原版，是有些删减的，主要是关于中国部分。我对照着看了下，其实不多，为了过审可以理解。&lt;/p&gt;
 &lt;p&gt;全书其实可以分为几个部分：&lt;/p&gt;

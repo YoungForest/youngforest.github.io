@@ -5,108 +5,109 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Thu, 15 Dec 2022 12:13:23 +0000</pubDate>
-        <lastBuildDate>Thu, 15 Dec 2022 12:13:23 +0000</lastBuildDate>
+        <pubDate>Thu, 15 Dec 2022 12:13:23 +0800</pubDate>
+        <lastBuildDate>Thu, 15 Dec 2022 12:13:23 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2022/12/15/Netherlands-Visa-from-Ireland/</guid>
             <title>爱尔兰 办荷兰申根短期签证</title>
             <link>https://youngforest.github.io/2022/12/15/Netherlands-Visa-from-Ireland/</link>
             <category>travel</category>
-            <pubDate>Thu, 15 Dec 2022 12:13:23 +0000</pubDate>
+            <pubDate>Thu, 15 Dec 2022 12:13:23 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;/images/NetherlandsVisa.jpg&#34; alt=&#34;荷兰签证效果图&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;终于在都柏林拿到心心念念的荷兰申根签证了，短期访问亲友签。&lt;/p&gt;
 &lt;p&gt;因为朋友在阿姆读书，我在爱尔兰打工。因为爱尔兰不属于申根区。因此互相探望的话，我需要办申根签证，她需要办爱尔兰签证。&lt;br /&gt;
@@ -151,7 +152,7 @@
             <title>武汉游记 暨硕士毕业旅行</title>
             <link>https://youngforest.github.io/2021/07/02/Wuhan-trip/</link>
             <category>travel</category>
-            <pubDate>Fri, 02 Jul 2021 19:26:23 +0100</pubDate>
+            <pubDate>Fri, 02 Jul 2021 19:26:23 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;终于毕业了，筹划了许久的毕业旅行也正式提上议程。因为要等npy考完试，而且入职前要回来，最好还有几天休息和置办家具。我和npy只有1周时间旅行。共去了3个地方，山西临汾-&amp;gt;湖北武汉-&amp;gt;湖北随州。&lt;br /&gt;
 目的大概是见我的家长，看望npy十年没见的奶奶。&lt;/p&gt;
 &lt;h1 id=&#34;624-day-0&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#624-day-0&#34;&gt;&lt;/a&gt; 6/24 Day 0&lt;/h1&gt;
@@ -192,7 +193,7 @@
             <link>https://youngforest.github.io/2019/09/30/Paris/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Mon, 30 Sep 2019 22:24:49 +0100</pubDate>
+            <pubDate>Mon, 30 Sep 2019 22:24:49 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;上周五赶上了9月27日比利时的法语区节日，学校放假，连上周末，我们恰好有3天的假期。在上上周从阿姆斯特丹回来的火车上，我们就定下了本次的去巴黎之旅。本次旅行的成员有：我、zfn、lsd、wyd。&lt;/p&gt;
 &lt;p&gt;总的感受是：我太喜欢巴黎了，我爱巴黎.&lt;br /&gt;
 在这里，我深刻地感受到法国的文化自信。&lt;/p&gt;
@@ -255,7 +256,7 @@
             <link>https://youngforest.github.io/2019/09/23/Amsterdam/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Mon, 23 Sep 2019 11:57:12 +0100</pubDate>
+            <pubDate>Mon, 23 Sep 2019 11:57:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;来到欧洲安顿下来的第一周，我们去了美丽的荷兰-阿姆斯特丹和周围的2座村庄。&lt;br /&gt;
 由于是第一次出来玩，许多行程安排的有问题，花费也相对不菲。人均大概450欧。相比之下，一周之后的巴黎之旅只花了300欧，并且体验也更棒。&lt;br /&gt;
 我认为荷兰绝对是欣赏北欧乡村风光的最佳地点。&lt;/p&gt;
@@ -286,7 +287,7 @@
             <link>https://youngforest.github.io/2019/09/17/Beligum/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Tue, 17 Sep 2019 22:08:27 +0100</pubDate>
+            <pubDate>Tue, 17 Sep 2019 22:08:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;今年的下半年，有幸有机会来比利时交换一学期，大概5个月时间。&lt;br /&gt;
 这是我首次出国这么长时间。之前也是参加学校的项目，去英国游学了半个月，详情可以看我3年前写的&lt;a href=&#34;https://youngforest.github.io/2016/08/25/my-britain-trip/&#34;&gt;英伦游学所见所思&lt;/a&gt;。&lt;br /&gt;
 接下来，我从城市、生活、学习和旅行四个方面总结我的交换项目。&lt;/p&gt;
@@ -313,7 +314,7 @@
             <link>https://youngforest.github.io/2018/10/09/guangzhou-tour/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Tue, 09 Oct 2018 17:26:52 +0100</pubDate>
+            <pubDate>Tue, 09 Oct 2018 17:26:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;国庆节后，我和二师兄有机会前往广东，依次游览了广州、澳门 和 香港。10月6号从北京出发，坐10个小时高铁，来到广州南站，之后落塌广东大厦。&lt;/p&gt;
 &lt;h2 id=&#34;广州&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#广州&#34;&gt;&lt;/a&gt; 广州&lt;/h2&gt;
 &lt;p&gt;第一天先歇一天，在广州玩。早起去爬越秀公园。由于是长假的最后一天，年轻人都玩累了躺在家里休息，大街上和公园里只能看到大量的中老年人在锻炼身体。在公园里，我终于亲眼看到了生长在南方的“木棉”。想起《致橡树》中的诗句，“我愿做你身旁的一株木棉…“；和 《致橡树》电视剧中的情节。橡树 和 木棉 分别生长在北方和南方，注定不能生长在一起。知道这一点的话，才能体会到《致橡树》中传达的悲伤的情感。&lt;/p&gt;
@@ -356,7 +357,7 @@
             <title>丰宁坝上草原2日游</title>
             <link>https://youngforest.github.io/2018/10/07/bashang-grassland/</link>
             <category>travel</category>
-            <pubDate>Sun, 07 Oct 2018 22:11:28 +0100</pubDate>
+            <pubDate>Sun, 07 Oct 2018 22:11:28 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;如何欢度2018年最后一个假期–国庆节呢？我选择了跟团(北京初心户外)去河北丰宁的坝上草原骑马。9月30号晚19点半在惠通西街南口集合上大巴。一路向北，9点半到达一个北京最北的服务站时，已经感觉很冷了。晚上近12点到达丰宁县的一个农家乐住宿时，天气已经非常冷了。据房东说，前一天刚刚下过雪，所以这两天非常冷。后来国庆节后刷朋友圈时，看到去什么沙漠、戈壁、火山的，无一例外都是很冷。所以，秋天去这些地方，还是要三思而后行的，做足充分准备的。出发前，领队反复强调需要带厚衣服，最好是羽绒服。我从小怕冷，直接带了最厚的羽绒服–500g 绒的加拿大鹅。据说这衣服去南极都没问题，我没去过南极，不知真假。但这件衣服抵抗秋天的草原夜晚的温度，还是一点问题也没有的。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;第一天上午，到村庄附近骑马，80元/小时。这个旅行团来骑马的有40余人，上马的时候很混乱。我稀里糊涂就跟着一批人走了。这批人由大约20名游客，3个马夫组成。通过后来的交流，我才知道，自己上了一条“贼船”。怎么个贼法呢？首先，我们绕了一大圈，走了最远的路线。这意味着，最长的时间(4小时)，最高的花费。过长的骑马对于第一次上马的我来说，度过了最初的激动和策马奔腾后，到最后回程的时候简直是一种折磨。马归心似箭，总想快跑，而我已经内脏都要被颠碎了。回来之后，腰背疼了4天，尾椎骨也破了，小腿的胫骨中部被马镫磨烂了，过了一周才慢慢痊愈。当然绕远也有好处。我们经过了附近风景最美的“情人谷”。山丘、草原、蓝天、白云相映生辉，组成一幅幅屏保级的图案。在马上随手一拍就是美景。尤其是还能看到成片的白桦林，远近不一的成群的风力发电机和覆盖着白雪的山顶。其次，我们中间休息了3次。每次休息都在简陋的茶房，加起来休息时间竟达到了1个小时。然而这些都是仍然算是收费的。你可以认为这些马和马夫在带薪休假。最后，回到农家乐已经下午一点了。12点开饭，回的早的人有大鱼大肉，回的晚的人只剩残羹冷炙了。&lt;/p&gt;
@@ -382,7 +383,7 @@
             <title>山东游记</title>
             <link>https://youngforest.github.io/2018/09/14/shandong-trip/</link>
             <category>travel</category>
-            <pubDate>Fri, 14 Sep 2018 21:07:24 +0100</pubDate>
+            <pubDate>Fri, 14 Sep 2018 21:07:24 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;8月21号 至 8月28号，带着自我放逐的心情，我去山东玩了7天。小时候（2008年）曾跟着爸爸和旅行团来过山东旅游，经典的旅游城市，包括青岛、烟台、威海 和 隔海相望的大连，都逛了一圈。当时年纪尚小，天真烂漫，只觉得不用上学，来到陌生的地方旅游，十分有趣。如今十年过去了，同样的景点，却有不一样的心情和感受。&lt;/p&gt;
 &lt;p&gt;此次旅行是临时决定的。之前同学叫着去重庆做毕业旅行，我由于种种原因没去成。8月中旬后，经历了情感上的波折和三毛流浪文学的洗脑，恰好有山东的同学(我们可以称之为“女声男”，因为其声音特别有雌性)邀请我去山东一起玩。我便答应了。希望通过此次旅行让心情好过一点，让匆忙的旅行占据自己的大脑，不去想不该想的苦恼。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
@@ -433,7 +434,7 @@
             <title>英伦游学所见所思</title>
             <link>https://youngforest.github.io/2016/08/25/my-britain-trip/</link>
             <category>travel</category>
-            <pubDate>Thu, 25 Aug 2016 14:48:19 +0100</pubDate>
+            <pubDate>Thu, 25 Aug 2016 14:48:19 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;今年暑假，有幸参加我航高等工程学院和剑桥东方交流会联合承办的英国交流营。该交流营为期两周，内容充实，形式多样，让我深刻了解了英国的人文文化和中国人留学情况，圆满完成自己行前的目标。接下来，我就整个整理进行整理，分享给大家，希望对大家有所帮助。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;这是我第一次有机会出国，也算是人生的一个标志事件，自己的心情也是十分激动的，半个学期都在期待这次交流。去英国前，英国脱欧公投，以几百万的微弱优势脱欧成功，首相卡梅隆辞职，英镑暴跌10%，我们又无形中省了一笔钱。经过几个月的行前筹备，我们终于踏上了这块离家乡八千公里的国度，开始为期两周的游学。所谓游学，既有紧张的环英之旅，从南到北，又从北到南，逛了很多自然人文景观；又有在剑桥的5天充实的学习生活，杜伦大学的一晚借宿，爱丁堡大学的参观游览，曼彻斯特大学的交流学习，伦敦大学的两天体会。14天的交流营，从希思罗机场到希思罗机场，可以说整个人都被洗脑了。被洗脑的原因有很多，我在下面分几个方面细细道来。&lt;/p&gt;

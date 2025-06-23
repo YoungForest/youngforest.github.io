@@ -3,101 +3,102 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;折腾&#34; category</title>
     <link href="https://youngforest.github.io" />
-    <updated>2021-10-13T11:39:31.000Z</updated>
+    <updated>2021-10-13T04:39:31.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="迷人的温度" />
     <category term="kuaishou" />
     <category term="Alibaba" />
     <category term="travel" />
+    <category term="游记" />
+    <category term="反脆弱" />
+    <category term="你的灯亮着吗" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="New Graduate" />
+    <category term="深奥的简洁" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="Weride" />
     <category term="C++" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
+    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
-    <category term="New Graduate" />
-    <category term="Hexo" />
-    <category term="北京" />
-    <category term="户口" />
-    <category term="Ireland" />
-    <category term="Competitive Programming" />
     <category term="Tech" />
-    <category term="Algorithm" />
-    <category term="LeetCode" />
-    <category term="Mihayo" />
-    <category term="键盘" />
-    <category term="Tencent" />
-    <category term="Linux" />
-    <category term="atom" />
-    <category term="hash" />
-    <category term="unordered_map" />
-    <category term="English" />
-    <category term="codeforces" />
-    <category term="contest" />
-    <category term="折腾" />
-    <category term="旷视" />
-    <category term="vim" />
-    <category term="WeRide" />
-    <category term="tex" />
-    <category term="Mac" />
-    <category term="Ubuntu" />
-    <category term="Owncloud" />
-    <category term="Windows" />
-    <category term="benchmark" />
-    <category term="sensetime" />
-    <category term="sublime" />
-    <category term="Microsoft" />
-    <category term="vscode" />
-    <category term="gcc" />
-    <category term="git" />
-    <category term="RIP" />
-    <category term="Weride" />
-    <category term="游记" />
-    <category term="投资" />
+    <category term="Hexo" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
+    <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="年终总结" />
-    <category term="Amazon" />
-    <category term="China" />
+    <category term="持续买进" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="穷查理宝典" />
+    <category term="编程珠玑" />
+    <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="Reading" />
-    <category term="3 body" />
-    <category term="全球通史" />
-    <category term="你的灯亮着吗" />
-    <category term="埃隆·马斯克传" />
-    <category term="枪炮、病菌与钢铁" />
-    <category term="持续买进" />
-    <category term="编程珠玑" />
     <category term="现实不似你所见-量子引力之旅" />
-    <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
-    <category term="碧血剑" />
-    <category term="生死疲劳" />
-    <category term="深奥的简洁" />
-    <category term="迷人的温度" />
-    <category term="反脆弱" />
-    <category term="厚黑学" />
-    <category term="六神磊磊读金庸" />
-    <category term="六神磊磊读唐诗" />
-    <category term="穷查理宝典" />
-    <category term="太白金星有点烦" />
     <category term="食南之徒" />
     <category term="马伯庸" />
+    <category term="太白金星有点烦" />
+    <category term="Tencent" />
     <category term="纳瓦尔宝典" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="国家为什么失败" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
-    <category term="Business cycles history theory and investment reality" />
-    <category term="Economics" />
+    <category term="碧血剑" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="生死疲劳" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="RIP" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
     <entry>
         <id>https://youngforest.github.io/2021/10/13/Niz-plum-option-key-not-work/</id>
         <title>Niz plum option key 在蓝牙模式下不响应</title>
@@ -123,7 +124,7 @@
 &lt;p&gt;敬请享受自己的键盘吧！&lt;/p&gt;
 </content>
         <category term="键盘" />
-        <updated>2021-10-13T11:39:31.000Z</updated>
+        <updated>2021-10-13T04:39:31.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/09/07/Setup-English-blog/</id>
@@ -150,7 +151,7 @@
 英文博客：&lt;a href=&#34;https://youngforest.github.io/en/&#34;&gt;https://youngforest.github.io/en/&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2021-09-07T16:50:49.000Z</updated>
+        <updated>2021-09-07T09:50:49.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/04/01/BUAA-daily-health-report/</id>
@@ -178,7 +179,7 @@
 &lt;h3 id=&#34;mac-配置代理服务器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mac-配置代理服务器&#34;&gt;&lt;/a&gt; Mac 配置代理服务器&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew install mitmproxy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
-        <updated>2021-04-01T10:16:46.000Z</updated>
+        <updated>2021-04-01T03:16:46.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/03/26/SSH-proxy-by-jump-server/</id>
@@ -214,7 +215,7 @@
 &lt;p&gt;Reference: &lt;a href=&#34;https://www.zsythink.net/archives/2450&#34;&gt;SSH 端口转发：SSH 隧道&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="tech" />
-        <updated>2021-03-26T15:11:02.000Z</updated>
+        <updated>2021-03-26T07:11:02.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/03/18/Ubuntu-vpn-cannot-access-public-resource/</id>
@@ -241,7 +242,7 @@
 &lt;p&gt;下一步，我还会试着在Ubuntu上装个跳板机。这样我的Mac或许可以通过该跳板机连入杭研院的机器。 (已经成功啦，下篇更新在&lt;a href=&#34;https://youngforest.github.io/2021/03/26/SSH-proxy-by-jump-server/&#34;&gt;这里&lt;/a&gt;)。&lt;/p&gt;
 </content>
         <category term="Linux" />
-        <updated>2021-03-18T11:20:13.000Z</updated>
+        <updated>2021-03-18T03:20:13.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/02/25/Google-AdSense-for-hexo-next/</id>
@@ -272,7 +273,7 @@
 其他需要生成放置在博客根目录下的文件也是类似的处理。&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2021-02-25T11:17:14.000Z</updated>
+        <updated>2021-02-25T03:17:14.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/05/08/ssh-login-remote-server-without-password/</id>
@@ -294,7 +295,7 @@ Windows是不需要这样的解决方法的，Windows下很多类Putty工具都�
 &lt;a href=&#34;https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/&#34;&gt;ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="tech" />
-        <updated>2018-05-08T17:47:09.000Z</updated>
+        <updated>2018-05-08T10:47:09.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2017/08/12/optimize-cortana-in-searching-local-files-and-folders/</id>
@@ -308,7 +309,7 @@ encounter a good solution.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10&#34;&gt;https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Windows" />
-        <updated>2017-08-12T22:50:49.000Z</updated>
+        <updated>2017-08-12T15:50:49.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2017/04/08/atom-explore/</id>
@@ -331,7 +332,7 @@ encounter a good solution.&lt;/p&gt;
 &lt;h3 id=&#34;具体命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#具体命令&#34;&gt;&lt;/a&gt; 具体命令&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config &lt;span class=&#34;built_in&#34;&gt;set&lt;/span&gt; https-proxy http://localhost:8123&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm config get https-proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;http://localhost:8123/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sean@sean-OptiPlex-790:~$ apm install markdown-preview-plus&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Installing markdown-preview-plus to /home/sean/.atom/packages ✓&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="atom" />
-        <updated>2017-04-08T21:20:36.000Z</updated>
+        <updated>2017-04-08T14:20:36.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2017/03/26/gvim-configuration-for-windows/</id>
@@ -363,7 +364,7 @@ encounter a good solution.&lt;/p&gt;
 &lt;p&gt;这篇post就是用&lt;code&gt;gvim for MS-WINDOWS&lt;/code&gt;完成的.&lt;/p&gt;
 </content>
         <category term="vim" />
-        <updated>2017-03-26T17:46:41.000Z</updated>
+        <updated>2017-03-26T10:46:41.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2017/01/18/sublime-personlize/</id>
@@ -379,7 +380,7 @@ encounter a good solution.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/vim-solarized.PNG&#34; alt=&#34;Solarized for vim&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="sublime" />
-        <updated>2017-01-18T15:27:15.000Z</updated>
+        <updated>2017-01-18T07:27:15.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/11/22/move-posts-from-cnblogs-to-Hexo/</id>
@@ -402,7 +403,7 @@ encounter a good solution.&lt;/p&gt;
 &lt;p&gt;迁移成功后发现, 有两篇文章的格式变得很奇怪, 正文都很正常, 但引用, 插入代码的地方就会排版很乱. 但另一篇却很完美. 通过观察迁移的&lt;code&gt;xml&lt;/code&gt;文件内容发现, 那两篇文章的内容是html格式的, 而另一篇是&lt;code&gt;Markdown&lt;/code&gt;格式的. 这时我才想起, 最初的两篇随笔是用博客园推荐的&lt;code&gt;TinyMCE编辑器&lt;/code&gt;编写的, 后来才转投&lt;code&gt;Markdown&lt;/code&gt;的. 所以, Hexo当然不能完美的支持.&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2016-11-22T01:42:23.000Z</updated>
+        <updated>2016-11-21T17:42:23.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/11/02/terminal-proxy-configuration/</id>
@@ -462,7 +463,7 @@ encounter a good solution.&lt;/p&gt;
 &lt;p&gt;在终端中尽情享受科学上网吧!&lt;/p&gt;
 </content>
         <category term="Linux" />
-        <updated>2016-11-02T23:30:00.000Z</updated>
+        <updated>2016-11-02T15:30:00.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/11/02/Hexo-github-building-personal-blog/</id>
@@ -504,6 +505,6 @@ encounter a good solution.&lt;/p&gt;
 在&lt;a href=&#34;https://youngforest.github.io/&#34;&gt;这里&lt;/a&gt;可以看到我部署好的博客.&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2016-11-02T22:32:55.000Z</updated>
+        <updated>2016-11-02T14:32:55.000Z</updated>
     </entry>
 </feed>

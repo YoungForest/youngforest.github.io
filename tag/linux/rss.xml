@@ -5,108 +5,109 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Thu, 18 Mar 2021 11:20:13 +0000</pubDate>
-        <lastBuildDate>Thu, 18 Mar 2021 11:20:13 +0000</lastBuildDate>
+        <pubDate>Thu, 18 Mar 2021 11:20:13 +0800</pubDate>
+        <lastBuildDate>Thu, 18 Mar 2021 11:20:13 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2021/03/18/Ubuntu-vpn-cannot-access-public-resource/</guid>
             <title>Ubuntu OpenVPN 无法获取公网资源</title>
             <link>https://youngforest.github.io/2021/03/18/Ubuntu-vpn-cannot-access-public-resource/</link>
             <category>Linux</category>
-            <pubDate>Thu, 18 Mar 2021 11:20:13 +0000</pubDate>
+            <pubDate>Thu, 18 Mar 2021 11:20:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;由于科研需求，我需要连接杭州研究院的VPN，才能使用显卡做神经网络的训练任务。&lt;br /&gt;
 然而在Ubunut 18.04配置好OpenVPN后，发现一个难题：连上VPN后无法上外网（百度等网站，不是墙外的网站，而是相对局域网内网的“外网”），断开VPN后可以连外网，但无法连接杭研院的资源。鉴于工作中，外网和杭研院内网基本缺一不可，我花了2天时间调研和修复改问题。而且其他同学使用VPN并没有类似问题，所以我认为是&lt;code&gt;Ubuntu&lt;/code&gt;独特的问题。修复的操作很简单，但定位到问题的过程十分坎坷。&lt;/p&gt;
 &lt;h2 id=&#34;现象整理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#现象整理&#34;&gt;&lt;/a&gt; 现象整理&lt;/h2&gt;
@@ -133,7 +134,7 @@
             <title>实现terminal代理</title>
             <link>https://youngforest.github.io/2016/11/02/terminal-proxy-configuration/</link>
             <category>Linux</category>
-            <pubDate>Wed, 02 Nov 2016 23:30:00 +0000</pubDate>
+            <pubDate>Wed, 02 Nov 2016 23:30:00 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题&#34;&gt;&lt;/a&gt; 问题&lt;/h2&gt;
 &lt;p&gt;作为一名Linuxer，熟练使用终端是一项必备技能，但终端中有时下载安装功能速度很慢，令人崩溃.我自然而然想到了可否加个代理,提高速度。我之前一直用shadowsocks,浏览器使用switchyProxy,实现了初步的科学上网。那么,终端中是否有类似的工具呢？答案是肯定的。通过科学搜索，我成功解决了terminal中的科学上网问题，在此总结一下，希望可以帮到大家。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;

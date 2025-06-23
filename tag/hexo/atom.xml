@@ -3,101 +3,102 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;hexo&#34; tag</title>
     <link href="https://youngforest.github.io" />
-    <updated>2021-09-07T16:50:49.000Z</updated>
+    <updated>2021-09-07T09:50:49.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="迷人的温度" />
     <category term="kuaishou" />
     <category term="Alibaba" />
     <category term="travel" />
+    <category term="游记" />
+    <category term="反脆弱" />
+    <category term="你的灯亮着吗" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="New Graduate" />
+    <category term="深奥的简洁" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="Weride" />
     <category term="C++" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
+    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
-    <category term="New Graduate" />
-    <category term="Hexo" />
-    <category term="北京" />
-    <category term="户口" />
-    <category term="Ireland" />
-    <category term="Competitive Programming" />
     <category term="Tech" />
-    <category term="Algorithm" />
-    <category term="LeetCode" />
-    <category term="Mihayo" />
-    <category term="键盘" />
-    <category term="Tencent" />
-    <category term="Linux" />
-    <category term="atom" />
-    <category term="hash" />
-    <category term="unordered_map" />
-    <category term="English" />
-    <category term="codeforces" />
-    <category term="contest" />
-    <category term="折腾" />
-    <category term="旷视" />
-    <category term="vim" />
-    <category term="WeRide" />
-    <category term="tex" />
-    <category term="Mac" />
-    <category term="Ubuntu" />
-    <category term="Owncloud" />
-    <category term="Windows" />
-    <category term="benchmark" />
-    <category term="sensetime" />
-    <category term="sublime" />
-    <category term="Microsoft" />
-    <category term="vscode" />
-    <category term="gcc" />
-    <category term="git" />
-    <category term="RIP" />
-    <category term="Weride" />
-    <category term="游记" />
-    <category term="投资" />
+    <category term="Hexo" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
+    <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="年终总结" />
-    <category term="Amazon" />
-    <category term="China" />
+    <category term="持续买进" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="穷查理宝典" />
+    <category term="编程珠玑" />
+    <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="Reading" />
-    <category term="3 body" />
-    <category term="全球通史" />
-    <category term="你的灯亮着吗" />
-    <category term="埃隆·马斯克传" />
-    <category term="枪炮、病菌与钢铁" />
-    <category term="持续买进" />
-    <category term="编程珠玑" />
     <category term="现实不似你所见-量子引力之旅" />
-    <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
-    <category term="碧血剑" />
-    <category term="生死疲劳" />
-    <category term="深奥的简洁" />
-    <category term="迷人的温度" />
-    <category term="反脆弱" />
-    <category term="厚黑学" />
-    <category term="六神磊磊读金庸" />
-    <category term="六神磊磊读唐诗" />
-    <category term="穷查理宝典" />
-    <category term="太白金星有点烦" />
     <category term="食南之徒" />
     <category term="马伯庸" />
+    <category term="太白金星有点烦" />
+    <category term="Tencent" />
     <category term="纳瓦尔宝典" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="国家为什么失败" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
-    <category term="Business cycles history theory and investment reality" />
-    <category term="Economics" />
+    <category term="碧血剑" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="生死疲劳" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="RIP" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
     <entry>
         <id>https://youngforest.github.io/2021/09/07/Setup-English-blog/</id>
         <title>Hexo 创建中英文博客</title>
@@ -123,7 +124,7 @@
 英文博客：&lt;a href=&#34;https://youngforest.github.io/en/&#34;&gt;https://youngforest.github.io/en/&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2021-09-07T16:50:49.000Z</updated>
+        <updated>2021-09-07T09:50:49.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/02/25/Google-AdSense-for-hexo-next/</id>
@@ -154,7 +155,7 @@
 其他需要生成放置在博客根目录下的文件也是类似的处理。&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2021-02-25T11:17:14.000Z</updated>
+        <updated>2021-02-25T03:17:14.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/11/22/move-posts-from-cnblogs-to-Hexo/</id>
@@ -177,7 +178,7 @@
 &lt;p&gt;迁移成功后发现, 有两篇文章的格式变得很奇怪, 正文都很正常, 但引用, 插入代码的地方就会排版很乱. 但另一篇却很完美. 通过观察迁移的&lt;code&gt;xml&lt;/code&gt;文件内容发现, 那两篇文章的内容是html格式的, 而另一篇是&lt;code&gt;Markdown&lt;/code&gt;格式的. 这时我才想起, 最初的两篇随笔是用博客园推荐的&lt;code&gt;TinyMCE编辑器&lt;/code&gt;编写的, 后来才转投&lt;code&gt;Markdown&lt;/code&gt;的. 所以, Hexo当然不能完美的支持.&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2016-11-22T01:42:23.000Z</updated>
+        <updated>2016-11-21T17:42:23.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/11/02/Hexo-github-building-personal-blog/</id>
@@ -219,6 +220,6 @@
 在&lt;a href=&#34;https://youngforest.github.io/&#34;&gt;这里&lt;/a&gt;可以看到我部署好的博客.&lt;/p&gt;
 </content>
         <category term="Hexo" />
-        <updated>2016-11-02T22:32:55.000Z</updated>
+        <updated>2016-11-02T14:32:55.000Z</updated>
     </entry>
 </feed>

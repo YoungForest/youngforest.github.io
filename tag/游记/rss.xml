@@ -5,109 +5,110 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Mon, 30 Sep 2019 22:24:49 +0100</pubDate>
-        <lastBuildDate>Mon, 30 Sep 2019 22:24:49 +0100</lastBuildDate>
+        <pubDate>Mon, 30 Sep 2019 22:24:49 +0800</pubDate>
+        <lastBuildDate>Mon, 30 Sep 2019 22:24:49 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2019/09/30/Paris/</guid>
             <title>巴黎</title>
             <link>https://youngforest.github.io/2019/09/30/Paris/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Mon, 30 Sep 2019 22:24:49 +0100</pubDate>
+            <pubDate>Mon, 30 Sep 2019 22:24:49 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;上周五赶上了9月27日比利时的法语区节日，学校放假，连上周末，我们恰好有3天的假期。在上上周从阿姆斯特丹回来的火车上，我们就定下了本次的去巴黎之旅。本次旅行的成员有：我、zfn、lsd、wyd。&lt;/p&gt;
 &lt;p&gt;总的感受是：我太喜欢巴黎了，我爱巴黎.&lt;br /&gt;
 在这里，我深刻地感受到法国的文化自信。&lt;/p&gt;
@@ -170,7 +171,7 @@
             <link>https://youngforest.github.io/2019/09/23/Amsterdam/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Mon, 23 Sep 2019 11:57:12 +0100</pubDate>
+            <pubDate>Mon, 23 Sep 2019 11:57:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;来到欧洲安顿下来的第一周，我们去了美丽的荷兰-阿姆斯特丹和周围的2座村庄。&lt;br /&gt;
 由于是第一次出来玩，许多行程安排的有问题，花费也相对不菲。人均大概450欧。相比之下，一周之后的巴黎之旅只花了300欧，并且体验也更棒。&lt;br /&gt;
 我认为荷兰绝对是欣赏北欧乡村风光的最佳地点。&lt;/p&gt;
@@ -201,7 +202,7 @@
             <link>https://youngforest.github.io/2019/09/17/Beligum/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Tue, 17 Sep 2019 22:08:27 +0100</pubDate>
+            <pubDate>Tue, 17 Sep 2019 22:08:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;今年的下半年，有幸有机会来比利时交换一学期，大概5个月时间。&lt;br /&gt;
 这是我首次出国这么长时间。之前也是参加学校的项目，去英国游学了半个月，详情可以看我3年前写的&lt;a href=&#34;https://youngforest.github.io/2016/08/25/my-britain-trip/&#34;&gt;英伦游学所见所思&lt;/a&gt;。&lt;br /&gt;
 接下来，我从城市、生活、学习和旅行四个方面总结我的交换项目。&lt;/p&gt;
@@ -228,7 +229,7 @@
             <link>https://youngforest.github.io/2018/10/09/guangzhou-tour/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Tue, 09 Oct 2018 17:26:52 +0100</pubDate>
+            <pubDate>Tue, 09 Oct 2018 17:26:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;国庆节后，我和二师兄有机会前往广东，依次游览了广州、澳门 和 香港。10月6号从北京出发，坐10个小时高铁，来到广州南站，之后落塌广东大厦。&lt;/p&gt;
 &lt;h2 id=&#34;广州&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#广州&#34;&gt;&lt;/a&gt; 广州&lt;/h2&gt;
 &lt;p&gt;第一天先歇一天，在广州玩。早起去爬越秀公园。由于是长假的最后一天，年轻人都玩累了躺在家里休息，大街上和公园里只能看到大量的中老年人在锻炼身体。在公园里，我终于亲眼看到了生长在南方的“木棉”。想起《致橡树》中的诗句，“我愿做你身旁的一株木棉…“；和 《致橡树》电视剧中的情节。橡树 和 木棉 分别生长在北方和南方，注定不能生长在一起。知道这一点的话，才能体会到《致橡树》中传达的悲伤的情感。&lt;/p&gt;

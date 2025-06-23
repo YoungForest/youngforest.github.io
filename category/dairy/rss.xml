@@ -5,109 +5,110 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Sat, 28 Dec 2024 00:04:56 +0000</pubDate>
-        <lastBuildDate>Sat, 28 Dec 2024 00:04:56 +0000</lastBuildDate>
+        <pubDate>Sat, 28 Dec 2024 00:04:56 +0800</pubDate>
+        <lastBuildDate>Sat, 28 Dec 2024 00:04:56 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/</guid>
             <title>2024年终总结 与 2025新年展望</title>
             <link>https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/</link>
             <category>life</category>
             <category>年终总结</category>
-            <pubDate>Sat, 28 Dec 2024 00:04:56 +0000</pubDate>
+            <pubDate>Sat, 28 Dec 2024 00:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;转自&lt;a href=&#34;https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;往年的年终总结：&lt;/p&gt;
 &lt;ul&gt;
@@ -262,7 +263,7 @@
             <link>https://youngforest.github.io/2023/12/23/2023-summary-and-2024-resolutions/</link>
             <category>life</category>
             <category>年终总结</category>
-            <pubDate>Sat, 23 Dec 2023 12:15:24 +0000</pubDate>
+            <pubDate>Sat, 23 Dec 2023 12:15:24 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;转自&lt;a href=&#34;https://youngforest.github.io/2023/12/23/2023-summary-and-2024-resolutions/&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;圣诞假期将至，爱尔兰微软的办公室早早就充满着节日气氛。各种张灯结彩，圣诞树和圣诞老人的装饰，不亏是爱尔兰最大的节日。爱尔兰圣诞节会放2天假，12月25号和26号，比美国还多一天。更多的人，尤其是基督教国家的同事，会在节日前后请年假，回家和家人一起过节。因此12月是一个工作比较轻松，大家十分放松的时间。&lt;br /&gt;
 距离新年还有半个月，我的生活和想法应该不会在这段时间内发生改变。不少朋友也在期待着我的年终总结，都成为一年一度的固定项目了。从17年到现在，已经第7年了。&lt;/p&gt;
@@ -412,7 +413,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <link>https://youngforest.github.io/2022/12/25/2022-summary-and-2023-resolutions/</link>
             <category>life</category>
             <category>年终总结</category>
-            <pubDate>Sun, 25 Dec 2022 10:59:13 +0000</pubDate>
+            <pubDate>Sun, 25 Dec 2022 10:59:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;转身之间，2022年已经要过去了。不知道是因为疫情限制地原因，还是因为自己本身年级大了。感觉现在是时光飞逝，真的如白驹过隙。古人诚不欺我。&lt;/p&gt;
 &lt;p&gt;之前的年终总结：&lt;/p&gt;
 &lt;ul&gt;
@@ -480,7 +481,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <title>爱尔兰 办荷兰申根短期签证</title>
             <link>https://youngforest.github.io/2022/12/15/Netherlands-Visa-from-Ireland/</link>
             <category>travel</category>
-            <pubDate>Thu, 15 Dec 2022 12:13:23 +0000</pubDate>
+            <pubDate>Thu, 15 Dec 2022 12:13:23 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;/images/NetherlandsVisa.jpg&#34; alt=&#34;荷兰签证效果图&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;终于在都柏林拿到心心念念的荷兰申根签证了，短期访问亲友签。&lt;/p&gt;
 &lt;p&gt;因为朋友在阿姆读书，我在爱尔兰打工。因为爱尔兰不属于申根区。因此互相探望的话，我需要办申根签证，她需要办爱尔兰签证。&lt;br /&gt;
@@ -526,7 +527,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <link>https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/</link>
             <category>life</category>
             <category>Tech</category>
-            <pubDate>Fri, 09 Dec 2022 16:42:27 +0000</pubDate>
+            <pubDate>Fri, 09 Dec 2022 16:42:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;转自&lt;a href=&#34;https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;今年，我按照预期计划，从国内投欧洲程序员的岗位，虽然赶上宏观经济下行，各个公司纷纷hire freeze甚至layoff。幸运地，还是拿到了2个offer，并在11月成功入职完成肉翻。虽然历经了不少坎坷，回过头看也算是一切顺利。在“润”地道路上被很多有经验地群友帮助，因此我也撰写一篇博客，总结自己地经验和教训，以方便后来人。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/%E6%B6%A6%E4%BA%86.png&#34; alt=&#34;润了&#34; /&gt;&lt;/p&gt;
@@ -641,7 +642,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <title>谈谈西方政治正确</title>
             <link>https://youngforest.github.io/2022/11/19/Western-political-correctness/</link>
             <category>life</category>
-            <pubDate>Sat, 19 Nov 2022 18:16:30 +0000</pubDate>
+            <pubDate>Sat, 19 Nov 2022 18:16:30 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;/images/green-book.jpg&#34; alt=&#34;Green Book&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;无论是在国内时看国内的新闻，还是来到爱尔兰后的真实感受，政治正确都是西方一个很明显的特点。国内普遍的观点是政治正确比较愚蠢，属于自掘坟墓，然而来了这里发现，他们本身竟以此为豪。今天就分享一些我自己关于政治正确的一些原因分析和看法。&lt;/p&gt;
 &lt;ol&gt;
@@ -658,7 +659,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <link>https://youngforest.github.io/2021/12/28/2021-summary-and-2022-resolutions/</link>
             <category>life</category>
             <category>年终总结</category>
-            <pubDate>Tue, 28 Dec 2021 23:35:06 +0000</pubDate>
+            <pubDate>Tue, 28 Dec 2021 23:35:06 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;新年快乐，离2021年结束还有3天。我终于提笔开始了我一年一度的年终总结和新年展望。最近发现写年终总结的同学越来越多，但我其实不是跟风。我很早就开始每年写年终总结。一开始是在日记本里，后来在博客里。除了每年辞旧迎新的时候，我还会在人生阶段性里程碑写下总结和展望，比如本科毕业和硕士毕业。&lt;/p&gt;
 &lt;p&gt;之前的年终总结：&lt;/p&gt;
 &lt;ul&gt;
@@ -713,7 +714,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <title>硕士3年复盘</title>
             <link>https://youngforest.github.io/2021/07/03/my-3-years-master/</link>
             <category>life</category>
-            <pubDate>Sat, 03 Jul 2021 10:41:38 +0100</pubDate>
+            <pubDate>Sat, 03 Jul 2021 10:41:38 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;本科毕业时，我写了4年的总结：&lt;a href=&#34;https://youngforest.github.io/2018/10/03/my-4-years-college/&#34;&gt;大学4年复盘&lt;/a&gt;. 现在转眼之间3年过去了，我已研究生毕业，即将进入职场。&lt;/p&gt;
 &lt;p&gt;虽然经历了半年延毕，但最后还是有惊无险的成功毕业了。上周完成了去武汉的毕业旅行，周末回到北京搬家和准备入职。带着对未来美好的期望，我踌躇满志。&lt;/p&gt;
 &lt;h2 id=&#34;硕士3年&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硕士3年&#34;&gt;&lt;/a&gt; 硕士3年&lt;/h2&gt;
@@ -755,7 +756,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <title>武汉游记 暨硕士毕业旅行</title>
             <link>https://youngforest.github.io/2021/07/02/Wuhan-trip/</link>
             <category>travel</category>
-            <pubDate>Fri, 02 Jul 2021 19:26:23 +0100</pubDate>
+            <pubDate>Fri, 02 Jul 2021 19:26:23 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;终于毕业了，筹划了许久的毕业旅行也正式提上议程。因为要等npy考完试，而且入职前要回来，最好还有几天休息和置办家具。我和npy只有1周时间旅行。共去了3个地方，山西临汾-&amp;gt;湖北武汉-&amp;gt;湖北随州。&lt;br /&gt;
 目的大概是见我的家长，看望npy十年没见的奶奶。&lt;/p&gt;
 &lt;h1 id=&#34;624-day-0&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#624-day-0&#34;&gt;&lt;/a&gt; 6/24 Day 0&lt;/h1&gt;
@@ -796,7 +797,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <link>https://youngforest.github.io/2020/11/25/2020-summary-and-2021-resolutions/</link>
             <category>life</category>
             <category>年终总结</category>
-            <pubDate>Wed, 25 Nov 2020 20:28:16 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2020 20:28:16 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;转发自&lt;a href=&#34;https://youngforest.github.io/2020/11/25/2020-summary-and-2021-resolutions/&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;今年也年终总结有些早，还没有步入12月份。不过因为今天刚交了大论文查重，虽然很多事儿要做，但完全没有工作的心情。不如就利用这种烦躁的心情写个年终总结的初稿，不知道会不会受影响。&lt;/p&gt;
 &lt;p&gt;2020年从一开始就是注定不平凡的一年，之前我只预见到因为我要毕业，只是对我而言，没想到一场席卷全球的疫情使得它成为了对所有人都很有挑战的年份。&lt;/p&gt;
@@ -830,7 +831,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
             <link>https://youngforest.github.io/2020/02/20/2019-summary-and-2020-resolutions/</link>
             <category>life</category>
             <category>年终总结</category>
-            <pubDate>Thu, 20 Feb 2020 16:50:42 +0000</pubDate>
+            <pubDate>Thu, 20 Feb 2020 16:50:42 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://youngforest.github.io/2020/02/20/2019-summary-and-2020-resolutions/&#34;&gt;转发自我的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2020年注定对我是一个不平凡的一年，主要原因在于我面临着毕业和求职的关口。这一关口是我近2年面临的最重要的挑战和任务，我也为之筹备良久，期待可以厚积薄发。然而事实却并不如愿。&lt;/p&gt;
 &lt;h2 id=&#34;2019年工作回顾&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2019年工作回顾&#34;&gt;&lt;/a&gt; 2019年工作回顾&lt;/h2&gt;
@@ -868,7 +869,7 @@ CTCI 基本看完。&lt;br /&gt;
             <link>https://youngforest.github.io/2019/09/30/Paris/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Mon, 30 Sep 2019 22:24:49 +0100</pubDate>
+            <pubDate>Mon, 30 Sep 2019 22:24:49 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;上周五赶上了9月27日比利时的法语区节日，学校放假，连上周末，我们恰好有3天的假期。在上上周从阿姆斯特丹回来的火车上，我们就定下了本次的去巴黎之旅。本次旅行的成员有：我、zfn、lsd、wyd。&lt;/p&gt;
 &lt;p&gt;总的感受是：我太喜欢巴黎了，我爱巴黎.&lt;br /&gt;
 在这里，我深刻地感受到法国的文化自信。&lt;/p&gt;
@@ -931,7 +932,7 @@ CTCI 基本看完。&lt;br /&gt;
             <link>https://youngforest.github.io/2019/09/23/Amsterdam/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Mon, 23 Sep 2019 11:57:12 +0100</pubDate>
+            <pubDate>Mon, 23 Sep 2019 11:57:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;来到欧洲安顿下来的第一周，我们去了美丽的荷兰-阿姆斯特丹和周围的2座村庄。&lt;br /&gt;
 由于是第一次出来玩，许多行程安排的有问题，花费也相对不菲。人均大概450欧。相比之下，一周之后的巴黎之旅只花了300欧，并且体验也更棒。&lt;br /&gt;
 我认为荷兰绝对是欣赏北欧乡村风光的最佳地点。&lt;/p&gt;
@@ -962,7 +963,7 @@ CTCI 基本看完。&lt;br /&gt;
             <link>https://youngforest.github.io/2019/09/17/Beligum/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Tue, 17 Sep 2019 22:08:27 +0100</pubDate>
+            <pubDate>Tue, 17 Sep 2019 22:08:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;今年的下半年，有幸有机会来比利时交换一学期，大概5个月时间。&lt;br /&gt;
 这是我首次出国这么长时间。之前也是参加学校的项目，去英国游学了半个月，详情可以看我3年前写的&lt;a href=&#34;https://youngforest.github.io/2016/08/25/my-britain-trip/&#34;&gt;英伦游学所见所思&lt;/a&gt;。&lt;br /&gt;
 接下来，我从城市、生活、学习和旅行四个方面总结我的交换项目。&lt;/p&gt;
@@ -989,7 +990,7 @@ CTCI 基本看完。&lt;br /&gt;
             <link>https://youngforest.github.io/2019/09/06/ByteDance-Camp/</link>
             <category>ByteDance</category>
             <category>interview</category>
-            <pubDate>Fri, 06 Sep 2019 19:25:56 +0100</pubDate>
+            <pubDate>Fri, 06 Sep 2019 19:25:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;总的体验是很开心，收获很大。&lt;/p&gt;
 &lt;p&gt;很幸运可以参加今年的Byte Camp，我认为这一周的活动是我今年参加过的最有意义的活动了。今年的夏令营共分为3个赛道：工程、算法、和 产品。我参加的是工程赛道。&lt;/p&gt;
 &lt;p&gt;工程和算法赛道进入夏令营的选拔都是通过笔试和面试完成的。笔试的题目也都一样，就是通过牛客网的平台在线完成。笔试有2次机会，都参加的话取分高的。笔试题目分为基础题（操作系统、计算机组成原理、计算机网络）和编程题。编程题有4题，难度依次递增。我参加的是第一场，AC了前3道，难度大约等于是LeetCode medium，最后一题的难度直接飙升到 ICPC world final的难度，要用费用流的知识。我也没打过ACM，第一次听说费用流，就没做出来。由于笔试答的还行，面试我没参加，直接拿到入营资格了。不过听参加面试的同学反映，面试也挺水的，难度很低。&lt;/p&gt;
@@ -1020,7 +1021,7 @@ CTCI 基本看完。&lt;br /&gt;
             <title>Happy birthday 2019</title>
             <link>https://youngforest.github.io/2019/07/15/Happy-birthday-2019/</link>
             <category>life</category>
-            <pubDate>Mon, 15 Jul 2019 22:42:14 +0100</pubDate>
+            <pubDate>Mon, 15 Jul 2019 22:42:14 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;今年仍然是在学校度过了自己23岁的生日。下午和舍友出去看了电影《狮子王》，晚上去 城南旧事 吃了“北京菜。算是庆祝了自己的生日吧。祝我生日快乐。&lt;br /&gt;
 自从18岁之后离开家，独自来到帝都读书。过生日就不再像在家里那么热闹和有人情味了。在外地漂泊，虽说还有同学或朋友祝你生日快乐，亲近的还会陪伴我一起过生日，但家人的温暖却再也没有了。大家来来往往，身边的人也基本只能陪伴一段时间。每每此时，都会怀念小时候。&lt;/p&gt;
 &lt;p&gt;最近北京的天气特别热，不由的心情烦躁。持续性混吃等死，间断性踌躇满志。经常思考些所谓的人生意义，努力的价值，自己的目标。&lt;br /&gt;
@@ -1047,7 +1048,7 @@ CTCI 基本看完。&lt;br /&gt;
             <link>https://youngforest.github.io/2018/12/12/2018-summary-and-2019-resolutions/</link>
             <category>life</category>
             <category>年终总结</category>
-            <pubDate>Wed, 12 Dec 2018 21:29:47 +0000</pubDate>
+            <pubDate>Wed, 12 Dec 2018 21:29:47 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Merry Christmas!&lt;/p&gt;
 &lt;p&gt;离2019年还有5天，2018年就要结束了。一年过的真快呀。不知道你的2018年怎么样呀？一年前制定的新年计划实现了多少呢？&lt;/p&gt;
 &lt;p&gt;我曾在2017年的新年计划中写下这样一段话：&lt;/p&gt;
@@ -1114,7 +1115,7 @@ CTCI 基本看完。&lt;br /&gt;
             <link>https://youngforest.github.io/2018/10/09/guangzhou-tour/</link>
             <category>travel</category>
             <category>游记</category>
-            <pubDate>Tue, 09 Oct 2018 17:26:52 +0100</pubDate>
+            <pubDate>Tue, 09 Oct 2018 17:26:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;国庆节后，我和二师兄有机会前往广东，依次游览了广州、澳门 和 香港。10月6号从北京出发，坐10个小时高铁，来到广州南站，之后落塌广东大厦。&lt;/p&gt;
 &lt;h2 id=&#34;广州&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#广州&#34;&gt;&lt;/a&gt; 广州&lt;/h2&gt;
 &lt;p&gt;第一天先歇一天，在广州玩。早起去爬越秀公园。由于是长假的最后一天，年轻人都玩累了躺在家里休息，大街上和公园里只能看到大量的中老年人在锻炼身体。在公园里，我终于亲眼看到了生长在南方的“木棉”。想起《致橡树》中的诗句，“我愿做你身旁的一株木棉…“；和 《致橡树》电视剧中的情节。橡树 和 木棉 分别生长在北方和南方，注定不能生长在一起。知道这一点的话，才能体会到《致橡树》中传达的悲伤的情感。&lt;/p&gt;
@@ -1157,7 +1158,7 @@ CTCI 基本看完。&lt;br /&gt;
             <title>丰宁坝上草原2日游</title>
             <link>https://youngforest.github.io/2018/10/07/bashang-grassland/</link>
             <category>travel</category>
-            <pubDate>Sun, 07 Oct 2018 22:11:28 +0100</pubDate>
+            <pubDate>Sun, 07 Oct 2018 22:11:28 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;如何欢度2018年最后一个假期–国庆节呢？我选择了跟团(北京初心户外)去河北丰宁的坝上草原骑马。9月30号晚19点半在惠通西街南口集合上大巴。一路向北，9点半到达一个北京最北的服务站时，已经感觉很冷了。晚上近12点到达丰宁县的一个农家乐住宿时，天气已经非常冷了。据房东说，前一天刚刚下过雪，所以这两天非常冷。后来国庆节后刷朋友圈时，看到去什么沙漠、戈壁、火山的，无一例外都是很冷。所以，秋天去这些地方，还是要三思而后行的，做足充分准备的。出发前，领队反复强调需要带厚衣服，最好是羽绒服。我从小怕冷，直接带了最厚的羽绒服–500g 绒的加拿大鹅。据说这衣服去南极都没问题，我没去过南极，不知真假。但这件衣服抵抗秋天的草原夜晚的温度，还是一点问题也没有的。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;第一天上午，到村庄附近骑马，80元/小时。这个旅行团来骑马的有40余人，上马的时候很混乱。我稀里糊涂就跟着一批人走了。这批人由大约20名游客，3个马夫组成。通过后来的交流，我才知道，自己上了一条“贼船”。怎么个贼法呢？首先，我们绕了一大圈，走了最远的路线。这意味着，最长的时间(4小时)，最高的花费。过长的骑马对于第一次上马的我来说，度过了最初的激动和策马奔腾后，到最后回程的时候简直是一种折磨。马归心似箭，总想快跑，而我已经内脏都要被颠碎了。回来之后，腰背疼了4天，尾椎骨也破了，小腿的胫骨中部被马镫磨烂了，过了一周才慢慢痊愈。当然绕远也有好处。我们经过了附近风景最美的“情人谷”。山丘、草原、蓝天、白云相映生辉，组成一幅幅屏保级的图案。在马上随手一拍就是美景。尤其是还能看到成片的白桦林，远近不一的成群的风力发电机和覆盖着白雪的山顶。其次，我们中间休息了3次。每次休息都在简陋的茶房，加起来休息时间竟达到了1个小时。然而这些都是仍然算是收费的。你可以认为这些马和马夫在带薪休假。最后，回到农家乐已经下午一点了。12点开饭，回的早的人有大鱼大肉，回的晚的人只剩残羹冷炙了。&lt;/p&gt;
@@ -1182,7 +1183,7 @@ CTCI 基本看完。&lt;br /&gt;
             <guid isPermalink="true">https://youngforest.github.io/2018/10/03/my-4-years-college/</guid>
             <title>大学4年复盘</title>
             <link>https://youngforest.github.io/2018/10/03/my-4-years-college/</link>
-            <pubDate>Wed, 03 Oct 2018 10:41:38 +0100</pubDate>
+            <pubDate>Wed, 03 Oct 2018 10:41:38 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;2014年9月，我误打误撞来到了北航计算机学院。没想到“侯门一入深如海，从此萧郎是路人“，从一个从没有接触过代码的小鲜肉，成长为未来的工程师。这四年的时光是我技术和三观成长的重要阶段，可以说，大学塑造了之后的我。其中，有值得肯定的部分，也有我现在一心想要摒弃的缺点。&lt;/p&gt;
 &lt;p&gt;北航的课程以基础扎实著称。计算机科学的基础课程：计算机组成原理、操作系统、编译原理、计算机网络，分别分布大二大三在4个学期，每学期这些基础课都属于重课，需要花费大量的精力。现在看来，重视这些基础课程简直太正确了。我大四参加了多场实习面试和实习，深刻体会到这些基础在面试和工作中的重要程度。只是当时大多数学生的motivation不足，并不能理解学院的良苦用心。我自认为在学院学习成绩名列前茅，奖学金和各种证书也拿了一大把。但对于这些cs基础，并不敢叫嚣自己理解了，更多地是谦虚地告诉自己，很多还需要补习。年轻的时候欠下的帐迟早要还的。这四年来，貌似学了很多，其实学到很少。其实，最好的学习方法是，在学院的课程配合下，主动地进行学习。阅读每个topic的扩展材料，而不是老师把材料的链接放在ppt上，自己连下载都不下载。多多上网搜集信息，泡图书馆。&lt;/p&gt;
 &lt;p&gt;虽然平时经常和朋友们吐槽课程设置不合理，但我不得不承认，计算机学院的很多本科课程的设置还是极其合理并富有前瞻性的，尤其是结合其他高校的课程设置来看。北航计算机学院全国第三的排名也并非浪得虚名。比如，大一上的大学计算机基础就是教python，更可怕的是，是几乎所有专业的同学都要学，不限于计算机，还有人文、经济、数学、飞行器。后来写的代码多了，才知道掌握python确实是必要的。尤其是15年后，机器学习大火之后。python是机器学习的必备语言。而据我所知，并没有其他高校从14年就将python设置为全校的必修课。&lt;br /&gt;

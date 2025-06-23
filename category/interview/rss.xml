@@ -5,109 +5,110 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 23 Jun 2020 18:56:43 +0100</pubDate>
-        <lastBuildDate>Tue, 23 Jun 2020 18:56:43 +0100</lastBuildDate>
+        <pubDate>Tue, 23 Jun 2020 18:56:43 +0800</pubDate>
+        <lastBuildDate>Tue, 23 Jun 2020 18:56:43 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2020/06/23/Bytedance-new-graduate-interview/</guid>
             <title>Bytedance 秋招面试 2020</title>
             <link>https://youngforest.github.io/2020/06/23/Bytedance-new-graduate-interview/</link>
             <category>ByteDance</category>
             <category>New Graduate</category>
-            <pubDate>Tue, 23 Jun 2020 18:56:43 +0100</pubDate>
+            <pubDate>Tue, 23 Jun 2020 18:56:43 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;我字节跳动提前批投了 技术中台 的 后端开发岗位。&lt;br /&gt;
 计算机基础没复习到位，答得不好。&lt;br /&gt;
 许愿offer。&lt;/p&gt;
@@ -154,7 +155,7 @@
             <title>2020 暑期实习 求职总结</title>
             <link>https://youngforest.github.io/2020/04/30/2021-summer-intern-interview-summary/</link>
             <category>intern</category>
-            <pubDate>Thu, 30 Apr 2020 16:51:34 +0100</pubDate>
+            <pubDate>Thu, 30 Apr 2020 16:51:34 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;从在牛客网发暑期实习的第一篇面经开始，到现在已经过去近2个月了。中间陆陆续续参加了8个厂的招聘。岗位均为后端/服务器开发。base地点为北京。&lt;/p&gt;
 &lt;h2 id=&#34;失败&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#失败&#34;&gt;&lt;/a&gt; 失败&lt;/h2&gt;
 &lt;h3 id=&#34;字节跳动&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字节跳动&#34;&gt;&lt;/a&gt; 字节跳动&lt;/h3&gt;
@@ -215,7 +216,7 @@
             <link>https://youngforest.github.io/2020/03/20/Mihayo-backend-intern-interview/</link>
             <category>intern</category>
             <category>Mihayo</category>
-            <pubDate>Fri, 20 Mar 2020 16:29:48 +0000</pubDate>
+            <pubDate>Fri, 20 Mar 2020 16:29:48 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一面&#34;&gt;&lt;/a&gt; 一面&lt;/h1&gt;
 &lt;p&gt;time: 2020-03-20 16:29:48&lt;/p&gt;
 &lt;p&gt;上周五参加了在牛客网上的笔试。题目不难，分为计算机基础、算法 和 系统设计。&lt;br /&gt;
@@ -307,7 +308,7 @@ follow up: 分数相同时，按照上榜时间排序。&lt;/p&gt;
             <link>https://youngforest.github.io/2020/03/11/Tencent-WeChat-backend-intern-interview/</link>
             <category>intern</category>
             <category>Tencent</category>
-            <pubDate>Wed, 11 Mar 2020 10:28:43 +0000</pubDate>
+            <pubDate>Wed, 11 Mar 2020 10:28:43 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一面&#34;&gt;&lt;/a&gt; 一面&lt;/h1&gt;
 &lt;p&gt;time: 2020-03-11 10:28:43&lt;/p&gt;
 &lt;p&gt;上周HR联系沟通了下意向工作城市，但是没约具体面试时间。&lt;/p&gt;
@@ -488,7 +489,7 @@ Space: O(1)&lt;/p&gt;
             <link>https://youngforest.github.io/2020/03/09/Alibaba-Ant-backend-intern-interview/</link>
             <category>intern</category>
             <category>Alibaba</category>
-            <pubDate>Mon, 09 Mar 2020 16:45:44 +0000</pubDate>
+            <pubDate>Mon, 09 Mar 2020 16:45:44 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一面&#34;&gt;&lt;/a&gt; 一面&lt;/h1&gt;
 &lt;p&gt;time: 2020-03-09 16:45:44&lt;/p&gt;
 &lt;h2 id=&#34;简历经历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简历经历&#34;&gt;&lt;/a&gt; 简历经历&lt;/h2&gt;
@@ -599,7 +600,7 @@ q个查询，特定位置（下标1开始）的值是否可确定。&lt;/p&gt;
             <link>https://youngforest.github.io/2020/03/04/Alibaba-Dingding-backend-intern-interview/</link>
             <category>intern</category>
             <category>Alibaba</category>
-            <pubDate>Wed, 04 Mar 2020 19:34:08 +0000</pubDate>
+            <pubDate>Wed, 04 Mar 2020 19:34:08 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;通过钉钉电话视频面试，手撕代码通过阿里在线平台完成。&lt;/p&gt;
 &lt;p&gt;算法题2道：&lt;/p&gt;
 &lt;p&gt;1. 实现一个双向链表的数据结构。&lt;/p&gt;
@@ -633,7 +634,7 @@ Order tree, 线段树。&lt;/p&gt;
             <link>https://youngforest.github.io/2020/02/27/Bytedance-Ads-backend-intern-interview/</link>
             <category>intern</category>
             <category>ByteDance</category>
-            <pubDate>Thu, 27 Feb 2020 18:34:40 +0000</pubDate>
+            <pubDate>Thu, 27 Feb 2020 18:34:40 +0800</pubDate>
             <description><![CDATA[ &lt;ul&gt;
 &lt;li&gt;HashMap&lt;/li&gt;
 &lt;li&gt;数据库
@@ -663,7 +664,7 @@ Order tree, 线段树。&lt;/p&gt;
             <link>https://youngforest.github.io/2018/12/09/sensetime-intern-interview/</link>
             <category>intern</category>
             <category>sensetime</category>
-            <pubDate>Sun, 09 Dec 2018 11:29:41 +0000</pubDate>
+            <pubDate>Sun, 09 Dec 2018 11:29:41 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;上周给在商汤实习的同学发了简历，和HR约了本周四的面试，周五就又接到HR的电话，商议Offer的事宜。不得不说，商汤招聘的效率还是很高的。这也从另一个侧面反应出，其十分缺人手的事实。很多商汤的同学都在询问我，有没有其他的同学可以推荐过来实习。&lt;br /&gt;
 商汤校友被誉为“北航实验室”。因为其招聘了大量的北航实习生，正式员工很多也是实习生直接转正的，本科的时候，就有几乎一个班都在那里实习。&lt;br /&gt;
 而我面试的时候，推我的是我的一个一直在那里实习的同学，一面的面试官是我大三编译实验课的助教，二三面的面试官也都是我的本科同学。可以说，如果你是北航的学生，那么进入商汤会比其他学校容易很多。&lt;/p&gt;
@@ -716,7 +717,7 @@ Order tree, 线段树。&lt;/p&gt;
             <link>https://youngforest.github.io/2018/09/28/jingchi-interview/</link>
             <category>intern</category>
             <category>WeRide</category>
-            <pubDate>Fri, 28 Sep 2018 11:22:23 +0100</pubDate>
+            <pubDate>Fri, 28 Sep 2018 11:22:23 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;昨天参与了景驰科技的实习生面试。此次实习生面试是实验室统一安排的，并不是我自己找的。&lt;br /&gt;
 形式为在线面试。总共2轮，预计每轮1小时，实际上第二轮只问了半个小时。第一轮用的Skype，通话质量比较差，视频输出也没有。第二轮，用的微信语音 + &lt;a href=&#34;http://collabedit.com/&#34;&gt;collabedit&lt;/a&gt;。效果好了很多。&lt;/p&gt;
 &lt;p&gt;技术面都很简单。因为是招数据标注平台的码农实习生嘛，自然要求超级低。感觉自己要被廉价卖掉了。&lt;/p&gt;
@@ -740,7 +741,7 @@ Order tree, 线段树。&lt;/p&gt;
             <link>https://youngforest.github.io/2018/08/14/face-interview/</link>
             <category>intern</category>
             <category>旷视</category>
-            <pubDate>Tue, 14 Aug 2018 11:23:52 +0100</pubDate>
+            <pubDate>Tue, 14 Aug 2018 11:23:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;一个清华的毕业生做为面试官，一开始问了我之后的工作意向。我回答说是“算法工程师”，其实我这次面的是开发岗，就被大佬教育了一顿。说你是不是投错组了，还没找到自己感兴趣的方向嘛。之后问我，现在在快手的实习是做什么的？我讲了一些。然后又被diss了。说这些特征工程之后都会被深度学习所取代的。&lt;/p&gt;
 &lt;p&gt;正式进入面试只问了2个问题：维护最小值的队实现，和 维护最小指的栈实现。&lt;/p&gt;
 &lt;p&gt;之后本来有二面的，后来没找到面试官就不了了之了。&lt;/p&gt;
@@ -753,7 +754,7 @@ Order tree, 线段树。&lt;/p&gt;
             <link>https://youngforest.github.io/2018/06/01/suzhou-microsoft-interview/</link>
             <category>intern</category>
             <category>Microsoft</category>
-            <pubDate>Fri, 01 Jun 2018 22:54:08 +0100</pubDate>
+            <pubDate>Fri, 01 Jun 2018 22:54:08 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;在@lxc师兄的内推下，我有幸可以前往 苏州微软，面试O365部门的暑期实习生。虽然最后失败了，但从这次失败的经历中，我学习到很多。&lt;br /&gt;
 总结在此，为未来的找实习和工作做准备。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
@@ -848,7 +849,7 @@ CPU和Memory之间由总线连接，一次（一个时钟周期）只能读取�
             <link>https://youngforest.github.io/2018/04/30/kuaishou-intern-interview/</link>
             <category>intern</category>
             <category>kuaishou</category>
-            <pubDate>Mon, 30 Apr 2018 23:33:10 +0100</pubDate>
+            <pubDate>Mon, 30 Apr 2018 23:33:10 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;感谢@lxc师兄的内推和面试建议，我有幸可以参加快手推荐组算法实习生的面试，并最终通过面试被录取。&lt;br /&gt;
 虽然实习生的面试可能相对简单，但是我认为还是有参考价值的。&lt;br /&gt;
 刷实习算是一种最终找到好工作，进入梦想公司的途径吧（不能算是捷径，我实习的2份工作还是很累的。快手是我的第二份实习。）。&lt;br /&gt;

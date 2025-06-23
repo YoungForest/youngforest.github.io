@@ -5,108 +5,109 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 07 Sep 2021 17:50:49 +0100</pubDate>
-        <lastBuildDate>Tue, 07 Sep 2021 17:50:49 +0100</lastBuildDate>
+        <pubDate>Tue, 07 Sep 2021 17:50:49 +0800</pubDate>
+        <lastBuildDate>Tue, 07 Sep 2021 17:50:49 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2021/09/07/Setup-English-blog/</guid>
             <title>Hexo 创建中英文博客</title>
             <link>https://youngforest.github.io/2021/09/07/Setup-English-blog/</link>
             <category>Hexo</category>
-            <pubDate>Tue, 07 Sep 2021 17:50:49 +0100</pubDate>
+            <pubDate>Tue, 07 Sep 2021 17:50:49 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;自从来到亚马逊工作，接触英文和外国同事比较多。锻炼使用英语的需求越来越大。而且为了和国际接轨，我决定创建自己的英文博客。&lt;/p&gt;
 &lt;h2 id=&#34;步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤&#34;&gt;&lt;/a&gt; 步骤&lt;/h2&gt;
 &lt;p&gt;以中文博客为模版，创建英文博客。&lt;/p&gt;
@@ -133,7 +134,7 @@
             <title>hexo next 配置 Google AdSense</title>
             <link>https://youngforest.github.io/2021/02/25/Google-AdSense-for-hexo-next/</link>
             <category>Hexo</category>
-            <pubDate>Thu, 25 Feb 2021 11:17:14 +0000</pubDate>
+            <pubDate>Thu, 25 Feb 2021 11:17:14 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;动机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动机&#34;&gt;&lt;/a&gt; 动机&lt;/h2&gt;
 &lt;p&gt;最近由于看了“半佛仙人”的一些视频，我对钱更感兴趣了。除了拿出积蓄的一部分投资A股外，还想着怎么提高被动收入。自己一直有写博客的习惯，写了有5年多，攒了一百余篇文章。虽然每日浏览量只有几十，但苍蝇再小也是肉。参照大佬的一些经验，尝试着通过投放广告来牟利。&lt;br /&gt;
 一般网站的广告收入都是通过广告联盟接入的。简而言之就是，你只用出租广告位给广告联盟，他们在此投放针对用户的广告，然后按照流量给你钱。&lt;br /&gt;
@@ -164,7 +165,7 @@
             <title>将博客园中的随笔迁移到Hexo</title>
             <link>https://youngforest.github.io/2016/11/22/move-posts-from-cnblogs-to-Hexo/</link>
             <category>Hexo</category>
-            <pubDate>Tue, 22 Nov 2016 01:42:23 +0000</pubDate>
+            <pubDate>Tue, 22 Nov 2016 01:42:23 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;有关如何将其他博客上的文章迁移到&lt;code&gt;Hexo&lt;/code&gt;上, &lt;a href=&#34;https://hexo.io/docs/migration.html&#34;&gt;官方文档&lt;/a&gt;给出了一些指引. 我也是根据官方文档进行了将自己之前在博客园中的随笔迁移到新博客上的尝试. 这个过程中遇到过一些问题, 再此给出解决方法.&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;未安装迁移插件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#未安装迁移插件&#34;&gt;&lt;/a&gt; 未安装迁移插件&lt;/h2&gt;
@@ -187,7 +188,7 @@
             <title>Hexo + github 搭建个人博客</title>
             <link>https://youngforest.github.io/2016/11/02/Hexo-github-building-personal-blog/</link>
             <category>Hexo</category>
-            <pubDate>Wed, 02 Nov 2016 22:32:55 +0000</pubDate>
+            <pubDate>Wed, 02 Nov 2016 22:32:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;动机放在前面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动机放在前面&#34;&gt;&lt;/a&gt; 动机(放在前面)&lt;/h2&gt;
 &lt;p&gt;之前在cnblog上有个博客, 但是也不经常维护, 到现在满打满算也才有3篇随笔, 1个粉. 主要是因为自己没有写东西的习惯. 高中的时候记过一段时间的日记, 零零总总写了有大半本, 都是一些励志(自欺欺人)的东西, 写给自己看的.&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;

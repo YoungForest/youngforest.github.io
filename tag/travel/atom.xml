@@ -3,101 +3,102 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;travel&#34; tag</title>
     <link href="https://youngforest.github.io" />
-    <updated>2022-12-15T12:13:23.000Z</updated>
+    <updated>2022-12-15T04:13:23.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="迷人的温度" />
     <category term="kuaishou" />
     <category term="Alibaba" />
     <category term="travel" />
+    <category term="游记" />
+    <category term="反脆弱" />
+    <category term="你的灯亮着吗" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="New Graduate" />
+    <category term="深奥的简洁" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="Weride" />
     <category term="C++" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
+    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
-    <category term="New Graduate" />
-    <category term="Hexo" />
-    <category term="北京" />
-    <category term="户口" />
-    <category term="Ireland" />
-    <category term="Competitive Programming" />
     <category term="Tech" />
-    <category term="Algorithm" />
-    <category term="LeetCode" />
-    <category term="Mihayo" />
-    <category term="键盘" />
-    <category term="Tencent" />
-    <category term="Linux" />
-    <category term="atom" />
-    <category term="hash" />
-    <category term="unordered_map" />
-    <category term="English" />
-    <category term="codeforces" />
-    <category term="contest" />
-    <category term="折腾" />
-    <category term="旷视" />
-    <category term="vim" />
-    <category term="WeRide" />
-    <category term="tex" />
-    <category term="Mac" />
-    <category term="Ubuntu" />
-    <category term="Owncloud" />
-    <category term="Windows" />
-    <category term="benchmark" />
-    <category term="sensetime" />
-    <category term="sublime" />
-    <category term="Microsoft" />
-    <category term="vscode" />
-    <category term="gcc" />
-    <category term="git" />
-    <category term="RIP" />
-    <category term="Weride" />
-    <category term="游记" />
-    <category term="投资" />
+    <category term="Hexo" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
+    <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="年终总结" />
-    <category term="Amazon" />
-    <category term="China" />
+    <category term="持续买进" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="穷查理宝典" />
+    <category term="编程珠玑" />
+    <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="Reading" />
-    <category term="3 body" />
-    <category term="全球通史" />
-    <category term="你的灯亮着吗" />
-    <category term="埃隆·马斯克传" />
-    <category term="枪炮、病菌与钢铁" />
-    <category term="持续买进" />
-    <category term="编程珠玑" />
     <category term="现实不似你所见-量子引力之旅" />
-    <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
-    <category term="碧血剑" />
-    <category term="生死疲劳" />
-    <category term="深奥的简洁" />
-    <category term="迷人的温度" />
-    <category term="反脆弱" />
-    <category term="厚黑学" />
-    <category term="六神磊磊读金庸" />
-    <category term="六神磊磊读唐诗" />
-    <category term="穷查理宝典" />
-    <category term="太白金星有点烦" />
     <category term="食南之徒" />
     <category term="马伯庸" />
+    <category term="太白金星有点烦" />
+    <category term="Tencent" />
     <category term="纳瓦尔宝典" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="国家为什么失败" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
-    <category term="Business cycles history theory and investment reality" />
-    <category term="Economics" />
+    <category term="碧血剑" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="生死疲劳" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="RIP" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
     <entry>
         <id>https://youngforest.github.io/2022/12/15/Netherlands-Visa-from-Ireland/</id>
         <title>爱尔兰 办荷兰申根短期签证</title>
@@ -141,7 +142,7 @@
 &lt;/ul&gt;
 </content>
         <category term="travel" />
-        <updated>2022-12-15T12:13:23.000Z</updated>
+        <updated>2022-12-15T04:13:23.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/07/02/Wuhan-trip/</id>
@@ -181,7 +182,7 @@
 &lt;p&gt;旅行真是花钱，搬家也是。&lt;/p&gt;
 </content>
         <category term="travel" />
-        <updated>2021-07-02T18:26:23.000Z</updated>
+        <updated>2021-07-02T11:26:23.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2019/09/30/Paris/</id>
@@ -244,7 +245,7 @@
 </content>
         <category term="travel" />
         <category term="游记" />
-        <updated>2019-09-30T21:24:49.000Z</updated>
+        <updated>2019-09-30T14:24:49.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2019/09/23/Amsterdam/</id>
@@ -275,7 +276,7 @@
 </content>
         <category term="travel" />
         <category term="游记" />
-        <updated>2019-09-23T10:57:12.000Z</updated>
+        <updated>2019-09-23T03:57:12.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2019/09/17/Beligum/</id>
@@ -302,7 +303,7 @@
 </content>
         <category term="travel" />
         <category term="游记" />
-        <updated>2019-09-17T21:08:27.000Z</updated>
+        <updated>2019-09-17T14:08:27.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/10/09/guangzhou-tour/</id>
@@ -346,7 +347,7 @@
 </content>
         <category term="travel" />
         <category term="游记" />
-        <updated>2018-10-09T16:26:52.000Z</updated>
+        <updated>2018-10-09T09:26:52.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/10/07/bashang-grassland/</id>
@@ -372,7 +373,7 @@
 &lt;/ul&gt;
 </content>
         <category term="travel" />
-        <updated>2018-10-07T21:11:28.000Z</updated>
+        <updated>2018-10-07T14:11:28.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/09/14/shandong-trip/</id>
@@ -423,7 +424,7 @@
 &lt;p&gt;我在青岛时会想，自己老了(也不一定要十分老，但起码要财务自由)以后，就每一年换一个地方住。租上一年的房子，和自己爱的人一起探索这个地方。体验不同的工作和生活。这样的话，这一生一定会更精彩。&lt;/p&gt;
 </content>
         <category term="travel" />
-        <updated>2018-09-14T20:07:24.000Z</updated>
+        <updated>2018-09-14T13:07:24.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/08/25/my-britain-trip/</id>
@@ -445,6 +446,6 @@
 在贝克街221B和&amp;quot;卷福&amp;quot;的合影。因为中国游客比较多，他可是会说中文哒。获得合影许可后，我说“Thank you”，他礼貌地回了句“举手之劳”。&lt;/p&gt;
 </content>
         <category term="travel" />
-        <updated>2016-08-25T13:48:19.000Z</updated>
+        <updated>2016-08-25T06:48:19.000Z</updated>
     </entry>
 </feed>

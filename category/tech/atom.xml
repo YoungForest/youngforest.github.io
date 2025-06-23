@@ -3,101 +3,102 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;tech&#34; category</title>
     <link href="https://youngforest.github.io" />
-    <updated>2021-02-27T17:10:01.000Z</updated>
+    <updated>2021-02-27T09:10:01.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="迷人的温度" />
     <category term="kuaishou" />
     <category term="Alibaba" />
     <category term="travel" />
+    <category term="游记" />
+    <category term="反脆弱" />
+    <category term="你的灯亮着吗" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="New Graduate" />
+    <category term="深奥的简洁" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="Weride" />
     <category term="C++" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
+    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
-    <category term="New Graduate" />
-    <category term="Hexo" />
-    <category term="北京" />
-    <category term="户口" />
-    <category term="Ireland" />
-    <category term="Competitive Programming" />
     <category term="Tech" />
-    <category term="Algorithm" />
-    <category term="LeetCode" />
-    <category term="Mihayo" />
-    <category term="键盘" />
-    <category term="Tencent" />
-    <category term="Linux" />
-    <category term="atom" />
-    <category term="hash" />
-    <category term="unordered_map" />
-    <category term="English" />
-    <category term="codeforces" />
-    <category term="contest" />
-    <category term="折腾" />
-    <category term="旷视" />
-    <category term="vim" />
-    <category term="WeRide" />
-    <category term="tex" />
-    <category term="Mac" />
-    <category term="Ubuntu" />
-    <category term="Owncloud" />
-    <category term="Windows" />
-    <category term="benchmark" />
-    <category term="sensetime" />
-    <category term="sublime" />
-    <category term="Microsoft" />
-    <category term="vscode" />
-    <category term="gcc" />
-    <category term="git" />
-    <category term="RIP" />
-    <category term="Weride" />
-    <category term="游记" />
-    <category term="投资" />
+    <category term="Hexo" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
+    <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="年终总结" />
-    <category term="Amazon" />
-    <category term="China" />
+    <category term="持续买进" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="穷查理宝典" />
+    <category term="编程珠玑" />
+    <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="Reading" />
-    <category term="3 body" />
-    <category term="全球通史" />
-    <category term="你的灯亮着吗" />
-    <category term="埃隆·马斯克传" />
-    <category term="枪炮、病菌与钢铁" />
-    <category term="持续买进" />
-    <category term="编程珠玑" />
     <category term="现实不似你所见-量子引力之旅" />
-    <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
-    <category term="碧血剑" />
-    <category term="生死疲劳" />
-    <category term="深奥的简洁" />
-    <category term="迷人的温度" />
-    <category term="反脆弱" />
-    <category term="厚黑学" />
-    <category term="六神磊磊读金庸" />
-    <category term="六神磊磊读唐诗" />
-    <category term="穷查理宝典" />
-    <category term="太白金星有点烦" />
     <category term="食南之徒" />
     <category term="马伯庸" />
+    <category term="太白金星有点烦" />
+    <category term="Tencent" />
     <category term="纳瓦尔宝典" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="国家为什么失败" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
-    <category term="Business cycles history theory and investment reality" />
-    <category term="Economics" />
+    <category term="碧血剑" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="生死疲劳" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="RIP" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
     <entry>
         <id>https://youngforest.github.io/2021/02/27/build-qBittorrent/</id>
         <title>MAC 手动编译 build qBittorrent</title>
@@ -122,7 +123,7 @@
 &lt;p&gt;如果遇到报错，&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Error: Directory not empty @ dir_s_rmdir - /usr/local/opt/openssl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;可以删掉对应文件夹或是更改其所有人&lt;code&gt;chown&lt;/code&gt;.&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew cleanup&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo &lt;span class=&#34;built_in&#34;&gt;rm&lt;/span&gt; -rf /usr/local/Cellar/openssl/1.0.2q&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;brew cleanup&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;rm&lt;/span&gt; -rf /usr/local/Cellar/openssl/1.0.2q&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在我&lt;code&gt;brew install libtorrent-rasterbar&lt;/code&gt;后再&lt;code&gt;./configure&lt;/code&gt;时，仍然会发生该库版本不对的问题：&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Requested &lt;span class=&#34;string&#34;&gt;&amp;#x27;libtorrent-rasterbar &amp;gt;= 1.2.11&amp;#x27;&lt;/span&gt; but version of libtorrent-rasterbar is 1.2.10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;因为&lt;code&gt;brew&lt;/code&gt;的formula中只有1.2.10，我们只好手动编译一个新版了。&lt;/p&gt;
@@ -137,7 +138,7 @@ Undefined symbols for architecture x86_64:
 &lt;p&gt;除此之外，你还可以参考&lt;a href=&#34;https://github.com/qbittorrent/qBittorrent/wiki#compilation&#34;&gt;官网的另外一些编译构建文档&lt;/a&gt;. 这里提供了使用CMake或QT Creator的编译方案。&lt;/p&gt;
 </content>
         <category term="折腾" />
-        <updated>2021-02-27T17:10:01.000Z</updated>
+        <updated>2021-02-27T09:10:01.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2019/11/11/mac-write-ntfs-solution/</id>
@@ -149,11 +150,11 @@ Undefined symbols for architecture x86_64:
 &lt;p&gt;优点：免费，小巧&lt;br /&gt;
 缺点：不hack，其实就是命令行的包装。有些同学可能更喜欢命令行的方式。&lt;/p&gt;
 &lt;h2 id=&#34;最hack的方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最hack的方法&#34;&gt;&lt;/a&gt; 最hack的方法&lt;/h2&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo umount &lt;span class=&#34;string&#34;&gt;&amp;quot;/Volumes/Seagate Expansion Drive&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo mount -t ntfs -o rw,auto,nobrowse /dev/disk3s1 ~/ntfs-volume&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;sudo&lt;/span&gt; umount &lt;span class=&#34;string&#34;&gt;&amp;quot;/Volumes/Seagate Expansion Drive&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;sudo&lt;/span&gt; mount -t ntfs -o rw,auto,nobrowse /dev/disk3s1 ~/ntfs-volume&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;reference: &lt;a href=&#34;https://mounty.app/&#34;&gt;mounty&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;经过一段时间的斗争，我还是采用了安装第三方应用的推荐方法。因为命令行确实经常忘记或是输错，每次都要重新Google，与我使用Mac系统想要的优雅方便不符。&lt;/p&gt;
 </content>
         <category term="Mac" />
-        <updated>2019-11-11T10:10:44.000Z</updated>
+        <updated>2019-11-11T02:10:44.000Z</updated>
     </entry>
 </feed>

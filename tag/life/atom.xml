@@ -3,101 +3,102 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;life&#34; tag</title>
     <link href="https://youngforest.github.io" />
-    <updated>2024-12-28T00:04:56.000Z</updated>
+    <updated>2024-12-27T16:04:56.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="迷人的温度" />
     <category term="kuaishou" />
     <category term="Alibaba" />
     <category term="travel" />
+    <category term="游记" />
+    <category term="反脆弱" />
+    <category term="你的灯亮着吗" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="New Graduate" />
+    <category term="深奥的简洁" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="Weride" />
     <category term="C++" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
+    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
-    <category term="New Graduate" />
-    <category term="Hexo" />
-    <category term="北京" />
-    <category term="户口" />
-    <category term="Ireland" />
-    <category term="Competitive Programming" />
     <category term="Tech" />
-    <category term="Algorithm" />
-    <category term="LeetCode" />
-    <category term="Mihayo" />
-    <category term="键盘" />
-    <category term="Tencent" />
-    <category term="Linux" />
-    <category term="atom" />
-    <category term="hash" />
-    <category term="unordered_map" />
-    <category term="English" />
-    <category term="codeforces" />
-    <category term="contest" />
-    <category term="折腾" />
-    <category term="旷视" />
-    <category term="vim" />
-    <category term="WeRide" />
-    <category term="tex" />
-    <category term="Mac" />
-    <category term="Ubuntu" />
-    <category term="Owncloud" />
-    <category term="Windows" />
-    <category term="benchmark" />
-    <category term="sensetime" />
-    <category term="sublime" />
-    <category term="Microsoft" />
-    <category term="vscode" />
-    <category term="gcc" />
-    <category term="git" />
-    <category term="RIP" />
-    <category term="Weride" />
-    <category term="游记" />
-    <category term="投资" />
+    <category term="Hexo" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
+    <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="年终总结" />
-    <category term="Amazon" />
-    <category term="China" />
+    <category term="持续买进" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="穷查理宝典" />
+    <category term="编程珠玑" />
+    <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="Reading" />
-    <category term="3 body" />
-    <category term="全球通史" />
-    <category term="你的灯亮着吗" />
-    <category term="埃隆·马斯克传" />
-    <category term="枪炮、病菌与钢铁" />
-    <category term="持续买进" />
-    <category term="编程珠玑" />
     <category term="现实不似你所见-量子引力之旅" />
-    <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
-    <category term="碧血剑" />
-    <category term="生死疲劳" />
-    <category term="深奥的简洁" />
-    <category term="迷人的温度" />
-    <category term="反脆弱" />
-    <category term="厚黑学" />
-    <category term="六神磊磊读金庸" />
-    <category term="六神磊磊读唐诗" />
-    <category term="穷查理宝典" />
-    <category term="太白金星有点烦" />
     <category term="食南之徒" />
     <category term="马伯庸" />
+    <category term="太白金星有点烦" />
+    <category term="Tencent" />
     <category term="纳瓦尔宝典" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="国家为什么失败" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
-    <category term="Business cycles history theory and investment reality" />
-    <category term="Economics" />
+    <category term="碧血剑" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="生死疲劳" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="RIP" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
     <entry>
         <id>https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/</id>
         <title>2024年终总结 与 2025新年展望</title>
@@ -251,7 +252,7 @@
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2024-12-28T00:04:56.000Z</updated>
+        <updated>2024-12-27T16:04:56.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2023/12/23/2023-summary-and-2024-resolutions/</id>
@@ -401,7 +402,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2023-12-23T12:15:24.000Z</updated>
+        <updated>2023-12-23T04:15:24.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2023/10/03/Ireland-visiting-dentist/</id>
@@ -414,7 +415,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="Ireland" />
         <category term="Life" />
-        <updated>2023-10-03T10:53:31.000Z</updated>
+        <updated>2023-10-03T03:53:31.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2023/09/20/Ireland-France-visa-monitor/</id>
@@ -432,7 +433,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
         <category term="法签" />
         <category term="申根签证" />
         <category term="Side Project" />
-        <updated>2023-09-20T13:05:07.000Z</updated>
+        <updated>2023-09-20T06:05:07.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2023/06/10/Ireland-Driving-License/</id>
@@ -514,7 +515,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="Ireland" />
         <category term="Life" />
-        <updated>2023-06-10T10:50:50.000Z</updated>
+        <updated>2023-06-10T03:50:50.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2022/12/25/2022-summary-and-2023-resolutions/</id>
@@ -583,7 +584,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2022-12-25T10:59:13.000Z</updated>
+        <updated>2022-12-25T02:59:13.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/</id>
@@ -699,7 +700,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="life" />
         <category term="Tech" />
-        <updated>2022-12-09T16:42:27.000Z</updated>
+        <updated>2022-12-09T08:42:27.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2022/11/19/Western-political-correctness/</id>
@@ -715,7 +716,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 &lt;/ol&gt;
 </content>
         <category term="life" />
-        <updated>2022-11-19T18:16:30.000Z</updated>
+        <updated>2022-11-19T10:16:30.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2022/11/11/Ireland-Onboarding/</id>
@@ -755,7 +756,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="Ireland" />
         <category term="Life" />
-        <updated>2022-11-11T21:25:17.000Z</updated>
+        <updated>2022-11-11T13:25:17.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/12/28/2021-summary-and-2022-resolutions/</id>
@@ -811,7 +812,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2021-12-28T23:35:06.000Z</updated>
+        <updated>2021-12-28T15:35:06.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/07/03/my-3-years-master/</id>
@@ -853,7 +854,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 &lt;p&gt;&lt;img src=&#34;/images/%E7%89%9B%E8%80%81%E5%B8%88%E5%92%8C%E6%9D%A8%E6%A3%AE.jpeg&#34; alt=&#34;硕士毕业和导师的合影&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="life" />
-        <updated>2021-07-03T09:41:38.000Z</updated>
+        <updated>2021-07-03T02:41:38.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2020/11/25/2020-summary-and-2021-resolutions/</id>
@@ -887,7 +888,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2020-11-25T20:28:16.000Z</updated>
+        <updated>2020-11-25T12:28:16.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2020/02/20/2019-summary-and-2020-resolutions/</id>
@@ -925,7 +926,7 @@ CTCI 基本看完。&lt;br /&gt;
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2020-02-20T16:50:42.000Z</updated>
+        <updated>2020-02-20T08:50:42.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2019/07/15/Happy-birthday-2019/</id>
@@ -951,7 +952,7 @@ CTCI 基本看完。&lt;br /&gt;
 &lt;/ul&gt;
 </content>
         <category term="life" />
-        <updated>2019-07-15T21:42:14.000Z</updated>
+        <updated>2019-07-15T14:42:14.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/12/12/2018-summary-and-2019-resolutions/</id>
@@ -1018,7 +1019,7 @@ CTCI 基本看完。&lt;br /&gt;
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2018-12-12T21:29:47.000Z</updated>
+        <updated>2018-12-12T13:29:47.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2017/02/22/2017-resolutions/</id>
@@ -1047,7 +1048,7 @@ CTCI 基本看完。&lt;br /&gt;
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2017-02-22T12:36:31.000Z</updated>
+        <updated>2017-02-22T04:36:31.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2016/11/09/gogogo/</id>
@@ -1074,7 +1075,7 @@ CTCI 基本看完。&lt;br /&gt;
 &lt;p&gt;加油!&lt;/p&gt;
 </content>
         <category term="life" />
-        <updated>2016-11-09T12:39:13.000Z</updated>
+        <updated>2016-11-09T04:39:13.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2013/06/07/My-dream-when-3rd-years-in-high-school/</id>
@@ -1097,6 +1098,6 @@ CTCI 基本看完。&lt;br /&gt;
 &lt;p&gt;&lt;img src=&#34;/images/Beijing/THU-2013-xiaojie.JPG&#34; alt=&#34;2013年8月，参加清华大学夏令营。和舍友啸捷&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="life" />
-        <updated>2013-06-07T09:29:10.000Z</updated>
+        <updated>2013-06-07T02:29:10.000Z</updated>
     </entry>
 </feed>

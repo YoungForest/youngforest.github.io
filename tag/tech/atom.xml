@@ -3,101 +3,102 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog • Posts by &#34;tech&#34; tag</title>
     <link href="https://youngforest.github.io" />
-    <updated>2022-12-09T16:42:27.000Z</updated>
+    <updated>2022-12-09T08:42:27.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="迷人的温度" />
     <category term="kuaishou" />
     <category term="Alibaba" />
     <category term="travel" />
+    <category term="游记" />
+    <category term="反脆弱" />
+    <category term="你的灯亮着吗" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="New Graduate" />
+    <category term="深奥的简洁" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="Weride" />
     <category term="C++" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
+    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
-    <category term="New Graduate" />
-    <category term="Hexo" />
-    <category term="北京" />
-    <category term="户口" />
-    <category term="Ireland" />
-    <category term="Competitive Programming" />
     <category term="Tech" />
-    <category term="Algorithm" />
-    <category term="LeetCode" />
-    <category term="Mihayo" />
-    <category term="键盘" />
-    <category term="Tencent" />
-    <category term="Linux" />
-    <category term="atom" />
-    <category term="hash" />
-    <category term="unordered_map" />
-    <category term="English" />
-    <category term="codeforces" />
-    <category term="contest" />
-    <category term="折腾" />
-    <category term="旷视" />
-    <category term="vim" />
-    <category term="WeRide" />
-    <category term="tex" />
-    <category term="Mac" />
-    <category term="Ubuntu" />
-    <category term="Owncloud" />
-    <category term="Windows" />
-    <category term="benchmark" />
-    <category term="sensetime" />
-    <category term="sublime" />
-    <category term="Microsoft" />
-    <category term="vscode" />
-    <category term="gcc" />
-    <category term="git" />
-    <category term="RIP" />
-    <category term="Weride" />
-    <category term="游记" />
-    <category term="投资" />
+    <category term="Hexo" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
+    <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="年终总结" />
-    <category term="Amazon" />
-    <category term="China" />
+    <category term="持续买进" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="穷查理宝典" />
+    <category term="编程珠玑" />
+    <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="Reading" />
-    <category term="3 body" />
-    <category term="全球通史" />
-    <category term="你的灯亮着吗" />
-    <category term="埃隆·马斯克传" />
-    <category term="枪炮、病菌与钢铁" />
-    <category term="持续买进" />
-    <category term="编程珠玑" />
     <category term="现实不似你所见-量子引力之旅" />
-    <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
-    <category term="碧血剑" />
-    <category term="生死疲劳" />
-    <category term="深奥的简洁" />
-    <category term="迷人的温度" />
-    <category term="反脆弱" />
-    <category term="厚黑学" />
-    <category term="六神磊磊读金庸" />
-    <category term="六神磊磊读唐诗" />
-    <category term="穷查理宝典" />
-    <category term="太白金星有点烦" />
     <category term="食南之徒" />
     <category term="马伯庸" />
+    <category term="太白金星有点烦" />
+    <category term="Tencent" />
     <category term="纳瓦尔宝典" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="国家为什么失败" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
-    <category term="Business cycles history theory and investment reality" />
-    <category term="Economics" />
+    <category term="碧血剑" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="生死疲劳" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="RIP" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
     <entry>
         <id>https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/</id>
         <title>从北京到都柏林 一名程序员的润欧之旅</title>
@@ -212,7 +213,7 @@
 </content>
         <category term="life" />
         <category term="Tech" />
-        <updated>2022-12-09T16:42:27.000Z</updated>
+        <updated>2022-12-09T08:42:27.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2021/03/26/SSH-proxy-by-jump-server/</id>
@@ -248,7 +249,7 @@
 &lt;p&gt;Reference: &lt;a href=&#34;https://www.zsythink.net/archives/2450&#34;&gt;SSH 端口转发：SSH 隧道&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="tech" />
-        <updated>2021-03-26T15:11:02.000Z</updated>
+        <updated>2021-03-26T07:11:02.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/11/05/baidu-cloud-download-speed-hack/</id>
@@ -266,7 +267,7 @@
 &lt;p&gt;&lt;img src=&#34;/images/proxyee-down.png&#34; alt=&#34;下载工具效果&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="tech" />
-        <updated>2018-11-05T16:44:00.000Z</updated>
+        <updated>2018-11-05T08:44:00.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/07/03/recommender-systems-of-popular-apps/</id>
@@ -407,7 +408,7 @@
 &lt;p&gt;希望大家作为一个成年人，拥有一个独立的三观，不要被推荐系统和自己的懒惰而奴役。&lt;/p&gt;
 </content>
         <category term="tech" />
-        <updated>2018-07-03T21:55:55.000Z</updated>
+        <updated>2018-07-03T14:55:55.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/05/08/ssh-login-remote-server-without-password/</id>
@@ -429,7 +430,7 @@ Windows是不需要这样的解决方法的，Windows下很多类Putty工具都�
 &lt;a href=&#34;https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/&#34;&gt;ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="tech" />
-        <updated>2018-05-08T17:47:09.000Z</updated>
+        <updated>2018-05-08T10:47:09.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2018/05/07/Advanced-SQL-practice/</id>
@@ -472,6 +473,6 @@ Hive上存在很多限制和挑战，比如不能在select中嵌套select子句�
 </content>
         <category term="tech" />
         <category term="kuaishou" />
-        <updated>2018-05-07T22:30:25.000Z</updated>
+        <updated>2018-05-07T15:30:25.000Z</updated>
     </entry>
 </feed>

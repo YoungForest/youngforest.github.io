@@ -5,108 +5,109 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Sat, 14 Dec 2019 22:07:31 +0000</pubDate>
-        <lastBuildDate>Sat, 14 Dec 2019 22:07:31 +0000</lastBuildDate>
+        <pubDate>Sat, 14 Dec 2019 22:07:31 +0800</pubDate>
+        <lastBuildDate>Sat, 14 Dec 2019 22:07:31 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2019/12/14/find-all-unique-pairs-of-maximum-and-second-maximum-elements-over-all-sub-arrays-in-onlogn/</guid>
             <title>Find all unique pairs of maximum and second maximum elements 子数组的最大值和次大值对</title>
             <link>https://youngforest.github.io/2019/12/14/find-all-unique-pairs-of-maximum-and-second-maximum-elements-over-all-sub-arrays-in-onlogn/</link>
             <category>Algorithm</category>
-            <pubDate>Sat, 14 Dec 2019 22:07:31 +0000</pubDate>
+            <pubDate>Sat, 14 Dec 2019 22:07:31 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;问题的根源是有个同学问了个lucky number的问题&lt;a href=&#34;https://codeforces.com/problemset/problem/280/B&#34;&gt;Codeforces 280B&lt;/a&gt;, &lt;a href=&#34;https://codeforces.com/problemset/problem/281/D&#34;&gt;Codeforces 281D&lt;/a&gt;也是同样的问题。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.geeksforgeeks.org/find-all-unique-pairs-of-maximum-and-second-maximum-elements-over-all-sub-arrays-in-onlogn/&#34;&gt;Find all unique pairs of maximum and second maximum elements over all sub-arrays in O(NlogN)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;幸运数的定义为：数组中子数组的最大值和次大值的XOR值。寻找所有幸运数中的最大的。&lt;/p&gt;
@@ -134,7 +135,7 @@
             <title>LeetCode 134 Gas Station</title>
             <link>https://youngforest.github.io/2019/09/06/LeetCode-134-Gas-Station/</link>
             <category>Algorithm</category>
-            <pubDate>Fri, 06 Sep 2019 16:56:01 +0100</pubDate>
+            <pubDate>Fri, 06 Sep 2019 16:56:01 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://leetcode.com/problems/gas-station/description/&#34;&gt;题目描述&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;本题是我2月份Google实习生电话面试遇到的一道题目。我当时做的很混乱，一面直接挂了。今天看到&lt;a href=&#34;https://zhuanlan.zhihu.com/p/81412559&#34;&gt;同学发的讲解&lt;/a&gt;，决定重新尝试一下这道题目。毕竟自己这半年来刷了有500+道题目，算法实力有一定的增长。我只看到了讲解的题目，并没有看内容，算是自己半年后可以独立解决这个问题了吧。AC后，我竟然都哭了，为当时实力不济而伤心。不知道之后还有那么好的机会吗？&lt;br /&gt;
 这半年也参加了3次Kick start，除了第一次的A轮收到简历通知外，D轮和E轮都挂了。&lt;br /&gt;
@@ -155,7 +156,7 @@
             <link>https://youngforest.github.io/2019/02/11/recursion/</link>
             <category>Algorithm</category>
             <category>LeetCode</category>
-            <pubDate>Mon, 11 Feb 2019 12:58:52 +0000</pubDate>
+            <pubDate>Mon, 11 Feb 2019 12:58:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;本文根据LeetCode上的教程 &lt;a href=&#34;https://leetcode.com/explore/learn/card/recursion-i/&#34;&gt;Introduction to Algorithms - Recursion I&lt;/a&gt; 整理而成。目的在于帮助笔者自己更熟悉“递归”这一重要的编程概念，如果能够同时对他人产生帮助，那更好不过了。&lt;/p&gt;
 &lt;p&gt;本文的结构和LeetCode上的完全相同，分为 简介、递归原则、复现关系、备忘录、复杂度分析、总结 6个部分。&lt;/p&gt;
 &lt;h2 id=&#34;简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简介&#34;&gt;&lt;/a&gt; 简介&lt;/h2&gt;

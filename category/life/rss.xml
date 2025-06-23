@@ -5,102 +5,103 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Thu, 25 Jan 2024 15:28:10 +0000</pubDate>
-        <lastBuildDate>Thu, 25 Jan 2024 15:28:10 +0000</lastBuildDate>
+        <pubDate>Thu, 25 Jan 2024 15:28:10 +0800</pubDate>
+        <lastBuildDate>Thu, 25 Jan 2024 15:28:10 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2024/01/25/QDII-off-exchange-to-on-exchange-arbitrage/</guid>
             <title>手把手教你 QDII 场外转场内 套利</title>
@@ -111,7 +112,7 @@
             <category>套利</category>
             <category>场外转场内</category>
             <category>Investment</category>
-            <pubDate>Thu, 25 Jan 2024 15:28:10 +0000</pubDate>
+            <pubDate>Thu, 25 Jan 2024 15:28:10 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;最近QDII场内基金高溢价大家似乎都听说了。溢价是说，场外基金的市场价格，高于场外基金的净值。疯狂的如 &lt;a href=&#34;https://xueqiu.com/S/SH513850&#34;&gt;美国50ETF（SH513850）&lt;/a&gt;曾达到30+点，&lt;a href=&#34;https://xueqiu.com/S/SH513520&#34;&gt;日经ETF（SH513520）&lt;/a&gt;20+点。普通的也有2个点。基金公司和券商都发布声明说，溢价过高的风险提示。高溢价会导致套利资金过来，然后抹平溢价。套利是说，在场外申购基金，然后转到场内，再卖出。在基金不涨不跌的情况下，至少可以有溢价的收益。正常情况下，因为市场本身的调节作用，对于基金规模大，交易量大的正常基金，如 很多 &lt;a href=&#34;https://xueqiu.com/S/SH510300&#34;&gt;沪深300ETF(SH510300)&lt;/a&gt;，溢价几乎没有。但QDII因为外汇等各种限制，有限购，规模小，交易量小等特点，套利基金并不能自由地无限进行，因此十分容易形成溢价。&lt;/p&gt;
 &lt;p&gt;我前几年恰好购买了一些QDII场外基金（&lt;a href=&#34;https://xueqiu.com/S/SH513500&#34;&gt;标普500ETF SH513500&lt;/a&gt;, &lt;a href=&#34;https://xueqiu.com/S/SH513100&#34;&gt;纳斯达克100 SH513100&lt;/a&gt;, &lt;a href=&#34;https://xueqiu.com/S/SH513050&#34;&gt;中概互联网ETF&lt;/a&gt;），之前都是直接在场外买卖的。没想过转场内交易。因为虽然套利门槛没那么高，但对于新手来说也不低，操作比平时购买基金难不少。最近的高溢价引起了我的极大兴趣，也在网上查了不少资料和教程，并没有想象中的那么容易和资料多。因此总结于此，方便后人参考。我以我的 场外”易方达e钱包“，场内 ”华泰券商 涨乐财富通“ 为例。其他的场外基金和场内券商，大同小异。之前我那么多QDII直接场外卖出，好亏呀。&lt;/p&gt;
 &lt;ol&gt;
@@ -138,10 +139,10 @@
             <title>国内外企 和 欧洲外企 对比</title>
             <link>https://youngforest.github.io/2023/10/18/foreign-companies-comparision-between-China-Europe/</link>
             <category>Europe</category>
-            <category>Microsoft</category>
             <category>Amazon</category>
+            <category>Microsoft</category>
             <category>China</category>
-            <pubDate>Wed, 18 Oct 2023 19:56:40 +0100</pubDate>
+            <pubDate>Wed, 18 Oct 2023 19:56:40 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;笔者有幸在国内的外企和欧洲的外企都工作过，2家都是美国的跨国企业，因此对于中国和爱尔兰，都是外企。且都属于互联网行业。总的感受一句话，全靠同行衬托。&lt;/p&gt;
 &lt;p&gt;中国的外企的特点就是，Work Life Balance，不加班，福利好，包裹好，十分人性化。同事水平也都十分高，基本都是名校毕业。当然最近几年，国内互联网行业的薪资水平也都追上甚至还有的反超了，比如新兴的 字节跳动 和 拼多多。我在这家外企呆了2年时间。因为是疫情后加入，基本都是在家办公，甚至远程入职。人性化最大的体会是，21年北京户口大赦，当时政策的规定是有半年和3年的指标，公司和员工协商决定。也就是你交够社保到半年和3年后，开始办户口。说是协商，其实员工处于弱势地位，并没有多少选择。外企基本都是让员工自己选，员工当然都选半年的。当时，主流的国内互联网公司，基本都是给3年的。更有甚者，还追加服务期到5年，得签协议，提前离职需要按比例退钱。在大家普遍5天年假的情况下，外企给到了12天。公积金也按照顶格12%给。中国劳动法其实定的标准很高，比如裁员的赔偿是N+1，比欧洲的标准N/2 要高不少。23年上半年，美国科技大厂大裁员，我的前司也不例外，中国办公室也有受影响，但给了N+6的赔偿。还是挺香的。&lt;/p&gt;
 &lt;p&gt;欧洲的外企，Work Life Balance，不加班 这些优势都没有了。因为欧洲本地企业，更加Work Life Balance，不加班。美企的文化反而在这方面处于劣势。不过，福利好，包裹好的优势依旧存在。毕竟美企基本都是跨国企业，从全世界赚钱，有钱许多。而且美国本土程序员薪资很好，因此即使在欧洲只给一半薪资，也是要高于市场水平的。欧洲外企的国际化和多样性很足，同事都是来自不同国家的，甚至本地人都不是特别占优势。相反中国的外企，都是中国人占大多数，外国人极少数。欧洲本地企业，大多数还是本地人居多。除了那种外国人开的企业。但欧洲外企同事的整体水平是要比中国外企的差一大截的。我认为主要原因是，欧洲外企的生态位在欧洲就业市场，并不如中国外企那样占优势，吸引人；很多优秀的人才也是直接被吸引到美国了，不会在欧洲长待。&lt;/p&gt;
@@ -154,7 +155,7 @@
             <link>https://youngforest.github.io/2023/06/21/investment-2023/</link>
             <category>money</category>
             <category>投资</category>
-            <pubDate>Wed, 21 Jun 2023 14:35:00 +0100</pubDate>
+            <pubDate>Wed, 21 Jun 2023 14:35:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;距离上篇&lt;a href=&#34;https://youngforest.github.io/2021/03/22/investment/&#34;&gt;我的投资故事（一）&lt;/a&gt;已经过去2年时间了，这2年，无论是我的投资观念，还是投资成果，都有了很大的进步。在此，我总结分享我的2022-2023年的投资故事。&lt;a href=&#34;https://youngforest.github.io/2023/06/21/investment-2023/&#34;&gt;博客原文&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;最重要的变化是，经过5年的投资，终于扭亏为盈啦。&lt;/p&gt;
 &lt;h2 id=&#34;国际大环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#国际大环境&#34;&gt;&lt;/a&gt; 国际大环境&lt;/h2&gt;
@@ -166,7 +167,7 @@
             <title>深痛悼念 左耳朵耗子</title>
             <link>https://youngforest.github.io/2023/05/15/rip-hao/</link>
             <category>RIP</category>
-            <pubDate>Mon, 15 May 2023 19:55:06 +0100</pubDate>
+            <pubDate>Mon, 15 May 2023 19:55:06 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;R.I.P.&lt;br /&gt;
 有幸和 左耳朵耗子 在同一个群里刷题。大家得知消息以为是谣言，还at了他。但多方消息佐证，现在应该是真的了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/hao-foxi.jpg&#34; alt=&#34;左耳朵耗子 在 佛系刷题群 的聊天历史&#34; /&gt;&lt;/p&gt;
@@ -183,7 +184,7 @@
             <link>https://youngforest.github.io/2022/01/12/Beijing-residence/</link>
             <category>北京</category>
             <category>户口</category>
-            <pubDate>Wed, 12 Jan 2022 12:46:52 +0000</pubDate>
+            <pubDate>Wed, 12 Jan 2022 12:46:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;户口作为中国特色的制度，一直以来是人们考虑工作、生活、定居的重要内容。从三十年前父辈们费尽心机从农村户口转到城市户口，到现在的我们，为了北京户口而煞费苦心。很多东西变了，但又有些东西没变。&lt;/p&gt;
 &lt;p&gt;幸运的是，北京市今年也出台了&lt;a href=&#34;http://rsj.beijing.gov.cn/xxgk/zcwj/202107/t20210712_2433865.html&#34;&gt;《户口新规》&lt;/a&gt;。大多数内容都没变，只是其中的“单列指标”给了我们机会。&lt;/p&gt;
 &lt;h2 id=&#34;单列指标-解读&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单列指标-解读&#34;&gt;&lt;/a&gt; 单列指标 解读：&lt;/h2&gt;
@@ -231,7 +232,7 @@
             <link>https://youngforest.github.io/2021/03/22/investment/</link>
             <category>money</category>
             <category>投资</category>
-            <pubDate>Mon, 22 Mar 2021 20:32:28 +0000</pubDate>
+            <pubDate>Mon, 22 Mar 2021 20:32:28 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;分享我的投资故事。&lt;br /&gt;
 首发于 &lt;a href=&#34;https://youngforest.github.io/2021/03/22/investment/&#34;&gt;Forest的博客&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;初出茅庐&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初出茅庐&#34;&gt;&lt;/a&gt; 初出茅庐&lt;/h2&gt;
@@ -277,7 +278,7 @@
             <category>bank</category>
             <category>money</category>
             <category>Europe</category>
-            <pubDate>Sat, 07 Dec 2019 12:22:12 +0000</pubDate>
+            <pubDate>Sat, 07 Dec 2019 12:22:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;本学期有幸来比利时交换一学期，在“钱”上遇到很多困难，在同学的帮助下逐步克服。在此感谢帮助过我的一系列好友，并将自己的经验分享给大家，让更多的人收益。&lt;/p&gt;
 &lt;p&gt;在全球化的今天，来到欧洲，如何方便的花钱，省钱，是每个留学生关心的事情。在欧洲花钱基本可以分为2类：现金、刷卡。2者是相辅相成的关系，并不像在国内，一部手机走天下。&lt;br /&gt;
 我的经历是：在国内换了700欧的现金带过来，还带了一张招商银行的Visa全币种信用卡。因为办签证需要经济证明，我还提前转了3000多欧给学校的账户，学校之后每个月给我的账户返还666欧，作为生活费。来了之后，我分别办了 ING的Green Account，网上银行 Revult, Curve, Bunq, Monese; 配置了Google Pay 和 PayPal。并经过到欧洲到处自由行，结合不同的花钱方式，达到最便利和最省钱。&lt;/p&gt;
@@ -389,7 +390,7 @@ I’m using @imaginecurve! All my cards in one + a great way to save &amp;amp; m
             <title>日常 | 去景驰实习前发些牢骚</title>
             <link>https://youngforest.github.io/2018/10/28/Complain-before-Weride-internship/</link>
             <category>Weride</category>
-            <pubDate>Sun, 28 Oct 2018 23:11:53 +0000</pubDate>
+            <pubDate>Sun, 28 Oct 2018 23:11:53 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;版权归作者所有，任何形式转载请联系作者。&lt;br /&gt;
 作者：YoungForest（来自豆瓣）&lt;br /&gt;
 来源：&lt;a href=&#34;https://www.douban.com/note/694767558/&#34;&gt;https://www.douban.com/note/694767558/&lt;/a&gt;&lt;/p&gt;

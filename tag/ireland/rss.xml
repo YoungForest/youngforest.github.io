@@ -5,109 +5,110 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 03 Oct 2023 11:53:31 +0100</pubDate>
-        <lastBuildDate>Tue, 03 Oct 2023 11:53:31 +0100</lastBuildDate>
+        <pubDate>Tue, 03 Oct 2023 11:53:31 +0800</pubDate>
+        <lastBuildDate>Tue, 03 Oct 2023 11:53:31 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2023/10/03/Ireland-visiting-dentist/</guid>
             <title>爱尔兰看牙记</title>
             <link>https://youngforest.github.io/2023/10/03/Ireland-visiting-dentist/</link>
             <category>Ireland</category>
             <category>Life</category>
-            <pubDate>Tue, 03 Oct 2023 11:53:31 +0100</pubDate>
+            <pubDate>Tue, 03 Oct 2023 11:53:31 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;笔者天生牙齿比较软，易得蛀牙。之前在北京上学的时候，就曾经和校医院和北医三院的口腔科有不解之缘，甚至久病成医。去年来到爱尔兰，在这边也是第一时间看牙，经常看牙。因此，总结和分享一下我的经验和体会。&lt;/p&gt;
 &lt;p&gt;在离开北京的前2天，我忽然牙疼，然后发现有颗牙有个洞，也就是龋齿了，还比较严重。之前一直去公立医院看病，一来三甲医院比较受我信任，二来花销少，医保可以报销，三来学生时代转院只能转到北医三院，比较熟悉。但公立医院挂号要提前一周，也不好抢。因此，果断第二天一早去了当时住的宾馆附近的一家评价不错的口腔私立医院，甚至不需要挂号。私立医院果然服务不错，拍了X光后，牙医说龋齿已经到神经了，需要做根管治疗，然后装冠。治疗周期至少需要2周，来治疗2次。我几年前，一颗牙齿在北医三院做过类似的治疗。因此十分清楚着这意味着什么：你的牙，他其实已经死了，只是尸体还在。因为我第二天就要坐飞机走了，最后给我开了些止疼药。&lt;/p&gt;
 &lt;p&gt;来了爱尔兰之后，我第二周就入职了。就已经有医疗保险了。但当时我还没有PPSN，有些担心，就又等了一个半月，直到有了PPSN后，才预约了公司办公室附近的一个Dentist。并且提前把保险换成了Principle Scheme + Dental Care，看牙的报销会更多些。后来我也了解到，并不需要PPSN，甚至入职，也能使用公司的保险，还是十分强大和对我们这些外地人有保障的。&lt;/p&gt;
@@ -124,7 +125,7 @@
             <category>法签</category>
             <category>申根签证</category>
             <category>Side Project</category>
-            <pubDate>Wed, 20 Sep 2023 14:05:07 +0100</pubDate>
+            <pubDate>Wed, 20 Sep 2023 14:05:07 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;申根签太难了。终于还是用科技打败了黄牛，成功抢到了法签。不枉学了9年计算机，程序员从不向黄牛低头。&lt;/p&gt;
 &lt;p&gt;爱尔兰有抢法签需求的同学可以试试我开发的这个法签通知工具，使用说明见文档。有问题可随时找我反馈：&lt;br /&gt;
 &lt;a href=&#34;https://docs.google.com/document/d/1uHJCxINt9Sb0f1HHybCFhxkmpzxRURilsxqD6OQLpQ4/edit?usp=sharing&#34;&gt;Google Docs&lt;/a&gt;&lt;/p&gt;
@@ -138,7 +139,7 @@
             <link>https://youngforest.github.io/2023/06/10/Ireland-Driving-License/</link>
             <category>Ireland</category>
             <category>Life</category>
-            <pubDate>Sat, 10 Jun 2023 11:50:50 +0100</pubDate>
+            <pubDate>Sat, 10 Jun 2023 11:50:50 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;爱尔兰作为一个岛国，公共交通不甚发达，城市也十分小。拥有一辆汽车对长期生活的质量提高十分重要。尤其是如果你打算成家的话，没有车肯定是十分不方便的。所以，我来爱尔兰不久，就开始了驾照申请之旅。&lt;br /&gt;
 不像国内报个驾校，交一次钱 就有完整的服务。爱尔兰的驾照申请流程还算比较复杂，需要自己一步步去办理。&lt;br /&gt;
 这篇博文就是记录申请流程和攻略，方便在爱华人。&lt;/p&gt;
@@ -220,7 +221,7 @@
             <link>https://youngforest.github.io/2022/11/11/Ireland-Onboarding/</link>
             <category>Ireland</category>
             <category>Life</category>
-            <pubDate>Fri, 11 Nov 2022 21:25:17 +0000</pubDate>
+            <pubDate>Fri, 11 Nov 2022 21:25:17 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;成功润到爱尔兰2周时间了，因为刚一直在办各种东西。慢慢的生活开始步入了正规。从今天开始，我会陆续分享一些来爱尔兰工作留学初期的一些攻略。一方面自己经历了很多坑，另一方面现在终于成功了一些，也算是有些经验可以帮助到大家。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/ireland-flag.png&#34; alt=&#34;爱尔兰国旗&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第一篇-电话卡&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一篇-电话卡&#34;&gt;&lt;/a&gt; 第一篇 电话卡&lt;/h2&gt;

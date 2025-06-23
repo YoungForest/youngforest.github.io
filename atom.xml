@@ -3,101 +3,129 @@
     <id>https://youngforest.github.io</id>
     <title>YoungForest&#39;s blog</title>
     <link href="https://youngforest.github.io" />
-    <updated>2025-05-26T21:15:29.000Z</updated>
+    <updated>2025-06-23T02:56:31.000Z</updated>
     <category term="tech" />
     <category term="life" />
+    <category term="年终总结" />
     <category term="intern" />
+    <category term="Reading" />
+    <category term="3 body" />
+    <category term="全球通史" />
+    <category term="迷人的温度" />
     <category term="kuaishou" />
     <category term="Alibaba" />
     <category term="travel" />
+    <category term="游记" />
+    <category term="反脆弱" />
+    <category term="你的灯亮着吗" />
+    <category term="北京" />
+    <category term="户口" />
+    <category term="Business cycles history theory and investment reality" />
+    <category term="Economics" />
     <category term="ByteDance" />
     <category term="interview" />
+    <category term="New Graduate" />
+    <category term="深奥的简洁" />
+    <category term="codeforces" />
+    <category term="contest" />
+    <category term="Weride" />
     <category term="C++" />
     <category term="Database" />
     <category term="Django" />
     <category term="C++11" />
+    <category term="埃隆·马斯克传" />
     <category term="bank" />
     <category term="money" />
     <category term="Europe" />
-    <category term="New Graduate" />
-    <category term="Hexo" />
-    <category term="北京" />
-    <category term="户口" />
-    <category term="Ireland" />
-    <category term="Competitive Programming" />
     <category term="Tech" />
-    <category term="Algorithm" />
-    <category term="LeetCode" />
-    <category term="Mihayo" />
-    <category term="键盘" />
-    <category term="Tencent" />
-    <category term="Linux" />
-    <category term="atom" />
-    <category term="hash" />
-    <category term="unordered_map" />
-    <category term="English" />
-    <category term="codeforces" />
-    <category term="contest" />
-    <category term="折腾" />
-    <category term="旷视" />
-    <category term="vim" />
-    <category term="WeRide" />
-    <category term="tex" />
-    <category term="Mac" />
-    <category term="Ubuntu" />
-    <category term="Owncloud" />
-    <category term="Windows" />
-    <category term="benchmark" />
-    <category term="sensetime" />
-    <category term="sublime" />
-    <category term="Microsoft" />
-    <category term="vscode" />
-    <category term="gcc" />
-    <category term="git" />
-    <category term="RIP" />
-    <category term="Weride" />
-    <category term="游记" />
-    <category term="投资" />
+    <category term="Hexo" />
+    <category term="枪炮、病菌与钢铁" />
+    <category term="厚黑学" />
+    <category term="Ireland" />
     <category term="Life" />
     <category term="法国签证" />
     <category term="法签" />
     <category term="申根签证" />
     <category term="Side Project" />
-    <category term="年终总结" />
-    <category term="Amazon" />
-    <category term="China" />
+    <category term="持续买进" />
+    <category term="Competitive Programming" />
+    <category term="Algorithm" />
+    <category term="LeetCode" />
+    <category term="六神磊磊读金庸" />
+    <category term="六神磊磊读唐诗" />
+    <category term="Mihayo" />
+    <category term="键盘" />
+    <category term="穷查理宝典" />
+    <category term="编程珠玑" />
+    <category term="投资" />
     <category term="QDII" />
     <category term="套利" />
     <category term="场外转场内" />
     <category term="Investment" />
-    <category term="Reading" />
-    <category term="3 body" />
-    <category term="全球通史" />
-    <category term="你的灯亮着吗" />
-    <category term="埃隆·马斯克传" />
-    <category term="枪炮、病菌与钢铁" />
-    <category term="持续买进" />
-    <category term="编程珠玑" />
     <category term="现实不似你所见-量子引力之旅" />
-    <category term="孙子兵法" />
-    <category term="历代经济变革得失" />
-    <category term="碧血剑" />
-    <category term="生死疲劳" />
-    <category term="深奥的简洁" />
-    <category term="迷人的温度" />
-    <category term="反脆弱" />
-    <category term="厚黑学" />
-    <category term="六神磊磊读金庸" />
-    <category term="六神磊磊读唐诗" />
-    <category term="穷查理宝典" />
-    <category term="太白金星有点烦" />
     <category term="食南之徒" />
     <category term="马伯庸" />
+    <category term="太白金星有点烦" />
+    <category term="Tencent" />
     <category term="纳瓦尔宝典" />
+    <category term="孙子兵法" />
+    <category term="历代经济变革得失" />
+    <category term="国家为什么失败" />
+    <category term="Linux" />
     <category term="时势" />
     <category term="小Lin说" />
-    <category term="Business cycles history theory and investment reality" />
-    <category term="Economics" />
+    <category term="碧血剑" />
+    <category term="atom" />
+    <category term="hash" />
+    <category term="unordered_map" />
+    <category term="English" />
+    <category term="折腾" />
+    <category term="旷视" />
+    <category term="Amazon" />
+    <category term="Microsoft" />
+    <category term="China" />
+    <category term="vim" />
+    <category term="WeRide" />
+    <category term="tex" />
+    <category term="生死疲劳" />
+    <category term="Mac" />
+    <category term="Windows" />
+    <category term="Ubuntu" />
+    <category term="Owncloud" />
+    <category term="benchmark" />
+    <category term="RIP" />
+    <category term="sensetime" />
+    <category term="sublime" />
+    <category term="vscode" />
+    <category term="gcc" />
+    <category term="git" />
+    <entry>
+        <id>https://youngforest.github.io/2025/06/23/Why-Nations-fail/</id>
+        <title>国家为什么失败 Why Nations fail</title>
+        <link rel="alternate" href="https://youngforest.github.io/2025/06/23/Why-Nations-fail/"/>
+        <content type="html">&lt;p&gt;一定要读英文版或台译本，懂得都懂。虽然中国是一个历史上失败国家和榨取型制度短暂成长国家的经典案例,但全书中着墨不算很多. 然而作为一个中国人,其他国家的案例也是值得学习的,我之前并不了解.尤其是很多非洲和拉美的案例. 但我心中处处在验证着中国的失败. 对比从一开始接受的社会主义教育 (可怕的洗脑 和 历史/政治重新书写), 和自己成年以后看的各种历史,经济,政治书, 还是十分认同书中的观点的. 我自己也在用脚投票. 时间不够可以关注这2小节.&lt;/p&gt;
+&lt;p&gt;13章 当前的国家为什么会失败 （5）新专制主义&lt;/p&gt;
+&lt;p&gt;描述 共产主义的榨取制度。&lt;/p&gt;
+&lt;p&gt;15章 理解富裕与贫困 （2）威权式成长难以抗拒的吸引力&lt;/p&gt;
+&lt;p&gt;解释中国的成长无法持续。&lt;/p&gt;
+&lt;p&gt;我也曾经对中国的政治改革充满希望, 但如今已经完全不抱希望，润了润了。&lt;/p&gt;
+&lt;p&gt;广纳式经济和政治制度是持续性成长的必要条件。&lt;br /&gt;
+关键时期、制度漂移 等决定了制度发展。&lt;br /&gt;
+不支持历史决定论，虽然制度变化基于之前的制度基因，有良性循环和恶性循环，但也充满了偶然性。&lt;br /&gt;
+贫穷是制度导致的，1. 缺乏集权的政府。或 2. 榨取型经济制度和政治制度。&lt;br /&gt;
+持续的经济成长需要对广大人群充满诱因和保障，关键在于 熊彼得 所说的“破坏性创新”。这也是为什么榨取型制度阻碍持续成长的根本原因。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;即使是科技创新也不一定会带来农业增产。事实上，我们都知道称作伊尔约龙特人的澳大利亚原住民，采用钢斧这项重大科技创新后并未导致更努力工作，反而是睡觉的时间更长，因为维持生存所需变得更加容易，而没有更努力工作的诱因。&lt;br /&gt;
+(笑死我了，和我一样）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;19世纪末、20世纪初，流氓大亨及托拉斯之兴起充分说明一项事实：市场本身并不保证会有广纳式制度。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="Reading" />
+        <category term="国家为什么失败" />
+        <updated>2025-06-23T02:56:31.000Z</updated>
+    </entry>
     <entry>
         <id>https://youngforest.github.io/2025/05/26/Business-cycles-history-theory-and-investment-reality/</id>
         <title>逃不开的经济周期 历史，理论与投资现实</title>
@@ -133,7 +161,7 @@
         <category term="Reading" />
         <category term="Business cycles history theory and investment reality" />
         <category term="Economics" />
-        <updated>2025-05-26T21:15:29.000Z</updated>
+        <updated>2025-05-26T14:15:29.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/</id>
@@ -288,7 +316,7 @@
 </content>
         <category term="life" />
         <category term="年终总结" />
-        <updated>2024-12-28T00:04:56.000Z</updated>
+        <updated>2024-12-27T16:04:56.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/10/20/Shi-Nan-Zhi-Tu/</id>
@@ -302,7 +330,7 @@
         <category term="Reading" />
         <category term="食南之徒" />
         <category term="马伯庸" />
-        <updated>2024-10-20T18:05:48.000Z</updated>
+        <updated>2024-10-20T11:05:48.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/</id>
@@ -314,7 +342,7 @@
 </content>
         <category term="Reading" />
         <category term="深奥的简洁" />
-        <updated>2024-09-15T17:54:17.000Z</updated>
+        <updated>2024-09-15T10:54:17.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/09/02/A-Matter-of-Degrees/</id>
@@ -330,7 +358,7 @@
 </content>
         <category term="Reading" />
         <category term="迷人的温度" />
-        <updated>2024-09-02T13:51:00.000Z</updated>
+        <updated>2024-09-02T06:51:00.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/08/24/Antifragile-Things-That-Gain-from-Disorder/</id>
@@ -384,7 +412,7 @@
 </content>
         <category term="Reading" />
         <category term="反脆弱" />
-        <updated>2024-08-24T09:31:57.000Z</updated>
+        <updated>2024-08-24T02:31:57.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/08/21/Tai-bai-jin-xing-you-dian-fan/</id>
@@ -395,7 +423,7 @@
 </content>
         <category term="Reading" />
         <category term="太白金星有点烦" />
-        <updated>2024-08-21T19:37:52.000Z</updated>
+        <updated>2024-08-21T12:37:52.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/08/07/Poor-Charlie-Almanack/</id>
@@ -419,7 +447,7 @@
 </content>
         <category term="Reading" />
         <category term="穷查理宝典" />
-        <updated>2024-08-07T21:35:33.000Z</updated>
+        <updated>2024-08-07T14:35:33.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/07/27/The-Almanack-of-Naval-Ravikant/</id>
@@ -437,7 +465,7 @@
 </content>
         <category term="Reading" />
         <category term="纳瓦尔宝典" />
-        <updated>2024-07-27T19:35:07.000Z</updated>
+        <updated>2024-07-27T12:35:07.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/07/25/Liu-Shen-Lei-Lei-Du-Tang-Shi/</id>
@@ -453,7 +481,7 @@
 </content>
         <category term="Reading" />
         <category term="六神磊磊读唐诗" />
-        <updated>2024-07-25T21:25:35.000Z</updated>
+        <updated>2024-07-25T14:25:35.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/07/22/Liu-Shen-Lei-Lei-Du-Jin-Yong/</id>
@@ -467,7 +495,7 @@
 </content>
         <category term="Reading" />
         <category term="六神磊磊读金庸" />
-        <updated>2024-07-22T21:54:13.000Z</updated>
+        <updated>2024-07-22T14:54:13.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/07/20/Hou-Hei-Xue/</id>
@@ -482,7 +510,7 @@
 </content>
         <category term="Reading" />
         <category term="厚黑学" />
-        <updated>2024-07-20T21:53:37.000Z</updated>
+        <updated>2024-07-20T14:53:37.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/06/04/Xiao-Lin/</id>
@@ -495,7 +523,7 @@
         <category term="Reading" />
         <category term="时势" />
         <category term="小Lin说" />
-        <updated>2024-06-04T22:11:35.000Z</updated>
+        <updated>2024-06-04T15:11:35.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/05/06/The-Art-of-War-by-Sunzi/</id>
@@ -512,7 +540,7 @@
 </content>
         <category term="Reading" />
         <category term="孙子兵法" />
-        <updated>2024-05-06T22:09:09.000Z</updated>
+        <updated>2024-05-06T15:09:09.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/03/25/3-body/</id>
@@ -525,7 +553,7 @@
 </content>
         <category term="Reading" />
         <category term="3 body" />
-        <updated>2024-03-25T19:45:04.000Z</updated>
+        <updated>2024-03-25T11:45:04.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/03/16/Just-Keep-Buying/</id>
@@ -544,7 +572,7 @@
 </content>
         <category term="Reading" />
         <category term="持续买进" />
-        <updated>2024-03-16T23:13:47.000Z</updated>
+        <updated>2024-03-16T15:13:47.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/03/07/Elon-Musk/</id>
@@ -564,7 +592,7 @@
 </content>
         <category term="Reading" />
         <category term="埃隆·马斯克传" />
-        <updated>2024-03-07T23:16:44.000Z</updated>
+        <updated>2024-03-07T15:16:44.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/03/01/Reality-Is-Not-What-It-Seems-The-Journey-to-Quantum-Gravity/</id>
@@ -576,7 +604,7 @@
 </content>
         <category term="Reading" />
         <category term="现实不似你所见-量子引力之旅" />
-        <updated>2024-03-01T23:18:54.000Z</updated>
+        <updated>2024-03-01T15:18:54.000Z</updated>
     </entry>
     <entry>
         <id>https://youngforest.github.io/2024/02/05/Programming-Pearls/</id>
@@ -587,80 +615,6 @@
 </content>
         <category term="Reading" />
         <category term="编程珠玑" />
-        <updated>2024-02-05T23:24:13.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://youngforest.github.io/2024/01/29/The-gains-and-losses-of-economic-changes-in-the-past-dynasties/</id>
-        <title>历代经济变革得失</title>
-        <link rel="alternate" href="https://youngforest.github.io/2024/01/29/The-gains-and-losses-of-economic-changes-in-the-past-dynasties/"/>
-        <content type="html">&lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/24851460/&#34;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;今年读过最棒，最能引起共鸣，启发思考最多的一本书。极力推荐。有许多想分享的思考和感受，但不好把握尺度。如此大胆，如此勇敢。总结了自古至今的经济改革，尤其是近代之后，6次“国进民退”。很多思考和振聋发聩的金句。虽然有故意忽略张居正改革的嫌疑，但瑕不掩瑜。中央集权的经济改革必定与民争利，以国富兵强和统治稳定为目的，但长期看反而会导致官商勾结、民变四起。自由主义、法制、保护私有财产、资产阶级、科技进步才是长久之计，尤其是对于国家和人民而言。经济改革的根本还是政治改革，没有配套的制度，经济改革就不可能彻底，已有的成就还会失去。本书&lt;/p&gt;
-&lt;p&gt;写于2013年，之后的事他没写。13年后的改革，是为中国近代史上第7次国进民退。标志事件是国央企的重新崛起和对民营资本家的更强控制。20年阻止阿里上市，开启了限制资本无序扩张的序幕。同样是以共同富裕为借口。最后的结果我们也看到了，一鲸落万物死。&lt;/p&gt;
-&lt;p&gt;后记中，吴晓波提到的四股前所未有的新势力：互联网、非政府组织、企业家和自由知识分子。寄予厚望，推动经济改革和体制变革。10年之后，这四股势力基本荡然无存。&lt;/p&gt;
-&lt;p&gt;一些我很喜欢的选段，真是一阵见血。值得反复品味:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果不研究历代经济的变革，其实无法真正理解当前的中国。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在这个世界上，人性的贪婪都是需要制度基础的，好的制度会遏制人的恶，反之则会催化和放大之。在这个意义上，比人的贪婪更可怕的是制度的贪婪。大清官王安石创造了一个贪婪的集权制度，他的后继者就会把这种贪婪和集权推向极致，并必然地产生异化，这是一条“惯性之路”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;发生在王安石时代的这两个时间具有分水岭般的意义。自由的城市催生自由的商业，自由的大学催生自由的思想，而自由的商业和思想又是人类文明走向现代社会的两块奠基石。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;明清治国者有特别发达的“专制智慧”，他们真正发现了“专制的秘密”：政权想要稳定，危险无非来自两处，一曰外患，一曰内忧。除外患，断绝一切联系时不二法门，所以要把国家变成一个铁桶。解内忧，控制、削弱民间的组织力量是关键，所以要把人民打成散沙。&lt;br /&gt;
-铁桶阵和散沙术，是明清治国者的两大法宝。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;法国思想家托克维尔尝言：“对于一个坏政府来说，最危险的时刻通常就是它开始改革的时刻”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;哈耶克 开始于“致命的自负”，终而“通往奴役之路”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;下面的政府指中华民国南京国民政府。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;民间企业家阶层对政府彻底失望。当时最大的私营集团控制人荣德生向政府上书，他写道：“若论国家经济，统治者富有四海，只须掌握政权，人民安居乐业，民生优裕，赋税自足……能用民力，不必国营，国用自足。不能使用民力，虽一切皆归官办，亦是无用。因官从民出，事不切己，徒然增加浪费而已”荣德生的这段表述可圈可点，至今是普世道理，可惜不为当政者闻。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;中国历代经济改革主旋律：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;其一，维持国家统一和中央集权的大一统原则；&lt;br /&gt;
-其二，抵御外敌、强盛国家的强国原则；&lt;br /&gt;
-其三，发展国营事业、节制民间资本的国有经济优先原则。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;中国历代经济改革种的4大利益集团：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;中央政府，地方政府&lt;br /&gt;
-无产阶层，有产阶层&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如此大胆，如此勇敢。竟然写了49年到78年间的，经济改革。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在整个计划经济时期，农民是一个被背叛和剥夺的阶层。他们失去了土地，被剥夺了进入城市的权利，他们创造的财富以“剪刀差”的方式转化为国家资产，而他们的生活质量却没有得到相应的改善。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;到1976年，中国是一个封闭自守的、与世界经济体系基本“绝缘”、高度集中而没有活力的经济体，沿用司马光对汉武帝的评价，此时的执政者“有亡秦之失，而免亡秦之祸”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;对改革开放的评价:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在将近三十年的时间里，邓小平的这些话语形成一种强大的社会共识，进而勾勒出本次改革的几个基本特征：功利务实、被动渐进、非均衡、不彻底。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;法国启蒙思想家孟德斯鸠尝言：“土地出产之少，主要不在于土地肥沃程度，而在于居民是否享有自由。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本书写于2013年，之后的事他没写。13年后的深化改革，我愿称之为中国近代史上第7次国进民退。标志事件是国央企的重新崛起和对资本家的更强控制。&lt;/p&gt;
-&lt;p&gt;后记中，吴晓波提到的四股前所未有的新势力：互联网、非政府组织、企业家和自由知识分子。寄予厚望，推动经济改革和体制变革。10年之后，这四股势力基本荡然无存。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;地方缺乏自治意识、政府与民间缺乏契约意识、知识分子缺乏独立意识、企业家阶层缺乏阶层意识。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;只有自由和市场经济方能在现代激烈的竞争中存活，过去的中央集权主义，在外部势力的角逐下，不得不对地方和小资产阶级退步。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;20年阻止阿里上市，开启了限制资本无序扩张的序幕。同样是以共同富裕为借口。最后的结果我们也看到了，一鲸落万物死。到23年，撞到南墙，经济下滑趋势明显，开始重新鼓励民营经济和外资的时候，内外资都已成惊弓之鸟，全无信心。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;布罗代尔曾很简洁地说道：“中国社会，政府的权力太大了，使富有的非统治者不能享有任何真正的安全。对任意征收的恐惧始终挥之不去。”&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-        <category term="Reading" />
-        <category term="历代经济变革得失" />
-        <updated>2024-01-29T23:28:06.000Z</updated>
+        <updated>2024-02-05T15:24:13.000Z</updated>
     </entry>
 </feed>

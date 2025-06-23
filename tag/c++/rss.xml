@@ -5,102 +5,103 @@
         <link>https://youngforest.github.io</link>
         <description>佛系更新；生活、学习</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Wed, 27 May 2020 12:29:34 +0100</pubDate>
-        <lastBuildDate>Wed, 27 May 2020 12:29:34 +0100</lastBuildDate>
+        <pubDate>Wed, 27 May 2020 12:29:34 +0800</pubDate>
+        <lastBuildDate>Wed, 27 May 2020 12:29:34 +0800</lastBuildDate>
         <category>tech</category>
         <category>life</category>
+        <category>年终总结</category>
         <category>intern</category>
+        <category>Reading</category>
+        <category>3 body</category>
+        <category>全球通史</category>
+        <category>迷人的温度</category>
         <category>kuaishou</category>
         <category>Alibaba</category>
         <category>travel</category>
+        <category>游记</category>
+        <category>反脆弱</category>
+        <category>你的灯亮着吗</category>
+        <category>北京</category>
+        <category>户口</category>
+        <category>Business cycles history theory and investment reality</category>
+        <category>Economics</category>
         <category>ByteDance</category>
         <category>interview</category>
+        <category>New Graduate</category>
+        <category>深奥的简洁</category>
+        <category>codeforces</category>
+        <category>contest</category>
+        <category>Weride</category>
         <category>C++</category>
         <category>Database</category>
         <category>Django</category>
         <category>C++11</category>
+        <category>埃隆·马斯克传</category>
         <category>bank</category>
         <category>money</category>
         <category>Europe</category>
-        <category>New Graduate</category>
-        <category>Hexo</category>
-        <category>北京</category>
-        <category>户口</category>
-        <category>Ireland</category>
-        <category>Competitive Programming</category>
         <category>Tech</category>
-        <category>Algorithm</category>
-        <category>LeetCode</category>
-        <category>Mihayo</category>
-        <category>键盘</category>
-        <category>Tencent</category>
-        <category>Linux</category>
-        <category>atom</category>
-        <category>hash</category>
-        <category>unordered_map</category>
-        <category>English</category>
-        <category>codeforces</category>
-        <category>contest</category>
-        <category>折腾</category>
-        <category>旷视</category>
-        <category>vim</category>
-        <category>WeRide</category>
-        <category>tex</category>
-        <category>Mac</category>
-        <category>Ubuntu</category>
-        <category>Owncloud</category>
-        <category>Windows</category>
-        <category>benchmark</category>
-        <category>sensetime</category>
-        <category>sublime</category>
-        <category>Microsoft</category>
-        <category>vscode</category>
-        <category>gcc</category>
-        <category>git</category>
-        <category>RIP</category>
-        <category>Weride</category>
-        <category>游记</category>
-        <category>投资</category>
+        <category>Hexo</category>
+        <category>枪炮、病菌与钢铁</category>
+        <category>厚黑学</category>
+        <category>Ireland</category>
         <category>Life</category>
         <category>法国签证</category>
         <category>法签</category>
         <category>申根签证</category>
         <category>Side Project</category>
-        <category>年终总结</category>
-        <category>Amazon</category>
-        <category>China</category>
+        <category>持续买进</category>
+        <category>Competitive Programming</category>
+        <category>Algorithm</category>
+        <category>LeetCode</category>
+        <category>六神磊磊读金庸</category>
+        <category>六神磊磊读唐诗</category>
+        <category>Mihayo</category>
+        <category>键盘</category>
+        <category>穷查理宝典</category>
+        <category>编程珠玑</category>
+        <category>投资</category>
         <category>QDII</category>
         <category>套利</category>
         <category>场外转场内</category>
         <category>Investment</category>
-        <category>Reading</category>
-        <category>3 body</category>
-        <category>全球通史</category>
-        <category>你的灯亮着吗</category>
-        <category>埃隆·马斯克传</category>
-        <category>枪炮、病菌与钢铁</category>
-        <category>持续买进</category>
-        <category>编程珠玑</category>
         <category>现实不似你所见-量子引力之旅</category>
-        <category>孙子兵法</category>
-        <category>历代经济变革得失</category>
-        <category>碧血剑</category>
-        <category>生死疲劳</category>
-        <category>深奥的简洁</category>
-        <category>迷人的温度</category>
-        <category>反脆弱</category>
-        <category>厚黑学</category>
-        <category>六神磊磊读金庸</category>
-        <category>六神磊磊读唐诗</category>
-        <category>穷查理宝典</category>
-        <category>太白金星有点烦</category>
         <category>食南之徒</category>
         <category>马伯庸</category>
+        <category>太白金星有点烦</category>
+        <category>Tencent</category>
         <category>纳瓦尔宝典</category>
+        <category>孙子兵法</category>
+        <category>历代经济变革得失</category>
+        <category>国家为什么失败</category>
+        <category>Linux</category>
         <category>时势</category>
         <category>小Lin说</category>
-        <category>Business cycles history theory and investment reality</category>
-        <category>Economics</category>
+        <category>碧血剑</category>
+        <category>atom</category>
+        <category>hash</category>
+        <category>unordered_map</category>
+        <category>English</category>
+        <category>折腾</category>
+        <category>旷视</category>
+        <category>Amazon</category>
+        <category>Microsoft</category>
+        <category>China</category>
+        <category>vim</category>
+        <category>WeRide</category>
+        <category>tex</category>
+        <category>生死疲劳</category>
+        <category>Mac</category>
+        <category>Windows</category>
+        <category>Ubuntu</category>
+        <category>Owncloud</category>
+        <category>benchmark</category>
+        <category>RIP</category>
+        <category>sensetime</category>
+        <category>sublime</category>
+        <category>vscode</category>
+        <category>gcc</category>
+        <category>git</category>
         <item>
             <guid isPermalink="true">https://youngforest.github.io/2020/05/27/best-implement-to-use-pair-as-key-to-std-unordered-map-in-C/</guid>
             <title>Best implement to use pair as key to std::unordered_map in C++</title>
@@ -109,7 +110,7 @@
             <category>hash</category>
             <category>unordered_map</category>
             <category>English</category>
-            <pubDate>Wed, 27 May 2020 12:29:34 +0100</pubDate>
+            <pubDate>Wed, 27 May 2020 12:29:34 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Reference: &lt;a href=&#34;https://www.mica.edu.vn/perso/Vu-Hai/EE3490/Ref/The%20C++Standard%20Library%20-%202nd%20Edition.pdf&#34;&gt;C++ Standard Library: A tutorial and reference, Second version&lt;/a&gt; Chapter 7.9.2: Creating and Controlling unordered Container&lt;/p&gt;
 &lt;p&gt;All solutions I found in Google use &lt;code&gt;XOR&lt;/code&gt; to generate hashcode of &lt;code&gt;pair&lt;/code&gt;, which is totally bad. see &lt;a href=&#34;https://stackoverflow.com/questions/5889238/why-is-xor-the-default-way-to-combine-hashes&#34;&gt;why-is-xor-the-default-way-to-combine-hashes&lt;/a&gt;. However, the book has given us the best solution, using &lt;code&gt;hash_combine&lt;/code&gt;, which is taken from &lt;code&gt;Boost&lt;/code&gt;. The solution is much better than XOR when I tested it in Online Judge(&lt;a href=&#34;https://atcoder.jp/contests/abc168/tasks/abc168_e&#34;&gt;Atcoder&lt;/a&gt;). I organized the code as a template as follow. You can copy and paste it as much as you can. And it is convenient to change it to fit any custom struct/class.&lt;/p&gt;
 &lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;functional&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// from boost (functional/hash):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// see http://www.boost.org/doc/libs/1_35_0/doc/html/hash/combine.html template&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;template&lt;/span&gt; &amp;lt;&lt;span class=&#34;keyword&#34;&gt;typename&lt;/span&gt; T&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;inline&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;hash_combine&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(std::&lt;span class=&#34;type&#34;&gt;size_t&lt;/span&gt; &amp;amp;seed, &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; T &amp;amp;val)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    seed ^= std::&lt;span class=&#34;built_in&#34;&gt;hash&lt;/span&gt;&amp;lt;T&amp;gt;()(val) + &lt;span class=&#34;number&#34;&gt;0x9e3779b9&lt;/span&gt; + (seed &amp;lt;&amp;lt; &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;) + (seed &amp;gt;&amp;gt; &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// auxiliary generic functions to create a hash value using a seed&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;template&lt;/span&gt; &amp;lt;&lt;span class=&#34;keyword&#34;&gt;typename&lt;/span&gt; T&amp;gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;inline&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;hash_val&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(std::&lt;span class=&#34;type&#34;&gt;size_t&lt;/span&gt; &amp;amp;seed, &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; T &amp;amp;val)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;hash_combine&lt;/span&gt;(seed, val);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;template&lt;/span&gt; &amp;lt;&lt;span class=&#34;keyword&#34;&gt;typename&lt;/span&gt; T, &lt;span class=&#34;keyword&#34;&gt;typename&lt;/span&gt;... Types&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;inline&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;hash_val&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(std::&lt;span class=&#34;type&#34;&gt;size_t&lt;/span&gt; &amp;amp;seed, &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; T &amp;amp;val, &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; Types &amp;amp;... args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;hash_combine&lt;/span&gt;(seed, val);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;hash_val&lt;/span&gt;(seed, args...);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;template&lt;/span&gt; &amp;lt;&lt;span class=&#34;keyword&#34;&gt;typename&lt;/span&gt;... Types&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;inline&lt;/span&gt; std::&lt;span class=&#34;type&#34;&gt;size_t&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;hash_val&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; Types &amp;amp;... args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    std::&lt;span class=&#34;type&#34;&gt;size_t&lt;/span&gt; seed = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;hash_val&lt;/span&gt;(seed, args...);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; seed;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;pair_hash&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;template&lt;/span&gt; &amp;lt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;T1&lt;/span&gt;, &lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;T2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;std::&lt;span class=&#34;type&#34;&gt;size_t&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; std::pair&amp;lt;T1, T2&amp;gt; &amp;amp;p)&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;hash_val&lt;/span&gt;(p.first, p.second);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; ll = &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    unordered_map&amp;lt;pair&amp;lt;ll, ll&amp;gt;, ll, pair_hash&amp;gt; slopeCount;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    unordered_set&amp;lt;pair&amp;lt;ll, ll&amp;gt;, pair_hash&amp;gt; seen;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -123,7 +124,7 @@
             <category>C++</category>
             <category>hash</category>
             <category>unordered_map</category>
-            <pubDate>Wed, 27 May 2020 11:57:01 +0100</pubDate>
+            <pubDate>Wed, 27 May 2020 11:57:01 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;今天在做&lt;a href=&#34;https://atcoder.jp/contests/abc168/tasks/abc168_e&#34;&gt;一道AtCoder的题目&lt;/a&gt;，有个test case一直TLE。研究这个测试用例和其他用例的区别，苦思不得其解。后来把unordered_map换成map就过了。虽然在小数据集上hashmap和treemap区别不大，但数据量大的话，hashmap还是好些。所以最佳实践是，在不需要排序特性时，就用hashmap。&lt;br /&gt;
 而且之前也从来没有遇到过hashmap比treemap效果差这么多的原因。最后花了一上午时间，才定位到是我的 pair 的hash函数实现太糟糕了。因为C++ STL中并没有pair的hash特化，所以如果想把pair当作键用在unordered_map中的话，就需要自己实现hash函数。我直接从网上抄了一个实现, 直接将 &lt;code&gt;std::hash&amp;lt;T&amp;gt;()(pair.first) ^ std::hash&amp;lt;U&amp;gt;()(pair.second)&lt;/code&gt;。为了避免误人子弟，我就不贴代码了。正是抄的这个实现害苦我了，hash函数碰撞严重，导致效率低下。令人惊讶的是，这种错误的实现遍布全网，无论是中文的还是英文的。我从犄角旮旯（&lt;a href=&#34;https://stackoverflow.com/questions/20590656/error-for-hash-function-of-pair-of-ints&#34;&gt;stackoverflow问题&lt;/a&gt;的评论区中）里才找到问题所在和正确的实现。所以特意总结此博文，避免更多的同学踩坑。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -141,7 +142,7 @@
             <title>C++ 中实现生成器(Generator, yield in Python)</title>
             <link>https://youngforest.github.io/2019/12/15/Cpp-generator-implement/</link>
             <category>C++</category>
-            <pubDate>Sun, 15 Dec 2019 21:34:30 +0000</pubDate>
+            <pubDate>Sun, 15 Dec 2019 21:34:30 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;问题的起因是因为LeetCode上的一个题目&lt;a href=&#34;https://leetcode.com/problems/iterator-for-combination/&#34;&gt;1286. Iterator for Combination&lt;/a&gt;。最完美的实现是利用 生成器(Generator)，也就是Python中的&lt;code&gt;yield&lt;/code&gt;。但是我不会，只实现了一个提前计算，然后存起来的解法。并不优雅，赛后，学习了一个C++中Generator的实现，在此分享下。因为我并未在网上找到很好的中文的关于此的文章。&lt;/p&gt;
  ]]></description>
         </item>
@@ -151,7 +152,7 @@
             <link>https://youngforest.github.io/2019/05/05/Effective-Modern-C/</link>
             <category>C++</category>
             <category>C++11</category>
-            <pubDate>Sun, 05 May 2019 20:27:23 +0100</pubDate>
+            <pubDate>Sun, 05 May 2019 20:27:23 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://book.douban.com/review/10131903/&#34;&gt;我的书评&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -160,7 +161,7 @@
             <title>pkg-config</title>
             <link>https://youngforest.github.io/2019/03/17/pkg-config/</link>
             <category>C++</category>
-            <pubDate>Sun, 17 Mar 2019 19:52:38 +0000</pubDate>
+            <pubDate>Sun, 17 Mar 2019 19:52:38 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;最近在学习&lt;a href=&#34;https://github.com/google/googletest&#34;&gt;google-test&lt;/a&gt;的使用和源码，在&lt;code&gt;make install&lt;/code&gt;的时候发现除了向&lt;code&gt;/usr/local/&lt;/code&gt;中安装了头文件，&lt;code&gt;/usr/lib/&lt;/code&gt;中安装了shared library外，还向&lt;code&gt;/usr/local/lib/pkgconfig/&lt;/code&gt;中安装了2个&lt;code&gt;.pc&lt;/code&gt;文件。所以说，这个pkg-config是个什么东西呢？&lt;/p&gt;
 &lt;p&gt;从一份&lt;a href=&#34;https://people.freedesktop.org/~dbn/pkg-config-guide.html&#34;&gt;Guide&lt;/a&gt;中，我们可以发现&lt;code&gt;pkg-config&lt;/code&gt;的所有有用的基本信息。&lt;/p&gt;
 &lt;h2 id=&#34;overview&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#overview&#34;&gt;&lt;/a&gt; Overview&lt;/h2&gt;
