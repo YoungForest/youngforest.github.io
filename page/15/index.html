@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="佛系更新；生活、学习">
 <meta property="og:type" content="website">
@@ -39,8 +39,8 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>YoungForest's blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-88350169-1","only_pageview":false,"measure_protocol_api_secret":null}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6NR9DW560"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-G6NR9DW560","only_pageview":false,"measure_protocol_api_secret":null}</script>
   <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
@@ -54,7 +54,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
 
 
 
@@ -106,6 +108,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,11 +117,37 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -276,7 +305,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,27 +341,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          官方题解
-
-codeforces上题目一般高于平时的面试题。如果是为了面试的话，只刷LeetCode就可以了。不过如果是对算法和竞赛感兴趣，强烈鼓励试一试。题目的数量和质量都远超LeetCode。而且为不同水平的同学有不同的赛道，题目难度也不同。对于高水平玩家来说，竞赛体验会好的多。
-
-我目前共参加过2场Div.2，rating 1480。没错，初始值是1500，我反而掉下来了。
-
- A. Filling Diamonds
-可以用动态规划的方式思考这个问题。对于长度为n的belt来说，共有2种状态：
-
- 0. 
-
-
-/
-
-和
-1.
-/
-\
-
-状态转移方程有:
-dp[n][0] = dp[n-1
+          <p><a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/75913">官方题解</a></p>
+<p>codeforces上题目一般高于平时的面试题。如果是为了面试的话，只刷LeetCode就可以了。不过如果是对算法和竞赛感兴趣，强烈鼓励试一试。题目的数量和质量都远超LeetCode。而且为不同水平的同学有不同的赛道，题目难度也不同。对于高水平玩家来说，竞赛体验会好的多。</p>
+<p>我目前共参加过2场Div.2，rating 1480。没错，初始值是1500，我反而掉下来了。</p>
+<h2 id="a-filling-diamonds"><a class="markdownIt-Anchor" href="#a-filling-diamonds"></a> A. Filling Diamonds</h2>
+<p>可以用动态规划的方式思考这个问题。对于长度为n的belt来说，共有2种状态：</p>
+<ol start="0">
+<li></li>
+</ol>
+<p><br>
+/</p>
+<p>和<br>
+1.<br>
+/<br>
+\</p>
+<p>状态转移方程有:<br>
+dp[n][0] = dp[n-1][1] + dp[n-1][0],<br>
+dp[n][1] = dp[n-1][1].</p>
+<p>对于初始值有:<br>
+dp[0][1] = 1,<br>
+dp[0][0] = 0.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/12/codeforces-round-633-Div2/#more" rel="contents">
@@ -402,7 +430,7 @@ dp[n][0] = dp[n-1
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -438,10 +466,44 @@ dp[n][0] = dp[n-1
     
     
     <div class="post-body" itemprop="articleBody">
-          RankNameScoreFinish TimeQ1 (4)Q2 (4)Q3 (6)Q4 (7)589 / 9816YoungForest190:55:300:07:040:15:050:37:18 10:50:30今天又是一轮手速场。Python告诉我们，“人生苦短，我用Python”。我有2题用Python实现，1和4。事实上，对于第3题，直接调用Python Str API更是如鱼得水，不过我当时选择了用Trie+自动机的方式实现，也活该名次掉下来。
-
- 1408. String Matching in an Array
-签到题。使用Python Str的find函数确定是否是子字符串即
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (4)</th>
+<th>Q2 (4)</th>
+<th>Q3 (6)</th>
+<th>Q4 (7)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>589 / 9816</td>
+<td>YoungForest</td>
+<td>19</td>
+<td>0:55:30</td>
+<td>0:07:04</td>
+<td>0:15:05</td>
+<td>0:37:18  1</td>
+<td>0:50:30</td>
+</tr>
+</tbody>
+</table>
+<p>今天又是一轮手速场。Python告诉我们，“人生苦短，我用Python”。我有2题用Python实现，1和4。事实上，对于第3题，直接调用Python Str API更是如鱼得水，不过我当时选择了用Trie+自动机的方式实现，也活该名次掉下来。</p>
+<h2 id="1408-string-matching-in-an-array"><a class="markdownIt-Anchor" href="#1408-string-matching-in-an-array"></a> 1408. String Matching in an Array</h2>
+<p>签到题。使用Python Str的find函数确定是否是子字符串即可。</p>
+<p>时间复杂度: O(words.length ^ 2 * words[i].length),<br>
+空间复杂度: O(words.length * words[i].length).</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">stringMatching</span>(<span class="params">self, words: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">str</span>]:</span><br><span class="line">        ans = <span class="built_in">set</span>()</span><br><span class="line">        n = <span class="built_in">len</span>(words)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, n):</span><br><span class="line">                <span class="keyword">if</span> words[i].find(words[j]) != -<span class="number">1</span>:</span><br><span class="line">                    ans.add(words[j])</span><br><span class="line">                <span class="keyword">if</span> words[j].find(words[i]) != -<span class="number">1</span>:</span><br><span class="line">                    ans.add(words[i])</span><br><span class="line">        <span class="keyword">return</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> ans]</span><br></pre></td></tr></table></figure>
+<h2 id="1409-queries-on-a-permutation-with-key"><a class="markdownIt-Anchor" href="#1409-queries-on-a-permutation-with-key"></a> 1409. Queries on a Permutation With Key</h2>
+<p>用List模拟Permutation的变化。<br>
+寻找位置时使用顺序查找。</p>
+<p>时间复杂度: O(m + queries.length * m),<br>
+空间复杂度: O(m + queries.length).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">processQueries</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; queries, <span class="type">int</span> m)</span> </span>&#123;</span><br><span class="line">        list&lt;<span class="type">int</span>&gt; P;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">            P.<span class="built_in">push_back</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(queries.size())</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; queries.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span> it = P.<span class="built_in">begin</span>();</span><br><span class="line">            <span class="type">int</span> position = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (it != P.<span class="built_in">end</span>() &amp;&amp; *it != queries[i]) &#123;</span><br><span class="line">                ++it;</span><br><span class="line">                ++position;</span><br><span class="line">            &#125;</span><br><span class="line">            ans[i] = position;</span><br><span class="line">            P.<span class="built_in">push_front</span>(*it);</span><br><span class="line">            P.<span class="built_in">erase</span>(it);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/12/LeetCode-weekly-contest-184/#more" rel="contents">
@@ -511,7 +573,7 @@ dp[n][0] = dp[n-1
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -547,31 +609,43 @@ dp[n][0] = dp[n-1
     
     
     <div class="post-body" itemprop="articleBody">
-          RankNameScoreFinish TimeQ1 (3)Q2 (5)Q3 (5)Q4 (6)199 / 7026YoungForest190:40:570:08:050:11:440:33:380:40:57不难，手速场。发现很多手速场的比赛，第三题甚至都比第四题更难。
-
- 1399. Count Largest Group
-straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count最大的几组。
-
-时间复杂度: O(N),
-空间复杂度: O(N).
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (5)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>199 / 7026</td>
+<td>YoungForest</td>
+<td>19</td>
+<td>0:40:57</td>
+<td>0:08:05</td>
+<td>0:11:44</td>
+<td>0:33:38</td>
+<td>0:40:57</td>
+</tr>
+</tbody>
+</table>
+<p>不难，手速场。发现很多手速场的比赛，第三题甚至都比第四题更难。</p>
+<h2 id="1399-count-largest-group"><a class="markdownIt-Anchor" href="#1399-count-largest-group"></a> 1399. Count Largest Group</h2>
+<p>straight forward. 用一个hashmap统计digit_sum -&gt; count, 最后再找出count最大的几组。</p>
+<p>时间复杂度: O(N),<br>
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countLargestGroup</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; seen;</span><br><span class="line">        <span class="type">int</span> largestSize = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)  &#123;</span><br><span class="line">            <span class="type">int</span> sumOfDigit = <span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> current = i;</span><br><span class="line">            <span class="keyword">while</span> (current &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                sumOfDigit += current % <span class="number">10</span>;</span><br><span class="line">                current /= <span class="number">10</span>;</span><br><span class="line">            &#125; </span><br><span class="line">            ++seen[sumOfDigit];</span><br><span class="line">            largestSize = <span class="built_in">max</span>(largestSize, seen[sumOfDigit]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> it = seen.<span class="built_in">begin</span>(); it != seen.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">            <span class="keyword">if</span> (it-&gt;second == largestSize)</span><br><span class="line">                ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1400-construct-k-palindrome-strings"><a class="markdownIt-Anchor" href="#1400-construct-k-palindrome-strings"></a> 1400. Construct K Palindrome Strings</h2>
+<p>统计出现的奇数字符数目，必需小于等于k。并且因为要求回文串非空，所以需要<code>s.size() &gt;= k</code>。</p>
+<p>时间复杂度: O(N),<br>
+空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canConstruct</span><span class="params">(string s, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.<span class="built_in">size</span>() &lt; k) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : s) &#123;</span><br><span class="line">            ++count[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> single = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : count) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">                ++single;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> single &lt;= k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/07/LeetCode-biweekly-contest-23/#more" rel="contents">
@@ -641,7 +715,7 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -677,10 +751,44 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
     
     
     <div class="post-body" itemprop="articleBody">
-          RankNameScoreFinish TimeQ1 (4)Q2 (4)Q3 (6)Q4 (7)91 / 12542YoungForest210:39:070:09:240:15:330:29:530:39:07本周又是手速场，足足有800人AK。可能是由于疫情的原因，程序员都wfh（work from home），每次周赛的参加人数都稳步上涨，比我刚回国的时候已经增加一个一倍了。rating掉了有一个月了，这周终于涨上来了，2187，恢复到了最高点。
-
- 1403. Minimum Subsequence in Non-Increasing Order
-贪心。先排序，试图选大的值，直到累计和
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (4)</th>
+<th>Q2 (4)</th>
+<th>Q3 (6)</th>
+<th>Q4 (7)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>91 / 12542</td>
+<td>YoungForest</td>
+<td>21</td>
+<td>0:39:07</td>
+<td>0:09:24</td>
+<td>0:15:33</td>
+<td>0:29:53</td>
+<td>0:39:07</td>
+</tr>
+</tbody>
+</table>
+<p>本周又是手速场，足足有800人AK。可能是由于疫情的原因，程序员都wfh（work from home），每次周赛的参加人数都稳步上涨，比我刚回国的时候已经增加一个一倍了。rating掉了有一个月了，这周终于涨上来了，2187，恢复到了最高点。</p>
+<h2 id="1403-minimum-subsequence-in-non-increasing-order"><a class="markdownIt-Anchor" href="#1403-minimum-subsequence-in-non-increasing-order"></a> 1403. Minimum Subsequence in Non-Increasing Order</h2>
+<p>贪心。先排序，试图选大的值，直到累计和超过一半。</p>
+<p>时间复杂度: O(N log N),<br>
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">minSubsequence</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">        <span class="type">int</span> sumAll = <span class="built_in">accumulate</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="type">int</span> sumCurrent = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : nums) &#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(i);</span><br><span class="line">            sumCurrent += i;</span><br><span class="line">            <span class="keyword">if</span> (sumCurrent &gt; sumAll / <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1404-number-of-steps-to-reduce-a-number-in-binary-representation-to-one"><a class="markdownIt-Anchor" href="#1404-number-of-steps-to-reduce-a-number-in-binary-representation-to-one"></a> 1404. Number of Steps to Reduce a Number in Binary Representation to One</h2>
+<p>用字符串模拟“加一”操作，直到为1.<br>
+这里我用了一个list来存字符，以方便进位操作。</p>
+<p>时间复杂度: O(N),<br>
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numSteps</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="function">list&lt;<span class="type">char</span>&gt; <span class="title">l</span><span class="params">(s.begin(), s.end())</span></span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (l.<span class="built_in">size</span>() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l.<span class="built_in">back</span>() == <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">auto</span> it = l.<span class="built_in">rbegin</span>();</span><br><span class="line">                <span class="keyword">for</span> (;it != l.<span class="built_in">rend</span>(); ++it) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (*it == <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">                        *it = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">                        <span class="keyword">goto</span> endIf;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        *it = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                l.<span class="built_in">push_front</span>(<span class="string">&#x27;1&#x27;</span>);</span><br><span class="line">                endIf: ;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                l.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/07/LeetCode-weekly-contest-183/#more" rel="contents">
@@ -750,7 +858,7 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -786,14 +894,45 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
     
     
     <div class="post-body" itemprop="articleBody">
-          RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (5)Q4 (8)727 / 11694YoungForest120:22:500:03:130:14:040:22:50null这周一加了一个LeetCode每日打卡和周赛群。每周出排名，末位发红包；每天做道指定题目，连续2天没做发红包，极其惊现刺激。赛事排行榜。
-本次比赛是入群以来的第一次，由于第四题太难了，总共也就一百人做出来。群里也只有5个人AC
-
- 1394. Find Lucky Integer in an Array
-签到题。注意数据范围，统计frequency即可。
-
-时间复杂度: O(N),
-空间复
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (8)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>727 / 11694</td>
+<td>YoungForest</td>
+<td>12</td>
+<td>0:22:50</td>
+<td>0:03:13</td>
+<td>0:14:04</td>
+<td>0:22:50</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>这周一加了一个LeetCode每日打卡和周赛群。每周出排名，末位发红包；每天做道指定题目，连续2天没做发红包，极其惊现刺激。<a target="_blank" rel="noopener" href="https://wisdompeak.github.io/lc-score-board/">赛事排行榜</a>。<br>
+本次比赛是入群以来的第一次，由于第四题太难了，总共也就一百人做出来。群里也只有5个人AC</p>
+<h2 id="1394-find-lucky-integer-in-an-array"><a class="markdownIt-Anchor" href="#1394-find-lucky-integer-in-an-array"></a> 1394. Find Lucky Integer in an Array</h2>
+<p>签到题。注意数据范围，统计frequency即可。</p>
+<p>时间复杂度: O(N),<br>
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findLucky</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">501</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : arr) &#123;</span><br><span class="line">            ++count[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">500</span>; i &gt;= <span class="number">1</span>; --i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (count[i] == i)</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1395-count-number-of-teams"><a class="markdownIt-Anchor" href="#1395-count-number-of-teams"></a> 1395. Count Number of Teams</h2>
+<p>由于数据规模很小，所以即使是枚举所有3元组的N^3的解法也能过。<br>
+在这里，我使用了DP, N^2复杂度的解法。如果使用order statistic tree的话，可以近一步降为N log N.</p>
+<p>时间复杂度: O(N ^ 2),<br>
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numTeams</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; rating)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> f = [&amp;](function&lt;<span class="built_in">bool</span>(<span class="type">int</span>,<span class="type">int</span>)&gt; op) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> n = rating.<span class="built_in">size</span>();</span><br><span class="line">            vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">large</span>(<span class="number">3</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">1</span>));</span><br><span class="line">            <span class="type">int</span> ans;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> echo = <span class="number">1</span>; echo &lt;= <span class="number">2</span>; ++echo) &#123;</span><br><span class="line">                ans = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">                    large[echo][i] = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; ++j) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (<span class="built_in">op</span>(rating[i], rating[j])) &#123;</span><br><span class="line">                            large[echo][i] += large[echo<span class="number">-1</span>][j];</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    ans += large[echo][i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">f</span>(<span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;()) + <span class="built_in">f</span>(<span class="built_in">less</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/29/LeetCode-weekly-contest-182/#more" rel="contents">
@@ -863,7 +1002,7 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -899,15 +1038,43 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
     
     
     <div class="post-body" itemprop="articleBody">
-          RankNameScoreFinish TimeQ1 (4)Q2 (4)Q3 (5)Q4 (6)1357 / 5632YoungForest121:27:090:05:060:48:41 11:22:09null 1385. Find the Distance Value Between Two Arrays
-先对arr2进行排序，再对arr1中的每一个元素，利用二分搜索，判断arr2中是否有距离在d中的值。
-
-时间复杂度: O(arr2.size() * log arr2.size() + arr1.size() * log arr2.size()),
-空间复杂度: O(1).
-
-1
-2
-3
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (4)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1357 / 5632</td>
+<td>YoungForest</td>
+<td>12</td>
+<td>1:27:09</td>
+<td>0:05:06</td>
+<td>0:48:41  1</td>
+<td>1:22:09</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1385-find-the-distance-value-between-two-arrays"><a class="markdownIt-Anchor" href="#1385-find-the-distance-value-between-two-arrays"></a> 1385. Find the Distance Value Between Two Arrays</h2>
+<p>先对<code>arr2</code>进行排序，再对<code>arr1</code>中的每一个元素，利用二分搜索，判断<code>arr2</code>中是否有距离在<code>d</code>中的值。</p>
+<p>时间复杂度: O(arr2.size() * log arr2.size() + arr1.size() * log arr2.size()),<br>
+空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findTheDistanceValue</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr1, vector&lt;<span class="type">int</span>&gt;&amp; arr2, <span class="type">int</span> d)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">sort</span>(arr<span class="number">2.</span><span class="built_in">begin</span>(), arr<span class="number">2.</span><span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : arr1) &#123;</span><br><span class="line">            <span class="keyword">auto</span> it1 = <span class="built_in">lower_bound</span>(arr<span class="number">2.</span><span class="built_in">begin</span>(), arr<span class="number">2.</span><span class="built_in">end</span>(), i - d);</span><br><span class="line">            <span class="keyword">auto</span> it2 = <span class="built_in">upper_bound</span>(arr<span class="number">2.</span><span class="built_in">begin</span>(), arr<span class="number">2.</span><span class="built_in">end</span>(), i + d);</span><br><span class="line">            <span class="keyword">if</span> (it1 == it2)</span><br><span class="line">                ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1386-cinema-seat-allocation"><a class="markdownIt-Anchor" href="#1386-cinema-seat-allocation"></a> 1386. Cinema Seat Allocation</h2>
+<p>贪心。每排尝试放2个family，再尝试放一个family。因为一行10个座位，所以可以用bitmap来表示占用情况。对于没reserverd的行，直接放2个。</p>
+<p>时间复杂度: O(reservedSeats.size() * log reserveredSeats.size() + max(n, reservedSeats.size())),<br>
+空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxNumberOfFamilies</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; reservedSeats)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(reservedSeats.<span class="built_in">begin</span>(), reservedSeats.<span class="built_in">end</span>(), [](<span class="type">const</span> <span class="keyword">auto</span>&amp; a, <span class="type">const</span> <span class="keyword">auto</span>&amp; b) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[<span class="number">0</span>] == b[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="keyword">return</span> a[<span class="number">1</span>] &lt; b[<span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> a[<span class="number">0</span>] &lt; b[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> index = <span class="number">0</span>, row = <span class="number">1</span>; row &lt;= n;) &#123;</span><br><span class="line">            <span class="type">unsigned</span> <span class="type">int</span> current_row = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (; index &lt; reservedSeats.<span class="built_in">size</span>() &amp;&amp; reservedSeats[index][<span class="number">0</span>] == row; ++ index) &#123;</span><br><span class="line">                current_row |= <span class="number">1</span> &lt;&lt; (reservedSeats[index][<span class="number">1</span>] - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            current_row = ~current_row;</span><br><span class="line">            <span class="keyword">if</span> ((current_row &amp; <span class="number">0b0111111110</span>) == <span class="number">0b0111111110</span>)</span><br><span class="line">                ans += <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ((current_row &amp; <span class="number">0b0001111000</span>) == <span class="number">0b0001111000</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>((current_row &amp; <span class="number">0b0000011110</span>) == <span class="number">0b0000011110</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ((current_row &amp; <span class="number">0b0111100000</span>) == <span class="number">0b0111100000</span>)</span><br><span class="line">                ++ans;</span><br><span class="line">            <span class="keyword">if</span> (index &lt; reservedSeats.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                ans += (reservedSeats[index][<span class="number">0</span>] - row - <span class="number">1</span>) * <span class="number">2</span>;</span><br><span class="line">                row = reservedSeats[index][<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                ans += (n + <span class="number">1</span> - row - <span class="number">1</span>) * <span class="number">2</span>;</span><br><span class="line">                row = n + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1387-sort-integers-by-the-power-value"><a class="markdownIt-Anchor" href="#1387-sort-integers-by-the-power-value"></a> 1387. Sort Integers by The Power Value</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/23/LeetCode-biweekly-contest-22/#more" rel="contents">
@@ -977,7 +1144,7 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1013,12 +1180,43 @@ straight forward. 用一个hashmap统计digit_sum -> count, 最后再找出count
     
     
     <div class="post-body" itemprop="articleBody">
-          自从LeetCode rating算法更新后，我的rating到达了顶峰，之后就一直向下掉。不过也是因为自己菜，每次都打的大好几百名，偶尔还上千。
-
-RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (5)Q4 (6)839 / 10930YoungForest181:31:130:04:530:14:43 10:45:27 11:16:13 1 1389. Create Target Array in the Given Order
-签到题。使用vector的insert接口，缺点是效率有问题，不过对于签到题足够了。
-
-时间复杂度: O(n ^ 2), 最坏情况是
+          <p>自从LeetCode rating算法更新后，我的rating到达了顶峰，之后就一直向下掉。不过也是因为自己菜，每次都打的大好几百名，偶尔还上千。</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>839 / 10930</td>
+<td>YoungForest</td>
+<td>18</td>
+<td>1:31:13</td>
+<td>0:04:53</td>
+<td>0:14:43  1</td>
+<td>0:45:27  1</td>
+<td>1:16:13  1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1389-create-target-array-in-the-given-order"><a class="markdownIt-Anchor" href="#1389-create-target-array-in-the-given-order"></a> 1389. Create Target Array in the Given Order</h2>
+<p>签到题。使用vector的insert接口，缺点是效率有问题，不过对于签到题足够了。</p>
+<p>时间复杂度: O(n ^ 2), 最坏情况是 每次都插到首位。<br>
+空间复杂度: O(n).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">createTargetArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, vector&lt;<span class="type">int</span>&gt;&amp; index)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n ; ++ i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index[i] &lt; ans.<span class="built_in">size</span>()) </span><br><span class="line">                ans.<span class="built_in">insert</span>(ans.<span class="built_in">begin</span>() + index[i], nums[i]);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ans.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1390-four-divisors"><a class="markdownIt-Anchor" href="#1390-four-divisors"></a> 1390. Four Divisors</h2>
+<p>Brute force. 计算每个数的因数。</p>
+<p>时间复杂度: O(sqrt(nums[i]) * nums.length),<br>
+空间复杂的: O(nums.length) -&gt; O(1) without memo.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; memo;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; sumDivisors;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">divisors</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (memo.<span class="built_in">find</span>(x) == memo.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="type">int</span> ans = <span class="number">2</span>;</span><br><span class="line">                <span class="type">int</span> sum = <span class="number">1</span> + x;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i * i &lt;= x; ++i) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (x % i == <span class="number">0</span>) &#123;</span><br><span class="line">                        ans += (i * i == x) ? <span class="number">1</span> : <span class="number">2</span>;</span><br><span class="line">                        sum += (i * i == x) ? i : i + x / i;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (ans &gt; <span class="number">4</span>)</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (ans == <span class="number">4</span>) &#123;</span><br><span class="line">                    sumDivisors[x] = sum;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> memo[x] = ans;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> memo[x];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumFourDivisors</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">divisors</span>(i) == <span class="number">4</span>)</span><br><span class="line">                ans += sumDivisors[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/22/LeetCode-weekly-contest-181/#more" rel="contents">
@@ -1088,7 +1286,7 @@ RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (5)Q4 (6)839 / 10930YoungForest181:31:130
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1124,16 +1322,21 @@ RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (5)Q4 (6)839 / 10930YoungForest181:31:130
     
     
     <div class="post-body" itemprop="articleBody">
-          新一年的kick start有了些许变化：
-
- 1. 所有测试结果正确与否立即返回。之前是大的数据集的测试结果赛后才能看到。相当于是降低了难度，减少了参赛者失误的代价。之前发生一点失误的话，大数据集的分数就没了。现在相当于是增加了一次罚时。
- 2. 题目从3到变成了4道，时间不变，增加了一道送分题。
-
-Rank 570. 因为大家都是100分，所以最后比拼的都是时间。因为比赛是12:00~15:00, 所以我中间花了半个小时去吃饭。另外每个题目都不是一遍做对，都通过printf进行调试，花了不少时间。最快的大佬们都是20min就做完了。
-
-下个月约起来round B呀！4月19号早上7点。
-
-
+          <p>新一年的kick start有了些许变化：</p>
+<ol>
+<li>所有测试结果正确与否立即返回。之前是大的数据集的测试结果赛后才能看到。相当于是降低了难度，减少了参赛者失误的代价。之前发生一点失误的话，大数据集的分数就没了。现在相当于是增加了一次罚时。</li>
+<li>题目从3到变成了4道，时间不变，增加了一道送分题。</li>
+</ol>
+<p>Rank 570. 因为大家都是100分，所以最后比拼的都是时间。因为比赛是12:00~15:00, 所以我中间花了半个小时去吃饭。另外每个题目都不是一遍做对，都通过<code>printf</code>进行调试，花了不少时间。最快的大佬们都是20min就做完了。</p>
+<p>下个月约起来round B呀！4月19号早上7点。</p>
+<p><a target="_blank" rel="noopener" href="https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc7">round A 题目地址</a></p>
+<h2 id="allocation"><a class="markdownIt-Anchor" href="#allocation"></a> Allocation</h2>
+<p>刚开始以为是一道简单的背包问题，后来发现是更简单的贪心问题。因为是要求购买房子数目的最大值，而不是价值的最大值，或者说 房子的价值都为1. 所以贪心即可。简而言之，送分的签到题。<br>
+把房子按照售价从小到大排序，先买便宜的房子。</p>
+<p>时间复杂度: O(N log N),<br>
+空间复杂度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">A</span><span class="params">(<span class="number">100005</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> iCase = <span class="number">1</span>; iCase &lt;= T; ++iCase) &#123;</span><br><span class="line">        <span class="type">int</span> N, B;</span><br><span class="line">        cin &gt;&gt; N &gt;&gt; B;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            cin &gt;&gt; A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(A.<span class="built_in">begin</span>(), A.<span class="built_in">begin</span>() + N);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; N &amp;&amp; B &gt;= A[index]) &#123;</span><br><span class="line">            B -= A[index];</span><br><span class="line">            ++ans;</span><br><span class="line">            ++index;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; iCase &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为贪心的时候忘记检查<code>index &lt; n</code>了，导致一次WA罚时。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/22/kick-start-2020-round-A/#more" rel="contents">
@@ -1203,7 +1406,7 @@ Rank 570. 因为大家都是100分，所以最后比拼的都是时间。因为�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1239,19 +1442,37 @@ Rank 570. 因为大家都是100分，所以最后比拼的都是时间。因为�
     
     
     <div class="post-body" itemprop="articleBody">
-          一面
-time: 2020-03-20 16:29:48
-
-上周五参加了在牛客网上的笔试。题目不难，分为计算机基础、算法 和 系统设计。
-计算机基础靠着本科的认真学习，没啥问题。算法也属于LeetCode medium难度，很快AC了。
-系统设计倒是难倒我了，并不擅长，也没有准备。需要设计一个 MOBA游戏的匹配机制，包括单人和组队。之前完全没想过，瞎写了一通。
-昨天收到电话，说我通过了笔试，约了今天下午2:30的电话面试。
-
-本科有个可爱的大佬舍友最后去米哈游了。我虽然对游戏不感冒，但本着多面试，多总结的态度，也报名了其春招内推。
-
-面试预计30min, 实际40min。
-
-自我介绍 + 项
+          <h1 id="一面"><a class="markdownIt-Anchor" href="#一面"></a> 一面</h1>
+<p>time: 2020-03-20 16:29:48</p>
+<p>上周五参加了在牛客网上的笔试。题目不难，分为计算机基础、算法 和 系统设计。<br>
+计算机基础靠着本科的认真学习，没啥问题。算法也属于LeetCode medium难度，很快AC了。<br>
+系统设计倒是难倒我了，并不擅长，也没有准备。需要设计一个 MOBA游戏的匹配机制，包括单人和组队。之前完全没想过，瞎写了一通。<br>
+昨天收到电话，说我通过了笔试，约了今天下午2:30的电话面试。</p>
+<p>本科有个可爱的大佬舍友最后去米哈游了。我虽然对游戏不感冒，但本着多面试，多总结的态度，也报名了其春招内推。</p>
+<p>面试预计30min, 实际40min。</p>
+<p>自我介绍 + 项目经历 + 计算机基础。</p>
+<p>计算机基础又分为：</p>
+<ul>
+<li>C++</li>
+<li>操作系统</li>
+<li>数据库</li>
+<li>计算机网络</li>
+<li>设计模式</li>
+</ul>
+<p>我不会的有：</p>
+<ul>
+<li>TCP 3次挥手，最后的time_wait的作用</li>
+<li>C++ 父类析构函数为什么必需是虚函数</li>
+<li>MySQL
+<ul>
+<li>事务 及 ACID</li>
+<li>Block 和 Tag 区别</li>
+<li>BiLog是什么</li>
+<li>timestamp, datetime的区别</li>
+</ul>
+</li>
+<li>说出常用的设计模式，我讲了几个，但面试官好像并不满意</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/20/Mihayo-backend-intern-interview/#more" rel="contents">
@@ -1321,7 +1542,7 @@ time: 2020-03-20 16:29:48
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1357,11 +1578,42 @@ time: 2020-03-20 16:29:48
     
     
     <div class="post-body" itemprop="articleBody">
-          自从LeetCode更新了周赛rating算法后，结果下我一跳。Rating直接涨到2171，全球排名608/81184, 完成比赛53场。记得上周我还在期望可以近几周突破2000分的，已经1990+了。更新后的算法显示去年8月份就已经2000了。
-
-本周日会村里看望奶奶，由于疫情原因，之前一家人一直未能团聚。今天好不容易，几乎所有人都到场了。周赛也是回老家参加的。由于环境不适合思考，所以结果也差强人意。
-
-RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (4)Q4 (6)1300 / 10047YoungForest110:29:310:12:200:18:26
+          <p>自从LeetCode<a target="_blank" rel="noopener" href="https://leetcode.com/discuss/general-discussion/518516/New-Rating-Algorithm-Details-Contest-Season-and-Absence-in-Participation">更新了周赛rating算法</a>后，结果下我一跳。Rating直接涨到2171，全球排名608/81184, 完成比赛53场。记得上周我还在期望可以近几周突破2000分的，已经1990+了。更新后的算法显示去年8月份就已经2000了。</p>
+<p>本周日会村里看望奶奶，由于疫情原因，之前一家人一直未能团聚。今天好不容易，几乎所有人都到场了。周赛也是回老家参加的。由于环境不适合思考，所以结果也差强人意。</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (4)</th>
+<th>Q4 (6)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1300 / 10047</td>
+<td>YoungForest</td>
+<td>11</td>
+<td>0:29:31</td>
+<td>0:12:20</td>
+<td>0:18:26</td>
+<td>0:29:31</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1380-lucky-numbers-in-a-matrix"><a class="markdownIt-Anchor" href="#1380-lucky-numbers-in-a-matrix"></a> 1380. Lucky Numbers in a Matrix</h2>
+<p>统计每行的最小值所在的列数和每列最大值所在的行数，判断是否有相等的。</p>
+<p>时间复杂度: O(m * n),<br>
+空间复杂度: O(m + n).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">luckyNumbers</span> <span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> m =  matrix.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (m == <span class="number">0</span>) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">const</span>  <span class="type">int</span> n = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">row_min_index</span><span class="params">(m, <span class="number">-1</span>)</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">col_max_index</span><span class="params">(n, <span class="number">-1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (row_min_index[i] == <span class="number">-1</span> || matrix[i][row_min_index[i]] &gt; matrix[i][j]) &#123;</span><br><span class="line">                    row_min_index[i] = j;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (col_max_index[j] == <span class="number">-1</span> || matrix[col_max_index[j]][j] &lt; matrix[i][j]) &#123;</span><br><span class="line">                    col_max_index[j] = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> row = <span class="number">0</span>; row &lt; m; ++row) &#123;</span><br><span class="line">            <span class="keyword">if</span> (col_max_index[row_min_index[row]] == row) &#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(matrix[row][row_min_index[row]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1381-design-a-stack-with-increment-operation"><a class="markdownIt-Anchor" href="#1381-design-a-stack-with-increment-operation"></a> 1381. Design a Stack With Increment Operation</h2>
+<p>用数组实现栈即可。</p>
+<p>时间复杂度:</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/15/LeetCode-weekly-contest-180/#more" rel="contents">

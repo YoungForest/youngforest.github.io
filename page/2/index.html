@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="佛系更新；生活、学习">
 <meta property="og:type" content="website">
@@ -39,8 +39,8 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>YoungForest's blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-88350169-1","only_pageview":false,"measure_protocol_api_secret":null}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6NR9DW560"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-G6NR9DW560","only_pageview":false,"measure_protocol_api_secret":null}</script>
   <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
@@ -54,7 +54,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
 
 
 
@@ -106,6 +108,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,11 +117,37 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -276,7 +305,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,9 +341,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          The Glory and the Dream A Narrative History of America 1932-72
-
-罗辑思维推荐. 作者左派倾向严重，美化民主党，丑化共和党。文笔优美的有些过分，让我想起了太史公，不禁怀疑，是不是也是“一半道听途说，一半靠想象”。开玩笑。刚看到32年罗斯福当选，美国历史上经历的，很多比今天的挑战大得多。罗斯福也是改变美国的一人，从自由主义转向政府主义，从孤立主义转而全球主义。也是美国250年历史上，最接近独裁风险的时刻。遇到危机就是这样的，自由民主来之不易，要珍惜。如今，新闻上，互联网上，大伙总是担忧美国分裂严重，逆全球化和右派抬头。只能说是太年轻，
+          <p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26314954/">The Glory and the Dream A Narrative History of America 1932-72</a></p>
+<p>罗辑思维推荐. 作者左派倾向严重，美化民主党，丑化共和党。文笔优美的有些过分，让我想起了太史公，不禁怀疑，是不是也是“一半道听途说，一半靠想象”。开玩笑。刚看到32年罗斯福当选，美国历史上经历的，很多比今天的挑战大得多。罗斯福也是改变美国的一人，从自由主义转向政府主义，从孤立主义转而全球主义。也是美国250年历史上，最接近独裁风险的时刻。遇到危机就是这样的，自由民主来之不易，要珍惜。如今，新闻上，互联网上，大伙总是担忧美国分裂严重，逆全球化和右派抬头。只能说是太年轻，以史为鉴。美国值得信赖。</p>
+<p>全篇都是流水账，对于外国人来说很多内容一笔带过，还是十分陌生的。尤其是娱乐，大众生活的历史，我就十分陌生。那些明星，影片，小说，一个也不知道。很长的一本书，4大本，今年以来读完的最长的书。另一本在读的长书是“悲惨世界”，还没读完。</p>
+<p>文笔还行，很多历史情节，像是作者就在旁边看着。情节生动的难以置信。这点和司马迁类似。当然现在史料汗牛充栋，只是作者夸张了些。</p>
+<p>作者民主党倾向严重。虽然知识分子是左派可以理解，但在这种编年体书中，有点用力过猛。春秋笔法看不下去了。</p>
+<p>看完后，更加精神美国人了。看看历史上的这些主义，战争，党政，科技进步，媒体/大众生活发生的巨变。每十年都是一个大变化。就不会为如今川普，贸易战，局部战争（俄乌，巴以，印巴），美股一时的涨跌而过度悲喜。都是小场面。现在的世界相比过去真是好太多了。尤其是作为IT从业者。知识分子有个缺点就是总是怀古伤今。</p>
+<blockquote>
+<p>政府从来不参加任何生产活动，本质上它是寄生性的，而经济发展主要依靠为盈利而不惜承担资金风险的企业家</p>
+</blockquote>
+<blockquote>
+<p>极端主义者总是能吸引少数人。1861年，美国北方只有少数人是废奴主义者；1776年，真正渴望领地独立的殖民主义者也只占少数。社会群体情绪的最好风向标，是它得到的同情，而不是参与人数的多少。</p>
+</blockquote>
+<blockquote>
+<p>美国之所以伟大，并不是因为政府为人民所做的努力，而是因为人们为他们自己所做的事情。</p>
+</blockquote>
+<p>正如后记所言，真正的美国立国精神是自由。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2025/05/18/The-Glory-and-the-Dream/#more" rel="contents">
@@ -384,7 +426,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -420,31 +462,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          转自我的博客
-
-往年的年终总结：
-
- * 2023年终总结
- * 2022年终总结
- * 2021年终总结
- * 2020年终总结
- * 2019年终总结
- * 2019年中总结(生日随想)
- * 2018年终总结
- * 2017新年展望
-
-里程碑回顾:
-
- * 硕士3年复盘
- * 大学4年复盘
-
-这些重要的博文都放在我博客的dairy分类下。
-
- 十年编程经验
-此处BGM应为，叶圣涛的“还有多少个十年",唱尽了多少人生的感悟。
-
-14年，18岁的我，离开家乡，前往北京读书。当时的那个少年，对前途一无所知。从此颠沛流离。这10年间，无论是我自己，还是这个世界，都发生了天翻地覆的变化。
-从“沙河
+          <p>转自<a href="https://youngforest.github.io/2024/12/28/2024-summary-and-2025-resolutions/">我的博客</a></p>
+<p>往年的年终总结：</p>
+<ul>
+<li><a href="https://youngforest.github.io/2023/12/23/2023-summary-and-2024-resolutions/">2023年终总结</a></li>
+<li><a href="https://youngforest.github.io/2022/12/25/2022-summary-and-2023-resolutions/">2022年终总结</a></li>
+<li><a href="https://youngforest.github.io/2021/12/28/2021-summary-and-2022-resolutions/">2021年终总结</a></li>
+<li><a href="https://youngforest.github.io/2020/11/25/2020-summary-and-2021-resolutions/">2020年终总结</a></li>
+<li><a href="https://youngforest.github.io/2020/02/20/2019-summary-and-2020-resolutions/">2019年终总结</a></li>
+<li><a href="https://youngforest.github.io/2019/07/15/Happy-birthday-2019/">2019年中总结(生日随想)</a></li>
+<li><a href="https://youngforest.github.io/2018/12/12/2018-summary-and-2019-resolutions/">2018年终总结</a></li>
+<li><a href="https://youngforest.github.io/2017/02/22/2017-resolutions/">2017新年展望</a></li>
+</ul>
+<p>里程碑回顾:</p>
+<ul>
+<li><a href="https://youngforest.github.io/2021/07/03/my-3-years-master/">硕士3年复盘</a></li>
+<li><a href="https://youngforest.github.io/2018/10/03/my-4-years-college/">大学4年复盘</a></li>
+</ul>
+<p>这些重要的博文都放在我博客的<a href="https://youngforest.github.io/categories/dairy/">dairy分类下</a>。</p>
+<h2 id="十年编程经验"><a class="markdownIt-Anchor" href="#十年编程经验"></a> 十年编程经验</h2>
+<p>此处BGM应为，叶圣涛的“还有多少个十年&quot;,唱尽了多少人生的感悟。</p>
+<p>14年，18岁的我，离开家乡，前往北京读书。当时的那个少年，对前途一无所知。从此颠沛流离。这10年间，无论是我自己，还是这个世界，都发生了天翻地覆的变化。<br>
+从“沙河镇”到“知春路”到“十里堡”，从“昌平”到“海淀”又到“朝阳”，从“北京”又到了“都柏林”。经历了许多的光荣和梦想，烦恼和心碎。走过了万里路，读遍了万卷书，也认识了许多不一样的人。从小镇做题家，成长为打工人。幸运的选择了计算机这个充满科技红利的专业，见证了 移动互联网的崛起和饱和，AI 的方兴未艾，全球化的鼎盛和倒退，和平和冲突，人类科技的不断进步。标普500 从1900点涨到6000点。</p>
+<p>当年“计算机”也算是热门专业，但绝对没有如今的TOP1的地位。当年北航计算机本科学科排名据说是第4. 上大学起，我才正式写下第一行代码。同时开始学习C语言和Python，对于新手来说，同时2门语言意味着傻傻分不清楚，花括号<code>{</code>和换行，<code>printf</code> 和 <code>print</code>，编译 与 解释，静态 和 动态。当年Python甚至还有<code>2</code>,<code>3</code>。好多概念也是日后慢慢才搞清楚的，直到现在如数家珍。后来陆续学了 <code>C++</code>,<code>Java</code>,<code>GoLang</code>,<code>TypeScript</code>,<code>C#</code> 都作为一时的主力语言，根据兴趣，也学过 <code>Lisp</code>,<code>Rust</code> 等小众语言。大二大三，正式有了感觉。那2年自己折腾和自学了很多，也有学校硬核课程的帮助。大四开始实习，正式接触业界。之前总结的 <a href="https://youngforest.github.io/2018/10/03/my-4-years-college/">大学4年复盘</a>，<a href="https://youngforest.github.io/2021/07/03/my-3-years-master/">硕士3年复盘</a>。不得不说，读硕士真是浪费时间。也就是国内太卷，找份好工作都要研究生。毕业就25岁了。到了海外后，基本都是本科就出来工作的，早早进入业界，早早升职加薪。现在又全职工作了3年多，加上之前实习，也算体验和经历了6家公司了. 回头看看，这么多年，很多东西浅尝辄止，简历也十分花里胡哨和充实。<br>
+真是如金庸所言，独孤求败 一开始“青光利剑，过刚则折”，之后&quot;紫薇软剑，灵活变通&quot;, 中年“重剑无锋，大巧不工。”, 最后&quot;草木之剑，返璞归真&quot;，花草树木，皆可为剑。达到最高境界。程序员也是如此。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/12/28/2024-summary-and-2025-resolutions/#more" rel="contents">
@@ -514,7 +555,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -550,13 +591,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          每周一本书24：食南之徒 马伯庸
+          <p>每周一本书24：<strong>食南之徒</strong> <a target="_blank" rel="noopener" href="https://book.douban.com/search/%E9%A9%AC%E4%BC%AF%E5%BA%B8">马伯庸</a></p>
+<p>作者貌似是在借汉朝的南越问题，映射台湾问题。马伯庸还是那么擅长，借用史书上的只言片语，脑补出完整的悬疑故事。之前的“两京十五日”，“长安的荔枝”都是如此。</p>
+<p>十分不错的长篇小说，尤其是对食物的描写，让人感到真诚和流口水。就是结局过于悲惨，“甘蔗”一家人都死了。悬案也终究没有告破和昭雪，虽然读者们和男主都知道真相了，迟到20+年的惩罚，也来的太迟了。男主要是再晚几年，凶手就善终了。但仍然作威作福那么多年，害了不少人。</p>
+<p>狐死首丘，万里运枣树苗，孤宫独守。赵佗 的这些情感，作为一个离开家乡10年有余，如今甚至流落海外的移民，真是感同身受，都要哭死了。但我也如同赵佗，也知道，回不去了。记忆中的故乡已经远去，即使勉强回去以减思乡之愁，也是无济于事，反而带来更大的痛苦。因为现实的家乡，和你想象中的，其实是完全不同的。思乡的人，总是美化这些。记吃不记打，好了伤疤忘了疼。<strong>过去没有想象中那么美好，现在没有想象中那么不好，未来远比想象中要好。</strong></p>
 
-作者貌似是在借汉朝的南越问题，映射台湾问题。马伯庸还是那么擅长，借用史书上的只言片语，脑补出完整的悬疑故事。之前的“两京十五日”，“长安的荔枝”都是如此。
-
-十分不错的长篇小说，尤其是对食物的描写，让人感到真诚和流口水。就是结局过于悲惨，“甘蔗”一家人都死了。悬案也终究没有告破和昭雪，虽然读者们和男主都知道真相了，迟到20+年的惩罚，也来的太迟了。男主要是再晚几年，凶手就善终了。但仍然作威作福那么多年，害了不少人。
-
-狐死首丘，万里运枣树苗，孤宫独守。赵佗 的这些情感，作为一个离开家乡10年有余，如今甚至流落海外的移民，真是感同身受，都要哭死了。但我也如同赵
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/10/20/Shi-Nan-Zhi-Tu/#more" rel="contents">
@@ -626,7 +665,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -662,9 +701,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          每周一本书22：深奥的简洁 从混沌、复杂到地球生命的起源
+          <p>每周一本书22：<a target="_blank" rel="noopener" href="https://book.douban.com/subject/3370214/"><strong>深奥的简洁</strong> 从混沌、复杂到地球生命的起源</a></p>
+<p>“穷查理宝典”推荐的书籍，从混沌的角度理解宇宙、生命和社会，十分有趣的角度。通过混沌，这一数学上的概念，把宇宙中很多事情都穿起来了。虽然我们有许多的物理学知识，看似对世界了解很多，可以做到预测历史和未来，像拉普拉斯认为的那样。但事实和理论证明了，这是不可能的。计算宇宙最好也是唯一的方案就是宇宙本身，无法在宇宙中制作出这样的机器或生命，去计算和预测宇宙。这是数学的限制，如果像很多先贤说的那样，数学是上帝的语言。那看来这一语言也是天生有限制的，不是全知全能的。当然数学也一直在进展，但从目前的证明来看，很多方程是没有解析解的。迭代解注定是蝴蝶效应。相比“迷人的温度”那本书稍差。虽然我自认为有一定的数理基础背景，但还是被本书的数学和论证搞得有些糊涂了。</p>
+<p>有意思的是，前一本书提到“流浪地球”的方案。本书则是以，“三体”问题开端。三体问题不可解，不是物理的错，而是数学的错，而且是数学已经证明了不可解。因此，如果“地球往事”里，三体组织的拯救派看过这部作品，也就会放弃拯救“主”的想法。当然，“三体”书中，最后拯救派也证明了此事，并且在与降临派的斗争中失败。可以说，他们的策略从根上就是不可能和注定失败的。</p>
 
-“穷查理宝典”推荐的书籍，从混沌的角度理解宇宙、生命和社会，十分有趣的角度。通过混沌，这一数学上的概念，把宇宙中很多事情都穿起来了。虽然我们有许多的物理学知识，看似对世界了解很多，可以做到预测历史和未来，像拉普拉斯认为的那样。但事实和理论证明了，这是不可能的。计算宇宙最好也是唯一的方案就是宇宙本身，无法在宇宙中制作出这样的机器或生命，去计算和预测宇宙。这是数学的限制，如果像很多先贤说的那样，数学是上帝的语言。那看来这一语言也是天生有限制的，不是全知全能的。当然数学也一直在进展，但从目前的证明来看，很多方程是没有解析解的。迭代解注定是蝴
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/09/15/Chaos-Complexity-and-the-Emergence-of-Life/#more" rel="contents">
@@ -734,7 +774,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -770,11 +810,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          A Matter of Degrees: What Temperature Reveals about the Past and Future of Our Species, Planet, and Universe
+          <p>A Matter of Degrees: What Temperature Reveals about the Past and Future of Our Species, Planet, and Universe</p>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/27016304/">豆瓣链接</a></p>
+<p>十分。“穷查理宝典”的推荐书籍，我从那本书过来的。芒格在书中强调，跨学科知识的重要性，或许这就是他推荐此书的原因吧。确实如此，本书集合多门学科大成，深入简出，是本优秀的科普书籍。虽然很多知识和历史都是我所知道的，但是通过“温度”这一物理变量，把医学，生物学（包括进化论），物理学（光、热、量子力学），地质学，化学都串在一起。当不同学科融会贯通，历史的发展交织在一起的时候，不得不感叹科学和人类文明的伟大。就像书中所说，从宇宙大爆炸，到太阳系的诞生，地球的诞生，再到生命，最后到人类来思考这些间接和直接创造人的这一切。让我读来多次拍手称快，爱不释手，3天读完。生而为人，我很幸运和骄傲。尤其是生活在21世纪，站在那么多巨人的肩膀上。享受着他们的发现和创造，过着舒适和幸福的生活。</p>
+<p>最有意思的部分是，在“太阳的诞生”章节，作者提到，太阳因为核心聚变的进程，核心温度是不断升高的。因为越重的原子核需要更高的温度，才能抗衡电磁斥力，产生聚变。现在的太阳是50亿年前，释放能量的30%多。之后也会越来越亮。这对地球不是什么好消息。再过10亿年，也许地球会步入金星后尘，变成一个温室效应严重，过热的星球。生命或将在地球上灭绝。但是科学家已经提出了解决方法，如果人类可以继续存在的话，可以通过驾驭小行星，利用引力弹弓（其实是发射太阳系探测器加速的常用技巧）的效应，每次从地球掠过的时候，把地球往外推一点，然后小行星会回到木星之外补充能量。然后人类再通过火箭，改变轨道，再次返回地球。每六千年一个周期，火箭的功率其实也不需要很大，因为时间长，产生的动量就大了。几十亿年后，地球就会到今天火星的轨道上。地球可以保持适宜的温度，为生命延长几十亿年的时间。真是科学版流浪地球，比大刘的行星核聚变引擎方案可行的多。当然大刘的背景是需要更快的走，引力弹弓虽然可行省力，但需要的时间也更久。当然《流浪地球》里的设定是，太阳会几千年内发生毁灭的氦闪，这不是科学的。当然50亿年后，太阳还是要变成红巨星，吞没地球和火星的。之后就生命需要移民到木星和更外的轨道了（这次没法带着地球一起走了），甚至是其他的恒星系。</p>
+<p>曾几何时，我也是有所谓“科学家”的理想的，初高中的时候，也是对物理十分感兴趣。差点报考南大的物理系或天文物理系了。小时候就喜欢读“十万个为什么”，“动物世界”，还订阅了科学杂志（忘记名字了，但真的很喜欢。印象最深刻的是讲，地平线号发射，将会十多年后访问冥王星的故事。当时冥王星还是九大行星之一。长大后，它真的到了，掠过冥王星。发回了探测数据，并开始离开太阳系了。但冥王星早被踢出行星行列，现在只有八大行星了）。高中的时候，也读了加来道雄的《平行宇宙》，霍金的《时间简史》，《果壳里的宇宙》。甚至是人教版的物理课本，都把物理学和那些科学家的故事讲的绘声绘色，令人神往。大学也读了加莫夫的《从一到无穷大》。来了爱尔兰后，读了《上帝掷色子吗》，《现实不似你所见》。如果你喜欢这些书的话，《迷人的温度》肯定也会十分符合你的胃口的。</p>
+<p>回想自己小时候也是充满了求知欲和理想主义，却在现实和社会的规训下，变得如今十分现实主义了。尤其是在国内的教育体制之下，剥夺了孩子们的多样性和求知欲，质疑与勇气。即使最后考上很好的大学，读了热门的专业，做了体面的工作，赚了可以的钱。但仍然也算是自怜自爱。唉，伤仲永呀。有些同学即使大学读了物理，大多也在社会的压力下转了码。我有个高中同学，一直读到高能物理博士，去年在巴黎联合培养两年。当时还去拜访和参观了他的实验室。但也去昧了。学物理确实是穷，就业面也窄。做的学术内容，日常也是读论文，写代码，分析实验数据和模拟。还是读科普书或看故事更精彩。身在其中的人，也是绝大多数要做很多枯燥的工作的。而且物理、数学这些很看天赋，多少知名的科学家都是年少有成，25岁之前就可以证明自己。我自己已经太老了。不过作为门外汉，关注这些科学的重大进展，还是很让人激动和开心的。多少次回想起，年少时第一次读到这些科学故事和知识的时候。</p>
+<p>第三章，”读懂地球“。也是十分有借鉴意义的，尤其是我一直很喜欢看B站上一个叫”芳斯塔夫“的UP主，讲生物进化的。很多地质和生活演化历史事件，和”芳斯塔夫“的都串起来了。这种感觉真是神奇。提到和分析了”温室效应“，但更加理性和客观，对二氧化碳的排放也更加从容和容忍。不像之前白左的极端观点，当然现如今白左也降温了。气候议题已经不如几十年前那么火热了。</p>
 
-豆瓣链接
-
-十分。“穷查理宝典”的推荐书籍，我从那本书过来的。芒格在书中强调，跨学科知识的重要性，或许这就是他推荐此书的原因吧。确实如此，本书集合多门学科大成，深入简出，是本优秀的科普书籍。虽然很多知识和历史都是我所知道的，但是通过“温度”这一物理变量，把医学，生物学（包括进化论），物理学（光、热、量子力学），地质学，化学都串在一起。当不同学科融会贯通，历史的发展交织在一起的时
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/09/02/A-Matter-of-Degrees/#more" rel="contents">
@@ -844,7 +887,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -880,17 +923,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          保守主义，自由主义，乐观主义 的盛宴。
-
-纳西姆.塔勒布 是 纳瓦尔 和 李总 都很推荐的一位作家，或许他们也叫他哲学家。
-
-反脆弱更像是成功学书籍，告诉人们要拥抱压力、坏的东西，从而获得恢复性的成长。其实就像是“七龙珠”里赛亚人的被动技能一样，每次从濒死状态恢复过来，战斗力都会成倍增长。贝吉塔就用过此技能开挂刷战斗力，但最后还是被弗利沙杀死了。
-
-在爱尔兰的2年，真是躺平和安逸。少不入欧。人都要呆废了。虽然生活很幸福，但没有了恢复性成长。
-
-也让我想起中学时代接受的教育，为了高考作文学的那些名言。想想之前的掉书袋和爱用典故，真是年轻气盛。
-
-孟子云：天将降大任于是人也，必先苦其心志，劳其筋骨
+          <p>保守主义，自由主义，乐观主义 的盛宴。</p>
+<p>纳西姆.塔勒布 是 纳瓦尔 和 李总 都很推荐的一位作家，或许他们也叫他哲学家。</p>
+<p>反脆弱更像是成功学书籍，告诉人们要拥抱压力、坏的东西，从而获得恢复性的成长。其实就像是“七龙珠”里赛亚人的被动技能一样，每次从濒死状态恢复过来，战斗力都会成倍增长。贝吉塔就用过此技能开挂刷战斗力，但最后还是被弗利沙杀死了。</p>
+<p>在爱尔兰的2年，真是躺平和安逸。少不入欧。人都要呆废了。虽然生活很幸福，但没有了恢复性成长。</p>
+<p>也让我想起中学时代接受的教育，为了高考作文学的那些名言。想想之前的掉书袋和爱用典故，真是年轻气盛。</p>
+<blockquote>
+<p><strong>孟子云：天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。入则无法家拂士，出则无敌国外患者，国恒亡。生于忧患，死于安乐。</strong></p>
+</blockquote>
+<p>司马迁在“史记 太史公自序”和“报仁安书”中也说：</p>
+<blockquote>
+<p>盖西伯拘而演《周易》；仲尼厄而作《春秋》；屈原放逐，乃赋《离骚》；左丘失明，厥有《国语》；孙子膑脚，《兵法》修列；不韦迁蜀，世传《吕览》；韩非囚秦，《说难》、《孤愤》；《诗》三百篇，大底圣贤发愤之所为作也。</p>
+</blockquote>
+<p>回顾自己的成长经历，不也是如此吗。发现自己的反脆弱性还是蛮强的。去年（23年）从各个角度讲，都是我近几年的人生低谷。但慢慢地，开始触底反弹。今年获得的成长性真的是超越过去任何阶段。现在的我，似乎又来到一个新的高度。</p>
+<blockquote>
+<p>大公司和政府似乎并不明白信息的反作用力，事实上，信息有能力控制那些试图控制它的人。当你听到一家公司或一个负债累累的政府表示要”重新注入信心“，那么你就应该知道它们是脆弱的，注定失败。信息是无情的：越是召开新闻发布会来”安抚“投资者，越会吓跑投资者，导致死亡螺旋或银行挤兑。</p>
+</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/08/24/Antifragile-Things-That-Gain-from-Disorder/#more" rel="contents">
@@ -960,7 +1008,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -996,9 +1044,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          马伯庸新作，十分，推荐。后记中说是消遣之作，读起来也确实畅快和消遣,2天读完，爱不释手。私认为质量仅次于长篇“古董局中局”，超过“两京十五日”，“长安十二时辰”和“长安的荔枝”，“我读书少，你可别骗我”，“显微镜下的大明”。亲王的书，我也是读了不少。算是最喜欢的当代中国作家了。一个作家的书能让我读这么多的，国外还有一个“东野圭吾”，国内还有一个“金庸”。
+          <p>马伯庸新作，十分，推荐。后记中说是消遣之作，读起来也确实畅快和消遣,2天读完，爱不释手。私认为质量仅次于长篇“古董局中局”，超过“两京十五日”，“长安十二时辰”和“长安的荔枝”，“我读书少，你可别骗我”，“显微镜下的大明”。亲王的书，我也是读了不少。算是最喜欢的当代中国作家了。一个作家的书能让我读这么多的，国外还有一个“东野圭吾”，国内还有一个“金庸”。</p>
+<p>解构了经典四大名著之“西游记”，凭借对人性和官场的洞察，写的故事反而比原版更有说服力，也更符合现代叙事。其中的冤假错案，山头斗争，权力制衡，发挥的淋漓尽致。很早就听说过一种说法（大概是早年知乎上看到的），孙悟空之所以大闹天宫，是被天庭刻意为之的，趁此各个部门把锅甩给齐天大圣，尤其是地府的“生死簿”，估计本身就是很多漏洞，趁此销毁证据。“太白”恰好把此观点发扬光大，借取经表演，也揭露500年前大闹天宫的真相。扩展成一部10万字的中篇小说。读起来诙谐幽默，让人捧腹，但细思又极恐。其中不乏揭露现实，或借古讽今之意，但也充满着“马伯庸”一贯的悲天悯人，悬疑反转。</p>
 
-解构了经典四大名著之“西游记”，凭借对人性和官场的洞察，写的故事反而比原版更有说服力，也更符合现代叙事。其中的冤假错案，山头斗争，权力制衡，发挥的淋漓尽致。很早就听说过一种说法（大概是早年知乎上看到的），孙悟空之所以大闹天宫，是被天庭刻意为
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/08/21/Tai-bai-jin-xing-you-dian-fan/#more" rel="contents">
@@ -1068,7 +1116,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1104,17 +1152,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          每周一本书 18:穷查理宝典:查理芒格的人生智慧
+          <p>每周一本书 18:穷查理宝典:查理芒格的人生智慧</p>
+<p>查理芒格去年底去世，享年99岁。惭愧现在才读集他思想大成的“穷查理宝典”。算是凝结他80年思想智慧的产物，因为原书第三版成书于2008年。最近看了太多的成功学书籍，对未来和自己真是充满了期待和自信。</p>
+<p>读传记，研究那些获得成功的人生和其他那些留下遗憾或者遭遇失败的人生。</p>
+<p>没有一个芒格认识的成功的朋友是不喜欢读书的。</p>
+<p>“迅速歼灭不该做的事情，接着对该做的事情发起熟练的、跨学科的攻击，然后，当合适的机会来临—只有当合适的机会来临—就采取果断地行动”。和“孙子兵法”的思想很像，孙子兵法不愧是三千年的经典，是人类智慧的总结。</p>
+<ol>
+<li>简化人物的最佳方法一般是先解决那些答案显而易见的大问题。</li>
+<li>伽利略说，唯有数学才能揭示科学的真实面貌，因为数学似乎是上帝的语言。</li>
+<li>光是正面思考问题时不够的，你必须进行反面思考。</li>
+<li>最好的、最具有实践性的智慧是基本的学术指挥。前提：以跨学科的方式思考。</li>
+<li>lollapalooza效应，通常在几种因素的共同作用下才会出现。</li>
+</ol>
+<p>爱因斯坦：我的成就取决于四个因素，首先是自我批评，然后才是好奇心、专注和毅力。</p>
+<p>我只想知道将来我会死在什么地方，这样我就永远不去那儿了。</p>
+<p>后面有多篇演讲稿，内容有些类似，其实是继承关系。第11讲是最长，也是集大成者。</p>
 
-查理芒格去年底去世，享年99岁。惭愧现在才读集他思想大成的“穷查理宝典”。算是凝结他80年思想智慧的产物，因为原书第三版成书于2008年。最近看了太多的成功学书籍，对未来和自己真是充满了期待和自信。
-
-读传记，研究那些获得成功的人生和其他那些留下遗憾或者遭遇失败的人生。
-
-没有一个芒格认识的成功的朋友是不喜欢读书的。
-
-“迅速歼灭不该做的事情，接着对该做的事情发起熟练的、跨学科的攻击，然后，当合适的机会来临—只有当合适的机会来临—就采取果断地行动”。和“孙子兵法”的思想很像，孙子兵法不愧是三千年的经典，是人类智慧的总结。
-
- 1. 简化人物的
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/08/07/Poor-Charlie-Almanack/#more" rel="contents">
@@ -1184,7 +1237,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1220,11 +1273,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          豆瓣链接
+          <p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35876121/">豆瓣链接</a></p>
+<p>前半本财富，适合35岁前读，改变现状。很多智慧也是世界上比较公认和容易的。后半本幸福，适合35岁后读，接受现状。但就比较主观和因人而异了，属于更大的智慧，也更加难得了。最后Die with zero (也是一本书).</p>
+<p>和之前读过的很多书都串起来了，真就是一份宝典。很多智慧只是只言片语，就讲清楚了。比如，“原子习惯”中如何培养好习惯，摒弃坏习惯，习惯的重要性；“金钱心理学”中财富的定义，如何获得财富；再如 “进化心理学”，“欲望的演化”中关于人类心理学和两性心理的论述。当然，这些书都写的详细的多，可操作性更强，属于术的部分。“纳瓦尔宝典”是一个集锦，纳瓦尔作为一个聪明人，读过很多书的人，几十年来积累的智慧总结。用他所推崇的“费曼学习法”，讲给大家。不同的人，有不同的人生阅历和阅读，感受就完全不一样。真是相见恨晚。</p>
+<p>痛苦时刻的一个定义是：当你看到实物的真面目不是你本来想要的样子时，你是痛苦的。</p>
+<p>对美好现实的渴求蒙蔽了对真实世界的认知。所谓痛苦，就是无法继续无视事实。</p>
+<p>科学最重要的是可证伪性。</p>
+<p>纳瓦尔推荐阅读原著和经典。但不敢苟同，很多原著都是几百年，上千年的历史了。阅读门槛很高，也不容易理解，有些内容也会过时或受局限。比如“孙子兵法”虽然只有5千多字，但直接去读就很难。我选择读了“华杉”的讲解版本。也可能是我太菜了吧。</p>
+<p>“如果能活1000次，那么其中的999次，我都过着成功的生活。”纳瓦尔的成功不是靠运气，而是靠自己的认知。就像冯小刚的“1942”中的 张国立 说的那样，“再给他十年他还能成为地主。”当然大环境也很重要。我当然相信 张国立 是知道怎么重新白手起家的，也会成功。但土地革命、社会主义改造、人民公社的历史进程很快就到来了。通过像“白鹿原”中贫民紧衣缩食，心思活泛，丰年屯粮，灾年买地，成长为地主的日子已经一去不复返了。迎接他的，也只是千百年未有之大变局。</p>
+<p>智慧是一种知道个人行为的长期后果的思维能力。</p>
 
-前半本财富，适合35岁前读，改变现状。很多智慧也是世界上比较公认和容易的。后半本幸福，适合35岁后读，接受现状。但就比较主观和因人而异了，属于更大的智慧，也更加难得了。最后Die with zero (也是一本书).
-
-和之前读过的很多书都串起来了，真就是一份宝典。很多智慧只是只言片语，就讲清楚了。比如，“原子习惯”中如何培养好习惯，摒弃坏习惯，习惯的重要性；“金钱心理学”中财富的定义，如何获得财富；再如 “进化心理学”，“欲望的演化”中关于人类心理学和两性心理的论述。当然，这些书都写的详细的多，可操作性更强，属于术的部分。“纳瓦尔宝典”是一个集锦，纳瓦尔作为一个聪明人，读过很多书
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/07/27/The-Almanack-of-Naval-Ravikant/#more" rel="contents">
@@ -1294,7 +1352,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1330,19 +1388,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          有种“当年明月”的“明朝那些事儿”的感觉呀。不知道是刻意模仿，还是无意为之。
+          <p>有种“当年明月”的“明朝那些事儿”的感觉呀。不知道是刻意模仿，还是无意为之。</p>
+<p>经常和金庸小说互动，尤其是同样的“悲天悯人”。</p>
+<p>岳灵珊“自怜自伤还自怨，不悔情真不悔痴。”</p>
+<p>知识分子借古讽今，在文章中委婉表达观点是常态。磊磊 特意写了一篇“放下筷子骂娘的白居易”，表达对如今言论管制环境的不满，和唐代开放包容的向往和怀念。</p>
+<p>这一年读了太多的现实主义书，获得了不少知识和智慧。但这本书是最有浪漫主义色彩的，令人十分感动。</p>
+<p>唐诗的四种套路：田园有宅男，边塞多愤青，咏古伤不起，送别满基情。</p>
+<p>“我们经常把赞美等同于忠诚，把批评等同于敌对，这实在是一个天大的误区，罗隐告诉我们：从来都没有这个等式。”和如今的社会现实如此相似。</p>
 
-经常和金庸小说互动，尤其是同样的“悲天悯人”。
-
-岳灵珊“自怜自伤还自怨，不悔情真不悔痴。”
-
-知识分子借古讽今，在文章中委婉表达观点是常态。磊磊 特意写了一篇“放下筷子骂娘的白居易”，表达对如今言论管制环境的不满，和唐代开放包容的向往和怀念。
-
-这一年读了太多的现实主义书，获得了不少知识和智慧。但这本书是最有浪漫主义色彩的，令人十分感动。
-
-唐诗的四种套路：田园有宅男，边塞多愤青，咏古伤不起，送别满基情。
-
-“我们经常把赞美等同于忠诚，把批评等同于敌对，这实在是一个天大的误区，罗隐告诉我们：从来都没有这个等式。”
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/07/25/Liu-Shen-Lei-Lei-Du-Tang-Shi/#more" rel="contents">

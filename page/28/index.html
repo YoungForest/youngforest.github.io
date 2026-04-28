@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="佛系更新；生活、学习">
 <meta property="og:type" content="website">
@@ -39,8 +39,8 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>YoungForest's blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-88350169-1","only_pageview":false,"measure_protocol_api_secret":null}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6NR9DW560"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-G6NR9DW560","only_pageview":false,"measure_protocol_api_secret":null}</script>
   <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
@@ -54,7 +54,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
 
 
 
@@ -106,6 +108,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,11 +117,37 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -276,7 +305,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,22 +341,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          问题
-作为一名Linuxer，熟练使用终端是一项必备技能，但终端中有时下载安装功能速度很慢，令人崩溃.我自然而然想到了可否加个代理,提高速度。我之前一直用shadowsocks,浏览器使用switchyProxy,实现了初步的科学上网。那么,终端中是否有类似的工具呢？答案是肯定的。通过科学搜索，我成功解决了terminal中的科学上网问题，在此总结一下，希望可以帮到大家。
-
- 准备工具
-shadowsocks, polipo
-
- shadowsocks
-Download and Install Client
-
- Install Command-line Client
-1
-2
-3
-
-
-pip i
+          <h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
+<p>作为一名Linuxer，熟练使用终端是一项必备技能，但终端中有时下载安装功能速度很慢，令人崩溃.我自然而然想到了可否加个代理,提高速度。我之前一直用shadowsocks,浏览器使用switchyProxy,实现了初步的科学上网。那么,终端中是否有类似的工具呢？答案是肯定的。通过科学搜索，我成功解决了terminal中的科学上网问题，在此总结一下，希望可以帮到大家。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/11/02/terminal-proxy-configuration/#more" rel="contents">
@@ -397,7 +412,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -433,12 +448,8 @@ pip i
     
     
     <div class="post-body" itemprop="articleBody">
-          动机(放在前面)
-之前在cnblog上有个博客, 但是也不经常维护, 到现在满打满算也才有3篇随笔, 1个粉. 主要是因为自己没有写东西的习惯. 高中的时候记过一段时间的日记, 零零总总写了有大半本, 都是一些励志(自欺欺人)的东西, 写给自己看的.
-
-首先, 之前感觉没有可写的, 但现在觉得可写的还是挺多的.自己这两年也折腾了不少东西.但折腾完后, 说实话忘得挺快的, 下次自己再弄或者给别人处理相同问题的时候, 基本上又要重新来过. 记下来下之后, 不管是自己日后需要, 还是给小伙伴们借鉴都是极有用的.
-
-其次, 经高人安利, 经常写博客, 总结自己的工作学习, 和网络上的大牛们交流是学习计
+          <h2 id="动机放在前面"><a class="markdownIt-Anchor" href="#动机放在前面"></a> 动机(放在前面)</h2>
+<p>之前在cnblog上有个博客, 但是也不经常维护, 到现在满打满算也才有3篇随笔, 1个粉. 主要是因为自己没有写东西的习惯. 高中的时候记过一段时间的日记, 零零总总写了有大半本, 都是一些励志(自欺欺人)的东西, 写给自己看的.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/11/02/Hexo-github-building-personal-blog/#more" rel="contents">
@@ -508,7 +519,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
 
   
@@ -535,7 +546,8 @@ pip i
     
     
     <div class="post-body" itemprop="articleBody">
-          【摘要】最近在做一道C语言题目的时候需要用到分割字符串，本来想自己手写的，也不会很麻烦，但想到其他语言都有分割字符串的库函数，C语言怎么会没有呢？所以，在网上搜了一搜，果然有这样的函数，还是很好用的，在此总结。 在C语言手册中可以很方便地查到strtok的用法，要注意的一点是，除了首次调用时，第一个参数要传 阅读全文
+          <p>【摘要】最近在做一道C语言题目的时候需要用到分割字符串，本来想自己手写的，也不会很麻烦，但想到其他语言都有分割字符串的库函数，C语言怎么会没有呢？所以，在网上搜了一搜，果然有这样的函数，还是很好用的，在此总结。 在C语言手册中可以很方便地查到strtok的用法，要注意的一点是，除了首次调用时，第一个参数要传 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/YoungForest/p/5950994.html">阅读全文</a></p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/10/11/slipt-string-by-C/#more" rel="contents">
@@ -605,7 +617,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
 
   
@@ -632,7 +644,8 @@ pip i
     
     
     <div class="post-body" itemprop="articleBody">
-          【摘要】最近在实验室帮师兄做一些项目，遇到各种没见过的时间戳，在此总结一下。 Unix时间 关于这个时间，大家一般都比较了解，记录了从1970年1月1日0时0分0秒开始到现在的总秒数。 这篇文章中有关于Unix时间和各种常用时间的关系，在这里分享一下。 Window NT时间 The 18-digit Ac 阅读全文
+          <p>【摘要】最近在实验室帮师兄做一些项目，遇到各种没见过的时间戳，在此总结一下。 Unix时间 关于这个时间，大家一般都比较了解，记录了从1970年1月1日0时0分0秒开始到现在的总秒数。 这篇文章中有关于Unix时间和各种常用时间的关系，在这里分享一下。 Window NT时间 The 18-digit Ac <a target="_blank" rel="noopener" href="http://www.cnblogs.com/YoungForest/p/5915074.html">阅读全文</a></p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/09/28/timestamp-summary/#more" rel="contents">
@@ -702,7 +715,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -738,9 +751,7 @@ pip i
     
     
     <div class="post-body" itemprop="articleBody">
-          今年暑假，有幸参加我航高等工程学院和剑桥东方交流会联合承办的英国交流营。该交流营为期两周，内容充实，形式多样，让我深刻了解了英国的人文文化和中国人留学情况，圆满完成自己行前的目标。接下来，我就整个整理进行整理，分享给大家，希望对大家有所帮助。
-
-这是我第一次有机会出国，也算是人生的一个标志事件，自己的心情也是十分激动的，半个学期都在期待这次交流。去英国前，英国脱欧公投，以几百万的微弱优势脱欧成功，首相卡梅隆辞职，英镑暴跌10%，我们又无形中省了一笔钱。经过几个月的行前筹备，我们终于踏上了这块离家乡八千公里的国度，开始为期两周的游学。所谓游学，既有紧张的环英之旅，从南到北，又从北到南，逛了很多自
+          <p>今年暑假，有幸参加我航高等工程学院和剑桥东方交流会联合承办的英国交流营。该交流营为期两周，内容充实，形式多样，让我深刻了解了英国的人文文化和中国人留学情况，圆满完成自己行前的目标。接下来，我就整个整理进行整理，分享给大家，希望对大家有所帮助。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/08/25/my-britain-trip/#more" rel="contents">
@@ -810,7 +821,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -846,11 +857,8 @@ pip i
     
     
     <div class="post-body" itemprop="articleBody">
-          还有一个半月就要离开沙河这个“破”地方了，没想到在这里已经呆了将近两年，所以现在写我的沙航故事最合适不过了。
-
-回头看看自己从小鲜肉沦为了老腊肉，当初对大学生活的新鲜感早已消失殆尽，变为日复一日地为课业忙碌，有时候真的想改变改变自己的状态，过上自己曾经憧憬的大学生活，但在面对大的体制，才感到自己的渺小和无助，只能以“为了国家民族的利益”聊以安慰。在这里我不想过多吐槽，只想和大家分享一下在沙航的这两年经历，给后来人一个参考，也给自己留一个log，方便以后查看。
-
-我来自离北京很近的地方——山西，和大家一样，我也是经历高考过来的，至于高考和报志愿的琐碎本身就可以另写一本书，所以我在这里不予赘述。初
+          <p>还有一个半月就要离开沙河这个“破”地方了，没想到在这里已经呆了将近两年，所以现在写我的沙航故事最合适不过了。</p>
+<p>回头看看自己从小鲜肉沦为了老腊肉，当初对大学生活的新鲜感早已消失殆尽，变为日复一日地为课业忙碌，有时候真的想改变改变自己的状态，过上自己曾经憧憬的大学生活，但在面对大的体制，才感到自己的渺小和无助，只能以“为了国家民族的利益”聊以安慰。在这里我不想过多吐槽，只想和大家分享一下在沙航的这两年经历，给后来人一个参考，也给自己留一个log，方便以后查看。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/05/25/my-shahe-story/#more" rel="contents">
@@ -920,7 +928,7 @@ pip i
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -956,14 +964,19 @@ pip i
     
     
     <div class="post-body" itemprop="articleBody">
-          2013年6月7日，是高中大我一届的高三学长学姐高考的最后一天。
-从那天以后，就是我离高考最近了，虽然要到9月份才正式升入高三。
-当时我在 山西省襄汾中学 读书，不到17岁，写下这篇“我的理想”，以明志和激励自己。现在10年过去了（2023年6月，整理自己硬盘资料时，惊喜地发现了这篇“文献”），回头看，自己并没有实现当年的清华梦。遭受了社会毒打后，理想（包括文采）也远没有当年优秀。但是，当年的文字依旧让我感动，感谢曾经的自己。
-我曾是少年。
-
-正文开始
-
-孔子十有五而志于学，便确立了自己接下来几十年的人生理想，并为之矢志不渝地奋斗。我虽不是圣人，只是一名普通的中学生，但也有我自己的人生理想——
+          <p>2013年6月7日，是高中大我一届的高三学长学姐高考的最后一天。<br>
+从那天以后，就是我离高考最近了，虽然要到9月份才正式升入高三。<br>
+当时我在 山西省襄汾中学 读书，不到17岁，写下这篇“我的理想”，以明志和激励自己。现在10年过去了（2023年6月，整理自己硬盘资料时，惊喜地发现了这篇“文献”），回头看，自己并没有实现当年的清华梦。遭受了社会毒打后，理想（包括文采）也远没有当年优秀。但是，当年的文字依旧让我感动，感谢曾经的自己。<br>
+我曾是少年。</p>
+<p><strong>正文开始</strong></p>
+<p>孔子十有五而志于学，便确立了自己接下来几十年的人生理想，并为之矢志不渝地奋斗。我虽不是圣人，只是一名普通的中学生，但也有我自己的人生理想——世界因我而改变。当后人听到我的名字时，都会竖起拇指，并发出由衷的赞叹，就像我现在听到爱因斯坦这些伟人的名字一样。</p>
+<p>我渴望真理，就像嗷嗷待哺的羊羔渴望母乳一般，一刻不曾忘记探索。伟人们的故事深深吸引着我，阿基米德用的浴缸、砸在牛顿脑袋上的苹果、被瓦特看到的壶盖，这些都使我印象深刻。谁知道会是哪天，又会是哪一个人再次在海边拾到更为精美的贝壳呢？伟人在那些积累量变达到质变之前，又有谁知道他就是改变世界的人呢？没有人是先知，但这并没有关系，真正勇士，不会因为道路的曲折艰险，梦想的遥遥无期，路人的冷嘲热讽而畏葸不前，当然，我也一样。</p>
+<p>无论是在高中还是大学，都是人们积累量变的地方，没有量变便没有质变。为了达到质变，量变之苦是必须承受的。</p>
+<p>全中国都知道高三苦，高考难，考清华更难。但清华作为中国第一流大学是那么地吸引着芸芸考生，以至于全国各地高手都会以清华为梦想学府，再苦再累也心甘情愿，我也不例外。清华作为一所大学，不仅起到教书育人的作用，也为我们提供了一个平台，充分交流，发展的平台。我希望清华不仅教给我知识（改变世界的基础），还能让我与高手切磋，大师交流，提升自己的素质和能力。</p>
+<p>在现在社会，知识就是力量，知识就是财富。面对航母大国的技术封锁，中国航母之路从零开始，没有知识，从乌克兰拉回来的废铁怎能变身“辽宁舰”；没有知识，歼十五舰载机怎能做到一年之内成功首飞。我渴望知识，渴望在清华接受最前沿的知识，希望有朝一日，我能凭借自己的知识让世界刮目相看。</p>
+<p>光有知识还不够，还要有能力，素质。这些能力和素质包括对灵感和信念锲而不舍地追求的精神、善于观察、不断学习、团队合作意识、资源共享意识、创新能力、勇于质疑等等。科学史上的每一次进步都与这些息息相关：牛顿的“巨人效应”妇孺皆知：“我之所以比别人看得更远，是因为我站在巨人的肩膀上。”这便是资源共享的优势；法拉第坚信康德哲学，相信万物存在内在的统一，既然电能生磁（电流的磁效应），那么磁也能生电。于是他开始了大量的实验，一次失败，二次失败，三次失败······，失败的阴影笼罩着他，但他没有放弃。在经过十年艰苦卓越的努力后，他成功了，他发现了电磁感应定律。当时的科学家不少当初都有和他有相同的想法，但他们没有锲而不舍地追求，从而错失了改变社会的机会。我相信，在清华园，我能学到这些优秀的品质，为以后追寻梦想之路铺平道路。</p>
+<p>我为了这个遥远而又真实的理想时刻奋斗着。作为高中生，拿下高考便成为最近而又最可即的台阶，杀入清华，才能进一步地登高。一步一个脚印，我脚踏实地；披星戴月，我从不喊累。我深知，高三只有血汗不会欺骗我。用汗水默默耕耘，用艰辛肥沃贫瘠的土壤。我按照自己的计划，争分夺秒，充实自我，为了高考，为了清华，为了梦想战。</p>
+<p><img src="/images/Beijing/THU-2013.JPG" alt="2013年8月，参加清华大学夏令营。二校门处自拍"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2013/06/07/My-dream-when-3rd-years-in-high-school/#more" rel="contents">

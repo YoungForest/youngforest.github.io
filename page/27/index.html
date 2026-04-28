@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="佛系更新；生活、学习">
 <meta property="og:type" content="website">
@@ -39,8 +39,8 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>YoungForest's blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-88350169-1","only_pageview":false,"measure_protocol_api_secret":null}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6NR9DW560"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-G6NR9DW560","only_pageview":false,"measure_protocol_api_secret":null}</script>
   <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
@@ -54,7 +54,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
 
 
 
@@ -106,6 +108,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,11 +117,37 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -276,7 +305,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,13 +341,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          Problem description
-When I used the Cortana, the personal assistant of Windows 10, I found that it is confusing that searching
-function worked badly sometimes but well sometimes. To improve my productivity, I googled this problem and
-encounter a good solution.
+          <h2 id="problem-description"><a class="markdownIt-Anchor" href="#problem-description"></a> Problem description</h2>
+<p>When I used the Cortana, the personal assistant of Windows 10, I found that it is confusing that searching<br>
+function worked badly sometimes but well sometimes. To improve my productivity, I googled this problem and<br>
+encounter a good solution.</p>
+<h2 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h2>
+<p><a target="_blank" rel="noopener" href="https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10">https://www.windowscentral.com/how-add-new-cortana-search-file-locations-windows-10</a></p>
 
- Reference
-https://www.windowscentral.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/08/12/optimize-cortana-in-searching-local-files-and-folders/#more" rel="contents">
@@ -388,7 +417,7 @@ https://www.windowscentral.
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -424,19 +453,20 @@ https://www.windowscentral.
     
     
     <div class="post-body" itemprop="articleBody">
-          配置代理
-笔者的需求是在markdown文档中插入LaTeX公式, atom默认的markdown-preview包无法满足要求. 经过搜索, 社区包markdown-preview-plus可是满足该需求.
-
- atom包管理
-按照官方教程, 安装失败
-
-Installing “markdown-preview-plus@2.4.9” failed.
-
-在log中, 笔者发现了这样的请求
-
-GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
-
-笔者接着使用浏览器测试该网址, 无法相应, 猜测是被q了. 幸运的是,
+          <h2 id="配置代理"><a class="markdownIt-Anchor" href="#配置代理"></a> 配置代理</h2>
+<p>笔者的需求是在markdown文档中插入LaTeX公式, atom默认的<code>markdown-preview</code>包无法满足要求. 经过搜索, 社区包<code>markdown-preview-plus</code>可是满足该需求.</p>
+<h3 id="atom包管理"><a class="markdownIt-Anchor" href="#atom包管理"></a> <a target="_blank" rel="noopener" href="http://flight-manual.atom.io/using-atom/sections/atom-packages/#atom-packages">atom包管理</a></h3>
+<p>按照官方教程, 安装失败</p>
+<blockquote>
+<p>Installing “markdown-preview-plus@2.4.9” failed.</p>
+</blockquote>
+<p>在log中, 笔者发现了这样的请求</p>
+<blockquote>
+<p>GET <a target="_blank" rel="noopener" href="https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz">https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz</a></p>
+</blockquote>
+<p>笔者接着使用浏览器测试该网址, 无法相应, 猜测是被q了. 幸运的是, atom文档中考虑到使用代理的需要, 并给出了guide.</p>
+<p><a target="_blank" rel="noopener" href="http://flight-manual.atom.io/getting-started/sections/installing-atom/#using-a-proxy">配置apm的代理</a></p>
+<p>最后, <a target="_blank" rel="noopener" href="http://blog.youngforest.me/2016/11/02/%E5%AE%9E%E7%8E%B0terminal%E4%BB%A3%E7%90%86/">fq基本功</a>. 不解释.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/04/08/atom-explore/#more" rel="contents">
@@ -506,7 +536,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -542,11 +572,20 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
     
     
     <div class="post-body" itemprop="articleBody">
-          最近由于准备GRE, 整天背单词, 练听力和写作, 很是心烦, 很久没折腾了, 所以抽出时间, 给自己的笔记本下载并配置gvim, 也算是休憩.
-
- 下载
- 配置文件
-与Linux不同, Windows中gvim的配置文件为$HOME/_vimrc(个人配置文件), $VIMROOT/_vimrc(系统配置文件), 默认情况下为C:\Program Files (x86)\Vim. 除此之外, 还可以有_gvimrc文件, 只有在gui情况下打开才会读取, 在terminal下不会. 这对于两者应用不同的配置很有帮助, 尤其是使用不同的主题, 同一主题下, 两者的效果很不同. 这样就避免了使用
+          <p>最近由于准备GRE, 整天背单词, 练听力和写作, 很是心烦, 很久没折腾了, 所以抽出时间, 给自己的笔记本下载并配置gvim, 也算是休憩.</p>
+<h1 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> <a target="_blank" rel="noopener" href="http://www.vim.org/download.php#pc">下载</a></h1>
+<h1 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h1>
+<p>与Linux不同, Windows中gvim的配置文件为<code>$HOME/_vimrc</code>(个人配置文件), <code>$VIMROOT/_vimrc</code>(系统配置文件), 默认情况下为<code>C:\Program Files (x86)\Vim</code>. 除此之外, 还可以有<code>_gvimrc</code>文件, 只有在gui情况下打开才会读取, 在terminal下不会. 这对于两者应用不同的配置很有帮助, 尤其是使用不同的主题, 同一主题下, 两者的效果很不同. 这样就避免了使用<code>if(has'gui_running')</code>这样复杂的配置内容.</p>
+<h1 id="vimrc配置"><a class="markdownIt-Anchor" href="#vimrc配置"></a> .vimrc配置</h1>
+<h2 id="打开配置文件"><a class="markdownIt-Anchor" href="#打开配置文件"></a> 打开配置文件</h2>
+<ul>
+<li><code>:e $MYVIMRC</code>: 打开用户配置文件, 如果没有的话可以参考<code>help vimrc</code></li>
+<li><code>:e $MYGVIMRC</code>: 打开GUI用户配置<br>
+<code>help vimrc</code>中推荐的配置文件位置是<code>$HOME/vimfiles/vimrc</code>(Windows)或<code>~/.vim/vimrc(Windows)</code>, 这样比起<code>$HOME/_vimrc</code>和<code>~/.vim</code>更portable.</li>
+</ul>
+<h2 id="个性化内容"><a class="markdownIt-Anchor" href="#个性化内容"></a> 个性化内容</h2>
+<p>$MYGVIMRC</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> clipboard=unnamed   <span class="comment">&quot; 与Windows公用clipboard, 默认情况下, y, p只使用vim的clipboard, 不是很方便</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">colorscheme</span> monokai <span class="comment">&quot; 一个我比较喜欢的主题, 不过在terminal下很难看, 所以放在gvimrc中</span></span><br><span class="line"><span class="keyword">set</span> guifont=Consola<span class="variable">s:h18</span>:cANSI:qDRAFT   <span class="comment">&quot;换个字体, 默认字体忍不了</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/03/26/gvim-configuration-for-windows/#more" rel="contents">
@@ -616,7 +655,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -652,12 +691,26 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
     
     
     <div class="post-body" itemprop="articleBody">
-          前言
-现在是大年初七, 是大多数有工作的人上班的日子, 也是襄中开学的日子, 而我作为一个大学生, 居然可以放假到农历二月, 致使现在凌晨2点还有时间码字. 刚刚看了一篇文章, 作者的话很大程度上描述了我的状态, 咸鱼懒的翻身. 而作者的亲身经历和劝说也让我愧疚.
+          <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>现在是大年初七, 是大多数有工作的人上班的日子, 也是襄中开学的日子, 而我作为一个大学生, 居然可以放假到农历二月, 致使现在凌晨2点还有时间码字. 刚刚看了<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/0566385dceff">一篇文章</a>, 作者的话很大程度上描述了我的状态, 咸鱼懒的翻身. 而作者的亲身经历和劝说也让我愧疚.</p>
+<p>最近刚读了蔡东藩的<a target="_blank" rel="noopener" href="https://book.douban.com/subject/3089584/">五代史</a>, 了解五代混乱的历史, 感叹大多数主子昏庸误国, 英明的主子也多少有瑕疵的同时, 也将心比心, 自己是否是一个英明的帝王. 答案却是否定的. 我是一个懒惰的人, 没有意志力的人, 不喜欢批评, 只喜欢表扬. 如果把自己放在帝王的位置上, 一定是个亡国之君了. 想想还是很可怕的.</p>
+<p>综上两点原因, 我打算在新的一年里有所改变, 制定新年目标, 完成新年计划, 做更好地自己.</p>
+<h2 id="2017目标及计划"><a class="markdownIt-Anchor" href="#2017目标及计划"></a> 2017目标及计划</h2>
+<ul>
+<li>英语每日打卡学习, 加大任务量(小镇做题家欠下的，语言关必须过)</li>
+<li>早起, 8点之前</li>
+<li>早睡, 12点之前</li>
+<li>坚持吃早饭</li>
+<li>坚持每日锻炼身体, 天气好出门跑步, 天气差在室内运动</li>
+<li>凡事不要以懒惰为借口</li>
+</ul>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>姐姐今年就要毕业找工作了, 我也要准备尽力保研了, 深感世事艰辛, 人间险阻, 唯有努力学习才能获得拯救.</p>
+<p>最后, 二句&quot;名言&quot;镇文.</p>
+<pre><code>学习使我快乐.
 
-最近刚读了蔡东藩的五代史, 了解五代混乱的历史, 感叹大多数主子昏庸误国, 英明的主子也多少有瑕疵的同时, 也将心比心, 自己是否是一个英明的帝王. 答案却是否定的. 我是一个懒惰的人, 没有意志力的人, 不喜欢批评, 只喜欢表扬. 如果把自己放在帝王的位置上, 一定是个亡国之君了. 想想还是很可怕的.
-
-综上两点原因, 我打算在
+我爱学习, 学习爱我.
+</code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/02/22/2017-resolutions/#more" rel="contents">
@@ -727,7 +780,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
 
   
@@ -754,9 +807,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
     
     
     <div class="post-body" itemprop="articleBody">
-          [摘要] Django 是一个高水平的Python Web框架, 可以帮助我们迅速开发, 设计一个干净, 程序化的应用. 虽然Django比较臃肿(现在大神都用Flask?), 适合大型Web应用的开发, 笔者的数据库课程设计是一个小型工程, 但Django名声是在太大, 笔者之前在实验室也稍稍接触过, 所以和队友果断选择了Django. 我们的课设, 在Django的帮助下, 实现起来就和切菜一样.
-
-数据库课设最近出分了, 只得了良好, 未如愿取得优秀. 但两天完成数据库的经验确实使笔者学到了很多, Django框架的使用, 前后端的概念, 结对编程的合作… 其中最想和大家分享的是Djan
+          <p><strong>[摘要]</strong> <a target="_blank" rel="noopener" href="https://www.djangoproject.com/">Django</a> 是一个高水平的Python Web框架, 可以帮助我们迅速开发, 设计一个干净, 程序化的应用. 虽然Django比较臃肿(现在大神都用<a target="_blank" rel="noopener" href="http://flask.pocoo.org/">Flask</a>?), 适合大型Web应用的开发, 笔者的数据库课程设计是一个小型工程, 但Django名声是在太大, 笔者之前在实验室也稍稍接触过, 所以和队友果断选择了Django. 我们的课设, 在Django的帮助下, 实现起来就和切菜一样.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/01/23/Django-note/#more" rel="contents">
@@ -826,7 +877,7 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -862,15 +913,15 @@ GET https://atom.io/download/electron/v1.3.13/iojs-v1.3.13.tar.gz
     
     
     <div class="post-body" itemprop="articleBody">
-          [摘要] sublime text3是一款强大的editor, 我从大二下开始正式使用, 经过半年的不断摸索, 将sublime配置成为个性化的editor, 满足了我日常编码的大部分需求.
+          <p><strong>[摘要]</strong> <a target="_blank" rel="noopener" href="https://www.sublimetext.com/">sublime text3</a>是一款强大的editor, 我从大二下开始正式使用, 经过半年的不断摸索, 将sublime配置成为个性化的editor, 满足了我日常编码的大部分需求.</p>
+<h3 id="为不同的语言进行不同的配置"><a class="markdownIt-Anchor" href="#为不同的语言进行不同的配置"></a> 为不同的语言进行不同的配置</h3>
+<p>首先, 打开该语言的任意个文件, <code>Sublime Text 3 -&gt; Preferences -&gt; Settings - Syntax Specific</code>进入该语言设置文件, 修改设置文件并保存即可.</p>
+<p><a target="_blank" rel="noopener" href="http://mlo.io/blog/2012/08/23/language-specific-indents-sublime.html">参考: 为不同语言设置不同缩进</a></p>
+<h3 id="color-scheme"><a class="markdownIt-Anchor" href="#color-scheme"></a> Color Scheme</h3>
+<p>sublime text 3 默认的主题是<code>Monokai(dark)</code>, 感觉还是挺养眼的, 但缺点是markdown的支持特别差. 我还比较喜欢的另一个主题<code>Solarized(dark)</code>也是这样, 默认提供的<code>Solarized</code>与在vim中的体验相去甚远. 所以我通过<code>Package Contorl</code>安装了<code>Solarized Color Scheme</code>这个主题, 与vim对照如下, 还是比较养眼.</p>
+<p><img src="../assets/sublime-solarized-optimized.PNG" alt="Solarized optimized for sublime"></p>
+<p><img src="../assets/vim-solarized.PNG" alt="Solarized for vim"></p>
 
- 为不同的语言进行不同的配置
-首先, 打开该语言的任意个文件, Sublime Text 3 -> Preferences -> Settings - Syntax Specific进入该语言设置文件, 修改设置文件并保存即可.
-
-参考: 为不同语言设置不同缩进
-
- Color Scheme
-sublime text 3 默认的主题是Monokai(dark), 感觉还是挺养眼的, 但缺点是markdo
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/01/18/sublime-personlize/#more" rel="contents">
@@ -940,7 +991,7 @@ sublime text 3 默认的主题是Monokai(dark), 感觉还是挺养眼的, 但缺
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -976,18 +1027,7 @@ sublime text 3 默认的主题是Monokai(dark), 感觉还是挺养眼的, 但缺
     
     
     <div class="post-body" itemprop="articleBody">
-          近来实验室的师兄有个需求, 写4个小程序, 分别对内存, CPU, 硬盘, 网络进行压力测试, 要求测试程序有压力档位可以调, 比如压力可以分为大, 中, 小. 二话不说, 撸起袖子加油干. 需求很简单, 但实现起来却并不简单, 笔者边学习, 边写程序, 才勉强完成任务.
-
- 测试环境
-Ubuntu 14.04
-
- CPU
-受编程之美的第一章"让CPU占有率曲线听你指挥"启发, 我很快地完成了对CPU的压力测试程序.
-
- 基本思路
-确定一个小周期, 笔者的周期设置为100, 这个值可以通过改变PIECE的值来改变, 周期为 100 * PIECE.
-
-在每个周期中, stress%的时间用于一
+          <p>近来实验室的师兄有个需求, 写4个小程序, 分别对内存, CPU, 硬盘, 网络进行压力测试, 要求测试程序有压力档位可以调, 比如压力可以分为大, 中, 小. 二话不说, 撸起袖子加油干. 需求很简单, 但实现起来却并不简单, 笔者边学习, 边写程序, 才勉强完成任务.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/01/14/pressure-test-to-CPU-memory-disk-network-IO/#more" rel="contents">
@@ -1057,7 +1097,7 @@ Ubuntu 14.04
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
 
   
@@ -1084,18 +1124,13 @@ Ubuntu 14.04
     
     
     <div class="post-body" itemprop="articleBody">
-          实验环境
- * Ubuntu 16.04
- * CPU only (自己的机器上没有NVIDIA的卡, AMD说起来都是泪.)
-
- 环境配置
-基本上是按照官方文档. 这里只展示与文档中不同的部分.
-
- Makefile.confile
- * line 8: CPU only
- * line 79, 80: support for python3
- * line 81: /usr/lib/python3.5/dist-packages/numpy/core/include -> /usr/local/lib/python3.5/dist-packages/numpy/core/include
- 
+          <h2 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h2>
+<ul>
+<li>Ubuntu 16.04</li>
+<li>CPU only (自己的机器上没有NVIDIA的卡, AMD说起来都是泪.)</li>
+</ul>
+<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置</h2>
+<p>基本上是按照<a target="_blank" rel="noopener" href="https://github.com/weiliu89/caffe/tree/ssd">官方文档</a>. 这里只展示与文档中不同的部分.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/01/12/SSD-Single-Shot-MultiBox-Detector-configuration/#more" rel="contents">
@@ -1165,7 +1200,7 @@ Ubuntu 14.04
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1201,19 +1236,7 @@ Ubuntu 14.04
     
     
     <div class="post-body" itemprop="articleBody">
-          有关如何将其他博客上的文章迁移到Hexo上, 官方文档给出了一些指引. 我也是根据官方文档进行了将自己之前在博客园中的随笔迁移到新博客上的尝试. 这个过程中遇到过一些问题, 再此给出解决方法.
-
- 未安装迁移插件
-博客园需要用rss迁移, 我根据文档, $ npm install hexo-migrator-rss --save 安装了相关的插件, 但在运行迁移命令$ hexo migrate rss <source>时, 报出了如下错误:
-
-1
-2
-3
-4
-
-
-undefined migrator plugin is not installed.
-Installed migrator plu
+          <p>有关如何将其他博客上的文章迁移到<code>Hexo</code>上, <a target="_blank" rel="noopener" href="https://hexo.io/docs/migration.html">官方文档</a>给出了一些指引. 我也是根据官方文档进行了将自己之前在博客园中的随笔迁移到新博客上的尝试. 这个过程中遇到过一些问题, 再此给出解决方法.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/11/22/move-posts-from-cnblogs-to-Hexo/#more" rel="contents">
@@ -1283,7 +1306,7 @@ Installed migrator plu
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1319,14 +1342,16 @@ Installed migrator plu
     
     
     <div class="post-body" itemprop="articleBody">
-          最近经历了两件事情, 使得我感觉需要反思一下近几年的自己.
-
-第一件事是, 昨晚的编译测试一没过, 具体地说是正确的程序没有跑出正确的结果. 编译测试让我想起两年前的计组测试, 进而想了很多.
-
-第二件事是, 今天早上的编译课上的小测, 第二道题完全不会, 想要抄别人的也没有的抄, 周围人没有靠谱的, 靠谱的不在周围. 这让我再次认识到, 只有自己才是最靠得住的, 如果自己都靠不住, 那就没人可以真正依靠了.
-
- 往者
-大一时抱怨数学课太多, 大家纷纷在说说上晒课表, 说"我上的是计算机系, 不是数学系"之类的. 现在看来, 当时真是太naive, 事实上, 现在的我最喜欢数学课了, 而不是计
+          <p>最近经历了两件事情, 使得我感觉需要反思一下近几年的自己.</p>
+<p>第一件事是, 昨晚的编译测试一没过, 具体地说是正确的程序没有跑出正确的结果. 编译测试让我想起两年前的计组测试, 进而想了很多.</p>
+<p>第二件事是, 今天早上的编译课上的小测, 第二道题完全不会, 想要抄别人的也没有的抄, 周围人没有靠谱的, 靠谱的不在周围. 这让我再次认识到, 只有自己才是最靠得住的, 如果自己都靠不住, 那就没人可以真正依靠了.</p>
+<h2 id="往者"><a class="markdownIt-Anchor" href="#往者"></a> 往者</h2>
+<p>大一时抱怨数学课太多, 大家纷纷在说说上晒课表, 说&quot;我上的是计算机系, 不是数学系&quot;之类的. 现在看来, 当时真是太naive, 事实上, 现在的我最喜欢数学课了, 而不是计算机课. 究其原因, 当时的专业课只有C语言, 当时的大计基python也确实对计算机学习很重要, 但这些比起现在的专业课真是太简单了. 对于可怜的GPA来说, 大一是最重要的, 因为那些我们不喜欢的数学课, 英语课占的学分很多. 一个学长告诉我说, 你的成绩基本上大一就已经定了. 现在看来, 确实是这样, 只有对自己的无能更加愤怒.</p>
+<p>大二上抱怨计组太难, 6系不是人呆的地方. 熬夜成了家庭便饭, 考期甚至有两门课需要刷夜, 经历了胸闷心痛的感觉. 大二下抱怨OO制度没人性, OS实验懒惰没有申优.</p>
+<p>大三到了该考虑出路的时候, 才发现别人是从一上大学就有了目标并为之奋斗四年, 现在到了即将收获果实的季节; 而自己却发现很多事情都已经为时甚完了; 要GPA, 有前两年的基础, 现在已经很难获得提高了; 要语言考试的成绩, 自己六级飘过的水平, 加上懒惰的习惯, 很难将命运全然托付之; 要找工作, 进顶尖公司, 赚大钱, 自己没有竞赛经验, 算法渣的一比, 自己都羞愧的向优秀的学长道歉. 感觉自己难道真的成了扶不起的阿斗了?</p>
+<h2 id="出路"><a class="markdownIt-Anchor" href="#出路"></a> 出路</h2>
+<h4 id="保研"><a class="markdownIt-Anchor" href="#保研"></a> 保研</h4>
+<p>这条路是最有可能也是现在面临的最轻松的一条路了, 但看着自己可怜的GPA, 现在已无力力挽狂澜, 只能任人宰割. 外推是绝无可能了, 甚至保本校我都不敢打包票, 毕竟后面还有一大堆加分的.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/11/09/gogogo/#more" rel="contents">

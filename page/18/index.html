@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="佛系更新；生活、学习">
 <meta property="og:type" content="website">
@@ -39,8 +39,8 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>YoungForest's blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88350169-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-88350169-1","only_pageview":false,"measure_protocol_api_secret":null}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6NR9DW560"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-G6NR9DW560","only_pageview":false,"measure_protocol_api_secret":null}</script>
   <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
@@ -54,7 +54,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
 
 
 
@@ -106,6 +108,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,11 +117,37 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -276,7 +305,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,14 +341,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          本轮是今年的倒数第二轮，也是相对比较简单的一个轮次。
-我做出了第3题和1 2题的小数据集。第二题我本身的算法是对的，但是没有正确的评估最大的k的位数，并防止溢出操作，所以字大数据集上WA。第一题其实本身不难，只是我对约数不很敏感，导致错失没有想出更好的解法。总的来说，本轮是我最接近AC的轮次，运气相对不错，也提前1个小时完成了比赛。因为后来实在想不出解法 和 要注意的点了，就放弃了。
-
- Book Reading
-暴力法加memo可以直接过。可以我的记忆化写错了，忘记记忆了。导致TLE，损失了不少分数，太可惜 了。
-另外，能用long long就不要用int。否则最后的ans会溢出。
-
-时间复
+          <p>本轮是今年的倒数第二轮，也是相对比较简单的一个轮次。<br>
+我做出了第3题和1 2题的小数据集。第二题我本身的算法是对的，但是没有正确的评估最大的k的位数，并防止溢出操作，所以字大数据集上WA。第一题其实本身不难，只是我对约数不很敏感，导致错失没有想出更好的解法。总的来说，本轮是我最接近AC的轮次，运气相对不错，也提前1个小时完成了比赛。因为后来实在想不出解法 和 要注意的点了，就放弃了。</p>
+<h2 id="book-reading"><a class="markdownIt-Anchor" href="#book-reading"></a> Book Reading</h2>
+<p>暴力法加memo可以直接过。可以我的记忆化写错了，忘记记忆了。导致TLE，损失了不少分数，太可惜 了。<br>
+另外，能用<code>long long</code>就不要用<code>int</code>。否则最后的<code>ans</code>会溢出。</p>
+<p>时间复杂度: O(N log (N)).</p>
+<p>因为记忆化 的存在，计算的页数最多是<code>1 + 1 / 2 + 1 / 3 + ... + 1 / N = log N</code>, 即调和级数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ll T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">for</span> (ll iCase = <span class="number">1</span>; iCase &lt;= T; ++iCase) &#123;</span><br><span class="line">        ll ans = <span class="number">0</span>;</span><br><span class="line">        ll N, M, Q;</span><br><span class="line">        cin &gt;&gt; N &gt;&gt; M &gt;&gt; Q;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">pages</span><span class="params">(N + <span class="number">1</span>, <span class="literal">true</span>)</span></span>;</span><br><span class="line">        pages[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (ll i = <span class="number">0</span>; i &lt; M; ++i) &#123;</span><br><span class="line">            ll P;</span><br><span class="line">            cin &gt;&gt; P;</span><br><span class="line">            pages[P] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        unordered_map&lt;ll, ll&gt; memo;</span><br><span class="line">        <span class="keyword">for</span> (ll i = <span class="number">0</span>; i &lt; Q; ++i) &#123;</span><br><span class="line">            ll R;</span><br><span class="line">            cin &gt;&gt; R;</span><br><span class="line">            ll count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (memo.<span class="built_in">find</span>(R) != memo.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                count = memo[R];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (ll j = <span class="number">1</span>; j * R &lt;= N; ++j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (pages[j * R]) &#123;</span><br><span class="line">                        ++count;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                memo[R] = count;</span><br><span class="line">            &#125;</span><br><span class="line">            ans += count;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; iCase &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="the-equation"><a class="markdownIt-Anchor" href="#the-equation"></a> The Equation</h2>
+<p>本题要注意的点相对比较多，本身算法并不难。</p>
+<ol>
+<li>long long  常数是<code>1L</code>。否则<code>1</code>默认 是<code>int</code>，会有溢出风险。</li>
+<li>我们不能从A中的最高位开始找，因为可能k会是更大的数。而应该从 M的角度考虑k的最大值，这里M是15位的，对应二进制50位。然而，我们同样不能从太高的位开始找，否则 <code>N*( 1&lt;&lt;i )</code>会溢出64位。鉴于N最大是1000，二进制10位。我们可以从50~53位开始找。</li>
+</ol>
+<p>因为要最大化k，所以我们可以使用贪心的思路，从高位向低位数，尽量放置1，否则放置0，超过要求回溯。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/10/20/kick-start-2019-round-G/#more" rel="contents">
@@ -389,7 +425,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -425,37 +461,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          1221. Split a String in Balanced Strings
-理解balanced的定义，发现只需要找到 L 和 R 出现个数相等的位置即可。
-
-Time complexity: O(N),
-Space complexity: O(1).
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-
-
-impl Solution {
-    pub fn balanced_string_split(s: String) -> i32 {
-        let mut ans = 0;
-        let mut l = 0;
-     
+          <h2 id="1221-split-a-string-in-balanced-strings"><a class="markdownIt-Anchor" href="#1221-split-a-string-in-balanced-strings"></a> 1221. Split a String in Balanced Strings</h2>
+<p>理解balanced的定义，发现只需要找到 L 和 R 出现个数相等的位置即可。</p>
+<p>Time complexity: O(N),<br>
+Space complexity: O(1).</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">balanced_string_split</span>(s: <span class="type">String</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">l</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">r</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> <span class="variable">c</span> <span class="keyword">in</span> s.<span class="title function_ invoke__">chars</span>() &#123;</span><br><span class="line">            <span class="keyword">match</span> c &#123;</span><br><span class="line">                <span class="string">&#x27;L&#x27;</span> =&gt; &#123; l += <span class="number">1</span>&#125;,</span><br><span class="line">                <span class="string">&#x27;R&#x27;</span> =&gt; &#123; r += <span class="number">1</span>&#125;,</span><br><span class="line">                _ =&gt; (),</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> l == r &#123;</span><br><span class="line">                ans += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1222-queens-that-can-attack-the-king"><a class="markdownIt-Anchor" href="#1222-queens-that-can-attack-the-king"></a> 1222. Queens That Can Attack the King</h2>
+<p>虽然理解题目稍微复杂些，但算法其实很直接，从King往外找，而不是从queue开始找。</p>
+<p>时间复杂度: O(queens.len() + chessboard.len()),<br>
+空间复杂度: O(queens.len()).</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">queens_attackthe_king</span>(queens: <span class="type">Vec</span>&lt;<span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;&gt;, king: <span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;) <span class="punctuation">-&gt;</span> <span class="type">Vec</span>&lt;<span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">qs</span>: HashSet&lt;(<span class="type">i32</span>, <span class="type">i32</span>)&gt; = HashSet::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    <span class="keyword">for</span> <span class="variable">queen</span> <span class="keyword">in</span> queens.<span class="title function_ invoke__">iter</span>() &#123;</span><br><span class="line">        qs.<span class="title function_ invoke__">insert</span>((queen[<span class="number">0</span>], queen[<span class="number">1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans</span>: <span class="type">Vec</span>&lt;<span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;&gt; = <span class="type">Vec</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">direction</span> = <span class="built_in">vec!</span>[</span><br><span class="line">        (<span class="number">0</span>, <span class="number">1</span>),</span><br><span class="line">        (<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">        (<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">        (<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">        (<span class="number">0</span>, -<span class="number">1</span>),</span><br><span class="line">        (-<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">        (-<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">        (-<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">    ];</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">k</span> = (king[<span class="number">0</span>], king[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (x, y) <span class="keyword">in</span> direction.<span class="title function_ invoke__">iter</span>() &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">target</span>: (<span class="type">i32</span>, <span class="type">i32</span>) = k;</span><br><span class="line">        <span class="keyword">loop</span> &#123;</span><br><span class="line">            target.<span class="number">0</span> += x;</span><br><span class="line">            target.<span class="number">1</span> += y;</span><br><span class="line">            <span class="keyword">if</span> target.<span class="number">0</span> &gt;= <span class="number">0</span> &amp;&amp; target.<span class="number">0</span> &lt; <span class="number">8</span> &amp;&amp; target.<span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; target.<span class="number">1</span> &lt; <span class="number">8</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> qs.<span class="title function_ invoke__">contains</span>(&amp;target) &#123;</span><br><span class="line">                    ans.<span class="title function_ invoke__">push</span>(<span class="built_in">vec!</span>[target.<span class="number">0</span>, target.<span class="number">1</span>]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1223-dice-roll-simulation"><a class="markdownIt-Anchor" href="#1223-dice-roll-simulation"></a> 1223. Dice Roll Simulation</h2>
+<p>有memoization的dfs。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/10/14/LeetCode-weekly-contest-158/#more" rel="contents">
@@ -525,7 +542,7 @@ impl Solution {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -561,38 +578,20 @@ impl Solution {
     
     
     <div class="post-body" itemprop="articleBody">
-          赛后补题。
-
- 1207. Unique Number of Occurrences
-Record the number of occurrences of each value by unordered_map.
-Check the unique using unordered_set.
-
-Time complexity: O(N),
-Space complexity: O(N).
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-
-
-class Solution {
-public:
-    bool uniqueOccurrences(vector
+          <p>赛后补题。</p>
+<h2 id="1207-unique-number-of-occurrences"><a class="markdownIt-Anchor" href="#1207-unique-number-of-occurrences"></a> 1207. Unique Number of Occurrences</h2>
+<p>Record the number of occurrences of each value by <code>unordered_map</code>.<br>
+Check the unique using <code>unordered_set</code>.</p>
+<p>Time complexity: O(N),<br>
+Space complexity: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">uniqueOccurrences</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="type">int</span>&gt; count;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; seen;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : arr) &#123;</span><br><span class="line">            ++seen[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; p : seen) &#123;</span><br><span class="line">            <span class="keyword">if</span> (count.<span class="built_in">find</span>(p.second) != count.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                count.<span class="built_in">insert</span>(p.second);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1208-get-equal-substrings-within-budget"><a class="markdownIt-Anchor" href="#1208-get-equal-substrings-within-budget"></a> 1208. Get Equal Substrings Within Budget</h2>
+<p>Sliding window.<br>
+Use a sliding window to represent the available substring.</p>
+<p>Time complexity: O(N),<br>
+space complexity: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">equalSubstring</span><span class="params">(string s, string t, <span class="type">const</span> <span class="type">int</span> maxCost)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// window: [left, right), length = right - left</span></span><br><span class="line">        <span class="type">int</span> cost = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (right &lt; s.<span class="built_in">size</span>() &amp;&amp; cost + std::<span class="built_in">abs</span>(s[right] - t[right]) &lt;= maxCost) &#123;</span><br><span class="line">                cost += std::<span class="built_in">abs</span>(s[right] - t[right]);</span><br><span class="line">                ++right;</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, right - left);</span><br><span class="line">            &#125;</span><br><span class="line">            cost -= std::<span class="built_in">abs</span>(s[left] - t[left]);</span><br><span class="line">            ++left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1209-remove-all-adjacent-duplicates-in-string-ii"><a class="markdownIt-Anchor" href="#1209-remove-all-adjacent-duplicates-in-string-ii"></a> 1209. Remove All Adjacent Duplicates in String II</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/10/04/LeetCode-weekly-contest-156/#more" rel="contents">
@@ -662,7 +661,7 @@ public:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -698,13 +697,9 @@ public:
     
     
     <div class="post-body" itemprop="articleBody">
-          上周五赶上了9月27日比利时的法语区节日，学校放假，连上周末，我们恰好有3天的假期。在上上周从阿姆斯特丹回来的火车上，我们就定下了本次的去巴黎之旅。本次旅行的成员有：我、zfn、lsd、wyd。
-
-总的感受是：我太喜欢巴黎了，我爱巴黎.
-在这里，我深刻地感受到法国的文化自信。
-
- 第一天
-周五一大早，我们先乘火车到达Bruxell Nord站，转乘FlixBus直达巴黎。之所以坐大巴去，主要还是因为穷。最快的方式是 大力神火车，但需要99欧。大巴只需要15欧，缺点就是舒适性不足、速度慢。到达巴黎已经是下午1点半了。我们先买了巴黎公共交通的3天旅行通票，1-3Zone的。巴黎的行政区域划分为很多
+          <p>上周五赶上了9月27日比利时的法语区节日，学校放假，连上周末，我们恰好有3天的假期。在上上周从阿姆斯特丹回来的火车上，我们就定下了本次的去巴黎之旅。本次旅行的成员有：我、zfn、lsd、wyd。</p>
+<p>总的感受是：我太喜欢巴黎了，我爱巴黎.<br />
+在这里，我深刻地感受到法国的文化自信。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/30/Paris/#more" rel="contents">
@@ -774,7 +769,7 @@ public:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -810,15 +805,27 @@ public:
     
     
     <div class="post-body" itemprop="articleBody">
-          来到欧洲安顿下来的第一周，我们去了美丽的荷兰-阿姆斯特丹和周围的2座村庄。
-由于是第一次出来玩，许多行程安排的有问题，花费也相对不菲。人均大概450欧。相比之下，一周之后的巴黎之旅只花了300欧，并且体验也更棒。
-我认为荷兰绝对是欣赏北欧乡村风光的最佳地点。
-
-本次成行人员：zfn, lxf, lsd, zjz（张导）和 我。
-
- 第一天 落脚羊角村
-第一天大多数 时间 都 花在路上了。因为张导住在鲁汶，所以我们选择在布鲁塞尔集合。因为是第一次出行，中间误了一趟车，并且开启了本次旅行的首次奔跑，为了帮张导赶车，在站台上3个人提着行李狂奔。鉴于之后的为了赶行程狂奔，本次狂奔只能算是前菜。
-吸取 
+          <p>来到欧洲安顿下来的第一周，我们去了美丽的荷兰-阿姆斯特丹和周围的2座村庄。<br>
+由于是第一次出来玩，许多行程安排的有问题，花费也相对不菲。人均大概450欧。相比之下，一周之后的巴黎之旅只花了300欧，并且体验也更棒。<br>
+我认为荷兰绝对是欣赏北欧乡村风光的最佳地点。</p>
+<p>本次成行人员：zfn, lxf, lsd, zjz（张导）和 我。</p>
+<h2 id="第一天-落脚羊角村"><a class="markdownIt-Anchor" href="#第一天-落脚羊角村"></a> 第一天 落脚羊角村</h2>
+<p>第一天大多数 时间 都 花在路上了。因为张导住在鲁汶，所以我们选择在布鲁塞尔集合。因为是第一次出行，中间误了一趟车，并且开启了本次旅行的首次奔跑，为了帮张导赶车，在站台上3个人提着行李狂奔。鉴于之后的为了赶行程狂奔，本次狂奔只能算是前菜。<br>
+吸取 的教训是，安排行程要量力而为，不要对自己和队友太过自信。<br>
+由于 中途大量 时间浪费在火车站和等人上，我们晚上11点 才到达羊角村预定的民宿。最后的民宿离镇上有10min的车程，我们有5个人，打车不方便，最后打了一辆7座的车。开车的司机脾气也比较火爆，对我们换车貌似有些不满，开的比较猛，大家纷纷晕车。虽然路途颠簸，但到达 民宿后，感觉一切都是值得的。</p>
+<p>首先，house的女主人超级nice。到达 鸟不拉屎的住处后，我先下车，和女主人聊了起来。因为她下腹比较胖，我很友善地问她是不是pregnant了？本想着和女主人套套近乎。没成想，女主人回复 不不，她已经有3个男孩子了。瞬间气氛变得很尴尬。不过女主人并不放在心上，继续很愉快的招待起我们。</p>
+<p>在这里，我看到了多年未见的银河，甚至 有幸看到流星。也足见这里的偏僻程度。我们开心地就像一群孩子一样，在后院里看了一个多小时银河。银河真是太美了，我们这样的星空震撼的哇哇叫。自从大概 上小学后，我就再也没能亲眼看到银河了。足以原谅我的激动。天空真的是分外清澈，银河和各个星座清晰可见。随着我们在外面呆的时间越长，眼睛对光线越发适应，看到的星空越美。洁白的月亮也出现在地平线上，并不与银河争光，所以银河就像一道牛奶的带子一样清晰可见。难怪叫做milky way. 因为照片拍不出银河的效果，只有肉眼可见，才能感受到震撼和美。</p>
+<h2 id="第二天-阿姆斯特丹"><a class="markdownIt-Anchor" href="#第二天-阿姆斯特丹"></a> 第二天 阿姆斯特丹</h2>
+<p>高空秋千。<br>
+游船。<br>
+集市。<br>
+啤酒博物馆。<br>
+逛街。<br>
+海鲜大餐。<br>
+红灯区。</p>
+<h2 id="第三天-风车村"><a class="markdownIt-Anchor" href="#第三天-风车村"></a> 第三天 风车村</h2>
+<p>风车村<br>
+梵高博物馆</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/23/Amsterdam/#more" rel="contents">
@@ -888,7 +895,7 @@ public:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -924,38 +931,19 @@ public:
     
     
     <div class="post-body" itemprop="articleBody">
-          上周末在比利时，比赛时间是凌晨的4点半到6点，时间不合适，所以就没有参加。发现只有双周赛的时间是周六的下午4点半到6点，稍微合适些。ranking 2000的目标今年怕是要鸽了。最好的情况下，参与比赛的数目也只有国内的1/3.
-
- 1189. Maximum Number of Balloons
-统计每个字母的频数即可。需要注意的是，l和o 需要2次才能组成一个ballon。
-
-时间复杂度: O(N),
-空间复杂度: O(1).
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-
-
-class Solution {
-public:
-    int
+          <p>上周末在比利时，比赛时间是凌晨的4点半到6点，时间不合适，所以就没有参加。发现只有双周赛的时间是周六的下午4点半到6点，稍微合适些。ranking 2000的目标今年怕是要鸽了。最好的情况下，参与比赛的数目也只有国内的1/3.</p>
+<h2 id="1189-maximum-number-of-balloons"><a class="markdownIt-Anchor" href="#1189-maximum-number-of-balloons"></a> 1189. Maximum Number of Balloons</h2>
+<p>统计每个字母的频数即可。需要注意的是，l和o 需要2次才能组成一个ballon。</p>
+<p>时间复杂度: O(N),<br>
+空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxNumberOfBalloons</span><span class="params">(string text)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> string once = <span class="string">&quot;ban&quot;</span>;</span><br><span class="line">        <span class="type">const</span> string twice = <span class="string">&quot;lo&quot;</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : text) &#123;</span><br><span class="line">            ++count[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : once) &#123;</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, count[c - <span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : twice) &#123;</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, count[c - <span class="string">&#x27;a&#x27;</span>] / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1190-reverse-substrings-between-each-pair-of-parentheses"><a class="markdownIt-Anchor" href="#1190-reverse-substrings-between-each-pair-of-parentheses"></a> 1190. Reverse Substrings Between Each Pair of Parentheses</h2>
+<p>因为字符串的最大长度为2000，使用暴力法即可。用一个栈来进行括号匹配。</p>
+<p>时间复杂度: O(N ^ 2),<br>
+空间负责度: O(N).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseParentheses</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        stack&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span>&amp; c = s[i];</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="string">&#x27;)&#x27;</span>) &#123;</span><br><span class="line">                <span class="type">int</span> begin = st.<span class="built_in">top</span>();</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="built_in">reverse</span>(s.<span class="built_in">begin</span>() + begin, s.<span class="built_in">begin</span>() + i);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">&#x27;(&#x27;</span>) &#123;</span><br><span class="line">                st.<span class="built_in">push</span>(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        string ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : s) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c != <span class="string">&#x27;)&#x27;</span> &amp;&amp; c != <span class="string">&#x27;(&#x27;</span>) &#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(c);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>看过discuss之后，发现时间复杂度为O(N)的Solution。<br>
+第一遍找到所有匹配的括号，第二遍构造结果字符串。每一个括号像一道传送门一样，改变前进方向的同时，跳到对应的括号那里。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/18/LeetCode-weekly-contest-154/#more" rel="contents">
@@ -1025,7 +1013,7 @@ public:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1061,12 +1049,18 @@ public:
     
     
     <div class="post-body" itemprop="articleBody">
-          今年的下半年，有幸有机会来比利时交换一学期，大概5个月时间。
-这是我首次出国这么长时间。之前也是参加学校的项目，去英国游学了半个月，详情可以看我3年前写的英伦游学所见所思。
-接下来，我从城市、生活、学习和旅行四个方面总结我的交换项目。
-
- 城市
-列日处于比利时的东南部，也是列日省的省会所在，与卢森堡、荷兰和德国接壤，也是比利时法语区第三大城市。很多前往欧洲上学的同学十分担心当地的治安和自身的安全。然而，列日就是一个十分安全的城市。在欧洲，往往越是小城市，越安全。像巴黎和布鲁塞尔相较之下可能遇到危险的概率就更大。我曾经就在布鲁塞尔差点被偷了包。在列日这样的小城市，街上的汽车都会主动为行人让路。有
+          <p>今年的下半年，有幸有机会来比利时交换一学期，大概5个月时间。<br>
+这是我首次出国这么长时间。之前也是参加学校的项目，去英国游学了半个月，详情可以看我3年前写的<a href="https://youngforest.github.io/2016/08/25/my-britain-trip/">英伦游学所见所思</a>。<br>
+接下来，我从城市、生活、学习和旅行四个方面总结我的交换项目。</p>
+<h2 id="城市"><a class="markdownIt-Anchor" href="#城市"></a> 城市</h2>
+<p>列日处于比利时的东南部，也是列日省的省会所在，与卢森堡、荷兰和德国接壤，也是比利时法语区第三大城市。很多前往欧洲上学的同学十分担心当地的治安和自身的安全。然而，列日就是一个十分安全的城市。在欧洲，往往越是小城市，越安全。像巴黎和布鲁塞尔相较之下可能遇到危险的概率就更大。我曾经就在布鲁塞尔差点被偷了包。在列日这样的小城市，街上的汽车都会主动为行人让路。有时候，一车公交的人等我过马路，我还有些不好意思，加快了脚下的步伐。虽然欧洲老龄化十分严重，但是列日作为一个大学城，这样的感觉并不明显，年轻人依然很多，整个城市充满活力。</p>
+<p><img src="/images/Belgium/liege-train-station.jpg" alt="列日火车站"></p>
+<h2 id="生活"><a class="markdownIt-Anchor" href="#生活"></a> 生活</h2>
+<p>西欧的生活节奏十分慢。一方面因为纬度高的原因，列日很早就天黑；另一方面，欧洲人生活压力小，十分讲究工作和生活的平衡。大多数商店都是6点关门，公共服务设施基本上5点关门，超市8点关门。从国内996的生活状态刚过来时会又些不适应，回来之后也是。</p>
+<p>比利时的生活成本在欧洲还是比较高的。欧洲是越靠北、越靠西的地区，越富有生活成本越高。维持最低生活水平的话，大概需要每月700欧元。如果想过的好些，再出去玩一玩，每个月大概需要1000欧元。</p>
+<p>西欧的天气在冬天以阴雨连绵为主，经常半个月见不到太阳，真的会影响心情。</p>
+<p><img src="/images/Belgium/2020.jpg" alt="圣彼得堡 的2020灯，新年快乐"></p>
+<h2 id="学习"><a class="markdownIt-Anchor" href="#学习"></a> 学习</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/17/Beligum/#more" rel="contents">
@@ -1136,7 +1130,7 @@ public:
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1172,17 +1166,44 @@ public:
     
     
     <div class="post-body" itemprop="articleBody">
-          RankNameScoreFinish TimeQ1 (3)Q2 (4)Q3 (5)Q4 (7)392 / 6212YoungForest120:41:420:06:46 10:16:110:36:42null本次比赛是我在国内的最后一场了。由于比利时这边时差的原因，每周的周赛是周日的早上4点半到6点。所以我并没有条件参加，只能每周日早上起来补题了。
-
- 1184. Distance Between Bus Stops
-Two pass。正着走一遍，总共走一遍，然后总的路程减去正的路程就是反的路程。
-这里要注意start必须在destination之前，否则要换一下位置。
-
-1
-2
-3
-4
-5
+          <table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>Finish Time</th>
+<th>Q1 (3)</th>
+<th>Q2 (4)</th>
+<th>Q3 (5)</th>
+<th>Q4 (7)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>392 / 6212</td>
+<td>YoungForest</td>
+<td>12</td>
+<td>0:41:42</td>
+<td>0:06:46  1</td>
+<td>0:16:11</td>
+<td>0:36:42</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>本次比赛是我在国内的最后一场了。由于比利时这边时差的原因，每周的周赛是周日的早上4点半到6点。所以我并没有条件参加，只能每周日早上起来补题了。</p>
+<h2 id="1184-distance-between-bus-stops"><a class="markdownIt-Anchor" href="#1184-distance-between-bus-stops"></a> 1184. Distance Between Bus Stops</h2>
+<p>Two pass。正着走一遍，总共走一遍，然后总的路程减去正的路程就是反的路程。<br>
+这里要注意start必须在destination之前，否则要换一下位置。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">distanceBetweenBusStops</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; distance, <span class="type">int</span> start, <span class="type">int</span> destination)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> total = <span class="built_in">accumulate</span>(distance.<span class="built_in">begin</span>(), distance.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> (start &gt; destination)</span><br><span class="line">            <span class="built_in">swap</span>(start, destination);</span><br><span class="line">        <span class="type">int</span> clockwise = <span class="built_in">accumulate</span>(distance.<span class="built_in">begin</span>() + start, distance.<span class="built_in">begin</span>() + destination, <span class="number">0</span>);</span><br><span class="line">        <span class="type">int</span> counterclockwise = total - clockwise;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(clockwise, counterclockwise);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度: O(N),<br>
+空间复杂度: O(1).</p>
+<h2 id="1185-day-of-the-week"><a class="markdownIt-Anchor" href="#1185-day-of-the-week"></a> 1185. Day of the Week</h2>
+<p>经典的日历问题。需要注意的点是 闰年 的处理。</p>
+<p>时间复杂度: O(year * month),<br>
+空间复杂度: O(1).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isLeap</span><span class="params">(<span class="type">int</span> year)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>) || (year % <span class="number">400</span> == <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">dayOfTheWeek</span><span class="params">(<span class="type">int</span> day, <span class="type">int</span> month, <span class="type">int</span> year)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; v = &#123;<span class="string">&quot;Sunday&quot;</span>, <span class="string">&quot;Monday&quot;</span>, <span class="string">&quot;Tuesday&quot;</span>, <span class="string">&quot;Wednesday&quot;</span>, <span class="string">&quot;Thursday&quot;</span>, <span class="string">&quot;Friday&quot;</span>, <span class="string">&quot;Saturday&quot;</span>&#125;;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; monthes = &#123;<span class="number">0</span>, <span class="number">31</span>, <span class="number">28</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>,<span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>&#125;;</span><br><span class="line">        <span class="type">int</span> count = <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1971</span>; i &lt; year; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">isLeap</span>(i)) &#123;</span><br><span class="line">                count += <span class="number">366</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                count += <span class="number">365</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isLeap</span>(year)) &#123;</span><br><span class="line">            monthes[<span class="number">2</span>] += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        count += <span class="built_in">accumulate</span>(monthes.<span class="built_in">begin</span>(), monthes.<span class="built_in">begin</span>() + month, <span class="number">0</span>);</span><br><span class="line">        count += day;</span><br><span class="line">        count %= <span class="number">7</span>;</span><br><span class="line">        <span class="keyword">return</span> v[count];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/15/LeetCode-weekly-contest-153/#more" rel="contents">
@@ -1252,7 +1273,7 @@ Two pass。正着走一遍，总共走一遍，然后总的路程减去正的路
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1288,11 +1309,17 @@ Two pass。正着走一遍，总共走一遍，然后总的路程减去正的路
     
     
     <div class="post-body" itemprop="articleBody">
-          总的体验是很开心，收获很大。
-
-很幸运可以参加今年的Byte Camp，我认为这一周的活动是我今年参加过的最有意义的活动了。今年的夏令营共分为3个赛道：工程、算法、和 产品。我参加的是工程赛道。
-
-工程和算法赛道进入夏令营的选拔都是通过笔试和面试完成的。笔试的题目也都一样，就是通过牛客网的平台在线完成。笔试有2次机会，都参加的话取分高的。笔试题目分为基础题（操作系统、计算机组成原理、计算机网络）和编程题。编程题有4题，难度依次递增。我参加的是第一场，AC了前3道，难度大约等于是LeetCode medium，最后一题的难度直接飙升到 ICPC world final的难度，要用费用流的知识。我
+          <p>总的体验是很开心，收获很大。</p>
+<p>很幸运可以参加今年的Byte Camp，我认为这一周的活动是我今年参加过的最有意义的活动了。今年的夏令营共分为3个赛道：工程、算法、和 产品。我参加的是工程赛道。</p>
+<p>工程和算法赛道进入夏令营的选拔都是通过笔试和面试完成的。笔试的题目也都一样，就是通过牛客网的平台在线完成。笔试有2次机会，都参加的话取分高的。笔试题目分为基础题（操作系统、计算机组成原理、计算机网络）和编程题。编程题有4题，难度依次递增。我参加的是第一场，AC了前3道，难度大约等于是LeetCode medium，最后一题的难度直接飙升到 ICPC world final的难度，要用费用流的知识。我也没打过ACM，第一次听说费用流，就没做出来。由于笔试答的还行，面试我没参加，直接拿到入营资格了。不过听参加面试的同学反映，面试也挺水的，难度很低。</p>
+<p>然后就是夏令营的正式活动了。活动虽然只有一周，但是日程安排的十分紧凑，基本是9 10 6。开幕式是有 AI-lab的主管 李航老师 主持。以前只在网上和书上久闻大名，这次竟然可以见到真人了，还有一起合影的机会。学机器学习的同学应该都听说过他，他的《统计学习方法》也是入门算法岗工作的维几之选。我们每人还获赠他签名的《统计学习方法》一书（工程赛道的同学可能对此不是很感冒，哈哈）。</p>
+<p><img src="/images/ByteDance-camp-jiti.jpg" alt="集体照"></p>
+<p>之后的日程主要分为2天的听课和3天的做项目。课程安排和项目都可以在<a target="_blank" rel="noopener" href="https://bytecamp.toutiao.com/course">官网上</a>看到，每天要上7节课之多。课上也是干货满满，每个主题都是字节跳动内部负责相关技术的资深工程师负责讲解，从基础设施架构到前后端，覆盖工程的同学可能感兴趣和从事的所有内容。<br>
+算法那边除了请公司内部的大牛之外，还有像 Yoshua Bengio、Oren Etzioni 这样的外部嘉宾参与。因为这2个人实在是太牛了（我也是后来才知道的，毕竟不搞算法），我们工程的也被要求参加他们的课程。课程内容倒是一般，比较入门和浅显（难道是为了照顾我们工程的孩子？），实质内容反而不多。</p>
+<p>我选择的项目是“服务治理：基于共享内存的高性能通信中间件”。说实话，我对共享内存和进程间通信不是特别熟，但是当时选题目的时候只有这个题目能看懂，其他的题目更是一头雾水，所以选择了“中间件”这一看起来比较靠谱的项目。（后来证明，这样的项目反而不如小游戏这样的项目容易拿奖，也更难完成）。项目的具体细节就不便透露了。我和交大的一位大佬一起完成，3天的时间里，完成了设计、实现、测试、性能测试、PPT和展示。别的组都是4～5人，我们组因为有2个队友提前退营了，只有2人。这3天的代码不是我写的最难的，但算是我这一年来写的最开心的了。白天写一天代码，晚上10点回到酒店里接着肝到一两点。（有五星级酒店住，也是我学校在北京，但仍和大家一起住酒店的原因。标间一晚九百多，很舒服）。我俩甚至把项目开源了：<a target="_blank" rel="noopener" href="https://github.com/Yellow-Pay/MakeTheAmericanGreatAgain">Yellow-Pay/MakeTheAmericanGreatAgain</a>。在GitHub上可以搜到很多shm-ipc的库，我们的目的更多的是为了用git协同工作。</p>
+<p><img src="/images/Bytedance-camp.jpg" alt="做项目的第二天"></p>
+<p><img src="/images/us.jpg" alt="我和队友黄富乾"></p>
+<p>上周五下午刚刚结束夏令营，回学校正式开工，才发现字节跳动的总部中航广场离学校如此之近。本来想坐地铁回来，可是走到知春里的时候发现，学校竟然只有半站路，就直接走回宿舍了。期待以后有机会可以和字节跳动有更多的接触，这么近的距离，偷偷出来实习一定很方便。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/06/ByteDance-Camp/#more" rel="contents">
@@ -1362,7 +1389,7 @@ Two pass。正着走一遍，总共走一遍，然后总的路程减去正的路
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-16 07:27:15" itemprop="dateModified" datetime="2026-04-16T07:27:15+08:00">2026-04-16</time>
+      <time title="修改时间：2026-04-28 20:48:33" itemprop="dateModified" datetime="2026-04-28T20:48:33+08:00">2026-04-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1398,11 +1425,19 @@ Two pass。正着走一遍，总共走一遍，然后总的路程减去正的路
     
     
     <div class="post-body" itemprop="articleBody">
-          题目描述
-
-本题是我2月份Google实习生电话面试遇到的一道题目。我当时做的很混乱，一面直接挂了。今天看到同学发的讲解，决定重新尝试一下这道题目。毕竟自己这半年来刷了有500+道题目，算法实力有一定的增长。我只看到了讲解的题目，并没有看内容，算是自己半年后可以独立解决这个问题了吧。AC后，我竟然都哭了，为当时实力不济而伤心。不知道之后还有那么好的机会吗？
-这半年也参加了3次Kick start，除了第一次的A轮收到简历通知外，D轮和E轮都挂了。
-就像我之前反复讲的，我很想去Google，微软这样的外企，自己也为之付出了半年的努力。希望努力会有回报吧！如果可以拿到明年暑期的Google或微软的
+          <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/gas-station/description/">题目描述</a></p>
+<p>本题是我2月份Google实习生电话面试遇到的一道题目。我当时做的很混乱，一面直接挂了。今天看到<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/81412559">同学发的讲解</a>，决定重新尝试一下这道题目。毕竟自己这半年来刷了有500+道题目，算法实力有一定的增长。我只看到了讲解的题目，并没有看内容，算是自己半年后可以独立解决这个问题了吧。AC后，我竟然都哭了，为当时实力不济而伤心。不知道之后还有那么好的机会吗？<br>
+这半年也参加了3次Kick start，除了第一次的A轮收到简历通知外，D轮和E轮都挂了。<br>
+就像我之前反复讲的，我很想去Google，微软这样的外企，自己也为之付出了半年的努力。希望努力会有回报吧！如果可以拿到明年暑期的Google或微软的暑期实习，我就奖励自己一次端午节假期去韩国的自由行。有青梅竹马在那里，可以去找她。</p>
+<p>本题的思路是这样的:</p>
+<p>首先暴力的O(N^2)解法很简单.<br>
+枚举所有的起点，从起点出发模拟循环的过程。<br>
+可以用2个前缀和数组gas_prefix和cost_prefix追踪油量和花费，保证油量永远大于等于花费。</p>
+<p>然后尝试进一步的优化，思考不同起点之间的信息是否可以互相利用。<br>
+观察有, 如果在第i个加油站油量小于花费了，则从起点到i（包含）的加油站都不必作为起点尝试了。因为如果<code>起点 &lt; j &lt;= i</code>，则<code>j</code>作为起点，到<code>i</code>时的gas_prefix = 旧起点的gas_prefix - 旧起点到j的gas_prefix, 同理cost_prefix = 旧起点的cost_prefix- 旧起点到j的cost_prefix. 因为旧起点到j是成功的，所以有<code>旧起点到j的gas_prefix &gt;= 旧起点到j的cost_prefix</code>, 所以gas_prefix还是小于 cost_prefix。j就不用尝试了，可以直接跳过。<br>
+所以我们有了在O(N)的复杂度下的解法，起点直接跳到失败节点之后。</p>
+<p>同学的解法是通过反证法证明这一优化正确性的，也是很好的方法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">canCompleteCircuit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; gas, vector&lt;<span class="type">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = gas.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">gas_prefix</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cost_prefix</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> begin_index = <span class="number">0</span>; begin_index &lt; n; ) &#123;</span><br><span class="line">            <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (; i &lt; n; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                    gas_prefix[i] = gas[(begin_index + i) % n];</span><br><span class="line">                    cost_prefix[i] = cost[(begin_index + i) % n];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    gas_prefix[i] = gas_prefix[i - <span class="number">1</span>] + gas[(begin_index + i) % n];</span><br><span class="line">                    cost_prefix[i] = cost_prefix[i - <span class="number">1</span>] + cost[(begin_index + i) % n];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (gas_prefix[i] &lt; cost_prefix[i]) &#123;</span><br><span class="line">                    begin_index += i + <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i == n) &#123;</span><br><span class="line">                <span class="keyword">return</span> begin_index;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/06/LeetCode-134-Gas-Station/#more" rel="contents">
