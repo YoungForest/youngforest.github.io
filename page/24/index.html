@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.2">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -305,7 +305,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -350,7 +350,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numsSameConsecDiff</span>(<span class="params">self, N, K</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> N == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">        ret = []</span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">10</span>):</span><br><span class="line">            hashmap[i] = []</span><br><span class="line">            <span class="keyword">if</span> K == <span class="number">0</span>:</span><br><span class="line">                hashmap[i].append(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> i + K &lt;= <span class="number">9</span>:</span><br><span class="line">                    hashmap[i].append(i + K)</span><br><span class="line">                <span class="keyword">if</span> i - K &gt;= <span class="number">0</span>:</span><br><span class="line">                    hashmap[i].append(i - K)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">n, digits</span>):</span><br><span class="line">            <span class="keyword">if</span> n == N:</span><br><span class="line">                ret.append(reduce(<span class="keyword">lambda</span> x, y: x * <span class="number">10</span> + y, digits))</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> hashmap[digits[n-<span class="number">1</span>]]:</span><br><span class="line">                digits.append(i)</span><br><span class="line">                helper(n+<span class="number">1</span>, digits)</span><br><span class="line">                digits.pop()</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">            digits = [i]</span><br><span class="line">            helper(<span class="number">1</span>, digits)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure>
 <h2 id="966-Vowel-Spellchecker">966. Vowel Spellchecker</h2>
 <p>由于前2题用brute search都解决了，本题我也上来就直接干。结果TLE了，因为暴力法的时间复杂度为O(MN)，M = len(wordlist), N = len(queries)。<br>
-怎样才能进一步降低时间复杂度呢？我脑子中闪过的第一个词是 单词书(Tire)，最近刚在 算法第四版 中学到这一技术。 时间复杂度为O(max(N * wordlist中最长单词的长度, M), 不出意料的话，可以AC，现在已经11:46了。应该写不完了，让我先看一下第4题吧。</p>
+怎样才能进一步降低时间复杂度呢？我脑子中闪过的第一个词是单词树（Trie），最近刚在《算法（第 4 版）》中学到这一技术。时间复杂度为 O(max(N * wordlist 中最长单词的长度, M))，不出意料的话，可以 AC，现在已经 11:46 了。应该写不完了，让我先看一下第 4 题吧。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">spellchecker</span>(<span class="params">self, wordlist, queries</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type wordlist: List[str]</span></span><br><span class="line"><span class="string">        :type queries: List[str]</span></span><br><span class="line"><span class="string">        :rtype: List[str]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        wordlist_replace_vowel = []</span><br><span class="line">        vowel = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;U&#x27;</span>]</span><br><span class="line">        word_lower = []</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> wordlist:</span><br><span class="line">            word_lower.append(word.lower())</span><br><span class="line">            temp = <span class="built_in">list</span>(word)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(temp)):</span><br><span class="line">                <span class="keyword">if</span> temp[i] <span class="keyword">in</span> vowel:</span><br><span class="line">                    temp[i] = <span class="string">&#x27;0&#x27;</span></span><br><span class="line">            wordlist_replace_vowel.append(<span class="string">&#x27;&#x27;</span>.join(temp).lower())</span><br><span class="line">            </span><br><span class="line">        ret = []</span><br><span class="line">        <span class="keyword">for</span> query <span class="keyword">in</span> queries:</span><br><span class="line">            flag = <span class="number">0</span></span><br><span class="line">            <span class="keyword">match</span> = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            temp = <span class="built_in">list</span>(query)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(temp)):</span><br><span class="line">                <span class="keyword">if</span> temp[i] <span class="keyword">in</span> vowel:</span><br><span class="line">                    temp[i] = <span class="string">&#x27;0&#x27;</span></span><br><span class="line">            query_replace_vowel = <span class="string">&#x27;&#x27;</span>.join(temp).lower()</span><br><span class="line">            query_lower = query.lower()</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> wi, word <span class="keyword">in</span> <span class="built_in">enumerate</span>(wordlist):</span><br><span class="line">                <span class="keyword">if</span> flag &lt; <span class="number">4</span> <span class="keyword">and</span> word == query:</span><br><span class="line">                    <span class="keyword">match</span> = word</span><br><span class="line">                    flag = <span class="number">4</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">if</span> flag  &lt; <span class="number">3</span> <span class="keyword">and</span> word_lower[wi] == query_lower:</span><br><span class="line">                    <span class="keyword">match</span> = word</span><br><span class="line">                    flag = <span class="number">3</span></span><br><span class="line">                <span class="keyword">if</span> flag &lt; <span class="number">2</span> <span class="keyword">and</span> wordlist_replace_vowel[wi] == query_replace_vowel:</span><br><span class="line">                    <span class="keyword">match</span> = word</span><br><span class="line">                    flag = <span class="number">2</span></span><br><span class="line">            </span><br><span class="line">            ret.append(<span class="keyword">match</span>)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -421,7 +421,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -546,7 +546,7 @@ dp[x] = max[dp[x] + x - k] for all A[x] &gt;= A[k],<br>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -670,7 +670,7 @@ weekly contest时长为1个半小时，4道不同难度的题目，每周末10�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -791,7 +791,7 @@ weekly contest时长为1个半小时，4道不同难度的题目，每周末10�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -916,7 +916,7 @@ weekly contest时长为1个半小时，4道不同难度的题目，每周末10�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
 
   
@@ -1015,7 +1015,7 @@ weekly contest时长为1个半小时，4道不同难度的题目，每周末10�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1130,7 +1130,7 @@ weekly contest时长为1个半小时，4道不同难度的题目，每周末10�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
 
   
@@ -1234,7 +1234,7 @@ Difficulty: Medium</p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
 
   
@@ -1344,7 +1344,7 @@ Difficulty: Medium</p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-04-28 22:00:23" itemprop="dateModified" datetime="2026-04-28T22:00:23+08:00">2026-04-28</time>
+      <time title="修改时间：2026-06-06 20:40:57" itemprop="dateModified" datetime="2026-06-06T20:40:57+08:00">2026-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
