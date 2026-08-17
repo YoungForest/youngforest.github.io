@@ -1259,7 +1259,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #96ffe0;
+  background: #ffa678;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2792,4 +2792,36 @@ header.header {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+.editorial-illustration {
+  margin: 1.75rem auto;
+}
+.editorial-illustration--hero {
+  margin-top: 0.75rem;
+}
+.editorial-illustration img {
+  aspect-ratio: 16/9;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+.post-hero img {
+  aspect-ratio: 16/9;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+@media (max-width: 390px) {
+  .editorial-illustration {
+    margin: 1.25rem auto;
+  }
+}
+.post-meta,
+.post-description {
+  color: #666;
+}
+.followme span {
+  color: #666;
 }

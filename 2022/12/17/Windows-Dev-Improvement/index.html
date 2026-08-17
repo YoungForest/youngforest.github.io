@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1T-h_WTI8xskfXv9HxKWHfxqfzny6jcGdT5hmIExYqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":true,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="整理 Windows 开发环境的实用改进，让终端、包管理、提示符与目录跳转更顺手。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微软员工的 Windows 开发环境改进技巧">
+<meta property="og:url" content="https://youngforest.github.io/2022/12/17/Windows-Dev-Improvement/index.html">
+<meta property="og:site_name" content="YoungForest&#39;s blog">
+<meta property="og:description" content="整理 Windows 开发环境的实用改进，让终端、包管理、提示符与目录跳转更顺手。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youngforest.github.io/images/ai/Windows-Dev-Improvement/zh-hero.webp">
+<meta property="article:published_time" content="2022-12-17T14:28:25.000Z">
+<meta property="article:modified_time" content="2026-08-17T11:12:55.527Z">
+<meta property="article:author" content="YoungForest">
+<meta property="article:tag" content="Windows">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youngforest.github.io/images/ai/Windows-Dev-Improvement/zh-hero.webp">
+
+
+<link rel="canonical" href="https://youngforest.github.io/2022/12/17/Windows-Dev-Improvement/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://youngforest.github.io/2022/12/17/Windows-Dev-Improvement/","path":"2022/12/17/Windows-Dev-Improvement/","title":"微软员工的 Windows 开发环境改进技巧"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>微软员工的 Windows 开发环境改进技巧 | YoungForest's blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <link rel="alternate" hreflang="zh-CN" href="https://youngforest.github.io/2022/12/17/Windows-Dev-Improvement/">
+    <link rel="alternate" hreflang="x-default" href="https://youngforest.github.io/2022/12/17/Windows-Dev-Improvement/">
+  
+  
+    <link rel="alternate" hreflang="en" href="https://youngforest.github.io/en/2022/12/17/Windows-Dev-Improvement/">
+  
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="YoungForest's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">YoungForest's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clink"><span class="nav-number">2.</span> <span class="nav-text">Clink</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE-Clink"><span class="nav-number">2.1.</span> <span class="nav-text">如何安装和设置 Clink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clink-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">Clink 使用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Tab-%E8%A1%A5%E5%85%A8"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. Tab 补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%88%AB%E5%90%8D"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E5%AF%BC%E8%88%AA"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 历史记录导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 自定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E7%9B%AE%E5%BD%95%E5%AF%BC%E8%88%AA"><span class="nav-number">2.2.5.</span> <span class="nav-text">5. 目录导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E5%A4%8D%E5%88%B6%E5%92%8C%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.6.</span> <span class="nav-text">6. 复制和移动文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.2.7.</span> <span class="nav-text">7. 管理进程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-number">3.</span> <span class="nav-text">PowerShell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE-PowerShell"><span class="nav-number">3.1.</span> <span class="nav-text">如何安装和设置 PowerShell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-PowerShell-%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.2.</span> <span class="nav-text">使用 PowerShell 管理系统的示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%A1%E7%90%86-Windows-%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.2.1.</span> <span class="nav-text">管理 Windows 服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.2.</span> <span class="nav-text">配置网络设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4%E4%BB%BB%E5%8A%A1"><span class="nav-number">3.2.3.</span> <span class="nav-text">执行系统维护任务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Winget"><span class="nav-number">4.</span> <span class="nav-text">Winget</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Winget-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.1.</span> <span class="nav-text">Winget 使用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BA%94%E7%94%A8"><span class="nav-number">4.1.1.</span> <span class="nav-text">安装应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E5%B7%B2%E5%AE%89%E8%A3%85%E5%BA%94%E7%94%A8"><span class="nav-number">4.1.2.</span> <span class="nav-text">列出已安装应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%BA%94%E7%94%A8"><span class="nav-number">4.1.3.</span> <span class="nav-text">搜索应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E5%BA%94%E7%94%A8"><span class="nav-number">4.1.4.</span> <span class="nav-text">卸载应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oh-My-Posh"><span class="nav-number">5.</span> <span class="nav-text">Oh My Posh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autojump"><span class="nav-number">6.</span> <span class="nav-text">Autojump</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Autojump"><span class="nav-number">6.1.</span> <span class="nav-text">安装 Autojump</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Autojump"><span class="nav-number">6.2.</span> <span class="nav-text">使用 Autojump</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E5%88%B0%E7%9B%AE%E5%BD%95"><span class="nav-number">6.2.1.</span> <span class="nav-text">跳转到目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95"><span class="nav-number">6.2.2.</span> <span class="nav-text">列出目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Z-lua%EF%BC%9A%E6%9B%B4%E5%BF%AB%E7%9A%84-Autojump-%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="nav-number">7.</span> <span class="nav-text">Z.lua：更快的 Autojump 替代方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YoungForest</p>
+  <div class="site-description" itemprop="description">软件工程师，记录技术、阅读、投资与生活</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">278</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YoungForest" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YoungForest" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sen.yang96@outlook.com" title="E-Mail → mailto:sen.yang96@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1111372490" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1111372490" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/youngforest" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;youngforest" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6393787/youngforest" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6393787&#x2F;youngforest" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/sen-yang-a20a02137/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;sen-yang-a20a02137&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.kenshinji.me/" title="https:&#x2F;&#x2F;www.kenshinji.me" rel="noopener" target="_blank">Fred</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://jacklandrin.github.io/" title="https:&#x2F;&#x2F;jacklandrin.github.io" rel="noopener" target="_blank">LiuBo</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://xiaozhou.net/" title="https:&#x2F;&#x2F;xiaozhou.net" rel="noopener" target="_blank">Timothy</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://nicelylit.net/" title="https:&#x2F;&#x2F;nicelylit.net&#x2F;" rel="noopener" target="_blank">Jeremy's World</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://fenghe.us/" title="https:&#x2F;&#x2F;fenghe.us&#x2F;" rel="noopener" target="_blank">Pool's</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://chenhe.me/" title="https:&#x2F;&#x2F;chenhe.me&#x2F;" rel="noopener" target="_blank">晨鹤部落格/Chenhe's blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://dreamerlzl.xyz/" title="https:&#x2F;&#x2F;dreamerlzl.xyz&#x2F;" rel="noopener" target="_blank">dreamerlzl</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://youngforest.github.io/2022/12/17/Windows-Dev-Improvement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YoungForest">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoungForest's blog">
+      <meta itemprop="description" content="软件工程师，记录技术、阅读、投资与生活">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="微软员工的 Windows 开发环境改进技巧 | YoungForest's blog">
+      <meta itemprop="description" content="整理 Windows 开发环境的实用改进，让终端、包管理、提示符与目录跳转更顺手。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          微软员工的 Windows 开发环境改进技巧
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-17 22:28:25" itemprop="dateCreated datePublished" datetime="2022-12-17T22:28:25+08:00">2022-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-08-17 19:12:55" itemprop="dateModified" datetime="2026-08-17T19:12:55+08:00">2026-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">整理 Windows 开发环境的实用改进，让终端、包管理、提示符与目录跳转更顺手。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="引言">引言</h2>
+<p>作为一名曾经的 Mac 用户，刚转到 Windows 11 时，我遇到了不少挑战。我很怀念 macOS 的易用与便利，也一度难以适应不同的开发环境。不过，经过一番探索，我找到了一些工具和技巧，让自己在 Windows 上的开发体验得到了改善。总有人需要把 Windows 当作开发机，比如微软员工。这篇文章会分享我的经验，并提供一些提示和资源，重点介绍如何改进 Shell 环境。</p>
+<figure class="editorial-illustration editorial-illustration--hero">
+  <img src="/images/ai/Windows-Dev-Improvement/zh-hero.webp" alt="杂乱线缆与抽屉穿过窗形拱门，变成由卡片、包裹、灯光和指南针组成的整洁工具工坊" width="1536" height="864" decoding="async" fetchpriority="high">
+</figure>
+<span id="more"></span>
+<h2 id="Clink">Clink</h2>
+<p>Clink 是一款增强 Windows 命令提示符功能的强大工具。它提供了多项功能，可以让你在使用命令行时更高效。</p>
+<h3 id="如何安装和设置-Clink">如何安装和设置 Clink</h3>
+<ol>
+<li>从<a target="_blank" rel="noopener" href="https://mridgers.github.io/clink/">官方网站</a>下载 Clink 安装程序。</li>
+<li>运行安装程序，并按照屏幕上的说明将 Clink 安装到系统中。</li>
+<li>安装完成后，打开 Windows 命令提示符。</li>
+<li>输入 <code>clink install</code> 并按 Enter，在命令提示符中启用 Clink。这会把 Clink 加入 PATH 环境变量，并配置一些默认设置。</li>
+<li>重新启动命令提示符以应用更改。</li>
+</ol>
+<p>你还可以编辑用户目录（例如 <code>C:\Users\username</code>）中的配置文件 <code>clink_inputrc.ini</code>，进一步定制 Clink。该文件包含多种选项，可以调整 Clink 的行为，例如修改配色、添加新的键盘快捷键，以及为常用命令定义别名。</p>
+<p>下面是修改 <code>clink_inputrc.ini</code> 配色的例子：</p>
+<ol>
+<li>用文本编辑器打开 <code>clink_inputrc.ini</code>。</li>
+<li>找到 <code>[colors]</code> 部分。</li>
+<li>把颜色代码改成想要的值。例如，要把目录列表的前景色改为黄色，可以设置 <code>ls+di=33;1</code>。</li>
+</ol>
+<p>关于自定义 Clink 的更多信息，可以查看<a target="_blank" rel="noopener" href="https://mridgers.github.io/clink/">官方文档</a>。</p>
+<h3 id="Clink-使用示例">Clink 使用示例</h3>
+<p>Clink 提供了许多实用功能，可以改善 Windows 命令行体验。</p>
+<h4 id="1-Tab-补全">1. Tab 补全</h4>
+<p>Clink 支持命令、选项和文件路径的 Tab 补全。只需输入命令或文件路径的前几个字符，然后按 <code>Tab</code> 键即可补全。如果有多个匹配项，可以反复按 <code>Tab</code> 在它们之间切换。</p>
+<h4 id="2-别名">2. 别名</h4>
+<p>你可以使用 Clink 的 <code>alias</code> 命令为常用命令定义别名。例如，如果经常使用 <code>dir /w</code>，可以创建名为 <code>ls</code> 的别名：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=dir /w</span><br></pre></td></tr></table></figure>
+<p>之后，在命令提示符中输入 <code>ls</code> 时，它就会被替换为 <code>dir /w</code>。</p>
+<h4 id="3-历史记录导航">3. 历史记录导航</h4>
+<p>Clink 允许你用上下方向键浏览命令历史。如果需要重复之前输入过的命令，这项功能尤其方便。</p>
+<h4 id="4-自定义">4. 自定义</h4>
+<p>如前所述，你可以通过编辑 <code>clink_inputrc.ini</code> 进一步定制 Clink，例如：</p>
+<ul>
+<li>修改命令提示符的配色。</li>
+<li>为常用命令定义键盘快捷键。</li>
+<li>为特定命令设置默认选项。</li>
+</ul>
+<p>这些设置和其他自定义选项都可以在 Clink 官方文档中找到。</p>
+<h4 id="5-目录导航">5. 目录导航</h4>
+<p>Clink 提供了多个目录导航快捷方式：</p>
+<ul>
+<li><code>cd..</code>：返回上一级目录。</li>
+<li><code>cd\</code>：前往根目录。</li>
+<li><code>cd.</code>：切换到当前目录，实际不会产生变化。</li>
+<li><code>cd~</code>：前往主目录。</li>
+</ul>
+<h4 id="6-复制和移动文件">6. 复制和移动文件</h4>
+<p>Clink 为常用的文件管理命令提供别名：</p>
+<ul>
+<li><code>cp</code>：<code>copy</code> 命令的别名。例如，可以用 <code>cp example.txt backup</code> 把当前目录中的 <code>example.txt</code> 复制到 <code>backup</code> 目录。</li>
+<li><code>mv</code>：<code>move</code> 命令的别名。例如，可以用 <code>mv example.txt archive</code> 把当前目录中的 <code>example.txt</code> 移动到 <code>archive</code> 目录。</li>
+</ul>
+<h4 id="7-管理进程">7. 管理进程</h4>
+<p>Clink 提供了多个管理进程的命令：</p>
+<ul>
+<li><code>tasklist</code>：显示所有正在运行的进程，以及它们的进程 ID（PID）等信息。</li>
+<li><code>taskkill</code>：根据 PID 或映像名称终止进程。例如，可以用 <code>taskkill /im notepad.exe</code> 终止映像名为 <code>notepad.exe</code> 的进程。</li>
+</ul>
+<p>利用 Clink 的功能和别名，可以更轻松、更快速地浏览目录、复制或移动文件，以及管理进程。总体而言，Clink 能显著改善 Windows 命令行体验。根据自己的需求使用并定制这些功能，可以让工作更高效。</p>
+<h2 id="PowerShell">PowerShell</h2>
+<p>PowerShell 是 Windows 上更先进的命令行界面，提供了广泛的功能，可以帮助你更高效地完成复杂任务。</p>
+<h3 id="如何安装和设置-PowerShell">如何安装和设置 PowerShell</h3>
+<p>PowerShell 比传统的命令提示符更强大、更灵活。可以按以下步骤安装和设置：</p>
+<ol>
+<li>检查 Windows 版本：Windows 7 SP1 及更高版本已包含 PowerShell。更早的系统需要安装 PowerShell Core。</li>
+<li>安装 PowerShell：如果尚未安装，可以前往 <a target="_blank" rel="noopener" href="https://github.com/PowerShell/PowerShell/releases">PowerShell 下载页面</a>，下载与操作系统匹配的版本。</li>
+<li>打开 PowerShell：安装完成后，可以在开始菜单中输入“PowerShell”，或者按 Windows 键 + X 并从菜单中选择“Windows PowerShell”。</li>
+<li>自定义 PowerShell 配置文件：打开 PowerShell 并输入 <code>notepad $PROFILE</code>，用记事本打开配置文件。你可以在其中添加别名、函数和其他自定义内容，然后保存。</li>
+<li>安装模块：PowerShell 拥有大量模块，可以扩展功能。使用 <code>Install-Module</code> 命令即可安装模块。例如，可以使用 <code>Install-Module -Name Az -AllowClobber</code> 安装 Azure PowerShell 模块。</li>
+</ol>
+<p>安装并定制 PowerShell 后，你就能在 Windows 上获得更强大、更灵活的命令行环境。</p>
+<h3 id="使用-PowerShell-管理系统的示例">使用 PowerShell 管理系统的示例</h3>
+<p>PowerShell 是管理 Windows 系统的强大工具，下面是几个例子。</p>
+<h4 id="管理-Windows-服务">管理 Windows 服务</h4>
+<p>PowerShell 可以管理 Windows 服务。例如，可以用以下命令启动 Print Spooler 服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Start-Service -Name Spooler</span><br></pre></td></tr></table></figure>
+<p>停止该服务可以使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stop-Service -Name Spooler</span><br></pre></td></tr></table></figure>
+<h4 id="配置网络设置">配置网络设置</h4>
+<p>PowerShell 也可以配置网络。例如，可以使用以下命令设置网络适配器的 IP 地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">New-NetIPAddress -InterfaceAlias &quot;Ethernet&quot; -IPAddress 192.168.1.100 -PrefixLength 24 -DefaultGateway 192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>这条命令会把“Ethernet”适配器的 IP 地址设为 192.168.1.100，子网掩码设为 255.255.255.0，默认网关设为 192.168.1.1。</p>
+<h4 id="执行系统维护任务">执行系统维护任务</h4>
+<p>PowerShell 还可以执行多种系统维护任务。例如，可以用以下命令检查磁盘错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-Volume | Get-Partition | Get-Disk | Repair-Volume -SpotFix</span><br></pre></td></tr></table></figure>
+<p>该命令会检查所有卷、分区和磁盘是否存在错误，并尝试修复。</p>
+<p>这些只是 PowerShell 管理和维护 Windows 系统的几个例子，它能够完成的事情远不止这些。</p>
+<h2 id="Winget">Winget</h2>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">Winget</a> 是 Windows 的包管理器，可以从命令行轻松安装、管理和更新应用。它类似于 macOS 上的 Homebrew 或 Ubuntu 上的 apt，为管理 Windows 软件提供了简单、方便的方式。使用 Winget 可以快速安装和更新应用，不必手动搜索和下载安装文件，对开发者和高级用户非常实用。</p>
+<h3 id="Winget-使用示例">Winget 使用示例</h3>
+<h4 id="安装应用">安装应用</h4>
+<p>输入以下命令即可安装应用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install &lt;application&gt;</span><br></pre></td></tr></table></figure>
+<p>例如，安装 Visual Studio Code：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install Microsoft.VisualStudioCode</span><br></pre></td></tr></table></figure>
+<h4 id="列出已安装应用">列出已安装应用</h4>
+<p>可以使用以下命令列出系统中当前安装的应用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget list</span><br></pre></td></tr></table></figure>
+<h4 id="搜索应用">搜索应用</h4>
+<p>可以使用以下命令搜索应用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget search &lt;application&gt;</span><br></pre></td></tr></table></figure>
+<p>例如，搜索 Firefox：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget search Firefox</span><br></pre></td></tr></table></figure>
+<h4 id="卸载应用">卸载应用</h4>
+<p>要卸载通过 Winget 安装的应用，可以使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget uninstall &lt;application&gt;</span><br></pre></td></tr></table></figure>
+<p>例如，卸载 Visual Studio Code：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget uninstall Microsoft.VisualStudioCode</span><br></pre></td></tr></table></figure>
+<p>以上只是使用 Winget 安装和管理 Windows 应用的几个例子。借助 Winget，可以轻松从命令行安装和更新应用，对开发者和高级用户都很有价值。</p>
+<h2 id="Oh-My-Posh">Oh My Posh</h2>
+<p>Oh My Posh 是一款用于定制 PowerShell 提示符的工具。它允许你创建自定义主题，让命令行界面更美观，也更易用。</p>
+<p><a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows 安装说明</a></p>
+<h2 id="Autojump">Autojump</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/wting/autojump">Autojump</a> 可以帮助你更高效地浏览文件系统。它会记住你访问过的目录，让你通过简短命令快速跳回这些位置。</p>
+<h3 id="安装-Autojump">安装 Autojump</h3>
+<p>以管理员身份打开 PowerShell 终端，然后运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install autojump</span><br></pre></td></tr></table></figure>
+<p>运行以下命令可以找到 PowerShell 配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$PROFILE</span><br></pre></td></tr></table></figure>
+<p>重新启动 PowerShell 终端以应用更改。</p>
+<h3 id="使用-Autojump">使用 Autojump</h3>
+<p>Autojump 会记住你访问过的目录，并提供快捷方式，让文件系统导航更高效。</p>
+<h4 id="跳转到目录">跳转到目录</h4>
+<p>要跳转到之前访问过的目录，只需输入 <code>j</code>，后面跟目录名中具有辨识度的一部分。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">j documents</span><br></pre></td></tr></table></figure>
+<p>这会跳转到名称中包含“documents”的目录。</p>
+<h4 id="列出目录">列出目录</h4>
+<p>要查看 Autojump 记住的目录列表，可以输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">j --stat</span><br></pre></td></tr></table></figure>
+<p>它会显示目录列表，以及每个目录被访问的次数。</p>
+<p>借助 Autojump，你可以更高效、更快速地浏览文件系统，让 Windows 开发体验更顺畅。</p>
+<h2 id="Z-lua：更快的-Autojump-替代方案">Z.lua：更快的 Autojump 替代方案</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua">z.lua</a> 是一个更快的 Autojump 替代方案。它使用纯 Lua 编写，没有外部依赖，速度也比 Autojump 更快。我在 Windows 和 PowerShell 上更常用它。</p>
+<h2 id="总结">总结</h2>
+<p>只要具备合适的工具并知道如何使用，Windows 也可以成为优秀的开发平台。本文介绍了多种改善 Windows 开发体验的工具，包括 Clink、PowerShell、Oh My Posh、Winget 和 Autojump。</p>
+<p>Clink 和 PowerShell 能带来不逊于其他平台的强大 Shell 体验；Oh My Posh 可以定制 PowerShell 提示符，让界面更美观；Winget 让安装和管理 Windows 软件更简单；Autojump 则提供了快速、高效的文件系统导航方式。</p>
+<p>使用这些工具和技巧，可以改善 Windows 开发体验并提高工作效率。经过合理配置，Windows 也能像其他平台一样强大、好用。</p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://mridgers.github.io/clink/">https://mridgers.github.io/clink/</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wting/autojump">https://github.com/wting/autojump</a></li>
+<li><a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/prompt">https://ohmyposh.dev/docs/installation/prompt</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">https://learn.microsoft.com/en-us/windows/package-manager/winget/</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/youngforest">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/15/Netherlands-Visa-from-Ireland/" rel="prev" title="爱尔兰 办荷兰申根短期签证">
+                  <i class="fa fa-angle-left"></i> 爱尔兰 办荷兰申根短期签证
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/12/25/2022-summary-and-2023-resolutions/" rel="next" title="2022年终总结 与 2023新年展望">
+                  2022年终总结 与 2023新年展望 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">YoungForest</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YoungForest" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"YoungForest","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js" defer></script>
+<script>
+  (() => {
+    if (window.location.hostname !== 'youngforest.github.io') return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-G6NR9DW560');
+    const loadAnalytics = () => {
+      if (document.querySelector('script[data-ga4-loader]')) return;
+      const script = document.createElement('script');
+      script.async = true;
+      script.dataset.ga4Loader = '';
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-G6NR9DW560';
+      document.head.appendChild(script);
+    };
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(loadAnalytics, { timeout: 2500 });
+    } else {
+      window.addEventListener('load', () => window.setTimeout(loadAnalytics, 1000), { once: true });
+    }
+  })();
+</script>
+
+<script>
+  (() => {
+    const reported = new Set();
+    const thresholds = [25, 50, 75, 100];
+    const reportDepth = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      const depth = Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+      thresholds.forEach(percent => {
+        if (depth >= percent && !reported.has(percent)) {
+          reported.add(percent);
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'scroll_depth', {
+              percent_scrolled: percent,
+              page_path: window.location.pathname
+            });
+          }
+        }
+      });
+    };
+    window.addEventListener('scroll', reportDepth, { passive: true });
+    reportDepth();
+  })();
+</script>
+
+<script>
+  (() => {
+    const sidebarToggle = document.querySelector('.sidebar-toggle[role="button"]');
+    if (sidebarToggle && !sidebarToggle.hasAttribute('aria-label')) {
+      sidebarToggle.setAttribute('aria-label', '切换侧栏');
+    }
+  })();
+</script>
+
+</body>
+</html>
