@@ -19,18 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":true,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="这周没有出去玩，恰好遇到双周赛。久违地参加了一场，确实难得。 本次双周赛都是常规题目，不难。我提前50min全部一次AC, 典型的手速场。    Rank Name Score Finish Time Q1 (2) Q2 (4) Q3 (5) Q4 (7)     119 &#x2F; 2503 YoungForest 18 0:39:28 0:02:18 0:08:49 0:21:07 0:39:28">
+    <meta name="description" content="双周赛复盘：四分之一高频元素、覆盖区间、组合迭代器和非同列下降路径，记录一次提前完成的手速场。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode biweekly contest 14">
 <meta property="og:url" content="https://youngforest.github.io/2019/12/14/LeetCode-biweekly-contest-15/index.html">
 <meta property="og:site_name" content="YoungForest&#39;s blog">
-<meta property="og:description" content="这周没有出去玩，恰好遇到双周赛。久违地参加了一场，确实难得。 本次双周赛都是常规题目，不难。我提前50min全部一次AC, 典型的手速场。    Rank Name Score Finish Time Q1 (2) Q2 (4) Q3 (5) Q4 (7)     119 &#x2F; 2503 YoungForest 18 0:39:28 0:02:18 0:08:49 0:21:07 0:39:28">
+<meta property="og:description" content="双周赛复盘：四分之一高频元素、覆盖区间、组合迭代器和非同列下降路径，记录一次提前完成的手速场。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youngforest.github.io/images/ai/LeetCode-biweekly-contest-15/zh-hero.webp">
 <meta property="article:published_time" content="2019-12-14T08:12:29.000Z">
-<meta property="article:modified_time" content="2026-08-17T11:12:55.517Z">
+<meta property="article:modified_time" content="2026-08-30T15:00:26.311Z">
 <meta property="article:author" content="YoungForest">
 <meta property="article:tag" content="Competitive Programming">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youngforest.github.io/images/ai/LeetCode-biweekly-contest-15/zh-hero.webp">
 
 
 <link rel="canonical" href="https://youngforest.github.io/2019/12/14/LeetCode-biweekly-contest-15/">
@@ -181,7 +183,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">278</span>
+          <span class="site-state-item-count">284</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -192,7 +194,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">107</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -286,7 +288,7 @@
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="LeetCode biweekly contest 14 | YoungForest's blog">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="双周赛复盘：四分之一高频元素、覆盖区间、组合迭代器和非同列下降路径，记录一次提前完成的手速场。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -308,7 +310,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-17 19:12:55" itemprop="dateModified" datetime="2026-08-17T19:12:55+08:00">2026-08-17</time>
+      <time title="修改时间：2026-08-30 23:00:26" itemprop="dateModified" datetime="2026-08-30T23:00:26+08:00">2026-08-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -323,13 +325,18 @@
   
 </div>
 
+            <div class="post-description">双周赛复盘：四分之一高频元素、覆盖区间、组合迭代器和非同列下降路径，记录一次提前完成的手速场。</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>这周没有出去玩，恰好遇到双周赛。久违地参加了一场，确实难得。<br>
+    <div class="post-body" itemprop="articleBody"><figure class="editorial-illustration editorial-illustration--hero">
+  <img src="/images/ai/LeetCode-biweekly-contest-15/zh-hero.webp" alt="Forest 在沙漏旁观察占优珠列、覆盖布条、组合轮架和避开同列的下降方块路径" width="1536" height="864" decoding="async" fetchpriority="high">
+</figure>
+<span id="more"></span>
+<p>这周没有出去玩，恰好遇到双周赛。久违地参加了一场，确实难得。<br>
 本次双周赛都是常规题目，不难。我提前50min全部一次AC, 典型的手速场。</p>
 <table>
 <thead>
@@ -395,6 +402,7 @@
 <p>时间复杂度: O(row_size * column_size),<br>
 空间复杂度: O(row_size * column_size)，另一个明显的优化是dp只需要保存上一层的，可以减小到O(column_size).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> MAX_N = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minFallingPathSum</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> row_size = arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> column_size = arr[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;  <span class="built_in">dp</span>(row_size, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; (column_size, <span class="number">0</span>));</span><br><span class="line">        <span class="type">int</span> row = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> min_first = MAX_N, min_second = MAX_N;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> column = <span class="number">0</span>; column &lt; column_size; ++column) &#123;</span><br><span class="line">            dp[row][column] = arr[row][column];</span><br><span class="line">            <span class="keyword">if</span> (dp[row][column] &lt; min_first) &#123;</span><br><span class="line">                min_second  = min_first;</span><br><span class="line">                min_first = dp[row][column];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (dp[row][column] &lt; min_second) &#123;</span><br><span class="line">                min_second = dp[row][column];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; dp[row][column] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot; | &quot; &lt;&lt; min_first &lt;&lt; &quot; &quot; &lt;&lt; min_second;</span></span><br><span class="line">        <span class="comment">// cout &lt;&lt; endl;</span></span><br><span class="line">        <span class="type">int</span> last_row_min_first = min_first;</span><br><span class="line">        <span class="type">int</span> last_row_min_second = min_second;</span><br><span class="line">        <span class="keyword">for</span> (row = <span class="number">1</span>; row &lt; row_size; ++row) &#123;</span><br><span class="line">            min_first = min_second = MAX_N;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> column = <span class="number">0</span>; column &lt; column_size; ++column) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dp[row - <span class="number">1</span>][column] == last_row_min_first) &#123;</span><br><span class="line">                    dp[row][column] = last_row_min_second + arr[row][column];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[row][column] = last_row_min_first + arr[row][column];</span><br><span class="line">                &#125;           </span><br><span class="line">                <span class="keyword">if</span> (dp[row][column] &lt; min_first) &#123;</span><br><span class="line">                    min_second  = min_first;</span><br><span class="line">                    min_first = dp[row][column];</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (dp[row][column] &lt; min_second) &#123;</span><br><span class="line">                    min_second = dp[row][column];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// cout &lt;&lt; dp[row][column] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot; | &quot; &lt;&lt; min_first &lt;&lt; &quot; &quot; &lt;&lt; min_second;</span></span><br><span class="line">            <span class="comment">// cout &lt;&lt; endl;</span></span><br><span class="line">            last_row_min_first = min_first;</span><br><span class="line">            last_row_min_second = min_second;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min_first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     

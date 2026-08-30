@@ -19,18 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":true,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Rank Name Score Finish Time Q1 (3) Q2 (4) Q3 (5) Q4 (8)     727 &#x2F; 11694 YoungForest 12 0:22:50 0:03:13 0:14:04 0:22:50 null    这周一加了一个LeetCode每日打卡和周赛群。每周出排名，末位发红包；每天做道指定题目，连续2天没做发红包，极其惊现刺激。赛事排行榜。 本">
+    <meta name="description" content="周赛复盘：幸运数频次、升降三人组、地下交通计时和好字符串计数，记录打卡群带来的压力。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode weekly contest 182">
 <meta property="og:url" content="https://youngforest.github.io/2020/03/29/LeetCode-weekly-contest-182/index.html">
 <meta property="og:site_name" content="YoungForest&#39;s blog">
-<meta property="og:description" content="Rank Name Score Finish Time Q1 (3) Q2 (4) Q3 (5) Q4 (8)     727 &#x2F; 11694 YoungForest 12 0:22:50 0:03:13 0:14:04 0:22:50 null    这周一加了一个LeetCode每日打卡和周赛群。每周出排名，末位发红包；每天做道指定题目，连续2天没做发红包，极其惊现刺激。赛事排行榜。 本">
+<meta property="og:description" content="周赛复盘：幸运数频次、升降三人组、地下交通计时和好字符串计数，记录打卡群带来的压力。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youngforest.github.io/images/ai/LeetCode-weekly-contest-182/zh-hero.webp">
 <meta property="article:published_time" content="2020-03-29T04:42:45.000Z">
-<meta property="article:modified_time" content="2026-08-17T11:12:55.522Z">
+<meta property="article:modified_time" content="2026-08-30T15:00:26.316Z">
 <meta property="article:author" content="YoungForest">
 <meta property="article:tag" content="Competitive Programming">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youngforest.github.io/images/ai/LeetCode-weekly-contest-182/zh-hero.webp">
 
 
 <link rel="canonical" href="https://youngforest.github.io/2020/03/29/LeetCode-weekly-contest-182/">
@@ -181,7 +183,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">278</span>
+          <span class="site-state-item-count">284</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -192,7 +194,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">107</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -286,7 +288,7 @@
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="LeetCode weekly contest 182 | YoungForest's blog">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="周赛复盘：幸运数频次、升降三人组、地下交通计时和好字符串计数，记录打卡群带来的压力。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -308,7 +310,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-17 19:12:55" itemprop="dateModified" datetime="2026-08-17T19:12:55+08:00">2026-08-17</time>
+      <time title="修改时间：2026-08-30 23:00:26" itemprop="dateModified" datetime="2026-08-30T23:00:26+08:00">2026-08-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -323,13 +325,18 @@
   
 </div>
 
+            <div class="post-description">周赛复盘：幸运数频次、升降三人组、地下交通计时和好字符串计数，记录打卡群带来的压力。</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><table>
+    <div class="post-body" itemprop="articleBody"><figure class="editorial-illustration editorial-illustration--hero">
+  <img src="/images/ai/LeetCode-weekly-contest-182/zh-hero.webp" alt="Forest 手持空白琥珀信封，面对同量筹码与高台、升降三人组、地下通路和彩珠自动机" width="1536" height="864" decoding="async" fetchpriority="high">
+</figure>
+<span id="more"></span>
+<table>
 <thead>
 <tr>
 <th>Rank</th>

@@ -19,19 +19,21 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"youngforest.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":true,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="比赛链接 官方题解 做出了前2题，卡在第三题了。 Rating change: 1407 -&gt; 1378 A. Forbidden Integer">
+    <meta name="description" content="三道题分别通过分类讨论拼出目标、计算两条路径的最长公共段，并贪心寻找不构成子序列的密码。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Educational Codeforces Round 151">
 <meta property="og:url" content="https://youngforest.github.io/2023/07/01/Codeforces-Educational-Codeforces-Round-151/index.html">
 <meta property="og:site_name" content="YoungForest&#39;s blog">
-<meta property="og:description" content="比赛链接 官方题解 做出了前2题，卡在第三题了。 Rating change: 1407 -&gt; 1378 A. Forbidden Integer">
+<meta property="og:description" content="三道题分别通过分类讨论拼出目标、计算两条路径的最长公共段，并贪心寻找不构成子序列的密码。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youngforest.github.io/images/ai/Codeforces-Educational-Codeforces-Round-151/zh-hero.webp">
 <meta property="article:published_time" content="2023-07-01T08:33:20.000Z">
-<meta property="article:modified_time" content="2026-08-17T11:12:55.515Z">
+<meta property="article:modified_time" content="2026-08-30T15:00:26.310Z">
 <meta property="article:author" content="YoungForest">
 <meta property="article:tag" content="codeforces">
 <meta property="article:tag" content="contest">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youngforest.github.io/images/ai/Codeforces-Educational-Codeforces-Round-151/zh-hero.webp">
 
 
 <link rel="canonical" href="https://youngforest.github.io/2023/07/01/Codeforces-Educational-Codeforces-Round-151/">
@@ -182,7 +184,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">278</span>
+          <span class="site-state-item-count">284</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -193,7 +195,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">107</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -287,7 +289,7 @@
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="Codeforces Educational Codeforces Round 151 | YoungForest's blog">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="三道题分别通过分类讨论拼出目标、计算两条路径的最长公共段，并贪心寻找不构成子序列的密码。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -309,7 +311,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-17 19:12:55" itemprop="dateModified" datetime="2026-08-17T19:12:55+08:00">2026-08-17</time>
+      <time title="修改时间：2026-08-30 23:00:26" itemprop="dateModified" datetime="2026-08-30T23:00:26+08:00">2026-08-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -324,6 +326,7 @@
   
 </div>
 
+            <div class="post-description">三道题分别通过分类讨论拼出目标、计算两条路径的最长公共段，并贪心寻找不构成子序列的密码。</div>
         </div>
       </header>
 
@@ -334,6 +337,10 @@
 <a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/117791">官方题解</a></p>
 <p>做出了前2题，卡在第三题了。<br>
 Rating change: 1407 -&gt; 1378</p>
+<figure class="editorial-illustration editorial-illustration--hero">
+  <img src="/images/ai/Codeforces-Educational-Codeforces-Round-151/zh-hero.webp" alt="允许积木绕过禁用槽拼成目标，两条路线从原点共享后分叉，机械手在珠链范围内不断选择最靠右的珠子" width="1536" height="864" decoding="async" fetchpriority="high">
+</figure>
+<span id="more"></span>
 <h2 id="A-Forbidden-Integer"><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1845/problem/A">A. Forbidden Integer</a></h2>
 <p>分类讨论。如果可以选1的话，那肯定可以组成任意数字。<br>
 如果不能的话，可以选2和3，也可以组成除1以外任意的数字。<br>
