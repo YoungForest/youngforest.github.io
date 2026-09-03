@@ -1259,7 +1259,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #f5f52b;
+  background: #ff57ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2795,6 +2795,30 @@ header.header {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+.post-body .review-cover {
+  margin: 1.25rem auto;
+  text-align: center;
+}
+.post-body .review-cover img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+}
+.post-body figure.review-cover:not(.highlight) figcaption {
+  max-width: 32rem;
+  margin: 0.65rem auto 0 !important;
+  color: #666;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.65;
+}
+.index .post-body .review-cover img {
+  width: 160px;
 }
 .editorial-illustration {
   margin: 1.75rem auto;
