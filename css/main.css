@@ -1259,7 +1259,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ff57ff;
+  background: #ffd92d;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -1478,7 +1478,6 @@ pre code {
   line-height: 1.8;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .post-toc .nav .nav-child {
   --height: 0;
@@ -1886,7 +1885,7 @@ pre code {
 }
 @media (max-width: 991px) {
   .post-body {
-    text-align: justify;
+    text-align: left;
   }
 }
 .post-body h1 .header-anchor,
@@ -2772,11 +2771,11 @@ header.header {
   }
 }
 .post-block:first-of-type {
-  padding-top: 80px;
+  padding-top: 48px;
 }
 @media (max-width: 767px) {
   .post-block:first-of-type {
-    padding-top: 60px;
+    padding-top: 28px;
   }
 }
 @media (min-width: 1200px) {
@@ -3033,5 +3032,86 @@ header.header {
   .legacy-comment__replies {
     margin-left: 0.85rem;
     padding-left: 0.7rem;
+  }
+}
+/* Reading refresh: intentionally scoped away from legacy comments and media. */
+.main-inner.post .post-description {
+  display: none;
+}
+.main-inner.index .post-block:not(:first-of-type) {
+  margin-top: 64px;
+}
+.main-inner.index .home-latest + .post-block {
+  padding-top: 0;
+  margin-top: 0;
+}
+.home-guide {
+  padding-top: 48px;
+}
+.home-intro {
+  color: #666;
+  margin: 0 0 16px;
+}
+.home-guide h2 {
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+.home-featured {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+.home-featured li {
+  line-height: 1.6;
+  font-size: 16px;
+  min-width: 0;
+}
+.home-featured a {
+  display: block;
+}
+.home-topics {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 16px;
+}
+.home-topics a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+}
+.home-latest {
+  font-size: 18px;
+  color: #666;
+  margin: 24px 0;
+}
+.post-translation a {
+  display: inline-block;
+}
+.home-guide a:focus-visible,
+.post-translation a:focus-visible,
+.post-body a:focus-visible {
+  outline: 2px solid #287f78;
+  outline-offset: 4px;
+}
+@media (max-width: 767px) {
+  .main-inner.index .post-block:not(:first-of-type) {
+    margin-top: 48px;
+  }
+  .home-guide {
+    padding-top: 28px;
+  }
+  .home-featured {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .home-intro {
+    font-size: 15px;
+    line-height: 1.6;
   }
 }
