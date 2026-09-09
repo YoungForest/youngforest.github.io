@@ -269,6 +269,8 @@
   
 
 
+
+
 <div class="post-block">
   
   
@@ -364,7 +366,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ curl -i http://ip.cn</span><br><span class="line">当前 IP：60.xxx.xxx.x 来自：中国北京北京 xxx/电信</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ http_proxy=http://localhost:8123 curl -i http://ip.cn # polipo的默认端口为8123,如有需要可以自行改动</span><br><span class="line">当前 IP：xxx.xxx.xxx.xx0 来自：美国加利福尼亚州洛杉矶</span><br></pre></td></tr></table></figure>
 <p>这样就算成功了.</p>
-<p>最近发现&quot;<a target="_blank" rel="noopener" href="http://ip.cn">ip.cn</a>&quot;这个网站不能用了，500访问错误。可以将其替换为“<a target="_blank" rel="noopener" href="http://ipinfo.io/ip%E2%80%9D%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86i%EF%BC%8C%E8%BF%99%E6%98%AF%E5%8F%A6%E4%B8%80%E4%B8%AA%E8%BF%94%E5%9B%9E%E4%BD%A0%E7%9A%84%E5%85%AC%E7%BD%91IP%E7%9A%84%E7%BD%91%E7%AB%99%E3%80%82">ipinfo.io/ip”就可以了i，这是另一个返回你的公网IP的网站。</a><br>
+<p>最近发现&quot;<a target="_blank" rel="noopener" href="http://ip.cn">ip.cn</a>&quot;这个网站不能用了，500访问错误。可以将其替换为“<a target="_blank" rel="noopener" href="http://ipinfo.io/ip">ipinfo.io/ip</a>”就可以了i，这是另一个返回你的公网IP的网站。<br>
 还有一些其他的网站提供类似的返回IP的服务:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl ifconfig.me</span><br><span class="line">curl icanhazip.com</span><br><span class="line">curl ipecho.net/plain</span><br><span class="line">curl ifconfig.co</span><br></pre></td></tr></table></figure>
 <p>从浏览器中获得自己公网IP的方法:</p>
@@ -391,6 +393,8 @@
     
 
     <footer class="post-footer">
+        
+        
           <div class="followme">
   <span>欢迎关注我的其它发布渠道</span>
 
@@ -485,6 +489,8 @@
 </noscript>
 <script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"YoungForest/blog-comments","issue_term":"pathname","theme":"github-light"}</script>
 <script src="/js/third-party/comments/utterances.js" defer></script>
+
+<script src="/js/discovery.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;
