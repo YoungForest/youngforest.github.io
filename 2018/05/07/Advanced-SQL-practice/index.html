@@ -121,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -332,6 +332,13 @@
     
     
     
+    
+    
+      <details class="mobile-toc">
+        <summary>文章目录 · 4 节</summary>
+        <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%AE%9E%E8%B7%B5%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="mobile-toc-list-text">实践中遇到的问题</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%9B%9E%E7%AD%94%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98"><span class="mobile-toc-list-text">回答面试中的问题</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E2%80%98left-join%E2%80%99%EF%BC%8C%E2%80%98right-join%E2%80%99%EF%BC%8C-inner-join%E2%80%99%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="mobile-toc-list-text">‘left join’，‘right join’，&#39;inner join’的区别</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#partition%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="mobile-toc-list-text">partition的概念</span></a></li></ol></li></ol></nav>
+      </details>
+    
     <div class="post-body" itemprop="articleBody"><p>这一周在公司写了很多很长功能很复杂的sql语句，深感自己的数据库和SQL学的还只是皮毛，完全没法满足工程上的要求。<br>
 负责带我的二mentor对SQL比较也精通，对我有很多指导和建议。<br>
 没有对比就没有伤害，自己的菜和师兄的强让我知耻而后勇，有了进阶SQL的想法和行动。</p>
@@ -398,12 +405,12 @@ Hive上存在很多限制和挑战，比如不能在select中嵌套select子句�
       </div>
 
       <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
+          <a target="_blank" class="social-link" href="/subscribe/">
             <span class="icon">
               <i class="fa fa-rss"></i>
             </span>
 
-            <span class="label">RSS</span>
+            <span class="label">订阅更新</span>
           </a>
       </div>
   </div>
@@ -416,6 +423,8 @@ Hive上存在很多限制和挑战，比如不能在select中嵌套select子句�
 
         
 
+
+        
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2018/05/07/github-page-binding-domain/" rel="prev" title="为GitHub Page绑定自己的域名">
@@ -479,6 +488,7 @@ Hive上存在很多限制和挑战，比如不能在select中嵌套select子句�
 <script src="/js/third-party/comments/utterances.js" defer></script>
 
 <script src="/js/discovery.js" defer></script>
+<script src="/js/reading-tools.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;

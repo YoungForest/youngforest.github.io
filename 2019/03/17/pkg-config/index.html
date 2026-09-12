@@ -120,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -331,6 +331,8 @@
     
     
     
+    
+    
     <div class="post-body" itemprop="articleBody"><p>最近在学习<a target="_blank" rel="noopener" href="https://github.com/google/googletest">google-test</a>的使用和源码，在<code>make install</code>的时候发现除了向<code>/usr/local/</code>中安装了头文件，<code>/usr/lib/</code>中安装了shared library外，还向<code>/usr/local/lib/pkgconfig/</code>中安装了2个<code>.pc</code>文件。所以说，这个pkg-config是个什么东西呢？</p>
 <p>从一份<a target="_blank" rel="noopener" href="https://people.freedesktop.org/~dbn/pkg-config-guide.html">Guide</a>中，我们可以发现<code>pkg-config</code>的所有有用的基本信息。</p>
 <figure class="editorial-illustration editorial-illustration--hero">
@@ -380,12 +382,12 @@ variables不是必须的，但是可以被用来表示<code>pkg-config</code>没
       </div>
 
       <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
+          <a target="_blank" class="social-link" href="/subscribe/">
             <span class="icon">
               <i class="fa fa-rss"></i>
             </span>
 
-            <span class="label">RSS</span>
+            <span class="label">订阅更新</span>
           </a>
       </div>
   </div>
@@ -397,6 +399,8 @@ variables不是必须的，但是可以被用来表示<code>pkg-config</code>没
 
         
 
+
+        
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2019/03/17/LeetCode-weekly-contest-128/" rel="prev" title="LeetCode weekly contest 128">
@@ -460,6 +464,7 @@ variables不是必须的，但是可以被用来表示<code>pkg-config</code>没
 <script src="/js/third-party/comments/utterances.js" defer></script>
 
 <script src="/js/discovery.js" defer></script>
+<script src="/js/reading-tools.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;

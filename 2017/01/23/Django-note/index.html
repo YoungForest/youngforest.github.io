@@ -121,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -323,6 +323,13 @@
     
     
     
+    
+    
+      <details class="mobile-toc">
+        <summary>文章目录 · 5 节</summary>
+        <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%97%B6%E9%97%B4%E5%88%86%E9%85%8D"><span class="mobile-toc-list-text">时间分配:</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%BA%BA%E5%91%98%E5%88%86%E9%85%8D"><span class="mobile-toc-list-text">人员分配:</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Django%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93"><span class="mobile-toc-list-text">Django使用总结</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E7%BB%83%E4%B9%A0"><span class="mobile-toc-list-text">练习</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%80%BB%E7%BB%93"><span class="mobile-toc-list-text">总结</span></a></li></ol></nav>
+      </details>
+    
     <div class="post-body" itemprop="articleBody"><p><strong>[摘要]</strong> <a target="_blank" rel="noopener" href="https://www.djangoproject.com/">Django</a> 是一个高水平的Python Web框架, 可以帮助我们迅速开发, 设计一个干净, 程序化的应用. 虽然Django比较臃肿(现在大神都用<a target="_blank" rel="noopener" href="http://flask.pocoo.org/">Flask</a>?), 适合大型Web应用的开发, 笔者的数据库课程设计是一个小型工程, 但Django名声是在太大, 笔者之前在实验室也稍稍接触过, 所以和队友果断选择了Django. 我们的课设, 在Django的帮助下, 实现起来就和切菜一样.</p>
 <figure class="editorial-illustration editorial-illustration--hero">
   <img src="/images/ai/Django-note/zh-hero.webp" alt="年轻 Forest 和队友打开一只大型框架工具箱，把数据库、后端和页面模块迅速装成一座小型充电站模型" width="1536" height="864" decoding="async" fetchpriority="high">
@@ -368,12 +375,12 @@
       </div>
 
       <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
+          <a target="_blank" class="social-link" href="/subscribe/">
             <span class="icon">
               <i class="fa fa-rss"></i>
             </span>
 
-            <span class="label">RSS</span>
+            <span class="label">订阅更新</span>
           </a>
       </div>
   </div>
@@ -386,6 +393,8 @@
 
         
 
+
+        
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2017/01/18/sublime-personlize/" rel="prev" title="个性化sublime">
@@ -449,6 +458,7 @@
 <script src="/js/third-party/comments/utterances.js" defer></script>
 
 <script src="/js/discovery.js" defer></script>
+<script src="/js/reading-tools.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;

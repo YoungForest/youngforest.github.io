@@ -122,7 +122,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -333,6 +333,8 @@
     
     
     
+    
+    
     <div class="post-body" itemprop="articleBody"><p>由于科研需求，我需要连接杭州研究院的VPN，才能使用显卡做神经网络的训练任务。<br>
 然而在Ubunut 18.04配置好OpenVPN后，发现一个难题：连上VPN后无法上外网（百度等网站，不是墙外的网站，而是相对局域网内网的“外网”），断开VPN后可以连外网，但无法连接杭研院的资源。鉴于工作中，外网和杭研院内网基本缺一不可，我花了2天时间调研和修复改问题。而且其他同学使用VPN并没有类似问题，所以我认为是<code>Ubuntu</code>独特的问题。修复的操作很简单，但定位到问题的过程十分坎坷。</p>
 <figure class="editorial-illustration editorial-illustration--hero">
@@ -382,12 +384,12 @@
       </div>
 
       <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
+          <a target="_blank" class="social-link" href="/subscribe/">
             <span class="icon">
               <i class="fa fa-rss"></i>
             </span>
 
-            <span class="label">RSS</span>
+            <span class="label">订阅更新</span>
           </a>
       </div>
   </div>
@@ -399,6 +401,8 @@
 
         
 
+
+        
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2021/03/14/LeetCode-weekly-contest-232/" rel="prev" title="LeetCode weekly contest 232">
@@ -462,6 +466,7 @@
 <script src="/js/third-party/comments/utterances.js" defer></script>
 
 <script src="/js/discovery.js" defer></script>
+<script src="/js/reading-tools.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;

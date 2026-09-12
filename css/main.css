@@ -1259,7 +1259,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffff17;
+  background: #c75990;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3116,6 +3116,192 @@ header.header {
   }
 }
 /* Discovery: shared, text-first UI; does not restyle article prose or comments. */
+.mobile-toc {
+  display: none;
+}
+.menu-item a[href$="/subscribe/"] {
+  box-sizing: border-box;
+  min-height: 44px;
+  align-items: center;
+}
+.post-body .subscription-card {
+  padding: 20px;
+  margin: 24px 0;
+  background: #f8f7f3;
+  border: 1px solid #d3d0c8;
+  border-radius: 6px;
+  text-align: left;
+}
+.post-body .subscription-card h2 {
+  margin: 0 0 8px;
+  border: 0;
+  font-size: 20px;
+}
+.subscription-card p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+.subscription-address {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+  user-select: all;
+  font-size: 16px;
+  color: #285f58;
+}
+.subscription-card button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 16px;
+  padding: 8px 14px;
+  max-width: 100%;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  background: #28665f;
+  border: 1px solid #28665f;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.subscription-card button[hidden] {
+  display: none;
+}
+.subscription-card button:focus-visible {
+  outline: 2px solid #28665f;
+  outline-offset: 3px;
+}
+.subscription-card .subscription-status {
+  min-height: 1.6em;
+  margin-bottom: 0;
+  color: #454545;
+}
+.related-reading {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #dedbd4;
+  text-align: left;
+}
+.related-reading h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+.related-reading ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 28px;
+}
+.related-reading li {
+  min-width: 0;
+}
+.related-reading a {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 6px 0;
+  border: 0;
+  color: #285f58;
+  font-size: 17px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.related-reading a:hover {
+  text-decoration: underline;
+}
+.related-reading a:focus-visible {
+  outline: 2px solid #28665f;
+  outline-offset: 3px;
+}
+.related-reading time {
+  display: block;
+  color: #555;
+  font-size: 13px;
+}
+.related-reading p {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 767px) {
+  .related-reading {
+    padding-left: 32px;
+  }
+  .related-reading ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .post-body .subscription-card {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .mobile-toc {
+    display: block;
+    position: sticky;
+    top: 8px;
+    z-index: 9;
+    margin: 0 0 24px;
+    color: #343d3b;
+    background: #f8f7f3;
+    border: 1px solid #cfcec8;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .mobile-toc summary {
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 10px 14px;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+  }
+  .mobile-toc nav {
+    max-height: 60vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-top: 1px solid #dedbd4;
+  }
+  .mobile-toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0 22px;
+  }
+  .mobile-toc ol ol {
+    padding-right: 0;
+    padding-left: 16px;
+  }
+  .mobile-toc a {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 4px;
+    border: 0;
+    color: #285f58;
+    overflow-wrap: anywhere;
+    text-align: left;
+  }
+  .mobile-toc summary:focus-visible,
+  .mobile-toc a:focus-visible {
+    outline: 2px solid #28665f;
+    outline-offset: -3px;
+  }
+  .mobile-toc + .post-body h2,
+  .mobile-toc + .post-body h3 {
+    scroll-margin-top: 96px;
+  }
+  .mobile-toc[open] + .post-body h2,
+  .mobile-toc[open] + .post-body h3 {
+    scroll-margin-top: calc(60vh + 96px);
+  }
+}
 .discovery-list {
   list-style: none;
   margin: 0;

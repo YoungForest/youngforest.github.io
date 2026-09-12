@@ -120,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -322,6 +322,13 @@
     
     
     
+    
+    
+      <details class="mobile-toc">
+        <summary>文章目录 · 10 节</summary>
+        <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E7%AE%80%E4%BB%8B"><span class="mobile-toc-list-text">简介</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83"><span class="mobile-toc-list-text">服务器环境</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="mobile-toc-list-text">搭建过程</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%AE%89%E8%A3%85owncloud"><span class="mobile-toc-list-text">安装owncloud</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%90%AF%E5%8A%A8apache%E6%9C%8D%E5%8A%A1"><span class="mobile-toc-list-text">启动apache服务</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E7%AE%A1%E7%90%86%E5%92%8C%E8%AE%BE%E7%BD%AEowncloud"><span class="mobile-toc-list-text">管理和设置owncloud</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Client-install"><span class="mobile-toc-list-text">Client install</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#windows"><span class="mobile-toc-list-text">windows</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#Android"><span class="mobile-toc-list-text">Android</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#Linux"><span class="mobile-toc-list-text">Linux</span></a></li></ol></li></ol></nav>
+      </details>
+    
     <div class="post-body" itemprop="articleBody"><h2 id="简介">简介</h2>
 <p><a target="_blank" rel="noopener" href="https://owncloud.org/">owncloud</a>是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的<a target="_blank" rel="noopener" href="https://download.owncloud.org/download/repositories/stable/owncloud/">二进制安装包</a>，更方便快速，更适合个人的应用。</p>
 <figure class="editorial-illustration editorial-illustration--hero">
@@ -370,12 +377,12 @@
       </div>
 
       <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
+          <a target="_blank" class="social-link" href="/subscribe/">
             <span class="icon">
               <i class="fa fa-rss"></i>
             </span>
 
-            <span class="label">RSS</span>
+            <span class="label">订阅更新</span>
           </a>
       </div>
   </div>
@@ -388,6 +395,8 @@
 
         
 
+
+        
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2017/08/12/optimize-cortana-in-searching-local-files-and-folders/" rel="prev" title="Optimize Cortana in Searching Local files and Folders">
@@ -451,6 +460,7 @@
 <script src="/js/third-party/comments/utterances.js" defer></script>
 
 <script src="/js/discovery.js" defer></script>
+<script src="/js/reading-tools.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;

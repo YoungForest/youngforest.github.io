@@ -120,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -331,6 +331,13 @@
     
     
     
+    
+    
+      <details class="mobile-toc">
+        <summary>文章目录 · 5 节</summary>
+        <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%8A%A8%E6%9C%BA-%E6%94%BE%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="mobile-toc-list-text">动机(放在前面)</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%BB%8B%E7%BB%8DHexo"><span class="mobile-toc-list-text">介绍Hexo</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="mobile-toc-list-text">搭建过程</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E6%9C%AC%E5%9C%B0Hexo%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE"><span class="mobile-toc-list-text">本地Hexo安装配置</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%8F%91%E5%B8%83%E5%88%B0github%E4%B8%8A"><span class="mobile-toc-list-text">发布到github上</span></a></li></ol></li></ol></nav>
+      </details>
+    
     <div class="post-body" itemprop="articleBody"><h2 id="动机-放在前面">动机(放在前面)</h2>
 <p>之前在cnblog上有个博客, 但是也不经常维护, 到现在满打满算也才有3篇随笔, 1个粉. 主要是因为自己没有写东西的习惯. 高中的时候记过一段时间的日记, 零零总总写了有大半本, 都是一些励志(自欺欺人)的东西, 写给自己看的.</p>
 <figure class="editorial-illustration editorial-illustration--hero">
@@ -394,12 +401,12 @@
       </div>
 
       <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
+          <a target="_blank" class="social-link" href="/subscribe/">
             <span class="icon">
               <i class="fa fa-rss"></i>
             </span>
 
-            <span class="label">RSS</span>
+            <span class="label">订阅更新</span>
           </a>
       </div>
   </div>
@@ -411,6 +418,8 @@
 
         
 
+
+        
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2016/10/11/slipt-string-by-C/" rel="prev" title="C语言分割字符串 - YoungForest">
@@ -474,6 +483,7 @@
 <script src="/js/third-party/comments/utterances.js" defer></script>
 
 <script src="/js/discovery.js" defer></script>
+<script src="/js/reading-tools.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;

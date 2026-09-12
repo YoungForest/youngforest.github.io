@@ -122,7 +122,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -332,6 +332,8 @@
     
     
     
+    
+    
     <div class="post-body" itemprop="articleBody"><p>今天在做<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc168/tasks/abc168_e">一道AtCoder的题目</a>，有个test case一直TLE。研究这个测试用例和其他用例的区别，苦思不得其解。后来把unordered_map换成map就过了。虽然在小数据集上hashmap和treemap区别不大，但数据量大的话，hashmap还是好些。所以最佳实践是，在不需要排序特性时，就用hashmap。<br>
 而且之前也从来没有遇到过hashmap比treemap效果差这么多的原因。最后花了一上午时间，才定位到是我的 pair 的hash函数实现太糟糕了。因为C++ STL中并没有pair的hash特化，所以如果想把pair当作键用在unordered_map中的话，就需要自己实现hash函数。我直接从网上抄了一个实现, 直接将 <code>std::hash&lt;T&gt;()(pair.first) ^ std::hash&lt;U&gt;()(pair.second)</code>。为了避免误人子弟，我就不贴代码了。正是抄的这个实现害苦我了，hash函数碰撞严重，导致效率低下。令人惊讶的是，这种错误的实现遍布全网，无论是中文的还是英文的。我从犄角旮旯（<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20590656/error-for-hash-function-of-pair-of-ints">stackoverflow问题</a>的评论区中）里才找到问题所在和正确的实现。所以特意总结此博文，避免更多的同学踩坑。</p>
 <figure class="editorial-illustration editorial-illustration--hero">
@@ -393,12 +395,12 @@
       </div>
 
       <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
+          <a target="_blank" class="social-link" href="/subscribe/">
             <span class="icon">
               <i class="fa fa-rss"></i>
             </span>
 
-            <span class="label">RSS</span>
+            <span class="label">订阅更新</span>
           </a>
       </div>
   </div>
@@ -412,6 +414,8 @@
 
         
 
+
+        
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2020/05/24/LeetCode-weekly-contest-190/" rel="prev" title="LeetCode weekly contest 190">
@@ -475,6 +479,7 @@
 <script src="/js/third-party/comments/utterances.js" defer></script>
 
 <script src="/js/discovery.js" defer></script>
+<script src="/js/reading-tools.js" defer></script>
 <script>
   (() => {
     if (window.location.hostname !== 'youngforest.github.io') return;
