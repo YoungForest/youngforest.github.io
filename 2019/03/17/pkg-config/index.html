@@ -87,7 +87,7 @@
 <link rel="alternate" href="/atom.xml" title="YoungForest's blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage"><a class="skip-link" href="#reading-content">跳到正文</a>
   <div class="headband"></div>
 
   <main class="main">
@@ -264,7 +264,7 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div id="reading-content" class="main-inner post posts-expand">
 
 
   
@@ -331,6 +331,7 @@
     
     
     
+    <p class="print-source">YoungForest · <a href="https://youngforest.github.io/2019/03/17/pkg-config/">https://youngforest.github.io/2019/03/17/pkg-config/</a></p>
     
     
     <div class="post-body" itemprop="articleBody"><p>最近在学习<a target="_blank" rel="noopener" href="https://github.com/google/googletest">google-test</a>的使用和源码，在<code>make install</code>的时候发现除了向<code>/usr/local/</code>中安装了头文件，<code>/usr/lib/</code>中安装了shared library外，还向<code>/usr/local/lib/pkgconfig/</code>中安装了2个<code>.pc</code>文件。所以说，这个pkg-config是个什么东西呢？</p>

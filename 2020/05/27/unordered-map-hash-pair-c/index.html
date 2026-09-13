@@ -89,7 +89,7 @@
 <link rel="alternate" href="/atom.xml" title="YoungForest's blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage"><a class="skip-link" href="#reading-content">跳到正文</a>
   <div class="headband"></div>
 
   <main class="main">
@@ -265,7 +265,7 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div id="reading-content" class="main-inner post posts-expand">
 
 
   
@@ -332,6 +332,7 @@
     
     
     
+    <p class="print-source">YoungForest · <a href="https://youngforest.github.io/2020/05/27/unordered-map-hash-pair-c/">https://youngforest.github.io/2020/05/27/unordered-map-hash-pair-c/</a></p>
     
     
     <div class="post-body" itemprop="articleBody"><p>今天在做<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc168/tasks/abc168_e">一道AtCoder的题目</a>，有个test case一直TLE。研究这个测试用例和其他用例的区别，苦思不得其解。后来把unordered_map换成map就过了。虽然在小数据集上hashmap和treemap区别不大，但数据量大的话，hashmap还是好些。所以最佳实践是，在不需要排序特性时，就用hashmap。<br>

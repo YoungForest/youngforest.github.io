@@ -1259,7 +1259,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #c75990;
+  background: #ffff6c;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3032,6 +3032,272 @@ header.header {
   .legacy-comment__replies {
     margin-left: 0.85rem;
     padding-left: 0.7rem;
+  }
+}
+/* Quality B: original photographs remain available; no script or image service. */
+.post-body .photo-original {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.post-body .photo-original a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #285f58;
+}
+.post-body img[data-responsive-photo] {
+  height: auto;
+  max-width: 100%;
+}
+/* Quality C: native keyboard controls; no overlay on the code. */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  z-index: 10000;
+  padding: 10px 16px;
+  min-height: 24px;
+  color: #fff;
+  background: #285f58;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  transform: translateY(-160%);
+}
+.skip-link:focus {
+  transform: none;
+  outline: 3px solid #285f58;
+  outline-offset: 2px;
+  color: #fff;
+}
+.code-copy-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin: 12px 0 0;
+  min-width: 0;
+}
+.code-copy-tools button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #285f58;
+  background: #f5f6f3;
+  border: 1px solid #becbc5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.code-copy-tools button:hover {
+  background: #eaf1eb;
+}
+.code-copy-tools button:focus-visible {
+  outline: 2px solid #285f58;
+  outline-offset: 3px;
+}
+.code-copy-status {
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+/* Quality D: paper-only presentation. Original page content and comments stay intact. */
+.print-source {
+  display: none;
+}
+@media print {
+  @page {
+    margin: 16mm;
+  }
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 11pt !important;
+  }
+  .header,
+  .column,
+  .sidebar,
+  .sidebar-dimmer,
+  .footer,
+  .headband,
+  .back-to-top,
+  .reading-progress-bar,
+  .sidebar-toggle,
+  .toggle,
+  .search-pop-overlay,
+  .mobile-toc,
+  .post-footer,
+  .comments,
+  .legacy-comments,
+  .utterances,
+  .post-translation,
+  .post-meta-item-icon,
+  .post-meta-item-text,
+  .code-copy-tools,
+  .skip-link,
+  .photo-original,
+  .sub-menu,
+  .pagination,
+  .forkme,
+  .post-edit-link {
+    display: none !important;
+  }
+  .main,
+  .main-inner,
+  .post-block,
+  .post-content,
+  .post-body {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+  .post-header {
+    margin: 0 0 6mm !important;
+    text-align: left !important;
+  }
+  .post-title {
+    font-size: 20pt !important;
+    line-height: 1.35 !important;
+  }
+  .post-meta-container {
+    margin: 2mm 0 !important;
+    color: #444 !important;
+    text-align: left !important;
+  }
+  .post-meta {
+    margin: 0 !important;
+    font-size: 9pt !important;
+  }
+  .print-source {
+    display: block !important;
+    margin: 2mm 0 5mm;
+    font-size: 9pt;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .post-body {
+    font-size: 11pt !important;
+    line-height: 1.65 !important;
+    text-align: left !important;
+  }
+  .post-body p {
+    margin: 0 0 3.5mm;
+    orphans: 3;
+    widows: 3;
+  }
+  .post-body h2,
+  .post-body h3,
+  .post-body h4,
+  .post-body h5,
+  .post-body h6 {
+    break-after: avoid;
+    margin: 6mm 0 2.5mm;
+  }
+  .post-body h2 {
+    font-size: 15pt;
+  }
+  .post-body h3 {
+    font-size: 12.5pt;
+  }
+  .post-body h4,
+  .post-body h5,
+  .post-body h6 {
+    font-size: 11pt;
+  }
+  .post-body a,
+  .print-source a {
+    color: #111 !important;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+  }
+  .post-body img {
+    max-width: 100% !important;
+    max-height: 220mm;
+    width: auto;
+    height: auto !important;
+    object-fit: contain;
+    break-inside: avoid;
+  }
+  .post-body figure:not(.highlight) {
+    margin: 4mm 0;
+    break-inside: avoid;
+  }
+  .post-body figure figcaption {
+    color: #444 !important;
+    font-size: 9pt !important;
+  }
+  .post-body blockquote {
+    border-left: 2px solid #aaa;
+    padding: 0 0 0 4mm;
+    margin: 4mm 0;
+    color: #333;
+  }
+  .post-body .table-container,
+  .post-body .code-container,
+  .post-body pre,
+  .post-body figure.highlight {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    break-inside: auto;
+  }
+  .post-body table {
+    table-layout: fixed;
+    width: 100% !important;
+    font-size: 9pt;
+  }
+  .post-body th,
+  .post-body td {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .post-body figure.highlight,
+  .post-body figure.highlight table,
+  .post-body figure.highlight tbody,
+  .post-body figure.highlight tr,
+  .post-body figure.highlight td {
+    display: block !important;
+    width: auto !important;
+  }
+  .post-body figure.highlight .gutter {
+    display: none !important;
+  }
+  .post-body pre,
+  .post-body pre code,
+  .post-body figure.highlight .line {
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+  .post-body pre,
+  .post-body code {
+    font-size: 8.5pt !important;
+    line-height: 1.5 !important;
+    color: #111 !important;
+  }
+  .post-body figure.highlight pre {
+    width: auto !important;
+    padding: 3mm !important;
+  }
+  .post-body pre span {
+    color: #111 !important;
+  }
+  .post-body iframe,
+  .post-body video {
+    max-width: 100%;
   }
 }
 /* Reading refresh: intentionally scoped away from legacy comments and media. */
