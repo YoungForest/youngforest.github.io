@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,23 +384,23 @@
 </tbody>
 </table>
 <p>本周最后一题着实比较难，涉及概率和组合数学等知识。恰好触及到我的知识盲区，所以没有做出来。对于数学好的同学应该会好很多。</p>
-<h2 id="1464-Maximum-Product-of-Two-Elements-in-an-Array">1464. Maximum Product of Two Elements in an Array</h2>
+<h2 id="1464-Maximum-Product-of-Two-Elements-in-an-Array">1464. Maximum Product of Two Elements in an Array<a class="section-link" href="#1464-Maximum-Product-of-Two-Elements-in-an-Array" aria-label="本节链接：1464. Maximum Product of Two Elements in an Array"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。由于<code>nums.size()</code>比较小，所以暴力即可。</p>
 <p>时间复杂度: O(N^2),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxProduct</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = -INF;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i<span class="number">+1</span>; j &lt; nums.<span class="built_in">size</span>(); ++j) &#123;</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, (nums[i] - <span class="number">1</span>) * (nums[j] - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts">1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts</h2>
+<h2 id="1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts">1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts<a class="section-link" href="#1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts" aria-label="本节链接：1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>分别找出最大的horizontal和vertical间隔，相乘即可。需要注意，把边界也当作cut处理。<br>
 数据类型最好使用<code>long long</code>，因为会有<code>int32</code>的溢出问题。</p>
 <p>时间复杂度: O(horizontalCuts.size() * log + verticalCuts.size() * log),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line">    <span class="type">const</span> ll MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxArea</span><span class="params">(<span class="type">int</span> h, <span class="type">int</span> w, vector&lt;<span class="type">int</span>&gt;&amp; horizontalCuts, vector&lt;<span class="type">int</span>&gt;&amp; verticalCuts)</span> </span>&#123;</span><br><span class="line">        horizontalCuts.<span class="built_in">insert</span>(horizontalCuts.<span class="built_in">begin</span>(), <span class="number">0</span>);</span><br><span class="line">        horizontalCuts.<span class="built_in">push_back</span>(h);</span><br><span class="line">        verticalCuts.<span class="built_in">insert</span>(verticalCuts.<span class="built_in">begin</span>(), <span class="number">0</span>);</span><br><span class="line">        verticalCuts.<span class="built_in">push_back</span>(w);</span><br><span class="line">        <span class="built_in">sort</span> (<span class="built_in">begin</span>(horizontalCuts), <span class="built_in">end</span>(horizontalCuts));</span><br><span class="line">        <span class="built_in">sort</span> (<span class="built_in">begin</span>(verticalCuts), <span class="built_in">end</span>(verticalCuts));</span><br><span class="line">        <span class="type">int</span> maxH = <span class="number">0</span>, maxW = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; horizontalCuts.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            maxH = <span class="built_in">max</span>(maxH, horizontalCuts[i] - horizontalCuts[i<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; verticalCuts.<span class="built_in">size</span>(); ++j) &#123;</span><br><span class="line">            maxW = <span class="built_in">max</span>(maxW, verticalCuts[j] - verticalCuts[j<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        ll mxh = maxH;</span><br><span class="line">        ll mxw = maxW;</span><br><span class="line">        <span class="keyword">return</span> (mxh * mxw) % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1466-Reorder-Routes-to-Make-All-Paths-Lead-to-the-City-Zero">1466. Reorder Routes to Make All Paths Lead to the City Zero</h2>
+<h2 id="1466-Reorder-Routes-to-Make-All-Paths-Lead-to-the-City-Zero">1466. Reorder Routes to Make All Paths Lead to the City Zero<a class="section-link" href="#1466-Reorder-Routes-to-Make-All-Paths-Lead-to-the-City-Zero" aria-label="本节链接：1466. Reorder Routes to Make All Paths Lead to the City Zero"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>由于无向图本身是一棵树，每个节点通向0的路径有且仅有一条。所以用dfs从0搜索一遍，把反向的边调整过来即可。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N) -&gt; 通过记录父节点，可以不用seen，将空间降到O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minReorder</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; connections)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;&gt; in, out;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">seen</span><span class="params">(n, <span class="literal">false</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; v : connections) &#123;</span><br><span class="line">            in[v[<span class="number">1</span>]].<span class="built_in">push_back</span>(v[<span class="number">0</span>]);</span><br><span class="line">            out[v[<span class="number">0</span>]].<span class="built_in">push_back</span>(v[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        function&lt;<span class="type">void</span>(<span class="type">int</span>)&gt; dfs = [&amp;](<span class="type">int</span> root) -&gt; <span class="type">void</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (seen[root]) <span class="keyword">return</span>;</span><br><span class="line">            seen[root] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> neighbor : in[root]) &#123;</span><br><span class="line">                <span class="built_in">dfs</span>(neighbor);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> neighbor : out[root]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!seen[neighbor]) &#123;</span><br><span class="line">                    ++ans;</span><br><span class="line">                    <span class="built_in">dfs</span>(neighbor);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1467-Probability-of-a-Two-Boxes-Having-The-Same-Number-of-Distinct-Balls">1467. Probability of a Two Boxes Having The Same Number of Distinct Balls</h2>
+<h2 id="1467-Probability-of-a-Two-Boxes-Having-The-Same-Number-of-Distinct-Balls">1467. Probability of a Two Boxes Having The Same Number of Distinct Balls<a class="section-link" href="#1467-Probability-of-a-Two-Boxes-Having-The-Same-Number-of-Distinct-Balls" aria-label="本节链接：1467. Probability of a Two Boxes Having The Same Number of Distinct Balls"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>概率问题。由于数据范围比较小，可以用回溯法枚举每个颜色的球在2个盒子里的数目。终点时，需要判断合法的permutation的数目，即 2个盒子中的球的数目相等。然后，如果颜色数量相等，也需要记录。<br>
 这里需要些组合数学的知识，x个球，然后每种颜色的数目为A_i.<br>
 则permutation的数目为:</p>

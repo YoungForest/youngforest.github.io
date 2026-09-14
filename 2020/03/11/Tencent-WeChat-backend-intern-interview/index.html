@@ -58,8 +58,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -94,66 +96,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -341,7 +356,7 @@
         <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%B8%80%E9%9D%A2"><span class="mobile-toc-list-text">一面</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80"><span class="mobile-toc-list-text">计算机基础</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E3%80%81%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="mobile-toc-list-text">分布式、深度学习</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-C"><span class="mobile-toc-list-text">语言基础 C++</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98"><span class="mobile-toc-list-text">算法题</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%8F%8D%E9%97%AE"><span class="mobile-toc-list-text">反问</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%BA%8C%E9%9D%A2"><span class="mobile-toc-list-text">二面</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%B8%89%E9%9D%A2"><span class="mobile-toc-list-text">三面</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%9B%9B%E9%9D%A2"><span class="mobile-toc-list-text">四面</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%BA%94%E9%9D%A2"><span class="mobile-toc-list-text">五面</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%B8%83%E9%9D%A2"><span class="mobile-toc-list-text">七面</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98-v2"><span class="mobile-toc-list-text">算法题</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="mobile-toc-list-text">数据结构</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80-v2"><span class="mobile-toc-list-text">计算机基础</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%85%B6%E4%BB%96"><span class="mobile-toc-list-text">其他</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%85%AB%E9%9D%A2-%E5%8F%88%E4%B8%80%E6%AC%A1%E8%BF%B7%E4%B8%80%E8%88%AC%E7%9A%84%E9%9D%A2%E8%AF%95-%E5%B7%AE%E8%AF%84"><span class="mobile-toc-list-text">八面 又一次迷一般的面试 差评</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%86%85%E5%AE%B9"><span class="mobile-toc-list-text">内容</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#2%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98"><span class="mobile-toc-list-text">2道算法题</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%B9%9D%E9%9D%A2"><span class="mobile-toc-list-text">九面</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#4-26-%E7%AC%94%E8%AF%95"><span class="mobile-toc-list-text">4.26 笔试</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#2-%E5%AF%BB%E6%89%BE2%E4%B8%AA%E7%82%B9%E9%9B%86%E4%B8%AD%E6%9C%80%E8%BF%91%E7%9A%84%E5%AF%B9"><span class="mobile-toc-list-text">2. 寻找2个点集中最近的对</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#2-%E5%8D%A1%E7%89%8C%E7%BF%BB%E8%BD%AC"><span class="mobile-toc-list-text">2. 卡牌翻转</span></a></li></ol></nav>
       </details>
     
-    <div class="post-body" itemprop="articleBody"><h2 id="一面">一面</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="一面">一面<a class="section-link" href="#%E4%B8%80%E9%9D%A2" aria-label="本节链接：一面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>time: 2020-03-11 10:28:43</p>
 <p>上周HR联系沟通了下意向工作城市，但是没约具体面试时间。</p>
 <p>昨晚8点半忽然接到广东深圳的电话，问是否方便，直接开始了面试（惊不惊喜，刺不刺激？）。面试官网还不太好，中间出了不少问题。比如手撕代码时，对方网站内容不能及时刷新。</p>
@@ -349,25 +364,25 @@
   <img src="/images/ai/Tencent-WeChat-backend-intern-interview/zh-hero.webp" alt="深夜电话突然响起，Forest 面前展开一条摆满算法积木、网络节点和空椅子的漫长面试走廊" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="计算机基础">计算机基础</h2>
-<h3 id="分布式、深度学习">分布式、深度学习</h3>
+<h2 id="计算机基础">计算机基础<a class="section-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80" aria-label="本节链接：计算机基础"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="分布式、深度学习">分布式、深度学习<a class="section-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E3%80%81%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0" aria-label="本节链接：分布式、深度学习"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>BN层，dropout。如何计算？<br>
 BN: mean, valence。</p>
 <p>单机训练 和 多机训练 区别。</p>
 <p>多机训练时，如何把各个单机得到的loss reduce下。</p>
 <p>数据并行训练 和 模型并行训练。</p>
 <p>百亿级特征训练。百亿级是指？</p>
-<h3 id="语言基础-C">语言基础 C++</h3>
+<h3 id="语言基础-C">语言基础 C++<a class="section-link" href="#%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-C" aria-label="本节链接：语言基础 C++"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>hashtable实现</p>
 <p>shared_ptr, unique_ptr, weak_ptr 区别</p>
 <p>move语义</p>
-<h2 id="算法题">算法题</h2>
+<h2 id="算法题">算法题<a class="section-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98" aria-label="本节链接：算法题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>二叉树深度。</p>
 <p>二维数组，横竖都非递减，寻找目标值。<code>O(m + n)</code>。<a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-a-2d-matrix-ii/description/">leetcode240</a></p>
-<h2 id="反问">反问</h2>
+<h2 id="反问">反问<a class="section-link" href="#%E5%8F%8D%E9%97%AE" aria-label="本节链接：反问"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>问题：贵组的工作内容，为何问如此多深度学习和分布式的问题？</p>
 <p>答：大规模分布式训练框架，技术栈：C++，Python</p>
-<h2 id="二面">二面</h2>
+<h2 id="二面">二面<a class="section-link" href="#%E4%BA%8C%E9%9D%A2" aria-label="本节链接：二面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>time: 2020-03-17 21:59:18</p>
 <p>等了一周，终于等来了第一个复试。和上次面我的面试官是同组的。应该是因为技术栈比较契合，所以被分布式训练框架组把简历给捞出来了。</p>
 <p>首先问了很多项目和实习经历相关的内容。比如最有挑战性的任务，遇到的困难，怎么解决的？我按照传说中的STAR方法回答了，但是面试官好像并不是很满意。我平时最不擅长讲这些，面试多了也学会一点。还是手撕代码来的干脆和直接（以Google为代表，上来就是干），就像八股文一样，也好准备。</p>
@@ -393,7 +408,7 @@ insert b to sorted_a as fast as possible, result sorted_a should be sorted, too.
 <p>Time: O(a.size() + b.size() * log b.size())<br>
 Space: O(1)</p>
 <p>写完代码后让我不停的优化，提示不是在时间复杂度级别的优化。我找了好几处（上面的代码是我的最终版本），最后才让面试官满意。</p>
-<h2 id="三面">三面</h2>
+<h2 id="三面">三面<a class="section-link" href="#%E4%B8%89%E9%9D%A2" aria-label="本节链接：三面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>time: 2020-03-19 09:06:13</p>
 <p>昨天下午刚刚结束二面，今天下午接到HR的电话，约了晚上8点的面试。通过牛客网的平台，视频面试+手撕代码。共1个小时20分钟。</p>
 <p>上来简短的自我介绍之后就开始了手撕代码了，我喜欢。共4道题目,都不难，LeetCode Easy/Medium水平。就是前2题一定要用C写比较不舒服。</p>
@@ -406,7 +421,7 @@ Space: O(1)</p>
 <p>接下来又问了之前的实习和项目经历。我写了5个，问了3个，问的还很细。</p>
 <p>问完之后，面试官很干脆的就结束了面试。我从高强度的面试状态中久久不能恢复。</p>
 <p>3次面试2次都是晚上进行，加班状态可以看到。只有3面的面试官开了视频，看到大佬的发际线，我感觉自己实力实在太弱了。</p>
-<h2 id="四面">四面</h2>
+<h2 id="四面">四面<a class="section-link" href="#%E5%9B%9B%E9%9D%A2" aria-label="本节链接：四面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>time: 2020-03-19 23:53:31</p>
 <p>昨天晚上刚刚结束了三面，今天早上收到四面的电话，约了晚上的面试。</p>
 <p>上来先刚了3道算法题，我喜欢。</p>
@@ -420,7 +435,7 @@ Space: O(1)</p>
 答曰：同一个候选人，会被不同的组挑到，然后面试。怪不得1面、2面 和 3面、4面无论是面试风格、问题、还是平台都有所区别。</p>
 <p>1、2面是明显的分布式框架组的。3、4面可能不是，忘记问了。</p>
 <p>下午还参加了微软SWE intern的面试，当时就觉得凉了，晚上果然收到Thank you Letter. 一首凉凉送给自己。秋招加油，再接再厉！</p>
-<h2 id="五面">五面</h2>
+<h2 id="五面">五面<a class="section-link" href="#%E4%BA%94%E9%9D%A2" aria-label="本节链接：五面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>time: 2020-03-20 17:40:42</p>
 <p>今天面完米哈游后，正在做快手的评测，忽然收到要半个小时后5点的电话面试。</p>
 <p>说实话，面到第五面我已经心力交瘁了，想要疯狂吐槽了。不过五面十分简单，只持续了15min。</p>
@@ -436,11 +451,11 @@ Space: O(1)</p>
 <p>接下来等HR面。</p>
 <p>他是 微信搜索服务 组的。三、四面 也是。前2面是分布式框架组的，无论是面试方式还是内容都有所不同。他说应该是 分布式训练框架组 我没过，然后简历释放出来给了他们组。他只能看到三、四面的面试评价，跨组的就是不透明的。我确实对分布式训练的基础知识和经验不足。<br>
 我也能理解为啥要有5次面试了。</p>
-<h2 id="七面">七面</h2>
+<h2 id="七面">七面<a class="section-link" href="#%E4%B8%83%E9%9D%A2" aria-label="本节链接：七面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>time: 2020-03-31 19:22:14</p>
 <p>上周三约了HR面试，闲聊了半天，和技术面的套路差别很大。因为我说我实习想在北京，所以又约了这周一（今天）下午的一次北京同事的技术面试。北京这边应该就只有一个技术面试，还有HR面试。</p>
 <p>视频面试采用牛客网平台，分为 项目、算法、数据结构、计算机基础。</p>
-<h2 id="算法题-v2">算法题</h2>
+<h2 id="算法题-v2">算法题<a class="section-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98-v2" aria-label="本节链接：算法题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <blockquote>
 <p>逛街<br>
 小Q在周末的时候和他的小伙伴来到大城市逛街，一条步行街上有很多高楼，共有n座高楼排成一行。<br>
@@ -462,16 +477,16 @@ Space: O(1)</p>
 </blockquote>
 <p>LeetCode medium难度，秒杀，正反使用2次单调递减栈即可。需要注意的是，看到的楼包括当前楼，所以当前楼会正反计算2次，最后需要减1。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>  std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">height</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        cin &gt;&gt; height[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; s;</span><br><span class="line">    <span class="keyword">auto</span> process = [&amp;](<span class="type">int</span> i) -&gt; <span class="type">void</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (!s.<span class="built_in">empty</span>() &amp;&amp; height[s.<span class="built_in">top</span>()] &lt;= height[i])  &#123;</span><br><span class="line">            <span class="type">int</span> t = s.<span class="built_in">top</span>();</span><br><span class="line">            s.<span class="built_in">pop</span>();</span><br><span class="line">            ++ans[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s.<span class="built_in">push</span>(i);</span><br><span class="line">        ans[i] += s.<span class="built_in">size</span>();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">process</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        s.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="built_in">process</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        -- ans[i]; <span class="comment">// delete repeated self(count twice)</span></span><br><span class="line">        cout &lt;&lt; ans[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="数据结构">数据结构</h2>
+<h2 id="数据结构">数据结构<a class="section-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" aria-label="本节链接：数据结构"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>设计一个支持序列化和反序列话的HashMap。我之前没有接触过类似问题，了解过一些序列化的知识。就设计了一个 线型探查版 的hashmap, 因为这样所有数据都可以存储在一个数组中，方便序列化。</p>
 <p>为了方便实现，并没有考虑泛化和扩容，虽然提前和面试官沟通过。面试官还是抨击了线型探查对空间利用有问题，说是单个bucket中有过多元素时会有问题。对此我并不苟同，然后有讨论了半天。最后他有怼我说，没别人实现的好，insert时没有考虑扩容。因为我之前已经和他沟通过不考虑扩容和泛化以简化问题。对此，面试官不免有些为了怼而怼的嫌疑，我是并不信服的。我问他别人怎么实现，主流方法如何？他只是说没有标准答案。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">HashMap</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> capity = <span class="number">1</span> &lt;&lt; <span class="number">7</span>;</span><br><span class="line">    array&lt;<span class="type">int</span>, capity&gt; data;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> NOT_EXIST = <span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">HashMap</span>() &#123;</span><br><span class="line">        <span class="built_in">memset</span>(data.<span class="built_in">data</span>(), capity * <span class="keyword">sizeof</span>(<span class="type">int</span>), <span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">searilize</span><span class="params">(<span class="type">const</span> string&amp; file_name)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 把data内容写到文件中</span></span><br><span class="line">        <span class="function">std::ofstream <span class="title">fout</span> <span class="params">(file_name, std::fstream::binary)</span></span>;</span><br><span class="line">        <span class="keyword">auto</span>&amp; d = <span class="keyword">static_cast</span>&lt;array&lt;<span class="type">char</span>, capity*<span class="keyword">sizeof</span>(<span class="type">int</span>)&gt;&gt;(data)</span><br><span class="line">        std::<span class="built_in">copy</span>(d.<span class="built_in">begin</span>(), d.<span class="built_in">end</span>(), std::<span class="built_in">istreambuf_iterator</span>&lt;<span class="type">char</span>&gt;(fout));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">load</span><span class="params">(<span class="type">const</span> string&amp; file_name)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 把文件内容读到data中</span></span><br><span class="line">        <span class="function">std::ifstream <span class="title">input</span><span class="params">(file_name, std::ios::binary )</span></span>;</span><br><span class="line">        std::<span class="built_in">copy</span>( </span><br><span class="line">            std::<span class="built_in">istreambuf_iterator</span>&lt;<span class="type">char</span>&gt;(input), </span><br><span class="line">            std::<span class="built_in">istreambuf_iterator</span>&lt;<span class="type">char</span>&gt;( ),</span><br><span class="line">            <span class="keyword">static_cast</span>&lt;array&lt;<span class="type">char</span>, capity*<span class="keyword">sizeof</span>(<span class="type">int</span>)&gt;&gt;(data).<span class="built_in">begin</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> hashcode = <span class="built_in">hash</span>(key);</span><br><span class="line">        <span class="type">int</span> bucket = hashcode &amp; <span class="number">6</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = bucket; i &lt; <span class="number">1</span> &lt;&lt; <span class="number">6</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (data[i] == key) &#123;</span><br><span class="line">                <span class="keyword">return</span> data[i + (<span class="number">1</span> &lt;&lt; <span class="number">6</span>)];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data[i] == NOT_EXIST) &#123;</span><br><span class="line">                <span class="keyword">return</span> NOT_EXIST;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> NOT_EXIST;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">insert</span> <span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> hashcode = <span class="built_in">hash</span>(key);</span><br><span class="line">        <span class="type">int</span> bucket = hashcode &amp; <span class="number">6</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = bucket; i &lt; <span class="number">1</span> &lt;&lt; <span class="number">6</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (data[i] == NOT_EXIST || data[i] == key) &#123;</span><br><span class="line">                data[i] = key;</span><br><span class="line">                data[i + (<span class="number">1</span> &lt;&lt; <span class="number">6</span>)] = value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="计算机基础-v2">计算机基础</h2>
+<h2 id="计算机基础-v2">计算机基础<a class="section-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80-v2" aria-label="本节链接：计算机基础"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <ul>
 <li>多态。构造函数不能虚函数，析构函数可以虚函数。</li>
 <li>并发了解。</li>
 </ul>
-<h2 id="其他">其他</h2>
+<h2 id="其他">其他<a class="section-link" href="#%E5%85%B6%E4%BB%96" aria-label="本节链接：其他"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>自己的优点：<br>
 我讲了 基础扎实、算法好 （刷题多）。<br>
 他讲了他对刷题的看法。虽然不排斥刷题，但说了很多ACM选手的问题，工程实现考虑不周。感觉他有很多怨言呀。</p>
@@ -481,14 +496,14 @@ Space: O(1)</p>
 <figure class="editorial-illustration">
   <img src="/images/ai/Tencent-WeChat-backend-intern-interview/zh-interview-marathon.webp" alt="Forest 在反复的面试圆桌、错位纸卷、旋转门和两座城市之间穿行" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="八面-又一次迷一般的面试-差评">八面 又一次迷一般的面试 差评</h2>
+<h2 id="八面-又一次迷一般的面试-差评">八面 又一次迷一般的面试 差评<a class="section-link" href="#%E5%85%AB%E9%9D%A2-%E5%8F%88%E4%B8%80%E6%AC%A1%E8%BF%B7%E4%B8%80%E8%88%AC%E7%9A%84%E9%9D%A2%E8%AF%95-%E5%B7%AE%E8%AF%84" aria-label="本节链接：八面 又一次迷一般的面试 差评"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>time: 2020-04-13 12:59:03</p>
 <p>今天(4.13)上午11:30接到电话，随即开展了40min的面试。根本没有提前约我的时间，让我手头的很多事情都中断了。而且他说之前他们组的同事应该已经给我一面了。但是之前腾讯的7次面试都是别的组面的。</p>
-<h2 id="内容">内容</h2>
+<h2 id="内容">内容<a class="section-link" href="#%E5%86%85%E5%AE%B9" aria-label="本节链接：内容"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>自我介绍，项目介绍。</p>
 <p>各种C++的容器的API的问题，时间复杂度。</p>
 <p>竟然让我设计一个推荐系统，我内心…只是简单说了下一些常见的推荐算法的实现。</p>
-<h2 id="2道算法题">2道算法题</h2>
+<h2 id="2道算法题">2道算法题<a class="section-link" href="#2%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98" aria-label="本节链接：2道算法题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <blockquote>
 <ol>
 <li>实现 strcpy 拷贝字符串</li>
@@ -503,17 +518,17 @@ Space: O(1)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">findUnique</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; v)</span> </span>&#123;    <span class="comment">// 4G</span></span><br><span class="line">    bitset&lt;1 &lt;&lt; 32&gt; seen;    <span class="comment">// 4G</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : v) &#123;</span><br><span class="line">        seen.<span class="built_in">set</span>(<span class="keyword">static_cast</span>&lt;<span class="type">unsigned</span> <span class="type">int</span>&gt;(i));</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; ans; <span class="comment">// 4 G = 10亿 * 4</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; seen.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!seen[i]) &#123;</span><br><span class="line">            ans.<span class="built_in">insert</span>(<span class="keyword">static_cast</span>&lt;<span class="type">int</span>&gt;(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>面试官是 微信kitcup推荐系统组的。我直接提意见说下次面试提前约，这次十分仓促，状态也不好。<br>
 这个面试官的态度也是我遇到过的最差的一批，多次和他沟通时，他说“不要问我”。很多问题问的也是不明所以，给他差评。真想投诉他。</p>
-<h2 id="九面">九面</h2>
+<h2 id="九面">九面<a class="section-link" href="#%E4%B9%9D%E9%9D%A2" aria-label="本节链接：九面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>本次面试大概只持续了10min，问了一道“判断链表是否是回文”的算法题。要求时间复杂度O(N), 空间复杂度O(1)。LeetCode medium难度吧。</p>
 <p>之后问我，看到我之前面了腾讯很多次，都到HR面了。为什么没有签？我说是因为工作地点冲突的原因。我期望在北京，他们组都在深圳。面试官说，那我也是面深圳的岗位。你填报志愿填的服从调剂。然后也没必要继续面下去了。史上最快的面试！！😂</p>
 <p>我之后去官网看了下，还真是，重新改了下，不服从调剂了。希望北京的组能捞起我。不知道组里的工程师能不能定向捞人呀，不然可以联系一下在腾讯工作的同学和师兄。</p>
-<h2 id="4-26-笔试">4.26 笔试</h2>
+<h2 id="4-26-笔试">4.26 笔试<a class="section-link" href="#4-26-%E7%AC%94%E8%AF%95" aria-label="本节链接：4.26 笔试"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>TX的笔试难度还是挺大的，尤其是第2题和第3题。不过TX并不生产算法题，它只是算法题的搬运工。</p>
-<h2 id="2-寻找2个点集中最近的对">2. 寻找2个点集中最近的对</h2>
+<h2 id="2-寻找2个点集中最近的对">2. 寻找2个点集中最近的对<a class="section-link" href="#2-%E5%AF%BB%E6%89%BE2%E4%B8%AA%E7%82%B9%E9%9B%86%E4%B8%AD%E6%9C%80%E8%BF%91%E7%9A%84%E5%AF%B9" aria-label="本节链接：2. 寻找2个点集中最近的对"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/121/">原题链接</a><br>
 大雪菜提供了<a target="_blank" rel="noopener" href="https://www.acwing.com/video/96/">视频讲解</a>。简而言之，就是把2个点集的点分别做个标记，然后利用一个点集内找最近对的算法（不同标记的点，相当于无穷远）。<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/">一个点集内找最近对</a>就是一个十分经典的问题了，采用分治可以解决。</p>
 <p>时间复杂度: O(N log N), 空间复杂度: O(N).</p>
-<h2 id="2-卡牌翻转">2. 卡牌翻转</h2>
+<h2 id="2-卡牌翻转">2. 卡牌翻转<a class="section-link" href="#2-%E5%8D%A1%E7%89%8C%E7%BF%BB%E8%BD%AC" aria-label="本节链接：2. 卡牌翻转"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/keyence2020/tasks/keyence2020_d">原题 Swap and Flip</a></p>
 <p>动态规划。DP[mask][i]表示mask中的牌在最左边，第i个牌在这些牌中的最后，保证非降的最小操作数。<br>
 <img src="https://uploadfiles.nowcoder.com/images/20200428/407266647_1588073288778_01811641BAED0EC338B3EE5B829175F4" alt="图片说明" title="图片标题"><br>

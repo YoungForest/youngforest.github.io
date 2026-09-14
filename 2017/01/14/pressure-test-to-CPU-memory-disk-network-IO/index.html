@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -343,9 +358,9 @@
   <img src="/images/ai/pressure-test-to-CPU-memory-disk-network-IO/zh-hero.webp" alt="一只无刻度总控杆同时调节旋转处理器、内存积木水箱、磁盘转轮和双端网络管道的负载" width="1536" height="864" decoding="async">
 </figure>
 <span id="more"></span>
-<h2 id="测试环境">测试环境</h2>
+<h2 id="测试环境">测试环境<a class="section-link" href="#%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83" aria-label="本节链接：测试环境"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Ubuntu 14.04</p>
-<h2 id="CPU">CPU</h2>
+<h2 id="CPU">CPU<a class="section-link" href="#CPU" aria-label="本节链接：CPU"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>受<a target="_blank" rel="noopener" href="https://book.douban.com/subject/3004255/">编程之美</a>的第一章&quot;让CPU占有率曲线听你指挥&quot;启发, 我很快地完成了对CPU的压力测试程序.</p>
 <h4 id="基本思路">基本思路</h4>
 <p>确定一个小周期, 笔者的周期设置为100, 这个值可以通过改变PIECE的值来改变, 周期为 100 * PIECE.</p>
@@ -354,16 +369,16 @@
 <script src="https://gist.github.com/YoungForest/04080ae9ad932aa1fd7211c05e93b197.js"></script>
 <h4 id="使用方法">使用方法</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ 程序名 stress    <span class="comment"># 其中 0&lt;=stress&lt;=100</span></span><br><span class="line">$ <span class="comment"># 例子</span></span><br><span class="line">$ gcc cpu_benchmark.c -o cpu_benchmark.out</span><br><span class="line">$ cpu_benchmark.out 50</span><br></pre></td></tr></table></figure>
-<h2 id="硬盘读写">硬盘读写</h2>
+<h2 id="硬盘读写">硬盘读写<a class="section-link" href="#%E7%A1%AC%E7%9B%98%E8%AF%BB%E5%86%99" aria-label="本节链接：硬盘读写"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>对硬盘进行读写的压力测试, 我是分别通过两个程序实现的.</p>
-<h3 id="硬盘读操作">硬盘读操作</h3>
+<h3 id="硬盘读操作">硬盘读操作<a class="section-link" href="#%E7%A1%AC%E7%9B%98%E8%AF%BB%E6%93%8D%E4%BD%9C" aria-label="本节链接：硬盘读操作"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <h4 id="基本思路-v2">基本思路</h4>
 <p>与CPU的压力测试类似, 在一个周期(1s)里, 先从硬盘里读取特定大小(speed)的数据, 周期的剩余时间sleep.</p>
 <h4 id="程序源代码-v2">程序源代码</h4>
 <script src="https://gist.github.com/YoungForest/9faaa24df53b3e78d27c18155ee26384.js"></script>
 <h4 id="使用方法-v2">使用方法</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python3 disk_read.py 硬盘名 level    <span class="comment"># 其中level可以是0, 1, 2, 3</span></span><br><span class="line">$ <span class="comment"># 例子</span></span><br><span class="line">$ python3 disk_read.py /dev/vda 2</span><br></pre></td></tr></table></figure>
-<h3 id="硬盘写操作">硬盘写操作</h3>
+<h3 id="硬盘写操作">硬盘写操作<a class="section-link" href="#%E7%A1%AC%E7%9B%98%E5%86%99%E6%93%8D%E4%BD%9C" aria-label="本节链接：硬盘写操作"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <h4 id="基本思想">基本思想</h4>
 <p>硬盘写操作的压力测试与读操作类似. 在一个周期内(1s)向一个文件中写入特定大小的数据, 之后删掉, 在周期的剩余时间内sleep.</p>
 <p>为了向文件中写数据, 笔者使用了命令<br>
@@ -373,7 +388,7 @@
 <script src="https://gist.github.com/YoungForest/0b3fdfbe15821b32991d9d48a9122290.js"></script>
 <h4 id="使用方法-v3">使用方法</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python3 disk_write.py 硬盘名 level    <span class="comment"># 其中level可以是0, 1, 2, 3</span></span><br><span class="line">$ <span class="comment"># 例子</span></span><br><span class="line">$ python3 disk_write.py /dev/vda 2</span><br></pre></td></tr></table></figure>
-<h2 id="内存">内存</h2>
+<h2 id="内存">内存<a class="section-link" href="#%E5%86%85%E5%AD%98" aria-label="本节链接：内存"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <h4 id="基本思想-v2">基本思想</h4>
 <p>对内存的测试, 笔者的师兄向笔者介绍了<a target="_blank" rel="noopener" href="https://linux.die.net/man/8/memtester"><code>memtester</code></a>这个程序. 具体安装及使用方法:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="comment"># 安装</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install memtester</span><br><span class="line">$ <span class="comment"># 从PHYSADDR处分配MEMORY大小的内存, 测试ITERATIONS次.</span></span><br><span class="line">$ <span class="built_in">sudo</span> memtester [-p PHYSADDR] &lt;MEMORY&gt; [ITERATIONS]</span><br></pre></td></tr></table></figure>
@@ -383,7 +398,7 @@
 <script src="https://gist.github.com/YoungForest/73875763467c9cd1eeccad3496a18398.js"></script>
 <h4 id="使用方法-v4">使用方法</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ python3 memory_benchmark.py &lt;MEMORY&gt; [ITERATIONS]</span><br><span class="line">$ <span class="comment"># 例子</span></span><br><span class="line">$ python3 memory_benchmark.py 3m 10</span><br><span class="line">$ python3 memory_benchmark.py 2m </span><br></pre></td></tr></table></figure>
-<h2 id="网络">网络</h2>
+<h2 id="网络">网络<a class="section-link" href="#%E7%BD%91%E7%BB%9C" aria-label="本节链接：网络"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>师兄的需求是需要公网压力测试, 查找了很多资料, 大多数工具都是测网速的, 而不是可以指定上下行速率进行测试. 幸运的是, 找了几天之后, 终于找到一个工具<code>iperf</code>可以勉强完成任务.</p>
 <h4 id="基本思路-v3">基本思路</h4>
 <p>一台机器作为服务器, 另一台机器作为客户端, 客户端向服务器发包, 服务器接受, 连接使用UDP连接. 这也就是说, 如果没有服务器的话, 客户端仍然可以对网络上行进行压力测试; 但没有客户端, 服务器则没法对网络下行进行压力测试. 简单地说, 服务器(下行)是被动的, 客户端(上行)是主动的, 没人收包仍然可以狂发包, 但没人发包, 无论如何是收不到包的.</p>

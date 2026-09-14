@@ -61,8 +61,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -97,66 +99,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -351,18 +366,18 @@
   <img src="/images/ai/Beligum/zh-hero.webp" alt="Forest 沿着一条交换生活路线前行，依次经过礼让行人的小城、雨天住处、山坡课堂和通往远方的车站" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="城市">城市</h2>
+<h2 id="城市">城市<a class="section-link" href="#%E5%9F%8E%E5%B8%82" aria-label="本节链接：城市"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>列日处于比利时的东南部，也是列日省的省会所在，与卢森堡、荷兰和德国接壤，也是比利时法语区第三大城市。很多前往欧洲上学的同学十分担心当地的治安和自身的安全。然而，列日就是一个十分安全的城市。在欧洲，往往越是小城市，越安全。像巴黎和布鲁塞尔相较之下可能遇到危险的概率就更大。我曾经就在布鲁塞尔差点被偷了包。在列日这样的小城市，街上的汽车都会主动为行人让路。有时候，一车公交的人等我过马路，我还有些不好意思，加快了脚下的步伐。虽然欧洲老龄化十分严重，但是列日作为一个大学城，这样的感觉并不明显，年轻人依然很多，整个城市充满活力。</p>
 <p><img src="/images/Belgium/liege-train-station.jpg" alt="列日火车站"></p>
-<h2 id="生活">生活</h2>
+<h2 id="生活">生活<a class="section-link" href="#%E7%94%9F%E6%B4%BB" aria-label="本节链接：生活"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>西欧的生活节奏十分慢。一方面因为纬度高的原因，列日很早就天黑；另一方面，欧洲人生活压力小，十分讲究工作和生活的平衡。大多数商店都是6点关门，公共服务设施基本上5点关门，超市8点关门。从国内996的生活状态刚过来时会又些不适应，回来之后也是。</p>
 <p>比利时的生活成本在欧洲还是比较高的。欧洲是越靠北、越靠西的地区，越富有生活成本越高。维持最低生活水平的话，大概需要每月700欧元。如果想过的好些，再出去玩一玩，每个月大概需要1000欧元。</p>
 <p>西欧的天气在冬天以阴雨连绵为主，经常半个月见不到太阳，真的会影响心情。</p>
 <p><img src="/images/Belgium/2020.jpg" alt="圣彼得堡 的2020灯，新年快乐"></p>
-<h2 id="学习">学习</h2>
+<h2 id="学习">学习<a class="section-link" href="#%E5%AD%A6%E4%B9%A0" aria-label="本节链接：学习"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>我学习的是计算机专业的课程，在列日大学分属应用科学学院，所有的课程都被安排在一个位于城市南部的山上。而为了生活便利，我和大多数学生一样，选择住在市里。每天上课通勤乘坐40分钟的公交上山上学。课程难度整体并不大，但知识量很大，又是英文教学，所以需要投入大量时间。最 令我印象深刻的一点是，这里的课程和考试的时长几乎都为4个小时，有时会提前下课。长时间的课程对集中注意力是一项重大的考验，每次上完课都感觉筋疲力尽。</p>
 <p><img src="/images/Belgium/children-learning-web-development.jpg" alt="荷兰小朋友在学习网站编程"></p>
-<h2 id="旅行">旅行</h2>
+<h2 id="旅行">旅行<a class="section-link" href="#%E6%97%85%E8%A1%8C" aria-label="本节链接：旅行"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>比利时布鲁塞尔作为欧盟的总部，欧洲的交通枢纽，前往其他国家的机票都十分便宜。经常可以找到10欧的廉价机票，背上行李，来场说走就走的旅行。可以说，这里和欧洲的联系十分密切。欧洲作为近现代工业革命的起源地和西方列强的根据地，拥有从全世界搜集的众多瑰宝。其中，以卢浮宫和大英博物馆居首。像中国一样，列日也有一些公共假期。除了比利时的假期外，还专门有一天法语区的放假。利用这些假期，我们在欧洲进行了充分的旅游，极大地增长了自己的眼界和阅历。读了二十多年书后，终于有机会走万里路了。</p>
 <p><img src="/images/Belgium/france-nice.jpg" alt="法国尼斯海岸"></p>
 <p><img src="/images/Belgium/Italy-Roma-Colosseum.jpg" alt="罗马斗兽场"></p>

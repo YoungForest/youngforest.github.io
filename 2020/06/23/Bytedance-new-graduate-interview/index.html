@@ -57,8 +57,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -93,66 +95,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -347,9 +362,9 @@
   <img src="/images/ai/Bytedance-new-graduate-interview/zh-hero.webp" alt="Forest 匆忙走向面试椅，手里的算法工具已经整理好，身后的计算机基础工具箱却还有多个空槽" width="1536" height="864" decoding="async">
 </figure>
 <span id="more"></span>
-<h2 id="一面">一面</h2>
+<h2 id="一面">一面<a class="section-link" href="#%E4%B8%80%E9%9D%A2" aria-label="本节链接：一面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>我自介绍。</p>
-<h3 id="算法题">算法题</h3>
+<h3 id="算法题">算法题<a class="section-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98" aria-label="本节链接：算法题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>先给暴力解，再优化。</p>
 <blockquote>
 <p>题目：数组代表股票每天价格，每天只允许买或者卖一次，也可以不买卖，需要先买入才能卖出，在只交易一次（即只买和卖一次）的情况下求最大收益。<br>
@@ -357,7 +372,7 @@
 输出： 5</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solution</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// time: N ^ 2</span></span><br><span class="line">    <span class="comment">// space: 1</span></span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> buy = <span class="number">0</span>; buy &lt; prices.<span class="built_in">size</span>(); ++buy) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> sell = buy + <span class="number">1</span>; sell &lt; prices.<span class="built_in">size</span>(); ++sell) &#123;</span><br><span class="line">            <span class="type">int</span> profit = prices[sell] - prices[buy];</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, profit);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solution2</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// time: O(N)</span></span><br><span class="line">    <span class="comment">// space: 1</span></span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (prices.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> minPrices = prices[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> sell = <span class="number">1</span>; sell &lt; prices.<span class="built_in">size</span>(); ++sell) &#123;</span><br><span class="line">        <span class="type">int</span> profit = prices[sell] - minPrices;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, profit);</span><br><span class="line">        minPrices = <span class="built_in">min</span>(minPrices, prices[sell]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//int a;</span></span><br><span class="line">    <span class="comment">//cin &gt;&gt; a;</span></span><br><span class="line">    <span class="comment">//cout &lt;&lt; a &lt;&lt; endl;</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; prices = &#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">solution2</span>(prices) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="计算机基础">计算机基础</h3>
+<h3 id="计算机基础">计算机基础<a class="section-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80" aria-label="本节链接：计算机基础"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <h4 id="操作系统">操作系统</h4>
 <p>IPC 种类<br>
 信号量</p>
@@ -382,7 +397,7 @@
 <figure class="editorial-illustration">
   <img src="/images/ai/Bytedance-new-graduate-interview/zh-review-plan.webp" alt="Forest 把散落的系统、网络、数据库和语言基础卡片整理成一条通往下一次面试的三段复习桥" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h3 id="总结">总结</h3>
+<h3 id="总结">总结<a class="section-link" href="#%E6%80%BB%E7%BB%93" aria-label="本节链接：总结"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>昨天约了今天的面试，失误呀。太过仓促。本来秋招提前批是很重要的，计算机基础知识就是题库里的那些题，花3天时间背背还是有必要的。要不靠着本科时学的知识，回答不会太好，会很伤。</p>
 <p>好多同学问题库在哪里。我也是在网上找的，<a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes">https://github.com/CyC2018/CS-Notes</a><br>
 感觉还是挺全的. 已经在背了。</p>

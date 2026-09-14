@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -350,12 +365,12 @@
 时间复杂度：O(max(N, M)), 其中N, M分别表示A，K的长度。<br>
 空间复杂度：O(M-N), 即deque所用的空间。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">addToArrayForm</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, <span class="type">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = A.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (K &gt; <span class="number">0</span> &amp;&amp; index &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="type">int</span> last_digit = K % <span class="number">10</span>;</span><br><span class="line">            K /= <span class="number">10</span>;</span><br><span class="line">            A[index] += last_digit;</span><br><span class="line">            <span class="type">int</span> carry = A[index] / <span class="number">10</span>;</span><br><span class="line">            K += carry;</span><br><span class="line">            A[index] %= <span class="number">10</span>;</span><br><span class="line">            index--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        deque&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">while</span> (K &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result.<span class="built_in">push_front</span>(K % <span class="number">10</span>);</span><br><span class="line">            K /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        A.<span class="built_in">insert</span>(A.<span class="built_in">begin</span>(), result.<span class="built_in">begin</span>(), result.<span class="built_in">end</span>());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="990-Satisfiability-of-Equality-Equations">990. Satisfiability of Equality Equations</h2>
+<h2 id="990-Satisfiability-of-Equality-Equations">990. Satisfiability of Equality Equations<a class="section-link" href="#990-Satisfiability-of-Equality-Equations" aria-label="本节链接：990. Satisfiability of Equality Equations"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>思路：使用并查集存储相等的关系，再遍历所有的不等关系是否在不同的集之间。</p>
 <p>时间复杂度：O(N),<br>
 空间复杂度：O（N）。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    array&lt;<span class="type">char</span>, 26&gt; parents;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">union_variables</span><span class="params">(<span class="type">char</span> a, <span class="type">char</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="type">char</span> a_parent = <span class="built_in">find_root</span>(a);</span><br><span class="line">        <span class="type">char</span> b_parent = <span class="built_in">find_root</span>(b);</span><br><span class="line">        parents[a_parent - <span class="string">&#x27;a&#x27;</span>] = b_parent;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">char</span> <span class="title">find_root</span><span class="params">(<span class="type">char</span> a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (parents[a - <span class="string">&#x27;a&#x27;</span>] != a)</span><br><span class="line">            a = parents[a - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Solution</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">            parents[i] = <span class="string">&#x27;a&#x27;</span> + i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">equationsPossible</span><span class="params">(vector&lt;string&gt;&amp; equations)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">const</span> string &amp; s : equations) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[<span class="number">1</span>] == <span class="string">&#x27;=&#x27;</span>) &#123;</span><br><span class="line">                union_variables(s[<span class="number">0</span>], s[<span class="number">3</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">const</span> string &amp; s : equations) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[<span class="number">1</span>] == <span class="string">&#x27;!&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">find_root</span>(s[<span class="number">0</span>]) == <span class="built_in">find_root</span>(s[<span class="number">3</span>]))</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="991-Broken-Calculator">991. Broken Calculator</h2>
+<h2 id="991-Broken-Calculator">991. Broken Calculator<a class="section-link" href="#991-Broken-Calculator" aria-label="本节链接：991. Broken Calculator"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>思路：一旦X大于Y，就只能通过减一的操作来达到Y。<br>
 如果X小于Y，则可以DOUBLE，也可以Decrement。<br>
 这时候如何选择呢？可以发现Double, Decrement, Decrement 和 Decrement, Double得到的结果相同。<br>
@@ -365,7 +380,7 @@
 <p>时间复杂度：O(log Y);<br>
 空间复杂度：O(log Y)，因为递归。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">brokenCalc</span><span class="params">(<span class="type">int</span> X, <span class="type">int</span> Y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (X == Y) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (X &gt; Y) <span class="keyword">return</span> X - Y;</span><br><span class="line">        <span class="keyword">if</span> (Y % <span class="number">2</span> == <span class="number">1</span>) <span class="keyword">return</span> <span class="built_in">brokenCalc</span>(X, Y + <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">brokenCalc</span>(X, Y / <span class="number">2</span>) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="992-Subarrays-with-K-Different-Integers">992. Subarrays with K Different Integers</h2>
+<h2 id="992-Subarrays-with-K-Different-Integers">992. Subarrays with K Different Integers<a class="section-link" href="#992-Subarrays-with-K-Different-Integers" aria-label="本节链接：992. Subarrays with K Different Integers"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>最后留给最后一道题的时间是40min，争取把这道Hard题目解决。</p>
 <p>思路：根据问题的时间复杂度O(n ^ 2)（我们至少需要遍历一遍所有的subarray）可知，解法的时间复杂度至少为O(n^2)。<br>
 用2层循环遍历所有的subarray, 如何快速地求出每个subarray的distinct number呢。<br>
@@ -386,7 +401,7 @@ new(A[i]), if i == j.<br>
 所以，对于每个右边界j，符合条件的subarray 的左边界在一定范围内，可以写作[left1, left2].</p>
 <p>其次，我们增长右边界，如果distinct number的数量超过K了，我们需要增长left1, left2。也即left1, left2是随着右边界单调递增的。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Window</span> &#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hashmap;</span><br><span class="line">        <span class="type">int</span> size = <span class="number">0</span>;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">            hashmap[value]++;</span><br><span class="line">            <span class="keyword">if</span> (hashmap[value] == <span class="number">1</span>) &#123;</span><br><span class="line">                size++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">            hashmap[value]--;</span><br><span class="line">            <span class="keyword">if</span> (hashmap[value] == <span class="number">0</span>) &#123;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">subarraysWithKDistinct</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, <span class="type">int</span> K)</span> </span>&#123;</span><br><span class="line">        Window w1, w2;</span><br><span class="line">        <span class="type">int</span> left1 = <span class="number">0</span>, left2 = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (right &lt; A.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="type">int</span> value = A[right];</span><br><span class="line">            </span><br><span class="line">            w1.<span class="built_in">add</span>(value);</span><br><span class="line">            w2.<span class="built_in">add</span>(value);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (w1.size &gt; K) &#123;</span><br><span class="line">                w1.<span class="built_in">remove</span>(A[left1++]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (w2.size &gt;= K) &#123;</span><br><span class="line">                w2.<span class="built_in">remove</span>(A[left2++]);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            result += left2 - left1;</span><br><span class="line">            right++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>今天是在家里呆的最后3天，果然寒假回家都虚度光阴了。还是呆在北京学校里，和志同道合的同学在一起，学习的劲头更高。竞争的压力也更大，怪不得大家都向往更好的环境，更优秀的朋友。</p>
 <!-- 下学期开始，就要去商汤实习了。好好把握这样的机会吧。 -->
 <p>加油，Forest！</p>

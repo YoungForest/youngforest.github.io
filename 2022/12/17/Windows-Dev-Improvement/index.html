@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -338,15 +353,15 @@
         <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%BC%95%E8%A8%80"><span class="mobile-toc-list-text">引言</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Clink"><span class="mobile-toc-list-text">Clink</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE-Clink"><span class="mobile-toc-list-text">如何安装和设置 Clink</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#Clink-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="mobile-toc-list-text">Clink 使用示例</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#PowerShell"><span class="mobile-toc-list-text">PowerShell</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE-PowerShell"><span class="mobile-toc-list-text">如何安装和设置 PowerShell</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E4%BD%BF%E7%94%A8-PowerShell-%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A4%BA%E4%BE%8B"><span class="mobile-toc-list-text">使用 PowerShell 管理系统的示例</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Winget"><span class="mobile-toc-list-text">Winget</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#Winget-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="mobile-toc-list-text">Winget 使用示例</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Oh-My-Posh"><span class="mobile-toc-list-text">Oh My Posh</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Autojump"><span class="mobile-toc-list-text">Autojump</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%AE%89%E8%A3%85-Autojump"><span class="mobile-toc-list-text">安装 Autojump</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E4%BD%BF%E7%94%A8-Autojump"><span class="mobile-toc-list-text">使用 Autojump</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Z-lua%EF%BC%9A%E6%9B%B4%E5%BF%AB%E7%9A%84-Autojump-%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="mobile-toc-list-text">Z.lua：更快的 Autojump 替代方案</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%80%BB%E7%BB%93"><span class="mobile-toc-list-text">总结</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="mobile-toc-list-text">参考资料</span></a></li></ol></nav>
       </details>
     
-    <div class="post-body" itemprop="articleBody"><h2 id="引言">引言</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="引言">引言<a class="section-link" href="#%E5%BC%95%E8%A8%80" aria-label="本节链接：引言"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>作为一名曾经的 Mac 用户，刚转到 Windows 11 时，我遇到了不少挑战。我很怀念 macOS 的易用与便利，也一度难以适应不同的开发环境。不过，经过一番探索，我找到了一些工具和技巧，让自己在 Windows 上的开发体验得到了改善。总有人需要把 Windows 当作开发机，比如微软员工。这篇文章会分享我的经验，并提供一些提示和资源，重点介绍如何改进 Shell 环境。</p>
 <figure class="editorial-illustration editorial-illustration--hero">
   <img src="/images/ai/Windows-Dev-Improvement/zh-hero.webp" alt="杂乱线缆与抽屉穿过窗形拱门，变成由卡片、包裹、灯光和指南针组成的整洁工具工坊" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="Clink">Clink</h2>
+<h2 id="Clink">Clink<a class="section-link" href="#Clink" aria-label="本节链接：Clink"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Clink 是一款增强 Windows 命令提示符功能的强大工具。它提供了多项功能，可以让你在使用命令行时更高效。</p>
-<h3 id="如何安装和设置-Clink">如何安装和设置 Clink</h3>
+<h3 id="如何安装和设置-Clink">如何安装和设置 Clink<a class="section-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE-Clink" aria-label="本节链接：如何安装和设置 Clink"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <ol>
 <li>从<a target="_blank" rel="noopener" href="https://mridgers.github.io/clink/">官方网站</a>下载 Clink 安装程序。</li>
 <li>运行安装程序，并按照屏幕上的说明将 Clink 安装到系统中。</li>
@@ -362,7 +377,7 @@
 <li>把颜色代码改成想要的值。例如，要把目录列表的前景色改为黄色，可以设置 <code>ls+di=33;1</code>。</li>
 </ol>
 <p>关于自定义 Clink 的更多信息，可以查看<a target="_blank" rel="noopener" href="https://mridgers.github.io/clink/">官方文档</a>。</p>
-<h3 id="Clink-使用示例">Clink 使用示例</h3>
+<h3 id="Clink-使用示例">Clink 使用示例<a class="section-link" href="#Clink-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B" aria-label="本节链接：Clink 使用示例"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>Clink 提供了许多实用功能，可以改善 Windows 命令行体验。</p>
 <h4 id="1-Tab-补全">1. Tab 补全</h4>
 <p>Clink 支持命令、选项和文件路径的 Tab 补全。只需输入命令或文件路径的前几个字符，然后按 <code>Tab</code> 键即可补全。如果有多个匹配项，可以反复按 <code>Tab</code> 在它们之间切换。</p>
@@ -401,9 +416,9 @@
 <li><code>taskkill</code>：根据 PID 或映像名称终止进程。例如，可以用 <code>taskkill /im notepad.exe</code> 终止映像名为 <code>notepad.exe</code> 的进程。</li>
 </ul>
 <p>利用 Clink 的功能和别名，可以更轻松、更快速地浏览目录、复制或移动文件，以及管理进程。总体而言，Clink 能显著改善 Windows 命令行体验。根据自己的需求使用并定制这些功能，可以让工作更高效。</p>
-<h2 id="PowerShell">PowerShell</h2>
+<h2 id="PowerShell">PowerShell<a class="section-link" href="#PowerShell" aria-label="本节链接：PowerShell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>PowerShell 是 Windows 上更先进的命令行界面，提供了广泛的功能，可以帮助你更高效地完成复杂任务。</p>
-<h3 id="如何安装和设置-PowerShell">如何安装和设置 PowerShell</h3>
+<h3 id="如何安装和设置-PowerShell">如何安装和设置 PowerShell<a class="section-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE-PowerShell" aria-label="本节链接：如何安装和设置 PowerShell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>PowerShell 比传统的命令提示符更强大、更灵活。可以按以下步骤安装和设置：</p>
 <ol>
 <li>检查 Windows 版本：Windows 7 SP1 及更高版本已包含 PowerShell。更早的系统需要安装 PowerShell Core。</li>
@@ -413,7 +428,7 @@
 <li>安装模块：PowerShell 拥有大量模块，可以扩展功能。使用 <code>Install-Module</code> 命令即可安装模块。例如，可以使用 <code>Install-Module -Name Az -AllowClobber</code> 安装 Azure PowerShell 模块。</li>
 </ol>
 <p>安装并定制 PowerShell 后，你就能在 Windows 上获得更强大、更灵活的命令行环境。</p>
-<h3 id="使用-PowerShell-管理系统的示例">使用 PowerShell 管理系统的示例</h3>
+<h3 id="使用-PowerShell-管理系统的示例">使用 PowerShell 管理系统的示例<a class="section-link" href="#%E4%BD%BF%E7%94%A8-PowerShell-%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A4%BA%E4%BE%8B" aria-label="本节链接：使用 PowerShell 管理系统的示例"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>PowerShell 是管理 Windows 系统的强大工具，下面是几个例子。</p>
 <h4 id="管理-Windows-服务">管理 Windows 服务</h4>
 <p>PowerShell 可以管理 Windows 服务。例如，可以用以下命令启动 Print Spooler 服务：</p>
@@ -429,9 +444,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-Volume | Get-Partition | Get-Disk | Repair-Volume -SpotFix</span><br></pre></td></tr></table></figure>
 <p>该命令会检查所有卷、分区和磁盘是否存在错误，并尝试修复。</p>
 <p>这些只是 PowerShell 管理和维护 Windows 系统的几个例子，它能够完成的事情远不止这些。</p>
-<h2 id="Winget">Winget</h2>
+<h2 id="Winget">Winget<a class="section-link" href="#Winget" aria-label="本节链接：Winget"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">Winget</a> 是 Windows 的包管理器，可以从命令行轻松安装、管理和更新应用。它类似于 macOS 上的 Homebrew 或 Ubuntu 上的 apt，为管理 Windows 软件提供了简单、方便的方式。使用 Winget 可以快速安装和更新应用，不必手动搜索和下载安装文件，对开发者和高级用户非常实用。</p>
-<h3 id="Winget-使用示例">Winget 使用示例</h3>
+<h3 id="Winget-使用示例">Winget 使用示例<a class="section-link" href="#Winget-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B" aria-label="本节链接：Winget 使用示例"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <h4 id="安装应用">安装应用</h4>
 <p>输入以下命令即可安装应用：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install &lt;application&gt;</span><br></pre></td></tr></table></figure>
@@ -451,18 +466,18 @@
 <p>例如，卸载 Visual Studio Code：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget uninstall Microsoft.VisualStudioCode</span><br></pre></td></tr></table></figure>
 <p>以上只是使用 Winget 安装和管理 Windows 应用的几个例子。借助 Winget，可以轻松从命令行安装和更新应用，对开发者和高级用户都很有价值。</p>
-<h2 id="Oh-My-Posh">Oh My Posh</h2>
+<h2 id="Oh-My-Posh">Oh My Posh<a class="section-link" href="#Oh-My-Posh" aria-label="本节链接：Oh My Posh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Oh My Posh 是一款用于定制 PowerShell 提示符的工具。它允许你创建自定义主题，让命令行界面更美观，也更易用。</p>
 <p><a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/installation/windows">Windows 安装说明</a></p>
-<h2 id="Autojump">Autojump</h2>
+<h2 id="Autojump">Autojump<a class="section-link" href="#Autojump" aria-label="本节链接：Autojump"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p><a target="_blank" rel="noopener" href="https://github.com/wting/autojump">Autojump</a> 可以帮助你更高效地浏览文件系统。它会记住你访问过的目录，让你通过简短命令快速跳回这些位置。</p>
-<h3 id="安装-Autojump">安装 Autojump</h3>
+<h3 id="安装-Autojump">安装 Autojump<a class="section-link" href="#%E5%AE%89%E8%A3%85-Autojump" aria-label="本节链接：安装 Autojump"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>以管理员身份打开 PowerShell 终端，然后运行：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install autojump</span><br></pre></td></tr></table></figure>
 <p>运行以下命令可以找到 PowerShell 配置文件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$PROFILE</span><br></pre></td></tr></table></figure>
 <p>重新启动 PowerShell 终端以应用更改。</p>
-<h3 id="使用-Autojump">使用 Autojump</h3>
+<h3 id="使用-Autojump">使用 Autojump<a class="section-link" href="#%E4%BD%BF%E7%94%A8-Autojump" aria-label="本节链接：使用 Autojump"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>Autojump 会记住你访问过的目录，并提供快捷方式，让文件系统导航更高效。</p>
 <h4 id="跳转到目录">跳转到目录</h4>
 <p>要跳转到之前访问过的目录，只需输入 <code>j</code>，后面跟目录名中具有辨识度的一部分。例如：</p>
@@ -473,13 +488,13 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">j --stat</span><br></pre></td></tr></table></figure>
 <p>它会显示目录列表，以及每个目录被访问的次数。</p>
 <p>借助 Autojump，你可以更高效、更快速地浏览文件系统，让 Windows 开发体验更顺畅。</p>
-<h2 id="Z-lua：更快的-Autojump-替代方案">Z.lua：更快的 Autojump 替代方案</h2>
+<h2 id="Z-lua：更快的-Autojump-替代方案">Z.lua：更快的 Autojump 替代方案<a class="section-link" href="#Z-lua%EF%BC%9A%E6%9B%B4%E5%BF%AB%E7%9A%84-Autojump-%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88" aria-label="本节链接：Z.lua：更快的 Autojump 替代方案"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p><a target="_blank" rel="noopener" href="https://github.com/skywind3000/z.lua">z.lua</a> 是一个更快的 Autojump 替代方案。它使用纯 Lua 编写，没有外部依赖，速度也比 Autojump 更快。我在 Windows 和 PowerShell 上更常用它。</p>
-<h2 id="总结">总结</h2>
+<h2 id="总结">总结<a class="section-link" href="#%E6%80%BB%E7%BB%93" aria-label="本节链接：总结"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>只要具备合适的工具并知道如何使用，Windows 也可以成为优秀的开发平台。本文介绍了多种改善 Windows 开发体验的工具，包括 Clink、PowerShell、Oh My Posh、Winget 和 Autojump。</p>
 <p>Clink 和 PowerShell 能带来不逊于其他平台的强大 Shell 体验；Oh My Posh 可以定制 PowerShell 提示符，让界面更美观；Winget 让安装和管理 Windows 软件更简单；Autojump 则提供了快速、高效的文件系统导航方式。</p>
 <p>使用这些工具和技巧，可以改善 Windows 开发体验并提高工作效率。经过合理配置，Windows 也能像其他平台一样强大、好用。</p>
-<h2 id="参考资料">参考资料</h2>
+<h2 id="参考资料">参考资料<a class="section-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" aria-label="本节链接：参考资料"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://mridgers.github.io/clink/">https://mridgers.github.io/clink/</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/wting/autojump">https://github.com/wting/autojump</a></li>

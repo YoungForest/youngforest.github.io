@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -338,21 +353,21 @@
         <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E9%97%AE%E9%A2%98"><span class="mobile-toc-list-text">问题</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7"><span class="mobile-toc-list-text">准备工具</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#shadowsocks"><span class="mobile-toc-list-text">shadowsocks</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#polipo"><span class="mobile-toc-list-text">polipo</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%B5%8B%E8%AF%95"><span class="mobile-toc-list-text">测试</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%9B%B4%E8%BF%9B%E4%B8%80%E6%AD%A5"><span class="mobile-toc-list-text">更进一步</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E4%B8%BAgit%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="mobile-toc-list-text">为git配置代理</span></a></li></ol></nav>
       </details>
     
-    <div class="post-body" itemprop="articleBody"><h2 id="问题">问题</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="问题">问题<a class="section-link" href="#%E9%97%AE%E9%A2%98" aria-label="本节链接：问题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>作为一名Linuxer，熟练使用终端是一项必备技能，但终端中有时下载安装功能速度很慢，令人崩溃.我自然而然想到了可否加个代理,提高速度。我之前一直用shadowsocks,浏览器使用switchyProxy,实现了初步的科学上网。那么,终端中是否有类似的工具呢？答案是肯定的。通过科学搜索，我成功解决了terminal中的科学上网问题，在此总结一下，希望可以帮到大家。</p>
 <figure class="editorial-illustration editorial-illustration--hero">
   <img src="/images/ai/terminal-proxy-configuration/zh-hero.webp" alt="拥堵码头上的数据包经过青绿色中继泵和琥珀色代理隧道，汇入畅通的远端网络轨道" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="准备工具">准备工具</h2>
+<h2 id="准备工具">准备工具<a class="section-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7" aria-label="本节链接：准备工具"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>shadowsocks, polipo</p>
-<h3 id="shadowsocks">shadowsocks</h3>
+<h3 id="shadowsocks">shadowsocks<a class="section-link" href="#shadowsocks" aria-label="本节链接：shadowsocks"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p><a target="_blank" rel="noopener" href="https://shadowsocks.org/en/download/clients.html">Download and Install Client</a></p>
 <h4 id="Install-Command-line-Client">Install Command-line Client</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install shadowsocks</span><br><span class="line">apt-get install shadowsocks-libev</span><br><span class="line">cpan Net::Shadowsocks</span><br></pre></td></tr></table></figure>
 <p>shadowsocks的配置可以参考<a target="_blank" rel="noopener" href="http://bblove.me/2015/03/09/use-ss/">这篇文章</a>, 我很久之前配置的,这里就不回忆了(忘得差不多了).</p>
 <p>让我们直接从polipo开始吧.</p>
-<h3 id="polipo">polipo</h3>
+<h3 id="polipo">polipo<a class="section-link" href="#polipo" aria-label="本节链接：polipo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>polipo有多种安装方式,可以使用Python的包管理工具pip直接安装,也可以用各个操作系统的包管理工具安装.我更推荐后者,因为个人认为这样更好管理罢了.这里以Ubuntu为例.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search polipo</span><br><span class="line"></span><br><span class="line">adzapper - proxy advertisement zapper add-on</span><br><span class="line">polipo - lightweight, caching web proxy</span><br><span class="line">polipo-dbg - debug package for polipo</span><br></pre></td></tr></table></figure>
 <p>第二个包就是给我们这些小白使用的,安装它</p>
@@ -368,7 +383,7 @@
 <p>可以用</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo polipo -v</span><br></pre></td></tr></table></figure>
 <p>查看具体各个配置项,可以看到我们之前的更改生效了.</p>
-<h2 id="测试">测试</h2>
+<h2 id="测试">测试<a class="section-link" href="#%E6%B5%8B%E8%AF%95" aria-label="本节链接：测试"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>配置完成后,怎么才知道自己是否已经可以科学上网了呢?<br>
 可以使用以下命令:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ curl -i http://ip.cn</span><br><span class="line">当前 IP：60.xxx.xxx.x 来自：中国北京北京 xxx/电信</span><br></pre></td></tr></table></figure>
@@ -383,9 +398,9 @@
 <li><a target="_blank" rel="noopener" href="https://duckduckgo.com/?q=ip">DuckDuckGo</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.wolframalpha.com/input/?i=what+is+my+ip+address">Wolframalpha</a>, 推荐</li>
 </ul>
-<h2 id="更进一步">更进一步</h2>
+<h2 id="更进一步">更进一步<a class="section-link" href="#%E6%9B%B4%E8%BF%9B%E4%B8%80%E6%AD%A5" aria-label="本节链接：更进一步"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>每次都打这么长的命令<code>http_proxy=http://localhost:8123</code>着实不是我们想要的,为了方便使用,可以在终端键入<code>export http_proxy=http://localhost:8123</code>,表示对该终端所有命令生效;或者更进一步,在.bashrc中加入<code>export http_proxy=http://localhost:8123</code>,每次启动终端时自动执行.如果不想要每次都走代理,可以像我一样,在.bashrc中加入<code>alias hp=&quot;http_proxy=http://localhost:8123&quot;</code>,每次需要代理时,只需要在命令前面加<code>hp </code>就好了.</p>
-<h2 id="为git配置代理">为git配置代理</h2>
+<h2 id="为git配置代理">为git配置代理<a class="section-link" href="#%E4%B8%BAgit%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86" aria-label="本节链接：为git配置代理"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>git clone的速度很是感人, 只有几十k, 为git配置代理也是很简单的.</p>
 <p>Add the following setting to the http items of .gitconfig files.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[http]</span><br><span class="line">proxy = &lt;address of the proxy server&gt;:&lt;port of the proxy server&gt;</span><br></pre></td></tr></table></figure>

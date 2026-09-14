@@ -71,8 +71,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -107,66 +109,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -361,7 +376,7 @@
   <img src="/images/ai/Paris/zh-hero.webp" alt="Forest 和三位同伴沿一条由廉价大巴、博物馆拱廊、塞纳河弯道与夜间铁塔串起的三日巴黎路线前进" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="第一天">第一天</h2>
+<h2 id="第一天">第一天<a class="section-link" href="#%E7%AC%AC%E4%B8%80%E5%A4%A9" aria-label="本节链接：第一天"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>周五一大早，我们先乘火车到达Bruxell Nord站，转乘FlixBus直达巴黎。之所以坐大巴去，主要还是因为穷。最快的方式是 大力神火车，但需要99欧。大巴只需要15欧，缺点就是舒适性不足、速度慢。到达巴黎已经是下午1点半了。我们先买了巴黎公共交通的3天旅行通票，1-3Zone的。巴黎的行政区域划分为很多区，但交通系统分为5区，类似北京的二环、三环、四环、5环。买票可以选3区或5区。3区基本上可以满足大多数旅行需求，除了西北的莫奈花园和西南的凡尔赛宫。<br>
 我们没有选择直接去青旅放行李，而是一鼓作气开始了市区的旅行。依次参观了巴黎圣母院、先贤祠，晚上吃了正宗的法餐，放了行李后又游览了凯旋门和埃菲尔铁塔。</p>
 <p>巴黎圣母院由于被烧毁还在修复，所以无法参观。我们仅在远处瞻仰了这座巴黎最有名的教堂。巴黎圣母院可以算是巴黎的地标，因为雨果的作品而名扬天下。即时被毁了，仍然是游客留念的必经之地。我们在被巴黎圣母院前合了影。从侧面可以看到正在修复的工程，之前从新闻上还不了解真正的损坏程度，近距离看的时候才发现，真的是毁了大半。修复工作需要持续数年，但愿之后我还有机会再次来到此地。</p>
@@ -382,7 +397,7 @@
 虽然铁塔景区和战神广场参观免费，但登顶的电梯票必须买，好在我们还年轻，只需要12.7欧每人。<br>
 铁塔上的观光区共分为second floor和TOP，其中TOP是真正意义上的塔顶，而second floor是底座的顶端。在塔顶，我们可以眺望整个城市。巴黎夜景尽收眼底，我脑中的多巴胺也不断分泌。来此求婚、拍婚纱照、羞羞的人也络绎不绝，我们竟然都遇到了。唯一要注意的是，塔上风很大，晚上多穿点。我们已经被吹成傻x了。</p>
 <p><img src="/images/paris/tieta.jpg" alt="我和铁塔" data-responsive-photo="paris-06" width="4000" height="3000" srcset="/images/responsive/paris-06-e926e4586da9-480.webp 480w, /images/responsive/paris-06-e926e4586da9-960.webp 960w, /images/responsive/paris-06-e926e4586da9-1600.webp 1600w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 991px) calc(100vw - 80px), 800px" loading="lazy" decoding="async"><span class="photo-original"><a href="/images/paris/tieta.jpg" aria-label="查看原图 · 我和铁塔">查看原图</a></span></p>
-<h2 id="第二天">第二天</h2>
+<h2 id="第二天">第二天<a class="section-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9" aria-label="本节链接：第二天"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>今天的日程以步行为主。<br>
 我们先后参观了卢浮宫、协和广场、香榭丽舍大街，并在塞纳河上做了游船。</p>
 <p>卢浮宫 是世界三大博物馆之首，也是世界上每年参观人数最多的博物馆。其余2个分别是 纽约的大都会博物馆，伦敦的大英博物馆。都是殖民和掠夺世界的列强，在他们的博物馆内可以看到整个世界的珍宝，其中也不乏从中国抢的宝物。16年时有幸去过大英博物馆，算上卢浮宫，我也算是打卡2/3了。希望以后有机会去纽约玩。<br>
@@ -397,7 +412,7 @@
 <p>在大街上短暂休息后，我们步行前往塞纳河岸码头乘坐游船。<br>
 塞纳河因周杰伦的《告白气球》而名扬中华，我可以在塞纳河上乘坐游船，真是太棒了。巴黎城最早就是沿着塞纳河发展起来的，所以大多数历史古迹和地标建筑都位于河的两岸。由于太累了，我一上船就睡着了，直到快结束才醒来。14欧的船票大约睡了10欧的，也算是超值不菲的一觉。好在没有错过最后的埃菲尔铁塔，白天的埃菲尔铁塔有别样的壮美。完美体现了法国在第二次工业革命后的钢铁产能之大。在河中看岸边的铁塔，让我想起了红警中苏军磁化埃菲尔铁塔的任务。游戏设计者真是匠心独具，将这一著名铁塔和磁暴线圈结合起来。</p>
 <p><img src="/images/paris/cibaoxianquan.jpg" alt="白天的铁塔" data-responsive-photo="paris-12" width="3000" height="4000" srcset="/images/responsive/paris-12-1bafb15bd07f-480.webp 480w, /images/responsive/paris-12-1bafb15bd07f-960.webp 960w, /images/responsive/paris-12-1bafb15bd07f-1600.webp 1600w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 991px) calc(100vw - 80px), 800px" loading="lazy" decoding="async"><span class="photo-original"><a href="/images/paris/cibaoxianquan.jpg" aria-label="查看原图 · 白天的铁塔">查看原图</a></span></p>
-<h2 id="第三天-凡尔赛宫">第三天 凡尔赛宫</h2>
+<h2 id="第三天-凡尔赛宫">第三天 凡尔赛宫<a class="section-link" href="#%E7%AC%AC%E4%B8%89%E5%A4%A9-%E5%87%A1%E5%B0%94%E8%B5%9B%E5%AE%AB" aria-label="本节链接：第三天 凡尔赛宫"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>凡尔赛宫 是今天的绝对主题，也不辜负我们花一整天时间在它上面。由于之前的通票买的是3圈内的，无法去5圈的凡尔赛宫，我们早上又买了去凡尔赛宫的return tickets. 去凡尔赛的交通十分方便，地铁可以直达。事实上，步行从巴黎市中心来此也只需要4小时。法国大革命爆发时，正是来自巴黎的愤怒的市民将凡尔赛宫包围，将当时的国王路易十六挟持至巴黎，结束了凡尔赛宫作为王宫和王权象征的历史。我很喜欢的一首歌Viva La Vida即是以第一人称的口吻描述路易十六的遭遇。路易十六和玛丽皇后也因叛国罪被国民议会在断头台铡死。</p>
 <p>来此之后发现参观人数众多，光在入口排队就排了一个多小时。不出所料，我们还是免费进。</p>
 <p>著名的镜厅。历史书上的 德意志第一帝国成立，凡尔赛条约签订 均是在这里发生的。</p>
@@ -405,7 +420,7 @@
 <p>路易十四在位50余年，代表着王权的巅峰。凡尔赛宫也是在他任内完成，并成为国王的王宫和王权象征。宫内也随处可见他的画像和雕塑。历史上的他也是十分自恋的一个人，和乾隆爷有一拼。</p>
 <p><img src="/images/paris/%E8%B7%AF%E6%98%93%E5%8D%81%E5%9B%9B.jpg" alt="我和路易十四" data-responsive-photo="paris-14" width="3000" height="4000" srcset="/images/responsive/paris-14-d40b0b636925-480.webp 480w, /images/responsive/paris-14-d40b0b636925-960.webp 960w, /images/responsive/paris-14-d40b0b636925-1600.webp 1600w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 991px) calc(100vw - 80px), 800px" loading="lazy" decoding="async"><span class="photo-original"><a href="/images/paris/%E8%B7%AF%E6%98%93%E5%8D%81%E5%9B%9B.jpg" aria-label="查看原图 · 我和路易十四">查看原图</a></span></p>
 <p><img src="/images/paris/third-duck.jpg" alt="第三顿法餐" data-responsive-photo="paris-15" width="4000" height="3000" srcset="/images/responsive/paris-15-d9f93892bea4-480.webp 480w, /images/responsive/paris-15-d9f93892bea4-960.webp 960w, /images/responsive/paris-15-d9f93892bea4-1600.webp 1600w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 991px) calc(100vw - 80px), 800px" loading="lazy" decoding="async"><span class="photo-original"><a href="/images/paris/third-duck.jpg" aria-label="查看原图 · 第三顿法餐">查看原图</a></span></p>
-<h2 id="第四天">第四天</h2>
+<h2 id="第四天">第四天<a class="section-link" href="#%E7%AC%AC%E5%9B%9B%E5%A4%A9" aria-label="本节链接：第四天"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>因为wyd同学下午有课，我们选择了周一上午返回列日。清晨从青旅check out，由于3天通票已经过期，我们买了单程的去FlixBus的Bercy station的票。之后乘坐Bus回到Bruxell，在Nord站内的KFC打发掉午餐，乘IC火车回到列日。</p>
 <p>从Bercy站出发的时候遇到一个小插曲：一名男子试图用身体阻止我们的车出站，好像是有什么诉求，咱也不敢问。车站的保安试图说服和驱逐他，双方用身体反复对抗。经历一些周折，我们才得以出站。<br>
 这里还是有很多不讲理的暴民在。我们要注意自己的安全，不要与之接触，必要的时候要寻求警方的帮助。如果是自己开车的话，千万不要开车门和窗户，把车门锁好，等待救援。</p>

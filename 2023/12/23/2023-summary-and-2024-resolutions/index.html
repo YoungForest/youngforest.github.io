@@ -58,8 +58,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -94,66 +96,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -366,9 +381,9 @@
 <figure class="editorial-illustration">
   <img src="/images/ai/2023-summary-and-2024-resolutions/zh-personal-review.webp" alt="Forest 从狭窄的办公室走向开阔的欧洲生活、旅行与独立思考空间" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="2023年个人回顾">2023年个人回顾</h2>
+<h2 id="2023年个人回顾">2023年个人回顾<a class="section-link" href="#2023%E5%B9%B4%E4%B8%AA%E4%BA%BA%E5%9B%9E%E9%A1%BE" aria-label="本节链接：2023年个人回顾"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>不同于前几年，大概是三年大疫情的原因，感觉时光飞快，每年都很快过去了，分不清今夕是何夕。今年感觉时光还是稍慢的，大约是换了一个环境，而且工作相对轻松，有了更多的时间旅行和读书，增加了很多记忆和思考。而且今年，生活也发生了一些剧变，隐约感觉到，大概是未来几年的一个转折点，一个新的起点。</p>
-<h3 id="工作">工作</h3>
+<h3 id="工作">工作<a class="section-link" href="#%E5%B7%A5%E4%BD%9C" aria-label="本节链接：工作"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>今年西方和国内经济环境，其实都是充满了严峻考验的。<br>
 2022年西方疫情结束之后，消费反弹，再加上前些年量化宽松，放水太多，叠加俄乌战争，造成了严重的通胀高企。仅次于70年代，石油危机时期的高通胀了。通胀有多严重呢，就我来爱尔兰的这一年时间，在超市就感受到了10%的涨价或是减量。更不用提相比疫情前的价格了。<br>
 美国，欧洲，英国疯狂加息，到23年中，才停止。通胀是控制住了，但物价只是不会继续疯狂涨了，已经涨的不会降了。<br>
@@ -383,7 +398,7 @@
 更惨的是，因为科技厂裁员和在华外资撤退的原因，今年9月份，我之前的组几十个人整个被裁了，虽然有N+6的丰厚补偿包。这2年我的经历真是 塞翁失马焉知非福。</p>
 <p>国内经济以通缩为标志。但我们仍要<a target="_blank" rel="noopener" href="https://www.cssn.cn/jjx/202312/t20231226_5722894.shtml">唱响中国经济光明论</a>. (这句话中的辛酸和梗，也许只有2023年底的中国人才能理解。)<br>
 对近30年，国内的经济发展和问题，推荐一本 兰小欢老师的新书：<a target="_blank" rel="noopener" href="https://book.douban.com/subject/35546622/">置身事内 – 中国政府与经济发展</a>. 也可以听听之前“忽左忽右”的一期播客“269 陶然谈土地财政与经济增长的未来”。笔者也不敢展开讲讲。</p>
-<h3 id="感情">感情</h3>
+<h3 id="感情">感情<a class="section-link" href="#%E6%84%9F%E6%83%85" aria-label="本节链接：感情"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>本来很犹豫是否写这个篇章，因为毕竟要揭开伤疤回忆和复盘这些事情还是极其痛苦的。但是，我想，还是留下些文字，给这段3年的感情一个圆满的句号吧。<br>
 因为记忆都是被塑造的，所以也可以通过文字，留下美好的记忆，忘记痛苦。</p>
 <p>分手的原因主要有3点：</p>
@@ -403,7 +418,7 @@
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35353111/">《How to Not Die Alone 如何避免孤独终老》</a> 作为畅销书，英文版门槛不高，比较容易读下来。全书从多个方便讲找对象的道理和具体方法，虽然以美国为主要研究对象和经验，但对其他地方，尤其是欧洲也是适用的。真是相见恨晚，如果能早点看这本书（虽然是21年才出版的），可以走不少弯路，也能少浪费些青春和感情。我Romanticizer，Maximizer，Hesitater 其实都有一些。Overthink也比较明显。明显是 Avoidant attached，不是Anxeity. Hitcher而不是Ditcher。还有寻找长期伴侣需要关注的那些特质，我不能再继续恋爱脑和过于同情心了。</li>
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/31457479/">《Eight Dates 爱的八次约会》</a> 就像书的副标题说的那样，这本书是为了教会大家怎么“创造一生的亲密关系”，尤其是通过和伴侣的对话和交流，对关键主题进行深入探讨。不是讲怎么找到伴侣，更多的是，找到后怎么更好地去经营这么一段关系。</li>
 </ul>
-<h3 id="生活">生活</h3>
+<h3 id="生活">生活<a class="section-link" href="#%E7%94%9F%E6%B4%BB" aria-label="本节链接：生活"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>今年生活在爱尔兰，工作相比国内轻松很多，有不少业余时间。再加上恢复了单身，节省了更多的时间和精力。（当然，独行快，众行远。虽然一个人可以快速成长，但长期看，还是得找个伴侣的长相厮守的）因此：</p>
 <p>这一年读了很多书，大概快50本。可以参考<a target="_blank" rel="noopener" href="https://www.douban.com/people/youngforest/">我的豆瓣</a>。给每本书都写了短评，有些自己有很多思考的，还写了长的书评。<br>
 后来为了保护眼睛，专门买了个Kindle。不同于之前被吐槽的压泡面神器，我觉得kindle还是今年买的最值得一个物件。主要是我从小本身就有阅读的习惯，上学得时候在图书馆借书，上班后用电脑看电子书。再加上微软也是每年有500欧的报销额度，鼓励大家学习、提升自己的知识和身体、包括心理，电子书阅读器也在列。</p>
@@ -424,9 +439,9 @@
 <figure class="editorial-illustration">
   <img src="/images/ai/2023-summary-and-2024-resolutions/zh-good-life-2024.webp" alt="Forest 沿花园小径体验工作、运动、阅读与安定生活的不同切面" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="2024年美好生活的向往">2024年美好生活的向往</h2>
+<h2 id="2024年美好生活的向往">2024年美好生活的向往<a class="section-link" href="#2024%E5%B9%B4%E7%BE%8E%E5%A5%BD%E7%94%9F%E6%B4%BB%E7%9A%84%E5%90%91%E5%BE%80" aria-label="本节链接：2024年美好生活的向往"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>其实每年的新年愿望都差不多，无非是工作，身体，心理 和 学习。</p>
-<h3 id="脱亚入欧，以后还要脱欧入美">脱亚入欧，以后还要脱欧入美</h3>
+<h3 id="脱亚入欧，以后还要脱欧入美">脱亚入欧，以后还要脱欧入美<a class="section-link" href="#%E8%84%B1%E4%BA%9A%E5%85%A5%E6%AC%A7%EF%BC%8C%E4%BB%A5%E5%90%8E%E8%BF%98%E8%A6%81%E8%84%B1%E6%AC%A7%E5%85%A5%E7%BE%8E" aria-label="本节链接：脱亚入欧，以后还要脱欧入美"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>熟悉我的朋友，或者是看过我之前的年终总结和博客的网友们，可能也知道，我去年来欧洲最主要的原因是来陪读的。我去年来爱尔兰之前，从来没有想过要来爱尔兰，甚至没有考虑过这个国家。事实上，在爱尔兰认识了很多朋友后，惊奇地发现，爱尔兰就是这么一个默默无闻的神奇的小国家。都柏林外地人很多，但大家都是因为各种各样不同的奇怪原因，偶然间来到爱尔兰的。很少有人一开始，就把爱尔兰当作第一选择。比如 留学投递的学校，很多也是顺便投的爱尔兰，都是优先英国。我去年找工作也是，主要投的荷兰，顺便投的爱尔兰。大家之前对爱尔兰都不太了解，都是有了offer后，才开始深入了解的。我去年离家的时候，亲戚朋友们都不知道爱尔兰在哪，很多还以为还是英国的一部分呢。<br>
 或许，正是这种信息差，导致爱尔兰其实是一个价值洼地。这边留学和工作的机会很多，但知道的人不多，竞争也没那么激烈。大多数人，无论是打算定居，还是把爱尔兰当跳板，都是冲着这些很好的留学和工作的机会来的。</p>
 <p>想了解更多从国内润到爱尔兰的经验的话，可以参考我 <a href="https://youngforest.github.io/2022/12/09/Find-a-Europe-SDE-job-from-China/">之前的博客: 从北京到都柏林 一名程序员的润欧之旅</a> 和 <a target="_blank" rel="noopener" href="https://youtu.be/W_AltNnX4fw">播客</a> (国内的朋友也可以在<a target="_blank" rel="noopener" href="https://www.xiaoyuzhoufm.com/episode/6558ee9451ba721857f6eb45?s=eyJ1IjogIjY0YTQ3OWQwZWRjZTY3MTA0YWYzNWJhMyJ9">小宇宙上听</a>)</p>
@@ -467,19 +482,19 @@
 <p>买股票需要开通券商账户（Broker），欧洲的朋友推荐 <a target="_blank" rel="noopener" href="https://ref.trade.re/z0xs4rc3">Trade Republic</a>，欧元买卖。现金也有4%的利息，比放在银行好。而且是放在德国的Citibank，有10万欧元的存款保险。另外一个更强大，功能更多，股票市场更多，全球大多数国家都能用的推荐是 <a target="_blank" rel="noopener" href="https://ibkr.com/referral/sen697">IBKR</a>，也是大多高手的选择, 但它操作门槛稍高，特别适合进阶用户。我基本只买大盘指数ETF （标普500 和 纳斯达克100）, 而且长期持有，也是 财务自由运动 FIRE (Finacial Independent, Retire Early) 的推荐。长期持有很考验心态，需要你对所投资的标的有信仰，才能在股市的波动中一直拿住，坚持定投。比如 投资美股大盘标普500，就要对美国有信仰；买Nasdaq 100，就要对科技有信仰。对财务自由感兴趣的朋友，可以参考<a target="_blank" rel="noopener" href="https://book.douban.com/subject/6920307/">《Early Retirement Extreme: A Philosophical and Practical Guide to Financial Independence》</a>.</p>
 <p>可以发现，无论是对美国，还是对人类文明，科学技术都是最重要的推动力。我们现在生活在工业文明，是何其幸运。生活质量如此之高。现在人类群星如此闪耀。现在就是历史上最好的时代，以后还会越来越好。如果信心不足，可以看看 茨威格 的<a target="_blank" rel="noopener" href="https://book.douban.com/subject/36096686/">《人类群星闪耀时》</a>。算是我“摸鱼理论”中的成功学书籍了。</p>
 <p>这种思维也和我过去27年的思想不同。因此，今年也是我摆脱“小镇做题家”身份和思维的元年。不再去无脑刷题，在有限的一亩三分地上精耕细作，去内卷了。而是发现更多更大的世界，摸鱼去学习，去提升自己，而不是努力工作。这样效率和结果反而更好。也就是用战略上的勤奋，来取代战术上的努力。也是可以不“努力”就取得成功的一条路。</p>
-<h3 id="工作-v2">工作</h3>
+<h3 id="工作-v2">工作<a class="section-link" href="#%E5%B7%A5%E4%BD%9C-v2" aria-label="本节链接：工作"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>结合上面的思考，长期大方向是不变的，先在爱尔兰苟着拿身份，再去美国发展。<br>
 因为美国身份风险比较高，失业的话，有不得不离开的可能。<br>
 L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。美国排绿卡是按照出生地排的，中国人现在要可能10年。<br>
 移民在外，身份是十分重要的，很多时候比赚钱更重要。而爱尔兰身份十分容易和友好，也挺强大的。因此可以当作一个不错的退路和托底。如果将来有了E-3签证，那更是可以十分方便地去美国工作了。</p>
 <p>明年，要么可以换回原来的组，回到rest &amp; vest的快乐生活。如果换不回去，等到9月份拿永居就直接换公司了。大家给犹太老板打工还是要当心，比华人还卷。</p>
 <p>另外，虽然之前也有耳闻，但今年接触更多的一个领域是“量化”，Quant Dev, 属于著名的高薪赛道。认识了其中不少优秀的同学，真是让人看着眼红呀。明年，会多了解些，看看自己有没有机会分一杯羹。</p>
-<h3 id="身体">身体</h3>
+<h3 id="身体">身体<a class="section-link" href="#%E8%BA%AB%E4%BD%93" aria-label="本节链接：身体"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>今年算是我的健身元年。以前在国内的时候，虽然办过健身卡，也尝试过健身，但因为时间和经历的原因，并没有坚持下去。今年从3月份开始，因为公司办公室有健身房和各种免费的课程，十分方便，总算养成了带薪健身的习惯。<br>
 身体确实好了很多，精力更旺盛了，心情也好了很多。各个肌群也有了轮廓，胸背，6块腹肌，臀腿。<br>
 其实回过头来看，我的很多习惯和技能成就，都是靠摸鱼达成的。有些理解 刘慈欣 了。</p>
 <p>习惯一旦养成，坚持下去就很容易了。新的一年，包括以后的人生，健身都是我的长期习惯了。关于习惯，推荐大家一本书，《Atomic Habits》, 从原理和方法出发，摒弃坏习惯，培养好习惯。我本身是ISFJ人格，J型属于比较有规划，有行动力的人。因此，对我来说，培养习惯反而不难，而且很适合我。</p>
-<h3 id="生活-v2">生活</h3>
+<h3 id="生活-v2">生活<a class="section-link" href="#%E7%94%9F%E6%B4%BB-v2" aria-label="本节链接：生活"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>既然已经决定了给爱尔兰一个机会，就要认真对待了。<br>
 今年买了一辆二手丰田卡罗拉，算是人生第一辆车了。</p>
 <p>明年</p>
@@ -488,7 +503,7 @@ L1B 与雇主绑定，没法跳槽。H1B需要抽签，有抽不中的风险。�
 <li>买个公寓。都柏林这边租房太贵了，租售比不错。自住或投资都划算。</li>
 <li>申请下来美签 B1/B2 旅游，去美国旅游看一看。上周去美国大使馆美签面试，不出意料地被check了（221g Administrative Processing），没有辜负母校的厚望（德才兼备，知行合一）。敏感学校+敏感专业。希望明年check能过，不过据说也只能最多给1年了。</li>
 </ul>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>生而为人，我很幸运。<br>
 希望大家都能在新的一年里，平平安安，健健康康，快快乐乐。实现自己的愿望和梦想。</p>
 <section class="legacy-comments" aria-labelledby="legacy-comments-title" aria-describedby="legacy-comments-note">

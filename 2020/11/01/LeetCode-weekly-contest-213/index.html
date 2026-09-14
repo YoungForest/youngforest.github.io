@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,24 +384,24 @@
 </tbody>
 </table>
 <p>周赛已经连续4周表现良好了，开心。群排名也稳定在了15名，终究还是无法进入前10.不过我已经满意了。</p>
-<h2 id="5554-Check-Array-Formation-Through-Concatenation">5554. Check Array Formation Through Concatenation</h2>
+<h2 id="5554-Check-Array-Formation-Through-Concatenation">5554. Check Array Formation Through Concatenation<a class="section-link" href="#5554-Check-Array-Formation-Through-Concatenation" aria-label="本节链接：5554. Check Array Formation Through Concatenation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。需要注意<code>arr</code>和<code>pieces</code>都是 distinct （互不相同）的。<br>
 所以，我们只需要记录pieces的开头元素对应的数组就可以了，直接找，然后匹配。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canFormArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; pieces)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; num2indexInPieces;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; pieces.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="type">const</span> <span class="keyword">auto</span>&amp; v = pieces[i];</span><br><span class="line">            num2indexInPieces[v[<span class="number">0</span>]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); ) &#123;</span><br><span class="line">            <span class="keyword">auto</span> it = num2indexInPieces.<span class="built_in">find</span>(arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (it == num2indexInPieces.<span class="built_in">end</span>()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> j = it-&gt;second;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> oldi = i;</span><br><span class="line">            <span class="keyword">for</span> (; i &lt; arr.<span class="built_in">size</span>() &amp;&amp; i - oldi &lt; pieces[j].<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[i] != pieces[j][i - oldi]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(arr.size() + pieces.size()),<br>
 空间复杂度: O(pieces.size()).</p>
-<h2 id="5555-Count-Sorted-Vowel-Strings">5555. Count Sorted Vowel Strings</h2>
+<h2 id="5555-Count-Sorted-Vowel-Strings">5555. Count Sorted Vowel Strings<a class="section-link" href="#5555-Count-Sorted-Vowel-Strings" aria-label="本节链接：5555. Count Sorted Vowel Strings"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>DP. 定义<code>dp(n, i)</code>为长度为n，开头是第i大的字母所对应的字符串的数量。<br>
 <code>dp(n, i) = sum(dp(n-1, j) for j in range(i, 0, -1))</code>.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">countVowelStrings</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"><span class="meta">        @lru_cache(<span class="params"><span class="literal">None</span></span>)</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">n, i</span>):</span><br><span class="line">            <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">sum</span>(dp(n-<span class="number">1</span>, j) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i, <span class="number">0</span>, -<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> dp(n, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(n * 5 * 5),<br>
 空间复杂度: O(n * 5).</p>
 <p>当然，评论区里还有<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-sorted-vowel-strings/solution/tong-ji-zi-dian-xu-yuan-yin-zi-fu-chuan-de-shu-mu-/">零神的O(1)解法</a>. tql，反正我是没看懂。</p>
-<h2 id="5556-Furthest-Building-You-Can-Reach">5556. Furthest Building You Can Reach</h2>
+<h2 id="5556-Furthest-Building-You-Can-Reach">5556. Furthest Building You Can Reach<a class="section-link" href="#5556-Furthest-Building-You-Can-Reach" aria-label="本节链接：5556. Furthest Building You Can Reach"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>贪心。尽量把梯子用到高度差最大的地方。<br>
 这里需要用<code>priority_queue</code>来维护之前最大的高度差。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">furthestBuilding</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; heights, <span class="type">int</span> bricks, <span class="type">int</span> ladders)</span> </span>&#123;</span><br><span class="line">        std::priority_queue&lt;<span class="type">int</span>, std::vector&lt;<span class="type">int</span>&gt;, std::greater&lt;<span class="type">int</span>&gt; &gt; q;</span><br><span class="line">        <span class="type">int</span> lasth = heights[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> i = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; heights.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (heights[i] &gt; lasth) &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> diff = heights[i] - lasth;</span><br><span class="line">                q.<span class="built_in">push</span>(diff);</span><br><span class="line">                <span class="keyword">if</span> (q.<span class="built_in">size</span>() &gt; ladders) &#123;</span><br><span class="line">                    <span class="type">int</span> t = q.<span class="built_in">top</span>();</span><br><span class="line">                    q.<span class="built_in">pop</span>();</span><br><span class="line">                    bricks -= t;</span><br><span class="line">                    <span class="keyword">if</span> (bricks &lt; <span class="number">0</span>) <span class="keyword">return</span> i - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            lasth = heights[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> heights.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="5600-Kth-Smallest-Instructions">5600. Kth Smallest Instructions</h2>
+<h2 id="5600-Kth-Smallest-Instructions">5600. Kth Smallest Instructions<a class="section-link" href="#5600-Kth-Smallest-Instructions" aria-label="本节链接：5600. Kth Smallest Instructions"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>上上周hulu面试刚问了一个找二叉搜索数中第k大的数的算法，而这又是我最早在《算法第4版》中看到的一个实现。在平时解题时，也经常用到需要这种带rank的数据结构。</p>
 <p>这道题和求rank的思路十分相似，都是维护一个子树的size，然后根据“左子树（向右走）”的size和rank的相对大小，选择走的决策。不同的是，本题中子树的size是总共可以走的路径的方案数，也就是一个组合数。</p>
 <p>本题中用到了零神用杨辉三角求组合数的方法，相比阶乘算法，可以支持取模。也防止了溢出。</p>

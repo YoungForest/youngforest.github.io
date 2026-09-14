@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,25 +384,25 @@
 </tr>
 </tbody>
 </table>
-<h2 id="1046-Last-Stone-Weight">1046. Last Stone Weight</h2>
+<h2 id="1046-Last-Stone-Weight">1046. Last Stone Weight<a class="section-link" href="#1046-Last-Stone-Weight" aria-label="本节链接：1046. Last Stone Weight"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition：<br>
 本题解法不难。我首先想到了最暴力的模拟整个smash的过程的解法。因为是签到题，暴力解也够了。<br>
 时间复杂度: O(n^2 log n)<br>
 空间复杂度: O(1)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lastStoneWeight</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 模拟smash</span></span><br><span class="line">        <span class="comment">// sort</span></span><br><span class="line">        <span class="comment">// pick two heaviest</span></span><br><span class="line">        <span class="comment">// smash</span></span><br><span class="line">        <span class="comment">// n^2 log n</span></span><br><span class="line">        <span class="keyword">while</span> (stones.<span class="built_in">size</span>() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">sort</span>(stones.<span class="built_in">begin</span>(), stones.<span class="built_in">end</span>());</span><br><span class="line">            <span class="type">int</span> n = stones.<span class="built_in">size</span>();</span><br><span class="line">            stones[n - <span class="number">2</span>] = stones[n - <span class="number">1</span>] - stones[n - <span class="number">2</span>];</span><br><span class="line">            stones.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stones[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>但事实上，同样是模拟smash的过程，找到最大的2个石头。我用的办法是sort，该操作的时间复杂度为<code>O(n log n)</code>. 大佬们就能想到优先队列(Priority Queue), 找石头的时间复杂度为<code>O(log n)</code>. 而且我的解法并没有专门处理<code>x == y</code>的情况，虽然不会出什么问题，但确实不符合模拟过程的初衷。</p>
-<h3 id="Priority-queue-版本">Priority queue 版本</h3>
+<h3 id="Priority-queue-版本">Priority queue 版本<a class="section-link" href="#Priority-queue-%E7%89%88%E6%9C%AC" aria-label="本节链接：Priority queue 版本"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>时间复杂度：O(N log N)<br>
 空间复杂度: O(1)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lastStoneWeight</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="function">priority_queue&lt;<span class="type">int</span>&gt; <span class="title">pq</span><span class="params">(stones.begin(), stones.end())</span></span>;</span><br><span class="line">        <span class="keyword">while</span> (pq.<span class="built_in">size</span>() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="type">int</span> y = pq.<span class="built_in">top</span>();</span><br><span class="line">            pq.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="type">int</span> x = pq.<span class="built_in">top</span>();</span><br><span class="line">            pq.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span> (y &gt; x)</span><br><span class="line">                pq.<span class="built_in">push</span>(y - x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pq.<span class="built_in">empty</span>() ? <span class="number">0</span> : pq.<span class="built_in">top</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1047-Remove-All-Adjacent-Duplicates-In-String">1047. Remove All Adjacent Duplicates In String</h2>
+<h2 id="1047-Remove-All-Adjacent-Duplicates-In-String">1047. Remove All Adjacent Duplicates In String<a class="section-link" href="#1047-Remove-All-Adjacent-Duplicates-In-String" aria-label="本节链接：1047. Remove All Adjacent Duplicates In String"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 用栈来保存之前的数，依次读取下一个数，视条件进行remove操作。<br>
 时间复杂度: <code>O(N)</code>,<br>
 空间复杂度: <code>O(N)</code>.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">removeDuplicates</span><span class="params">(string S)</span> </span>&#123;</span><br><span class="line">        stack&lt;<span class="type">char</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : S) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                s.<span class="built_in">push</span>(c);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">top</span>() == c) &#123;</span><br><span class="line">                s.<span class="built_in">pop</span>();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                s.<span class="built_in">push</span>(c);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        string ret;</span><br><span class="line">        <span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            ret.<span class="built_in">push_back</span>(s.<span class="built_in">top</span>());</span><br><span class="line">            s.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(ret.<span class="built_in">begin</span>(), ret.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>使用 stack 应该是该题的标准解法，大佬们也基本上都用的同样的方法。</p>
-<h2 id="1048-Longest-String-Chain">1048. Longest String Chain</h2>
+<h2 id="1048-Longest-String-Chain">1048. Longest String Chain<a class="section-link" href="#1048-Longest-String-Chain" aria-label="本节链接：1048. Longest String Chain"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 DP. 对于每个单词，遍历一遍比它短1的所有单词，更新成最大的dp+1。<br>
 时间复杂度: <code>O(N^2 * word.length)</code><br>
@@ -395,7 +410,7 @@ DP. 对于每个单词，遍历一遍比它短1的所有单词，更新成最大
 其中N为<code>words.length</code>.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isPredecessor</span><span class="params">(<span class="type">const</span> string&amp; last, <span class="type">const</span> string&amp; current)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (last.<span class="built_in">size</span>() + <span class="number">1</span> != current.<span class="built_in">size</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">int</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; last.<span class="built_in">size</span>();) &#123;</span><br><span class="line">            <span class="keyword">if</span> (last[i] == current[i + flag]) &#123;</span><br><span class="line">                ++i;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag == <span class="number">0</span>)</span><br><span class="line">                ++flag;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">longestStrChain</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;pair&lt;string, <span class="type">int</span>&gt;&gt;&gt; <span class="built_in">dp</span>(<span class="number">16</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; s : words) &#123;</span><br><span class="line">            dp[s.<span class="built_in">size</span>() - <span class="number">1</span>].<span class="built_in">push_back</span>(&#123;s, <span class="number">1</span>&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// for (const auto&amp; i : dp) &#123;</span></span><br><span class="line">        <span class="comment">//     for (const auto&amp; j : i) &#123;</span></span><br><span class="line">        <span class="comment">//         cout &lt;&lt; j.first &lt;&lt; &quot; &quot;;</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">//     cout &lt;&lt; endl;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="type">int</span> ret = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; <span class="number">16</span>; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> last_length = i - <span class="number">1</span>;</span><br><span class="line">            <span class="type">const</span> <span class="keyword">auto</span>&amp; last_dp = dp[last_length];</span><br><span class="line">            <span class="keyword">auto</span>&amp; current_dp = dp[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; current : current_dp) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; last : last_dp) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="built_in">isPredecessor</span>(last.first, current.first)) &#123;</span><br><span class="line">                        current.second = <span class="built_in">max</span>(current.second, last.second + <span class="number">1</span>);</span><br><span class="line">                        ret = <span class="built_in">max</span>(ret, current.second);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// for (const auto&amp; i : dp) &#123;</span></span><br><span class="line">        <span class="comment">//     for (const auto&amp; j : i) &#123;</span></span><br><span class="line">        <span class="comment">//         cout &lt;&lt; &quot;(&quot; &lt;&lt; j.first &lt;&lt; &quot; &quot; &lt;&lt; j.second &lt;&lt; &quot;), &quot;;</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">//     cout &lt;&lt; endl;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>Discuss总结：大概只有2种方法，DP(bottom-top)和DFS。DFS的复杂度会更高些，需要用memoization，其实也就是top-bottom的DP。</p>
-<h2 id="1049-Last-Stone-Weight-II">1049. Last Stone Weight II</h2>
+<h2 id="1049-Last-Stone-Weight-II">1049. Last Stone Weight II<a class="section-link" href="#1049-Last-Stone-Weight-II" aria-label="本节链接：1049. Last Stone Weight II"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 backtracking.<br>
 时间复杂度：O(N!), N = 30. 所以肯定会超时。</p>
@@ -406,13 +421,13 @@ backtracking.<br>
 任何一个初始的石头，如果被smash的次数是奇数，则前面是 负号，反之，正号。<br>
 所以，原始问题可以转化为 将所有石头分成2份，求2份石头差的绝对值的最小值。<br>
 该问题是经典的背包问题之一“minimum knapsack partition”。</p>
-<h3 id="Solution-DP-for-classic-knapsack-problem">Solution: DP for classic knapsack problem</h3>
+<h3 id="Solution-DP-for-classic-knapsack-problem">Solution: DP for classic knapsack problem<a class="section-link" href="#Solution-DP-for-classic-knapsack-problem" aria-label="本节链接：Solution: DP for classic knapsack problem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lastStoneWeightII</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> sum_bound = <span class="number">1500</span>;</span><br><span class="line">        bitset&lt;1500 + 1&gt; dp &#123;<span class="number">1</span>&#125;; <span class="comment">// present whether the sum of group is i is possible; initial true when i == 0  </span></span><br><span class="line">        <span class="type">int</span> sumOfStones = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> stone : stones) &#123;</span><br><span class="line">            sumOfStones += stone;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = sum_bound; i &gt;= stone; --i) &#123;  <span class="comment">// reverse traversal is needed, for a stone can be used only once</span></span><br><span class="line">                dp[i] = dp[i] + dp[i - stone];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ret = numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= sum_bound; ++i) &#123;</span><br><span class="line">            ret = <span class="built_in">min</span>(ret, <span class="built_in">abs</span>(sumOfStones - dp[i]*i*<span class="number">2</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(sum_bound * stones.size())<br>
 空间复杂度: O(sum_bound)</p>
 <p>C++ 中 Bitset 是内含bit 或 Boolean值且大小固定的array。对其不熟悉的同学，可以看看<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26419721/">《C++ 标准库 第二版》（C++ Standard library)</a>这本书。我最近也在看，目的是熟悉一下C++的标准库，学习其中的智慧和用法。<br>
 除了使用Bitset外，直接使用set</p>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>周五剁手买了一年的LeetCode Premium, 花了159刀，大概1000元RMB。<br>
 刷题走起！！！</p>
 

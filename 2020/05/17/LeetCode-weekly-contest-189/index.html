@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -370,17 +385,17 @@
 </table>
 <p>本周的最后一题是一个经典的计算几何问题，并不好写。不过通过率还是很高的，可能是test case比较弱的原因。</p>
 <p>在残酷群的排名降到了32名，跌幅达100%。之前感觉自己变强了错觉，是由于3周前的186周赛取得了113的好成绩，所以按照群排名算法，之后3周的排名都比较高。最好的一次成绩过去后，排名就恢复了本来的水平。30左右。并不是自己变强了，而是运气好而已。而且186正好用的python，python确实对手速场有优势。</p>
-<h2 id="1450-Number-of-Students-Doing-Homework-at-a-Given-Time">1450. Number of Students Doing Homework at a Given Time</h2>
+<h2 id="1450-Number-of-Students-Doing-Homework-at-a-Given-Time">1450. Number of Students Doing Homework at a Given Time<a class="section-link" href="#1450-Number-of-Students-Doing-Homework-at-a-Given-Time" aria-label="本节链接：1450. Number of Students Doing Homework at a Given Time"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题，One Pass.</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">busyStudent</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; startTime, vector&lt;<span class="type">int</span>&gt;&amp; endTime, <span class="type">int</span> queryTime)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; startTime.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (startTime[i] &lt;= queryTime &amp;&amp; queryTime &lt;= endTime[i]) ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1451-Rearrange-Words-in-a-Sentence">1451. Rearrange Words in a Sentence</h2>
+<h2 id="1451-Rearrange-Words-in-a-Sentence">1451. Rearrange Words in a Sentence<a class="section-link" href="#1451-Rearrange-Words-in-a-Sentence" aria-label="本节链接：1451. Rearrange Words in a Sentence"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>利用C++ STL提供的排序函数。</p>
 <p>时间复杂度: O(N log N),<br>
 空间复杂度: O(N).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    vector&lt;pair&lt;string,<span class="type">int</span>&gt;&gt; <span class="built_in">splitSentence</span>(<span class="type">const</span> string&amp; text) &#123;</span><br><span class="line">        string tmp;</span><br><span class="line">        vector&lt;pair&lt;string,<span class="type">int</span>&gt;&gt; stk;</span><br><span class="line">        <span class="function">stringstream <span class="title">ss</span><span class="params">(text)</span></span>;</span><br><span class="line">        <span class="type">int</span> position = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">getline</span>(ss,tmp,<span class="string">&#x27; &#x27;</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">islower</span>(tmp[<span class="number">0</span>])) tmp[<span class="number">0</span>] = <span class="built_in">tolower</span>(tmp[<span class="number">0</span>]);</span><br><span class="line">            stk.<span class="built_in">push_back</span>(&#123;tmp, position&#125;);</span><br><span class="line">            ++position;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stk;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">arrangeWords</span><span class="params">(string text)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> split = <span class="built_in">splitSentence</span>(text);</span><br><span class="line">        <span class="built_in">sort</span>(split.<span class="built_in">begin</span>(), split.<span class="built_in">end</span>(), [](<span class="type">const</span> <span class="keyword">auto</span>&amp; a, <span class="type">const</span> <span class="keyword">auto</span>&amp; b) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (a.first.<span class="built_in">size</span>() == b.first.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                <span class="keyword">return</span> a.second &lt; b.second;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> a.first.<span class="built_in">size</span>() &lt; b.first.<span class="built_in">size</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        string ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; word : split) &#123;</span><br><span class="line">            ans += word.first;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        ans.<span class="built_in">pop_back</span>();</span><br><span class="line">        ans[<span class="number">0</span>] = <span class="built_in">toupper</span>(ans[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1452-People-Whose-List-of-Favorite-Companies-Is-Not-a-Subset-of-Another-List">1452. People Whose List of Favorite Companies Is Not a Subset of Another List</h2>
+<h2 id="1452-People-Whose-List-of-Favorite-Companies-Is-Not-a-Subset-of-Another-List">1452. People Whose List of Favorite Companies Is Not a Subset of Another List<a class="section-link" href="#1452-People-Whose-List-of-Favorite-Companies-Is-Not-a-Subset-of-Another-List" aria-label="本节链接：1452. People Whose List of Favorite Companies Is Not a Subset of Another List"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>brute force. 对于每个人，判断是否被另外一个人所包含。N^2.<br>
 判断包含时，可以将公司先排序，再顺序比较。O(m * log m + m).<br>
 N为人数，M为公司数。</p>
@@ -388,7 +403,7 @@ N为人数，M为公司数。</p>
 空间复杂度: O(N).</p>
 <p>其中，利用了STL algorithm里的includes函数，可以判断2个排序区间是否包含。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">peopleIndexes</span><span class="params">(vector&lt;vector&lt;string&gt;&gt;&amp; favoriteCompanies)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; v : favoriteCompanies) &#123;</span><br><span class="line">            <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = favoriteCompanies.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="type">bool</span> remove = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == j) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">includes</span>(favoriteCompanies[j].<span class="built_in">begin</span>(), favoriteCompanies[j].<span class="built_in">end</span>(), favoriteCompanies[i].<span class="built_in">begin</span>(), favoriteCompanies[i].<span class="built_in">end</span>())) &#123;</span><br><span class="line">                    remove = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!remove) &#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1453-Maximum-Number-of-Darts-Inside-of-a-Circular-Dartboard">1453. Maximum Number of Darts Inside of a Circular Dartboard</h2>
+<h2 id="1453-Maximum-Number-of-Darts-Inside-of-a-Circular-Dartboard">1453. Maximum Number of Darts Inside of a Circular Dartboard<a class="section-link" href="#1453-Maximum-Number-of-Darts-Inside-of-a-Circular-Dartboard" aria-label="本节链接：1453. Maximum Number of Darts Inside of a Circular Dartboard"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>一道经典的题目：disk partial covering problem。<br>
 在网上随便一搜就有，原理参考<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/angular-sweep-maximum-points-can-enclosed-circle-given-radius/">geekforgeek</a>, <a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/discuss/636416/c%2B%2B-O(n2logn)-angular-sweep-(with-picture)">discuss</a>, 即著名的augular sweep.</p>
 <p>时间复杂度: O(n^2 log n)<br>

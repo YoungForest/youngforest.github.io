@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -370,23 +385,23 @@
 </table>
 <p>本次比赛题目比较简单，又是一次手速和bug-free的比拼。<br>
 真的是错过比赛半年，连人数较少的双周赛都进不了前200了，吓～</p>
-<h2 id="1356-Sort-Integers-by-The-Number-of-1-Bits">1356. Sort Integers by The Number of 1 Bits</h2>
+<h2 id="1356-Sort-Integers-by-The-Number-of-1-Bits">1356. Sort Integers by The Number of 1 Bits<a class="section-link" href="#1356-Sort-Integers-by-The-Number-of-1-Bits" aria-label="本节链接：1356. Sort Integers by The Number of 1 Bits"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>利用C++标准库中的排序函数和lambda表达式。</p>
 <p>时间复杂度: O(n log n),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortByBits</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), [](<span class="type">const</span> <span class="keyword">auto</span>&amp; a, <span class="type">const</span> <span class="keyword">auto</span>&amp; b) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">auto</span> aa = __builtin_popcount(a);</span><br><span class="line">            <span class="keyword">auto</span> bb = __builtin_popcount(b);</span><br><span class="line">            <span class="keyword">if</span> (aa == bb) &#123;</span><br><span class="line">                <span class="keyword">return</span> a &lt; b;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> aa &lt; bb;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1357-Apply-Discount-Every-n-Orders">1357. Apply Discount Every n Orders</h2>
+<h2 id="1357-Apply-Discount-Every-n-Orders">1357. Apply Discount Every n Orders<a class="section-link" href="#1357-Apply-Discount-Every-n-Orders" aria-label="本节链接：1357. Apply Discount Every n Orders"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>考察对数据结构的熟悉程度。根据题意直接实现即可。<br>
 因为读题不仔细，把discount的定义搞错了（是减价多少，而不是剩下多少），导致了一次错误提交。</p>
 <p>时间复杂度：O(product.length),<br>
 空间复杂度：O(getBill.length).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cashier</span> &#123;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; m;</span><br><span class="line">    <span class="type">int</span> d;</span><br><span class="line">    <span class="type">int</span> nn;</span><br><span class="line">    <span class="type">int</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Cashier</span>(<span class="type">int</span> n, <span class="type">int</span> discount, vector&lt;<span class="type">int</span>&gt;&amp; products, vector&lt;<span class="type">int</span>&gt;&amp; prices) &#123;</span><br><span class="line">        d = discount;</span><br><span class="line">        nn = n;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; products.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            m[products[i]] = prices[i];</span><br><span class="line">        &#125;</span><br><span class="line">        index = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">getBill</span><span class="params">(vector&lt;<span class="type">int</span>&gt; product, vector&lt;<span class="type">int</span>&gt; amount)</span> </span>&#123;</span><br><span class="line">        ++index;</span><br><span class="line">        <span class="type">bool</span> discount = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (index == nn) &#123;</span><br><span class="line">            index = <span class="number">0</span>;</span><br><span class="line">            discount = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">double</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; product.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            ans += amount[i] * m[product[i]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (discount)</span><br><span class="line">            ans *= <span class="number">1</span> - d / <span class="number">100.0</span>;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Cashier object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Cashier* obj = new Cashier(n, discount, products, prices);</span></span><br><span class="line"><span class="comment"> * double param_1 = obj-&gt;getBill(product,amount);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h2 id="1358-Number-of-Substrings-Containing-All-Three-Characters">1358. Number of Substrings Containing All Three Characters</h2>
+<h2 id="1358-Number-of-Substrings-Containing-All-Three-Characters">1358. Number of Substrings Containing All Three Characters<a class="section-link" href="#1358-Number-of-Substrings-Containing-All-Three-Characters" aria-label="本节链接：1358. Number of Substrings Containing All Three Characters"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>滑动窗口。在右侧移动的时候，保持窗口最小，此时，左侧窗口的左边都是符合条件的子串。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numberOfSubstrings</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> right = <span class="number">0</span>, left = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">3</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            ++count[s[right] - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">            <span class="keyword">while</span> (left &lt;= right &amp;&amp; count[s[left] - <span class="string">&#x27;a&#x27;</span>] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                --count[s[left] - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">                ++left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (count[<span class="number">0</span>] &gt;= <span class="number">1</span> &amp;&amp; count[<span class="number">1</span>] &gt;= <span class="number">1</span> &amp;&amp; count[<span class="number">2</span>] &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">                ans += (left + <span class="number">1</span>) * <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ++right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1359-Count-All-Valid-Pickup-and-Delivery-Options">1359. Count All Valid Pickup and Delivery Options</h2>
+<h2 id="1359-Count-All-Valid-Pickup-and-Delivery-Options">1359. Count All Valid Pickup and Delivery Options<a class="section-link" href="#1359-Count-All-Valid-Pickup-and-Delivery-Options" aria-label="本节链接：1359. Count All Valid Pickup and Delivery Options"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>一个典型的递归问题。<br>
 对于n个物件，我们从中选择任何一个作为第一个pickup, 然后计算剩余n-1个物件的排序问题。diliver可以插入在任意位置(<code>2 * (n - 1) + 1</code>种情况)。</p>
 <p>因为取余问题导致一次Wrong Answer，已经不是第一次了。下次需要注意。</p>

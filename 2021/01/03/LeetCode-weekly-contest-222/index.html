@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -368,19 +383,19 @@
   <img src="/images/ai/LeetCode-weekly-contest-222/zh-hero.webp" alt="高单位箱优先装车，食物筹码成对落入倍增托盘，双闸门划分前缀重量，目标槽位映射后由上升轨道保留最长次序" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="5641-Maximum-Units-on-a-Truck">5641. Maximum Units on a Truck</h2>
+<h2 id="5641-Maximum-Units-on-a-Truck">5641. Maximum Units on a Truck<a class="section-link" href="#5641-Maximum-Units-on-a-Truck" aria-label="本节链接：5641. Maximum Units on a Truck"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>贪心。按盒子容量从大到小排序后先用大的盒子。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumUnits</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; boxTypes, <span class="type">int</span> truckSize)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// greedy, put larger boxes first</span></span><br><span class="line">        <span class="built_in">sort</span>(boxTypes.<span class="built_in">begin</span>(), boxTypes.<span class="built_in">end</span>(), [](<span class="type">const</span> <span class="keyword">auto</span>&amp; a, <span class="type">const</span> <span class="keyword">auto</span>&amp; b) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[<span class="number">1</span>] != b[<span class="number">1</span>]) <span class="keyword">return</span> a[<span class="number">1</span>] &gt; b[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> a[<span class="number">0</span>] &gt; b[<span class="number">0</span>];</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (truckSize &gt; <span class="number">0</span> &amp;&amp; i &lt; boxTypes.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> put = <span class="built_in">min</span>(truckSize, boxTypes[i][<span class="number">0</span>]);</span><br><span class="line">            truckSize -= put;</span><br><span class="line">            ans += boxTypes[i][<span class="number">1</span>] * put;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(n log n), <code>n = boxTypes.size()</code><br>
 空间复杂度: O(log n). 快排内部的递归消耗。</p>
-<h2 id="5642-Count-Good-Meals">5642. Count Good Meals</h2>
+<h2 id="5642-Count-Good-Meals">5642. Count Good Meals<a class="section-link" href="#5642-Count-Good-Meals" aria-label="本节链接：5642. Count Good Meals"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>类似two-sum。使用hashtable维护之前见过的数，只是target数目编程了22.<br>
 从<code>2^0</code> 到 最大的<code>2^21</code>.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">using</span> ll = <span class="type">int</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> maxBit = <span class="number">22</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countPairs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; deliciousness)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;ll&gt; <span class="title">target</span><span class="params">(maxBit)</span></span>;</span><br><span class="line">        target[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; maxBit; ++i) &#123;</span><br><span class="line">            target[i] = target[i<span class="number">-1</span>] * <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        unordered_map&lt;ll, <span class="type">int</span>&gt; count;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (ll i : deliciousness) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; maxBit; ++j) &#123;</span><br><span class="line">                <span class="keyword">auto</span> it = count.<span class="built_in">find</span>(target[j] - i);</span><br><span class="line">                <span class="keyword">if</span> (it != count.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                    ans = (ans + it-&gt;second) % MOD;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ++count[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(22n),<br>
 空间复杂度: O(n).</p>
 <p>比赛过程中，由于错误估计了最大的幂数。<code>2^20 + 2^20 = 2^21</code>, 错估计成了<code>2^40</code>。导致2次超时罚时。</p>
-<h2 id="5643-Ways-to-Split-Array-Into-Three-Subarrays">5643. Ways to Split Array Into Three Subarrays</h2>
+<h2 id="5643-Ways-to-Split-Array-Into-Three-Subarrays">5643. Ways to Split Array Into Three Subarrays<a class="section-link" href="#5643-Ways-to-Split-Array-Into-Three-Subarrays" aria-label="本节链接：5643. Ways to Split Array Into Three Subarrays"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>枚举每个左子数组。然后利用前缀和和二分确定中间数组的大小。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">waysToSplit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">presum</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        presum[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            presum[i<span class="number">+1</span>] = presum[i] + nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> binarySearchRightLessThanMid = [&amp;](<span class="type">int</span> lo, <span class="type">int</span> hi) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            <span class="comment">// [lo, hi)</span></span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> begin = lo;</span><br><span class="line">            <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">                <span class="comment">// [begin, mid), [mid, end)</span></span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> rightSum = presum[n] - presum[mid];</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> midSum = presum[mid] - presum[begin];</span><br><span class="line">                <span class="keyword">if</span> (rightSum &lt; midSum) &#123;</span><br><span class="line">                    hi = mid;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123; <span class="comment">// rightSum &gt;= midSum</span></span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> lo;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">auto</span> binarySearchFirstLargeEqualThan = [&amp;](<span class="type">int</span> lo, <span class="type">int</span> hi, <span class="type">const</span> <span class="type">int</span> leftSum) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            <span class="comment">// [lo, hi)</span></span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> begin = lo;</span><br><span class="line">            <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">                <span class="comment">// [begin, mid)</span></span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> midSum = presum[mid] - presum[begin];</span><br><span class="line">                <span class="keyword">if</span> (midSum &gt;= leftSum) &#123;</span><br><span class="line">                    hi = mid;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123; <span class="comment">// rightSum &lt; midSum</span></span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> lo;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> left = <span class="number">1</span>; left &lt;= n - <span class="number">2</span>; ++left) &#123;</span><br><span class="line">            <span class="comment">// [0, left)</span></span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> leftSum = presum[left];</span><br><span class="line">            <span class="comment">// [left, mid)</span></span><br><span class="line">            <span class="type">int</span> midLeft = <span class="built_in">binarySearchFirstLargeEqualThan</span>(left, n, leftSum);</span><br><span class="line">            <span class="keyword">if</span> (midLeft == left) midLeft = left + <span class="number">1</span>;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> midRight = <span class="built_in">binarySearchRightLessThanMid</span>(left, n);</span><br><span class="line">            <span class="comment">// cout &lt;&lt; left &lt;&lt; &quot; &quot; &lt;&lt; leftSum &lt;&lt; &quot; &quot; &lt;&lt; midLeft &lt;&lt; &quot; &quot; &lt;&lt; midRight &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">if</span> (midRight &gt; midLeft)</span><br><span class="line">                ans = (ans + (midRight - midLeft)) % MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(n log n),<br>
@@ -391,7 +406,7 @@
 <li>数组全为9时，此时右数组不为空。</li>
 </ul>
 <p>事实上，由于<code>midRight</code>和<code>midleft</code>是单调递增的，可以采用<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ways-to-split-array-into-three-subarrays/solution/cong-shuang-zhi-zhen-dao-san-zhi-zhen-by-klrb/">三指针的方法</a>进一步将时间复杂度降到O(n).</p>
-<h2 id="5644-Minimum-Operations-to-Make-a-Subsequence">5644. Minimum Operations to Make a Subsequence</h2>
+<h2 id="5644-Minimum-Operations-to-Make-a-Subsequence">5644. Minimum Operations to Make a Subsequence<a class="section-link" href="#5644-Minimum-Operations-to-Make-a-Subsequence" aria-label="本节链接：5644. Minimum Operations to Make a Subsequence"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>本题大家都是比赛现场学，现场抄的。之所以这样讲，是因为本题可以转化成其他经典题目。</p>
 <p>首先，观察有，<code>arr</code>中不出现在<code>target</code>中的数是没用的，可以直接删掉。<br>
 删掉后的<code>arr</code>是一个<code>target</code>的组合（也不完全是，区别在于<code>arr</code>中有些可能是重复的数）。<br>
@@ -403,7 +418,7 @@
 <p>时间复杂度: O(n log n), <code>n = target.size()</code><br>
 空间复杂度: O(target.size()).</p>
 <p>因为抄错LIS的模版，TLE了3次。因为一开始只用了朴素的LCS的O(mn)解法又TLE了2次。</p>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>今天是2021年的第一场周赛，比往常的更难一些。<br>
 北京的冬天真是太冷了，起床已经变的十分困难了，对生活的热情也十分不足，状态有些消极和悲伤。<br>
 我想要重新振作和积极起来，开始奋斗的Forest。<br>

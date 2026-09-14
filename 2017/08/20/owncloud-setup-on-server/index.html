@@ -56,8 +56,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -92,66 +94,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -330,28 +345,28 @@
         <nav aria-label="文章目录"><ol class="mobile-toc-list"><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E7%AE%80%E4%BB%8B"><span class="mobile-toc-list-text">简介</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83"><span class="mobile-toc-list-text">服务器环境</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="mobile-toc-list-text">搭建过程</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%AE%89%E8%A3%85owncloud"><span class="mobile-toc-list-text">安装owncloud</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E5%90%AF%E5%8A%A8apache%E6%9C%8D%E5%8A%A1"><span class="mobile-toc-list-text">启动apache服务</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#%E7%AE%A1%E7%90%86%E5%92%8C%E8%AE%BE%E7%BD%AEowncloud"><span class="mobile-toc-list-text">管理和设置owncloud</span></a></li></ol></li><li class="mobile-toc-list-item mobile-toc-list-level-2"><a class="mobile-toc-list-link" href="#Client-install"><span class="mobile-toc-list-text">Client install</span></a><ol class="mobile-toc-list-child"><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#windows"><span class="mobile-toc-list-text">windows</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#Android"><span class="mobile-toc-list-text">Android</span></a></li><li class="mobile-toc-list-item mobile-toc-list-level-3"><a class="mobile-toc-list-link" href="#Linux"><span class="mobile-toc-list-text">Linux</span></a></li></ol></li></ol></nav>
       </details>
     
-    <div class="post-body" itemprop="articleBody"><h2 id="简介">简介</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="简介">简介<a class="section-link" href="#%E7%AE%80%E4%BB%8B" aria-label="本节链接：简介"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p><a target="_blank" rel="noopener" href="https://owncloud.org/">owncloud</a>是一个私有云解决方案，可以替代百度云。其提供企业版和个人版，个人可以利用服务器搭建个人版的owncloud。官网提供了多种服务器端解决方案。其中，自己编译可以获得最新版的owncloud；owncloud也提供了各大发行版软件库的<a target="_blank" rel="noopener" href="https://download.owncloud.org/download/repositories/stable/owncloud/">二进制安装包</a>，更方便快速，更适合个人的应用。</p>
 <figure class="editorial-illustration editorial-illustration--hero">
   <img src="/images/ai/owncloud-setup-on-server/zh-hero.webp" alt="一座自管的云形数据小屋把个人文件安全地送往电脑、手机和笔记本设备" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="服务器环境">服务器环境</h2>
+<h2 id="服务器环境">服务器环境<a class="section-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83" aria-label="本节链接：服务器环境"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>腾讯云的一台云主机。操作系统版本为Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-105-generic x86_64)。</p>
-<h2 id="搭建过程">搭建过程</h2>
-<h3 id="安装owncloud">安装owncloud</h3>
+<h2 id="搭建过程">搭建过程<a class="section-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B" aria-label="本节链接：搭建过程"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="安装owncloud">安装owncloud<a class="section-link" href="#%E5%AE%89%E8%A3%85owncloud" aria-label="本节链接：安装owncloud"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p><a target="_blank" rel="noopener" href="https://download.owncloud.org/download/repositories/stable/owncloud/">通过apt库安装owncloud</a>。同时会安装很多依赖包，如apache2，php环境等。</p>
-<h3 id="启动apache服务">启动apache服务</h3>
+<h3 id="启动apache服务">启动apache服务<a class="section-link" href="#%E5%90%AF%E5%8A%A8apache%E6%9C%8D%E5%8A%A1" aria-label="本节链接：启动apache服务"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service httpd start</span><br></pre></td></tr></table></figure>
-<h3 id="管理和设置owncloud">管理和设置owncloud</h3>
+<h3 id="管理和设置owncloud">管理和设置owncloud<a class="section-link" href="#%E7%AE%A1%E7%90%86%E5%92%8C%E8%AE%BE%E7%BD%AEowncloud" aria-label="本节链接：管理和设置owncloud"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>在浏览器的地址栏输入<code>ip/owncloud</code>或<code>域名/owncloud</code>，设置好管理员账户和密码就好了。</p>
 <h4 id="配置MySQL">配置MySQL</h4>
 <p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html">参考</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql --user=root --password</span><br></pre></td></tr></table></figure>
-<h2 id="Client-install">Client install</h2>
-<h3 id="windows">windows</h3>
-<h3 id="Android">Android</h3>
-<h3 id="Linux">Linux</h3>
+<h2 id="Client-install">Client install<a class="section-link" href="#Client-install" aria-label="本节链接：Client install"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="windows">windows<a class="section-link" href="#windows" aria-label="本节链接：windows"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
+<h3 id="Android">Android<a class="section-link" href="#Android" aria-label="本节链接：Android"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
+<h3 id="Linux">Linux<a class="section-link" href="#Linux" aria-label="本节链接：Linux"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 
     </div>
 

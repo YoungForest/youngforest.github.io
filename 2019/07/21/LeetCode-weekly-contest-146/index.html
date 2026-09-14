@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -347,18 +362,18 @@
 不过时间上应该是超时了。<br>
 排名1800+。</p>
 <p>总体来讲，本次题目虽然不难，但是需要花时间思考才能做出来的。这样的题目也是我喜欢的。通过自己的思考，作出一道并不是一眼看上去就知道解答的题目，是很爽的。快感可比超神和三杀。</p>
-<h2 id="5130-Number-of-Equivalent-Domino-Pairs">5130. Number of Equivalent Domino Pairs</h2>
+<h2 id="5130-Number-of-Equivalent-Domino-Pairs">5130. Number of Equivalent Domino Pairs<a class="section-link" href="#5130-Number-of-Equivalent-Domino-Pairs" aria-label="本节链接：5130. Number of Equivalent Domino Pairs"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>既然domino可以通过旋转相等，我们就把他们归一化(将2种domino映射成一种)。<br>
 然后计算组合数即可。</p>
 <p>时间复杂度: O(N log N), 因为pair默认不是hashable，所以偷懒用了map。<br>
 空间复杂度: O(N).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numEquivDominoPairs</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; dominoes)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = dominoes.<span class="built_in">size</span>();</span><br><span class="line">        map&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;, <span class="type">int</span>&gt; transform;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dominoes[i][<span class="number">0</span>] &lt; dominoes[i][<span class="number">1</span>]) &#123;</span><br><span class="line">                ++transform[<span class="built_in">make_pair</span>(dominoes[i][<span class="number">0</span>], dominoes[i][<span class="number">1</span>])];  </span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ++transform[<span class="built_in">make_pair</span>(dominoes[i][<span class="number">1</span>], dominoes[i][<span class="number">0</span>])];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; p : transform) &#123;</span><br><span class="line">            ans += p.second * (p.second - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1129-Shortest-Path-with-Alternating-Colors">1129. Shortest Path with Alternating Colors</h2>
+<h2 id="1129-Shortest-Path-with-Alternating-Colors">1129. Shortest Path with Alternating Colors<a class="section-link" href="#1129-Shortest-Path-with-Alternating-Colors" aria-label="本节链接：1129. Shortest Path with Alternating Colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>算最短路径，用BFS。由于需要颜色交替，代码略微有些麻烦，需要2套变量。</p>
 <p>时间复杂度: O(N), 每个节点最多遍历2次。<br>
 空间复杂度: O(max(N, edges)).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">shortestAlternatingPaths</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; red_edges, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; blue_edges)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;&gt; red_to, blue_to;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; edge : red_edges) &#123;</span><br><span class="line">            red_to[edge[<span class="number">0</span>]].<span class="built_in">push_back</span>(edge[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; edge : blue_edges) &#123;</span><br><span class="line">            blue_to[edge[<span class="number">0</span>]].<span class="built_in">push_back</span>(edge[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ret</span><span class="params">(n, numeric_limits&lt;<span class="type">int</span>&gt;::max())</span></span>;</span><br><span class="line">        ret[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// bfs</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">bool</span> red : &#123;<span class="literal">true</span>, <span class="literal">false</span>&#125;) &#123;</span><br><span class="line">            queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">            unordered_set&lt;<span class="type">int</span>&gt; seen_red, seen_blue;</span><br><span class="line">            q.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line">            seen_red.<span class="built_in">insert</span>(<span class="number">0</span>);</span><br><span class="line">            seen_blue.<span class="built_in">insert</span>(<span class="number">0</span>);</span><br><span class="line">            <span class="type">int</span> level = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                <span class="type">int</span> s = q.<span class="built_in">size</span>();</span><br><span class="line">                ++level;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s; ++i) &#123;</span><br><span class="line">                    <span class="type">int</span> current = q.<span class="built_in">front</span>();</span><br><span class="line">                    q.<span class="built_in">pop</span>();</span><br><span class="line">                    vector&lt;<span class="type">int</span>&gt;* edges = <span class="literal">nullptr</span>;</span><br><span class="line">                    unordered_set&lt;<span class="type">int</span>&gt;* seen = <span class="literal">nullptr</span>;</span><br><span class="line">                    <span class="keyword">if</span> (red) &#123;</span><br><span class="line">                        edges = &amp;red_to[current];</span><br><span class="line">                        seen = &amp;seen_red;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        edges = &amp;blue_to[current];</span><br><span class="line">                        seen = &amp;seen_blue;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> des : *edges) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (seen-&gt;<span class="built_in">find</span>(des) == seen-&gt;<span class="built_in">end</span>()) &#123;</span><br><span class="line">                            q.<span class="built_in">push</span>(des);</span><br><span class="line">                            seen-&gt;<span class="built_in">insert</span>(des);</span><br><span class="line">                            ret[des] = <span class="built_in">min</span>(ret[des], level);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;            </span><br><span class="line">                red = !red;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; item : ret) &#123;</span><br><span class="line">            <span class="keyword">if</span> (item == numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>())</span><br><span class="line">                item = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="5131-Minimum-Cost-Tree-From-Leaf-Values">5131. Minimum Cost Tree From Leaf Values</h2>
+<h2 id="5131-Minimum-Cost-Tree-From-Leaf-Values">5131. Minimum Cost Tree From Leaf Values<a class="section-link" href="#5131-Minimum-Cost-Tree-From-Leaf-Values" aria-label="本节链接：5131. Minimum Cost Tree From Leaf Values"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>本题是本次比赛中最难的题目。我也是思考了很长时间才摸索出来的。</p>
 <p>首先，观察有：</p>
 <ul>
@@ -369,7 +384,7 @@
 <p>时间复杂度: O(n log n). 类似快排，把问题分解成2个子问题，然后还需要end - begin组合解。<br>
 空间复杂度: O(n), n个叶子最多n层，也就是递归深度.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// max_leaf</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">recurse</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; arr, <span class="type">int</span> begin, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (begin + <span class="number">1</span> == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> arr[begin];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> max_index = begin;</span><br><span class="line">        <span class="type">int</span> max_value = arr[begin];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = begin + <span class="number">1</span>; i &lt; end; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] &gt;= max_value) &#123;</span><br><span class="line">                max_value = arr[i];</span><br><span class="line">                max_index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> l, r;</span><br><span class="line">        <span class="keyword">if</span> (max_index - begin + <span class="number">2</span> &lt;= end - max_index) &#123; <span class="comment">// 向后分</span></span><br><span class="line">            l = <span class="built_in">recurse</span>(arr, begin, max_index + <span class="number">1</span>);</span><br><span class="line">            r = <span class="built_in">recurse</span>(arr, max_index + <span class="number">1</span>, end);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;    <span class="comment">// 向前分</span></span><br><span class="line">            l = <span class="built_in">recurse</span>(arr, begin, max_index);</span><br><span class="line">            r = <span class="built_in">recurse</span>(arr, max_index, end);</span><br><span class="line">        &#125;</span><br><span class="line">        ret += l * r;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(l, r);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mctFromLeafValues</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">recurse</span>(arr, <span class="number">0</span>, arr.<span class="built_in">size</span>());</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1131-Maximum-of-Absolute-Value-Expression">1131. Maximum of Absolute Value Expression</h2>
+<h2 id="1131-Maximum-of-Absolute-Value-Expression">1131. Maximum of Absolute Value Expression<a class="section-link" href="#1131-Maximum-of-Absolute-Value-Expression" aria-label="本节链接：1131. Maximum of Absolute Value Expression"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>首先观察数据规模<code>40000</code>, 排除暴力解法的<code>O(N^2)</code>。<br>
 寻找<code>O(N)</code> 或 <code>O(N log N)</code>的解法。<br>
 实际上，由于绝对值的作用有2种：不变，取反。3个绝对值号，枚举2^3 = 8种组合即可。</p>

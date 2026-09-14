@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -342,23 +357,23 @@
   <img src="/images/ai/LeetCode-weekly-contest-158/zh-hero.webp" alt="无人机械花园以双色平衡液槽、放射中心件、空白方块滚筒和移走单珠的机械爪表现四种状态约束" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="1221-Split-a-String-in-Balanced-Strings">1221. Split a String in Balanced Strings</h2>
+<h2 id="1221-Split-a-String-in-Balanced-Strings">1221. Split a String in Balanced Strings<a class="section-link" href="#1221-Split-a-String-in-Balanced-Strings" aria-label="本节链接：1221. Split a String in Balanced Strings"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>理解balanced的定义，发现只需要找到 L 和 R 出现个数相等的位置即可。</p>
 <p>Time complexity: O(N),<br>
 Space complexity: O(1).</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">balanced_string_split</span>(s: <span class="type">String</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">l</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">r</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> <span class="variable">c</span> <span class="keyword">in</span> s.<span class="title function_ invoke__">chars</span>() &#123;</span><br><span class="line">            <span class="keyword">match</span> c &#123;</span><br><span class="line">                <span class="string">&#x27;L&#x27;</span> =&gt; &#123; l += <span class="number">1</span>&#125;,</span><br><span class="line">                <span class="string">&#x27;R&#x27;</span> =&gt; &#123; r += <span class="number">1</span>&#125;,</span><br><span class="line">                _ =&gt; (),</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> l == r &#123;</span><br><span class="line">                ans += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="1222-Queens-That-Can-Attack-the-King">1222. Queens That Can Attack the King</h2>
+<h2 id="1222-Queens-That-Can-Attack-the-King">1222. Queens That Can Attack the King<a class="section-link" href="#1222-Queens-That-Can-Attack-the-King" aria-label="本节链接：1222. Queens That Can Attack the King"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>虽然理解题目稍微复杂些，但算法其实很直接，从King往外找，而不是从queue开始找。</p>
 <p>时间复杂度: O(queens.len() + chessboard.len()),<br>
 空间复杂度: O(queens.len()).</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">queens_attackthe_king</span>(queens: <span class="type">Vec</span>&lt;<span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;&gt;, king: <span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;) <span class="punctuation">-&gt;</span> <span class="type">Vec</span>&lt;<span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">qs</span>: HashSet&lt;(<span class="type">i32</span>, <span class="type">i32</span>)&gt; = HashSet::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    <span class="keyword">for</span> <span class="variable">queen</span> <span class="keyword">in</span> queens.<span class="title function_ invoke__">iter</span>() &#123;</span><br><span class="line">        qs.<span class="title function_ invoke__">insert</span>((queen[<span class="number">0</span>], queen[<span class="number">1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans</span>: <span class="type">Vec</span>&lt;<span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;&gt; = <span class="type">Vec</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">direction</span> = <span class="built_in">vec!</span>[</span><br><span class="line">        (<span class="number">0</span>, <span class="number">1</span>),</span><br><span class="line">        (<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">        (<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">        (<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">        (<span class="number">0</span>, -<span class="number">1</span>),</span><br><span class="line">        (-<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">        (-<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">        (-<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">    ];</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">k</span> = (king[<span class="number">0</span>], king[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (x, y) <span class="keyword">in</span> direction.<span class="title function_ invoke__">iter</span>() &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">target</span>: (<span class="type">i32</span>, <span class="type">i32</span>) = k;</span><br><span class="line">        <span class="keyword">loop</span> &#123;</span><br><span class="line">            target.<span class="number">0</span> += x;</span><br><span class="line">            target.<span class="number">1</span> += y;</span><br><span class="line">            <span class="keyword">if</span> target.<span class="number">0</span> &gt;= <span class="number">0</span> &amp;&amp; target.<span class="number">0</span> &lt; <span class="number">8</span> &amp;&amp; target.<span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; target.<span class="number">1</span> &lt; <span class="number">8</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> qs.<span class="title function_ invoke__">contains</span>(&amp;target) &#123;</span><br><span class="line">                    ans.<span class="title function_ invoke__">push</span>(<span class="built_in">vec!</span>[target.<span class="number">0</span>, target.<span class="number">1</span>]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="1223-Dice-Roll-Simulation">1223. Dice Roll Simulation</h2>
+<h2 id="1223-Dice-Roll-Simulation">1223. Dice Roll Simulation<a class="section-link" href="#1223-Dice-Roll-Simulation" aria-label="本节链接：1223. Dice Roll Simulation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>有memoization的dfs。</p>
 <p>通过分析memo的最多可能，可知<br>
 时间复杂度: O(6 * N ^ 2),<br>
 空间复杂度: O(6 * N ^ 2).</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::HashMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">impl</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> MOD_NUMBER: <span class="type">i32</span> = <span class="number">1000000007</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">answer</span>(</span><br><span class="line">        <span class="keyword">mut</span> memo: &amp;<span class="keyword">mut</span> HashMap&lt;(<span class="type">i32</span>, <span class="type">usize</span>, <span class="type">i32</span>), <span class="type">i32</span>&gt;,</span><br><span class="line">        roll_max: &amp;<span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;,</span><br><span class="line">        n: <span class="type">i32</span>,</span><br><span class="line">        previous_number: <span class="type">usize</span>,</span><br><span class="line">        previous_consecutive: <span class="type">i32</span>,</span><br><span class="line">    ) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">match</span> memo.<span class="title function_ invoke__">get</span>(&amp;(n, previous_number, previous_consecutive)) &#123;</span><br><span class="line">            <span class="title function_ invoke__">Some</span>(value) =&gt; &#123;</span><br><span class="line">                <span class="keyword">return</span> *value;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">                <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans</span> = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">0</span>..<span class="number">6</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> i == previous_number &#123;</span><br><span class="line">                        <span class="keyword">if</span> previous_consecutive == roll_max[previous_number] &#123;</span><br><span class="line">                            <span class="keyword">continue</span>;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            ans = (ans</span><br><span class="line">                                + Solution::<span class="title function_ invoke__">answer</span>(&amp;<span class="keyword">mut</span> memo, &amp;roll_max, n - <span class="number">1</span>, i, previous_consecutive + <span class="number">1</span>))</span><br><span class="line">                                % Solution::MOD_NUMBER;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        ans = (ans + Solution::<span class="title function_ invoke__">answer</span>(&amp;<span class="keyword">mut</span> memo, &amp;roll_max, n - <span class="number">1</span>, i, <span class="number">1</span>)) % Solution::MOD_NUMBER;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                memo.<span class="title function_ invoke__">insert</span>((n, previous_number, previous_consecutive), ans);</span><br><span class="line">                <span class="keyword">return</span> ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">die_simulator</span>(n: <span class="type">i32</span>, roll_max: <span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">memo</span>: HashMap&lt;(<span class="type">i32</span>, <span class="type">usize</span>, <span class="type">i32</span>), <span class="type">i32</span>&gt; = HashMap::<span class="title function_ invoke__">new</span>();</span><br><span class="line">        Solution::<span class="title function_ invoke__">answer</span>(&amp;<span class="keyword">mut</span> memo, &amp;roll_max, n, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="1224-Maximum-Equal-Frequency">1224. Maximum Equal Frequency</h2>
+<h2 id="1224-Maximum-Equal-Frequency">1224. Maximum Equal Frequency<a class="section-link" href="#1224-Maximum-Equal-Frequency" aria-label="本节链接：1224. Maximum Equal Frequency"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>首先明确 <code>an array prefix of nums</code>的意义，即前缀数组。<br>
 再看到加粗的<code>exactly one</code>，可知符合要求的前缀数组有2种情况：</p>
 <ul>

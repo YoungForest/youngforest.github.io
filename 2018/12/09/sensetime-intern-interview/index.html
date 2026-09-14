@@ -57,8 +57,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -93,66 +95,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -348,7 +363,7 @@
   <img src="/images/ai/sensetime-intern-interview/zh-hero.webp" alt="Forest 依次走过三座越来越深的技术工作台，从算法拼块进入操作系统齿轮、编译管道与语言机关" width="1536" height="864" decoding="async">
 </figure>
 <span id="more"></span>
-<h2 id="一面">一面</h2>
+<h2 id="一面">一面<a class="section-link" href="#%E4%B8%80%E9%9D%A2" aria-label="本节链接：一面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>一面面试官是此组的lead，今年刚刚毕业转正。我一直觉得他很眼熟，后来和同学交流过后才想起来，这不是2年前检查我编译实验的助教哥哥嘛！</p>
 <p>因为是lead给自己招人，所以一面总体上节奏很紧，内容也很充实。依次问了我职业规划、项目经历和2道算法题。<br>
 职业规划主要是与将来实习工作内容相关，从超级硬核的嵌入式和操作系统，到优化深度学习框架和库，再到优化计算机视觉的策略和算法。<br>
@@ -363,13 +378,13 @@
 更多的是依靠灵感和尝试。比如第一道题，我最开始一筹莫展，但再尝试几次后，偶然想到可以先把前缀和计算出来(遇0减一，遇1加一)，之后就迎刃而解了。和LeetCode上一些字符串比较的问题很像。<br>
 这种依靠灵感和尝试的解决方案，首先不是每次都奏效，如果状态不好，可能就不行了；其次是不靠谱，做题的时候心里没谱，对于题目能不能成功解决心惊胆战的。<br>
 所以，在面对未来更多的面试和dream job之前，形成自己稳定可靠的解题流程是必要的。</p>
-<h2 id="二面">二面</h2>
+<h2 id="二面">二面<a class="section-link" href="#%E4%BA%8C%E9%9D%A2" aria-label="本节链接：二面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>二面的面试官是我的本科同学，但平时交流并不多，他属于比较geek的类型。<br>
 这位同学刚开始比较不善言辞，问我一面都面了什么，会写什么。我判断他作为面试官的经历其实也不多，并不擅长。稍稍有些放松和欣喜。<br>
 不过很快，他真的是用技术教我重新做人了。慢慢熟悉起来之后，他也进入了面试的状态。从操作系统(从shell敲入命令到程序被执行中间发生了什么，进程的建立过程)问到编译器(编译的过程，每一步的细节)，从编译优化(循环展开)问到CPython的实现(全局变量的处理，Python是如何运行的)，看到我用过Django，又问我框架的实现，model的实现。问我哪门语言比较熟，我说Python，就问了我很多Python实现的问题。问我看过什么Python的大型项目的代码吗？我只好汗颜地说没有。</p>
 <p>整场面试除了刚开始几分钟比较轻松外，后面的节奏越来越快。每个问题都是越来越深入，直到我实在回答不上来为止。<br>
 应对这种类型的面试，我只能说，<strong>CSAPP</strong>和<strong>SICP</strong>的真的很重要。虽然我都只看了几章，但硬是凭着不深的记忆硬扯。比如Python的运行过程，我之前根本没有了解过。刚开始只说是解释运行，对方要求更详细些，从开始到运行完毕的过程是怎样的？我想Lisp也是解释语言，就把老早之前在SICP上看过的Lisp运行过程说了下。面试后我查了查Python的运行过程，惊喜地发现真的差不多。CSAPP对编译和进程有很深入的介绍，如果对这2章更熟一点，我面试时一定会更从容。没有读过大型项目的源码也是我的短板。说实话，真的没有多少人读过很多大型项目的源码。但是我们是要向大牛看齐的，多读读源码，才能成为更优秀的程序员。</p>
-<h2 id="三面">三面</h2>
+<h2 id="三面">三面<a class="section-link" href="#%E4%B8%89%E9%9D%A2" aria-label="本节链接：三面"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>三面的面试官也是我的本科同学，稍微还熟悉些。最后一面由不同组的同学负责，被称为跨组面试。防止有组内私自招收不合格员工的情况发生。<br>
 既然比较熟，面试过程就比较轻松了。先是依次问了项目经历，之后又问了1道语言题和一道算法题。</p>
 <p>语言题涉及到Python的闭包，<br>
@@ -385,7 +400,7 @@
 <figure class="editorial-illustration">
   <img src="/images/ai/sensetime-intern-interview/zh-engineering-path.webp" alt="Forest 离开浮在高处的职业奖杯阶梯，走向一张能亲手搭建可靠程序的工程工作台" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="后记-感悟">后记 | 感悟</h2>
+<h2 id="后记-感悟">后记 | 感悟<a class="section-link" href="#%E5%90%8E%E8%AE%B0-%E6%84%9F%E6%82%9F" aria-label="本节链接：后记 | 感悟"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>有一个清晰的职业规划和技能方向是十分重要的。平时和师兄聊天的时候可以说自己也不知道做啥，不知道对啥最感兴趣。但面试时这样说肯定就gg了，最好最自己有比较清晰的认识，知道自己的兴趣，职业规划，当然这些和面试职位的需求相符那就更好了。如果不相符的话，大概率也会gg，搞不好还会被喷（参考我5月时面试face++的面试经历，在我的博客上可以找到<a href="https://youngforest.github.io/2018/08/14/face-interview/">https://youngforest.github.io/2018/08/14/face-interview/</a>）。</p>
 <p>今年算法岗大火，以至于供过于求。算法岗也处于程序员鄙视链的上游，薪水也比研发岗高一些。<br>
 但我结合自己的经历和体验，发现自己还是对写代码比较感兴趣，写出更优雅，performance更高的代码，满足用户的需求，产生impact。我就很开心和满足了。虽然做程序员很辛苦，但是我很开心。没必要追求别人认为好的职业(鄙视链大概是：研究员 &gt; 算法岗 &gt; 研发岗 &gt; 其他)。<br>

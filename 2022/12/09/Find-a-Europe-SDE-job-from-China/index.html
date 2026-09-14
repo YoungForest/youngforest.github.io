@@ -59,8 +59,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -95,66 +97,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -349,7 +364,7 @@
 </figure>
 <span id="more"></span>
 <p><img src="/images/%E6%B6%A6%E4%BA%86.png" alt="润了"></p>
-<h2 id="背景">背景</h2>
+<h2 id="背景">背景<a class="section-link" href="#%E8%83%8C%E6%99%AF" aria-label="本节链接：背景"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>首先给不熟悉我的朋友简单介绍一下我的背景。<br>
 在北京某校读了计算机本硕。<br>
 读书时从大四开始有过不少实习经历，先后在小厂、大厂，人工智能、自动驾驶，国内互联网、外企干过一段时间，在学校也有长期的科研经历。<br>
@@ -362,7 +377,7 @@
 同时很多发达国家拥有从出生到坟墓的福利制度，尤其适合逃离国内996而且拖家带口的同行们。<br>
 最重要的是工作机会多，竞争压力小，有大量面向海外招人的岗位。从我的经验来看，不考虑语言挑战的话，面试难度是远小于国内的。<br>
 本文虽然是以投欧洲为背景，不过大多数经验也是对其他地区有帮助的。尤其是投谷歌、亚马逊、微软这种美企的。</p>
-<h2 id="时间线">时间线</h2>
+<h2 id="时间线">时间线<a class="section-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF" aria-label="本节链接：时间线"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>3月开始在Stack Overflow（现在Jobs板块已关闭）、Google Jobs、LinkedIn上海投，也找了不少朋友内推。我投的工作地点主要以荷兰为主，也投了德国、爱尔兰、英国等其他国家。<br>
 这段时间以中小公司为主，想在投大厂前多练练。但并不理想，大多数直接被据，只有4个面试。</p>
 <p>4月底开始投大厂，当然海投一直没停，最后投了近40个厂，有8家面试，2家offer。阿姆本地的大厂岗位只有 Amazon、Uber和Booking。微软投了都柏林，谷歌投了慕尼黑。<br>
@@ -380,11 +395,11 @@
 <figure class="editorial-illustration">
   <img src="/images/ai/Find-a-Europe-SDE-job-from-China/zh-interview-path.webp" alt="Forest 跨过申请信、算法石、设计齿轮和行为故事卡，绕过冰封大门走向两扇暖光门" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="面试准备">面试准备</h2>
+<h2 id="面试准备">面试准备<a class="section-link" href="#%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87" aria-label="本节链接：面试准备"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>这部分是大家最关心，也是最花时间的了。</p>
 <p>首先推荐一下<a target="_blank" rel="noopener" href="https://www.youtube.com/@Fred_Talk">V2WORLD 群主的频道</a>. 有包括 简历准备、英文、算法、技能 等十分干货的视频，尤其是适合德国岗位。</p>
 <p>我这里主要结合我自己的经验，分享一下面试准备的心得。</p>
-<h3 id="英文">英文</h3>
+<h3 id="英文">英文<a class="section-link" href="#%E8%8B%B1%E6%96%87" aria-label="本节链接：英文"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>英文对于很多同学可能是比较恐惧和担忧的一个挑战。我也是这样，因此很能理解。<br>
 作为一名小镇做题家，高考英语听力都不算分，从小到大的英语老师也都是二本甚至专科毕业的，自己英文都说的不利索。四六级倒是有听力，但口语当时还是可选的，也没多少人专门去考。大学英语老师水平倒是很高，但无奈基础已经摆在那里了。而且大学英语也更侧重于科研需求。大一的时候是最恐惧的时候，英语课都改成全英文的了，上课都听不懂了。也有部分同学游刃有余，对应着城乡，发达与落后地区的差距就十分明显了。从大学开始，我开始了漫长的和英语搏斗之路。虽然四六级都是一次性裸考过，但我深知那只是代表了应试能力和我阅读的强势，听说仍然比大城市的同学差很多。当时尝试了不少英语App，包括流利说和扇贝网。其中扇贝网因为网页做的不错，我身为程序员，也更习惯PC端的产品。而且扇贝听力的精听功能深得我心。我和舍友每日打卡，差不多打了有快2年时间。<br>
 另外，我也尝试参加一些学校的英语活动。包括尝试了几次英语社，每日大早在沙河南湖边大声背诵。以志愿者身份，参加了2次暑期学校，解决外国学生的各种问题。也以学生身份上了一次暑期学校的课。<br>
@@ -393,19 +408,19 @@
 <p>虽然到目前为止，我发现自己的英语和周围人之间还是有不小差距的，但可以基本不大影响工作。在面试过程中，因为欧洲这边基本也都不是英语母语，所以要求和水平相对较低。即使如此，还是有面试据我的理由是，他们目前想找一个英文更好的人。</p>
 <p>在我看来，面试中的英文并不难，最重要的是你敢说，愿意交流。如果遇到不会表达的，或没表达清楚，只要和面试官反复沟通和确认，基本上还是可以沟通无碍的。其实在工作中也是一样。</p>
 <p>因此，我给出的建议是：用模拟面试（如<a target="_blank" rel="noopener" href="https://www.pramp.com/invt/lYgBVdQ8qrTMQg9jwEmP">pramp</a>）或 真正的面试(可以先投一些小厂) 去练习，找到短板和技巧。无论是英文还是技术，欧洲的面试真没大多数人想象中的那么难。</p>
-<h3 id="简历投递">简历投递</h3>
+<h3 id="简历投递">简历投递<a class="section-link" href="#%E7%AE%80%E5%8E%86%E6%8A%95%E9%80%92" aria-label="本节链接：简历投递"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>主要靠网友内推和Linkedin海投为主。花些时间维护好Linkedin profile。基本大厂靠内推，其他靠海投。</p>
-<h3 id="算法题">算法题</h3>
+<h3 id="算法题">算法题<a class="section-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98" aria-label="本节链接：算法题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>还是得靠刷题 LeetCode基本刷上300题就差不多了。<br>
 之前写的经验在这里分享一下: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/280279208/answer/704774024">大家都是如何刷 LeetCode 的？ - youngforest的回答 - 知乎</a></p>
-<h3 id="软件设计-Software-Design-OOD">软件设计 Software Design, OOD</h3>
+<h3 id="软件设计-Software-Design-OOD">软件设计 Software Design, OOD<a class="section-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1-Software-Design-OOD" aria-label="本节链接：软件设计 Software Design, OOD"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>基本这一本书就够了：</p>
 <ul>
 <li>Grokking the Object Oriented Design Interview<br>
 其他进阶资料：</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/donnemartin/system-design-primer">The System Design Primer</a></li>
 </ul>
-<h3 id="系统设计-System-Design">系统设计 System Design</h3>
+<h3 id="系统设计-System-Design">系统设计 System Design<a class="section-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-System-Design" aria-label="本节链接：系统设计 System Design"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>准备面试基本看2本书就够了，</p>
 <ul>
 <li>Grokking the System Design Interview</li>
@@ -417,7 +432,7 @@
 <li>DDIA (Designing Data Intensive Applications)</li>
 <li><a target="_blank" rel="noopener" href="https://www.1point3acres.com/bbs/thread-907316-1-1.html">一本分布式电子书和视频资料</a></li>
 </ul>
-<h3 id="行为面试">行为面试</h3>
+<h3 id="行为面试">行为面试<a class="section-link" href="#%E8%A1%8C%E4%B8%BA%E9%9D%A2%E8%AF%95" aria-label="本节链接：行为面试"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>Behavior questions 很好准备，用一两周即可。网上有大量的问题，自己提前根据自己的过往经历准备几个故事，足以应付大多数问题即可。一定要基于自己过往经历，可以添油加醋，但不要无中生有，要不面试时如果问follow up有可能圆不上露馅。</p>
 <p>文章</p>
 <ul>
@@ -436,7 +451,7 @@
 <figure class="editorial-illustration">
   <img src="/images/ai/Find-a-Europe-SDE-job-from-China/zh-ireland-reality.webp" alt="Forest 在家庭、工作与绿色海岸的一侧和风雨、公交、住房压力的一侧之间保持平衡" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="爱尔兰-怎么样？">爱尔兰 怎么样？</h2>
+<h2 id="爱尔兰-怎么样？">爱尔兰 怎么样？<a class="section-link" href="#%E7%88%B1%E5%B0%94%E5%85%B0-%E6%80%8E%E4%B9%88%E6%A0%B7%EF%BC%9F" aria-label="本节链接：爱尔兰 怎么样？"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>我这两年也加入了一起志同道合润的微信群（V2WORLD），也认识了不少已经润，正在润和将要润的群友。说实话，2022年因为国内经济和疫情封控的原因，润的人更多了。<br>
 从这个小范围样本来看（大概2百人，大概率会有幸存者偏差），润到新加坡/欧洲（其中德国占大部分）的居多，日本、加拿大、澳洲的其次。<br>
 爱尔兰算是一个不大热门也不引人关注的国家。其实我投递的时候也是没以爱尔兰为主的，但是后来发现这里大厂很多，包括很多美企巨头的欧洲总部，如 Microsoft，Apple，Google，AWS （Amazon的欧洲总部在卢森堡）。基本上都有3千研发的办公室。比如微软这里有2栋楼，3500+个研发。工作机会很多，尤其是如果你偏爱美企大厂，或者以后想通过L1润美的话。以后跳槽和职业发展也不错，也被称为欧洲小硅谷。<br>
@@ -449,7 +464,7 @@
 <p>比较村，也被称为“爱村”。除了之前提到的基础设施差之外，商场娱乐也不像大城市的样子。不过这点对我来说也挺好，我其实就喜欢这个样子。作为一名典型的“小镇做题家”，从小在小县城长大。虽然后来通过高考来到了大城市，但头两年呆在沙河（北京昌平郊区一镇），十分荒凉。后来来到了北四环学院路，总算是城市了。但海淀相比朝阳还是破旧许多。工作后在朝阳呆了一年，总算是品尝了些大城市的灯红酒绿，但也不习惯。所以，此番来到爱尔兰都柏林郊区，也算是能接受，感觉比长大的县城还是好上不少的。</p>
 <p>高税收。爱尔兰属于高税收高福利国家，更看重公平而非效率。本身就比美国薪水低很多，再加上最高52%的各种税，到手其实和国内差不多，甚至更少。再加上高昂的房租和物价，存下来的钱必然是更少的。</p>
 <p>变态的房租。我之前在<a href="https://youngforest.github.io/2022/12/25/2022-summary-and-2023-resolutions/#%E7%94%9F%E6%B4%BB">年终总结</a>里分享过，都柏林的房租直追欧洲一线城市，但享受到的基础设施、服务都是三线的。</p>
-<h2 id="FAQ">FAQ</h2>
+<h2 id="FAQ">FAQ<a class="section-link" href="#FAQ" aria-label="本节链接：FAQ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>有想润的朋友经常咨询我一些问题，统一在这里整理出来。</p>
 <p>** Q: 你当时在职面海外岗位，会不会时间太紧完全没法准备啊？以及请假会不会很难？**</p>
 <p>A: 我还好。因为我本身在国内就在外企工作，工作压力小，请假也十分方便，而且还长期居家办公。另外我面的欧洲工作，我会优先选择晚上面试，最差情况是下午面试，就得请假了。准备方面的话。因为我长期刷题，这方面基本不怎么需要再花时间。英语、系统设计、Behavior questions倒是花了不少时间练习。你如果当前工作压力大，确实会顶不住。建议你慢慢来，如果真想润的话，别放弃润的目标，长期准备。正好现在大环境不好，到处裁员和缩招。另外以面代练，广撒网也很重要。不需要等准备充分了才开始投。</p>

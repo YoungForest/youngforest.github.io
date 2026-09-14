@@ -56,8 +56,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -92,66 +94,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -342,18 +357,18 @@ Rating change: 1407 -&gt; 1378</p>
   <img src="/images/ai/Codeforces-Educational-Codeforces-Round-151/zh-hero.webp" alt="允许积木绕过禁用槽拼成目标，两条路线从原点共享后分叉，机械手在珠链范围内不断选择最靠右的珠子" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="A-Forbidden-Integer"><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1845/problem/A">A. Forbidden Integer</a></h2>
+<h2 id="A-Forbidden-Integer"><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1845/problem/A">A. Forbidden Integer</a><a class="section-link" href="#A-Forbidden-Integer" aria-label="本节链接：A. Forbidden Integer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>分类讨论。如果可以选1的话，那肯定可以组成任意数字。<br>
 如果不能的话，可以选2和3，也可以组成除1以外任意的数字。<br>
 如果只能选2的话，那么只能组成偶数。</p>
 <p>时间复杂度: O(t * n),</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(t):</span><br><span class="line">    n, k, x = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;NO&#x27;</span>)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> k == <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;YES&#x27;</span>)</span><br><span class="line">                <span class="built_in">print</span>(n//<span class="number">2</span>)</span><br><span class="line">                <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n//<span class="number">2</span>):</span><br><span class="line">                    <span class="built_in">print</span>(<span class="number">2</span>, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">                <span class="built_in">print</span>()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;NO&#x27;</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;YES&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(n//<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">while</span> n &gt; <span class="number">3</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="number">2</span>, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">                n -= <span class="number">2</span></span><br><span class="line">            <span class="built_in">print</span>(n)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;YES&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(n)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="built_in">print</span>(<span class="number">1</span>, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br></pre></td></tr></table></figure>
-<h2 id="B-Come-Together"><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1845/problem/B">B. Come Together</a></h2>
+<h2 id="B-Come-Together"><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1845/problem/B">B. Come Together</a><a class="section-link" href="#B-Come-Together" aria-label="本节链接：B. Come Together"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>分类讨论，B，C 在不同象限，最长公用路线不同。</p>
 <p>时间复杂度: O(t),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(t):</span><br><span class="line">    A = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line">    B = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line">    C = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line">    B[<span class="number">0</span>] = B[<span class="number">0</span>] - A[<span class="number">0</span>]</span><br><span class="line">    B[<span class="number">1</span>] = B[<span class="number">1</span>] - A[<span class="number">1</span>]</span><br><span class="line">    C[<span class="number">0</span>] = C[<span class="number">0</span>] - A[<span class="number">0</span>]</span><br><span class="line">    C[<span class="number">1</span>] = C[<span class="number">1</span>] - A[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># if B and C are in the same quadrant</span></span><br><span class="line">    <span class="keyword">if</span> (B[<span class="number">0</span>] * C[<span class="number">0</span>] &gt; <span class="number">0</span> <span class="keyword">and</span> B[<span class="number">1</span>] * C[<span class="number">1</span>] &gt; <span class="number">0</span>) \</span><br><span class="line">        <span class="keyword">or</span> (B[<span class="number">0</span>] * C[<span class="number">0</span>] == <span class="number">0</span> <span class="keyword">and</span> B[<span class="number">1</span>] * C[<span class="number">1</span>] &gt; <span class="number">0</span>) \</span><br><span class="line">        <span class="keyword">or</span> (B[<span class="number">0</span>] * C[<span class="number">0</span>] &gt; <span class="number">0</span> <span class="keyword">and</span> B[<span class="number">1</span>] * C[<span class="number">1</span>] == <span class="number">0</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">min</span>(<span class="built_in">abs</span>(B[<span class="number">0</span>]), <span class="built_in">abs</span>(C[<span class="number">0</span>])) + <span class="number">1</span> + <span class="built_in">min</span>(<span class="built_in">abs</span>(B[<span class="number">1</span>]), <span class="built_in">abs</span>(C[<span class="number">1</span>])) + <span class="number">1</span> - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">elif</span> B[<span class="number">0</span>] * C[<span class="number">0</span>] &lt;= <span class="number">0</span> <span class="keyword">and</span> B[<span class="number">1</span>] * C[<span class="number">1</span>] &gt; <span class="number">0</span>: <span class="comment"># the same side but different quadrant</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">min</span>(<span class="built_in">abs</span>(B[<span class="number">1</span>]), <span class="built_in">abs</span>(C[<span class="number">1</span>])) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">elif</span> B[<span class="number">0</span>] * C[<span class="number">0</span>] &gt; <span class="number">0</span> <span class="keyword">and</span> B[<span class="number">1</span>] * C[<span class="number">1</span>] &lt;= <span class="number">0</span>: <span class="comment"># the same side but different quadrant</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">min</span>(<span class="built_in">abs</span>(B[<span class="number">0</span>]), <span class="built_in">abs</span>(C[<span class="number">0</span>])) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>: <span class="comment"># opposite quadrant</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="C-Strong-Password"><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1845/problem/C#">C. Strong Password</a></h2>
+<h2 id="C-Strong-Password"><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1845/problem/C#">C. Strong Password</a><a class="section-link" href="#C-Strong-Password" aria-label="本节链接：C. Strong Password"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>暴力方法很简单，回溯枚举所有符合l, r限制的密码，然后判断是否是s的子序列。<br>
 然而，回溯这步时间复杂度就是对数的了。</p>
 <p>正确的解法是贪心，对于每个位置，尽量取其在s中最靠右的数。<br>

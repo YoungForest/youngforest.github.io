@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,25 +384,25 @@
 </tbody>
 </table>
 <p>本次比赛的失误主要在于第二题sort中的cmp函数写错了，没有保证 严格有序。一直segment fault。即 a &lt; b, 必有 b !&lt; a.</p>
-<h2 id="1093-Statistics-from-a-Large-Sample">1093. Statistics from a Large Sample</h2>
+<h2 id="1093-Statistics-from-a-Large-Sample">1093. Statistics from a Large Sample<a class="section-link" href="#1093-Statistics-from-a-Large-Sample" aria-label="本节链接：1093. Statistics from a Large Sample"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intution:<br>
 熟悉C++和统计中的这5个统计值的意义即可。<br>
 时间复杂度: O(N),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">sampleStats</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; count)</span> </span>&#123;</span><br><span class="line">        <span class="type">double</span> minimum = <span class="number">255.0</span>, maximum = <span class="number">0.0</span>, mean = <span class="number">0.0</span>, median = <span class="number">0.0</span>, mode = <span class="number">0.0</span>;</span><br><span class="line">        <span class="keyword">auto</span> minimum_it = <span class="built_in">find_if</span>(count.<span class="built_in">cbegin</span>(), count.<span class="built_in">cend</span>(), [](<span class="type">const</span> <span class="keyword">auto</span> &amp; a) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> a &gt; <span class="number">0</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">        minimum = minimum_it - count.<span class="built_in">cbegin</span>();</span><br><span class="line">        <span class="keyword">auto</span> max_it = <span class="built_in">find_if</span>(count.<span class="built_in">crbegin</span>(), count.<span class="built_in">crend</span>(), [](<span class="type">const</span> <span class="keyword">auto</span> &amp; a) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> a &gt; <span class="number">0</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">        maximum = <span class="keyword">static_cast</span>&lt;<span class="type">int</span>&gt;(count.<span class="built_in">size</span>()) - (max_it - count.<span class="built_in">crbegin</span>()) - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; count.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            mean += i * count[i];</span><br><span class="line">            num += count[i];</span><br><span class="line">        &#125;</span><br><span class="line">        mean /= num;</span><br><span class="line">        <span class="type">int</span> total = num;</span><br><span class="line">        num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; count.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (count[i] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            num += count[i];</span><br><span class="line">            <span class="keyword">if</span> (num * <span class="number">2</span> &gt; total) &#123;</span><br><span class="line">                <span class="keyword">if</span> (median &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    median = (median + i) / <span class="number">2</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    median = i;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num * <span class="number">2</span> == total) &#123;</span><br><span class="line">                median = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">auto</span> mode_it = <span class="built_in">max_element</span>(count.<span class="built_in">cbegin</span>(), count.<span class="built_in">cend</span>());</span><br><span class="line">        mode = mode_it - count.<span class="built_in">cbegin</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> &#123;minimum, maximum, mean, median, mode&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1094-Car-Pooling">1094. Car Pooling</h2>
+<h2 id="1094-Car-Pooling">1094. Car Pooling<a class="section-link" href="#1094-Car-Pooling" aria-label="本节链接：1094. Car Pooling"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 模拟整个上下车的过程。在每个站台判断是否超载。<br>
 时间复杂度: O(N log N)<br>
 空间复杂度: O(N)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">carPooling</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; &amp;trips, <span class="type">int</span> capacity)</span> </span>&#123;</span><br><span class="line">       map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; stops;</span><br><span class="line">       <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; trip : trips) &#123;</span><br><span class="line">           stops[trip[<span class="number">1</span>]] += trip[<span class="number">0</span>];</span><br><span class="line">           stops[trip[<span class="number">2</span>]] -= trip[<span class="number">0</span>];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="type">int</span> passengers = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; stop : stops) &#123;</span><br><span class="line">           passengers += stop.second;</span><br><span class="line">           <span class="keyword">if</span> (passengers &gt; capacity)</span><br><span class="line">               <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1095-Find-in-Mountain-Array">1095. Find in Mountain Array</h2>
+<h2 id="1095-Find-in-Mountain-Array">1095. Find in Mountain Array<a class="section-link" href="#1095-Find-in-Mountain-Array" aria-label="本节链接：1095. Find in Mountain Array"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>本题算是一类新题型：交互式问题。<br>
 3次 二分搜索搞定。</p>
 <p>时间复杂度: O(log N).<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * // This is the MountainArray&#x27;s API interface.</span></span><br><span class="line"><span class="comment"> * // You should not implement it, or speculate about its implementation</span></span><br><span class="line"><span class="comment"> * class MountainArray &#123;</span></span><br><span class="line"><span class="comment"> *   public:</span></span><br><span class="line"><span class="comment"> *     int get(int index);</span></span><br><span class="line"><span class="comment"> *     int length();</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findInMountainArray</span><span class="params">(<span class="type">int</span> target, MountainArray &amp;mountainArr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> lo = <span class="number">0</span>, hi = mountainArr.<span class="built_in">length</span>();</span><br><span class="line">        <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">            <span class="type">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (mid == mountainArr.<span class="built_in">length</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">                hi = mid;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (mountainArr.<span class="built_in">get</span>(mid) &lt; mountainArr.<span class="built_in">get</span>(mid + <span class="number">1</span>))</span><br><span class="line">                lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> mountain = lo;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;mountain: &quot; &lt;&lt; mountain &lt;&lt; endl;</span></span><br><span class="line">        lo = <span class="number">0</span>, hi = mountain + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">            <span class="type">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (mountainArr.<span class="built_in">get</span>(mid) &lt; target)</span><br><span class="line">                lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;first: &quot; &lt;&lt; lo &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">if</span> (mountainArr.<span class="built_in">get</span>(lo) == target)</span><br><span class="line">            <span class="keyword">return</span> lo;</span><br><span class="line">        lo = mountain, hi = mountainArr.<span class="built_in">length</span>();</span><br><span class="line">        <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">            <span class="type">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (mountainArr.<span class="built_in">get</span>(mid) &gt; target)</span><br><span class="line">                lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;second: &quot; &lt;&lt; lo &lt;&lt; endl;</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (lo &lt; mountainArr.<span class="built_in">length</span>() &amp;&amp; mountainArr.<span class="built_in">get</span>(lo) == target)</span><br><span class="line">            <span class="keyword">return</span> lo;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1096-Brace-Expansion-II">1096. Brace Expansion II</h2>
+<h2 id="1096-Brace-Expansion-II">1096. Brace Expansion II<a class="section-link" href="#1096-Brace-Expansion-II" aria-label="本节链接：1096. Brace Expansion II"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>参考的<a target="_blank" rel="noopener" href="https://leetcode.com/problems/brace-expansion-ii/discuss/317732/ChineseC++-1096.">discuss</a><br>
 作者用了语法分析的思路来解决这道题目。<br>
 二个子程序parseRule2 和 parseRule3 分别处理 并集 和 笛卡尔积 的情况。</p>

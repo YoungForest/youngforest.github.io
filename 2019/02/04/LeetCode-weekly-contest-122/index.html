@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -344,7 +359,7 @@
 <span id="more"></span>
 <p>由于宅在家里过节，竟然忘记了每天是星期几，只知道农历腊月几日。今天才发现已经到了周一了，错过了每周一度的weekly contest。在此除夕之夜，和家人一起看春晚之前，Forest携全家人一起祝大家新年快乐！快些刷完这4道比赛题目，好安心吃年夜饭。</p>
 <p>由于比赛不能用官方的Notes, 写在blog上还是蛮方便的一种替代品。</p>
-<h2 id="985-Sum-of-Even-Numbers-After-Queries">985. Sum of Even Numbers After Queries</h2>
+<h2 id="985-Sum-of-Even-Numbers-After-Queries">985. Sum of Even Numbers After Queries<a class="section-link" href="#985-Sum-of-Even-Numbers-After-Queries" aria-label="本节链接：985. Sum of Even Numbers After Queries"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>第一题直接模拟即可。每个query有2个动作：</p>
 <ol>
 <li>add <code>val</code> to <code>A[index]</code>;</li>
@@ -363,19 +378,19 @@ if 偶数 -&gt; 奇数，sum = last_sum - 旧偶数;<br>
 if 偶数 -&gt; 偶数，sum = last_sum + 新偶数 - 旧偶数;<br>
 if 奇数 -&gt; 奇数，sum = last_sum.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sumEvenAfterQueries</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; queries)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; results;</span><br><span class="line">        <span class="type">int</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> a : A) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">0</span>) total += a;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; query : queries) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[query[<span class="number">1</span>]] % <span class="number">2</span> == <span class="number">0</span>) total -= A[query[<span class="number">1</span>]];</span><br><span class="line">            A[query[<span class="number">1</span>]] += query[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">if</span> (A[query[<span class="number">1</span>]] % <span class="number">2</span> == <span class="number">0</span>) total += A[query[<span class="number">1</span>]];</span><br><span class="line">            results.<span class="built_in">push_back</span>(total);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="988-Smallest-String-Starting-From-Leaf">988. Smallest String Starting From Leaf</h2>
+<h2 id="988-Smallest-String-Starting-From-Leaf">988. Smallest String Starting From Leaf<a class="section-link" href="#988-Smallest-String-Starting-From-Leaf" aria-label="本节链接：988. Smallest String Starting From Leaf"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>寻找二叉树中从叶子到根的最小字符串。<br>
 Intuition：递归左右子树，将根结点与更小的结合。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">smallestFromLeaf</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        string left = <span class="built_in">smallestFromLeaf</span>(root-&gt;left);</span><br><span class="line">        string right = <span class="built_in">smallestFromLeaf</span>(root-&gt;right);</span><br><span class="line">        <span class="keyword">if</span> (!left.<span class="built_in">empty</span>() &amp;&amp; !right.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (left &lt; right) &#123;</span><br><span class="line">                left.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + root-&gt;val);</span><br><span class="line">                <span class="keyword">return</span> left;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + root-&gt;val);</span><br><span class="line">                <span class="keyword">return</span> right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!left.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            left.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + root-&gt;val);</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + root-&gt;val);</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125;</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="986-Interval-List-Intersections">986. Interval List Intersections</h2>
+<h2 id="986-Interval-List-Intersections">986. Interval List Intersections<a class="section-link" href="#986-Interval-List-Intersections" aria-label="本节链接：986. Interval List Intersections"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>求2个有序区间列表的并集列表。</p>
 <p>Intuition：2个指针遍历2个列表，根据不同重合程度，选择并集和指针移动。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for an interval.</span></span><br><span class="line"><span class="comment"> * struct Interval &#123;</span></span><br><span class="line"><span class="comment"> *     int start;</span></span><br><span class="line"><span class="comment"> *     int end;</span></span><br><span class="line"><span class="comment"> *     Interval() : start(0), end(0) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     Interval(int s, int e) : start(s), end(e) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;Interval&gt; <span class="title">intervalIntersection</span><span class="params">(vector&lt;Interval&gt;&amp; A, vector&lt;Interval&gt;&amp; B)</span> </span>&#123;</span><br><span class="line">        vector&lt;Interval&gt; results;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">auto</span> a = A.<span class="built_in">begin</span>();</span><br><span class="line">        <span class="keyword">auto</span> b = B.<span class="built_in">begin</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (a != A.<span class="built_in">end</span>() &amp;&amp; b != B.<span class="built_in">end</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a-&gt;end &lt; b-&gt;start) &#123;</span><br><span class="line">                a++;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b-&gt;end &lt; a-&gt;start) &#123;</span><br><span class="line">                b++;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a-&gt;start &lt; b-&gt;start) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a-&gt;end &lt; b-&gt;end) &#123;</span><br><span class="line">                    Interval <span class="built_in">interval</span>(b-&gt;start, a-&gt;end);</span><br><span class="line">                    results.<span class="built_in">push_back</span>(interval);</span><br><span class="line">                    a++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    results.<span class="built_in">push_back</span>(*b);</span><br><span class="line">                    b++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b-&gt;start &lt; a-&gt;start) &#123;</span><br><span class="line">                <span class="keyword">if</span> (b-&gt;end &lt; a-&gt;end) &#123;</span><br><span class="line">                    Interval <span class="built_in">interval</span>(a-&gt;start, b-&gt;end);</span><br><span class="line">                    results.<span class="built_in">push_back</span>(interval);</span><br><span class="line">                    b++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    results.<span class="built_in">push_back</span>(*a);</span><br><span class="line">                    a++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (a-&gt;end &lt;= b-&gt;end) &#123;</span><br><span class="line">                    Interval <span class="built_in">interval</span>(b-&gt;start, a-&gt;end);</span><br><span class="line">                    results.<span class="built_in">push_back</span>(interval);</span><br><span class="line">                    a++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    Interval <span class="built_in">interval</span>(a-&gt;start, b-&gt;end);</span><br><span class="line">                    results.<span class="built_in">push_back</span>(interval);</span><br><span class="line">                    b++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// cout &lt;&lt; &quot;(&quot; &lt;&lt; a-&gt;start &lt;&lt; &quot;, &quot; &lt;&lt; a-&gt;end &lt;&lt; &quot;), &quot;;</span></span><br><span class="line">                <span class="comment">// cout &lt;&lt; &quot;(&quot; &lt;&lt; b-&gt;start &lt;&lt; &quot;, &quot; &lt;&lt; b-&gt;end &lt;&lt; &quot;)&quot; &lt;&lt; endl;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="987-Vertical-Order-Traversal-of-a-Binary-Tree">987. Vertical Order Traversal of a Binary Tree</h2>
+<h2 id="987-Vertical-Order-Traversal-of-a-Binary-Tree">987. Vertical Order Traversal of a Binary Tree<a class="section-link" href="#987-Vertical-Order-Traversal-of-a-Binary-Tree" aria-label="本节链接：987. Vertical Order Traversal of a Binary Tree"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intution: 建立一个dequeue&lt;treemap<int>&gt;, 对于每一颗子树，讲root插入当前的treemap中（使用treemap以保证同一X层内的顺序），同时递归调用左右子树，并更新当前的treemap。<br>
 最后再转化为vector&lt;vector<int>&gt;。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    deque&lt;multiset&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt;&gt; results;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">recurse</span><span class="params">(TreeNode* root, deque&lt;multiset&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt;&gt;::iterator current, <span class="type">int</span> level)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (current == results.<span class="built_in">end</span>()) &#123;</span><br><span class="line">            multiset&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; s;</span><br><span class="line">            results.<span class="built_in">push_back</span>(s);</span><br><span class="line">            current = results.<span class="built_in">end</span>() - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (current + <span class="number">1</span> == results.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">            multiset&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; s;</span><br><span class="line">            results.<span class="built_in">push_front</span>(s);</span><br><span class="line">            current = results.<span class="built_in">begin</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        current-&gt;<span class="built_in">insert</span>(&#123;level, root-&gt;val&#125;);</span><br><span class="line">        <span class="built_in">recurse</span>(root-&gt;left, current - <span class="number">1</span>, level + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">recurse</span>(root-&gt;right, current + <span class="number">1</span>, level + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">verticalTraversal</span>(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">recurse</span>(root, results.<span class="built_in">begin</span>(), <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ret;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> multiset&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt;&amp; s : results) &#123;</span><br><span class="line">            vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">const</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; num : s) &#123;</span><br><span class="line">                v.<span class="built_in">push_back</span>(num.second);</span><br><span class="line">            &#125;</span><br><span class="line">            ret.<span class="built_in">push_back</span>(v);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Google的电话面试的结果已经出来了。很遗憾Forest Fail掉了，没有进入下一轮面试。虽然是在情理之中的事情，但还是挺伤心的。比较了同行的实力后，我发现自己还是LeetCode刷的不够多。年初定目标竟然只定了300道，看现在程序员竞争的灿烈程度，300道估计是远远不够的。毕竟自己已经练习了有200道了，实习生的面试都应对不了。经过这次失败，我重新审视了自己的实力，决定将今年的刷题计划提高到900道，或者是把所有的可刷的题目都刷完。因为有Premium才能刷的题目，所以现在不知道能刷的有多少。把该刷的刷完，我也会买个大会员，进一步刷题的。</p>
 <p>我告诉快手师兄C<ins>是我的主语言，然后他问了我C</ins>11的新特性“move的语义”是什么？然后我就gg了。自己对C<ins>掌握的只是皮毛而已，还好意思说会C</ins>。春节假期一定要把《C++ Primer》看完，否则节后都不好意思找快手师兄啦！</p>
 <p>任重而道远啊！加油，Forest！</p>

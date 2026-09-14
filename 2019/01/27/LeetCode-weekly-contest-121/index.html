@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -343,21 +358,21 @@
 </figure>
 <span id="more"></span>
 <p>今天放假回家，下午3点半的火车。不过我还是百忙之中抽出时间参加了每周例行的weekly contest。 结果因为回家不够专注，效果很差，只做出一道签到题。第二题TLE(结果把一个变量改成引用就可以了，也算是吸取了教训，能用引用就用引用)，第3题没有足够的时间完成了(直到下午坐上火车，心无旁骛地终于独立完成了第三题。其实思路从一开始就是对的，只不过没有时间调试细节)。第四题干脆连题干都没有时间看完。</p>
-<h2 id="984-String-Without-AAA-or-BBB">984. String Without AAA or BBB</h2>
+<h2 id="984-String-Without-AAA-or-BBB">984. String Without AAA or BBB<a class="section-link" href="#984-String-Without-AAA-or-BBB" aria-label="本节链接：984. String Without AAA or BBB"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intution: 由于不能出现连续的a或b，我们可以试着直接构造出符合要求的字符串。多的字符出现2次，即插入一个少的字符，当剩余的2个字符一样多的时候，就一个出现一次就可以了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">strWithout3a3b</span><span class="params">(<span class="type">int</span> A, <span class="type">int</span> B)</span> </span>&#123;</span><br><span class="line">        string result;</span><br><span class="line">        <span class="type">char</span> large, small;</span><br><span class="line">        <span class="type">int</span> bigger, smaller;</span><br><span class="line">        <span class="keyword">if</span> (A &gt; B) &#123;</span><br><span class="line">            large = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            small = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">            bigger = A;</span><br><span class="line">            smaller = B;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            large = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">            small = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            bigger = B;</span><br><span class="line">            smaller = A;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; bigger &gt; <span class="number">0</span> &amp;&amp; smaller &gt; <span class="number">0</span> &amp;&amp; bigger &gt; smaller; bigger-=<span class="number">2</span>, smaller--) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(large);</span><br><span class="line">            result.<span class="built_in">push_back</span>(large);</span><br><span class="line">            result.<span class="built_in">push_back</span>(small);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; bigger &gt; <span class="number">0</span> &amp;&amp; smaller &gt; <span class="number">0</span>; bigger--, smaller--) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(large);</span><br><span class="line">            result.<span class="built_in">push_back</span>(small);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (bigger &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(large);</span><br><span class="line">            bigger--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (smaller &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(small);</span><br><span class="line">            small--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="981-Time-Based-Key-Value-Store">981. Time Based Key-Value Store</h2>
+<h2 id="981-Time-Based-Key-Value-Store">981. Time Based Key-Value Store<a class="section-link" href="#981-Time-Based-Key-Value-Store" aria-label="本节链接：981. Time Based Key-Value Store"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intution:<br>
 使用hashmap存储&lt;key, vector&lt;pair&lt;int, string&gt;&gt; value&gt;,<br>
 每次查找到key对应的vector后，针对pair的第一个值使用二分查找upper_bound timestamp.</p>
 <p>注意：用引用，千万不要用普通变量存储hashmap[key]。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TimeMap</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/** Intution:</span></span><br><span class="line"><span class="comment">        使用hashmap存储&lt;key, vector&lt;pair&lt;int, string&gt;&gt; value&gt;,</span></span><br><span class="line"><span class="comment">        每次查找到key对应的vector后，针对pair的第一个值使用二分查找upper_bound timestamp</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    unordered_map&lt;string, vector&lt;pair&lt;<span class="type">int</span>, string&gt;&gt;&gt; hashmap;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Cmp</span> &#123;</span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(pair&lt;<span class="type">int</span>, string&gt; a, pair&lt;<span class="type">int</span>, string&gt; b)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a.first &lt; b.first;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="built_in">TimeMap</span>() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">set</span><span class="params">(string key, string value, <span class="type">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        hashmap[key].<span class="built_in">push_back</span>(&#123;timestamp, value&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">string <span class="title">get</span><span class="params">(string key, <span class="type">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span>&amp; values = hashmap[key];    <span class="comment">// 注意：用引用，千万不要用普通变量存储</span></span><br><span class="line">        <span class="keyword">if</span> (values.<span class="built_in">size</span>() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">auto</span> val = <span class="built_in">upper_bound</span>(values.<span class="built_in">begin</span>(), values.<span class="built_in">end</span>(), <span class="built_in">make_pair</span>(timestamp, <span class="string">&quot;&quot;</span>), <span class="built_in">Cmp</span>());</span><br><span class="line">        <span class="keyword">if</span> (val == values.<span class="built_in">begin</span>()) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> (--val)-&gt;second;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your TimeMap object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * TimeMap* obj = new TimeMap();</span></span><br><span class="line"><span class="comment"> * obj-&gt;set(key,value,timestamp);</span></span><br><span class="line"><span class="comment"> * string param_2 = obj-&gt;get(key,timestamp);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h2 id="983-Minimum-Cost-For-Tickets">983. Minimum Cost For Tickets</h2>
+<h2 id="983-Minimum-Cost-For-Tickets">983. Minimum Cost For Tickets<a class="section-link" href="#983-Minimum-Cost-For-Tickets" aria-label="本节链接：983. Minimum Cost For Tickets"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intution: 最优化问题，最优解依赖子问题的解，首先想到dp。<br>
 最优解结构：f(x) = min(f(x-1) + cost[0], f(x-7) + cost[1], f(x-30) + cost[2]),<br>
 其中，f(x)表示天数为x时的最小花费，由于x可能不存在于days中，此时，f(x)表示比x恰好大的天的最小花费。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getDp</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; days, vector&lt;<span class="type">int</span>&gt;&amp; dp, <span class="type">int</span> day)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> result = <span class="built_in">upper_bound</span>(days.<span class="built_in">begin</span>(), days.<span class="built_in">end</span>(), day);</span><br><span class="line">        <span class="comment">// cout &lt;&lt; day &lt;&lt; &quot; &quot; &lt;&lt; int(result - days.begin()) &lt;&lt; &quot; &quot; &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">if</span> (result == days.<span class="built_in">begin</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot;return : &quot; &lt;&lt; *(result-1) &lt;&lt; endl;</span></span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot;return : &quot; &lt;&lt; dp[0] &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">return</span> dp[result - days.<span class="built_in">begin</span>() - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mincostTickets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; days, vector&lt;<span class="type">int</span>&gt;&amp; costs)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(days.size(), <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; days.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="type">int</span> day = days[i];</span><br><span class="line">            dp[i] = <span class="built_in">getDp</span>(days, dp, day - <span class="number">1</span>) + costs[<span class="number">0</span>];</span><br><span class="line">            dp[i] = <span class="built_in">min</span>(dp[i], <span class="built_in">getDp</span>(days, dp, day - <span class="number">7</span>) + costs[<span class="number">1</span>]);</span><br><span class="line">            dp[i] = <span class="built_in">min</span>(dp[i], <span class="built_in">getDp</span>(days, dp, day - <span class="number">30</span>) + costs[<span class="number">2</span>]);</span><br><span class="line">            <span class="comment">// cout &lt;&lt; &quot;dp : &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; dp[i] &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[dp.<span class="built_in">size</span>() - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="983-Minimum-Cost-For-Tickets-v2">983. Minimum Cost For Tickets</h2>
+<h2 id="983-Minimum-Cost-For-Tickets-v2">983. Minimum Cost For Tickets<a class="section-link" href="#983-Minimum-Cost-For-Tickets-v2" aria-label="本节链接：983. Minimum Cost For Tickets"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>暴力方法是3层循环枚举所有的组合，判断是否符合按位与为0的条件。时间复杂度: O(n^3)。<br>
 结果TLE。</p>
 <p>可以想到的优化:</p>
@@ -373,7 +388,7 @@
 结果AC。因为A[i] &amp; A[j]重复的很多，所以实际运行时，比较接近 Omega(n^2)。</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countTriplets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hashtable;</span><br><span class="line">        <span class="type">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> a: A) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> b: A) &#123;</span><br><span class="line">                <span class="type">int</span> x = a &amp; b;</span><br><span class="line">                <span class="keyword">if</span> (hashtable.<span class="built_in">find</span>(x) == hashtable.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">auto</span> c: A) &#123;</span><br><span class="line">                        <span class="keyword">if</span> ((c &amp; x) == <span class="number">0</span>)</span><br><span class="line">                            hashtable[x]++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                result += hashtable[x];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>结束该contest后的第二天，我在家里参加了Google的1st Phone Interview。由于保密协议的限制，并不能分享具体的题目。<br>
 只能再次分享一些面试的体会吧。面试题目整体不难，比较接近Medium。但45分钟要解决2道题目，从思考到讨论再到编码，而且电话面试的通话质量也很差，真的是很难的一件事情。最后结果第二题最后急匆匆写完了，也没有做到bug-free就匆忙结束了已经超时的面试。我现在在LeetCode上做算法题也有170道了，其中一半以上是Medium+难度的。但仍然不足以应对Google的面试。排除掉客观原因，我失败的主观原因有：</p>
 <ul>

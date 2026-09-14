@@ -61,8 +61,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -97,66 +99,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -351,11 +366,11 @@
   <img src="/images/ai/Ireland-Driving-License/zh-hero.webp" alt="Forest 沿爱尔兰海岸公路依次经过理论卡片、视力镜片、许可文件夹、驾驶课、路考与车钥匙" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="中国驾照在爱尔兰的使用">中国驾照在爱尔兰的使用</h2>
+<h2 id="中国驾照在爱尔兰的使用">中国驾照在爱尔兰的使用<a class="section-link" href="#%E4%B8%AD%E5%9B%BD%E9%A9%BE%E7%85%A7%E5%9C%A8%E7%88%B1%E5%B0%94%E5%85%B0%E7%9A%84%E4%BD%BF%E7%94%A8" aria-label="本节链接：中国驾照在爱尔兰的使用"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>中国大陆的驾照可以在爱尔兰开一年车，整个翻译件就可以了。我出国前还特意办了公证，算是更加保险。之后再开就需要考当地驾照了。有许多国家和地区可以在爱尔兰直接换驾照，如 中国台湾地区，可惜大陆不在此列。欧盟或英国驾照也可以无缝在爱尔兰继续使用。<a target="_blank" rel="noopener" href="https://t.co/Tm6Szxm22v">具体不同国家驾照在爱尔兰使用要求可以参考这里</a>.</p>
-<h2 id="爱尔兰驾照申请流程">爱尔兰驾照申请流程</h2>
+<h2 id="爱尔兰驾照申请流程">爱尔兰驾照申请流程<a class="section-link" href="#%E7%88%B1%E5%B0%94%E5%85%B0%E9%A9%BE%E7%85%A7%E7%94%B3%E8%AF%B7%E6%B5%81%E7%A8%8B" aria-label="本节链接：爱尔兰驾照申请流程"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>官方步骤：理论考试，视力证明，申请Learner驾照，外国驾照减免，上驾校，路考，申请正式驾照。</p>
-<h3 id="理论考试-（Theory-Test）">理论考试 （Theory Test）</h3>
+<h3 id="理论考试-（Theory-Test）">理论考试 （Theory Test）<a class="section-link" href="#%E7%90%86%E8%AE%BA%E8%80%83%E8%AF%95-%EF%BC%88Theory-Test%EF%BC%89" aria-label="本节链接：理论考试 （Theory Test）"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>类似国内的 科一 和 科四。</p>
 <p><a target="_blank" rel="noopener" href="https://t.co/IBdjYMC5NS">理论考试报名链接</a>. 报名费45欧。<br>
 考试30分钟，40道题，答对35道就算通过。通过后有效期2年。</p>
@@ -370,7 +385,7 @@
 结束考试后，在现场等5分钟就可以拿到结果和成绩单。</p>
 <p><img src="/images/IrelandDriverLicense/DriverLicenseScore1.jpg" alt="成绩单正面"><br>
 <img src="/images/IrelandDriverLicense/DriverLicenseScore2.jpg" alt="成绩单反面"></p>
-<h3 id="视力证明-Eyesight-test-report">视力证明 (Eyesight test report)</h3>
+<h3 id="视力证明-Eyesight-test-report">视力证明 (Eyesight test report)<a class="section-link" href="#%E8%A7%86%E5%8A%9B%E8%AF%81%E6%98%8E-Eyesight-test-report" aria-label="本节链接：视力证明 (Eyesight test report)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>我是去家附近的Specsaver预约的下个月的视力检查。因为驾照的视力检查与普通检查不同，每天只有一个名额，推荐提前至少一个月预约。而且Specsaver必须线下预约，普通的可以线上直接约。通过理论考试后，在申请Learner Permit(实习驾照)的时候，还需要有个一个月以内的视力检查表，视力要求其实也不高，矫正后超过0.5即可。不用特别紧张。我也是高度近视。从<a target="_blank" rel="noopener" href="https://t.co/MYsibOUOyX">这里</a>可以下载视力检查表，提前打印好到店里就成。店里也有检查表，我当时是店里给我提供的，没用到自己打印的。不过还是推荐自己打印更保险些。</p>
 <p>费用的话，不同店不同。我的是40欧，还被推销了一个OCT的眼底检查（25欧）。公司买的私人保险Laya会报销35欧。<br>
 如果工作久的话，比如超过2年，交的PRSI会给你一个10欧检查的优惠。不过我只来了半年，久没有这个优惠。可以在预约的时候问下店员，店员会用的你的PPSN查一下，过几天会收到信件是否符合优惠条件。</p>
@@ -378,7 +393,7 @@
 特别的是一个专门给驾驶检测的机器。需要你盯着红点，然后屏幕上其他地方出现白点，就按一下手中的按钮。感觉是为了测试你反应能力。正常人应该都能通过。</p>
 <p><img src="/images/IrelandDriverLicense/Eyesight-requirements.jpeg" alt="视力检查要求"></p>
 <p>视力检查表只有3个月有效期，需要尽快申请实习驾照。</p>
-<h3 id="申请实习驾照-Learner-Permit">申请实习驾照 Learner Permit</h3>
+<h3 id="申请实习驾照-Learner-Permit">申请实习驾照 Learner Permit<a class="section-link" href="#%E7%94%B3%E8%AF%B7%E5%AE%9E%E4%B9%A0%E9%A9%BE%E7%85%A7-Learner-Permit" aria-label="本节链接：申请实习驾照 Learner Permit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p><a target="_blank" rel="noopener" href="https://ndls.rsa.ie/">申请地址</a><br>
 注意要选择Apply apply for first time learner permit, 而不是with foreign license。因为大陆的驾照并不支持。后面还有问是否有外国驾照的，那里可以填Yes, 国家Other，驾照号就是国内身份证号。<br>
 还有一些健康问题调查。除了佩戴眼镜，其他都选No就可以了。因为眼镜，会在驾照上打印一个01, 代表需要佩戴眼镜。<br>
@@ -391,7 +406,7 @@
 <li>在车上佩戴L标志</li>
 </ul>
 <p>不过很多本地人都是L驾照就随便开很久，路上也没人查。想想也是蛮危险的。我比较遵纪守法，自然不会这么干的。</p>
-<h3 id="外国驾照减免-Reduced-Essential-Driver-Training-EDT">外国驾照减免 Reduced Essential Driver Training (EDT)</h3>
+<h3 id="外国驾照减免-Reduced-Essential-Driver-Training-EDT">外国驾照减免 Reduced Essential Driver Training (EDT)<a class="section-link" href="#%E5%A4%96%E5%9B%BD%E9%A9%BE%E7%85%A7%E5%87%8F%E5%85%8D-Reduced-Essential-Driver-Training-EDT" aria-label="本节链接：外国驾照减免 Reduced Essential Driver Training (EDT)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>持有中国驾照至少2年，可以减免课时从12小时到6小时。每小时课差不多50欧，可以省不少钱。<br>
 持有中国驾照6个月，可以免除 实习驾照 获取后，6个月才能参加路考 的限制。<br>
 然后驾照不能过期超过6个月。</p>
@@ -407,19 +422,19 @@
 邮寄地址参见 <a target="_blank" rel="noopener" href="https://www.ndls.ie/images/Documents/Forms/169030%20RSA%20Reduced%20EDT%20App%20Form%201405_Web_HR.pdf">Reduced EDT的说明和申请表</a>：Reduced EDT, National Driver Licence Service, PO Box 858, Southside Delivery Offi ce, Cork</p>
 <p><img src="/images/IrelandDriverLicense/Reduced-EDT.jpg" alt="Reduced EDT 申请通过"></p>
 <p>下一步就可以联系ADI教练了。</p>
-<h3 id="上驾校">上驾校</h3>
+<h3 id="上驾校">上驾校<a class="section-link" href="#%E4%B8%8A%E9%A9%BE%E6%A0%A1" aria-label="本节链接：上驾校"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>在 小红书 上找了一个华人教练，叫“人在旅途”/Jun，但他只有自动挡的车。我想学手动挡，因为选择更多。和国内一样，手动挡驾照可以开自动挡和手动挡的车，但自动挡驾照只能开自动挡的车。</p>
 <p>后来经Jun 推荐，找了一个National driving School的教练 Keith. 联系方式为：<br>
 +353 85 151 4076<br>
 收费每小时55欧。</p>
 <p>上过6小时课程后，就可以报名路考了。</p>
-<h3 id="路考">路考</h3>
+<h3 id="路考">路考<a class="section-link" href="#%E8%B7%AF%E8%80%83" aria-label="本节链接：路考"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>在<a target="_blank" rel="noopener" href="https://www.rsa.ie/">rsa.ie</a>上报名路考，建议上完6小时课程后，尽快报名。因为排队的人多，只能加入waiting list。大概过半年才能排到。我是9月14号报的名。<br>
 我住在都柏林南边，选这个考场最好 Dun Laoghaire/Deansgrange</p>
 <p>等路考期间，可以自己买个二手车多练练。虽然理论上L驾照，需要一个正式驾照2年的副驾驶陪同才能上路，但实践中你买车上路都没啥问题。如果爱尔兰有熟人，可以借车给你练也是再好不过的了。还可以坐在副驾驶上，符合法律要求。当然也可以再花钱约教练学课程。<br>
 虽然约教练蛮贵的（55欧一小时），但其实自己买车，车钱+保险也不便宜。看自己的需求和计划了。</p>
 <p>确定考试日期后，可以和教练约一个pre test. 教练到时候根据日期，会知道考试线路，可以帮你过一下，提高通过率。</p>
-<h3 id="申请正式驾照。">申请正式驾照。</h3>
+<h3 id="申请正式驾照。">申请正式驾照。<a class="section-link" href="#%E7%94%B3%E8%AF%B7%E6%AD%A3%E5%BC%8F%E9%A9%BE%E7%85%A7%E3%80%82" aria-label="本节链接：申请正式驾照。"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <section class="legacy-comments" aria-labelledby="legacy-comments-title" aria-describedby="legacy-comments-note">
     <header class="legacy-comments__header">
       <div class="legacy-comments__title" id="legacy-comments-title" role="heading" aria-level="2">历史评论<span class="legacy-comments__count" aria-label="4 条历史评论">4</span></div>

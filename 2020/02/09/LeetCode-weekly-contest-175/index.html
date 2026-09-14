@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,17 +384,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="1346-Check-If-N-and-Its-Double-Exist">1346. Check If N and Its Double Exist</h2>
+<h2 id="1346-Check-If-N-and-Its-Double-Exist">1346. Check If N and Its Double Exist<a class="section-link" href="#1346-Check-If-N-and-Its-Double-Exist" aria-label="本节链接：1346. Check If N and Its Double Exist"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>使用一个hashmap存储之前见到过的数即可。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">checkIfExist</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="type">int</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : arr) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">find</span>(i * <span class="number">2</span>) != s.<span class="built_in">end</span>() || (i % <span class="number">2</span> == <span class="number">0</span> &amp;&amp; s.<span class="built_in">find</span>(i / <span class="number">2</span>) != s.<span class="built_in">end</span>()))</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            s.<span class="built_in">insert</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram">1347. Minimum Number of Steps to Make Two Strings Anagram</h2>
+<h2 id="1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram">1347. Minimum Number of Steps to Make Two Strings Anagram<a class="section-link" href="#1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram" aria-label="本节链接：1347. Minimum Number of Steps to Make Two Strings Anagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>根据Anagram的定义，我们统计2个字符串中各个字符出现频数之差就可以了。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">convert</span><span class="params">(<span class="type">const</span> string&amp; s)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(<span class="number">26</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : s) &#123;</span><br><span class="line">            ++ans[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSteps</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> count_s = <span class="built_in">convert</span>(s);</span><br><span class="line">        <span class="keyword">auto</span> <span class="type">count_t</span> = <span class="built_in">convert</span>(t);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (count_s[i] &gt; <span class="type">count_t</span>[i]) &#123;</span><br><span class="line">                ans += count_s[i] - <span class="type">count_t</span>[i];</span><br><span class="line">            &#125;            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1348-Tweet-Counts-Per-Frequency">1348. Tweet Counts Per Frequency</h2>
+<h2 id="1348-Tweet-Counts-Per-Frequency">1348. Tweet Counts Per Frequency<a class="section-link" href="#1348-Tweet-Counts-Per-Frequency" aria-label="本节链接：1348. Tweet Counts Per Frequency"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>使用TreeMap记录Tweet即可。<br>
 需要注意记录区间分割的点，根据这些分割点寻找里面的Tweet。</p>
 <p>时间复杂度:</p>
@@ -390,7 +405,7 @@
 <li>O(N)</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TweetCounts</span> &#123;</span><br><span class="line">    unordered_map&lt;string, map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; string_map;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">TweetCounts</span>() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">recordTweet</span><span class="params">(string tweetName, <span class="type">int</span> time)</span> </span>&#123;</span><br><span class="line">        ++string_map[tweetName][time];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">getTweetCountsPerFrequency</span><span class="params">(string freq, string tweetName, <span class="type">int</span> startTime, <span class="type">int</span> endTime)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> interval = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (freq == <span class="string">&quot;hour&quot;</span>) &#123;</span><br><span class="line">            interval = <span class="number">3600</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (freq == <span class="string">&quot;day&quot;</span>) &#123;</span><br><span class="line">            interval =  <span class="number">3600</span> * <span class="number">24</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            interval = <span class="number">60</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">const</span> <span class="keyword">auto</span>&amp; m = string_map[tweetName];</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="type">int</span> st = startTime;</span><br><span class="line">        <span class="keyword">auto</span> start_it = m.<span class="built_in">lower_bound</span>(st);</span><br><span class="line">        <span class="keyword">auto</span> end_it = m.<span class="built_in">upper_bound</span>(endTime);</span><br><span class="line">        <span class="keyword">auto</span> it = start_it;</span><br><span class="line">        <span class="keyword">while</span> (st &lt;= endTime) &#123;</span><br><span class="line">            <span class="keyword">auto</span> next_it = m.<span class="built_in">lower_bound</span>(st + interval);</span><br><span class="line">            <span class="type">int</span> accu = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (; it != next_it &amp;&amp; it != end_it; ++it) &#123;</span><br><span class="line">                accu += it-&gt;second;</span><br><span class="line">            &#125;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(accu);</span><br><span class="line">            st += interval;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your TweetCounts object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * TweetCounts* obj = new TweetCounts();</span></span><br><span class="line"><span class="comment"> * obj-&gt;recordTweet(tweetName,time);</span></span><br><span class="line"><span class="comment"> * vector&lt;int&gt; param_2 = obj-&gt;getTweetCountsPerFrequency(freq,tweetName,startTime,endTime);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h2 id="1349-Maximum-Students-Taking-Exam">1349. Maximum Students Taking Exam</h2>
+<h2 id="1349-Maximum-Students-Taking-Exam">1349. Maximum Students Taking Exam<a class="section-link" href="#1349-Maximum-Students-Taking-Exam" aria-label="本节链接：1349. Maximum Students Taking Exam"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>一道还挺难的题目，看了<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av88416735">花花酱</a>的视频后才学会正确的解法，在这里友情打一波广告。<br>
 动态规划 和 状态压缩。</p>
 <p>这里有几个bitmask的技巧:</p>

@@ -56,8 +56,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -92,66 +94,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -344,10 +359,10 @@
   <img src="/images/ai/2021-summer-intern-interview-summary/zh-hero.webp" alt="Forest 抱着简历穿过八条分叉的面试跑道，失败、暂停、录取和等待的出口同时亮起" width="1536" height="864" decoding="async">
 </figure>
 <span id="more"></span>
-<h2 id="失败">失败</h2>
-<h3 id="字节跳动">字节跳动</h3>
+<h2 id="失败">失败<a class="section-link" href="#%E5%A4%B1%E8%B4%A5" aria-label="本节链接：失败"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="字节跳动">字节跳动<a class="section-link" href="#%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8" aria-label="本节链接：字节跳动"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/371946">一面</a>就凉。字节跳动还是一家和我很有缘分，我也很喜欢的一家公司。去年参加过一次广告系统的暑期实习面试，经历残酷四面。面到lead力哲。最后因为实习时间不合适没去。去年暑假还参加了ByteDance 的夏令营。由于是长久以来的第一次面试，准备不足、发挥也不是很好。算法题 编辑距离 没做出来，遂一面即凉。</p>
-<h3 id="微软">微软</h3>
+<h3 id="微软">微软<a class="section-link" href="#%E5%BE%AE%E8%BD%AF" aria-label="本节链接：微软"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>找了之前在微软工作的一位师兄，托他又联系到正在微软工作的一位同事，做了内推。18年时曾面过一次<a href="https://youngforest.github.io/2018/06/01/suzhou-microsoft-interview/">苏州微软</a>, 当时水平有限，无奈地凉了。今年踌躇满志，想要一雪前耻。没想到同样翻船了。不过吸取了很重要的经验，不要吹牛打过比赛。<br>
 一面面试官问我打过什么比赛吗？我当时作死回答说，打过一些LeetCode、kickstart、codeforces、atcoder。实际上，只有LeetCode我是经常参加周赛，kickstart参加每月的轮次（如果时间合适的话）。其他平台的赛事加起来也只有几场。面试官因此误解了我的实力，认为是cf水平的（实际上，我cf的rating都不到1500）。只问了我系统设计的问题，没有手撕代码，我尽管在LeetCode上刷了900题，也没发发挥。<br>
 二面面试官上来就问了2道很难的算法题，感觉是准备给ACM选手的。都怪我一面时吹了牛，二面被安排了。</p>
@@ -355,29 +370,29 @@
 <li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/">find the closet point pair</a></li>
 <li>在平面上找到任意直线，将N个点分为数量相等的2部分</li>
 </ul>
-<h2 id="结束">结束</h2>
-<h3 id="谷歌">谷歌</h3>
+<h2 id="结束">结束<a class="section-link" href="#%E7%BB%93%E6%9D%9F" aria-label="本节链接：结束"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="谷歌">谷歌<a class="section-link" href="#%E8%B0%B7%E6%AD%8C" aria-label="本节链接：谷歌"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>通过了电话一面，但无奈因为疫情的原因，Google中国取消了暑期实习项目。我的面试进程也止于一面了。</p>
-<h3 id="钉钉">钉钉</h3>
+<h3 id="钉钉">钉钉<a class="section-link" href="#%E9%92%89%E9%92%89" aria-label="本节链接：钉钉"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>因为之前以为蚂蚁金服是独立的公司，所以投了蚂蚁和钉钉。正式在阿里系统里投递时，才得知只能投递一个。因为蚂蚁在北京，遂选择了蚂蚁。录入系统前参加了一次面试。</p>
 <p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/375152">钉钉一面</a></p>
 <figure class="editorial-illustration">
   <img src="/images/ai/2021-summer-intern-interview-summary/zh-successful-landing.webp" alt="Forest 从不断弹回的面试弹珠台中接住一枚琥珀色通行牌，身后仍有几条轨道继续滚动" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="成功上岸">成功上岸</h2>
-<h3 id="蚂蚁金服">蚂蚁金服</h3>
+<h2 id="成功上岸">成功上岸<a class="section-link" href="#%E6%88%90%E5%8A%9F%E4%B8%8A%E5%B2%B8" aria-label="本节链接：成功上岸"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="蚂蚁金服">蚂蚁金服<a class="section-link" href="#%E8%9A%82%E8%9A%81%E9%87%91%E6%9C%8D" aria-label="本节链接：蚂蚁金服"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>收到意向书。今年暑期情况不明，也不知道是否可以会北京参加实习。</p>
 <p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/377900">一面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/390413">二面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/392312">三面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/399613">四面</a></p>
-<h3 id="米哈游">米哈游</h3>
+<h3 id="米哈游">米哈游<a class="section-link" href="#%E7%B1%B3%E5%93%88%E6%B8%B8" aria-label="本节链接：米哈游"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>通过了面试，但是因为暑假不可能去上海实习，遂拒绝了。</p>
 <p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/387235">一面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/399642">二面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/402613">三面</a></p>
-<h2 id="进行中">进行中</h2>
-<h3 id="腾讯">腾讯</h3>
+<h2 id="进行中">进行中<a class="section-link" href="#%E8%BF%9B%E8%A1%8C%E4%B8%AD" aria-label="本节链接：进行中"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="腾讯">腾讯<a class="section-link" href="#%E8%85%BE%E8%AE%AF" aria-label="本节链接：腾讯"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>由于工作岗位base地点的原因，换着面了很多组。都聊到HR了，但北京这边就是恰好没有HC。</p>
 <p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/378468">一面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/384452">二面</a><br>
@@ -388,9 +403,9 @@
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/406795">八面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/409853">九面</a><br>
 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/419602">笔试</a></p>
-<h3 id="华为">华为</h3>
+<h3 id="华为">华为<a class="section-link" href="#%E5%8D%8E%E4%B8%BA" aria-label="本节链接：华为"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>参加了线上的笔试，难度不大。LeetCode medium吧。</p>
-<h3 id="美团">美团</h3>
+<h3 id="美团">美团<a class="section-link" href="#%E7%BE%8E%E5%9B%A2" aria-label="本节链接：美团"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>参加了线上笔试。效果不佳。5道编程题，只A了2道，有2道过了一半，还有最后一道最后一直没有调出来。题目看起来难度不是很大，但做的效果实在不行。感觉要凉。<br>
 美团还是实验室亲师兄推我的，感觉辜负了期望。</p>
 <h4 id="一面">一面</h4>

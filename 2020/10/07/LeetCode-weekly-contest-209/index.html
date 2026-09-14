@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -368,16 +383,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X">1608. Special Array With X Elements Greater Than or Equal X</h2>
+<h2 id="1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X">1608. Special Array With X Elements Greater Than or Equal X<a class="section-link" href="#1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X" aria-label="本节链接：1608. Special Array With X Elements Greater Than or Equal X"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。从小到大枚举可能的答案，进行检查。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">specialArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">auto</span> check = [&amp;](<span class="type">const</span> <span class="type">int</span> i) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">auto</span> it = <span class="built_in">lower_bound</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), i);</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> d = <span class="built_in">distance</span>(nums.<span class="built_in">begin</span>(), it);</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> le = n - d;</span><br><span class="line">            <span class="keyword">return</span> le == i;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">check</span>(i)) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N * log N),</p>
-<h2 id="1609-Even-Odd-Tree">1609. Even Odd Tree</h2>
+<h2 id="1609-Even-Odd-Tree">1609. Even Odd Tree<a class="section-link" href="#1609-Even-Odd-Tree" aria-label="本节链接：1609. Even Odd Tree"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>二叉树的层序遍历。使用广度优先搜索（BFS），记录层数和前一个元素即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isEvenOddTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// bfs</span></span><br><span class="line">        queue&lt;TreeNode*&gt; q;</span><br><span class="line">        <span class="type">int</span> level = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (root) q.<span class="built_in">push</span>(root);</span><br><span class="line">        <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> s = q.<span class="built_in">size</span>();</span><br><span class="line">            <span class="type">int</span> last;</span><br><span class="line">            <span class="keyword">if</span> (level % <span class="number">2</span> == <span class="number">0</span>) last = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span> last = <span class="number">1&#x27;000&#x27;006</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s; ++i) &#123;</span><br><span class="line">                <span class="keyword">auto</span> current = q.<span class="built_in">front</span>();</span><br><span class="line">                q.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="keyword">if</span> (level % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (current-&gt;val % <span class="number">2</span> == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">if</span> (current-&gt;val &lt;= last) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (current-&gt;val % <span class="number">2</span> == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">if</span> (current-&gt;val &gt;= last) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                last = current-&gt;val;</span><br><span class="line">                <span class="keyword">if</span> (current-&gt;left) q.<span class="built_in">push</span>(current-&gt;left);</span><br><span class="line">                <span class="keyword">if</span> (current-&gt;right) q.<span class="built_in">push</span>(current-&gt;right);</span><br><span class="line">            &#125;</span><br><span class="line">            ++level;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
-<h2 id="1610-Maximum-Number-of-Visible-Points">1610. Maximum Number of Visible Points</h2>
+<h2 id="1610-Maximum-Number-of-Visible-Points">1610. Maximum Number of Visible Points<a class="section-link" href="#1610-Maximum-Number-of-Visible-Points" aria-label="本节链接：1610. Maximum Number of Visible Points"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>滑动窗口。这里有2个技巧：</p>
 <ol>
 <li>使用复数及其方法处理几何问题。可以快速计算向量的夹角。</li>
@@ -387,7 +402,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">ostream&amp; <span class="keyword">operator</span> &lt;&lt;(ostream&amp; out, <span class="type">const</span> vector&lt;T&gt;&amp; a) &#123;</span><br><span class="line">  out &lt;&lt; <span class="string">&quot;[&quot;</span>; <span class="type">bool</span> first = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; v : a) &#123; out &lt;&lt; (first ? <span class="string">&quot;&quot;</span> : <span class="string">&quot;, &quot;</span>); out &lt;&lt; v; first = <span class="number">0</span>;&#125; out &lt;&lt; <span class="string">&quot;]&quot;</span>;</span><br><span class="line">  <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">using</span> Point = complex&lt;<span class="type">double</span>&gt;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">visiblePoints</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; points, <span class="type">int</span> a, vector&lt;<span class="type">int</span>&gt;&amp; location)</span> </span>&#123;</span><br><span class="line">        <span class="type">double</span> angle = a;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = points.<span class="built_in">size</span>();</span><br><span class="line">        Point me &#123;<span class="keyword">static_cast</span>&lt;<span class="type">double</span>&gt;(location[<span class="number">0</span>]), <span class="keyword">static_cast</span>&lt;<span class="type">double</span>&gt;(location[<span class="number">1</span>])&#125;;</span><br><span class="line">        vector&lt;<span class="type">double</span>&gt; ps;</span><br><span class="line">        ps.<span class="built_in">reserve</span>(<span class="number">2</span> * points.<span class="built_in">size</span>());</span><br><span class="line">        <span class="type">int</span> same = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp; v : points) &#123;</span><br><span class="line">            <span class="keyword">if</span> (v == location) &#123;</span><br><span class="line">                ++same;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            Point x &#123;<span class="keyword">static_cast</span>&lt;<span class="type">double</span>&gt;(v[<span class="number">0</span>]), <span class="keyword">static_cast</span>&lt;<span class="type">double</span>&gt;(v[<span class="number">1</span>])&#125;;</span><br><span class="line">            ps.<span class="built_in">push_back</span>(<span class="built_in">arg</span>(x - me)*(<span class="number">180</span>/M_PI));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> s = ps.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s; ++i) &#123;</span><br><span class="line">            ps.<span class="built_in">push_back</span>(ps[i] + <span class="number">360</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(ps.<span class="built_in">begin</span>(), ps.<span class="built_in">end</span>());</span><br><span class="line">        <span class="comment">// cout &lt;&lt; ps &lt;&lt; endl;</span></span><br><span class="line">        <span class="type">const</span> <span class="type">double</span> error = <span class="number">1e-8</span>;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; r &lt; ps.<span class="built_in">size</span>(); ++r) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ps[r] - ps[l] &gt; angle + error) &#123;</span><br><span class="line">                ++l;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, r - l + <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// cout &lt;&lt; r &lt;&lt; &quot; &quot; &lt;&lt; l &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(ans, n) + same;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N log N),<br>
 空间复杂度: O(N).</p>
-<h2 id="1611-Minimum-One-Bit-Operations-to-Make-Integers-Zero">1611. Minimum One Bit Operations to Make Integers Zero</h2>
+<h2 id="1611-Minimum-One-Bit-Operations-to-Make-Integers-Zero">1611. Minimum One Bit Operations to Make Integers Zero<a class="section-link" href="#1611-Minimum-One-Bit-Operations-to-Make-Integers-Zero" aria-label="本节链接：1611. Minimum One Bit Operations to Make Integers Zero"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>参考<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=8MdutrMAwY4">群主的视频</a>写的代码。比赛时没做出来，赛后看lee215的discuss也是讲的比较简单和跳跃。还是群主的视频好，把你当傻逼一样讲，速度还慢。虽然时长挺长的，但对于这种比较难的题目还是十分有效的。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">largestBit</span> <span class="params">(<span class="type">const</span> <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (b &lt;= n) &#123;</span><br><span class="line">            b = (b &lt;&lt; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        b = (b &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(<span class="type">const</span> <span class="type">int</span> n, <span class="type">const</span> <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// xxxx -&gt; 1000</span></span><br><span class="line">        <span class="keyword">if</span> ((n &amp; b) != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 1xxx -&gt; 1000</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">minimumOneBitOperations</span>(n ^ b);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 0xxx -&gt; 0100 -&gt; 1100 -&gt; 1000</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">helper</span>(n, b &gt;&gt; <span class="number">1</span>) + <span class="number">1</span> + <span class="built_in">minimumOneBitOperations</span>(b &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimumOneBitOperations</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (__builtin_popcount(n) == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> (n &lt;&lt; <span class="number">1</span>) - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> b = <span class="built_in">largestBit</span>(n);</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">helper</span>(b ^ n, b &gt;&gt; <span class="number">1</span>) + <span class="number">1</span> + <span class="built_in">minimumOneBitOperations</span>(b &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(log N),<br>

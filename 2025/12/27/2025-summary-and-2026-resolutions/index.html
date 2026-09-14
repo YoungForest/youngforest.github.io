@@ -58,8 +58,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -94,66 +96,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -364,12 +379,12 @@
 <li><a href="https://youngforest.github.io/2018/10/03/my-4-years-college/">大学4年复盘</a></li>
 </ul>
 <p>这些重要的博文都放在我博客的<a href="https://youngforest.github.io/categories/dairy/">dairy分类下</a>。</p>
-<h2 id="2025年总结">2025年总结</h2>
+<h2 id="2025年总结">2025年总结<a class="section-link" href="#2025%E5%B9%B4%E6%80%BB%E7%BB%93" aria-label="本节链接：2025年总结"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <figure class="editorial-illustration">
   <img src="/images/ai/2025-summary-and-2026-resolutions/zh-historical-process.webp" alt="纸张、金属代币、资产方块与发光节点随历史河流汇向不确定的远方" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="历史进程">历史进程</h2>
-<h3 id="欧元强势上涨">欧元强势上涨</h3>
+<h2 id="历史进程">历史进程<a class="section-link" href="#%E5%8E%86%E5%8F%B2%E8%BF%9B%E7%A8%8B" aria-label="本节链接：历史进程"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="欧元强势上涨">欧元强势上涨<a class="section-link" href="#%E6%AC%A7%E5%85%83%E5%BC%BA%E5%8A%BF%E4%B8%8A%E6%B6%A8" aria-label="本节链接：欧元强势上涨"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>今年欧元异常强劲，异军突起，在众多货币中独领风骚<a target="_blank" rel="noopener" href="https://finance.yahoo.com/quote/%5EXDE/?guccounter=1&amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;guce_referrer_sig=AQAAAJUbguSB1BaqGq5vWs0tiw-jx2VWEsDBXS0XAiJecjmnBMgQXQ7z7GCMNdtKYpRuF7W-48gBtYwSsBy-XyNpFju2VPx_MPREoTOpHDMv5oaQAXSf5I0bnyKKuY4m-3X-kMEW3jKDB5_0uE4IjqBKxR-rwCX9wENjGEiCaxlOosru">Euro Currency Index (^XDE)</a> YTD 涨了13.5%. 日元贬值的笑话，大家都知道：</p>
 <blockquote>
 <p>当初公司给小明开折合80万人民币年薪的时候他是犹豫的，毕竟东京生活成本高。<br>
@@ -378,12 +393,12 @@
 </blockquote>
 <p>遥想3年前来到欧洲的时候，当时疫情刚刚结束，俄乌战争刚爆发不到一年，十分焦灼。冬天要到了，没了俄国的天然气，外界都在担心欧洲的取暖问题。就这样，欧元汇率跌到了6.8左右，我印象深刻。当时确实人人喊打，连Amazon中国给实习生发的钱都按欧元发（固定欧元数额，换成人民币发给大家），想尽快出清欧元。<br>
 如今，欧元已经涨到8.2了，今年最高8.4，3年涨了20%有余。我也算是肉身抄底了欧元，就像曾经一位长者说的，“个人努力要结合历史进程”。不知不觉，身价上涨。</p>
-<h3 id="资产大升值">资产大升值</h3>
+<h3 id="资产大升值">资产大升值<a class="section-link" href="#%E8%B5%84%E4%BA%A7%E5%A4%A7%E5%8D%87%E5%80%BC" aria-label="本节链接：资产大升值"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>今年是美元贬值周期。除了美元美债，其它所有资产都在疯涨。大牛市，只要买就涨，涨多涨少的区别。黄金历史新高4300+ USD/oz, 白银更是一年翻倍还要多，标普500 6800+，就连常年失落的A股，中概股，日股，欧股 都回暖，A到了3900点，阿里腾讯翻倍。日经指数更是创历史新高，结束日本失落的30年。主要货币都相对美元半年涨了10个点以上。现在遍地股神，巴菲特和标普500都不够看。越涨越害怕。美元潮汐的力量确实强大，资金从美国流向海外，可以预见到其他市场，尤其是新兴市场，如印度，东南亚等地的经济在近几年会有不错的表现。<br>
 唯一挨打的，大概就是比特币了。年线收跌 6%，到88k USD, 不过也是从125k的历史高点跌下来的。</p>
 <p>在主流的以美元本位计价的货币体系中，这种美元下跌，资产上涨有时也是一种幻觉。比如 日元，人民币 虽然也相对美元涨了，但相比欧元并不突出。有人以黄金计价，论证SP500其实没涨，没有泡沫，定价合理，也并没太多道理。<br>
 以我 奥地利自由经济学派 的观点，更加认同金本位，或是比特币本位，对由政府信用支撑的法币和现代货币主义，是反对和怀疑的。但生活在其中，还是持有 美股、欧元房产和债务，践行 伍治坚 的资产配置的理念。</p>
-<h3 id="AI-第三年">AI 第三年</h3>
+<h3 id="AI-第三年">AI 第三年<a class="section-link" href="#AI-%E7%AC%AC%E4%B8%89%E5%B9%B4" aria-label="本节链接：AI 第三年"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>22年底，疫情结束的时候，也是ChatGpt 3 横空出世的时候，也是我离开祖国，逃离到欧洲的时间点。说来多么的巧。我在微软，也算是近水楼台先得月，对AI浪潮的感受和影响十分明显。如今3年过去了，过去吹嘘的AI泡沫，技术革命，越来越明显了。<br>
 2025年，深刻地感受到AI对生产力、工作、生活地提升和不可替代。22年 ChatGPT 时刻 一开始地时候，马斯克 就预言到25年底，AI的能力会超过单个专家人类。现在看来，此言不虚。<br>
 虽然对于AI取代人类工作担忧的言论一直甚嚣尘上，我却并不十分担忧。这种“卢德派”的观点古已有之。从历史的后视镜看，他们一方面并不能阻止技术的进步，另一方面，担心的后果也并没有出现或那么严重。作为单个个体和人类整体，又有不同的境遇。个人的选择比努力要重要。其实就如当年90年代国企改制一样，东北从此衰落，同样改制的四川、广东、江浙，反而从此起飞。认清现实，做出选择，而不是逃避、自欺欺人。<br>
@@ -394,7 +409,7 @@
 <figure class="editorial-illustration">
   <img src="/images/ai/2025-summary-and-2026-resolutions/zh-reading.webp" alt="打开的书化为连接历史、经济、科学与人类旅程的广阔思想世界" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h2 id="读万卷书">读万卷书</h2>
+<h2 id="读万卷书">读万卷书<a class="section-link" href="#%E8%AF%BB%E4%B8%87%E5%8D%B7%E4%B9%A6" aria-label="本节链接：读万卷书"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>今年读了30+本书，<a href="https://youngforest.github.io/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/">读后感列表</a>。特别喜欢的有：</p>
 <ul>
 <li><a href="https://youngforest.github.io/2025/12/31/The-World-I-see/">李飞飞 的《The World I See》</a></li>
@@ -431,13 +446,13 @@
 <li>暖暖内含光<br>
 太虐了。哭死。不要一个人看. 尤其是有前任的，经历过在一起的痛苦，之后分手，试图忘记对方的。这部片中实现了这一科幻题材，忘记对方，但这才发现，根本不想忘记，也不想分手。</li>
 </ul>
-<h2 id="行万里路">行万里路</h2>
+<h2 id="行万里路">行万里路<a class="section-link" href="#%E8%A1%8C%E4%B8%87%E9%87%8C%E8%B7%AF" aria-label="本节链接：行万里路"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>今年去了 台湾，葡萄牙 的 Madeira, 重访了 伦敦和马赛。如愿通过了路考，拿到了爱尔兰驾照和申请了国际驾照。</p>
 <p>台湾自驾环岛真是我历年来旅行的巅峰。依次去了 台北，花莲，台东，垦丁，高雄，台南，嘉义，台中，阿里山。在台北通化夜市偶遇了 黄仁勋，在花莲蹭到了免费义演 的 五月天 演唱会，在台东遇到我好多年没遇到的地震。</p>
 <p>对于很多中国大陆人来说，台湾 是最熟悉，但又最陌生的地方。熟悉 是说，在各种官方非官方的宣传和历史中，各个年龄段的人都对台湾印象深刻。陌生 是说，长期的隔离、互联网墙、信息和出版审查，使得大陆人对台湾其实并不真实了解。对于官方和简体中文互联网上的信息，基本上是以 掩耳盗铃、自欺欺人 为主。<br>
 就像 高晓松 说的，“台湾是中国的过去，也是中国的未来”。“过去”是说 台湾确实因为被政治和地理隔离，保护和保留了很多中国的传统文化，包括佛教寺庙的盛行，台北嘉义故宫博物馆的国宝，繁体字，市民和市井文化。“未来”是说，台湾 在80年代末结束戒严，90年代实现政党轮替，民主和自由化，如今30年后的民主自由的繁荣。我参观了 中正纪念堂，一小部分是讲蒋介石的历史和各种遗物，大部分被改造成了台湾民主运动的展览。不过要讲“民国遗风”，台湾其实感受不深，甚至双十节虽然放假，但民间的庆祝很少，还是 纽约曼哈顿 和 波士顿 的 唐人街 更有那种风韵，双十节被大肆庆祝。</p>
 <p>Madeira 是6月份去的。天朗气清，民风热情，道路基础建设很好，适合自驾环岛，登山。还赶上了节日游行，喜庆极了。葡萄牙 和 西班牙 在大西洋上蛮多大的岛，蛮适合度假的。作为曾经大航海时代的领导国和日不落帝国，只剩下这些海外领地作为辉煌的见证了。</p>
-<h2 id="2026年展望">2026年展望</h2>
+<h2 id="2026年展望">2026年展望<a class="section-link" href="#2026%E5%B9%B4%E5%B1%95%E6%9C%9B" aria-label="本节链接：2026年展望"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>明年继续做时间的朋友。坚持做有长期收益的事情。继续健身，读书，观影，旅行（想去日本、韩国、东南亚），与人面对面聊天，Just Keep Buying and Holding 投资。</p>
 <p>另外，也考虑和准备换工作的事情。因为现在已经是在微软的第四年了，Sign On Stocks还有一年要发完了。面临着收入大幅降低的窘境，按照如今MSFT 413EUR的价格，会减少25%的税前收入，20%的税后收入。这还是在EUR今年大幅升值的背景下。主要得益于我入职的时间22年下半年，当时正好是美股的低点，刚刚开始长达3年的牛市，算是肉身抄底了。和老板同事，网路上的朋友也都谈过，最好的解决方案就是换工作。虽然在如今的工作岗位上还蛮享受的，同事也都很Nice，毕竟如今可以Fully remote的工作不多了，但还是要有的选才好。<br>
 放弃刷题已经有2年了，重新捡起来，发现还蛮有挑战性的。尤其是想要Bug Free不容易，很多算法还记得，但corner case很多已经完全忘了。如今，面试的Bar甚至越来越高了。真是逆水行舟，不进则退呀。</p>

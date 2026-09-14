@@ -57,8 +57,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -93,66 +95,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -341,7 +356,7 @@
   <img src="/images/ai/2019-summary-and-2020-resolutions/zh-hero.webp" alt="Forest 背着算法积木、实习工具和研究论文，站在毕业与求职两座并行闸门前" width="1536" height="864" decoding="async">
 </figure>
 <span id="more"></span>
-<h2 id="2019年工作回顾">2019年工作回顾</h2>
+<h2 id="2019年工作回顾">2019年工作回顾<a class="section-link" href="#2019%E5%B9%B4%E5%B7%A5%E4%BD%9C%E5%9B%9E%E9%A1%BE" aria-label="本节链接：2019年工作回顾"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>在<a href="https://youngforest.github.io/2018/12/12/2018-summary-and-2019-resolutions/">去年的规划</a>中，我写了自己对2019年的规划和畅想。</p>
 <p>LeetCode 刷题任务超额完成，如今已经刷了800+道了。</p>
 <p>C<ins>的学习虽然没有按照预期学完C</ins> Primer，但是基本学完了 Effective C<ins>系列 和 C</ins> Standard Library。也算是成为我的主语言了。（最近在搞Rust，学完C<ins>后学Rust有很多好处，2者有许多共性。不过这次折腾更多的是兴趣使然，不会改变C</ins>是我的主语言的身份。<br>
@@ -355,14 +370,14 @@ CTCI 基本看完。<br>
 <figure class="editorial-illustration">
   <img src="/images/ai/2019-summary-and-2020-resolutions/zh-social-support.webp" alt="Forest 独自在偏斜的细桥上搬运沉重积木，邻近同伴用共享脚手架和绳索伸来支援" width="1536" height="864" loading="lazy" decoding="async">
 </figure>
-<h3 id="学习脱离社交">学习脱离社交</h3>
+<h3 id="学习脱离社交">学习脱离社交<a class="section-link" href="#%E5%AD%A6%E4%B9%A0%E8%84%B1%E7%A6%BB%E7%A4%BE%E4%BA%A4" aria-label="本节链接：学习脱离社交"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>由于家庭环境的整体内向和“万般皆下品，唯有读书高”的家训，长久以来，我养成了独立思考学习的习惯。这点在过去看来并不是缺点，反而是优点，可以向内更多地寻求力量。然而，到了研究生阶段，这却成了一个大问题。研究生不比从前，你不需要刻意在学习方面寻求社交，也不会过分脱离社交。因为周围的同学大体上学习内容和学习要求与你相同，大家彼此之间的交流就不可避免。而现在，尤其是研一过后连课程也没了，只有科研任务。我的研究课题又是只有我一个人做的。之前实验室有很多人做，最多时多达4人，都成了一个课题组。然而最近该走的走，该毕业的毕业，只剩下我一个人苦苦支撑。如果我不去寻求社交帮助，真的是没有人会和我交流。<br>
 脱离社交的坏处是明显的。我经常会剑走偏锋，在错误的道路上越走越远；得不到情感支持和技术支持；懒惰、退缩的情绪被放大。</p>
 <p>可行的解决方法：<br>
 无论时候求职还是课题研究，多与同学进行交流。虽然大家的研究课题不同，但可以提供起码的情感支持和技术建议。<br>
 在工作中多与老师沟通。我本人与老师的沟通特别少，得益于从小对老师的恐惧之情。虽然大学老师和之前的老师差别很大，很大程度上亦师亦友，但我小学和初中被老师体罚的阴影却一直挥之不去，成为我现在与导师交流的心里障碍。<br>
 提高沟通的欲望和经验。之前在与人的接触交流中，我的宗旨是能少说话就少说话，能关系不进一步就保持原地。这一宗旨是时候发生改变了。我的目标是维护一个庞大的普通朋友的圈子，至少50人，包括维持原先认识的人和今年新认识的人。标准是一年累计的交流时间超过1个小时，或微信交流条数超过50条。</p>
-<h2 id="2020年美好生活的向往">2020年美好生活的向往</h2>
+<h2 id="2020年美好生活的向往">2020年美好生活的向往<a class="section-link" href="#2020%E5%B9%B4%E7%BE%8E%E5%A5%BD%E7%94%9F%E6%B4%BB%E7%9A%84%E5%90%91%E5%BE%80" aria-label="本节链接：2020年美好生活的向往"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>继续以毕业和找工作为重心。两手都要抓，双手都要硬。</p>
 <ul>
 <li>坚持每天刷题，培养手感和bug-free, debug能力。今年争取攻克hard题目，在半小时内可以解决绝大多数hard题目。</li>

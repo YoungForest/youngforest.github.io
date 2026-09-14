@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -373,17 +388,17 @@
   <img src="/images/ai/LeetCode-weekly-contest-243/zh-hero.webp" alt="彩珠词串在算盘上合并，单珠插入序列取得最大轮廓，任务经双队列分给服务器，旅程跳过部分休息赶上沙漏" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="1880-Check-if-Word-Equals-Summation-of-Two-Words">1880. Check if Word Equals Summation of Two Words</h2>
+<h2 id="1880-Check-if-Word-Equals-Summation-of-Two-Words">1880. Check if Word Equals Summation of Two Words<a class="section-link" href="#1880-Check-if-Word-Equals-Summation-of-Two-Words" aria-label="本节链接：1880. Check if Word Equals Summation of Two Words"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。按题目要求转换字符串到数字，再进行判断。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSumEqual</span>(<span class="params">self, firstWord: <span class="built_in">str</span>, secondWord: <span class="built_in">str</span>, targetWord: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">toDigit</span>(<span class="params">w</span>):</span><br><span class="line">            ans = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> w:</span><br><span class="line">                ans = ans * <span class="number">10</span> + <span class="built_in">ord</span>(i) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> toDigit(firstWord) + toDigit(secondWord) == toDigit(targetWord)</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
-<h2 id="1881-Maximum-Value-after-Insertion">1881. Maximum Value after Insertion</h2>
+<h2 id="1881-Maximum-Value-after-Insertion">1881. Maximum Value after Insertion<a class="section-link" href="#1881-Maximum-Value-after-Insertion" aria-label="本节链接：1881. Maximum Value after Insertion"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>贪心。正数时插入到第一个比x小的数，负数时插入到第一个比x大的数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxValue</span>(<span class="params">self, n: <span class="built_in">str</span>, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment"># insert into the position where the first digit &lt; x</span></span><br><span class="line">        <span class="comment"># negative first &gt; x</span></span><br><span class="line">        <span class="keyword">if</span> n[<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(n)):</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">ord</span>(n[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;0&#x27;</span>) &gt; x:</span><br><span class="line">                    <span class="keyword">return</span> n[:i] + <span class="built_in">str</span>(x) + n[i:]</span><br><span class="line">            <span class="keyword">return</span> n + <span class="built_in">str</span>(x)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">ord</span>(n[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;0&#x27;</span>) &lt; x:</span><br><span class="line">                    <span class="keyword">return</span> n[:i] + <span class="built_in">str</span>(x) + n[i:]</span><br><span class="line">            <span class="keyword">return</span> n + <span class="built_in">str</span>(x)</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
-<h2 id="1882-Process-Tasks-Using-Servers">1882. Process Tasks Using Servers</h2>
+<h2 id="1882-Process-Tasks-Using-Servers">1882. Process Tasks Using Servers<a class="section-link" href="#1882-Process-Tasks-Using-Servers" aria-label="本节链接：1882. Process Tasks Using Servers"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>直接暴力模拟即可。使用优先队列维护空闲服务器，等待任务和释放时间。<br>
 模拟时需要注意时间不能1单位1单位地进行，而是只进行那些有事件发生的时刻。<br>
 即任务开始等待，服务器释放。<br>
@@ -391,7 +406,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line">    <span class="keyword">using</span> pii = pair&lt;ll, ll&gt;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">assignTasks</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; servers, vector&lt;<span class="type">int</span>&gt;&amp; tasks)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// brute-force: (m + n) * log n</span></span><br><span class="line">        priority_queue&lt;pii, vector&lt;pii&gt;, greater&lt;&gt;&gt; freeServers, releaseTime;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; servers.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            freeServers.<span class="built_in">emplace</span>(servers[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;&gt;&gt; waitTasks;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> m = tasks.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            waitTasks.<span class="built_in">push</span>(i);</span><br><span class="line">            <span class="keyword">while</span> (!releaseTime.<span class="built_in">empty</span>() &amp;&amp; releaseTime.<span class="built_in">top</span>().first &lt;= i) &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> idx = releaseTime.<span class="built_in">top</span>().second;</span><br><span class="line">                freeServers.<span class="built_in">emplace</span>(servers[idx], idx);</span><br><span class="line">                releaseTime.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!freeServers.<span class="built_in">empty</span>() &amp;&amp; !waitTasks.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> idx = waitTasks.<span class="built_in">top</span>();</span><br><span class="line">                waitTasks.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="keyword">auto</span> [weight, serverIdx] = freeServers.<span class="built_in">top</span>();</span><br><span class="line">                freeServers.<span class="built_in">pop</span>();</span><br><span class="line">                ans[idx] = serverIdx;</span><br><span class="line">                releaseTime.<span class="built_in">emplace</span>(i + tasks[idx], serverIdx);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ll current = m - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (!releaseTime.<span class="built_in">empty</span>() &amp;&amp; !waitTasks.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> idx = releaseTime.<span class="built_in">top</span>().second;</span><br><span class="line">            current = releaseTime.<span class="built_in">top</span>().first;</span><br><span class="line">            freeServers.<span class="built_in">emplace</span>(servers[idx], idx);</span><br><span class="line">            releaseTime.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">while</span> (!releaseTime.<span class="built_in">empty</span>() &amp;&amp; releaseTime.<span class="built_in">top</span>().first &lt;= current) &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> idx = releaseTime.<span class="built_in">top</span>().second;</span><br><span class="line">                current = releaseTime.<span class="built_in">top</span>().first;</span><br><span class="line">                freeServers.<span class="built_in">emplace</span>(servers[idx], idx);</span><br><span class="line">                releaseTime.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!freeServers.<span class="built_in">empty</span>() &amp;&amp; !waitTasks.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">int</span> idx = waitTasks.<span class="built_in">top</span>();</span><br><span class="line">                waitTasks.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="keyword">auto</span> [weight, serverIdx] = freeServers.<span class="built_in">top</span>();</span><br><span class="line">                freeServers.<span class="built_in">pop</span>();</span><br><span class="line">                ans[idx] = serverIdx;</span><br><span class="line">                releaseTime.<span class="built_in">emplace</span>(current + tasks[idx], serverIdx);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O((m + n) * log n),<br>
 空间复杂度: O(m + n).</p>
-<h2 id="1883-Minimum-Skips-to-Arrive-at-Meeting-On-Time">1883. Minimum Skips to Arrive at Meeting On Time</h2>
+<h2 id="1883-Minimum-Skips-to-Arrive-at-Meeting-On-Time">1883. Minimum Skips to Arrive at Meeting On Time<a class="section-link" href="#1883-Minimum-Skips-to-Arrive-at-Meeting-On-Time" aria-label="本节链接：1883. Minimum Skips to Arrive at Meeting On Time"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>动态规划。<br>
 dp(i, k)表示，从dist0到i（inclusive），k次休息，结束的最早时间。<br>
 状态转移方程为<br>

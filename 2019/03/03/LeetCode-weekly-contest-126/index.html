@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -372,16 +387,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="1002-Find-Common-Characters">1002. Find Common Characters</h2>
+<h2 id="1002-Find-Common-Characters">1002. Find Common Characters<a class="section-link" href="#1002-Find-Common-Characters" aria-label="本节链接：1002. Find Common Characters"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>因为录视频的时候把思路都写在开始部分了。就只分析一下复杂度吧。<br>
 Time complexity: O(N), N为A中所有字符串长度之和。<br>
 空间复杂度：O(1), 因为字符被限制在26个小写字母里，否则的话，是和字符数成正比的。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">commonChars</span><span class="params">(vector&lt;string&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 用一个vector记录出现的字母，因为只有小写，大小为26，还因为要记录出现的最小次数，所以类型为int即可</span></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">record</span><span class="params">(<span class="number">26</span>, numeric_limits&lt;<span class="type">int</span>&gt;::max())</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (string &amp; s: A) &#123;</span><br><span class="line">            <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">record1String</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">char</span> c : s) &#123;</span><br><span class="line">                record1String[c - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; ++i) &#123;</span><br><span class="line">                record[i] = <span class="built_in">min</span>(record[i], record1String[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        vector&lt;string&gt; result;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">            result.<span class="built_in">insert</span>(result.<span class="built_in">end</span>(), record[i], <span class="built_in">string</span>(<span class="number">1</span>, <span class="built_in">char</span>(i + <span class="string">&#x27;a&#x27;</span>)));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1003-Check-If-Word-Is-Valid-After-Substitutions">1003. Check If Word Is Valid After Substitutions</h2>
+<h2 id="1003-Check-If-Word-Is-Valid-After-Substitutions">1003. Check If Word Is Valid After Substitutions<a class="section-link" href="#1003-Check-If-Word-Is-Valid-After-Substitutions" aria-label="本节链接：1003. Check If Word Is Valid After Substitutions"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Time complexity: O(N ^ 2), 因为find, 构造 nextS的操作是O(N)的，每次while循环S的长度减3, 需要 长度/3 次循环。<br>
 Space complexity: O(N), 因为构造了新的nextS。不过这个是可以消除的，反复利用原来的S的空间就可以。但是要写多余的代码。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValid</span><span class="params">(string S)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 首先理解valid string的定义:</span></span><br><span class="line">        <span class="comment">// 这个定义的递归的</span></span><br><span class="line">        <span class="comment">// 对于任何valid的string，把&quot;abc&quot;插入任何位置的字符串仍为valid</span></span><br><span class="line">        <span class="comment">// 初始的valid string只有&quot;abc&quot;</span></span><br><span class="line">        <span class="comment">// 所以，判断一个string是否是valid的，我们只需要不断地把&quot;abd&quot;抽掉，如果剩下&quot;abc&quot;，则true，否则false</span></span><br><span class="line">        <span class="comment">// 这个过程也可以递归进行</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 递归解法会stack overflow, 换迭代解法</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (S == <span class="string">&quot;abc&quot;</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">auto</span> index = S.<span class="built_in">find</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (index == string::npos) &#123; <span class="comment">// 没找到&quot;abc&quot;字串</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                string <span class="built_in">nextS</span>(S.<span class="built_in">begin</span>(), S.<span class="built_in">begin</span>() + index);</span><br><span class="line">                nextS.<span class="built_in">insert</span>(nextS.<span class="built_in">end</span>(), S.<span class="built_in">begin</span>() + index + <span class="number">3</span>, S.<span class="built_in">end</span>());</span><br><span class="line">                S = nextS;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1004-Max-Consecutive-Ones-III">1004. Max Consecutive Ones III</h2>
+<h2 id="1004-Max-Consecutive-Ones-III">1004. Max Consecutive Ones III<a class="section-link" href="#1004-Max-Consecutive-Ones-III" aria-label="本节链接：1004. Max Consecutive Ones III"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>看了讨论区，才惊觉要用sliding window。其实，如果对此类问题比较熟悉的话，还是很直觉的想法。这道题也一针见血地指出了我知识的盲区。说实话，我对sliding window(或是 2 pointers)的题目还不足够熟悉。看到这道题，一直在尝试用dp和greedy做。花费很多时间，还没做出来，也不奇怪。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">longestOnes</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, <span class="type">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 知道用sliding window了，题目就很简单了。用指针left, right表示窗口的范围。如果right指向1的话，继续扩充，指向0的话，如果K还有剩余，则扩充。不能扩充的时候，收缩left。</span></span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> remain = K;</span><br><span class="line">        <span class="type">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (right &lt; A.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[right] == <span class="number">1</span>) right++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (A[right] == <span class="number">0</span> &amp;&amp; remain &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                right++;</span><br><span class="line">                remain--;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (A[left] == <span class="number">0</span>) &#123;</span><br><span class="line">                left++;</span><br><span class="line">                remain++;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (A[left] == <span class="number">1</span>) &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">assert</span>(<span class="literal">false</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            result = <span class="built_in">max</span>(result, right - left);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(n), 这也是sliding window的特点，只需要左右指针各走一遍就可以了。<br>
@@ -389,7 +404,7 @@ Space complexity: O(N), 因为构造了新的nextS。不过这个是可以消除
 <p>同样是sliding window, 讨论区的lee215大佬的代码是这样的。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">longestOnes</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, <span class="type">int</span> K)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>, j;</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; A.<span class="built_in">size</span>(); ++j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[j] == <span class="number">0</span>) K--;</span><br><span class="line">        <span class="keyword">if</span> (K &lt; <span class="number">0</span> &amp;&amp; A[i++] == <span class="number">0</span>) K++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> j - i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为我们要找最大的window，所以收缩窗口是没有必要的。所以大佬的代码如此简洁。</p>
-<h2 id="1000-Minimum-Cost-to-Merge-Stones">1000. Minimum Cost to Merge Stones</h2>
+<h2 id="1000-Minimum-Cost-to-Merge-Stones">1000. Minimum Cost to Merge Stones<a class="section-link" href="#1000-Minimum-Cost-to-Merge-Stones" aria-label="本节链接：1000. Minimum Cost to Merge Stones"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>LeetCode的第1k道题，果然好难。看别人的Discuss看了有1个小时才理解。<br>
 说实话，DP也是我的一个知识盲区，运气好能做出来，运气不好，就做不出来。就像 花花酱 所说，DP是那种你刷100道，遇到新的还是可能解不出来的类型。<br>
 因为Discuss太难理解了。所以我想自己理解后，博文也要写的尽可能详细才行。</p>

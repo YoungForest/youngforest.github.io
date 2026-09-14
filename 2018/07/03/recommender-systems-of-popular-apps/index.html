@@ -58,8 +58,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -94,66 +96,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -360,13 +375,13 @@
 <li>淘宝</li>
 </ul>
 <p>本文还用了很多来自：Netflix, Amazon, Google News, Facebook 这些国外大厂的例子对推荐系统加以说明，因为这些app虽然国内的同学不熟悉，但在推荐系统业内属于引领者。</p>
-<h2 id="推荐系统的2大类">推荐系统的2大类</h2>
-<h3 id="基于内容的过滤">基于内容的过滤</h3>
+<h2 id="推荐系统的2大类">推荐系统的2大类<a class="section-link" href="#%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%842%E5%A4%A7%E7%B1%BB" aria-label="本节链接：推荐系统的2大类"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="基于内容的过滤">基于内容的过滤<a class="section-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E8%BF%87%E6%BB%A4" aria-label="本节链接：基于内容的过滤"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>此种过滤只依赖于item的数据。<br>
 在一个推荐系统中，被推荐和消费的就是item。如：在今日头条这样的新闻客户端中，一条新闻就是一个item，知乎 -&gt; 一个回答, 网易云音乐 -&gt; 一首歌，快手 -&gt; 一个短视频，淘宝 -&gt; 一个商品。<br>
 根据用户填的问卷信息（针对新用户。一般新用户进入一个应用时，都会选择一些自己的兴趣），或者根据用户的评分（针对老用户。老用户会产生很多评分，或其他action，体现出其兴趣），我们发现他对民谣感兴趣，我们就继续给他推荐其它他未消费过的民谣类歌曲。<br>
 这里的民谣只是一个tag，表示歌曲的类型，除此之外可能还有歌手名等tag可以利用。</p>
-<h3 id="协同过滤">协同过滤</h3>
+<h3 id="协同过滤">协同过滤<a class="section-link" href="#%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4" aria-label="本节链接：协同过滤"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>此种过滤依赖于其他用户的数据。<br>
 协同过滤基于这样的假设：与你类似的用户喜欢的东西，可能你也会喜欢。<br>
 这就跟你朋友推荐给你的东西与一个陌生人推荐给你的东西相比，更可能符合你的胃口。因为你的朋友在一定程度上是与你相像的，拥有一些共同的标签。而且根据心理学的研究，人们也倾向于与与自己更像的人交朋友。<br>
@@ -382,13 +397,13 @@
 <p>当然基于内容的过滤也是很有用。尤其是当一个新用户刚刚登录，还未产生很多动作和基础信息来找到和他相像的人的时候。<br>
 吸引新用户是十分重要的，特别是在一个app快速成长的时期。<br>
 相对应的，业内会有1日留存率，3日留存率，7日留存率还表示推荐系统对新用户的吸引程度。</p>
-<h2 id="各大内容app使用的推荐系统">各大内容app使用的推荐系统</h2>
+<h2 id="各大内容app使用的推荐系统">各大内容app使用的推荐系统<a class="section-link" href="#%E5%90%84%E5%A4%A7%E5%86%85%E5%AE%B9app%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F" aria-label="本节链接：各大内容app使用的推荐系统"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>各个厂用的主要推荐算法基本都属于协同过滤的那一大类，由于应用场景的不尽相同（新闻、商品、音乐、电影），使用的算法也不一样。<br>
 为了实现冷启动（新用户刚使用时获得比较好的推荐效果），各个厂也会使用基于内容的过滤和基于规则的推荐。<br>
 由于推荐系统都是基于内容的公司的核心竞争力，完全公开的是没有的。<br>
 而且据一位业界专家所说，每个厂使用的推荐算法基本相同，都是公开的那些；不一样的只是参数、数据和规则；最后推荐的结果也趋于一致。<br>
 我们只能在不同的应用场景下进行一些猜测，比如，在内容为音乐的网易云音乐会使用什么样的推荐算法。</p>
-<h3 id="知乎">知乎</h3>
+<h3 id="知乎">知乎<a class="section-link" href="#%E7%9F%A5%E4%B9%8E" aria-label="本节链接：知乎"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>知乎的内容以文字为主，现在还加入了很多视频的内容。<br>
 作为一个“高素质”人群的问答社区，知乎问题的分类和描述都比较清晰，这有利于更好的推荐。<br>
 分析知乎在推荐页给我的推荐内容，知乎的推荐以回答为主，之外还有少量的live和广告。<br>
@@ -398,7 +413,7 @@
 从结果来看，向我推荐的回答大多是我显式选择的关注话题或者是于此相关的话题（如下图2所示：话题之间有父子、相关等关系），</p>
 <p><img src="/assets/zhihu-recommend-page.jpg" alt="推荐页"></p>
 <p><img src="/assets/zhihu-topic-page.jpg" alt="相关话题页"></p>
-<h3 id="网易云音乐">网易云音乐</h3>
+<h3 id="网易云音乐">网易云音乐<a class="section-link" href="#%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90" aria-label="本节链接：网易云音乐"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>网易云音乐的推荐可以分为3个板块：私人FM，每日推荐，推荐歌单。</p>
 <p><img src="/assets/netease-music-homepage.jpg" alt="网易云音乐推荐模块"></p>
 <p>私人FM有3个主要操作：</p>
@@ -420,7 +435,7 @@
 比如，你昨天听了电音，比较喜欢，接连听了几首，可能还“喜欢”了一些。今天的每日推荐就会推更多的电音给你。</p>
 <p>推荐歌单算是比较容易推荐的一个板块。因为歌单都是专家或是爱好者组建的，将很多歌曲按照某一标准归为一类。每个歌单还都有自己的标签可以利用。如摇滚、英伦、另类、独立。这些标签都是区分性很强的。<br>
 在向我推荐的歌单里，一般包含几首我“喜爱”的歌曲。由此可见，推荐歌单使用了“我喜欢的音乐”中的信息。如果几首你喜欢的音乐同时出现在一个歌单中，那么很大程度上可以预测，这个歌单中的其他音乐也会被你喜欢。</p>
-<h3 id="快手">快手</h3>
+<h3 id="快手">快手<a class="section-link" href="#%E5%BF%AB%E6%89%8B" aria-label="本节链接：快手"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>快手作为一个短视频平台，每天用户会产生大量的视频。视频相对而言是不那么好推荐的，因为</p>
 <ul>
 <li>视频内的语义现在用机器理解还是很困难的</li>
@@ -429,12 +444,12 @@
 <p>在这种情况下，快手可能使用了标签这一信息作为推荐的主要依据。<br>
 用户上传的视频可以被用户自己打上各种标签：社会摇，炫技，教程，小吃等。<br>
 依靠这些标签把用户和视频聚成不同的类。这样新上传的视频就可以利用用户在老视频上产生的操作了。</p>
-<h3 id="淘宝">淘宝</h3>
+<h3 id="淘宝">淘宝<a class="section-link" href="#%E6%B7%98%E5%AE%9D" aria-label="本节链接：淘宝"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>淘宝作为一个c2c的电商平台，推荐系统的指标与其他b2c电商（如 亚马逊）有所不同。<br>
 评价一个推荐系统好坏的指标中有一个是对冷门产品的发掘能力，即对<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94">长尾</a>的尾端进行推荐。<br>
 使用推荐系统将冷门产品的商家和顾客联系起来是淘宝的一个卖点，因为淘宝上的商品实在太多了。没有你买不到，只有你想不到。<br>
 根据亚马逊公开的一些信息，电商系统的推荐系统核心可以用一句话概括：买了商品A的人，同样也买了B，你买B呀？</p>
-<h2 id="为什么说推荐系统在改造和奴役你的思维">为什么说推荐系统在改造和奴役你的思维</h2>
+<h2 id="为什么说推荐系统在改造和奴役你的思维">为什么说推荐系统在改造和奴役你的思维<a class="section-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%9C%A8%E6%94%B9%E9%80%A0%E5%92%8C%E5%A5%B4%E5%BD%B9%E4%BD%A0%E7%9A%84%E6%80%9D%E7%BB%B4" aria-label="本节链接：为什么说推荐系统在改造和奴役你的思维"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>对于一个内容app的推荐系统来说，推荐好不好的指标最后都会反应在用户停留在该app上的时间。<br>
 在互联网上网人数趋于饱和的情况下，整个市场用户时间数不会像之前那样快速增长，如何抢夺用户宝贵的时间就成个各个内容推荐系统的目标。<br>
 为了让你停留在本应用的时间增加，各大内容app可谓用心良苦。<br>
@@ -450,23 +465,23 @@
 在此引用一句古话：“良药苦口利于病，忠言逆耳利于行”。然而作为推荐系统，只会给你说好听的，你喜欢听的。<br>
 在潜移默化之中，你的思想已经被推荐系统所改造和奴役了。</p>
 <p>依赖于推荐系统的内容也是一种懒惰的表现。相比 主动去获取信息，直接接受推荐系统的内容 要容易、愉快的多。但要记住，懒惰是有代价的，你的思想将不可避免地变得狭隘。</p>
-<h2 id="如何避免推荐系统的恶果">如何避免推荐系统的恶果</h2>
-<h3 id="多读书">多读书</h3>
+<h2 id="如何避免推荐系统的恶果">如何避免推荐系统的恶果<a class="section-link" href="#%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%81%B6%E6%9E%9C" aria-label="本节链接：如何避免推荐系统的恶果"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="多读书">多读书<a class="section-link" href="#%E5%A4%9A%E8%AF%BB%E4%B9%A6" aria-label="本节链接：多读书"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>无论知乎给你怎样的错觉，书本上的内容在质量上还是高的多。<br>
 我最近读了一本斌卡的《一平米健身》，相比知乎上的健身类回答，内容的质量要高的多。<br>
 毕竟相比在网络上写个回答来说，出书的门槛和花费的精力要多的多。<br>
 尤其是，书本上还承载着互联网之前人们的原创思想。这是知乎上所没有的。当然，经过不断搬运，许多&quot;知乎er&quot;把书本上的知识运用在回答中。不过这些都是经过加工和断章取义的，也有不少从某本书上搬一段话就获得高赞的案例。</p>
-<h3 id="与优秀的人交朋友">与优秀的人交朋友</h3>
+<h3 id="与优秀的人交朋友">与优秀的人交朋友<a class="section-link" href="#%E4%B8%8E%E4%BC%98%E7%A7%80%E7%9A%84%E4%BA%BA%E4%BA%A4%E6%9C%8B%E5%8F%8B" aria-label="本节链接：与优秀的人交朋友"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>与优秀的人交朋友，聊天，比起把时间花在追随大v的言论要有用的多。<br>
 我总认为，一个人在互联网上呈现给你的是他想给你看的部分，不完全。<br>
 相比之下，虽然面对面的交流也通常是会掩盖本性的，但这种信息交互是双向的，而非通过follow关系的单向信息输出。<br>
 而且，不知道大家有没有这样的感觉。与优秀的人交流时，自己会花更多的精力去思考，而非听完就完事儿了。在知乎这些平台上，看完之后的热度保持的并不长久。</p>
-<h3 id="接触不同的内容，才能够塑造一个完整的三观">接触不同的内容，才能够塑造一个完整的三观</h3>
+<h3 id="接触不同的内容，才能够塑造一个完整的三观">接触不同的内容，才能够塑造一个完整的三观<a class="section-link" href="#%E6%8E%A5%E8%A7%A6%E4%B8%8D%E5%90%8C%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E6%89%8D%E8%83%BD%E5%A4%9F%E5%A1%91%E9%80%A0%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E4%B8%89%E8%A7%82" aria-label="本节链接：接触不同的内容，才能够塑造一个完整的三观"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>不要只看自己喜欢的，也要听取不同的声音。党同伐异是人类的天性。如果你不刻意去避免这一人性上的缺点的话，推荐系统会像一个谄媚的奸臣一样，只说你想听的，而你可能就会想历史上的昏君一样，荒废了朝政。广开言路，逆耳忠言才是明君应有的表现。<br>
 比方说，当你听到与你不同的言论，不要先想着反驳对方，试着想想为什么对方会这样想？<br>
 每个人的想法都是其经历和体验的体现，没有相应的经历，很难会理解一些不一样的事情。这个时候不要着急去反驳对方，而是试着丰富自己的阅历。<br>
 之前说的2条“多读书、与优秀的人交朋友”都是丰富自己阅历的高效途径。</p>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>希望大家作为一个成年人，拥有一个独立的三观，不要被推荐系统和自己的懒惰而奴役。</p>
 
     </div>

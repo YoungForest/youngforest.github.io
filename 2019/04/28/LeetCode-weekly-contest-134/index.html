@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -370,7 +385,7 @@
 </table>
 <p>本次比赛质量在上周的基础上继续提高。尤其是corner case，导致我有4次incorrect attempts, 也就是20min的罚时。不过我看leader board上，大家的战况也都差不多，错误尝试很多。<br>
 本次比赛的重点在于作出所有的题目。恰好需要4道题，才能进入前200. 因为第三题的思路问题，即使再给我半个小时，我也难以做出来。所以我输的还算心服口服。</p>
-<h2 id="1033-Moving-Stones-Until-Consecutive">1033. Moving Stones Until Consecutive</h2>
+<h2 id="1033-Moving-Stones-Until-Consecutive">1033. Moving Stones Until Consecutive<a class="section-link" href="#1033-Moving-Stones-Until-Consecutive" aria-label="本节链接：1033. Moving Stones Until Consecutive"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 最小移动步数只有3种情况：<br>
 0: 3个坐标紧挨，<br>
@@ -380,13 +395,13 @@
 <p>时间复杂度: O(1)<br>
 空间复杂度: O(1)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">numMovesStones</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// greedy</span></span><br><span class="line">        <span class="type">int</span> minimum_moves = <span class="number">0</span>, maximum_moves;</span><br><span class="line">        <span class="type">int</span> x = <span class="built_in">min</span>(&#123;a, b, c&#125;);</span><br><span class="line">        <span class="type">int</span> z = <span class="built_in">max</span>(&#123;a, b, c&#125;);</span><br><span class="line">        <span class="type">int</span> y = a + b + c - x - z;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (y - x == <span class="number">1</span> &amp;&amp; z - y == <span class="number">1</span>)</span><br><span class="line">            minimum_moves = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (y - x == <span class="number">1</span> || z - y == <span class="number">1</span> || y - x == <span class="number">2</span> || z - y == <span class="number">2</span>)</span><br><span class="line">            minimum_moves = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            minimum_moves = <span class="number">2</span>;</span><br><span class="line">        maximum_moves = z - y - <span class="number">1</span> + y - x - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;minimum_moves, maximum_moves&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1034-Coloring-A-Border">1034. Coloring A Border</h2>
+<h2 id="1034-Coloring-A-Border">1034. Coloring A Border<a class="section-link" href="#1034-Coloring-A-Border" aria-label="本节链接：1034. Coloring A Border"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 dfs 染色。需要注意如何标注已经访问的节点，在这里我使用了负数来表示。<br>
 时间复杂度: O(n*m),<br>
 空间复杂度: O(1), in place.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">border</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; grid, <span class="type">int</span> r, <span class="type">int</span> c)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; di = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; dj = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; ++k) &#123;</span><br><span class="line">            <span class="type">int</span> ni = r + di[k];</span><br><span class="line">            <span class="type">int</span> nj = c + dj[k];</span><br><span class="line">            <span class="keyword">if</span> (ni &lt; <span class="number">0</span> || ni &gt;= grid.<span class="built_in">size</span>() || nj &lt; <span class="number">0</span> || nj &gt;= grid[<span class="number">0</span>].<span class="built_in">size</span>() || <span class="built_in">abs</span>(grid[ni][nj]) != <span class="built_in">abs</span>(grid[r][c]))</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; &amp;grid, <span class="type">int</span> r, <span class="type">int</span> c)</span> </span>&#123;</span><br><span class="line">        grid[r][c] = -grid[r][c];</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; di = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; dj = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; ++k) &#123;</span><br><span class="line">            <span class="type">int</span> ni = r + di[k];</span><br><span class="line">            <span class="type">int</span> nj = c + dj[k];</span><br><span class="line">            <span class="keyword">if</span> (ni &gt;= <span class="number">0</span> &amp;&amp; ni &lt; grid.<span class="built_in">size</span>() &amp;&amp; nj &gt;= <span class="number">0</span> &amp;&amp; nj &lt; grid[<span class="number">0</span>].<span class="built_in">size</span>() &amp;&amp; grid[ni][nj] == <span class="built_in">abs</span>(grid[r][c]))</span><br><span class="line">                <span class="built_in">dfs</span>(grid, ni, nj);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">border</span>(grid, r, c))</span><br><span class="line">            grid[r][c] = -grid[r][c];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">colorBorder</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; grid, <span class="type">int</span> r0, <span class="type">int</span> c0, <span class="type">int</span> color) &#123;</span><br><span class="line">        <span class="comment">// dfs</span></span><br><span class="line">        <span class="keyword">if</span> (grid[r0][c0] == color) <span class="keyword">return</span> grid;</span><br><span class="line">        <span class="type">int</span> origin_color = grid[r0][c0];</span><br><span class="line">        <span class="built_in">dfs</span>(grid, r0, c0);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; r : grid) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> &amp; item : r) &#123;</span><br><span class="line">                <span class="keyword">if</span> (item &lt; <span class="number">0</span>)</span><br><span class="line">                    item = color;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> grid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1035-Uncrossed-Lines">1035. Uncrossed Lines</h2>
+<h2 id="1035-Uncrossed-Lines">1035. Uncrossed Lines<a class="section-link" href="#1035-Uncrossed-Lines" aria-label="本节链接：1035. Uncrossed Lines"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 第一直觉是将题目转化成 二分图求最大独立集的问题。把所有的连线当作node，连线相交表示node之间的edge。在网上找了些求解二分图的算法，但都不简单，短时间内无法写出来。遂放弃了该题目，先把第四题做出来了。实际上，先去做第四题的策略是对的。事实证明，本题我的思路是走偏了。应该转化成LCS(largest common subsequence), 用dp解决。而且第四题分数更高，所以此次比赛排名反而考前。</p>
 <p>LCS的dp实现起来也很简单。<br>
@@ -395,7 +410,7 @@ dfs 染色。需要注意如何标注已经访问的节点，在这里我使用�
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxUncrossedLines</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, vector&lt;<span class="type">int</span>&gt;&amp; B)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> m = A.<span class="built_in">size</span>(), n = B.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(m + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; (n + <span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (A[i - <span class="number">1</span>] == B[j - <span class="number">1</span>]) &#123;</span><br><span class="line">                    dp[i][j] = <span class="number">1</span> + dp[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[i][j] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>空间复杂度可以优化到N, 因为dp的子问题只用到了上一行和本行的解。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxUncrossedLines</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A, vector&lt;<span class="type">int</span>&gt;&amp; B)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> m = A.<span class="built_in">size</span>(), n = B.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = n; j &gt;= <span class="number">1</span>; --j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (A[i - <span class="number">1</span>] == B[j - <span class="number">1</span>]) &#123;</span><br><span class="line">                    dp[j] = <span class="number">1</span> + dp[j - <span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">                dp[j] = <span class="built_in">max</span>(dp[j], dp[j - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1036-Escape-a-Large-Maze">1036. Escape a Large Maze</h2>
+<h2 id="1036-Escape-a-Large-Maze">1036. Escape a Large Maze<a class="section-link" href="#1036-Escape-a-Large-Maze" aria-label="本节链接：1036. Escape a Large Maze"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 dfs: O(n ^ 2) 10 ^ 12 TLE.<br>
 blocked.length 很小, 可以尝试从此做文章<br>

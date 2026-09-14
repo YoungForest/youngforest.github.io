@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -370,18 +385,18 @@
   <img src="/images/ai/LeetCode-weekly-contest-239/zh-hero.webp" alt="测距车沿轨道寻找最近目标，长条回溯切成递减石阶，珠序列换到目标排列，短区间优先覆盖查询钉" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="1848-Minimum-Distance-to-the-Target-Element">1848. Minimum Distance to the Target Element</h2>
+<h2 id="1848-Minimum-Distance-to-the-Target-Element">1848. Minimum Distance to the Target Element<a class="section-link" href="#1848-Minimum-Distance-to-the-Target-Element" aria-label="本节链接：1848. Minimum Distance to the Target Element"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。<br>
 One pass，记录最优答案。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getMinDistance</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target, <span class="type">int</span> start)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = -INF;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == target) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">abs</span>(i - start) &lt; <span class="built_in">abs</span>(ans - start)) &#123;</span><br><span class="line">                    ans = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">abs</span>(ans - start);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1849-Splitting-a-String-Into-Descending-Consecutive-Values">1849. Splitting a String Into Descending Consecutive Values</h2>
+<h2 id="1849-Splitting-a-String-Into-Descending-Consecutive-Values">1849. Splitting a String Into Descending Consecutive Values<a class="section-link" href="#1849-Splitting-a-String-Into-Descending-Consecutive-Values" aria-label="本节链接：1849. Splitting a String Into Descending Consecutive Values"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Backtracking, 搜索可能的分割点。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">splitString</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        <span class="keyword">if</span> n &lt;= <span class="number">1</span>: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i: <span class="built_in">int</span>, last: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">            <span class="keyword">if</span> i &gt;= n: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> i != <span class="number">0</span>:</span><br><span class="line">                final = <span class="built_in">int</span>(s[i:])</span><br><span class="line">                <span class="keyword">if</span> final &lt; last <span class="keyword">and</span> last - final == <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, n):</span><br><span class="line">                new = <span class="built_in">int</span>(s[i:j])</span><br><span class="line">                <span class="keyword">if</span> new &lt; last <span class="keyword">and</span> (i == <span class="number">0</span> <span class="keyword">or</span> last - new == <span class="number">1</span>):</span><br><span class="line">                    <span class="keyword">if</span> dfs(j, new): <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>, <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>))</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N^2),<br>
 空间复杂度: O(N).</p>
 <p>虽然我们使用了backtracking，看起来好想时间复杂度很高，O(N ^ N), 但其实在<code>dfs</code>中的<code>for</code>循环中，符合条件可以<code>dfs</code>到下一层的可能路径只有1条。<br>
 参考<a target="_blank" rel="noopener" href="https://leetcode.com/problems/splitting-a-string-into-descending-consecutive-values/discuss/1186795/C%2B%2B-Backtracking-solution.-O(N-2)-and-time-complexity-analytics">这个题解的分析</a>.</p>
-<h2 id="1850-Minimum-Adjacent-Swaps-to-Reach-the-Kth-Smallest-Number">1850. Minimum Adjacent Swaps to Reach the Kth Smallest Number</h2>
+<h2 id="1850-Minimum-Adjacent-Swaps-to-Reach-the-Kth-Smallest-Number">1850. Minimum Adjacent Swaps to Reach the Kth Smallest Number<a class="section-link" href="#1850-Minimum-Adjacent-Swaps-to-Reach-the-Kth-Smallest-Number" aria-label="本节链接：1850. Minimum Adjacent Swaps to Reach the Kth Smallest Number"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>首先，我们需要复习一下<a target="_blank" rel="noopener" href="https://leetcode.com/problems/next-permutation/">LC 31. Next Permutation</a>. 学习一下求解下一个枚举排列的方法。幸运的是，C++ STL 里已经提供了<code>std::next_permutation</code>函数可以直接用，均摊时间复杂度为<strong>O(1)</strong>.<br>
 使用<code>k</code>次<code>next_permutation</code>找到the Kth Smallest Number<br>
 后，只需要采用贪心的思路就可以找到最小交换次数。<br>
@@ -389,7 +404,7 @@ One pass，记录最优答案。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getMinSwaps</span><span class="params">(string num, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> s = num;</span><br><span class="line">        <span class="keyword">while</span>(std::<span class="built_in">next_permutation</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>()) &amp;&amp; k - <span class="number">1</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// std::cout &lt;&lt; s &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line">            --k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = num.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num[j] == s[j]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">// find next digit and swap it here</span></span><br><span class="line">            <span class="type">int</span> i = j + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (; i &lt; n <span class="keyword">and</span> num[i] != s[j]; ++i);</span><br><span class="line">            <span class="comment">// cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; endl;</span></span><br><span class="line">            ans += i - j;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> x = i; x &gt; j; --x) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(num[x], num[x - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(k + n^2),<br>
 空间复杂度: O(n).</p>
-<h2 id="1851-Minimum-Interval-to-Include-Each-Query">1851. Minimum Interval to Include Each Query</h2>
+<h2 id="1851-Minimum-Interval-to-Include-Each-Query">1851. Minimum Interval to Include Each Query<a class="section-link" href="#1851-Minimum-Interval-to-Include-Each-Query" aria-label="本节链接：1851. Minimum Interval to Include Each Query"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>本题和<a href="https://youngforest.github.io/2021/05/02/LeetCode-biweekly-contest-51/#1847-Closest-Room">昨晚双周赛的最后一题</a>有些像，需要用到离线计算的技术。<br>
 intervals按照size从小到大排序，没新增一个interval，更新可以覆盖到的query的答案。<br>
 这里需要用<code>multimap</code>维护待解决的<code>queries</code>。因为支持二分查找和删除，以及重复的query.</p>

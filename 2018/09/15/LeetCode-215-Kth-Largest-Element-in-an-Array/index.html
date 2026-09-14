@@ -54,8 +54,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -90,66 +92,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -338,13 +353,13 @@
 Solution: <a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/">https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/</a><br>
 Difficulty: Medium</p>
 <p>这是二师兄面试景驰的一道题目。因为他的面试在上午，我的在下午。所以，和他交流过面试内容后，我把他被面的题目都做了一遍。包括这道题目和<a target="_blank" rel="noopener" href="https://leetcode.com/problems/coin-change/description/">找硬币</a>。</p>
-<h2 id="我的动态规划">我的动态规划</h2>
+<h2 id="我的动态规划">我的动态规划<a class="section-link" href="#%E6%88%91%E7%9A%84%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" aria-label="本节链接：我的动态规划"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findKthLargest</span>(<span class="params">self, nums, k</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        mi = nums[<span class="number">0</span>]</span><br><span class="line">        ma = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            ma = <span class="built_in">max</span>(ma, nums[i])</span><br><span class="line">            mi = <span class="built_in">min</span>(mi, nums[i])</span><br><span class="line">            memo[(i, i+<span class="number">1</span>)] = mi</span><br><span class="line">            memo[(i, <span class="number">1</span>)] = ma</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">find</span>(<span class="params">n, k</span>):</span><br><span class="line">            <span class="keyword">if</span> (n, k) <span class="keyword">in</span> memo:</span><br><span class="line">                <span class="keyword">return</span> memo[(n, k)]</span><br><span class="line">            </span><br><span class="line">            n_sub_1_k = find(n-<span class="number">1</span>, k)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> nums[n] &lt;= n_sub_1_k:</span><br><span class="line">                <span class="keyword">return</span> n_sub_1_k</span><br><span class="line">            </span><br><span class="line">            n_sub_1_k_sub_1 = find(n-<span class="number">1</span>, k-<span class="number">1</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> nums[n] &gt;= n_sub_1_k_sub_1:</span><br><span class="line">                <span class="keyword">return</span> n_sub_1_k_sub_1</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> nums[n]</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> find(<span class="built_in">len</span>(nums)-<span class="number">1</span>, k)</span><br></pre></td></tr></table></figure>
 <p>时间复杂度 O(n^2)，memo中的每个元素需要遍历一遍;<br>
 空间复杂度 O(n^2)，创建一个二维的memo.</p>
 <p>结果：TLE 超时。<br>
 还不如直接快排找第k个值。</p>
-<h2 id="选择算法"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Selection_algorithm">选择算法</a></h2>
+<h2 id="选择算法"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Selection_algorithm">选择算法</a><a class="section-link" href="#%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95" aria-label="本节链接：选择算法"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findKthLargest</span>(<span class="params">self, nums, k</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">partition</span>(<span class="params">nums, lo, hi</span>):</span><br><span class="line">            i = lo + <span class="number">1</span></span><br><span class="line">            j = hi</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">                <span class="keyword">while</span> i &lt;= hi <span class="keyword">and</span> nums[i] &lt; nums[lo]:</span><br><span class="line">                    i += <span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> j &gt; lo <span class="keyword">and</span> nums[j] &gt; nums[lo]:</span><br><span class="line">                    j -= <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> i &gt;= j:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                    </span><br><span class="line">                nums[i], nums[j] = nums[j], nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">            nums[lo], nums[j] = nums[j], nums[lo]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> j</span><br><span class="line">        </span><br><span class="line">        lo = <span class="number">0</span></span><br><span class="line">        hi = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        k = <span class="built_in">len</span>(nums) - k</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">            j = partition(nums, lo, hi)</span><br><span class="line">            <span class="keyword">if</span> j &lt; k:</span><br><span class="line">                lo = j + <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> j &gt; k:</span><br><span class="line">                hi = j - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> nums[k]</span><br></pre></td></tr></table></figure>
 <p>和快排很像，尤其是<code>partition</code>部分。<br>
 时间复杂度O(n)，空间复杂度O(n)。<br>

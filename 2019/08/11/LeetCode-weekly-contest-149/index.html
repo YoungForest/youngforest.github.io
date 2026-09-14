@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,23 +384,23 @@
 </tbody>
 </table>
 <p>惭愧的排名又落到400+了。最后一题有半个小时可以解决，一直试图用线段树来做。像kick start round D一样，沉迷于线段树而翻车。获得的教训是，不要纠结与区间问题一定要用线段树做，常常还有其他更简单的做法。</p>
-<h2 id="1154-Day-of-the-Year">1154. Day of the Year</h2>
+<h2 id="1154-Day-of-the-Year">1154. Day of the Year<a class="section-link" href="#1154-Day-of-the-Year" aria-label="本节链接：1154. Day of the Year"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>判断闰年，累加之前月份的日子。<br>
 时间复杂度: O(1),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isLeap</span><span class="params">(<span class="type">int</span> yy)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (yy % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; yy % <span class="number">100</span> != <span class="number">0</span>) || yy % <span class="number">400</span> == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">dayOfYear</span><span class="params">(string date)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> yy = <span class="built_in">stoi</span>(date.<span class="built_in">substr</span>(<span class="number">0</span>, <span class="number">4</span>));</span><br><span class="line">        <span class="keyword">auto</span> mm = <span class="built_in">stoi</span>(date.<span class="built_in">substr</span>(<span class="number">5</span>, <span class="number">2</span>));</span><br><span class="line">        <span class="keyword">auto</span> dd = <span class="built_in">stoi</span>(date.<span class="built_in">substr</span>(<span class="number">8</span>, <span class="number">2</span>));</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; days = &#123;<span class="number">0</span>, <span class="number">31</span>, <span class="number">28</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isLeap</span>(yy)) &#123;</span><br><span class="line">            days[<span class="number">2</span>] = <span class="number">29</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        ans += <span class="built_in">accumulate</span>(days.<span class="built_in">cbegin</span>(), days.<span class="built_in">cbegin</span>() + mm, <span class="number">0</span>);</span><br><span class="line">        ans += dd;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1155-Number-of-Dice-Rolls-With-Target-Sum">1155. Number of Dice Rolls With Target Sum</h2>
+<h2 id="1155-Number-of-Dice-Rolls-With-Target-Sum">1155. Number of Dice Rolls With Target Sum<a class="section-link" href="#1155-Number-of-Dice-Rolls-With-Target-Sum" aria-label="本节链接：1155. Number of Dice Rolls With Target Sum"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>隔板插空，经典的排列组合问题。由于2个隔板之前的间隔不能大于骰子最大的数字，所以不能直接用数学公式求解。我采用了回溯法，使用了memorization，所以也算是DP。</p>
 <p>时间复杂度: O(N ^ 2),<br>
 空间复杂度: O(d * bar).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="type">int</span> f;</span><br><span class="line">    map&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;, <span class="type">int</span>&gt; memo;</span><br><span class="line">    <span class="comment">// [begin, end), the index of insert bar</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">backtracking</span><span class="params">(<span class="type">int</span> begin, <span class="type">int</span> end, <span class="type">int</span> bar)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (memo.<span class="built_in">find</span>(&#123;begin, bar&#125;) != memo.<span class="built_in">end</span>()) &#123;</span><br><span class="line">            <span class="keyword">return</span> memo[&#123;begin, bar&#125;];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (bar == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (end - begin + <span class="number">1</span> &lt;= f)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = begin; i &lt; end &amp;&amp; i - begin + <span class="number">1</span> &lt;= f; ++i) &#123;</span><br><span class="line">            <span class="comment">// insert in i</span></span><br><span class="line">            ans += <span class="built_in">backtracking</span>(i + <span class="number">1</span>, end, bar - <span class="number">1</span>);</span><br><span class="line">            ans %= mod;</span><br><span class="line">        &#125;</span><br><span class="line">        memo[&#123;begin, bar&#125;] = ans;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numRollsToTarget</span><span class="params">(<span class="type">int</span> d, <span class="type">int</span> f, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;f = f;</span><br><span class="line">        <span class="type">int</span> ans = <span class="built_in">backtracking</span>(<span class="number">0</span>, target - <span class="number">1</span>, d - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1156-Swap-For-Longest-Repeated-Character-Substring">1156. Swap For Longest Repeated Character Substring</h2>
+<h2 id="1156-Swap-For-Longest-Repeated-Character-Substring">1156. Swap For Longest Repeated Character Substring<a class="section-link" href="#1156-Swap-For-Longest-Repeated-Character-Substring" aria-label="本节链接：1156. Swap For Longest Repeated Character Substring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>One pass, 更新可以获得的最长长度。<br>
 需要观察到: 最长长度的获得和中间空的字母无关，而只和前后有无需要的字母有关。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxRepOpt1</span><span class="params">(string text)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt;&gt; <span class="built_in">v</span>(<span class="number">26</span>);</span><br><span class="line">        <span class="type">char</span> last = <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; text.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (text[i] == last) &#123;</span><br><span class="line">                v[text[i] - <span class="string">&#x27;a&#x27;</span>].<span class="built_in">back</span>().second = i + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                v[text[i] - <span class="string">&#x27;a&#x27;</span>].<span class="built_in">push_back</span>(&#123;i, i + <span class="number">1</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            last = text[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; row : v) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; row.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i + <span class="number">1</span> == row.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (row.<span class="built_in">size</span>() == <span class="number">1</span>)</span><br><span class="line">                        ans = <span class="built_in">max</span>(ans, row[i].second - row[i].first);</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        ans = <span class="built_in">max</span>(ans, row[i].second - row[i].first + <span class="number">1</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="type">const</span> <span class="keyword">auto</span>&amp; a = row[i];</span><br><span class="line">                    <span class="type">const</span> <span class="keyword">auto</span>&amp; b = row[i + <span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span> (a.second + <span class="number">1</span> == b.first) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (row.<span class="built_in">size</span>() &gt; <span class="number">2</span>) &#123;</span><br><span class="line">                            ans = <span class="built_in">max</span>(ans, a.second - a.first + b.second - b.first + <span class="number">1</span>);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            ans = <span class="built_in">max</span>(ans, a.second - a.first + b.second - b.first);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        ans = <span class="built_in">max</span>(ans, a.second - a.first + <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1157-Online-Majority-Element-In-Subarray">1157. Online Majority Element In Subarray</h2>
+<h2 id="1157-Online-Majority-Element-In-Subarray">1157. Online Majority Element In Subarray<a class="section-link" href="#1157-Online-Majority-Element-In-Subarray" aria-label="本节链接：1157. Online Majority Element In Subarray"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>random pick + binary search.</p>
 <p>时间复杂度: O(log N).<br>
 空间复杂度: O(N).</p>

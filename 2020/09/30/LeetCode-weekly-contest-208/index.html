@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -374,20 +389,20 @@
 </table>
 <p>事实上，由于要处理突发的培养方案问题，我还迟到了25min，否则成绩会更好看。</p>
 <p>本次比赛被大家吐槽为阅读理解，读题难、题目描述迷惑。确实如此。</p>
-<h2 id="1598-Crawler-Log-Folder">1598. Crawler Log Folder</h2>
+<h2 id="1598-Crawler-Log-Folder">1598. Crawler Log Folder<a class="section-link" href="#1598-Crawler-Log-Folder" aria-label="本节链接：1598. Crawler Log Folder"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。只需要关心向下一层和向上一层即可。可以用一个变量维护，在比赛中，我是用了一个栈去做，实际上是大材小用了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minOperations</span><span class="params">(vector&lt;string&gt;&amp; logs)</span> </span>&#123;</span><br><span class="line">        stack&lt;string&gt; st;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; s : logs) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s == <span class="string">&quot;../&quot;</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!st.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">                    st.<span class="built_in">pop</span>();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (s == <span class="string">&quot;./&quot;</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                s.<span class="built_in">pop_back</span>();</span><br><span class="line">                st.<span class="built_in">push</span>(s);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
-<h2 id="1599-Maximum-Profit-of-Operating-a-Centennial-Wheel">1599. Maximum Profit of Operating a Centennial Wheel</h2>
+<h2 id="1599-Maximum-Profit-of-Operating-a-Centennial-Wheel">1599. Maximum Profit of Operating a Centennial Wheel<a class="section-link" href="#1599-Maximum-Profit-of-Operating-a-Centennial-Wheel" aria-label="本节链接：1599. Maximum Profit of Operating a Centennial Wheel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Straight forward. 千万不要多想，直接模拟，一下一下地转，得到最大收益。特别需要注意的是，当你停止运行后，之后再转就不需要cost了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; customers, <span class="type">int</span> boardingCost, <span class="type">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> waitCustomer = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> getBoard = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; customers.<span class="built_in">size</span>() || waitCustomer &gt; <span class="number">0</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; customers.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                waitCustomer += customers[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (waitCustomer &gt;= <span class="number">4</span>) &#123;</span><br><span class="line">                waitCustomer -= <span class="number">4</span>;</span><br><span class="line">                getBoard += <span class="number">4</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                getBoard += waitCustomer;</span><br><span class="line">                waitCustomer = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">const</span> <span class="type">int</span> profit = getBoard * boardingCost - runningCost * (i + <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// cout &lt;&lt; profit &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">if</span> (profit &gt; maxProfit) &#123;</span><br><span class="line">                maxProfit = profit;</span><br><span class="line">                ans = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (maxProfit &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(customers.size() + sum(customers) / 4),<br>
 空间复杂度: O(1).</p>
-<h2 id="1600-Throne-Inheritance">1600. Throne Inheritance</h2>
+<h2 id="1600-Throne-Inheritance">1600. Throne Inheritance<a class="section-link" href="#1600-Throne-Inheritance" aria-label="本节链接：1600. Throne Inheritance"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>别看描述的这么复杂，其实就是一个深度优先搜索/前序遍历。前面的问题描述，尤其是<code>Successor</code>函数的定义会让人十分迷惑，其实就是嫡长子继承制。直接看example会更好理解。我也是做完第四题才返回来看的第三题，确实太难理解题意了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ThroneInheritance</span> &#123;</span><br><span class="line">    unordered_set&lt;string&gt; dead;</span><br><span class="line">    unordered_map&lt;string, vector&lt;string&gt;&gt; children;</span><br><span class="line">    string root;</span><br><span class="line">    <span class="comment">// dfs</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">ThroneInheritance</span>(string kingName) &#123;</span><br><span class="line">        root = kingName;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">birth</span><span class="params">(string parentName, string childName)</span> </span>&#123;</span><br><span class="line">        children[parentName].<span class="built_in">push_back</span>(childName);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">death</span><span class="params">(string name)</span> </span>&#123;</span><br><span class="line">        dead.<span class="built_in">insert</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">getInheritanceOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; ans;</span><br><span class="line">        function&lt;<span class="type">void</span>(<span class="type">const</span> string&amp;)&gt; dfs = [&amp;](<span class="type">const</span> string&amp; r) -&gt; <span class="type">void</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (dead.<span class="built_in">find</span>(r) == dead.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(r);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">const</span> string&amp; child : children[r]) &#123;</span><br><span class="line">                <span class="built_in">dfs</span>(child);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">dfs</span>(root);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your ThroneInheritance object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * ThroneInheritance* obj = new ThroneInheritance(kingName);</span></span><br><span class="line"><span class="comment"> * obj-&gt;birth(parentName,childName);</span></span><br><span class="line"><span class="comment"> * obj-&gt;death(name);</span></span><br><span class="line"><span class="comment"> * vector&lt;string&gt; param_3 = obj-&gt;getInheritanceOrder();</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="1601-Maximum-Number-of-Achievable-Transfer-Requests">1601. Maximum Number of Achievable Transfer Requests</h2>
+<h2 id="1601-Maximum-Number-of-Achievable-Transfer-Requests">1601. Maximum Number of Achievable Transfer Requests<a class="section-link" href="#1601-Maximum-Number-of-Achievable-Transfer-Requests" aria-label="本节链接：1601. Maximum Number of Achievable Transfer Requests"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>题目相比二三题好理解的多。由于<code>request.length</code>本身比较小，所以我们可以直接暴力解法，枚举所有<code>requests</code>的子集，判断是否合法(每个building入度出度相等)，找到最大的。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumRequests</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; requests)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 2 ^ 16 * 16</span></span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> rl = requests.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">auto</span> verify  = [&amp;](<span class="type">const</span> <span class="type">int</span> mask) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            vector&lt;<span class="type">int</span>&gt; <span class="built_in">in</span>(n, <span class="number">0</span>);</span><br><span class="line">            <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">out</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rl; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((mask &amp; (<span class="number">1</span> &lt;&lt; i)) != <span class="number">0</span>) &#123;</span><br><span class="line">                    ++in[requests[i][<span class="number">1</span>]];</span><br><span class="line">                    ++out[requests[i][<span class="number">0</span>]];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (in[i] != out[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = (<span class="number">1</span> &lt;&lt; rl) - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">verify</span>(i)) &#123;</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, __builtin_popcount(i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>m: <code>requests.length</code>,<br>
@@ -395,7 +410,7 @@
 空间复杂度: O(n).</p>
 <p>当然也有多项式时间复杂度的解法：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-number-of-achievable-transfer-requests/solution/zui-xiao-fei-yong-zui-da-liu-onm2-c-by-heltion/">O((n+m)m)</a>.<br>
 用到了费用流，这已经超出我的知识范围了，有兴趣的同学可以学习下。</p>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>经过3年的准备，我的秋招基本结束了。已经决定留在亚马逊了，再过3个月就要成为社畜了。算是比较理想的offer了。<br>
 最理想的Dream company当然是Google，无奈好不容易通过了实习一面，谷歌今年的实习项目因为疫情原因取消了。秋招也相比往年晚了很多，最近才有一些推送的消息。本身HC也十分稀少，机会难得。<br>
 其他心仪的外企 Hulu 通过一面，在等待二面；微软找zenian内推却一直没有笔试或面试的消息，应该是由于投的北京的STCA，HC少而且基本上都被实习生占了，之前还收到是否同意可能调剂到苏州的问卷，难呀；Intel基本上是稳了，不过那边薪资待遇比起亚麻都要差很多，已经不考虑了；还投了小厂HotStar，有口头的offer，但本身就是我用来拿个大package再和大厂compete的，基本上不考虑去。<br>

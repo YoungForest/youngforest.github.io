@@ -54,8 +54,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -90,66 +92,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -366,20 +381,20 @@
 <li>模型评估</li>
 <li>提交结果</li>
 </ul>
-<h2 id="题目理解">题目理解</h2>
+<h2 id="题目理解">题目理解<a class="section-link" href="#%E9%A2%98%E7%9B%AE%E7%90%86%E8%A7%A3" aria-label="本节链接：题目理解"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>在问题描述中，一般会给出数据集的背景、每个challenge的目标、还有所需的技能。<br>
 还可以判断出需要哪些领域知识。比如在Titanic中，20世纪初 西方人的姓名、贵族爵位、船的相关知识都是极其有帮助的。</p>
 <p>看完问题描述后，可以有自己基本的猜测：什么因素对是否存活影响最大？<br>
 我会想到 年龄和性别。媒体不是一直宣传沉船的时候，会让妇女儿童先走？<br>
 之后，我们会用数据分析的方式验证猜测是否合理。</p>
-<h2 id="数据理解">数据理解</h2>
+<h2 id="数据理解">数据理解<a class="section-link" href="#%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3" aria-label="本节链接：数据理解"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>通过一些Python及其可视化的工具，我们可以快速对数据有初步的了解。</p>
 <p>比如：<code>titanic</code>是存储所有原始数据的<code>pd.DataFrame</code>，<code>titanic.head()</code>可以显示最开始的5行，<code>titanic.describe()</code>显示所有特征的统计结果，包括最大值、最小值、缺失数量、均值方差等。<br>
 对所有原始特征有直观的了解后，可以知道，哪些特征是离散值，哪些是连续值，哪些需要预处理。</p>
 <p>利用热力图，可以直观地看到不同特征之间的相关性。<br>
 对连续值，画出其分布图(<code>plot_distribution()</code>)；对离散值，画出箱形图(<code>plot_categories</code>).</p>
 <p>通过这些技能，可以对<strong>选择哪些特征进行建模</strong>、<strong>如何进行数据预处理</strong> 心中有数。</p>
-<h2 id="数据预处理">数据预处理</h2>
+<h2 id="数据预处理">数据预处理<a class="section-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" aria-label="本节链接：数据预处理"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>对于离散值(Categorical variables)，需要将其转化为数值类型才能进行下一步的建模。<br>
 二类离散值可以简单地映射为(0, 1)，<br>
 多类离散值需要利用<code>pd.get_dummies()</code>进行one hot编码。</p>
@@ -387,17 +402,17 @@
 在数据比较宝贵的情况(数据量小 或 缺失值过多）下，一般采取填充的方式。对于离散值，可以填充“Unknown”；对于连续值，一般填充其均值。</p>
 <p><strong>特征工程</strong>。这是拉开不同选手之间水平的一项技能，需要一定的领域知识和对数据足够的敏感性。不过今年由于深度学习的原因，特征工程有被放弃的趋势。选手之前的差别主要靠调参。在Titanic中，如果你对20世纪初的西方足够了解的话，一些特征工程才能做。如，从姓名中提取出“Title”，是贵族、平民、还是职员。对船足够熟悉的话，可以从舱室提取出是几等舱，票号中提取出几等票。</p>
 <p><strong>组装最后的数据集</strong>。数据集经过我们的预处理后，需要进行特征选择，并组装成可以进行建模的形式。一般是一个<code>pd.DataFrame</code>，还需要切分成 训练集(Train)、验证集(Valid) 和 测试集(Test)。</p>
-<h2 id="建模-和-模型评估">建模 和 模型评估</h2>
+<h2 id="建模-和-模型评估">建模 和 模型评估<a class="section-link" href="#%E5%BB%BA%E6%A8%A1-%E5%92%8C-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0" aria-label="本节链接：建模 和 模型评估"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>这里也是大量工作所在。常用的机器学习模型要一个一个试，每个的参数也要进行调整后再试，然后用验证集评估，选出最好的。<br>
 很多时候，还需要回到数据预处理的部分，选择不同的特征，进行不同的特征工程，再回来进行建模和评估。</p>
 <p>这部分属于枯燥的实验部分，因为需要大量的尝试和选择。当然，可以写自动化的脚本加速这些工作。</p>
-<h2 id="提交">提交</h2>
+<h2 id="提交">提交<a class="section-link" href="#%E6%8F%90%E4%BA%A4" aria-label="本节链接：提交"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>提交比较简单。主要是需要注意提交的方法和格式。一般比赛都会给一个提交的模板，帮助参赛者理解所要求的格式。</p>
 <p>我第一次提交因为预测值没有从浮点数转化为整数，分数只有0。之后解决这个问题后，获得了0.77033这样的分数，排名6242/9939。<br>
 这次提交算是对整个流程的一次体验。<br>
 我之后会继续特征工程和调参，以获得更高的分数。<br>
 牛逼的是有很多人满分，之前听说会有泄露预测信息到特征中的bug，不知道是不是这个原因。</p>
-<h2 id="后记">后记</h2>
+<h2 id="后记">后记<a class="section-link" href="#%E5%90%8E%E8%AE%B0" aria-label="本节链接：后记"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>据今年找工作的师兄们和网络上的消息，今年算法工程师的岗位竞争十分激烈。很大程度是因为算法岗的高薪资，和去年毕业生尝到的甜头。大家纷纷从开发岗转去算法岗。众多数据挖掘的比赛也因此十分火爆，kaggle就是其中最火的一个比赛平台。我也打算花1个月时间蹭蹭热度，看看自己有没有做算法的天赋和能力。</p>
 <p>在kaggle上，我首先关注了欢哥(mgchbot)，和大师兄(sparkingarthur)。看了他们的Profile，真是很厉害的人呐。尤其是欢哥，不愧是KDD的双料冠军。大师兄也不赖，平时在我面前特别谦虚（也可能是欢哥这样的人一直在身边吧）。他们的kaggle排名分别是100，和1000（现在共有超过8w人）。由于我还没有任何比赛结束，所以排名为Unranked。向优秀的人学习，因为有40w+户口的诱惑。</p>
 

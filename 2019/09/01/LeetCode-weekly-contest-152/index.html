@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,22 +384,22 @@
 </tbody>
 </table>
 <p>本期比赛由于粗心，第一题忘记考虑corner case，0的排列是1；第二题干脆upper lower写反了。获得2次罚时。否则应该可以进入前100的。题目比较简单，都是常规题目，之前的原题改改就行。</p>
-<h2 id="1175-Prime-Arrangements">1175. Prime Arrangements</h2>
+<h2 id="1175-Prime-Arrangements">1175. Prime Arrangements<a class="section-link" href="#1175-Prime-Arrangements" aria-label="本节链接：1175. Prime Arrangements"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>筛法求素数 + 排列组合。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> modulo = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, ll&gt; memo;</span><br><span class="line">    <span class="function">ll <span class="title">A</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (memo.<span class="built_in">find</span>(x) == memo.<span class="built_in">end</span>()) &#123;</span><br><span class="line">            memo[x] = (x * <span class="built_in">A</span>(x - <span class="number">1</span>)) % modulo;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> memo[x];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numPrimeArrangements</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">a</span><span class="params">(n + <span class="number">1</span>, <span class="literal">true</span>)</span></span>;</span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt; n + <span class="number">1</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i]) &#123;</span><br><span class="line">                ++count;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">2</span>; j * i &lt; n + <span class="number">1</span>; ++j) &#123;</span><br><span class="line">                    a[j * i] = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="built_in">A</span>(count) * <span class="built_in">A</span>(n - count)) % modulo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1176-Diet-Plan-Performance">1176. Diet Plan Performance</h2>
+<h2 id="1176-Diet-Plan-Performance">1176. Diet Plan Performance<a class="section-link" href="#1176-Diet-Plan-Performance" aria-label="本节链接：1176. Diet Plan Performance"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>简单的滑动窗口。竟然因为粗心错了一次。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">dietPlanPerformance</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; calories, <span class="type">int</span> k, <span class="type">int</span> lower, <span class="type">int</span> upper)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt; calories.<span class="built_in">size</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> sum = <span class="built_in">accumulate</span>(calories.<span class="built_in">begin</span>(), calories.<span class="built_in">begin</span>() + k, <span class="number">0</span>);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (sum &gt; upper)</span><br><span class="line">            ++ans;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; lower)</span><br><span class="line">            --ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = k; i &lt; calories.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            sum = sum + calories[i] - calories[i - k];</span><br><span class="line">            <span class="keyword">if</span> (sum &gt; upper)</span><br><span class="line">                ++ans;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; lower)</span><br><span class="line">                --ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="5175-Can-Make-Palindrome-from-Substring">5175. Can Make Palindrome from Substring</h2>
+<h2 id="5175-Can-Make-Palindrome-from-Substring">5175. Can Make Palindrome from Substring<a class="section-link" href="#5175-Can-Make-Palindrome-from-Substring" aria-label="本节链接：5175. Can Make Palindrome from Substring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>对回文字符串要敏感。观察有：回文串只允许一个字母的数量是奇数，没多一个替换，多2个允许的单数。</p>
 <p>时间复杂度：O(max(s.size(), queries.size()).<br>
 空间复杂度: O(max(s.size(), queries.size()).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">canMakePaliQueries</span><span class="params">(string s, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; queries)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">prefix</span>(s.<span class="built_in">size</span>() + <span class="number">1</span>);</span><br><span class="line">        prefix[<span class="number">0</span>] = count;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>() + <span class="number">1</span>; ++i) &#123;</span><br><span class="line">            ++count[s[i - <span class="number">1</span>] - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">            prefix[i] = count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">ans</span><span class="params">(queries.size())</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; queries.<span class="built_in">size</span>(); ++j) &#123;</span><br><span class="line">            <span class="type">const</span> <span class="keyword">auto</span>&amp; query = queries[j];</span><br><span class="line">            <span class="type">const</span> <span class="keyword">auto</span>&amp; l = prefix[query[<span class="number">0</span>]];</span><br><span class="line">            <span class="type">const</span> <span class="keyword">auto</span>&amp; r = prefix[query[<span class="number">1</span>] + <span class="number">1</span>];</span><br><span class="line">            <span class="type">int</span> odd = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; ++i) &#123;</span><br><span class="line">                <span class="comment">// cout &lt;&lt; r[i] &lt;&lt; &quot;, &quot; &lt;&lt; l[i] &lt;&lt; endl;</span></span><br><span class="line">                <span class="type">int</span> sub = r[i] - l[i];</span><br><span class="line">                <span class="keyword">if</span> (sub % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                    ++odd;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans[j] = odd &lt;= <span class="number">1</span> + <span class="number">2</span> * query[<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1178-Number-of-Valid-Words-for-Each-Puzzle">1178. Number of Valid Words for Each Puzzle</h2>
+<h2 id="1178-Number-of-Valid-Words-for-Each-Puzzle">1178. Number of Valid Words for Each Puzzle<a class="section-link" href="#1178-Number-of-Valid-Words-for-Each-Puzzle" aria-label="本节链接：1178. Number of Valid Words for Each Puzzle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>字典树的变种。</p>
 <p>首先起码想到暴力解法，每个puzzle和每个word去匹配。时间复杂度为 O(words.length * puzzles.length), 肯定会超时。<br>
 优化方向是，整合word的信息，字典树是一个很好的数据结构。</p>

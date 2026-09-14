@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -343,12 +358,12 @@
 </figure>
 <span id="more"></span>
 <p>上周末在比利时，比赛时间是凌晨的4点半到6点，时间不合适，所以就没有参加。发现只有双周赛的时间是周六的下午4点半到6点，稍微合适些。ranking 2000的目标今年怕是要鸽了。最好的情况下，参与比赛的数目也只有国内的1/3.</p>
-<h2 id="1189-Maximum-Number-of-Balloons">1189. Maximum Number of Balloons</h2>
+<h2 id="1189-Maximum-Number-of-Balloons">1189. Maximum Number of Balloons<a class="section-link" href="#1189-Maximum-Number-of-Balloons" aria-label="本节链接：1189. Maximum Number of Balloons"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>统计每个字母的频数即可。需要注意的是，l和o 需要2次才能组成一个ballon。</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxNumberOfBalloons</span><span class="params">(string text)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> string once = <span class="string">&quot;ban&quot;</span>;</span><br><span class="line">        <span class="type">const</span> string twice = <span class="string">&quot;lo&quot;</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : text) &#123;</span><br><span class="line">            ++count[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : once) &#123;</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, count[c - <span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : twice) &#123;</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, count[c - <span class="string">&#x27;a&#x27;</span>] / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses">1190. Reverse Substrings Between Each Pair of Parentheses</h2>
+<h2 id="1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses">1190. Reverse Substrings Between Each Pair of Parentheses<a class="section-link" href="#1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses" aria-label="本节链接：1190. Reverse Substrings Between Each Pair of Parentheses"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>因为字符串的最大长度为2000，使用暴力法即可。用一个栈来进行括号匹配。</p>
 <p>时间复杂度: O(N ^ 2),<br>
 空间负责度: O(N).</p>
@@ -356,14 +371,14 @@
 <p>看过discuss之后，发现时间复杂度为O(N)的Solution。<br>
 第一遍找到所有匹配的括号，第二遍构造结果字符串。每一个括号像一道传送门一样，改变前进方向的同时，跳到对应的括号那里。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">reverseParentheses</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = s.<span class="built_in">length</span>();</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; opened, <span class="built_in">pair</span>(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">            opened.<span class="built_in">push_back</span>(i);</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27;)&#x27;</span>) &#123;</span><br><span class="line">            <span class="type">int</span> j = opened.<span class="built_in">back</span>();</span><br><span class="line">            opened.<span class="built_in">pop_back</span>();</span><br><span class="line">            pair[i] = j;</span><br><span class="line">            pair[j] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    string res;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>, d = <span class="number">1</span>; i &lt; n; i += d) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27;(&#x27;</span> || s[i] == <span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">            i = pair[i], d = -d;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res += s[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="1191-K-Concatenation-Maximum-Sum">1191. K-Concatenation Maximum Sum</h2>
+<h2 id="1191-K-Concatenation-Maximum-Sum">1191. K-Concatenation Maximum Sum<a class="section-link" href="#1191-K-Concatenation-Maximum-Sum" aria-label="本节链接：1191. K-Concatenation Maximum Sum"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>子数组最大和问题。该题目的特殊之处在于数组可以重复k次。<br>
 仔细观察可以发现，当整个数组的和小于等于0时,根据贪心的思路，最后答案必定是数组重复2次组成的答案，即 本身的子数组，或 最大的前缀和 + 最大的后缀和。<br>
 当整个数组的和大于0时，答案为k-2个数组和 + 最大的前缀和 + 最大的后缀和</p>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(1).</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line">    <span class="type">const</span> ll mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">kConcatenationMaxSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        ll head = <span class="number">0</span>, tail = <span class="number">0</span>;</span><br><span class="line">        ll global_max = <span class="number">0</span>, local_max = <span class="number">0</span>;</span><br><span class="line">        ll prefix = <span class="number">0</span>, total_sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (ll i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] + prefix &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                prefix = <span class="number">0</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                prefix = arr[i] + prefix;</span><br><span class="line">                local_max = <span class="built_in">max</span>(local_max, prefix);</span><br><span class="line">            &#125;</span><br><span class="line">            total_sum += arr[i];</span><br><span class="line">            head = <span class="built_in">max</span>(head, total_sum);</span><br><span class="line">            tail = <span class="built_in">min</span>(tail, total_sum);</span><br><span class="line">        &#125;</span><br><span class="line">        tail = total_sum - tail;</span><br><span class="line">        tail = prefix;</span><br><span class="line">        <span class="keyword">if</span> (total_sum &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            global_max = tail + head + total_sum * (k - <span class="number">2</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            global_max = head + tail;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        global_max = <span class="built_in">max</span>(global_max, local_max);</span><br><span class="line">        <span class="keyword">return</span> global_max % mod;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1192-Critical-Connections-in-a-Network">1192. Critical Connections in a Network</h2>
+<h2 id="1192-Critical-Connections-in-a-Network">1192. Critical Connections in a Network<a class="section-link" href="#1192-Critical-Connections-in-a-Network" aria-label="本节链接：1192. Critical Connections in a Network"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 
     </div>
 

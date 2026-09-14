@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -372,25 +387,25 @@
   <img src="/images/ai/LeetCode-weekly-contest-249/zh-hero.webp" alt="两段相同彩块首尾拼接，三珠镜环围住中心，三色列网格逐步铺开，多棵搜索树嫁接成一棵完整树" width="1536" height="864" decoding="async" fetchpriority="high">
 </figure>
 <span id="more"></span>
-<h2 id="1929-Concatenation-of-Array">1929. Concatenation of Array</h2>
+<h2 id="1929-Concatenation-of-Array">1929. Concatenation of Array<a class="section-link" href="#1929-Concatenation-of-Array" aria-label="本节链接：1929. Concatenation of Array"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。Straight forward。Python竟然可以一行<code>return nums + nums</code>。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">getConcatenation</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(<span class="number">2</span> * n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            ans[i] = ans[i+n] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(n),<br>
 空间复杂度: O(n).</p>
-<h2 id="1930-Unique-Length-3-Palindromic-Subsequences">1930. Unique Length-3 Palindromic Subsequences</h2>
+<h2 id="1930-Unique-Length-3-Palindromic-Subsequences">1930. Unique Length-3 Palindromic Subsequences<a class="section-link" href="#1930-Unique-Length-3-Palindromic-Subsequences" aria-label="本节链接：1930. Unique Length-3 Palindromic Subsequences"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>因为回文串的长度比较短，只有3. 因此，最多有26*26种回文串。可以用中间和两侧的字符表示这个回文串。<br>
 因为是subsequence，需要用<code>cntLeft</code>和<code>cntRight</code>维护两侧字符是否满足要求。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countPalindromicSubsequence</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">bool</span>&gt;&gt; <span class="built_in">seen</span>(<span class="number">26</span>, <span class="built_in">vector</span>&lt;<span class="type">bool</span>&gt;(<span class="number">26</span>, <span class="literal">false</span>));</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cntRight</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : s) &#123;</span><br><span class="line">            ++cntRight[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cntLeft</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : s) &#123;</span><br><span class="line">            --cntRight[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">char</span> i = <span class="string">&#x27;a&#x27;</span>; i &lt;= <span class="string">&#x27;z&#x27;</span>; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (cntRight[i - <span class="string">&#x27;a&#x27;</span>] &gt; <span class="number">0</span> &amp;&amp; cntLeft[i - <span class="string">&#x27;a&#x27;</span>] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!seen[c - <span class="string">&#x27;a&#x27;</span>][i - <span class="string">&#x27;a&#x27;</span>]) &#123;</span><br><span class="line">                        ++ans;</span><br><span class="line">                        seen[c - <span class="string">&#x27;a&#x27;</span>][i - <span class="string">&#x27;a&#x27;</span>] = <span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ++cntLeft[c - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(26*s.length),<br>
 空间复杂度: O(26 * 26).</p>
-<h2 id="1931-Painting-a-Grid-With-Three-Different-Colors">1931. Painting a Grid With Three Different Colors</h2>
+<h2 id="1931-Painting-a-Grid-With-Three-Different-Colors">1931. Painting a Grid With Three Different Colors<a class="section-link" href="#1931-Painting-a-Grid-With-Three-Different-Colors" aria-label="本节链接：1931. Painting a Grid With Three Different Colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>算是<a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/">1411. Number of Ways to Paint N × 3 Grid</a>的升级版。<br>
 行数从3变成了1-5，但思想不变，仍然是 3进制的bit_mask + dp。</p>
 <p>用3进制bit_mask表示每一列的颜色状态，从上一列的颜色排列数量得到新的一列的数量。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">colorTheGrid</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> pow3m = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt; m; ++x) &#123;</span><br><span class="line">            pow3m *= <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> ok = [&amp;](<span class="type">int</span> i, <span class="type">int</span> j) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt; m; ++x) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((i % <span class="number">3</span>) == (j % <span class="number">3</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                i /= <span class="number">3</span>;</span><br><span class="line">                j /= <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">auto</span> isLegal = [&amp;](<span class="type">int</span> i) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="type">int</span> last = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt; m; ++x) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i % <span class="number">3</span> == last) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                last = i % <span class="number">3</span>;</span><br><span class="line">                i /= <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">match</span>(pow3m);</span><br><span class="line">        <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">legal</span><span class="params">(pow3m)</span></span>;</span><br><span class="line">         <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (pow3m); ++i) &#123;</span><br><span class="line">              legal[i] = <span class="built_in">isLegal</span>(i);</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (pow3m); ++i) &#123;</span><br><span class="line">              <span class="comment">// cout &lt;&lt; legal[i] &lt;&lt; &quot; &quot; &lt;&lt; endl;</span></span><br><span class="line">              <span class="keyword">if</span> (!legal[i]) <span class="keyword">continue</span>;</span><br><span class="line">              <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; (pow3m); ++j) &#123;</span><br><span class="line">                  <span class="comment">// cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot;....&quot;;</span></span><br><span class="line">                  <span class="keyword">if</span> (!legal[j]) <span class="keyword">continue</span>;</span><br><span class="line">                  <span class="comment">// cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot;****&quot;;</span></span><br><span class="line">                  <span class="keyword">if</span> (<span class="built_in">ok</span>(i, j)) &#123;</span><br><span class="line">                      match[i].<span class="built_in">push_back</span>(j);</span><br><span class="line">                      <span class="comment">// cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; j &lt;&lt; &quot;;&quot;;</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">         &#125;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(pow3m, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; (n, <span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> mask = <span class="number">0</span>; mask &lt; (pow3m); ++mask) &#123;</span><br><span class="line">            <span class="keyword">if</span> (legal[mask])</span><br><span class="line">                dp[mask][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; dp[mask][0] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> mask = <span class="number">0</span>; mask &lt; (pow3m); ++mask) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!legal[mask]) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> left : match[mask]) &#123;</span><br><span class="line">                    dp[mask][i] = (dp[mask][i] + dp[left][i<span class="number">-1</span>]) % MOD;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// cout &lt;&lt; dp[mask][i] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> mask = <span class="number">0</span>; mask &lt; (pow3m); ++mask) &#123;</span><br><span class="line">            <span class="keyword">if</span> (legal[mask])</span><br><span class="line">                ans = (ans + dp[mask][n<span class="number">-1</span>]) % MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(3<sup>m</sup>2 + n*3^m),<br>
 空间复杂度: O(n * 3^m).</p>
-<h2 id="1932-Merge-BSTs-to-Create-Single-BST">1932. Merge BSTs to Create Single BST</h2>
+<h2 id="1932-Merge-BSTs-to-Create-Single-BST">1932. Merge BSTs to Create Single BST<a class="section-link" href="#1932-Merge-BSTs-to-Create-Single-BST" aria-label="本节链接：1932. Merge BSTs to Create Single BST"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>算法不难，但是实现起来比较复杂，corner case也容易fail。<br>
 根据题目描述，找到每个根和叶子的对应，进行合并操作。<br>
 最后还得检查是否是BST。</p>

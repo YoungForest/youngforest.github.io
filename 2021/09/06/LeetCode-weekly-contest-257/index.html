@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -379,19 +394,19 @@
 <p>另一方面进行实践。把自己的资产分为4个部分 灵活取用（现金，货币基金）、保守的债卷基金 和 固收（定期）、偏风险的股票基金（以宽基指数 和 行业指数 为主）。<br>
 半年前写过一个<a href="https://youngforest.github.io/2021/03/22/investment/">自己的投资故事</a>，现在，我可以大胆的说我的知识和经验更加丰富和专业了。虽然并没有收益多少，但工作之后随着本金的增加，投资理财变得更加重要了。<br>
 现在我总的股票仓位较低，大概不到 1/3，以其他3种保守投资为主。</p>
-<h2 id="1995-Count-Special-Quadruplets">1995. Count Special Quadruplets</h2>
+<h2 id="1995-Count-Special-Quadruplets">1995. Count Special Quadruplets<a class="section-link" href="#1995-Count-Special-Quadruplets" aria-label="本节链接：1995. Count Special Quadruplets"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>签到题。暴力枚举即可。不过因为着急，没仔细看题，忽略了index 递增的要求，擅自加了排序，导致WA一发。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">countQuadruplets</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        seen = <span class="built_in">set</span>()</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment"># print(nums)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, n):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(j + <span class="number">1</span>, n):</span><br><span class="line">                    <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(k + <span class="number">1</span>, n):</span><br><span class="line">                        <span class="keyword">if</span> nums[i] + nums[j] + nums[k] == nums[l]:</span><br><span class="line">                            <span class="comment"># print((i, j, k, l))</span></span><br><span class="line">                            seen.add((i, j, k, l))</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(seen)</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(n^4),<br>
 空间复杂度: O(n)。</p>
-<h2 id="1996-The-Number-of-Weak-Characters-in-the-Game">1996. The Number of Weak Characters in the Game</h2>
+<h2 id="1996-The-Number-of-Weak-Characters-in-the-Game">1996. The Number of Weak Characters in the Game<a class="section-link" href="#1996-The-Number-of-Weak-Characters-in-the-Game" aria-label="本节链接：1996. The Number of Weak Characters in the Game"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>做这题的时候，我就觉的它有些像<a target="_blank" rel="noopener" href="https://leetcode.com/problems/russian-doll-envelopes/">354. Russian Doll Envelopes</a>。<br>
 先排序，按照一维递减，另一维递增的方式。<br>
 然后遍历，因为前面的都保证第一维大于等于当前了，只需要看前面第二维最大的就可以了。这也是为什么第二维排序要递增的原因，在第一维相等的时候，第二位大的要排后面，才不会影响遍历时的比较过程。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numberOfWeakCharacters</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; p)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(p.<span class="built_in">begin</span>(), p.<span class="built_in">end</span>(), [](<span class="type">const</span> <span class="keyword">auto</span>&amp; lhs, <span class="type">const</span> <span class="keyword">auto</span>&amp; rhs) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (lhs[<span class="number">0</span>] != rhs[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="keyword">return</span> lhs[<span class="number">0</span>] &gt; rhs[<span class="number">0</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> lhs[<span class="number">1</span>] &lt; rhs[<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> maxDefense = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; c : p) &#123;</span><br><span class="line">            <span class="keyword">if</span> (maxDefense &gt; c[<span class="number">1</span>]) &#123;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">            maxDefense = <span class="built_in">max</span>(maxDefense, c[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(nlogn),<br>
 空间复杂度: O(log n).</p>
-<h2 id="1997-First-Day-Where-You-Have-Been-in-All-the-Rooms">1997. First Day Where You Have Been in All the Rooms</h2>
+<h2 id="1997-First-Day-Where-You-Have-Been-in-All-the-Rooms">1997. First Day Where You Have Been in All the Rooms<a class="section-link" href="#1997-First-Day-Where-You-Have-Been-in-All-the-Rooms" aria-label="本节链接：1997. First Day Where You Have Been in All the Rooms"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>本题幸运的发现了问题的本质，很快并且代码行数很少地解决了问题。<br>
 否则最后一题可能没时间Debug了。</p>
 <p>注意到<code>0 &lt;= nextVisit[i] &lt;= i</code>，因此奇数次的时候必然是要往回走/呆在原地。<br>
@@ -402,7 +417,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">firstDayBeenInAllRooms</span>(<span class="params">self, nextVisit: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        MOD = <span class="number">10</span>**<span class="number">9</span> + <span class="number">7</span></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dp</span>(<span class="params">i</span>):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> (dp(i-<span class="number">1</span>) * <span class="number">2</span> + <span class="number">2</span> - dp(nextVisit[i-<span class="number">1</span>])) % MOD</span><br><span class="line">        n = <span class="built_in">len</span>(nextVisit)</span><br><span class="line">        <span class="keyword">return</span> dp(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>时间复杂度: O(N),<br>
 空间复杂度: O(N).</p>
-<h2 id="1998-GCD-Sort-of-an-Array">1998. GCD Sort of an Array</h2>
+<h2 id="1998-GCD-Sort-of-an-Array">1998. GCD Sort of an Array<a class="section-link" href="#1998-GCD-Sort-of-an-Array" aria-label="本节链接：1998. GCD Sort of an Array"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>观察交换规则，可以发现交换的位置其实是一个并查集，2个元素可以通过第3个元素互换。<br>
 问题转换成，原始位置要换到排序后的位置，需要经过一系列元素的交换，这些元素必须在同一个集（component）里。<br>
 在同一个集的充分必要条件是 gcd 大于 1。</p>

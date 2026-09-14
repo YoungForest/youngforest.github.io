@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -369,7 +384,7 @@
 </tbody>
 </table>
 <p>本周日是国内的工作日，参加LeetCode weekly contest的人直接少了1千，可见国内参与此比赛的热情。而且国人的实力一般也是排在世界前列的。所以我此次排名为70，首次进入前200，除了争分夺秒在结束前AC掉最后一题的功劳外，还有参赛大佬减少的原因。</p>
-<h2 id="5051-Valid-Boomerang">5051. Valid Boomerang</h2>
+<h2 id="5051-Valid-Boomerang">5051. Valid Boomerang<a class="section-link" href="#5051-Valid-Boomerang" aria-label="本节链接：5051. Valid Boomerang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>Intuition:<br>
 分为判断distinct和not in a straight line两部分。<br>
 3点共线可以用斜率直接判断。<br>
@@ -384,9 +399,9 @@
 <p>我的解法会有除0的问题，<br>
 但仍然能通过<code>[[1,2],[1,1],[2,1]]</code>这样的测试用例。<br>
 仔细想想C++的浮点数除法，根据IEEE 754 标准，结果为+infinite。自然有不相等的结果。</p>
-<h2 id="1038-Binary-Search-Tree-to-Greater-Sum-Tree">1038. Binary Search Tree to Greater Sum Tree</h2>
+<h2 id="1038-Binary-Search-Tree-to-Greater-Sum-Tree">1038. Binary Search Tree to Greater Sum Tree<a class="section-link" href="#1038-Binary-Search-Tree-to-Greater-Sum-Tree" aria-label="本节链接：1038. Binary Search Tree to Greater Sum Tree"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> current = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">recurse</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="built_in">recurse</span>(root-&gt;right);</span><br><span class="line">        current += root-&gt;val;</span><br><span class="line">        root-&gt;val = current;</span><br><span class="line">        <span class="built_in">recurse</span>(root-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">bstToGst</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">recurse</span>(root);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1039-Minimum-Score-Triangulation-of-Polygon">1039. Minimum Score Triangulation of Polygon</h2>
+<h2 id="1039-Minimum-Score-Triangulation-of-Polygon">1039. Minimum Score Triangulation of Polygon<a class="section-link" href="#1039-Minimum-Score-Triangulation-of-Polygon" aria-label="本节链接：1039. Minimum Score Triangulation of Polygon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-score-triangulation-of-polygon/discuss/286705/JavaC++Python-DP">参考</a></p>
 <p>Intuition:<br>
 DP.<br>
@@ -396,7 +411,7 @@ DP.<br>
 <p>时间复杂度：O(n ^ 3),<br>
 空间复杂度：O(n ^ 2)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minScoreTriangulation</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> n = A.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span> (n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; (n));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> d = <span class="number">2</span>; d &lt; n; ++d) &#123; <span class="comment">// i, j 之间的距离</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i + d&lt; n; ++i) &#123;   <span class="comment">// 直线的一端</span></span><br><span class="line">                <span class="type">int</span> j = i + d;  <span class="comment">// 直线的另一端</span></span><br><span class="line">                dp[i][j] = numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>();</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> k = i + <span class="number">1</span>; k &lt; j; ++k) &#123; <span class="comment">// 三角形的另一个顶点</span></span><br><span class="line">                    dp[i][j] = <span class="built_in">min</span>(dp[i][j], dp[i][k] + dp[k][j] + A[i] * A[k] * A[j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][n<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="1040-Moving-Stones-Until-Consecutive-II">1040. Moving Stones Until Consecutive II</h2>
+<h2 id="1040-Moving-Stones-Until-Consecutive-II">1040. Moving Stones Until Consecutive II<a class="section-link" href="#1040-Moving-Stones-Until-Consecutive-II" aria-label="本节链接：1040. Moving Stones Until Consecutive II"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>时间复杂度: O(n long n), 因为有个排序。<br>
 空间复杂度: O(1)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">numMovesStonesII</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 贪心策略</span></span><br><span class="line">        <span class="comment">// 最小：尽可能地收缩，答案一定小于size，连续的size内有多少石头，答案即为size-这个数目</span></span><br><span class="line">        <span class="comment">// 特殊情况：这个区间涉及到头或尾，且补位的位置也是头尾，即 1 11这种情况，此时答案为2，而不是1</span></span><br><span class="line">        <span class="comment">// 最大：先排个序，最小的跳到最大的左面，或 最大的额跳到最小的右面，剩下的每次收缩1</span></span><br><span class="line">        <span class="built_in">sort</span>(stones.<span class="built_in">begin</span>(), stones.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> size = stones.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> minimum_moves = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (stones[i] &gt;= stones[left] + size) &#123;</span><br><span class="line">                <span class="keyword">while</span> (stones[i] &gt;= stones[left] + size)</span><br><span class="line">                    ++left;</span><br><span class="line">            &#125;</span><br><span class="line">            minimum_moves = <span class="built_in">max</span>(minimum_moves, i - left + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (minimum_moves == size - <span class="number">1</span> &amp;&amp; (stones[<span class="number">1</span>] - stones[<span class="number">0</span>] != <span class="number">2</span> &amp;&amp; stones[size - <span class="number">1</span>] - stones[size - <span class="number">2</span>] != <span class="number">2</span>)) &#123;</span><br><span class="line">            minimum_moves = <span class="number">2</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            minimum_moves = size - minimum_moves;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> maximum_moves = <span class="number">0</span>;</span><br><span class="line">        maximum_moves = <span class="built_in">max</span>(stones[size - <span class="number">2</span>] - stones[<span class="number">0</span>], stones[size - <span class="number">1</span>] - stones[<span class="number">1</span>]) + <span class="number">1</span> - size + <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> &#123;minimum_moves, maximum_moves&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>

@@ -55,8 +55,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="/js/third-party/search/local-search.js" defer></script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/search-ui.js" defer></script>
 
 
 
@@ -91,66 +93,79 @@
 
   <main class="main">
     <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+        <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
     </div>
   </div>
-
   <div class="site-meta">
-
+    
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">YoungForest's blog</p>
       <i class="logo-line"></i>
     </a>
+    
+    
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button type="button" class="toggle popup-trigger" data-search-trigger aria-label="搜索" hidden><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i></button>
+      <a class="toggle search-archive-fallback" data-search-fallback href="/archives/" aria-label="文章归档"><i class="fa fa-list fa-fw fa-lg" aria-hidden="true"></i></a>
+    
   </div>
 </div>
 
 
 
+
+
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-从这里开始"><a href="/start-here/" rel="section"><i class="fa fa-compass fa-fw"></i>从这里开始</a></li><li class="menu-item menu-item-主题"><a href="/topics/" rel="section"><i class="fa fa-th fa-fw"></i>主题</a></li><li class="menu-item menu-item-订阅"><a href="/subscribe/" rel="section"><i class="fa fa-rss fa-fw"></i>订阅</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-english"><a href="https://youngforest.github.io/en/" rel="section"><i class="fa fa-globe fa-fw"></i>English</a></li>
+    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
+        <button type="button" class="popup-trigger" data-search-trigger hidden>
+          <i class="fa fa-search fa-fw" aria-hidden="true"></i>搜索
+        </button>
+        <a data-search-fallback href="/archives/">文章归档</a>
       </li>
+    
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
+
+<dialog class="search-popup search-dialog" id="site-search" aria-labelledby="site-search-title">
+  <h2 class="search-visually-hidden" id="site-search-title">搜索本站</h2>
+  <div class="search-header">
+    <span class="search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <div class="search-input-container">
+      <label class="search-visually-hidden" for="site-search-input">搜索中文文章</label>
+      <input id="site-search-input" autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
     </div>
+    <button class="popup-btn-close" type="button" aria-label="关闭搜索"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
+  <div class="search-scroll">
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true"
+       data-empty="输入标题或正文关键词。这里只搜索中文文章。" data-loading="正在加载搜索内容…" data-none="没有找到匹配文章。试试更短的关键词，或从目录浏览。"
+       data-error="搜索内容未能加载，请重试；也可以直接浏览文章归档。" data-library-error="搜索组件未能加载。请刷新页面，或直接浏览文章归档。">输入标题或正文关键词。这里只搜索中文文章。</p>
+    <div class="search-actions">
+      <button type="button" class="search-retry" hidden>重试</button>
+      <button type="button" class="search-reload" hidden>刷新页面</button>
+    </div>
+    <nav class="search-browse" aria-label="也可以浏览">
+      <a href="/archives/">文章归档</a>
+      <a href="/topics/">主题目录</a>
+      <a href="/reading/">书影音目录</a>
+      <a href="https://youngforest.github.io/en/" lang="en">English site</a>
+    </nav>
+    <div class="search-result-container" id="site-search-results"></div>
+  </div>
+</dialog>
 
 </header>
         
@@ -345,20 +360,20 @@
   <img src="/images/ai/gogogo/zh-hero.webp" alt="夜里的 Forest 背着过去积累的课业石块站在四条未来道路前，把散落的编译零件重新装进自己的工具箱" width="1536" height="864" decoding="async">
 </figure>
 <span id="more"></span>
-<h2 id="往者">往者</h2>
+<h2 id="往者">往者<a class="section-link" href="#%E5%BE%80%E8%80%85" aria-label="本节链接：往者"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>大一时抱怨数学课太多, 大家纷纷在说说上晒课表, 说&quot;我上的是计算机系, 不是数学系&quot;之类的. 现在看来, 当时真是太naive, 事实上, 现在的我最喜欢数学课了, 而不是计算机课. 究其原因, 当时的专业课只有C语言, 当时的大计基python也确实对计算机学习很重要, 但这些比起现在的专业课真是太简单了. 对于可怜的GPA来说, 大一是最重要的, 因为那些我们不喜欢的数学课, 英语课占的学分很多. 一个学长告诉我说, 你的成绩基本上大一就已经定了. 现在看来, 确实是这样, 只有对自己的无能更加愤怒.</p>
 <p>大二上抱怨计组太难, 6系不是人呆的地方. 熬夜成了家庭便饭, 考期甚至有两门课需要刷夜, 经历了胸闷心痛的感觉. 大二下抱怨OO制度没人性, OS实验懒惰没有申优.</p>
 <p>大三到了该考虑出路的时候, 才发现别人是从一上大学就有了目标并为之奋斗四年, 现在到了即将收获果实的季节; 而自己却发现很多事情都已经为时甚完了; 要GPA, 有前两年的基础, 现在已经很难获得提高了; 要语言考试的成绩, 自己六级飘过的水平, 加上懒惰的习惯, 很难将命运全然托付之; 要找工作, 进顶尖公司, 赚大钱, 自己没有竞赛经验, 算法渣的一比, 自己都羞愧的向优秀的学长道歉. 感觉自己难道真的成了扶不起的阿斗了?</p>
-<h2 id="出路">出路</h2>
-<h3 id="保研">保研</h3>
+<h2 id="出路">出路<a class="section-link" href="#%E5%87%BA%E8%B7%AF" aria-label="本节链接：出路"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
+<h3 id="保研">保研<a class="section-link" href="#%E4%BF%9D%E7%A0%94" aria-label="本节链接：保研"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>这条路是最有可能也是现在面临的最轻松的一条路了, 但看着自己可怜的GPA, 现在已无力力挽狂澜, 只能任人宰割. 外推是绝无可能了, 甚至保本校我都不敢打包票, 毕竟后面还有一大堆加分的.</p>
-<h3 id="工作">工作</h3>
+<h3 id="工作">工作<a class="section-link" href="#%E5%B7%A5%E4%BD%9C" aria-label="本节链接：工作"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>就像舍友zjy说的, 自己什么都不会, 哪里有公司会要呐. 我和他的处境类似, 虽说2年半来认真学习专业知识, 但无论是深度还是适合度, 都与市场上的需求相差甚远. tls自然不同担心, 有ACM的丰富经验再此, 无论是出国留学还是进入国际顶尖公司, 固然是走上人生巅峰了.</p>
-<h3 id="留学">留学</h3>
+<h3 id="留学">留学<a class="section-link" href="#%E7%95%99%E5%AD%A6" aria-label="本节链接：留学"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>说起来, 自从2016年暑假去英国呆了两周, 竟然有了出国深造的想法和勇气. 没想到已半年过去, 锐气已然消失, 但信念仍存. 虽无背水一战的勇气, 但也有不屈服命运的倔强.</p>
-<h3 id="创业">创业</h3>
+<h3 id="创业">创业<a class="section-link" href="#%E5%88%9B%E4%B8%9A" aria-label="本节链接：创业"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h3>
 <p>这个选项是留给别人的, 我从来都是想也不敢想. 没有资金, 没有人脉, 没有强爹, 没有素质, 也没有勇气.</p>
-<h2 id="来者">来者</h2>
+<h2 id="来者">来者<a class="section-link" href="#%E6%9D%A5%E8%80%85" aria-label="本节链接：来者"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .5l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.5l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a></h2>
 <p>新的一年, 新的学期. 这一年, 至少将决定接下来2年的发展, 甚至会决定一生的命运.</p>
 <p>加油!</p>
 
